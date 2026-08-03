@@ -1,50 +1,236 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#2ebd85">
-<title>五年级上册 Unit 3 - 短文听读说写训练</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Unit 3 演讲稿 · 跟读 H5</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-  body{
-    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
-    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
-    min-height:100vh;
-    display:flex;justify-content:center;align-items:center;
-    padding:20px;
-  }
-  .card{
-    width:100%;max-width:420px;
-    background:#fff;border-radius:20px;
-    box-shadow:0 10px 30px rgba(47,157,240,.12);
-    padding:52px 30px 44px;text-align:center;
-  }
-  .badge{
-    display:inline-block;
-    background:linear-gradient(135deg,#35d29a,#2f9df0);
-    color:#fff;border-radius:999px;
-    padding:6px 16px;font-size:13px;letter-spacing:1px;
-  }
-  h1{font-size:22px;color:#33434b;margin:20px 0 12px;}
-  .tip{font-size:16px;color:#8aa09a;letter-spacing:2px;}
-  .back{
-    display:inline-block;margin-top:32px;
-    padding:11px 28px;border-radius:12px;
-    background:#e8f7f0;color:#1fa873;
-    text-decoration:none;font-size:14px;font-weight:600;
-    transition:transform .15s ease;
-    touch-action:manipulation;
-  }
-  .back:active{transform:scale(.95);}
+  :root{--bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;--red:#e53935;--accent:#2e9e6b;--cn-bg:#f1f6fb;--cn-line:#4a90d9;--hi-en:#fff6da;--hi-en-line:#ffb300;--hi-cn:#e3f2fd;--hi-cn-line:#1e88e5;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;padding-bottom:84px;-webkit-font-smoothing:antialiased;}
+  header{background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;padding:18px 16px 16px;text-align:center;box-shadow:0 2px 10px rgba(46,158,107,.25);}
+  header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.5px;}
+  header p{margin:4px 0 0;font-size:12px;opacity:.92;}
+  .top-toggle{margin-top:10px;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 16px;border:1.5px solid rgba(255,255,255,.85);background:rgba(255,255,255,.16);color:#fff;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,transform .08s;}
+  .top-toggle:active{transform:scale(.97);}
+  .wrap{max-width:760px;margin:0 auto;padding:14px 12px 8px;}
+  .card{background:var(--card);border-radius:14px;padding:14px 14px 12px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .card-title{font-size:13px;font-weight:700;color:var(--accent);margin:0 0 8px;padding-left:10px;border-left:4px solid var(--accent);}
+  .en-sentence{position:relative;padding:10px 12px;margin:8px 0;border-radius:10px;background:#fbfdfc;border:1px solid #eef3f1;font-size:16px;transition:background .25s,box-shadow .25s;cursor:pointer;}
+  .en-sentence strong{font-weight:700;color:#16242c;}
+  .en-sentence .ph{color:var(--red);font-size:.82em;font-family:"Arial",sans-serif;margin:0 2px;white-space:nowrap;transition:opacity .2s;}
+  body.hide-ph .ph{display:none;}
+  .en-sentence.speaking{background:var(--hi-en);box-shadow:inset 0 0 0 2px var(--hi-en-line);}
+  .cn{background:var(--cn-bg);border-left:4px solid var(--cn-line);border-radius:0 10px 10px 0;padding:10px 12px;margin:10px 0 2px;color:#4a5a66;font-size:15px;transition:background .25s,border-color .25s;}
+  .cn.cn-speaking{background:var(--hi-cn);border-left-color:var(--hi-cn-line);color:#1b3a52;}
+  .controls{display:flex;gap:8px;margin-top:10px;}
+  .btn{flex:1;min-height:42px;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;user-select:none;}
+  .btn:active{transform:scale(.97);}
+  .btn-play{background:var(--accent);color:#fff;}
+  .btn-play:hover{filter:brightness(1.05);}
+  .btn-pause{background:#fff;color:var(--accent);border:1.5px solid var(--accent);}
+  .btn-pause:disabled{opacity:.45;cursor:default;}
+  .global-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:1px solid #e3eae6;box-shadow:0 -3px 14px rgba(30,50,40,.08);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;max-width:760px;margin:0 auto;}
+  .global-bar .gbtn{flex:1;min-height:46px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;}
+  .global-bar .gbtn:active{transform:scale(.97);}
+  .gbtn-loop{background:var(--accent);color:#fff;}
+  .gbtn-stop{background:#fdecec;color:var(--red);border:1.5px solid #f4b9b9;}
+  .loop-info{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--muted);background:#fff;padding:2px 10px;border-radius:10px;border:1px solid #e3eae6;white-space:nowrap;}
+  .hint{text-align:center;font-size:12px;color:var(--muted);margin:4px 0 2px;}
+  .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
+  .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}
 </style>
 </head>
 <body>
-<div class="card">
-  <span class="badge">五年级上册</span>
-  <h1>📖 Unit 3</h1>
-  <p class="tip">🔨 网页开发中...</p>
-  <a class="back" href="index.html">← 返回导航</a>
+
+<header>
+  <h1>My Week · 跟读 H5</h1>
+  <p>人教PEP五年级上册 Unit 3 ｜ 汕头 2027 中考 ｜ 美式女声 · 单句跟读（只朗读英文）</p>
+  <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
+
+<div class="wrap" id="content">
+  <div class="card">
+    <div class="card-title">开场 · 我的一周</div>
+    <div class="en-sentence" data-spoken="Good morning, my dear teachers and friends! Today, my topic is My Busy Week.">Good morning, my dear teachers and friends! Today, my topic is My Busy Week.</div>
+    <div class="cn">尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《我忙碌的一周》。</div>
+  </div>
+  <div class="card">
+    <div class="card-title">① 上学日</div>
+    <div class="en-sentence" data-spoken="I usually  start  my week on Monday . My favourite subject  is English, because  it is fun.">I <strong>usually</strong> <span class="ph">/ˈjuːʒuəli/ adv. 通常地；经常地</span> <strong>start</strong> <span class="ph">/stɑːt/ v. 开始</span> my week on <strong>Monday</strong> <span class="ph">/ˈmʌndeɪ/ n. 星期一</span>. My favourite <strong>subject</strong> <span class="ph">/ˈsʌbdʒɪkt/ n. 科目；学科</span> is English, <strong>because</strong> <span class="ph">/bɪˈkɒz/ conj. 因为</span> it is fun.</div>
+    <div class="en-sentence" data-spoken="On Tuesday  and Wednesday , I have PE and art lessons .">On <strong>Tuesday</strong> <span class="ph">/ˈtjuːzdeɪ/ n. 星期二</span> and <strong>Wednesday</strong> <span class="ph">/ˈwenzdeɪ/ n. 星期三</span>, I have PE and art <strong>lessons</strong> <span class="ph">/ˈlesn/ n. 课；一节课</span>.</div>
+    <div class="en-sentence" data-spoken="On Thursday , we do a maths quiz, and I can answer  most questions. On Friday , we play ping-pong  in the gym. I love my school days!">On <strong>Thursday</strong> <span class="ph">/ˈθɜːzdeɪ/ n. 星期四</span>, we do a maths quiz, and I can <strong>answer</strong> <span class="ph">/ˈɑːnsə(r)/ v. &amp; n. 答复；回答</span> most questions. On <strong>Friday</strong> <span class="ph">/ˈfraɪdeɪ/ n. 星期五</span>, we play <strong>ping-pong</strong> <span class="ph">/ˈpɪŋpɒŋ/ n. 乒乓球</span> in the gym. I love my school days!</div>
+    <div class="cn">我通常从星期一开始我的一周。我最喜欢的科目是英语，因为它很有趣。星期二和星期三，我有体育课和美术课。星期四，我们做数学小测验，我能回答大多数问题。星期五，我们在体育馆打乒乓球。我爱我的上学日！</div>
+  </div>
+  <div class="card">
+    <div class="card-title">② 晚上与周末</div>
+    <div class="en-sentence" data-spoken="In the evening , I do my homework, and at night  I read storybooks. On the weekend , I am free. On Saturday , I visit  my grandparents . They live near a park. On Sunday , I sometimes  go swimming with my dad.">In the <strong>evening</strong> <span class="ph">/ˈiːvnɪŋ/ n. 晚上；傍晚</span>, I do my homework, and at <strong>night</strong> <span class="ph">/naɪt/ n. 夜；夜晚</span> I read storybooks. On the <strong>weekend</strong> <span class="ph">/ˌwiːkˈend/ n. 周末</span>, I am free. On <strong>Saturday</strong> <span class="ph">/ˈsætədeɪ/ n. 星期六</span>, I <strong>visit</strong> <span class="ph">/ˈvɪzɪt/ v. 看望；拜访；参观</span> my <strong>grandparents</strong> <span class="ph">/ˈɡrænpeərənt/ n. 祖父；祖母；外祖父；外祖母</span>. They live near a park. On <strong>Sunday</strong> <span class="ph">/ˈsʌndeɪ/ n. 星期日</span>, I <strong>sometimes</strong> <span class="ph">/ˈsʌmtaɪmz/ adv. 有时；间或</span> go swimming with my dad.</div>
+    <div class="cn">晚上我做作业，夜里读故事书。周末我空闲。星期六我去看望爷爷奶奶。他们住在公园附近。星期天我有时和爸爸去游泳。</div>
+  </div>
+  <div class="card">
+    <div class="card-title">结束语</div>
+    <div class="en-sentence" data-spoken="My friends, every day is a new start.">My friends, every day is a new start.</div>
+    <div class="en-sentence" data-spoken="Do your best every day, and you will have a wonderful week!">Do your best every day, and you will have a wonderful week!</div>
+    <div class="en-sentence" data-spoken="That's all. Thank you for listening!">That's all. Thank you for listening!</div>
+    <div class="cn">朋友们，每一天都是新的开始。每天尽力而为，你就会拥有精彩的一周！ 我的演讲到此结束，谢谢大家！</div>
+  </div>
+  <p class="hint">点击句子或【播放】即可跟读（只朗读英文），红色为单词音标注释，蓝框为中文翻译。</p>
+  <div class="full-translation" id="fullTranslation">
+    <h2>整篇中文翻译</h2>
+    <p>尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《我忙碌的一周》。</p>
+    <p>我通常从星期一开始我的一周。我最喜欢的科目是英语，因为它很有趣。星期二和星期三，我有体育课和美术课。星期四，我们做数学小测验，我能回答大多数问题。星期五，我们在体育馆打乒乓球。我爱我的上学日！</p>
+    <p>晚上我做作业，夜里读故事书。周末我空闲。星期六我去看望爷爷奶奶。他们住在公园附近。星期天我有时和爸爸去游泳。</p>
+    <p>朋友们，每一天都是新的开始。每天尽力而为，你就会拥有精彩的一周！</p>
+    <p>我的演讲到此结束，谢谢大家！</p>
+  </div>
 </div>
+
+<div class="global-bar">
+  <span class="loop-info" id="loopInfo">未播放</span>
+  <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
+  <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var synth = window.speechSynthesis;
+  var MAX_LOOP = 10;
+  var sentences = Array.prototype.slice.call(document.querySelectorAll('.en-sentence'));
+  sentences.forEach(function(el, i){
+    var ctl = document.createElement('div');
+    ctl.className = 'controls';
+    var bPlay = document.createElement('button');
+    bPlay.className = 'btn btn-play';
+    bPlay.textContent = '▶ 播放';
+    var bPause = document.createElement('button');
+    bPause.className = 'btn btn-pause';
+    bPause.textContent = '⏸ 暂停';
+    bPause.disabled = true;
+    ctl.appendChild(bPlay);
+    ctl.appendChild(bPause);
+    el.appendChild(ctl);
+    bPlay.addEventListener('click', function(e){ e.stopPropagation(); playSingle(i); });
+    bPause.addEventListener('click', function(e){ e.stopPropagation(); pauseCurrent(); });
+    el.addEventListener('click', function(){ playSingle(i); });
+  });
+  var mode = 'idle', currentIdx = -1, paused = false, token = 0, loopCount = 0;
+  var loopInfo = document.getElementById('loopInfo');
+  function pickVoice(){
+    if(!synth) return null;
+    var vs = synth.getVoices() || [];
+    var en = vs.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('en') === 0; });
+    if(!en.length) return null;
+    var fav = en.filter(function(v){
+      var n = v.name.toLowerCase();
+      return /female|samantha|zira|google us|karen|tessa|victoria|allison|google UK English Female|Microsoft.*Zira|Microsoft.*Aria/i.test(n)
+        && (v.lang.toLowerCase().indexOf('en-us') === 0 || v.default);
+    });
+    if(fav.length) return fav[0];
+    var us = en.filter(function(v){ return v.lang.toLowerCase() === 'en-us'; });
+    if(us.length) return us[0];
+    return en[0];
+  }
+  function clearHighlight(){
+    sentences.forEach(function(s){ s.classList.remove('speaking'); });
+    document.querySelectorAll('.cn').forEach(function(c){ c.classList.remove('cn-speaking'); });
+  }
+  function highlight(i){
+    clearHighlight();
+    var s = sentences[i];
+    if(!s) return;
+    s.classList.add('speaking');
+    s.scrollIntoView({behavior:'smooth', block:'center'});
+    var card = s.closest('.card');
+    if(card){
+      var cn = card.querySelector('.cn');
+      if(cn) cn.classList.add('cn-speaking');
+    }
+  }
+  function setPauseBtn(){
+    sentences.forEach(function(s){
+      var b = s.querySelector('.btn-pause');
+      if(b) b.disabled = !(paused && currentIdx === sentences.indexOf(s) && mode !== 'idle');
+    });
+  }
+  function speak(index, nextMode){
+    if(!synth){ alert('当前浏览器不支持语音朗读（Web Speech API）。'); return; }
+    synth.cancel();
+    var myToken = ++token;
+    currentIdx = index;
+    mode = nextMode;
+    paused = false;
+    var text = sentences[index].getAttribute('data-spoken') || sentences[index].textContent;
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 0.92;
+    u.pitch = 1.05;
+    u.onend = function(){
+      if(myToken !== token) return;
+      if(mode === 'all'){ advanceAll(); }
+      else { mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn(); }
+    };
+    u.onerror = function(){ if(myToken !== token) return; mode='idle'; currentIdx=-1; clearHighlight(); setPauseBtn(); };
+    highlight(index);
+    setPauseBtn();
+    synth.speak(u);
+  }
+  function advanceAll(){
+    if(mode !== 'all') return;
+    var next = currentIdx + 1;
+    if(next < sentences.length){ speak(next, 'all'); }
+    else {
+      loopCount++;
+      if(loopCount < MAX_LOOP){
+        loopInfo.textContent = '第 ' + (loopCount+1) + ' / ' + MAX_LOOP + ' 轮';
+        speak(0, 'all');
+      } else {
+        loopInfo.textContent = '已完成 ' + MAX_LOOP + ' 轮';
+        mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn();
+      }
+    }
+  }
+  function playSingle(i){
+    if(paused && mode !== 'idle' && currentIdx === i){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '单句跟读';
+    speak(i, 'single');
+  }
+  function pauseCurrent(){
+    if(synth && synth.speaking && !synth.paused){ synth.pause(); paused = true; setPauseBtn(); }
+  }
+  function stopAll(){
+    if(synth) synth.cancel();
+    token++; mode = 'idle'; currentIdx = -1; paused = false; loopCount = 0;
+    clearHighlight(); setPauseBtn();
+    loopInfo.textContent = '已停止';
+  }
+  document.getElementById('btnLoop').addEventListener('click', function(){
+    if(mode === 'all' && !paused){ pauseCurrent(); loopInfo.textContent = '已暂停'; return; }
+    if(paused && mode === 'all'){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '第 1 / ' + MAX_LOOP + ' 轮';
+    speak(0, 'all');
+  });
+  document.getElementById('btnStop').addEventListener('click', stopAll);
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  function syncToggleLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncToggleLabel();
+  });
+  syncToggleLabel();
+  if(synth && typeof synth.onvoiceschanged !== 'undefined'){
+    synth.onvoiceschanged = function(){ /* voices ready */ };
+  }
+})();
+</script>
 </body>
 </html>

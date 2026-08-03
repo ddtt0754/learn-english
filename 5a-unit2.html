@@ -1,50 +1,242 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#2ebd85">
-<title>五年级上册 Unit 2 - 短文听读说写训练</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Unit 2 演讲稿 · 跟读 H5</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-  body{
-    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
-    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
-    min-height:100vh;
-    display:flex;justify-content:center;align-items:center;
-    padding:20px;
-  }
-  .card{
-    width:100%;max-width:420px;
-    background:#fff;border-radius:20px;
-    box-shadow:0 10px 30px rgba(47,157,240,.12);
-    padding:52px 30px 44px;text-align:center;
-  }
-  .badge{
-    display:inline-block;
-    background:linear-gradient(135deg,#35d29a,#2f9df0);
-    color:#fff;border-radius:999px;
-    padding:6px 16px;font-size:13px;letter-spacing:1px;
-  }
-  h1{font-size:22px;color:#33434b;margin:20px 0 12px;}
-  .tip{font-size:16px;color:#8aa09a;letter-spacing:2px;}
-  .back{
-    display:inline-block;margin-top:32px;
-    padding:11px 28px;border-radius:12px;
-    background:#e8f7f0;color:#1fa873;
-    text-decoration:none;font-size:14px;font-weight:600;
-    transition:transform .15s ease;
-    touch-action:manipulation;
-  }
-  .back:active{transform:scale(.95);}
+  :root{--bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;--red:#e53935;--accent:#2e9e6b;--cn-bg:#f1f6fb;--cn-line:#4a90d9;--hi-en:#fff6da;--hi-en-line:#ffb300;--hi-cn:#e3f2fd;--hi-cn-line:#1e88e5;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;padding-bottom:84px;-webkit-font-smoothing:antialiased;}
+  header{background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;padding:18px 16px 16px;text-align:center;box-shadow:0 2px 10px rgba(46,158,107,.25);}
+  header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.5px;}
+  header p{margin:4px 0 0;font-size:12px;opacity:.92;}
+  .top-toggle{margin-top:10px;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 16px;border:1.5px solid rgba(255,255,255,.85);background:rgba(255,255,255,.16);color:#fff;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,transform .08s;}
+  .top-toggle:active{transform:scale(.97);}
+  .wrap{max-width:760px;margin:0 auto;padding:14px 12px 8px;}
+  .card{background:var(--card);border-radius:14px;padding:14px 14px 12px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .card-title{font-size:13px;font-weight:700;color:var(--accent);margin:0 0 8px;padding-left:10px;border-left:4px solid var(--accent);}
+  .en-sentence{position:relative;padding:10px 12px;margin:8px 0;border-radius:10px;background:#fbfdfc;border:1px solid #eef3f1;font-size:16px;transition:background .25s,box-shadow .25s;cursor:pointer;}
+  .en-sentence strong{font-weight:700;color:#16242c;}
+  .en-sentence .ph{color:var(--red);font-size:.82em;font-family:"Arial",sans-serif;margin:0 2px;white-space:nowrap;transition:opacity .2s;}
+  body.hide-ph .ph{display:none;}
+  .en-sentence.speaking{background:var(--hi-en);box-shadow:inset 0 0 0 2px var(--hi-en-line);}
+  .cn{background:var(--cn-bg);border-left:4px solid var(--cn-line);border-radius:0 10px 10px 0;padding:10px 12px;margin:10px 0 2px;color:#4a5a66;font-size:15px;transition:background .25s,border-color .25s;}
+  .cn.cn-speaking{background:var(--hi-cn);border-left-color:var(--hi-cn-line);color:#1b3a52;}
+  .controls{display:flex;gap:8px;margin-top:10px;}
+  .btn{flex:1;min-height:42px;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;user-select:none;}
+  .btn:active{transform:scale(.97);}
+  .btn-play{background:var(--accent);color:#fff;}
+  .btn-play:hover{filter:brightness(1.05);}
+  .btn-pause{background:#fff;color:var(--accent);border:1.5px solid var(--accent);}
+  .btn-pause:disabled{opacity:.45;cursor:default;}
+  .global-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:1px solid #e3eae6;box-shadow:0 -3px 14px rgba(30,50,40,.08);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;max-width:760px;margin:0 auto;}
+  .global-bar .gbtn{flex:1;min-height:46px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;}
+  .global-bar .gbtn:active{transform:scale(.97);}
+  .gbtn-loop{background:var(--accent);color:#fff;}
+  .gbtn-stop{background:#fdecec;color:var(--red);border:1.5px solid #f4b9b9;}
+  .loop-info{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--muted);background:#fff;padding:2px 10px;border-radius:10px;border:1px solid #e3eae6;white-space:nowrap;}
+  .hint{text-align:center;font-size:12px;color:var(--muted);margin:4px 0 2px;}
+  .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
+  .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}
 </style>
 </head>
 <body>
-<div class="card">
-  <span class="badge">五年级上册</span>
-  <h1>📖 Unit 2</h1>
-  <p class="tip">🔨 网页开发中...</p>
-  <a class="back" href="index.html">← 返回导航</a>
+
+<header>
+  <h1>Feelings · 跟读 H5</h1>
+  <p>人教PEP五年级上册 Unit 2 ｜ 汕头 2027 中考 ｜ 美式女声 · 单句跟读（只朗读英文）</p>
+  <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
+
+<div class="wrap" id="content">
+  <div class="card">
+    <div class="card-title">开场 · 感受很重要</div>
+    <div class="en-sentence" data-spoken="Good morning, my dear teachers and friends! Today, my topic is Feelings Are Okay.">Good morning, my dear teachers and friends! Today, my topic is Feelings Are Okay.</div>
+    <div class="cn">尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《感受没关系》。</div>
+  </div>
+  <div class="card">
+    <div class="card-title">① 星期一的一天</div>
+    <div class="en-sentence" data-spoken="On Monday  morning, I felt sad . My good friend Lily was worried , too. "What's the matter ?" I asked. She had a big project  to finish . We went to the school centre  and worked together. We agreed  to do it, both  of us. At last, we finished it, and we were so excited !">On <strong>Monday</strong> <span class="ph">/ˈmʌndeɪ/ n. 星期一</span> morning, I felt <strong>sad</strong> <span class="ph">/sæd/ adj. 悲哀的；难过的</span>. My good friend Lily was <strong>worried</strong> <span class="ph">/ˈwʌrid/ adj. 担心的；担忧的</span>, too. "What's the <strong>matter</strong> <span class="ph">/ˈmætə(r)/ n. 事情；问题</span>?" I asked. She had a big <strong>project</strong> <span class="ph">/ˈprɒdʒekt/ n. 项目；方案</span> to <strong>finish</strong> <span class="ph">/ˈfɪnɪʃ/ v. 完成；做好</span>. We went to the school <strong>centre</strong> <span class="ph">/ˈsentə(r)/ n. 中心</span> and worked together. We <strong>agreed</strong> <span class="ph">/əˈɡriː/ v. 同意；赞成</span> to do it, <strong>both</strong> <span class="ph">/bəʊθ/ pron. &amp; adj. 两者；两个（都）</span> of us. At last, we finished it, and we were so <strong>excited</strong> <span class="ph">/ɪkˈsaɪtɪd/ adj. 激动的；兴奋的</span>!</div>
+    <div class="cn">星期一早上，我感到难过。我的好朋友莉莉也很担心。&quot;怎么啦？&quot;我问。她有一个大项目要完成。我们去了学校中心，一起做。我们俩都同意一起做。最后，我们完成了，我们非常兴奋！</div>
+  </div>
+  <div class="card">
+    <div class="card-title">② 弟弟的情绪</div>
+    <div class="en-sentence" data-spoken="Sometimes my brother gets angry .">Sometimes my brother gets <strong>angry</strong> <span class="ph">/ˈæŋɡri/ adj. 愤怒的；生气的</span>.</div>
+    <div class="en-sentence" data-spoken="He thinks everything is wrong , and he is afraid  of making mistakes. My parents  tell us, "Do not be afraid. Just ask  for help." We learn that every feeling is okay.">He thinks everything is <strong>wrong</strong> <span class="ph">/rɒŋ/ adj. 错误的</span>, and he is <strong>afraid</strong> <span class="ph">/əˈfreɪd/ adj. 担心；害怕</span> of making mistakes. My <strong>parents</strong> <span class="ph">/ˈpeərənt/ n. 父亲；母亲</span> tell us, "Do not be afraid. Just <strong>ask</strong> <span class="ph">/ɑːsk/ v. 问；询问</span> for help." We learn that every feeling is okay.</div>
+    <div class="cn">有时我弟弟会生气。他觉得一切都是错的，他害怕犯错。我的父母告诉我们：&quot;不要害怕。需要帮助就开口求助。&quot;我们学会了：每一种感受都是正常的。</div>
+  </div>
+  <div class="card">
+    <div class="card-title">③ 艾米的离别信</div>
+    <div class="en-sentence" data-spoken="Last month, my friend Amy had to move  to another city. We were sad, but she wrote me a letter.">Last month, my friend Amy had to <strong>move</strong> <span class="ph">/muːv/ v. 搬家；移动</span> to another city. We were sad, but she wrote me a letter.</div>
+    <div class="en-sentence" data-spoken="At the end, she wrote, "Yours  truly, Amy." I keep the letter in my desk, and it makes me happy.">At the end, she wrote, "<strong>Yours</strong> <span class="ph">/jɔːz/ pron. 您的（用于书信结尾的签名前）</span> truly, Amy." I keep the letter in my desk, and it makes me happy.</div>
+    <div class="cn">上个月，我的朋友艾米不得不搬到另一个城市。我们很难过，但她给我写了一封信。信的结尾她写道：&quot;您的真诚的艾米。&quot;我把信放在书桌里，它让我开心。</div>
+  </div>
+  <div class="card">
+    <div class="card-title">结束语</div>
+    <div class="en-sentence" data-spoken="My friends, it is okay to be sad, angry or afraid.">My friends, it is okay to be sad, angry or afraid.</div>
+    <div class="en-sentence" data-spoken="Talk about your feelings, and ask for help when you need it. Every feeling will pass, and happiness will come again!">Talk about your feelings, and ask for help when you need it. Every feeling will pass, and happiness will come again!</div>
+    <div class="en-sentence" data-spoken="That's all. Thank you for listening!">That's all. Thank you for listening!</div>
+    <div class="cn">朋友们，难过、生气或害怕都没关系。谈谈你的感受，需要时就求助。每一种感受都会过去，快乐会再次到来！ 我的演讲到此结束，谢谢大家！</div>
+  </div>
+  <p class="hint">点击句子或【播放】即可跟读（只朗读英文），红色为单词音标注释，蓝框为中文翻译。</p>
+  <div class="full-translation" id="fullTranslation">
+    <h2>整篇中文翻译</h2>
+    <p>尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《感受没关系》。</p>
+    <p>星期一早上，我感到难过。我的好朋友莉莉也很担心。&quot;怎么啦？&quot;我问。她有一个大项目要完成。我们去了学校中心，一起做。我们俩都同意一起做。最后，我们完成了，我们非常兴奋！</p>
+    <p>有时我弟弟会生气。他觉得一切都是错的，他害怕犯错。我的父母告诉我们：&quot;不要害怕。需要帮助就开口求助。&quot;我们学会了：每一种感受都是正常的。</p>
+    <p>上个月，我的朋友艾米不得不搬到另一个城市。我们很难过，但她给我写了一封信。信的结尾她写道：&quot;您的真诚的艾米。&quot;我把信放在书桌里，它让我开心。</p>
+    <p>朋友们，难过、生气或害怕都没关系。谈谈你的感受，需要时就求助。每一种感受都会过去，快乐会再次到来！</p>
+    <p>我的演讲到此结束，谢谢大家！</p>
+  </div>
 </div>
+
+<div class="global-bar">
+  <span class="loop-info" id="loopInfo">未播放</span>
+  <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
+  <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var synth = window.speechSynthesis;
+  var MAX_LOOP = 10;
+  var sentences = Array.prototype.slice.call(document.querySelectorAll('.en-sentence'));
+  sentences.forEach(function(el, i){
+    var ctl = document.createElement('div');
+    ctl.className = 'controls';
+    var bPlay = document.createElement('button');
+    bPlay.className = 'btn btn-play';
+    bPlay.textContent = '▶ 播放';
+    var bPause = document.createElement('button');
+    bPause.className = 'btn btn-pause';
+    bPause.textContent = '⏸ 暂停';
+    bPause.disabled = true;
+    ctl.appendChild(bPlay);
+    ctl.appendChild(bPause);
+    el.appendChild(ctl);
+    bPlay.addEventListener('click', function(e){ e.stopPropagation(); playSingle(i); });
+    bPause.addEventListener('click', function(e){ e.stopPropagation(); pauseCurrent(); });
+    el.addEventListener('click', function(){ playSingle(i); });
+  });
+  var mode = 'idle', currentIdx = -1, paused = false, token = 0, loopCount = 0;
+  var loopInfo = document.getElementById('loopInfo');
+  function pickVoice(){
+    if(!synth) return null;
+    var vs = synth.getVoices() || [];
+    var en = vs.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('en') === 0; });
+    if(!en.length) return null;
+    var fav = en.filter(function(v){
+      var n = v.name.toLowerCase();
+      return /female|samantha|zira|google us|karen|tessa|victoria|allison|google UK English Female|Microsoft.*Zira|Microsoft.*Aria/i.test(n)
+        && (v.lang.toLowerCase().indexOf('en-us') === 0 || v.default);
+    });
+    if(fav.length) return fav[0];
+    var us = en.filter(function(v){ return v.lang.toLowerCase() === 'en-us'; });
+    if(us.length) return us[0];
+    return en[0];
+  }
+  function clearHighlight(){
+    sentences.forEach(function(s){ s.classList.remove('speaking'); });
+    document.querySelectorAll('.cn').forEach(function(c){ c.classList.remove('cn-speaking'); });
+  }
+  function highlight(i){
+    clearHighlight();
+    var s = sentences[i];
+    if(!s) return;
+    s.classList.add('speaking');
+    s.scrollIntoView({behavior:'smooth', block:'center'});
+    var card = s.closest('.card');
+    if(card){
+      var cn = card.querySelector('.cn');
+      if(cn) cn.classList.add('cn-speaking');
+    }
+  }
+  function setPauseBtn(){
+    sentences.forEach(function(s){
+      var b = s.querySelector('.btn-pause');
+      if(b) b.disabled = !(paused && currentIdx === sentences.indexOf(s) && mode !== 'idle');
+    });
+  }
+  function speak(index, nextMode){
+    if(!synth){ alert('当前浏览器不支持语音朗读（Web Speech API）。'); return; }
+    synth.cancel();
+    var myToken = ++token;
+    currentIdx = index;
+    mode = nextMode;
+    paused = false;
+    var text = sentences[index].getAttribute('data-spoken') || sentences[index].textContent;
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 0.92;
+    u.pitch = 1.05;
+    u.onend = function(){
+      if(myToken !== token) return;
+      if(mode === 'all'){ advanceAll(); }
+      else { mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn(); }
+    };
+    u.onerror = function(){ if(myToken !== token) return; mode='idle'; currentIdx=-1; clearHighlight(); setPauseBtn(); };
+    highlight(index);
+    setPauseBtn();
+    synth.speak(u);
+  }
+  function advanceAll(){
+    if(mode !== 'all') return;
+    var next = currentIdx + 1;
+    if(next < sentences.length){ speak(next, 'all'); }
+    else {
+      loopCount++;
+      if(loopCount < MAX_LOOP){
+        loopInfo.textContent = '第 ' + (loopCount+1) + ' / ' + MAX_LOOP + ' 轮';
+        speak(0, 'all');
+      } else {
+        loopInfo.textContent = '已完成 ' + MAX_LOOP + ' 轮';
+        mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn();
+      }
+    }
+  }
+  function playSingle(i){
+    if(paused && mode !== 'idle' && currentIdx === i){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '单句跟读';
+    speak(i, 'single');
+  }
+  function pauseCurrent(){
+    if(synth && synth.speaking && !synth.paused){ synth.pause(); paused = true; setPauseBtn(); }
+  }
+  function stopAll(){
+    if(synth) synth.cancel();
+    token++; mode = 'idle'; currentIdx = -1; paused = false; loopCount = 0;
+    clearHighlight(); setPauseBtn();
+    loopInfo.textContent = '已停止';
+  }
+  document.getElementById('btnLoop').addEventListener('click', function(){
+    if(mode === 'all' && !paused){ pauseCurrent(); loopInfo.textContent = '已暂停'; return; }
+    if(paused && mode === 'all'){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '第 1 / ' + MAX_LOOP + ' 轮';
+    speak(0, 'all');
+  });
+  document.getElementById('btnStop').addEventListener('click', stopAll);
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  function syncToggleLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncToggleLabel();
+  });
+  syncToggleLabel();
+  if(synth && typeof synth.onvoiceschanged !== 'undefined'){
+    synth.onvoiceschanged = function(){ /* voices ready */ };
+  }
+})();
+</script>
 </body>
 </html>
