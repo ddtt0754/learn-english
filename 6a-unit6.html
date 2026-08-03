@@ -1,50 +1,240 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#2ebd85">
-<title>六年级上册 Unit 6 - 短文听读说写训练</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>6a-unit6 演讲稿 · 跟读 H5</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-  body{
-    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
-    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
-    min-height:100vh;
-    display:flex;justify-content:center;align-items:center;
-    padding:20px;
-  }
-  .card{
-    width:100%;max-width:420px;
-    background:#fff;border-radius:20px;
-    box-shadow:0 10px 30px rgba(47,157,240,.12);
-    padding:52px 30px 44px;text-align:center;
-  }
-  .badge{
-    display:inline-block;
-    background:linear-gradient(135deg,#35d29a,#2f9df0);
-    color:#fff;border-radius:999px;
-    padding:6px 16px;font-size:13px;letter-spacing:1px;
-  }
-  h1{font-size:22px;color:#33434b;margin:20px 0 12px;}
-  .tip{font-size:16px;color:#8aa09a;letter-spacing:2px;}
-  .back{
-    display:inline-block;margin-top:32px;
-    padding:11px 28px;border-radius:12px;
-    background:#e8f7f0;color:#1fa873;
-    text-decoration:none;font-size:14px;font-weight:600;
-    transition:transform .15s ease;
-    touch-action:manipulation;
-  }
-  .back:active{transform:scale(.95);}
-</style>
+  :root{--bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;--red:#e53935;--accent:#2e9e6b;--cn-bg:#f1f6fb;--cn-line:#4a90d9;--hi-en:#fff6da;--hi-en-line:#ffb300;--hi-cn:#e3f2fd;--hi-cn-line:#1e88e5;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;padding-bottom:84px;-webkit-font-smoothing:antialiased;}
+  header{background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;padding:18px 16px 16px;text-align:center;box-shadow:0 2px 10px rgba(46,158,107,.25);}
+  header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.5px;}
+  header p{margin:4px 0 0;font-size:12px;opacity:.92;}
+  .top-toggle{margin-top:10px;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 16px;border:1.5px solid rgba(255,255,255,.85);background:rgba(255,255,255,.16);color:#fff;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,transform .08s;}
+  .top-toggle:active{transform:scale(.97);}
+  .wrap{max-width:760px;margin:0 auto;padding:14px 12px 8px;}
+  .card{background:var(--card);border-radius:14px;padding:14px 14px 12px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .card-title{font-size:13px;font-weight:700;color:var(--accent);margin:0 0 8px;padding-left:10px;border-left:4px solid var(--accent);}
+  .en-sentence{position:relative;padding:10px 12px;margin:8px 0;border-radius:10px;background:#fbfdfc;border:1px solid #eef3f1;font-size:16px;transition:background .25s,box-shadow .25s;cursor:pointer;}
+  .en-sentence strong{font-weight:700;color:#16242c;}
+  .en-sentence .ph{color:var(--red);font-size:.82em;font-family:"Arial",sans-serif;margin:0 2px;white-space:nowrap;transition:opacity .2s;}
+  body.hide-ph .ph{display:none;}
+  .en-sentence.speaking{background:var(--hi-en);box-shadow:inset 0 0 0 2px var(--hi-en-line);}
+  .cn{background:var(--cn-bg);border-left:4px solid var(--cn-line);border-radius:0 10px 10px 0;padding:10px 12px;margin:10px 0 2px;color:#4a5a66;font-size:15px;transition:background .25s,border-color .25s;}
+  .cn.cn-speaking{background:var(--hi-cn);border-left-color:var(--hi-cn-line);color:#1b3a52;}
+  .controls{display:flex;gap:8px;margin-top:10px;}
+  .btn{flex:1;min-height:42px;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;user-select:none;}
+  .btn:active{transform:scale(.97);}
+  .btn-play{background:var(--accent);color:#fff;}
+  .btn-pause{background:#fff;color:var(--accent);border:1.5px solid var(--accent);}
+  .btn-pause:disabled{opacity:.45;cursor:default;}
+  .global-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:1px solid #e3eae6;box-shadow:0 -3px 14px rgba(30,50,40,.08);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;max-width:760px;margin:0 auto;}
+  .global-bar .gbtn{flex:1;min-height:46px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;}
+  .global-bar .gbtn:active{transform:scale(.97);}
+  .gbtn-loop{background:var(--accent);color:#fff;}
+  .gbtn-stop{background:#fdecec;color:var(--red);border:1.5px solid #f4b9b9;}
+  .loop-info{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--muted);background:#fff;padding:2px 10px;border-radius:10px;border:1px solid #e3eae6;white-space:nowrap;}
+  .hint{text-align:center;font-size:12px;color:var(--muted);margin:4px 0 2px;}
+  .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
+  .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}</style>
 </head>
 <body>
-<div class="card">
-  <span class="badge">六年级上册</span>
-  <h1>📖 Unit 6</h1>
-  <p class="tip">🔨 网页开发中...</p>
-  <a class="back" href="index.html">← 返回导航</a>
+
+<header>
+  <h1>Energy, nature and us · 跟读 H5</h1>
+  <p>人教版PEP六年级上册 Unit 6 ｜ 汕头 2027 中考 ｜ 美式女声 · 单句跟读（只朗读英文）</p>
+  <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
+
+<div class="wrap" id="content">
+  <div class="card">
+    <div class="card-title">开场 · 能源、自然与我们</div>
+    <div class="en-sentence" data-spoken="Good morning, my dear teachers and friends! Today, my topic is Energy, Nature and Us.">Good morning, my dear teachers and friends! Today, my topic is <i>Energy, Nature and Us</i>.</div>
+    <div class="cn">尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《能源、自然与我们》。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">① 能源种类</div>
+    <div class="en-sentence" data-spoken="Energy is all around us. There are many types of energy: solar energy from the sun, electricity from power stations, and heat from the sun."><strong>Energy</strong> <span class="ph">/ˈenədʒi/ n. 能源；能量</span> is all around us. There are many <strong>types</strong> <span class="ph">/taɪp/ n. 类型；种类</span> of energy: <strong>solar</strong> <span class="ph">/ˈsəʊlə(r)/ adj. 太阳的</span> energy from the sun, <strong>electricity</strong> <span class="ph">/ɪˌlekˈtrɪsəti/ n. 电</span> from power stations, and <strong>heat</strong> <span class="ph">/hiːt/ n. 热量</span> from the sun.</div>
+    <div class="en-sentence" data-spoken="The sun is a great source of energy. It can light our homes and cool our rooms.">The sun is a great <strong>source</strong> <span class="ph">/sɔːs/ n. 来源</span> of energy. It can <strong>light</strong> <span class="ph">/laɪt/ v. 照亮</span> our homes and <strong>cool</strong> <span class="ph">/kuːl/ v. （使）变凉；冷却</span> our rooms.</div>
+    <div class="en-sentence" data-spoken="Solar panels use the sun's power to run machines.">Solar panels use the sun's <strong>power</strong> <span class="ph">/ˈpaʊə(r)/ n. 能；能量</span> to <strong>run</strong> <span class="ph">/rʌn/ v. 使运行</span> machines.</div>
+    <div class="cn">能源无处不在。能源有很多种类：来自太阳的太阳能、来自发电站的电、还有来自太阳的热量。太阳是巨大的能源来源。它能照亮我们的家，也能让房间变凉。太阳能板利用太阳的能量让机器运转。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">② 节约能源</div>
+    <div class="en-sentence" data-spoken="We must not waste resources . If we use too much energy, the resources may run out one day.">We must not waste <strong>resources</strong> <span class="ph">/rɪˈsɔːs/ n. 资源</span>. If we use too much energy, the resources may <strong>run out</strong> <span class="ph">/ˌrʌn ˈaʊt/ phr. 用完</span> one day.</div>
+    <div class="en-sentence" data-spoken="We should reduce the use of electricity. Here are some quick tips: turn off the lights, unplug the chargers, and take a short shower .">We should <strong>reduce</strong> <span class="ph">/rɪˈdjuːs/ v. 减少</span> the use of electricity. Here are some <strong>quick</strong> <span class="ph">/kwɪk/ adj. 迅速的；快的</span> tips: turn off the lights, <strong>unplug</strong> <span class="ph">/ˌʌnˈplʌɡ/ v. 拔掉……的电源插头</span> the chargers, and take a short <strong>shower</strong> <span class="ph">/ˈʃaʊə(r)/ n. 淋浴</span>.</div>
+    <div class="en-sentence" data-spoken="These small actions can make a big difference . A few minutes of care can change our future.">These small actions can make a big <strong>difference</strong> <span class="ph">/ˈdɪfrəns/ n. 差别；不同（之处）</span>. A <strong>few</strong> <span class="ph">/fjuː/ adj. 不多；很少</span> minutes of care can <strong>change</strong> <span class="ph">/tʃeɪndʒ/ v. （使）不同；改变</span> our future.</div>
+    <div class="cn">我们绝不能浪费资源。如果我们用太多能源，总有一天资源会耗尽。我们应该减少用电。这里有一些快速小贴士：关灯、拔掉充电器、洗短一点的热水澡。这些小小的举动能带来巨大的不同。几分钟的用心就能改变我们的未来。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">③ 结束语</div>
+    <div class="en-sentence" data-spoken="My friends, nature gives us energy, and we must protect nature. Let us save energy and keep our planet green!">My friends, nature gives us energy, and we must protect nature. Let us save energy and keep our planet green!</div>
+    <div class="en-sentence" data-spoken="That's all. Thank you for listening!">That's all. Thank you for listening!</div>
+    <div class="cn">朋友们，大自然赐予我们能源，我们必须保护大自然。让我们节约能源，让我们的星球保持绿色！ 我的演讲到此结束，谢谢大家！</div>
+  </div>
+
+  <p class="hint">点击句子或【播放】即可跟读（只朗读英文），红色为单词音标注释，蓝框为中文翻译。</p>
+
+  <div class="full-translation" id="fullTranslation">
+    <h2>整篇中文翻译</h2>
+    <p>尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《能源、自然与我们》。</p>
+    <p>能源无处不在。能源有很多种类：来自太阳的太阳能、来自发电站的电、还有来自太阳的热量。太阳是巨大的能源来源。它能照亮我们的家，也能让房间变凉。太阳能板利用太阳的能量让机器运转。</p>
+    <p>我们绝不能浪费资源。如果我们用太多能源，总有一天资源会耗尽。我们应该减少用电。这里有一些快速小贴士：关灯、拔掉充电器、洗短一点的热水澡。这些小小的举动能带来巨大的不同。几分钟的用心就能改变我们的未来。</p>
+    <p>朋友们，大自然赐予我们能源，我们必须保护大自然。让我们节约能源，让我们的星球保持绿色！</p>
+    <p>我的演讲到此结束，谢谢大家！</p>
+  </div>
 </div>
+
+<div class="global-bar">
+  <span class="loop-info" id="loopInfo">未播放</span>
+  <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
+  <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var synth = window.speechSynthesis;
+  var MAX_LOOP = 10;
+  var sentences = Array.prototype.slice.call(document.querySelectorAll('.en-sentence'));
+  sentences.forEach(function(el, i){
+    var ctl = document.createElement('div');
+    ctl.className = 'controls';
+    var bPlay = document.createElement('button');
+    bPlay.className = 'btn btn-play';
+    bPlay.textContent = '▶ 播放';
+    var bPause = document.createElement('button');
+    bPause.className = 'btn btn-pause';
+    bPause.textContent = '⏸ 暂停';
+    bPause.disabled = true;
+    ctl.appendChild(bPlay);
+    ctl.appendChild(bPause);
+    el.appendChild(ctl);
+    bPlay.addEventListener('click', function(e){ e.stopPropagation(); playSingle(i); });
+    bPause.addEventListener('click', function(e){ e.stopPropagation(); pauseCurrent(); });
+    el.addEventListener('click', function(){ playSingle(i); });
+  });
+  var mode = 'idle', currentIdx = -1, paused = false, token = 0, loopCount = 0;
+  var loopInfo = document.getElementById('loopInfo');
+  function pickVoice(){
+    if(!synth) return null;
+    var vs = synth.getVoices() || [];
+    var en = vs.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('en') === 0; });
+    if(!en.length) return null;
+    var fav = en.filter(function(v){
+      var n = v.name.toLowerCase();
+      return /female|samantha|zira|google us|karen|tessa|victoria|allison|google UK English Female|Microsoft.*Zira|Microsoft.*Aria/i.test(n)
+        && (v.lang.toLowerCase().indexOf('en-us') === 0 || v.default);
+    });
+    if(fav.length) return fav[0];
+    var us = en.filter(function(v){ return v.lang.toLowerCase() === 'en-us'; });
+    if(us.length) return us[0];
+    return en[0];
+  }
+  function clearHighlight(){
+    sentences.forEach(function(s){ s.classList.remove('speaking'); });
+    document.querySelectorAll('.cn').forEach(function(c){ c.classList.remove('cn-speaking'); });
+  }
+  function highlight(i){
+    clearHighlight();
+    var s = sentences[i];
+    if(!s) return;
+    s.classList.add('speaking');
+    s.scrollIntoView({behavior:'smooth', block:'center'});
+    var card = s.closest('.card');
+    if(card){
+      var cn = card.querySelector('.cn');
+      if(cn) cn.classList.add('cn-speaking');
+    }
+  }
+  function setPauseBtn(){
+    sentences.forEach(function(s){
+      var b = s.querySelector('.btn-pause');
+      if(b) b.disabled = !(paused && currentIdx === sentences.indexOf(s) && mode !== 'idle');
+    });
+  }
+  function speak(index, nextMode){
+    if(!synth){ alert('当前浏览器不支持语音朗读（Web Speech API）。'); return; }
+    synth.cancel();
+    var myToken = ++token;
+    currentIdx = index;
+    mode = nextMode;
+    paused = false;
+    var text = sentences[index].getAttribute('data-spoken') || sentences[index].textContent;
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 0.92;
+    u.pitch = 1.05;
+    u.onend = function(){
+      if(myToken !== token) return;
+      if(mode === 'all'){ advanceAll(); }
+      else { mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn(); }
+    };
+    u.onerror = function(){ if(myToken !== token) return; mode='idle'; currentIdx=-1; clearHighlight(); setPauseBtn(); };
+    highlight(index);
+    setPauseBtn();
+    synth.speak(u);
+  }
+  function advanceAll(){
+    if(mode !== 'all') return;
+    var next = currentIdx + 1;
+    if(next < sentences.length){ speak(next, 'all'); }
+    else {
+      loopCount++;
+      if(loopCount < MAX_LOOP){
+        loopInfo.textContent = '第 ' + (loopCount+1) + ' / ' + MAX_LOOP + ' 轮';
+        speak(0, 'all');
+      } else {
+        loopInfo.textContent = '已完成 ' + MAX_LOOP + ' 轮';
+        mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn();
+      }
+    }
+  }
+  function playSingle(i){
+    if(paused && mode !== 'idle' && currentIdx === i){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '单句跟读';
+    speak(i, 'single');
+  }
+  function pauseCurrent(){
+    if(synth && synth.speaking && !synth.paused){ synth.pause(); paused = true; setPauseBtn(); }
+  }
+  function stopAll(){
+    if(synth) synth.cancel();
+    token++; mode = 'idle'; currentIdx = -1; paused = false; loopCount = 0;
+    clearHighlight(); setPauseBtn();
+    loopInfo.textContent = '已停止';
+  }
+  document.getElementById('btnLoop').addEventListener('click', function(){
+    if(mode === 'all' && !paused){ pauseCurrent(); loopInfo.textContent = '已暂停'; return; }
+    if(paused && mode === 'all'){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '第 1 / ' + MAX_LOOP + ' 轮';
+    speak(0, 'all');
+  });
+  document.getElementById('btnStop').addEventListener('click', stopAll);
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  function syncToggleLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncToggleLabel();
+  });
+  syncToggleLabel();
+  if(synth && typeof synth.onvoiceschanged !== 'undefined'){
+    synth.onvoiceschanged = function(){ /* voices ready */ };
+  }
+})();
+</script>
 </body>
 </html>
