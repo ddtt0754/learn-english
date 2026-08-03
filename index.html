@@ -73,6 +73,33 @@
   }
   .title-card .sub b{font-weight:600;margin:0 2px;}
 
+  /* 打印版入口按钮（顶部） */
+  .print-btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:16px;
+    padding:10px 26px;
+    background:rgba(255,255,255,.20);
+    border:1.5px solid rgba(255,255,255,.85);
+    color:#fff;
+    border-radius:999px;
+    font-size:13.5px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-decoration:none;
+    cursor:pointer;
+    transition:background .2s,transform .08s,box-shadow .2s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .print-btn:active{transform:scale(.96);}
+  @media (hover:hover){
+    .print-btn:hover{background:rgba(255,255,255,.32);box-shadow:0 4px 14px rgba(255,255,255,.25);}
+  }
+
   /* ============ 年级标签页（3~9 年级共 7 个，4 列两行） ============ */
   .tabs{
     width:100%;
@@ -235,6 +262,7 @@
   <header class="title-card">
     <h1>📖 短文听读说写训练</h1>
     <p class="sub">听<b>·</b>读<b>·</b>说<b>·</b>写</p>
+    <a class="print-btn" href="print/index.html">🖨️ 打印版 · 单词表 &amp; 演讲稿</a>
   </header>
 
   <!-- 年级标签页（选择年级后自动切换） -->
@@ -311,12 +339,12 @@ const DATA = {
     "下册": mk("六年级","下册",4)   // 六年级下册实际只有 4 个单元 → 只显示 4 个格子
   },
   "七年级": {
-    "上册": mk("七年级","上册",9),
-    "下册": mk("七年级","下册",12)
+    "上册": mk("七年级","上册",7),
+    "下册": mk("七年级","下册",8)
   },
   "八年级": {
-    "上册": mk("八年级","上册",10),
-    "下册": mk("八年级","下册",10)
+    "上册": mk("八年级","上册",8),
+    "下册": mk("八年级","下册",8)
   },
   "九年级": {
     "上册": mk("九年级","上册",7),
