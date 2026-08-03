@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>8a-unit7 演讲稿 · 跟读 H5</title>
+<style>
+  :root{--bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;--red:#e53935;--accent:#2e9e6b;--cn-bg:#f1f6fb;--cn-line:#4a90d9;--hi-en:#fff6da;--hi-en-line:#ffb300;--hi-cn:#e3f2fd;--hi-cn-line:#1e88e5;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;padding-bottom:84px;-webkit-font-smoothing:antialiased;}
+  header{background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;padding:18px 16px 16px;text-align:center;box-shadow:0 2px 10px rgba(46,158,107,.25);}
+  header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.5px;}
+  header p{margin:4px 0 0;font-size:12px;opacity:.92;}
+  .top-toggle{margin-top:10px;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 16px;border:1.5px solid rgba(255,255,255,.85);background:rgba(255,255,255,.16);color:#fff;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,transform .08s;}
+  .top-toggle:active{transform:scale(.97);}
+  .wrap{max-width:760px;margin:0 auto;padding:14px 12px 8px;}
+  .card{background:var(--card);border-radius:14px;padding:14px 14px 12px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .card-title{font-size:13px;font-weight:700;color:var(--accent);margin:0 0 8px;padding-left:10px;border-left:4px solid var(--accent);}
+  .en-sentence{position:relative;padding:10px 12px;margin:8px 0;border-radius:10px;background:#fbfdfc;border:1px solid #eef3f1;font-size:16px;transition:background .25s,box-shadow .25s;cursor:pointer;}
+  .en-sentence strong{font-weight:700;color:#16242c;}
+  .en-sentence .ph{color:var(--red);font-size:.82em;font-family:"Arial",sans-serif;margin:0 2px;white-space:nowrap;transition:opacity .2s;}
+  body.hide-ph .ph{display:none;}
+  .en-sentence.speaking{background:var(--hi-en);box-shadow:inset 0 0 0 2px var(--hi-en-line);}
+  .cn{background:var(--cn-bg);border-left:4px solid var(--cn-line);border-radius:0 10px 10px 0;padding:10px 12px;margin:10px 0 2px;color:#4a5a66;font-size:15px;transition:background .25s,border-color .25s;}
+  .cn.cn-speaking{background:var(--hi-cn);border-left-color:var(--hi-cn-line);color:#1b3a52;}
+  .controls{display:flex;gap:8px;margin-top:10px;}
+  .btn{flex:1;min-height:42px;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;user-select:none;}
+  .btn:active{transform:scale(.97);}
+  .btn-play{background:var(--accent);color:#fff;}
+  .btn-play:hover{filter:brightness(1.05);}
+  .btn-pause{background:#fff;color:var(--accent);border:1.5px solid var(--accent);}
+  .btn-pause:disabled{opacity:.45;cursor:default;}
+  .global-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:1px solid #e3eae6;box-shadow:0 -3px 14px rgba(30,50,40,.08);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;max-width:760px;margin:0 auto;}
+  .global-bar .gbtn{flex:1;min-height:46px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;}
+  .global-bar .gbtn:active{transform:scale(.97);}
+  .gbtn-loop{background:var(--accent);color:#fff;}
+  .gbtn-stop{background:#fdecec;color:var(--red);border:1.5px solid #f4b9b9;}
+  .loop-info{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--muted);background:#fff;padding:2px 10px;border-radius:10px;border:1px solid #e3eae6;white-space:nowrap;}
+  .hint{text-align:center;font-size:12px;color:var(--muted);margin:4px 0 2px;}
+  .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
+  .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}</style>
+</head>
+<body>
+
+<header>
+  <h1>When Tomorrow Comes · 跟读 H5</h1>
+  <p>人教版八年级上册 Unit 7 ｜ 汕头 2027 中考 ｜ 美式女声 · 单句跟读（只朗读英文）</p>
+  <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
+
+<div class="wrap" id="content">
+  <div class="card">
+    <div class="card-title">开场 · 未来预测</div>
+    <div class="en-sentence" data-spoken="Good morning, my dear teachers and friends! Today, my topic is When Tomorrow Comes.">Good morning, my dear teachers and friends! Today, my topic is <i>When Tomorrow Comes</i>.</div>
+    <div class="cn">尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《当明天到来》。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">① 科技与太空</div>
+    <div class="en-sentence" data-spoken="What will the future be like? Futurists make predictions about tomorrow, and I like sci-fi movies about the future.">What will the future be like? <strong>Futurists</strong> <span class="ph">/ˈfjuːtʃərɪst/ n. 未来学家</span> make <strong>predictions</strong> <span class="ph">/prɪˈdɪkʃn/ n. 预测；预言</span> about tomorrow, and I like <strong>sci-fi</strong> <span class="ph">/ˈsaɪfaɪ/ n. 科幻小说（或影片等）</span> movies about the future.</div>
+    <div class="en-sentence" data-spoken="Some predictions are positive , but others may be worse . In the future, technology will influence every part of our lives.">Some predictions are <strong>positive</strong> <span class="ph">/ˈpɒzətɪv/ adj. 乐观的；积极的</span>, but others may be <strong>worse</strong> <span class="ph">/wɜːs/ adj. 更差的；更糟的</span>. In the future, <strong>technology</strong> <span class="ph">/tekˈnɒlədʒi/ n. 科技；工艺</span> will <strong>influence</strong> <span class="ph">/ˈɪnfluəns/ v. 影响</span> every part of our lives.</div>
+    <div class="en-sentence" data-spoken="AI robots will replace people in some boring jobs, and smart transport systems will make traffic safe and efficient .">AI robots will <strong>replace</strong> <span class="ph">/rɪˈpleɪs/ v. 代替；取代</span> people in some boring jobs, and smart <strong>transport</strong> <span class="ph">/ˈtrænspɔːt/ n. 交通运输系统</span> <strong>systems</strong> <span class="ph">/ˈsɪstəm/ n. 系统</span> will make <strong>traffic</strong> <span class="ph">/ˈtræfɪk/ n. 交通</span> safe and <strong>efficient</strong> <span class="ph">/ɪˈfɪʃnt/ adj. 效率高的</span>.</div>
+    <div class="en-sentence" data-spoken="We shall travel in outer space , and the outer world will be full of wonders.">We <strong>shall</strong> <span class="ph">/ʃæl/ modal v. 将要</span> travel in <strong>outer space</strong> <span class="ph">/ˌaʊtə ˈspeɪs/ phr. 太空；外层空间</span>, and the <strong>outer</strong> <span class="ph">/ˈaʊtə(r)/ adj. 外围的；外表的</span> world will be full of wonders.</div>
+    <div class="en-sentence" data-spoken="Video calls will be everywhere . Robots will do many tasks for us, but we must depend on our own intelligence and creativity ."><strong>Video</strong> <span class="ph">/ˈvɪdiəʊ/ n. 视频</span> calls will be <strong>everywhere</strong> <span class="ph">/ˈevriweə(r)/ adv. 到处</span>. Robots will do many <strong>tasks</strong> <span class="ph">/tɑːsk/ n. 任务；工作</span> for us, but we must <strong>depend on</strong> <span class="ph">/dɪˈpend ɒn/ phr. 取决于；依靠</span> our own <strong>intelligence</strong> <span class="ph">/ɪnˈtelɪdʒəns/ n. 智力；智慧</span> and <strong>creativity</strong> <span class="ph">/ˌkriːeɪˈtɪvəti/ n. 创造力</span>.</div>
+    <div class="en-sentence" data-spoken="We depend on each other, too.">We <strong>depend</strong> <span class="ph">/dɪˈpend/ v. 取决于；依靠</span> on each other, too.</div>
+    <div class="cn">未来会是什么样子？未来学家对未来做出预测，我喜欢看关于未来的科幻电影。有些预测是积极的，但有些可能更糟。未来，科技将影响我们生活的方方面面。人工智能机器人将取代人们做一些无聊的工作，智能交通系统会让交通既安全又高效。 我们将遨游太空，外面的世界将充满奇迹。视频通话将无处不在。机器人会帮我们做许多任务，但我们必须依靠自己的智慧和创造力。我们也要互相依靠。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">② 教育新貌</div>
+    <div class="en-sentence" data-spoken="Education will be different. The length of lessons will be shorter, and students can pass exams with the help of AI."><strong>Education</strong> <span class="ph">/ˌedʒuˈkeɪʃn/ n. 教育</span> will be different. The <strong>length</strong> <span class="ph">/leŋθ/ n. 时长；长度</span> of lessons will be shorter, and students can <strong>pass</strong> <span class="ph">/pɑːs/ v. 及格；通过</span> exams with the help of AI.</div>
+    <div class="en-sentence" data-spoken="A partner from another country can study with you, and every topic can be explored online.">A <strong>partner</strong> <span class="ph">/ˈpɑːtnə(r)/ n. 搭档；同伴</span> from another country can study with you, and every <strong>topic</strong> <span class="ph">/ˈtɒpɪk/ n. 话题；题目</span> can be explored online.</div>
+    <div class="en-sentence" data-spoken="But we must accept that some things cannot be replaced: emotional care, medical service and the medical industry need human hands.">But we must <strong>accept</strong> <span class="ph">/əkˈsept/ v. 接受；相信</span> that some things cannot be replaced: <strong>emotional</strong> <span class="ph">/ɪˈməʊʃənl/ adj. 情感的</span> care, <strong>medical</strong> <span class="ph">/ˈmedɪkl/ adj. 医学的</span> <strong>service</strong> <span class="ph">/ˈsɜːvɪs/ n. 服务</span> and the medical <strong>industry</strong> <span class="ph">/ˈɪndəstri/ n. 行业；工业</span> need human hands.</div>
+    <div class="en-sentence" data-spoken="Robots can cure some diseases, but they can't cure cancer alone, and they can't do creative work like writing a poem.">Robots can <strong>cure</strong> <span class="ph">/kjʊə(r)/ v. 治愈</span> some diseases, but they can't cure <strong>cancer</strong> <span class="ph">/ˈkænsə(r)/ n. 癌症</span> alone, and they can't do <strong>creative</strong> <span class="ph">/kriˈeɪtɪv/ adj. 创造性的</span> work like writing a poem.</div>
+    <div class="en-sentence" data-spoken="That is why human care is always valuable .">That is why human care is always <strong>valuable</strong> <span class="ph">/ˈvæljuəbl/ adj. 宝贵的</span>.</div>
+    <div class="cn">教育将变得不同。课程时长会更短，学生可以借助人工智能通过考试。来自另一个国家的伙伴可以和你一起学习，每个话题都可以在网上探索。但我们必须接受：有些东西无法被取代——情感关怀、医疗服务，医疗行业需要人类的双手。机器人能治愈一些疾病，但无法独自治愈癌症，也无法从事写诗这样的创造性工作。这就是为什么人类的关怀永远宝贵。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">③ 挑战与机会</div>
+    <div class="en-sentence" data-spoken="The future also brings challenges . There may be disasters or emergencies , and some animals will disappear .">The future also brings <strong>challenges</strong> <span class="ph">/ˈtʃælɪndʒ/ n. 挑战</span>. There may be <strong>disasters</strong> <span class="ph">/dɪˈzɑːstə(r)/ n. 灾难</span> or <strong>emergencies</strong> <span class="ph">/ɪˈmɜːdʒənsi/ n. 突发事件；紧急情况</span>, and some animals will <strong>disappear</strong> <span class="ph">/ˌdɪsəˈpɪə(r)/ v. 消失；不见</span>.</div>
+    <div class="en-sentence" data-spoken="We need experts and pilots to help people. A challenging task teaches us to develop our skills and quality .">We need <strong>experts</strong> <span class="ph">/ˈekspɜːt/ n. 专家</span> and <strong>pilots</strong> <span class="ph">/ˈpaɪlət/ n. 飞行员</span> to help people. A <strong>challenging</strong> <span class="ph">/ˈtʃælɪndʒɪŋ/ adj. 挑战性的</span> task teaches us to <strong>develop</strong> <span class="ph">/dɪˈveləp/ v. 增强；发展</span> our skills and <strong>quality</strong> <span class="ph">/ˈkwɒləti/ n. 素质；质量</span>.</div>
+    <div class="en-sentence" data-spoken="We should mention these problems to the public , and take action.">We should <strong>mention</strong> <span class="ph">/ˈmenʃn/ v. 提到</span> these problems to the <strong>public</strong> <span class="ph">/ˈpʌblɪk/ adj. 公共的；公众的</span>, and take action.</div>
+    <div class="en-sentence" data-spoken="Nothing is impossible if we work hard.">Nothing is <strong>impossible</strong> <span class="ph">/ɪmˈpɒsəbl/ adj. 不可能的</span> if we work hard.</div>
+    <div class="en-sentence" data-spoken="Let's think about a concert . You don't pay with cash ; you use a wallet app on your phone.">Let's think about a <strong>concert</strong> <span class="ph">/ˈkɒnsət/ n. 音乐会</span>. You don't pay with <strong>cash</strong> <span class="ph">/kæʃ/ n. 现金</span>; you use a <strong>wallet</strong> <span class="ph">/ˈwɒlɪt/ n. 钱包</span> app on your phone.</div>
+    <div class="en-sentence" data-spoken="You buy a ticket , invite a guest , and enjoy the show.">You buy a <strong>ticket</strong> <span class="ph">/ˈtɪkɪt/ n. 票；券</span>, invite a <strong>guest</strong> <span class="ph">/ɡest/ n. 客人；宾客</span>, and enjoy the show.</div>
+    <div class="en-sentence" data-spoken="An author writes about the future, and we learn from his ideas.">An <strong>author</strong> <span class="ph">/ˈɔːθə(r)/ n. 作者；作家</span> writes about the future, and we learn from his ideas.</div>
+    <div class="cn">未来也带来挑战。可能会有灾难或突发事件，一些动物会消失。我们需要专家和飞行员来帮助人们。有挑战性的任务教会我们发展技能、提升素质。我们应该向公众提及这些问题，并采取行动。只要努力，没有什么是做不到的。 让我们想想一场音乐会吧。你不用现金付款，用手机上的钱包应用就行。你买一张票，邀请一位客人，一起欣赏演出。一位作家写下了关于未来的故事，我们从他的想法中学习。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">④ 结束语</div>
+    <div class="en-sentence" data-spoken="My friends, the future depends on us. We can be winners if we try.">My friends, the future <strong>depends</strong> <span class="ph">/dɪˈpend/ v. 取决于</span> on us. We can be <strong>winners</strong> <span class="ph">/ˈwɪnə(r)/ n. 优胜者；成功者</span> if we try.</div>
+    <div class="en-sentence" data-spoken="Let us be positive, meet every challenge, and build a better tomorrow!">Let us be positive, meet every challenge, and build a better tomorrow!</div>
+    <div class="en-sentence" data-spoken="That's all. Thank you for listening!">That's all. Thank you for listening!</div>
+    <div class="cn">朋友们，未来掌握在我们自己手中。只要努力，我们都能成为赢家。让我们保持乐观，迎接每一个挑战，建设更美好的明天！ 我的演讲到此结束，谢谢大家！</div>
+  </div>
+
+  <p class="hint">点击句子或【播放】即可跟读（只朗读英文），红色为单词音标注释，蓝框为中文翻译。</p>
+
+  <div class="full-translation" id="fullTranslation">
+    <h2>整篇中文翻译</h2>
+    <p>尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《当明天到来》。</p>
+    <p>未来会是什么样子？未来学家对未来做出预测，我喜欢看关于未来的科幻电影。有些预测是积极的，但有些可能更糟。未来，科技将影响我们生活的方方面面。人工智能机器人将取代人们做一些无聊的工作，智能交通系统会让交通既安全又高效。</p>
+    <p>我们将遨游太空，外面的世界将充满奇迹。视频通话将无处不在。机器人会帮我们做许多任务，但我们必须依靠自己的智慧和创造力。我们也要互相依靠。</p>
+    <p>教育将变得不同。课程时长会更短，学生可以借助人工智能通过考试。来自另一个国家的伙伴可以和你一起学习，每个话题都可以在网上探索。但我们必须接受：有些东西无法被取代——情感关怀、医疗服务，医疗行业需要人类的双手。机器人能治愈一些疾病，但无法独自治愈癌症，也无法从事写诗这样的创造性工作。这就是为什么人类的关怀永远宝贵。</p>
+    <p>未来也带来挑战。可能会有灾难或突发事件，一些动物会消失。我们需要专家和飞行员来帮助人们。有挑战性的任务教会我们发展技能、提升素质。我们应该向公众提及这些问题，并采取行动。只要努力，没有什么是做不到的。</p>
+    <p>让我们想想一场音乐会吧。你不用现金付款，用手机上的钱包应用就行。你买一张票，邀请一位客人，一起欣赏演出。一位作家写下了关于未来的故事，我们从他的想法中学习。</p>
+    <p>朋友们，未来掌握在我们自己手中。只要努力，我们都能成为赢家。让我们保持乐观，迎接每一个挑战，建设更美好的明天！</p>
+    <p>我的演讲到此结束，谢谢大家！</p>
+  </div>
+</div>
+
+<div class="global-bar">
+  <span class="loop-info" id="loopInfo">未播放</span>
+  <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
+  <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var synth = window.speechSynthesis;
+  var MAX_LOOP = 10;
+  var sentences = Array.prototype.slice.call(document.querySelectorAll('.en-sentence'));
+  sentences.forEach(function(el, i){
+    var ctl = document.createElement('div');
+    ctl.className = 'controls';
+    var bPlay = document.createElement('button');
+    bPlay.className = 'btn btn-play';
+    bPlay.textContent = '▶ 播放';
+    var bPause = document.createElement('button');
+    bPause.className = 'btn btn-pause';
+    bPause.textContent = '⏸ 暂停';
+    bPause.disabled = true;
+    ctl.appendChild(bPlay);
+    ctl.appendChild(bPause);
+    el.appendChild(ctl);
+    bPlay.addEventListener('click', function(e){ e.stopPropagation(); playSingle(i); });
+    bPause.addEventListener('click', function(e){ e.stopPropagation(); pauseCurrent(); });
+    el.addEventListener('click', function(){ playSingle(i); });
+  });
+  var mode = 'idle', currentIdx = -1, paused = false, token = 0, loopCount = 0;
+  var loopInfo = document.getElementById('loopInfo');
+  function pickVoice(){
+    if(!synth) return null;
+    var vs = synth.getVoices() || [];
+    var en = vs.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('en') === 0; });
+    if(!en.length) return null;
+    var fav = en.filter(function(v){
+      var n = v.name.toLowerCase();
+      return /female|samantha|zira|google us|karen|tessa|victoria|allison|google UK English Female|Microsoft.*Zira|Microsoft.*Aria/i.test(n)
+        && (v.lang.toLowerCase().indexOf('en-us') === 0 || v.default);
+    });
+    if(fav.length) return fav[0];
+    var us = en.filter(function(v){ return v.lang.toLowerCase() === 'en-us'; });
+    if(us.length) return us[0];
+    return en[0];
+  }
+  function clearHighlight(){
+    sentences.forEach(function(s){ s.classList.remove('speaking'); });
+    document.querySelectorAll('.cn').forEach(function(c){ c.classList.remove('cn-speaking'); });
+  }
+  function highlight(i){
+    clearHighlight();
+    var s = sentences[i];
+    if(!s) return;
+    s.classList.add('speaking');
+    s.scrollIntoView({behavior:'smooth', block:'center'});
+    var card = s.closest('.card');
+    if(card){
+      var cn = card.querySelector('.cn');
+      if(cn) cn.classList.add('cn-speaking');
+    }
+  }
+  function setPauseBtn(){
+    sentences.forEach(function(s){
+      var b = s.querySelector('.btn-pause');
+      if(b) b.disabled = !(paused && currentIdx === sentences.indexOf(s) && mode !== 'idle');
+    });
+  }
+  function speak(index, nextMode){
+    if(!synth){ alert('当前浏览器不支持语音朗读（Web Speech API）。'); return; }
+    synth.cancel();
+    var myToken = ++token;
+    currentIdx = index;
+    mode = nextMode;
+    paused = false;
+    var text = sentences[index].getAttribute('data-spoken') || sentences[index].textContent;
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 0.92;
+    u.pitch = 1.05;
+    u.onend = function(){
+      if(myToken !== token) return;
+      if(mode === 'all'){ advanceAll(); }
+      else { mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn(); }
+    };
+    u.onerror = function(){ if(myToken !== token) return; mode='idle'; currentIdx=-1; clearHighlight(); setPauseBtn(); };
+    highlight(index);
+    setPauseBtn();
+    synth.speak(u);
+  }
+  function advanceAll(){
+    if(mode !== 'all') return;
+    var next = currentIdx + 1;
+    if(next < sentences.length){ speak(next, 'all'); }
+    else {
+      loopCount++;
+      if(loopCount < MAX_LOOP){
+        loopInfo.textContent = '第 ' + (loopCount+1) + ' / ' + MAX_LOOP + ' 轮';
+        speak(0, 'all');
+      } else {
+        loopInfo.textContent = '已完成 ' + MAX_LOOP + ' 轮';
+        mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn();
+      }
+    }
+  }
+  function playSingle(i){
+    if(paused && mode !== 'idle' && currentIdx === i){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '单句跟读';
+    speak(i, 'single');
+  }
+  function pauseCurrent(){
+    if(synth && synth.speaking && !synth.paused){ synth.pause(); paused = true; setPauseBtn(); }
+  }
+  function stopAll(){
+    if(synth) synth.cancel();
+    token++; mode = 'idle'; currentIdx = -1; paused = false; loopCount = 0;
+    clearHighlight(); setPauseBtn();
+    loopInfo.textContent = '已停止';
+  }
+  document.getElementById('btnLoop').addEventListener('click', function(){
+    if(mode === 'all' && !paused){ pauseCurrent(); loopInfo.textContent = '已暂停'; return; }
+    if(paused && mode === 'all'){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '第 1 / ' + MAX_LOOP + ' 轮';
+    speak(0, 'all');
+  });
+  document.getElementById('btnStop').addEventListener('click', stopAll);
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  function syncToggleLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncToggleLabel();
+  });
+  syncToggleLabel();
+  if(synth && typeof synth.onvoiceschanged !== 'undefined'){
+    synth.onvoiceschanged = function(){ /* voices ready */ };
+  }
+})();
+</script>
+</body>
+</html>

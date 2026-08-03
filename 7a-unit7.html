@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>7a unit7 演讲稿 · 跟读 H5</title>
+<style>
+  :root{--bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;--red:#e53935;--accent:#2e9e6b;--cn-bg:#f1f6fb;--cn-line:#4a90d9;--hi-en:#fff6da;--hi-en-line:#ffb300;--hi-cn:#e3f2fd;--hi-cn-line:#1e88e5;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;padding-bottom:84px;-webkit-font-smoothing:antialiased;}
+  header{background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;padding:18px 16px 16px;text-align:center;box-shadow:0 2px 10px rgba(46,158,107,.25);}
+  header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.5px;}
+  header p{margin:4px 0 0;font-size:12px;opacity:.92;}
+  .top-toggle{margin-top:10px;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 16px;border:1.5px solid rgba(255,255,255,.85);background:rgba(255,255,255,.16);color:#fff;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,transform .08s;}
+  .top-toggle:active{transform:scale(.97);}
+  .wrap{max-width:760px;margin:0 auto;padding:14px 12px 8px;}
+  .card{background:var(--card);border-radius:14px;padding:14px 14px 12px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .card-title{font-size:13px;font-weight:700;color:var(--accent);margin:0 0 8px;padding-left:10px;border-left:4px solid var(--accent);}
+  .en-sentence{position:relative;padding:10px 12px;margin:8px 0;border-radius:10px;background:#fbfdfc;border:1px solid #eef3f1;font-size:16px;transition:background .25s,box-shadow .25s;cursor:pointer;}
+  .en-sentence strong{font-weight:700;color:#16242c;}
+  .en-sentence .ph{color:var(--red);font-size:.82em;font-family:"Arial",sans-serif;margin:0 2px;white-space:nowrap;transition:opacity .2s;}
+  body.hide-ph .ph{display:none;}
+  .en-sentence.speaking{background:var(--hi-en);box-shadow:inset 0 0 0 2px var(--hi-en-line);}
+  .cn{background:var(--cn-bg);border-left:4px solid var(--cn-line);border-radius:0 10px 10px 0;padding:10px 12px;margin:10px 0 2px;color:#4a5a66;font-size:15px;transition:background .25s,border-color .25s;}
+  .cn.cn-speaking{background:var(--hi-cn);border-left-color:var(--hi-cn-line);color:#1b3a52;}
+  .controls{display:flex;gap:8px;margin-top:10px;}
+  .btn{flex:1;min-height:42px;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;user-select:none;}
+  .btn:active{transform:scale(.97);}
+  .btn-play{background:var(--accent);color:#fff;}
+  .btn-play:hover{filter:brightness(1.05);}
+  .btn-pause{background:#fff;color:var(--accent);border:1.5px solid var(--accent);}
+  .btn-pause:disabled{opacity:.45;cursor:default;}
+  .global-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:1px solid #e3eae6;box-shadow:0 -3px 14px rgba(30,50,40,.08);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;max-width:760px;margin:0 auto;}
+  .global-bar .gbtn{flex:1;min-height:46px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;}
+  .global-bar .gbtn:active{transform:scale(.97);}
+  .gbtn-loop{background:var(--accent);color:#fff;}
+  .gbtn-stop{background:#fdecec;color:var(--red);border:1.5px solid #f4b9b9;}
+  .loop-info{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--muted);background:#fff;padding:2px 10px;border-radius:10px;border:1px solid #e3eae6;white-space:nowrap;}
+  .hint{text-align:center;font-size:12px;color:var(--muted);margin:4px 0 2px;}
+  .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
+  .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}</style>
+</head>
+<body>
+
+<header>
+  <h1>Happy Birthday! · 跟读 H5</h1>
+  <p>人教版七年级上册 Unit 7 ｜ 汕头 2027 中考 ｜ 美式女声 · 单句跟读（只朗读英文）</p>
+  <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
+
+<div class="wrap" id="content">
+  <div class="card">
+    <div class="card-title">开场 · 生日日期</div>
+    <div class="en-sentence" data-spoken="Good morning, my dear teachers and friends! Today, my topic is A Happy Birthday.">Good morning, my dear teachers and friends! Today, my topic is <i>A Happy Birthday</i>.</div>
+    <div class="en-sentence" data-spoken="Hello, everyone! What is your birthday date?">Hello, everyone! What is your birthday <strong>date</strong> <span class="ph">/deɪt/ n. 日期；日子</span>?</div>
+    <div class="en-sentence" data-spoken="My birthday is on August 2nd. It is a very special day for me, and my family always celebrates it with love.">My birthday is on August 2nd. It is a very special day for me, and my family always <strong>celebrates</strong> <span class="ph">/ˈselɪbreɪt/ v. 庆祝；庆贺</span> it with love.</div>
+    <div class="cn">大家早上好！今天我演讲的题目是《一个快乐的生日》。大家好！你的生日是哪一天？我的生日是八月二日。对我来说这是一个非常特别的日子，我的家人总是满怀爱意地为我庆祝。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">① 购物准备</div>
+    <div class="en-sentence" data-spoken="This year, I wanted to do something special.">This year, I wanted to do <strong>something</strong> <span class="ph">/ˈsʌmθɪŋ/ pron. 某事；某物</span> special.</div>
+    <div class="en-sentence" data-spoken="I wrote a shopping list and went to the store with my mum.">I wrote a shopping <strong>list</strong> <span class="ph">/lɪst/ n. 名单；清单</span> and went to the store with my mum.</div>
+    <div class="en-sentence" data-spoken="The store was having a sale, so the price was not high.">The store was having a <strong>sale</strong> <span class="ph">/seɪl/ n. 出售；销售</span>, so the <strong>price</strong> <span class="ph">/praɪs/ n. 价格</span> was not high.</div>
+    <div class="en-sentence" data-spoken="We bought a kilo of apples, some yogurt, chocolate and a big pizza.">We bought a <strong>kilo</strong> <span class="ph">/ˈkiːləʊ/ n. 千克；公斤</span> of apples, some <strong>yogurt</strong> <span class="ph">/ˈjɒɡət/ n. 酸奶</span>, <strong>chocolate</strong> <span class="ph">/ˈtʃɒklət/ n. 巧克力</span> and a big <strong>pizza</strong> <span class="ph">/ˈpiːtsə/ n. 比萨饼</span>.</div>
+    <div class="en-sentence" data-spoken="In total, we spent about fifty yuan.">In <strong>total</strong> <span class="ph">/ˈtəʊtl/ n. 总数；合计</span>, we spent about fifty yuan.</div>
+    <div class="en-sentence" data-spoken="We also bought a balloon, and the shop owner gave us a surprise gift.">We also bought a <strong>balloon</strong> <span class="ph">/bəˈluːn/ n. 气球</span>, and the shop owner gave us a <strong>surprise</strong> <span class="ph">/səˈpraɪz/ n. 惊奇；惊讶</span> gift.</div>
+    <div class="en-sentence" data-spoken="I wanted to buy a gift with my own money, for example, a small model car.">I wanted to buy a gift with my <strong>own</strong> <span class="ph">/əʊn/ adj. &amp; pron. 自己的；本人的</span> money, for <strong>example</strong> <span class="ph">/ɪɡˈzɑːmpl/ n. 例子；范例</span>, a small model car.</div>
+    <div class="cn">今年，我想做一些特别的事。我列了一张购物清单，和妈妈一起去商店。商店正在打折，所以价格不高。我们买了一公斤苹果、一些酸奶、巧克力和一个大披萨。总共花了大约五十元。我们还买了一个气球，店主送了我们一份惊喜礼物。我想用自己的钱买一份礼物，比如一个小汽车模型。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">② 庆祝活动</div>
+    <div class="en-sentence" data-spoken="On my birthday, my family held a big celebration.">On my birthday, my family held a big <strong>celebration</strong> <span class="ph">/ˌselɪˈbreɪʃn/ n. 庆典；庆祝（活动）</span>.</div>
+    <div class="en-sentence" data-spoken="Everyone sang Happy Birthday in different languages.">Everyone sang "Happy Birthday" in different <strong>languages</strong> <span class="ph">/ˈlæŋɡwɪdʒ/ n. 语言</span>.</div>
+    <div class="en-sentence" data-spoken="My grandma cooked long noodles, because long noodles are a symbol of long life.">My grandma cooked long noodles, because long noodles are a <strong>symbol</strong> <span class="ph">/ˈsɪmbl/ n. 象征；符号</span> of long life.</div>
+    <div class="en-sentence" data-spoken="I made a wish and blew out the candles.">I made a wish and <strong>blew</strong> <span class="ph">/bləʊ/ v. 吹；刮</span> out the candles.</div>
+    <div class="en-sentence" data-spoken="My father marked my height on the door. He said, Look, you grow up a little every year.">My father <strong>marked</strong> <span class="ph">/mɑːk/ v. 做记号；纪念</span> my <strong>height</strong> <span class="ph">/haɪt/ n. 身高；高度</span> on the door. He said, "Look, you <strong>grow</strong> <span class="ph">/ɡrəʊ/ v. 成长；长大</span> up a little every year."</div>
+    <div class="en-sentence" data-spoken="My mother posted the photos online, and my friends contacted me to say happy birthday.">My mother <strong>posted</strong> <span class="ph">/pəʊst/ n. &amp; v. 帖子；发布</span> the photos online, and my friends <strong>contacted</strong> <span class="ph">/ˈkɒntækt/ n. &amp; v. 联系；联络</span> me to say happy birthday.</div>
+    <div class="en-sentence" data-spoken="Later, my grandparents called me from the village. They founded our family many years ago, and their love is a meaningful treasure."><strong>Later</strong> <span class="ph">/ˈleɪtə(r)/ adj. &amp; adv. 以后（的）；后来（的）</span>, my grandparents called me from the <strong>village</strong> <span class="ph">/ˈvɪlɪdʒ/ n. 村庄；村镇</span>. They <strong>founded</strong> <span class="ph">/faʊnd/ v. 创建；创立</span> our family many years ago, and their love is a <strong>meaningful</strong> <span class="ph">/ˈmiːnɪŋfl/ adj. 重要的；重大的；有意义的</span> treasure.</div>
+    <div class="cn">生日那天，家人为我举办了一场盛大的庆祝活动。大家用不同的语言唱"生日快乐"歌。奶奶煮了长寿面，因为长面条是长寿的象征。我许了愿，吹灭蜡烛。爸爸在门上标出我的身高。他说："看，你每年都在长高一点。"妈妈把照片发到网上，朋友们纷纷联系我祝我生日快乐。后来，爷爷奶奶从村里打来电话。他们很多年前创建了我们的家庭，他们的爱是一份有意义的财富。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">③ 节日与结尾</div>
+    <div class="en-sentence" data-spoken="In China, we also celebrate national festivals.">In China, we also <strong>celebrate</strong> <span class="ph">/ˈselɪbreɪt/ v. 庆祝；庆贺</span> <strong>national</strong> <span class="ph">/ˈnæʃnəl/ adj. 国家的；民族的</span> festivals.</div>
+    <div class="en-sentence" data-spoken="The national day marks the founding of our country.">The <strong>national</strong> <span class="ph">/ˈnæʃnəl/ adj. 国家的</span> day <strong>marks</strong> <span class="ph">/mɑːk/ v. 做记号；纪念</span> the founding of our country.</div>
+    <div class="en-sentence" data-spoken="International Children's Day is fun, too."><strong>International</strong> <span class="ph">/ˌɪntəˈnæʃnəl/ adj. 国际的</span> Children's Day is fun, too.</div>
+    <div class="en-sentence" data-spoken="My friends, every birthday is a great celebration of life. Enjoy every moment with your family! That's all. Thank you for listening!">My friends, every birthday is a great celebration of <strong>life</strong> <span class="ph">/laɪf/ n. 生活；生命</span>. <strong>Enjoy</strong> <span class="ph">/ɪnˈdʒɔɪ/ v. 享受……的乐趣；喜欢</span> every moment with your family! That's all. Thank you for listening!</div>
+    <div class="cn">在中国，我们还庆祝国家节日。国庆节纪念我们国家的成立。国际儿童节也很有趣。朋友们，每个生日都是对生命的一次盛大庆祝。请享受和家人的每一刻吧！我的演讲到此结束，谢谢大家！</div>
+  </div>
+
+  <p class="hint">点击句子或【播放】即可跟读（只朗读英文），红色为单词音标注释，蓝框为中文翻译。</p>
+
+  <div class="full-translation" id="fullTranslation">
+    <h2>整篇中文翻译</h2>
+    <p>尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《一个快乐的生日》。</p>
+    <p>大家好！你的生日是哪一天？我的生日是八月二日。对我来说这是一个非常特别的日子，我的家人总是满怀爱意地为我庆祝。</p>
+    <p>今年，我想做一些特别的事。我列了一张购物清单，和妈妈一起去商店。商店正在打折，所以价格不高。我们买了一公斤苹果、一些酸奶、巧克力和一个大披萨。总共花了大约五十元。我们还买了一个气球，店主送了我们一份惊喜礼物。我想用自己的钱买一份礼物，比如一个小汽车模型。</p>
+    <p>生日那天，家人为我举办了一场盛大的庆祝活动。大家用不同的语言唱"生日快乐"歌。奶奶煮了长寿面，因为长面条是长寿的象征。我许了愿，吹灭蜡烛。爸爸在门上标出我的身高。他说："看，你每年都在长高一点。"妈妈把照片发到网上，朋友们纷纷联系我祝我生日快乐。后来，爷爷奶奶从村里打来电话。他们很多年前创建了我们的家庭，他们的爱是一份有意义的财富。</p>
+    <p>在中国，我们还庆祝国家节日。国庆节纪念我们国家的成立。国际儿童节也很有趣。朋友们，每个生日都是对生命的一次盛大庆祝。请享受和家人的每一刻吧！我的演讲到此结束，谢谢大家！</p>
+  </div>
+</div>
+
+<div class="global-bar">
+  <span class="loop-info" id="loopInfo">未播放</span>
+  <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
+  <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var synth = window.speechSynthesis;
+  var MAX_LOOP = 10;
+  var sentences = Array.prototype.slice.call(document.querySelectorAll('.en-sentence'));
+  sentences.forEach(function(el, i){
+    var ctl = document.createElement('div');
+    ctl.className = 'controls';
+    var bPlay = document.createElement('button');
+    bPlay.className = 'btn btn-play';
+    bPlay.textContent = '▶ 播放';
+    var bPause = document.createElement('button');
+    bPause.className = 'btn btn-pause';
+    bPause.textContent = '⏸ 暂停';
+    bPause.disabled = true;
+    ctl.appendChild(bPlay);
+    ctl.appendChild(bPause);
+    el.appendChild(ctl);
+    bPlay.addEventListener('click', function(e){ e.stopPropagation(); playSingle(i); });
+    bPause.addEventListener('click', function(e){ e.stopPropagation(); pauseCurrent(); });
+    el.addEventListener('click', function(){ playSingle(i); });
+  });
+  var mode = 'idle', currentIdx = -1, paused = false, token = 0, loopCount = 0;
+  var loopInfo = document.getElementById('loopInfo');
+  function pickVoice(){
+    if(!synth) return null;
+    var vs = synth.getVoices() || [];
+    var en = vs.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('en') === 0; });
+    if(!en.length) return null;
+    var fav = en.filter(function(v){
+      var n = v.name.toLowerCase();
+      return /female|samantha|zira|google us|karen|tessa|victoria|allison|google UK English Female|Microsoft.*Zira|Microsoft.*Aria/i.test(n)
+        && (v.lang.toLowerCase().indexOf('en-us') === 0 || v.default);
+    });
+    if(fav.length) return fav[0];
+    var us = en.filter(function(v){ return v.lang.toLowerCase() === 'en-us'; });
+    if(us.length) return us[0];
+    return en[0];
+  }
+  function clearHighlight(){
+    sentences.forEach(function(s){ s.classList.remove('speaking'); });
+    document.querySelectorAll('.cn').forEach(function(c){ c.classList.remove('cn-speaking'); });
+  }
+  function highlight(i){
+    clearHighlight();
+    var s = sentences[i];
+    if(!s) return;
+    s.classList.add('speaking');
+    s.scrollIntoView({behavior:'smooth', block:'center'});
+    var card = s.closest('.card');
+    if(card){
+      var cn = card.querySelector('.cn');
+      if(cn) cn.classList.add('cn-speaking');
+    }
+  }
+  function setPauseBtn(){
+    sentences.forEach(function(s){
+      var b = s.querySelector('.btn-pause');
+      if(b) b.disabled = !(paused && currentIdx === sentences.indexOf(s) && mode !== 'idle');
+    });
+  }
+  function speak(index, nextMode){
+    if(!synth){ alert('当前浏览器不支持语音朗读（Web Speech API）。'); return; }
+    synth.cancel();
+    var myToken = ++token;
+    currentIdx = index;
+    mode = nextMode;
+    paused = false;
+    var text = sentences[index].getAttribute('data-spoken') || sentences[index].textContent;
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 0.92;
+    u.pitch = 1.05;
+    u.onend = function(){
+      if(myToken !== token) return;
+      if(mode === 'all'){ advanceAll(); }
+      else { mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn(); }
+    };
+    u.onerror = function(){ if(myToken !== token) return; mode='idle'; currentIdx=-1; clearHighlight(); setPauseBtn(); };
+    highlight(index);
+    setPauseBtn();
+    synth.speak(u);
+  }
+  function advanceAll(){
+    if(mode !== 'all') return;
+    var next = currentIdx + 1;
+    if(next < sentences.length){ speak(next, 'all'); }
+    else {
+      loopCount++;
+      if(loopCount < MAX_LOOP){
+        loopInfo.textContent = '第 ' + (loopCount+1) + ' / ' + MAX_LOOP + ' 轮';
+        speak(0, 'all');
+      } else {
+        loopInfo.textContent = '已完成 ' + MAX_LOOP + ' 轮';
+        mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn();
+      }
+    }
+  }
+  function playSingle(i){
+    if(paused && mode !== 'idle' && currentIdx === i){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '单句跟读';
+    speak(i, 'single');
+  }
+  function pauseCurrent(){
+    if(synth && synth.speaking && !synth.paused){ synth.pause(); paused = true; setPauseBtn(); }
+  }
+  function stopAll(){
+    if(synth) synth.cancel();
+    token++; mode = 'idle'; currentIdx = -1; paused = false; loopCount = 0;
+    clearHighlight(); setPauseBtn();
+    loopInfo.textContent = '已停止';
+  }
+  document.getElementById('btnLoop').addEventListener('click', function(){
+    if(mode === 'all' && !paused){ pauseCurrent(); loopInfo.textContent = '已暂停'; return; }
+    if(paused && mode === 'all'){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '第 1 / ' + MAX_LOOP + ' 轮';
+    speak(0, 'all');
+  });
+  document.getElementById('btnStop').addEventListener('click', stopAll);
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  function syncToggleLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncToggleLabel();
+  });
+  syncToggleLabel();
+  if(synth && typeof synth.onvoiceschanged !== 'undefined'){
+    synth.onvoiceschanged = function(){ /* voices ready */ };
+  }
+})();
+</script>
+</body>
+</html>

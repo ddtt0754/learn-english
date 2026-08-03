@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>8a-unit3 演讲稿 · 跟读 H5</title>
+<style>
+  :root{--bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;--red:#e53935;--accent:#2e9e6b;--cn-bg:#f1f6fb;--cn-line:#4a90d9;--hi-en:#fff6da;--hi-en-line:#ffb300;--hi-cn:#e3f2fd;--hi-cn-line:#1e88e5;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;padding-bottom:84px;-webkit-font-smoothing:antialiased;}
+  header{background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;padding:18px 16px 16px;text-align:center;box-shadow:0 2px 10px rgba(46,158,107,.25);}
+  header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.5px;}
+  header p{margin:4px 0 0;font-size:12px;opacity:.92;}
+  .top-toggle{margin-top:10px;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 16px;border:1.5px solid rgba(255,255,255,.85);background:rgba(255,255,255,.16);color:#fff;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,transform .08s;}
+  .top-toggle:active{transform:scale(.97);}
+  .wrap{max-width:760px;margin:0 auto;padding:14px 12px 8px;}
+  .card{background:var(--card);border-radius:14px;padding:14px 14px 12px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .card-title{font-size:13px;font-weight:700;color:var(--accent);margin:0 0 8px;padding-left:10px;border-left:4px solid var(--accent);}
+  .en-sentence{position:relative;padding:10px 12px;margin:8px 0;border-radius:10px;background:#fbfdfc;border:1px solid #eef3f1;font-size:16px;transition:background .25s,box-shadow .25s;cursor:pointer;}
+  .en-sentence strong{font-weight:700;color:#16242c;}
+  .en-sentence .ph{color:var(--red);font-size:.82em;font-family:"Arial",sans-serif;margin:0 2px;white-space:nowrap;transition:opacity .2s;}
+  body.hide-ph .ph{display:none;}
+  .en-sentence.speaking{background:var(--hi-en);box-shadow:inset 0 0 0 2px var(--hi-en-line);}
+  .cn{background:var(--cn-bg);border-left:4px solid var(--cn-line);border-radius:0 10px 10px 0;padding:10px 12px;margin:10px 0 2px;color:#4a5a66;font-size:15px;transition:background .25s,border-color .25s;}
+  .cn.cn-speaking{background:var(--hi-cn);border-left-color:var(--hi-cn-line);color:#1b3a52;}
+  .controls{display:flex;gap:8px;margin-top:10px;}
+  .btn{flex:1;min-height:42px;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;user-select:none;}
+  .btn:active{transform:scale(.97);}
+  .btn-play{background:var(--accent);color:#fff;}
+  .btn-play:hover{filter:brightness(1.05);}
+  .btn-pause{background:#fff;color:var(--accent);border:1.5px solid var(--accent);}
+  .btn-pause:disabled{opacity:.45;cursor:default;}
+  .global-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:1px solid #e3eae6;box-shadow:0 -3px 14px rgba(30,50,40,.08);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;max-width:760px;margin:0 auto;}
+  .global-bar .gbtn{flex:1;min-height:46px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;}
+  .global-bar .gbtn:active{transform:scale(.97);}
+  .gbtn-loop{background:var(--accent);color:#fff;}
+  .gbtn-stop{background:#fdecec;color:var(--red);border:1.5px solid #f4b9b9;}
+  .loop-info{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--muted);background:#fff;padding:2px 10px;border-radius:10px;border:1px solid #e3eae6;white-space:nowrap;}
+  .hint{text-align:center;font-size:12px;color:var(--muted);margin:4px 0 2px;}
+  .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
+  .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}</style>
+</head>
+<body>
+
+<header>
+  <h1>Same or Different? · 跟读 H5</h1>
+  <p>人教版八年级上册 Unit 3 ｜ 汕头 2027 中考 ｜ 美式女声 · 单句跟读（只朗读英文）</p>
+  <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
+
+<div class="wrap" id="content">
+  <div class="card">
+    <div class="card-title">开场 · 相同还是不同</div>
+    <div class="en-sentence" data-spoken="Good morning, my dear teachers and friends! Today, my topic is Same or Different?">Good morning, my dear teachers and friends! Today, my topic is <i>Same or Different?</i></div>
+    <div class="cn">尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《相同还是不同》。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">① 我的好朋友</div>
+    <div class="en-sentence" data-spoken="My best friend Tom and I are different in appearance but alike in personality .">My best friend Tom and I are different in <strong>appearance</strong> <span class="ph">/əˈpɪərəns/ n. 外表；露面</span> but <strong>alike</strong> <span class="ph">/əˈlaɪk/ adj. 相像的</span> in <strong>personality</strong> <span class="ph">/ˌpɜːsəˈnæləti/ n. 性格；品质</span>.</div>
+    <div class="en-sentence" data-spoken="I am shy , and I am not as ... as Tom is — he is outgoing and loud , while I am quiet.">I am <strong>shy</strong> <span class="ph">/ʃaɪ/ adj. 害羞的</span>, and I am not <strong>as ... as</strong> <span class="ph">/æz/ phr. 像……一样……</span> Tom is — he is <strong>outgoing</strong> <span class="ph">/ˈaʊtɡəʊɪŋ/ adj. 外向的</span> and <strong>loud</strong> <span class="ph">/laʊd/ adj. 大声的</span>, while I am quiet.</div>
+    <div class="en-sentence" data-spoken="I am a little lazy about sports, but Tom is hard-working .">I am a little <strong>lazy</strong> <span class="ph">/ˈleɪzi/ adj. 懒惰的</span> about sports, but Tom is <strong>hard-working</strong> <span class="ph">/ˌhɑːd ˈwɜːkɪŋ/ adj. 勤奋的</span>.</div>
+    <div class="en-sentence" data-spoken="We have sth in common , though: we both love music. We met by accident at the music club.">We <strong>have sth in common</strong> <span class="ph">/ˈkɒmən/ phr. 有共同之处</span>, though: we both love music. We met by <strong>accident</strong> <span class="ph">/ˈæksɪdənt/ n. 意外</span> at the music club.</div>
+    <div class="en-sentence" data-spoken="He can perform the flute , and he is tall and slim .">He can <strong>perform</strong> <span class="ph">/pəˈfɔːm/ v. 表演；执行</span> the <strong>flute</strong> <span class="ph">/fluːt/ n. 长笛</span>, and he is tall and <strong>slim</strong> <span class="ph">/slɪm/ adj. 苗条的</span>.</div>
+    <div class="en-sentence" data-spoken="We compare our hobbies every day. Our friendship grows stronger because of our differences.">We <strong>compare</strong> <span class="ph">/kəmˈpeə(r)/ v. 比较；对比</span> our hobbies every day. Our <strong>friendship</strong> <span class="ph">/ˈfrendʃɪp/ n. 友谊；友情</span> grows stronger because of our differences.</div>
+    <div class="en-sentence" data-spoken="Tom is straightforward , honest and direct . He never hides his opinion .">Tom is <strong>straightforward</strong> <span class="ph">/ˌstreɪtˈfɔːwəd/ adj. 坦率的</span>, <strong>honest</strong> <span class="ph">/ˈɒnɪst/ adj. 诚实的</span> and <strong>direct</strong> <span class="ph">/dəˈrekt/ adj. 率直的</span>. He never hides his <strong>opinion</strong> <span class="ph">/əˈpɪnjən/ n. 看法；意见</span>.</div>
+    <div class="en-sentence" data-spoken="I am serious and careful, and my strength is solving problems. In a difficult situation , I try to reach the answer myself and never expect others to do it for me.">I am <strong>serious</strong> <span class="ph">/ˈsɪəriəs/ adj. 严肃的</span> and careful, and my <strong>strength</strong> <span class="ph">/streŋθ/ n. 优势；力量</span> is <strong>solving</strong> <span class="ph">/sɒlv/ v. 解决；解答</span> problems. In a difficult <strong>situation</strong> <span class="ph">/ˌsɪtʃuˈeɪʃn/ n. 情况；状况</span>, I try to <strong>reach</strong> <span class="ph">/riːtʃ/ v. 伸手；达到</span> the answer myself and never <strong>expect</strong> <span class="ph">/ɪkˈspekt/ v. 预料；期待</span> others to do it for me.</div>
+    <div class="en-sentence" data-spoken="Sometimes we disagree, but we never touch each other's feelings. We exchange small gifts on birthdays.">Sometimes we disagree, but we never <strong>touch</strong> <span class="ph">/tʌtʃ/ v. 触动；触碰</span> each other's feelings. We <strong>exchange</strong> <span class="ph">/ɪksˈtʃeɪndʒ/ v. &amp; n. 交换</span> small gifts on birthdays.</div>
+    <div class="en-sentence" data-spoken="His warm character always makes me smile. Our problems become less difficult when we work together.">His warm <strong>character</strong> <span class="ph">/ˈkærəktə(r)/ n. 人物；个性</span> always makes me smile. Our problems become <strong>less</strong> <span class="ph">/les/ adj. 较少的</span> difficult when we work together.</div>
+    <div class="cn">我最好的朋友汤姆和我外表不同，但性格相似。我很害羞，没有汤姆那么外向——他外向又大声，而我安静。我对运动有点懒，但汤姆很勤奋。不过我们有很多共同点：我们都热爱音乐。我们在音乐俱乐部偶然相遇。他会吹长笛，而且又高又苗条。我们每天都比较各自的爱好。我们的友谊因为差异而更加牢固。 汤姆坦率、诚实又直爽，从不隐藏自己的看法。我严肃细心，我的强项是解决问题。遇到困难时，我努力自己找到答案，从不指望别人替我做。有时我们意见不合，但我们从不触碰彼此的感情。生日时我们互赠小礼物。他温暖的个性总让我微笑。我们合作时，难题就不再那么难了。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">② 性格与品质</div>
+    <div class="en-sentence" data-spoken="Last week, we attended the school art festival. Tom won a prize for his flute performance!">Last week, we <strong>attended</strong> <span class="ph">/əˈtend/ v. 参加；出席</span> the school art festival. Tom won a <strong>prize</strong> <span class="ph">/praɪz/ n. 奖；奖励</span> for his flute performance!</div>
+    <div class="en-sentence" data-spoken="Congratulation ! I told everyone about the difference between the population of big cities and small towns, and the average rainfall per year in our city."><strong>Congratulation</strong> <span class="ph">/kənˌɡrætʃuˈleɪʃn/ n. 祝贺；恭喜</span>! I told everyone about the <strong>difference</strong> <span class="ph">/ˈdɪfrəns/ n. 差异</span> between the <strong>population</strong> <span class="ph">/ˌpɒpjuˈleɪʃn/ n. 人口</span> of big cities and small towns, and the <strong>average</strong> <span class="ph">/ˈævərɪdʒ/ adj. 平均的</span> <strong>rainfall</strong> <span class="ph">/ˈreɪnfɔːl/ n. 降雨量</span> <strong>per</strong> <span class="ph">/pə(r)/ prep. 每</span> year in our city.</div>
+    <div class="en-sentence" data-spoken="These facts may sound boring, but we made them interesting. In my spare time , I read novels — reading is a great pleasure for me.">These <strong>facts</strong> <span class="ph">/fækt/ n. 事实；现实</span> may sound boring, but we made them interesting. In my <strong>spare time</strong> <span class="ph">/ˌspeə ˈtaɪm/ phr. 空闲时间</span>, I read <strong>novels</strong> <span class="ph">/ˈnɒvl/ n. 小说</span> — reading is a great <strong>pleasure</strong> <span class="ph">/ˈpleʒə(r)/ n. 乐事；愉快</span> for me.</div>
+    <div class="en-sentence" data-spoken="I look in the mirror to practise my speech, and my interest in writing grows day by day.">I look in the <strong>mirror</strong> <span class="ph">/ˈmɪrə(r)/ n. 镜子</span> to practise my speech, and my <strong>interest</strong> <span class="ph">/ˈɪntrəst/ n. 兴趣</span> in writing grows day by day.</div>
+    <div class="en-sentence" data-spoken="I always have spare time for my hobbies.">I always have <strong>spare</strong> <span class="ph">/speə(r)/ adj. 空闲的</span> time for my hobbies.</div>
+    <div class="cn">上周，我们参加了学校的艺术节。汤姆的长笛表演获奖了！恭喜！我向大家介绍了大城市和小城镇人口之间的差异，以及我们城市每年的平均降雨量。这些事实听起来可能无聊，但我们把它们讲得很有趣。空闲时间我读小说——读书对我来说是极大的乐趣。我对着镜子练习演讲，对写作的兴趣与日俱增。我总是留出空闲时间做爱好。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">③ 学校活动</div>
+    <div class="en-sentence" data-spoken="Every person has a unique personality and a different sense of humour .">Every person has a unique personality and a different <strong>sense</strong> <span class="ph">/sens/ n. 理解力；感觉</span> of <strong>humour</strong> <span class="ph">/ˈhjuːmə(r)/ n. 幽默；幽默感</span>.</div>
+    <div class="en-sentence" data-spoken="We may have differences, but we also have similarities . In my opinion, friends don't need to be the same; they just need to care about each other.">We may have differences, but we also have <strong>similarities</strong> <span class="ph">/ˌsɪməˈlærəti/ n. 相似之处</span>. In my opinion, friends don't need to be the same; they just need to care about each other.</div>
+    <div class="en-sentence" data-spoken="Every difficulty has a silver lining, and every friendship is valuable. It is pleasant to have a friend like Tom.">Every difficulty has a <strong>silver</strong> <span class="ph">/ˈsɪlvə(r)/ adj. 银色的</span> lining, and every friendship is valuable. It is <strong>pleasant</strong> <span class="ph">/ˈpleznt/ adj. 宜人的；友好的</span> to have a friend like Tom.</div>
+    <div class="cn">每个人都有独特的个性和不同的幽默感。我们也许有差异，但我们也总有相似之处。在我看来，朋友不需要完全相同；他们只需要互相关心。每道困难都有光明的一面（乌云总镶银边），每份友谊都弥足珍贵。有汤姆这样的朋友，真是件令人愉快的事。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">④ 结束语</div>
+    <div class="en-sentence" data-spoken="That's all. Thank you for listening!">That's all. Thank you for listening!</div>
+    <div class="cn">我的演讲到此结束，谢谢大家！</div>
+  </div>
+
+  <p class="hint">点击句子或【播放】即可跟读（只朗读英文），红色为单词音标注释，蓝框为中文翻译。</p>
+
+  <div class="full-translation" id="fullTranslation">
+    <h2>整篇中文翻译</h2>
+    <p>尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《相同还是不同》。</p>
+    <p>我最好的朋友汤姆和我外表不同，但性格相似。我很害羞，没有汤姆那么外向——他外向又大声，而我安静。我对运动有点懒，但汤姆很勤奋。不过我们有很多共同点：我们都热爱音乐。我们在音乐俱乐部偶然相遇。他会吹长笛，而且又高又苗条。我们每天都比较各自的爱好。我们的友谊因为差异而更加牢固。</p>
+    <p>汤姆坦率、诚实又直爽，从不隐藏自己的看法。我严肃细心，我的强项是解决问题。遇到困难时，我努力自己找到答案，从不指望别人替我做。有时我们意见不合，但我们从不触碰彼此的感情。生日时我们互赠小礼物。他温暖的个性总让我微笑。我们合作时，难题就不再那么难了。</p>
+    <p>上周，我们参加了学校的艺术节。汤姆的长笛表演获奖了！恭喜！我向大家介绍了大城市和小城镇人口之间的差异，以及我们城市每年的平均降雨量。这些事实听起来可能无聊，但我们把它们讲得很有趣。空闲时间我读小说——读书对我来说是极大的乐趣。我对着镜子练习演讲，对写作的兴趣与日俱增。我总是留出空闲时间做爱好。</p>
+    <p>每个人都有独特的个性和不同的幽默感。我们也许有差异，但我们也总有相似之处。在我看来，朋友不需要完全相同；他们只需要互相关心。每道困难都有光明的一面（乌云总镶银边），每份友谊都弥足珍贵。有汤姆这样的朋友，真是件令人愉快的事。</p>
+    <p>我的演讲到此结束，谢谢大家！</p>
+  </div>
+</div>
+
+<div class="global-bar">
+  <span class="loop-info" id="loopInfo">未播放</span>
+  <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
+  <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var synth = window.speechSynthesis;
+  var MAX_LOOP = 10;
+  var sentences = Array.prototype.slice.call(document.querySelectorAll('.en-sentence'));
+  sentences.forEach(function(el, i){
+    var ctl = document.createElement('div');
+    ctl.className = 'controls';
+    var bPlay = document.createElement('button');
+    bPlay.className = 'btn btn-play';
+    bPlay.textContent = '▶ 播放';
+    var bPause = document.createElement('button');
+    bPause.className = 'btn btn-pause';
+    bPause.textContent = '⏸ 暂停';
+    bPause.disabled = true;
+    ctl.appendChild(bPlay);
+    ctl.appendChild(bPause);
+    el.appendChild(ctl);
+    bPlay.addEventListener('click', function(e){ e.stopPropagation(); playSingle(i); });
+    bPause.addEventListener('click', function(e){ e.stopPropagation(); pauseCurrent(); });
+    el.addEventListener('click', function(){ playSingle(i); });
+  });
+  var mode = 'idle', currentIdx = -1, paused = false, token = 0, loopCount = 0;
+  var loopInfo = document.getElementById('loopInfo');
+  function pickVoice(){
+    if(!synth) return null;
+    var vs = synth.getVoices() || [];
+    var en = vs.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('en') === 0; });
+    if(!en.length) return null;
+    var fav = en.filter(function(v){
+      var n = v.name.toLowerCase();
+      return /female|samantha|zira|google us|karen|tessa|victoria|allison|google UK English Female|Microsoft.*Zira|Microsoft.*Aria/i.test(n)
+        && (v.lang.toLowerCase().indexOf('en-us') === 0 || v.default);
+    });
+    if(fav.length) return fav[0];
+    var us = en.filter(function(v){ return v.lang.toLowerCase() === 'en-us'; });
+    if(us.length) return us[0];
+    return en[0];
+  }
+  function clearHighlight(){
+    sentences.forEach(function(s){ s.classList.remove('speaking'); });
+    document.querySelectorAll('.cn').forEach(function(c){ c.classList.remove('cn-speaking'); });
+  }
+  function highlight(i){
+    clearHighlight();
+    var s = sentences[i];
+    if(!s) return;
+    s.classList.add('speaking');
+    s.scrollIntoView({behavior:'smooth', block:'center'});
+    var card = s.closest('.card');
+    if(card){
+      var cn = card.querySelector('.cn');
+      if(cn) cn.classList.add('cn-speaking');
+    }
+  }
+  function setPauseBtn(){
+    sentences.forEach(function(s){
+      var b = s.querySelector('.btn-pause');
+      if(b) b.disabled = !(paused && currentIdx === sentences.indexOf(s) && mode !== 'idle');
+    });
+  }
+  function speak(index, nextMode){
+    if(!synth){ alert('当前浏览器不支持语音朗读（Web Speech API）。'); return; }
+    synth.cancel();
+    var myToken = ++token;
+    currentIdx = index;
+    mode = nextMode;
+    paused = false;
+    var text = sentences[index].getAttribute('data-spoken') || sentences[index].textContent;
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 0.92;
+    u.pitch = 1.05;
+    u.onend = function(){
+      if(myToken !== token) return;
+      if(mode === 'all'){ advanceAll(); }
+      else { mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn(); }
+    };
+    u.onerror = function(){ if(myToken !== token) return; mode='idle'; currentIdx=-1; clearHighlight(); setPauseBtn(); };
+    highlight(index);
+    setPauseBtn();
+    synth.speak(u);
+  }
+  function advanceAll(){
+    if(mode !== 'all') return;
+    var next = currentIdx + 1;
+    if(next < sentences.length){ speak(next, 'all'); }
+    else {
+      loopCount++;
+      if(loopCount < MAX_LOOP){
+        loopInfo.textContent = '第 ' + (loopCount+1) + ' / ' + MAX_LOOP + ' 轮';
+        speak(0, 'all');
+      } else {
+        loopInfo.textContent = '已完成 ' + MAX_LOOP + ' 轮';
+        mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn();
+      }
+    }
+  }
+  function playSingle(i){
+    if(paused && mode !== 'idle' && currentIdx === i){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '单句跟读';
+    speak(i, 'single');
+  }
+  function pauseCurrent(){
+    if(synth && synth.speaking && !synth.paused){ synth.pause(); paused = true; setPauseBtn(); }
+  }
+  function stopAll(){
+    if(synth) synth.cancel();
+    token++; mode = 'idle'; currentIdx = -1; paused = false; loopCount = 0;
+    clearHighlight(); setPauseBtn();
+    loopInfo.textContent = '已停止';
+  }
+  document.getElementById('btnLoop').addEventListener('click', function(){
+    if(mode === 'all' && !paused){ pauseCurrent(); loopInfo.textContent = '已暂停'; return; }
+    if(paused && mode === 'all'){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '第 1 / ' + MAX_LOOP + ' 轮';
+    speak(0, 'all');
+  });
+  document.getElementById('btnStop').addEventListener('click', stopAll);
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  function syncToggleLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncToggleLabel();
+  });
+  syncToggleLabel();
+  if(synth && typeof synth.onvoiceschanged !== 'undefined'){
+    synth.onvoiceschanged = function(){ /* voices ready */ };
+  }
+})();
+</script>
+</body>
+</html>

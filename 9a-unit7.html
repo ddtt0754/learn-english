@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Unit 7 演讲稿 · 跟读 H5</title>
+<style>
+  :root{--bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;--red:#e53935;--accent:#2e9e6b;--cn-bg:#f1f6fb;--cn-line:#4a90d9;--hi-en:#fff6da;--hi-en-line:#ffb300;--hi-cn:#e3f2fd;--hi-cn-line:#1e88e5;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;padding-bottom:84px;-webkit-font-smoothing:antialiased;}
+  header{background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;padding:18px 16px 16px;text-align:center;box-shadow:0 2px 10px rgba(46,158,107,.25);}
+  header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.5px;}
+  header p{margin:4px 0 0;font-size:12px;opacity:.92;}
+  .top-toggle{margin-top:10px;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 16px;border:1.5px solid rgba(255,255,255,.85);background:rgba(255,255,255,.16);color:#fff;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,transform .08s;}
+  .top-toggle:active{transform:scale(.97);}
+  .wrap{max-width:760px;margin:0 auto;padding:14px 12px 8px;}
+  .card{background:var(--card);border-radius:14px;padding:14px 14px 12px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .card-title{font-size:13px;font-weight:700;color:var(--accent);margin:0 0 8px;padding-left:10px;border-left:4px solid var(--accent);}
+  .en-sentence{position:relative;padding:10px 12px;margin:8px 0;border-radius:10px;background:#fbfdfc;border:1px solid #eef3f1;font-size:16px;transition:background .25s,box-shadow .25s;cursor:pointer;}
+  .en-sentence strong{font-weight:700;color:#16242c;}
+  .en-sentence .ph{color:var(--red);font-size:.82em;font-family:"Arial",sans-serif;margin:0 2px;white-space:nowrap;transition:opacity .2s;}
+  body.hide-ph .ph{display:none;}
+  .en-sentence.speaking{background:var(--hi-en);box-shadow:inset 0 0 0 2px var(--hi-en-line);}
+  .cn{background:var(--cn-bg);border-left:4px solid var(--cn-line);border-radius:0 10px 10px 0;padding:10px 12px;margin:10px 0 2px;color:#4a5a66;font-size:15px;transition:background .25s,border-color .25s;}
+  .cn.cn-speaking{background:var(--hi-cn);border-left-color:var(--hi-cn-line);color:#1b3a52;}
+  .controls{display:flex;gap:8px;margin-top:10px;}
+  .btn{flex:1;min-height:42px;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;user-select:none;}
+  .btn:active{transform:scale(.97);}
+  .btn-play{background:var(--accent);color:#fff;}
+  .btn-play:hover{filter:brightness(1.05);}
+  .btn-pause{background:#fff;color:var(--accent);border:1.5px solid var(--accent);}
+  .btn-pause:disabled{opacity:.45;cursor:default;}
+  .global-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:1px solid #e3eae6;box-shadow:0 -3px 14px rgba(30,50,40,.08);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;max-width:760px;margin:0 auto;}
+  .global-bar .gbtn{flex:1;min-height:46px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;}
+  .global-bar .gbtn:active{transform:scale(.97);}
+  .gbtn-loop{background:var(--accent);color:#fff;}
+  .gbtn-stop{background:#fdecec;color:var(--red);border:1.5px solid #f4b9b9;}
+  .loop-info{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--muted);background:#fff;padding:2px 10px;border-radius:10px;border:1px solid #e3eae6;white-space:nowrap;}
+  .hint{text-align:center;font-size:12px;color:var(--muted);margin:4px 0 2px;}
+  .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
+  .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Feel the Rhythm · 跟读 H5</h1>
+  <p>人教版九年级上册 Unit 7 ｜ 汕头 2027 中考 ｜ 美式女声 · 单句跟读（只朗读英文）</p>
+  <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
+
+<div class="wrap" id="content">
+
+  <div class="card">
+    <div class="card-title">开场</div>
+    <div class="en-sentence" data-spoken="Good morning, my dear teachers and friends! Today, my topic is Feel the Rhythm.">Good morning, my dear teachers and friends! Today, my topic is <i>Feel the Rhythm</i>.</div>
+    <div class="cn">大家早上好！今天我演讲的题目是《感受节奏》。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">① 音乐风格</div>
+    <div class="en-sentence" data-spoken="Music is everywhere, and every kind of music has its own rhythm.">Music is everywhere, and every kind of music has its own <strong>rhythm</strong> <span class="ph">/ˈrɪðm/ n. 节奏；韵律</span>.</div>
+    <div class="en-sentence" data-spoken="We have folk songs, traditional tunes, pop music, jazz, rap, blues and classical music.">We have <strong>folk</strong> <span class="ph">/fəʊk/ adj. 民间的 n. 民间音乐</span> songs, <strong>traditional</strong> <span class="ph">/trəˈdɪʃənl/ adj. 传统的；习俗的</span> <strong>tunes</strong> <span class="ph">/tjuːn/ n. 曲调；旋律 v. 调音</span>, <strong>pop</strong> <span class="ph">/pɒp/ n. 流行音乐 adj. 流行的</span> music, <strong>jazz</strong> <span class="ph">/dʒæz/ n. 爵士乐</span>, <strong>rap</strong> <span class="ph">/ræp/ n. 说唱乐 v. 表演说唱乐</span>, <strong>blues</strong> <span class="ph">/bluːz/ n. 布鲁斯音乐；蓝调</span> and <strong>classical</strong> <span class="ph">/ˈklæsɪkl/ adj. 古典的；经典的</span> music.</div>
+    <div class="en-sentence" data-spoken="Each style tells a different story, and whatever music you like, you can always find joy in it.">Each <strong>style</strong> <span class="ph">/staɪl/ n. 风格；方式</span> tells a different story, and <strong>whatever</strong> <span class="ph">/wɒtˈevə(r)/ pron. 无论什么；任何（事物）</span> music you like, you can always find joy in it.</div>
+    <div class="cn">音乐无处不在，每一种音乐都有它自己的节奏。我们有民歌、传统曲调、流行音乐、爵士乐、说唱乐、布鲁斯和古典音乐。每一种风格都讲述着不同的故事，无论你喜欢什么音乐，你总能在其中找到快乐。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">② 乐器</div>
+    <div class="en-sentence" data-spoken="Instruments bring music to life.">Instruments bring music to life.</div>
+    <div class="en-sentence" data-spoken="The piano and the keyboard can play many keys, while the guitar, the violin, the flute and the trumpet each have a unique sound.">The <strong>piano</strong> <span class="ph">/piˈænəʊ/ n. 钢琴</span> and the <strong>keyboard</strong> <span class="ph">/ˈkiːbɔːd/ n. 电子琴；键盘</span> can play many keys, while the <strong>guitar</strong> <span class="ph">/ɡɪˈtɑː(r)/ n. 吉他</span>, the <strong>violin</strong> <span class="ph">/ˌvaɪəˈlɪn/ n. 小提琴</span>, the <strong>flute</strong> <span class="ph">/fluːt/ n. 长笛</span> and the <strong>trumpet</strong> <span class="ph">/ˈtrʌmpɪt/ n. 小号；喇叭</span> each have a <strong>unique</strong> <span class="ph">/juˈniːk/ adj. 独特的；独一无二的</span> <strong>sound</strong> <span class="ph">/saʊnd/ n. 声音 v. 听起来</span>.</div>
+    <div class="en-sentence" data-spoken="The drum gives us a strong beat.">The <strong>drum</strong> <span class="ph">/drʌm/ n. 鼓</span> gives us a strong <strong>beat</strong> <span class="ph">/biːt/ n. 节拍；节奏</span>.</div>
+    <div class="en-sentence" data-spoken="With an electric guitar or an electronic keyboard, young musicians can create modern sounds.">With an <strong>electric</strong> <span class="ph">/ɪˈlektrɪk/ adj. 电的；令人激动的</span> guitar or an <strong>electronic</strong> <span class="ph">/ˌɪlekˈtrɒnɪk/ adj. 电子的</span> keyboard, young musicians can <strong>create</strong> <span class="ph">/kriˈeɪt/ v. 创造；创作</span> modern sounds.</div>
+    <div class="en-sentence" data-spoken="Even without any instrument, people can whistle or hum a melody, and some like to strum a guitar in the park.">Even <strong>without</strong> <span class="ph">/wɪˈðaʊt/ prep. 没有；无</span> any instrument, people can <strong>whistle</strong> <span class="ph">/ˈwɪsl/ v. &amp; n. 吹口哨；口哨声</span> or <strong>hum</strong> <span class="ph">/hʌm/ v. &amp; n. 哼唱；嗡嗡声</span> a <strong>melody</strong> <span class="ph">/ˈmelədi/ n. 旋律；曲调</span>, and some like to <strong>strum</strong> <span class="ph">/strʌm/ v. 弹拨（吉他等弦乐器）</span> a guitar in the park.</div>
+    <div class="cn">乐器让音乐活起来。钢琴和电子琴能弹奏许多琴键，而吉他、小提琴、长笛和小号各有其独特的声音。鼓给我们强烈的节拍。有了电吉他或电子琴，年轻的音乐家们可以创作出现代的声音。即使没有任何乐器，人们也能吹口哨或哼一段旋律，还有人喜欢在公园里弹拨吉他。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">③ 音乐家</div>
+    <div class="en-sentence" data-spoken="Great musicians are often gifted, and some are true geniuses.">Great <strong>musicians</strong> <span class="ph">/mjuˈzɪʃn/ n. 音乐家</span> are often <strong>gifted</strong> <span class="ph">/ˈɡɪftɪd/ adj. 有天赋的</span>, and some are true <strong>geniuses</strong> <span class="ph">/ˈdʒiːniəs/ n. 天才人物；天赋</span>.</div>
+    <div class="en-sentence" data-spoken="A talented pianist can master the piano after years of practice.">A <strong>talented</strong> <span class="ph">/ˈtæləntɪd/ adj. 有才能的；有天赋的</span> <strong>pianist</strong> <span class="ph">/ˈpɪənɪst/ n. 钢琴家；钢琴演奏者</span> can <strong>master</strong> <span class="ph">/ˈmɑːstə(r)/ v. &amp; n. 掌握；精通；大师</span> the piano after years of practice.</div>
+    <div class="en-sentence" data-spoken="A composer writes music, a singer sings the song, and a performer brings it to the stage.">A <strong>composer</strong> <span class="ph">/kəmˈpəʊzə(r)/ n. 作曲家</span> writes music, a <strong>singer</strong> <span class="ph">/ˈsɪŋə(r)/ n. 歌手</span> sings the <strong>song</strong> <span class="ph">/sɒŋ/ n. 歌曲</span>, and a <strong>performer</strong> <span class="ph">/pəˈfɔːmə(r)/ n. 演奏者；表演者</span> brings it to the stage.</div>
+    <div class="en-sentence" data-spoken="The drummer beats the drums with great power, and a conductor conducts the orchestra, and every member of the band plays their part.">The drummer <strong>beats</strong> <span class="ph">/biːt/ v. 敲打（鼓）；击败 n. 节拍</span> the drums with great power, and a <strong>conductor</strong> <span class="ph">/kənˈdʌktə(r)/ n. 指挥</span> <strong>conducts</strong> <span class="ph">/kənˈdʌkt/ v. 指挥（乐队/合唱团）；引导</span> the <strong>orchestra</strong> <span class="ph">/ˈɔːkɪstrə/ n. 管弦乐队</span>, and every member of the <strong>band</strong> <span class="ph">/bænd/ n. 乐队</span> plays their part.</div>
+    <div class="en-sentence" data-spoken="The singer has a sweet voice, and the applause fills the hall.">The singer has a sweet <strong>voice</strong> <span class="ph">/vɔɪs/ n. 嗓音；声音</span>, and the <strong>applause</strong> <span class="ph">/əˈplɔːz/ n. 掌声；喝彩</span> fills the hall.</div>
+    <div class="en-sentence" data-spoken="Hats off to all professional musicians who pour their hearts into music!"><strong>Hats off</strong> <span class="ph">/ˌhæts ˈɒf/ phr. （向某人）表示敬佩</span> to all <strong>professional</strong> <span class="ph">/prəˈfeʃənl/ adj. 专业的；职业的</span> musicians who <strong>pour</strong> <span class="ph">/pɔː(r)/ v. 倾倒；倒出；倾泻</span> their hearts into music!</div>
+    <div class="cn">伟大的音乐家往往天赋过人，有些人是真正的天才。有才华的钢琴家经过多年练习，可以精通钢琴。作曲家创作乐曲，歌手演唱歌曲，表演者把它带上舞台。鼓手有力地敲击着鼓，指挥家指挥管弦乐队，乐队每一位成员都各司其职。歌手嗓音甜美，掌声响彻大厅。向所有把心血倾注于音乐的专业音乐家们致敬！</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">④ 欣赏与参与</div>
+    <div class="en-sentence" data-spoken="When we enjoy music, we can tap our feet to the beat, sing along to the chorus, and dance to the rhythm.">When we enjoy music, we can <strong>tap (one's feet)</strong> <span class="ph">/ˌtæp wʌnz ˈfiːt/ phr. 用脚打拍子</span> to the beat, <strong>sing along to</strong> <span class="ph">/ˌsɪŋ əˈlɒŋ tuː/ phr. 随着……唱</span> the <strong>chorus</strong> <span class="ph">/ˈkɔːrəs/ n. 合唱；副歌；合唱团</span>, and <strong>dance to</strong> <span class="ph">/ˌdɑːns tuː/ phr. 随着……跳舞</span> the rhythm.</div>
+    <div class="en-sentence" data-spoken="We can download songs from the internet, comment on our favourite artists, and rate a live performance.">We can <strong>download</strong> <span class="ph">/ˌdaʊnˈləʊd/ v. 下载</span> songs from the internet, <strong>comment</strong> <span class="ph">/ˈkɒment/ v. &amp; n. 评论；批评</span> on our favourite artists, and <strong>rate</strong> <span class="ph">/reɪt/ v. 评价；给……评分 n. 比率</span> a <strong>live</strong> <span class="ph">/laɪv/ adj. 现场的 adv. 现场地</span> <strong>performance</strong> <span class="ph">/pəˈfɔːməns/ n. 演出；表演</span>.</div>
+    <div class="en-sentence" data-spoken="We may compose a simple melody with the keyboard, read the lyrics of a new album, or record our own songs on the phone.">We may <strong>compose</strong> <span class="ph">/kəmˈpəʊz/ v. 作曲；创作；组成</span> a simple melody with the keyboard, read the <strong>lyrics</strong> <span class="ph">/ˈlɪrɪk/ n. 歌词 adj. 抒情的</span> of a new <strong>album</strong> <span class="ph">/ˈælbəm/ n. 专辑；音乐专辑</span>, or <strong>record</strong> <span class="ph">/rɪˈkɔːd/ v. 录制；记录</span> our own songs on the phone.</div>
+    <div class="en-sentence" data-spoken="A famous singer may release a new album every year.">A famous singer may <strong>release</strong> <span class="ph">/rɪˈliːs/ v. &amp; n. 发布；发行；释放</span> a new album every year.</div>
+    <div class="en-sentence" data-spoken="We should not make noise during a concert; instead, we should listen softly and applaud loudly when the performance ends.">We should not make <strong>noise</strong> <span class="ph">/nɔɪz/ n. 噪音；声音</span> during a <strong>concert</strong> <span class="ph">/ˈkɒnsət/ n. 音乐会</span>; instead, we should listen <strong>softly</strong> <span class="ph">/ˈsɒftli/ adv. 轻柔地；柔和地</span> and <strong>applaud</strong> <span class="ph">/əˈplɔːd/ v. 鼓掌；称赞</span> <strong>loudly</strong> <span class="ph">/ˈlaʊdli/ adv. 大声地；响亮地</span> when the performance ends.</div>
+    <div class="en-sentence" data-spoken="Some songs are soulful and emotional, some are romantic and golden, and some are so powerful that they inspire us and improve our lives.">Some songs are <strong>soulful</strong> <span class="ph">/ˈsəʊlfl/ adj. 深情的；真挚的</span> and <strong>emotional</strong> <span class="ph">/ɪˈməʊʃənl/ adj. 情感上的；感人的</span>, some are <strong>romantic</strong> <span class="ph">/rəʊˈmæntɪk/ adj. 浪漫的；爱情的</span> and <strong>golden</strong> <span class="ph">/ˈɡəʊldən/ adj. 金色的；黄金般的</span>, and some are so powerful that they <strong>inspire</strong> <span class="ph">/ɪnˈspaɪə(r)/ v. 鼓舞；激励；激发灵感</span> us and <strong>improve</strong> <span class="ph">/ɪmˈpruːv/ v. 改善；提高</span> our lives.</div>
+    <div class="en-sentence" data-spoken="Music can express our feelings and broaden our minds.">Music can <strong>express</strong> <span class="ph">/ɪkˈspres/ v. 表达；表露</span> our feelings and <strong>broaden</strong> <span class="ph">/ˈbrɔːdn/ v. 拓宽；扩大</span> our minds.</div>
+    <div class="en-sentence" data-spoken="We can even perform a short song for our friends at a party.">We can even <strong>perform</strong> <span class="ph">/pəˈfɔːm/ v. 表演；演出；表现</span> a short song for our friends at a party.</div>
+    <div class="cn">欣赏音乐时，我们可以跟着节拍用脚打拍子，跟着副歌一起唱，跟着节奏跳舞。我们可以从网上下载歌曲，评论喜欢的艺人，给一场现场演出评分。我们可以用电子琴创作简单的旋律，读新专辑的歌词，也可以用手机录下自己的歌。著名的歌手每年可能发布一张新专辑。音乐会期间我们不应该制造噪音；相反，演出结束时我们应静静地聆听、热烈地鼓掌。有些歌曲深情而感人，有些浪漫而金光闪闪，有些则力量强大，激励着我们，改善我们的生活。音乐可以表达我们的情感，开阔我们的心胸。我们甚至可以在聚会上为朋友表演一首短歌。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⑤ 结束语</div>
+    <div class="en-sentence" data-spoken="Music is a valuable gift to everyone, even to deaf people who can feel the vibration.">Music is a <strong>valuable</strong> <span class="ph">/ˈvæljuəbl/ adj. 贵重的；宝贵的</span> gift to everyone, even to <strong>deaf</strong> <span class="ph">/def/ adj. 聋的</span> people who can feel the vibration.</div>
+    <div class="en-sentence" data-spoken="Nowadays, music is popular everywhere, and many people listen to it regularly, with or without headphones."><strong>Nowadays</strong> <span class="ph">/ˈnaʊədeɪz/ adv. 现今；现在</span>, music is <strong>popular</strong> <span class="ph">/ˈpɒpjələ(r)/ adj. 受欢迎的；流行的</span> everywhere, and many people listen to it <strong>regularly</strong> <span class="ph">/ˈreɡjələli/ adv. 定期地；经常地</span>, with or without headphones.</div>
+    <div class="en-sentence" data-spoken="Through music, we can connect with each other, whatever our differences, and music makes us more creative."><strong>Through</strong> <span class="ph">/θruː/ prep. 通过；穿过</span> music, we can connect with each other, whatever our differences, and music makes us more <strong>creative</strong> <span class="ph">/kriˈeɪtɪv/ adj. 有创造力的</span>.</div>
+    <div class="en-sentence" data-spoken="We may even hum a tune proudly on our way to school.">We may even hum a tune <strong>proudly</strong> <span class="ph">/ˈpraʊdli/ adv. 骄傲地；自豪地</span> on our way to school.</div>
+    <div class="en-sentence" data-spoken="So let us open our hearts, enjoy every verse and every chorus, and feel the rhythm of life!">So let us open our hearts, enjoy every <strong>verse</strong> <span class="ph">/vɜːs/ n. 诗句；歌曲的段落</span> and every chorus, and feel the rhythm of life!</div>
+    <div class="en-sentence" data-spoken="That's all. Thank you for listening!">That's all. Thank you for listening!</div>
+    <div class="cn">音乐是送给每个人的珍贵礼物，甚至包括能感受到振动的聋人。如今，音乐处处流行，很多人定期听音乐，戴不戴耳机都可以。通过音乐，无论彼此有何差异，我们都能相互联结，音乐也让我们更有创造力。我们甚至可以在上学路上骄傲地哼上一段小曲。所以，让我们敞开心扉，享受每一段歌词、每一句副歌，感受生命的节奏！我的演讲到此结束，谢谢大家！</div>
+  </div>
+
+  <p class="hint">点击句子或【播放】即可跟读（只朗读英文），红色为单词音标注释，蓝框为中文翻译。</p>
+
+  <div class="full-translation" id="fullTranslation">
+    <h2>整篇中文翻译</h2>
+    <p>大家早上好！今天我演讲的题目是《感受节奏》。</p>
+    <p>音乐无处不在，每一种音乐都有它自己的节奏。我们有民歌、传统曲调、流行音乐、爵士乐、说唱乐、布鲁斯和古典音乐。每一种风格都讲述着不同的故事，无论你喜欢什么音乐，你总能在其中找到快乐。</p>
+    <p>乐器让音乐活起来。钢琴和电子琴能弹奏许多琴键，而吉他、小提琴、长笛和小号各有其独特的声音。鼓给我们强烈的节拍。有了电吉他或电子琴，年轻的音乐家们可以创作出现代的声音。即使没有任何乐器，人们也能吹口哨或哼一段旋律，还有人喜欢在公园里弹拨吉他。</p>
+    <p>伟大的音乐家往往天赋过人，有些人是真正的天才。有才华的钢琴家经过多年练习，可以精通钢琴。作曲家创作乐曲，歌手演唱歌曲，表演者把它带上舞台。鼓手有力地敲击着鼓，指挥家指挥管弦乐队，乐队每一位成员都各司其职。歌手嗓音甜美，掌声响彻大厅。向所有把心血倾注于音乐的专业音乐家们致敬！</p>
+    <p>欣赏音乐时，我们可以跟着节拍用脚打拍子，跟着副歌一起唱，跟着节奏跳舞。我们可以从网上下载歌曲，评论喜欢的艺人，给一场现场演出评分。我们可以用电子琴创作简单的旋律，读新专辑的歌词，也可以用手机录下自己的歌。著名的歌手每年可能发布一张新专辑。音乐会期间我们不应该制造噪音；相反，演出结束时我们应静静地聆听、热烈地鼓掌。有些歌曲深情而感人，有些浪漫而金光闪闪，有些则力量强大，激励着我们，改善我们的生活。音乐可以表达我们的情感，开阔我们的心胸。我们甚至可以在聚会上为朋友表演一首短歌。</p>
+    <p>音乐是送给每个人的珍贵礼物，甚至包括能感受到振动的聋人。如今，音乐处处流行，很多人定期听音乐，戴不戴耳机都可以。通过音乐，无论彼此有何差异，我们都能相互联结，音乐也让我们更有创造力。我们甚至可以在上学路上骄傲地哼上一段小曲。所以，让我们敞开心扉，享受每一段歌词、每一句副歌，感受生命的节奏！我的演讲到此结束，谢谢大家！</p>
+  </div>
+</div>
+
+<div class="global-bar">
+  <span class="loop-info" id="loopInfo">未播放</span>
+  <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
+  <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var synth = window.speechSynthesis;
+  var MAX_LOOP = 10;
+  var sentences = Array.prototype.slice.call(document.querySelectorAll('.en-sentence'));
+  sentences.forEach(function(el, i){
+    var ctl = document.createElement('div');
+    ctl.className = 'controls';
+    var bPlay = document.createElement('button');
+    bPlay.className = 'btn btn-play';
+    bPlay.textContent = '▶ 播放';
+    var bPause = document.createElement('button');
+    bPause.className = 'btn btn-pause';
+    bPause.textContent = '⏸ 暂停';
+    bPause.disabled = true;
+    ctl.appendChild(bPlay);
+    ctl.appendChild(bPause);
+    el.appendChild(ctl);
+    bPlay.addEventListener('click', function(e){ e.stopPropagation(); playSingle(i); });
+    bPause.addEventListener('click', function(e){ e.stopPropagation(); pauseCurrent(); });
+    el.addEventListener('click', function(){ playSingle(i); });
+  });
+  var mode = 'idle', currentIdx = -1, paused = false, token = 0, loopCount = 0;
+  var loopInfo = document.getElementById('loopInfo');
+  function pickVoice(){
+    if(!synth) return null;
+    var vs = synth.getVoices() || [];
+    var en = vs.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('en') === 0; });
+    if(!en.length) return null;
+    var fav = en.filter(function(v){
+      var n = v.name.toLowerCase();
+      return /female|samantha|zira|google us|karen|tessa|victoria|allison|google UK English Female|Microsoft.*Zira|Microsoft.*Aria/i.test(n)
+        && (v.lang.toLowerCase().indexOf('en-us') === 0 || v.default);
+    });
+    if(fav.length) return fav[0];
+    var us = en.filter(function(v){ return v.lang.toLowerCase() === 'en-us'; });
+    if(us.length) return us[0];
+    return en[0];
+  }
+  function clearHighlight(){
+    sentences.forEach(function(s){ s.classList.remove('speaking'); });
+    document.querySelectorAll('.cn').forEach(function(c){ c.classList.remove('cn-speaking'); });
+  }
+  function highlight(i){
+    clearHighlight();
+    var s = sentences[i];
+    if(!s) return;
+    s.classList.add('speaking');
+    s.scrollIntoView({behavior:'smooth', block:'center'});
+    var card = s.closest('.card');
+    if(card){
+      var cn = card.querySelector('.cn');
+      if(cn) cn.classList.add('cn-speaking');
+    }
+  }
+  function setPauseBtn(){
+    sentences.forEach(function(s){
+      var b = s.querySelector('.btn-pause');
+      if(b) b.disabled = !(paused && currentIdx === sentences.indexOf(s) && mode !== 'idle');
+    });
+  }
+  function speak(index, nextMode){
+    if(!synth){ alert('当前浏览器不支持语音朗读（Web Speech API）。'); return; }
+    synth.cancel();
+    var myToken = ++token;
+    currentIdx = index;
+    mode = nextMode;
+    paused = false;
+    var text = sentences[index].getAttribute('data-spoken') || sentences[index].textContent;
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 0.92;
+    u.pitch = 1.05;
+    u.onend = function(){
+      if(myToken !== token) return;
+      if(mode === 'all'){ advanceAll(); }
+      else { mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn(); }
+    };
+    u.onerror = function(){ if(myToken !== token) return; mode='idle'; currentIdx=-1; clearHighlight(); setPauseBtn(); };
+    highlight(index);
+    setPauseBtn();
+    synth.speak(u);
+  }
+  function advanceAll(){
+    if(mode !== 'all') return;
+    var next = currentIdx + 1;
+    if(next < sentences.length){ speak(next, 'all'); }
+    else {
+      loopCount++;
+      if(loopCount < MAX_LOOP){
+        loopInfo.textContent = '第 ' + (loopCount+1) + ' / ' + MAX_LOOP + ' 轮';
+        speak(0, 'all');
+      } else {
+        loopInfo.textContent = '已完成 ' + MAX_LOOP + ' 轮';
+        mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn();
+      }
+    }
+  }
+  function playSingle(i){
+    if(paused && mode !== 'idle' && currentIdx === i){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '单句跟读';
+    speak(i, 'single');
+  }
+  function pauseCurrent(){
+    if(synth && synth.speaking && !synth.paused){ synth.pause(); paused = true; setPauseBtn(); }
+  }
+  function stopAll(){
+    if(synth) synth.cancel();
+    token++; mode = 'idle'; currentIdx = -1; paused = false; loopCount = 0;
+    clearHighlight(); setPauseBtn();
+    loopInfo.textContent = '已停止';
+  }
+  document.getElementById('btnLoop').addEventListener('click', function(){
+    if(mode === 'all' && !paused){ pauseCurrent(); loopInfo.textContent = '已暂停'; return; }
+    if(paused && mode === 'all'){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '第 1 / ' + MAX_LOOP + ' 轮';
+    speak(0, 'all');
+  });
+  document.getElementById('btnStop').addEventListener('click', stopAll);
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  function syncToggleLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncToggleLabel();
+  });
+  syncToggleLabel();
+  if(synth && typeof synth.onvoiceschanged !== 'undefined'){
+    synth.onvoiceschanged = function(){ /* voices ready */ };
+  }
+})();
+</script>
+</body>
+</html>
