@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2ebd85">
+<title>九年级上册 Unit 3 课标单词表 · Smart Learning</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    min-height:100vh;
+    padding:24px 14px 60px;
+    color:#33434b;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+  header{
+    text-align:center;
+    background:linear-gradient(135deg,#35d29a,#2f9df0);
+    color:#fff;border-radius:18px;
+    padding:30px 22px 26px;
+    box-shadow:0 10px 30px rgba(47,157,240,.18);
+  }
+  header .badge{
+    display:inline-block;background:rgba(255,255,255,.22);
+    border-radius:999px;padding:4px 14px;font-size:13px;letter-spacing:1px;
+    margin-bottom:12px;
+  }
+  header h1{font-size:24px;margin-bottom:8px;}
+  header p{font-size:14px;opacity:.92;}
+  .tip{
+    background:#fff;border-radius:14px;padding:14px 18px;
+    margin:18px 0 8px;font-size:14px;line-height:1.9;
+    box-shadow:0 4px 14px rgba(47,157,240,.08);
+  }
+  .tip b{color:#1fa873;}
+  .section-title{
+    font-size:18px;margin:26px 0 12px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .section-title::before{
+    content:"";width:5px;height:20px;border-radius:3px;
+    background:linear-gradient(180deg,#35d29a,#2f9df0);
+  }
+  .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(47,157,240,.08);}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  thead th{
+    background:#f0faf6;color:#1fa873;font-size:13.5px;
+    padding:11px 10px;text-align:left;white-space:nowrap;
+    border-bottom:2px solid #d9f2e8;
+  }
+  tbody td{
+    padding:11px 10px;border-bottom:1px solid #eef4f2;vertical-align:top;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfb;}
+  .num{color:#8aa09a;font-size:12.5px;width:40px;}
+  .word{font-weight:700;font-size:16px;color:#2f6ba3;}
+  .ipa{color:#b05a2e;font-family:"Segoe UI",Georgia,serif;white-space:nowrap;}
+  .pos{color:#1fa873;font-weight:600;white-space:nowrap;}
+  .cn{color:#4a5a63;}
+  .note{
+    background:#fff8ef;border-left:4px solid #f5a623;
+    border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0 4px;
+    font-size:13.5px;line-height:1.9;color:#7a5b23;
+  }
+  footer{text-align:center;font-size:12px;color:#8aa09a;margin-top:30px;letter-spacing:1px;}
+  @media print{
+    body{background:#fff;padding:0;}
+    header{box-shadow:none;}
+    .card{box-shadow:none;border:1px solid #ddd;}
+  }
+
+  /* 隐藏/显示列 切换按钮 */
+  .top-toggle{
+    margin:12px 5px 0;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:38px;
+    padding:0 16px;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s,transform .08s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .top-toggle:active{transform:scale(.97);}
+  @media (hover:hover){
+    .top-toggle:hover{background:rgba(255,255,255,.30);}
+  }
+  /* 一键隐藏/恢复 单词列（第 2 列） */
+  body.hide-word th:nth-child(2),body.hide-word td:nth-child(2){display:none;}
+  /* 一键隐藏/恢复 释义列（第 5 列） */
+  body.hide-cn th:nth-child(5),body.hide-cn td:nth-child(5){display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">2026秋 · 人教新目标版（2026新版）· 新课标</span>
+    <h1>九年级上册 Unit 3 Smart Learning</h1>
+    <p>智慧学习 · 课标单词表（含音标 / 词性 / 释义）</p>
+      <button class="top-toggle" id="btnToggleWord" type="button">隐藏单词列</button>
+    <button class="top-toggle" id="btnToggleCn" type="button">隐藏释义列</button>
+</header>
+
+  <div class="tip">
+    本单元话题为 <b>智慧学习（Smart Learning）</b>，高效学习方法与学习资源（抽认卡、播客、学习策略、资源平台）。教材词汇表核心课标词共 <b>52 个词条</b>。
+  </div>
+
+  <div class="section-title">📖 课标单词表（教材词汇表 52 词条）</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>#</th><th>单词</th><th>音标（英式）</th><th>词性</th><th>释义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="word">learner</td><td class="ipa">/ˈlɜːnə(r)/</td><td class="pos">n.</td><td class="cn">学习者</td></tr>
+        <tr><td class="num">2</td><td class="word">flashcards</td><td class="ipa">/ˈflæʃkɑːd/</td><td class="pos">n.</td><td class="cn">（用于学习的）卡片；抽认卡</td></tr>
+        <tr><td class="num">3</td><td class="word">project</td><td class="ipa">/ˈprɒdʒekt/</td><td class="pos">n.</td><td class="cn">计划；项目</td></tr>
+        <tr><td class="num">4</td><td class="word">website</td><td class="ipa">/ˈwebsaɪt/</td><td class="pos">n.</td><td class="cn">网站</td></tr>
+        <tr><td class="num">5</td><td class="word">Hands-on</td><td class="ipa">/ˌhændz ˈɒn/</td><td class="pos">adj.</td><td class="cn">动手的；实际操作的</td></tr>
+        <tr><td class="num">6</td><td class="word">experiments</td><td class="ipa">/ɪkˈsperɪmənt/</td><td class="pos">n.</td><td class="cn">实验；试验</td></tr>
+        <tr><td class="num">7</td><td class="word">look up</td><td class="ipa">/ˌlʊk ˈʌp/</td><td class="pos">phr.</td><td class="cn">查阅；检查</td></tr>
+        <tr><td class="num">8</td><td class="word">dictionary</td><td class="ipa">/ˈdɪkʃənri/</td><td class="pos">n.</td><td class="cn">词典；字典</td></tr>
+        <tr><td class="num">9</td><td class="word">aloud</td><td class="ipa">/əˈlaʊd/</td><td class="pos">adv.</td><td class="cn">出声地；大声地</td></tr>
+        <tr><td class="num">10</td><td class="word">pronunciation</td><td class="ipa">/prəˌnʌnsiˈeɪʃn/</td><td class="pos">n.</td><td class="cn">发音；读音</td></tr>
+        <tr><td class="num">11</td><td class="word">dialogue</td><td class="ipa">/ˈdaɪəlɒɡ/</td><td class="pos">n.</td><td class="cn">对话；对白</td></tr>
+        <tr><td class="num">12</td><td class="word">suit</td><td class="ipa">/suːt/</td><td class="pos">v.</td><td class="cn">适合；有利于 n. 套装</td></tr>
+        <tr><td class="num">13</td><td class="word">In general</td><td class="ipa">/ˌɪn ˈdʒenrəl/</td><td class="pos">phr.</td><td class="cn">总的来说；通常</td></tr>
+        <tr><td class="num">14</td><td class="word">strategy</td><td class="ipa">/ˈstrætədʒi/</td><td class="pos">n.</td><td class="cn">策略</td></tr>
+        <tr><td class="num">15</td><td class="word">speed</td><td class="ipa">/spiːd/</td><td class="pos">n.</td><td class="cn">速度 v. 加速；促进</td></tr>
+        <tr><td class="num">16</td><td class="word">grammar</td><td class="ipa">/ˈɡræmə(r)/</td><td class="pos">n.</td><td class="cn">语法</td></tr>
+        <tr><td class="num">17</td><td class="word">step by step</td><td class="ipa">/ˌstep baɪ ˈstep/</td><td class="pos">phr.</td><td class="cn">逐步地；循序渐进地</td></tr>
+        <tr><td class="num">18</td><td class="word">podcasts</td><td class="ipa">/ˈpɒdkɑːst/</td><td class="pos">n.</td><td class="cn">播客</td></tr>
+        <tr><td class="num">19</td><td class="word">build up</td><td class="ipa">/ˌbɪld ˈʌp/</td><td class="pos">phr.</td><td class="cn">增加；加强；创建</td></tr>
+        <tr><td class="num">20</td><td class="word">put off</td><td class="ipa">/ˌpʊt ˈɒf/</td><td class="pos">phr.</td><td class="cn">推迟；拖延</td></tr>
+        <tr><td class="num">21</td><td class="word">schoolwork</td><td class="ipa">/ˈskuːlwɜːk/</td><td class="pos">n.</td><td class="cn">学校作业</td></tr>
+        <tr><td class="num">22</td><td class="word">Actively</td><td class="ipa">/ˈæktɪvli/</td><td class="pos">adv.</td><td class="cn">积极地</td></tr>
+        <tr><td class="num">23</td><td class="word">enjoyable</td><td class="ipa">/ɪnˈdʒɔɪəbl/</td><td class="pos">adj.</td><td class="cn">有乐趣的；使人快乐的</td></tr>
+        <tr><td class="num">24</td><td class="word">come across</td><td class="ipa">/ˌkʌm əˈkrɒs/</td><td class="pos">phr.</td><td class="cn">（偶然）遇见；发现</td></tr>
+        <tr><td class="num">25</td><td class="word">guidance</td><td class="ipa">/ˈɡaɪdns/</td><td class="pos">n.</td><td class="cn">指导</td></tr>
+        <tr><td class="num">26</td><td class="word">feedback</td><td class="ipa">/ˈfiːdbæk/</td><td class="pos">n.</td><td class="cn">反馈的意见</td></tr>
+        <tr><td class="num">27</td><td class="word">In addition</td><td class="ipa">/ˌɪn əˈdɪʃn/</td><td class="pos">phr.</td><td class="cn">另外；此外</td></tr>
+        <tr><td class="num">28</td><td class="word">summarize</td><td class="ipa">/ˈsʌməraɪz/</td><td class="pos">v.</td><td class="cn">总结；概括</td></tr>
+        <tr><td class="num">29</td><td class="word">growth</td><td class="ipa">/ɡrəʊθ/</td><td class="pos">n.</td><td class="cn">成长；增加</td></tr>
+        <tr><td class="num">30</td><td class="word">mindset</td><td class="ipa">/ˈmaɪndset/</td><td class="pos">n.</td><td class="cn">观念模式</td></tr>
+        <tr><td class="num">31</td><td class="word">suggest</td><td class="ipa">/səˈdʒest/</td><td class="pos">v.</td><td class="cn">建议；提议</td></tr>
+        <tr><td class="num">32</td><td class="word">correct</td><td class="ipa">/kəˈrekt/</td><td class="pos">adj.</td><td class="cn">正确的；恰当的</td></tr>
+        <tr><td class="num">33</td><td class="word">method</td><td class="ipa">/ˈmeθəd/</td><td class="pos">n.</td><td class="cn">方法</td></tr>
+        <tr><td class="num">34</td><td class="word">Zero</td><td class="ipa">/ˈzɪərəʊ/</td><td class="pos">num.</td><td class="cn">零；最低程度</td></tr>
+        <tr><td class="num">35</td><td class="word">materials</td><td class="ipa">/məˈtɪəriəl/</td><td class="pos">n.</td><td class="cn">材料</td></tr>
+        <tr><td class="num">36</td><td class="word">general</td><td class="ipa">/ˈdʒenrəl/</td><td class="pos">adj.</td><td class="cn">总的；大体的</td></tr>
+        <tr><td class="num">37</td><td class="word">In part</td><td class="ipa">/ˌɪn ˈpɑːt/</td><td class="pos">phr.</td><td class="cn">在某种程度上；部分地</td></tr>
+        <tr><td class="num">38</td><td class="word">textbooks</td><td class="ipa">/ˈtekstbʊk/</td><td class="pos">n.</td><td class="cn">教科书；课本</td></tr>
+        <tr><td class="num">39</td><td class="word">addition</td><td class="ipa">/əˈdɪʃn/</td><td class="pos">n.</td><td class="cn">添加；加法</td></tr>
+        <tr><td class="num">40</td><td class="word">e-books</td><td class="ipa">/ˈiːbʊk/</td><td class="pos">n.</td><td class="cn">电子书</td></tr>
+        <tr><td class="num">41</td><td class="word">magazines</td><td class="ipa">/ˌmæɡəˈziːn/</td><td class="pos">n.</td><td class="cn">杂志；期刊</td></tr>
+        <tr><td class="num">42</td><td class="word">resources</td><td class="ipa">/rɪˈsɔːs/</td><td class="pos">n.</td><td class="cn">资源；资料</td></tr>
+        <tr><td class="num">43</td><td class="word">Print</td><td class="ipa">/prɪnt/</td><td class="pos">n.</td><td class="cn">印刷品 v. 打印</td></tr>
+        <tr><td class="num">44</td><td class="word">advantages</td><td class="ipa">/ədˈvɑːntɪdʒ/</td><td class="pos">n.</td><td class="cn">优势；优点</td></tr>
+        <tr><td class="num">45</td><td class="word">shelf</td><td class="ipa">/ʃelf/</td><td class="pos">n.</td><td class="cn">架子；搁板</td></tr>
+        <tr><td class="num">46</td><td class="word">newspaper</td><td class="ipa">/ˈnjuːzpeɪpə(r)/</td><td class="pos">n.</td><td class="cn">报纸</td></tr>
+        <tr><td class="num">47</td><td class="word">click</td><td class="ipa">/klɪk/</td><td class="pos">v.</td><td class="cn">点击；（使）发出咔嗒声</td></tr>
+        <tr><td class="num">48</td><td class="word">open up</td><td class="ipa">/ˌəʊpən ˈʌp/</td><td class="pos">phr.</td><td class="cn">打开；开放</td></tr>
+        <tr><td class="num">49</td><td class="word">recent</td><td class="ipa">/ˈriːsnt/</td><td class="pos">adj.</td><td class="cn">最近的；最新的</td></tr>
+        <tr><td class="num">50</td><td class="word">valley</td><td class="ipa">/ˈvæli/</td><td class="pos">n.</td><td class="cn">山谷；溪谷</td></tr>
+        <tr><td class="num">51</td><td class="word">take advantage of</td><td class="ipa">/ˌteɪk ədˈvɑːntɪdʒ əv/</td><td class="pos">phr.</td><td class="cn">利用</td></tr>
+        <tr><td class="num">52</td><td class="word">efficiently</td><td class="ipa">/ɪˈfɪʃntli/</td><td class="pos">adv.</td><td class="cn">效率高地</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    💡 说明：本表依据 2026 秋人教版（2026 新版）新课标九年级上册 Unit 3《Smart Learning》教材词汇表整理；音标采用英式（DJ）标注。点击页头按钮可一键隐藏单词列或释义列，方便自测。
+  </div>
+
+  <footer>© 2026 豆豆助理 · 人教版九年级上册 Unit 3 课标单词表</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function makeToggle(btnId, cls, showText, hideText){
+    var btn = document.getElementById(btnId);
+    if(!btn) return;
+    function sync(){
+      btn.textContent = document.body.classList.contains(cls) ? showText : hideText;
+    }
+    btn.addEventListener('click', function(){
+      document.body.classList.toggle(cls);
+      sync();
+    });
+    sync();
+  }
+  makeToggle('btnToggleWord', 'hide-word', '显示单词列', '隐藏单词列');
+  makeToggle('btnToggleCn', 'hide-cn', '显示释义列', '隐藏释义列');
+})();
+</script>
+</body>
+</html>

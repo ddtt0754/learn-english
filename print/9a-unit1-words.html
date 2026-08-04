@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2ebd85">
+<title>九年级上册 Unit 1 课标单词表 · Our Changing World</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    min-height:100vh;
+    padding:24px 14px 60px;
+    color:#33434b;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+  header{
+    text-align:center;
+    background:linear-gradient(135deg,#35d29a,#2f9df0);
+    color:#fff;border-radius:18px;
+    padding:30px 22px 26px;
+    box-shadow:0 10px 30px rgba(47,157,240,.18);
+  }
+  header .badge{
+    display:inline-block;background:rgba(255,255,255,.22);
+    border-radius:999px;padding:4px 14px;font-size:13px;letter-spacing:1px;
+    margin-bottom:12px;
+  }
+  header h1{font-size:24px;margin-bottom:8px;}
+  header p{font-size:14px;opacity:.92;}
+  .tip{
+    background:#fff;border-radius:14px;padding:14px 18px;
+    margin:18px 0 8px;font-size:14px;line-height:1.9;
+    box-shadow:0 4px 14px rgba(47,157,240,.08);
+  }
+  .tip b{color:#1fa873;}
+  .section-title{
+    font-size:18px;margin:26px 0 12px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .section-title::before{
+    content:"";width:5px;height:20px;border-radius:3px;
+    background:linear-gradient(180deg,#35d29a,#2f9df0);
+  }
+  .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(47,157,240,.08);}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  thead th{
+    background:#f0faf6;color:#1fa873;font-size:13.5px;
+    padding:11px 10px;text-align:left;white-space:nowrap;
+    border-bottom:2px solid #d9f2e8;
+  }
+  tbody td{
+    padding:11px 10px;border-bottom:1px solid #eef4f2;vertical-align:top;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfb;}
+  .num{color:#8aa09a;font-size:12.5px;width:40px;}
+  .word{font-weight:700;font-size:16px;color:#2f6ba3;}
+  .ipa{color:#b05a2e;font-family:"Segoe UI",Georgia,serif;white-space:nowrap;}
+  .pos{color:#1fa873;font-weight:600;white-space:nowrap;}
+  .cn{color:#4a5a63;}
+  .note{
+    background:#fff8ef;border-left:4px solid #f5a623;
+    border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0 4px;
+    font-size:13.5px;line-height:1.9;color:#7a5b23;
+  }
+  footer{text-align:center;font-size:12px;color:#8aa09a;margin-top:30px;letter-spacing:1px;}
+  @media print{
+    body{background:#fff;padding:0;}
+    header{box-shadow:none;}
+    .card{box-shadow:none;border:1px solid #ddd;}
+  }
+
+  /* 隐藏/显示列 切换按钮 */
+  .top-toggle{
+    margin:12px 5px 0;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:38px;
+    padding:0 16px;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s,transform .08s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .top-toggle:active{transform:scale(.97);}
+  @media (hover:hover){
+    .top-toggle:hover{background:rgba(255,255,255,.30);}
+  }
+  /* 一键隐藏/恢复 单词列（第 2 列） */
+  body.hide-word th:nth-child(2),body.hide-word td:nth-child(2){display:none;}
+  /* 一键隐藏/恢复 释义列（第 5 列） */
+  body.hide-cn th:nth-child(5),body.hide-cn td:nth-child(5){display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">2026秋 · 人教新目标版（2026新版）· 新课标</span>
+    <h1>九年级上册 Unit 1 Our Changing World</h1>
+    <p>我们的世界在变化 · 课标单词表（含音标 / 词性 / 释义）</p>
+      <button class="top-toggle" id="btnToggleWord" type="button">隐藏单词列</button>
+    <button class="top-toggle" id="btnToggleCn" type="button">隐藏释义列</button>
+</header>
+
+  <div class="tip">
+    本单元话题为 <b>我们的世界在变化（Our Changing World）</b>，家乡环境变化（沙尘暴治理、政府帮扶）、科技发展与国际合作。教材词汇表核心课标词共 <b>53 个词条</b>。
+  </div>
+
+  <div class="section-title">📖 课标单词表（教材词汇表 53 词条）</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>#</th><th>单词</th><th>音标（英式）</th><th>词性</th><th>释义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="word">sandstorm</td><td class="ipa">/ˈsændstɔːrm/</td><td class="pos">n.</td><td class="cn">沙尘暴</td></tr>
+        <tr><td class="num">2</td><td class="word">sandy</td><td class="ipa">/ˈsændi/</td><td class="pos">adj.</td><td class="cn">铺满沙子的；含沙的</td></tr>
+        <tr><td class="num">3</td><td class="word">soil</td><td class="ipa">/sɔɪl/</td><td class="pos">n.</td><td class="cn">土壤</td></tr>
+        <tr><td class="num">4</td><td class="word">shortage</td><td class="ipa">/ˈʃɔːrtɪdʒ/</td><td class="pos">n.</td><td class="cn">短缺；不足</td></tr>
+        <tr><td class="num">5</td><td class="word">farmland</td><td class="ipa">/ˈfɑːrmlænd/</td><td class="pos">n.</td><td class="cn">耕地；农田</td></tr>
+        <tr><td class="num">6</td><td class="word">lack</td><td class="ipa">/læk/</td><td class="pos">v. &amp; n.</td><td class="cn">缺乏</td></tr>
+        <tr><td class="num">7</td><td class="word">bush</td><td class="ipa">/bʊʃ/</td><td class="pos">n.</td><td class="cn">灌木</td></tr>
+        <tr><td class="num">8</td><td class="word">root</td><td class="ipa">/ruːt/</td><td class="pos">n.</td><td class="cn">根</td></tr>
+        <tr><td class="num">9</td><td class="word">rough</td><td class="ipa">/rʌf/</td><td class="pos">adj.</td><td class="cn">崎岖的；粗糙的</td></tr>
+        <tr><td class="num">10</td><td class="word">narrow</td><td class="ipa">/ˈnæroʊ/</td><td class="pos">adj.</td><td class="cn">狭窄的</td></tr>
+        <tr><td class="num">11</td><td class="word">government</td><td class="ipa">/ˈɡʌvərnmənt/</td><td class="pos">n.</td><td class="cn">政府</td></tr>
+        <tr><td class="num">12</td><td class="word">greenhouse</td><td class="ipa">/ˈɡriːnhaʊs/</td><td class="pos">n.</td><td class="cn">温室；大棚</td></tr>
+        <tr><td class="num">13</td><td class="word">corn</td><td class="ipa">/kɔːrn/</td><td class="pos">n.</td><td class="cn">玉米；谷物</td></tr>
+        <tr><td class="num">14</td><td class="word">wide</td><td class="ipa">/waɪd/</td><td class="pos">adj.</td><td class="cn">宽阔的</td></tr>
+        <tr><td class="num">15</td><td class="word">highway</td><td class="ipa">/ˈhaɪweɪ/</td><td class="pos">n.</td><td class="cn">公路；高速公路</td></tr>
+        <tr><td class="num">16</td><td class="word">railway</td><td class="ipa">/ˈreɪlweɪ/</td><td class="pos">n.</td><td class="cn">铁路</td></tr>
+        <tr><td class="num">17</td><td class="word">covered with</td><td class="ipa">/bi ˈkʌvərd wɪð/</td><td class="pos">phr.</td><td class="cn">被……覆盖</td></tr>
+        <tr><td class="num">18</td><td class="word">bring about</td><td class="ipa">/brɪŋ əˈbaʊt/</td><td class="pos">v.</td><td class="cn">带来；引起</td></tr>
+        <tr><td class="num">19</td><td class="word">ease</td><td class="ipa">/iːz/</td><td class="pos">v. &amp; n.</td><td class="cn">减轻；缓解</td></tr>
+        <tr><td class="num">20</td><td class="word">villager</td><td class="ipa">/ˈvɪlɪdʒər/</td><td class="pos">n.</td><td class="cn">村民</td></tr>
+        <tr><td class="num">21</td><td class="word">flat</td><td class="ipa">/flæt/</td><td class="pos">n.</td><td class="cn">公寓</td></tr>
+        <tr><td class="num">22</td><td class="word">housing</td><td class="ipa">/ˈhaʊzɪŋ/</td><td class="pos">n.</td><td class="cn">住房；住宅</td></tr>
+        <tr><td class="num">23</td><td class="word">satisfied with</td><td class="ipa">/bi ˈsætɪsfaɪd wɪð/</td><td class="pos">phr.</td><td class="cn">对……感到满意</td></tr>
+        <tr><td class="num">24</td><td class="word">e-payment</td><td class="ipa">/ˈiː peɪmənt/</td><td class="pos">n.</td><td class="cn">电子支付</td></tr>
+        <tr><td class="num">25</td><td class="word">electronic</td><td class="ipa">/ɪˌlekˈtrɑːnɪk/</td><td class="pos">adj.</td><td class="cn">电子的</td></tr>
+        <tr><td class="num">26</td><td class="word">convenient</td><td class="ipa">/kənˈviːniənt/</td><td class="pos">adj.</td><td class="cn">方便的；便利的</td></tr>
+        <tr><td class="num">27</td><td class="word">high-tech</td><td class="ipa">/ˌhaɪ ˈtek/</td><td class="pos">adj.</td><td class="cn">高科技的</td></tr>
+        <tr><td class="num">28</td><td class="word">link</td><td class="ipa">/lɪŋk/</td><td class="pos">v. &amp; n.</td><td class="cn">连接；联系</td></tr>
+        <tr><td class="num">29</td><td class="word">audio</td><td class="ipa">/ˈɔːdiəʊ/</td><td class="pos">n. &amp; adj.</td><td class="cn">音频（的）</td></tr>
+        <tr><td class="num">30</td><td class="word">easily</td><td class="ipa">/ˈiːzəli/</td><td class="pos">adv.</td><td class="cn">容易地</td></tr>
+        <tr><td class="num">31</td><td class="word">man-made</td><td class="ipa">/ˌmæn ˈmeɪd/</td><td class="pos">adj.</td><td class="cn">人造的；非天然的</td></tr>
+        <tr><td class="num">32</td><td class="word">support</td><td class="ipa">/səˈpɔːrt/</td><td class="pos">v. &amp; n.</td><td class="cn">支持</td></tr>
+        <tr><td class="num">33</td><td class="word">greatly</td><td class="ipa">/ˈɡreɪtli/</td><td class="pos">adv.</td><td class="cn">大大地；非常</td></tr>
+        <tr><td class="num">34</td><td class="word">Mombasa</td><td class="ipa">/mɒmˈbæsə/</td><td class="pos">n.</td><td class="cn">蒙巴萨（肯尼亚城市）</td></tr>
+        <tr><td class="num">35</td><td class="word">port</td><td class="ipa">/pɔːrt/</td><td class="pos">n.</td><td class="cn">港口</td></tr>
+        <tr><td class="num">36</td><td class="word">Kenyan</td><td class="ipa">/ˈkenjən/</td><td class="pos">n. &amp; adj.</td><td class="cn">肯尼亚人（的）</td></tr>
+        <tr><td class="num">37</td><td class="word">truck</td><td class="ipa">/trʌk/</td><td class="pos">n.</td><td class="cn">卡车</td></tr>
+        <tr><td class="num">38</td><td class="word">manager</td><td class="ipa">/ˈmænɪdʒər/</td><td class="pos">n.</td><td class="cn">经理</td></tr>
+        <tr><td class="num">39</td><td class="word">business</td><td class="ipa">/ˈbɪznəs/</td><td class="pos">n.</td><td class="cn">生意；商业</td></tr>
+        <tr><td class="num">40</td><td class="word">product</td><td class="ipa">/ˈprɑːdʌkt/</td><td class="pos">n.</td><td class="cn">产品</td></tr>
+        <tr><td class="num">41</td><td class="word">capital</td><td class="ipa">/ˈkæpɪtl/</td><td class="pos">n.</td><td class="cn">首都</td></tr>
+        <tr><td class="num">42</td><td class="word">miracle</td><td class="ipa">/ˈmɪrəkl/</td><td class="pos">n.</td><td class="cn">奇迹</td></tr>
+        <tr><td class="num">43</td><td class="word">attraction</td><td class="ipa">/əˈtrækʃn/</td><td class="pos">n.</td><td class="cn">向往的地方；吸引力</td></tr>
+        <tr><td class="num">44</td><td class="word">benefit</td><td class="ipa">/ˈbenɪfɪt/</td><td class="pos">n. &amp; v.</td><td class="cn">益处；使受益</td></tr>
+        <tr><td class="num">45</td><td class="word">socialist</td><td class="ipa">/ˈsoʊʃəlɪst/</td><td class="pos">adj.</td><td class="cn">社会主义的</td></tr>
+        <tr><td class="num">46</td><td class="word">lead</td><td class="ipa">/liːd/</td><td class="pos">v.</td><td class="cn">带领；过（某种生活）</td></tr>
+        <tr><td class="num">47</td><td class="word">dust</td><td class="ipa">/dʌst/</td><td class="pos">n.</td><td class="cn">尘土</td></tr>
+        <tr><td class="num">48</td><td class="word">path</td><td class="ipa">/pɑːθ/</td><td class="pos">n.</td><td class="cn">小路；小径</td></tr>
+        <tr><td class="num">49</td><td class="word">Olympic Games</td><td class="ipa">/ðə əˈlɪmpɪk ˈɡeɪmz/</td><td class="pos">n.</td><td class="cn">奥林匹克运动会</td></tr>
+        <tr><td class="num">50</td><td class="word">junior</td><td class="ipa">/ˈdʒuːniər/</td><td class="pos">adj.</td><td class="cn">低年级的；初级的</td></tr>
+        <tr><td class="num">51</td><td class="word">discussion</td><td class="ipa">/dɪˈskʌʃn/</td><td class="pos">n.</td><td class="cn">讨论</td></tr>
+        <tr><td class="num">52</td><td class="word">aspect</td><td class="ipa">/ˈæspekt/</td><td class="pos">n.</td><td class="cn">方面</td></tr>
+        <tr><td class="num">53</td><td class="word">summary</td><td class="ipa">/ˈsʌməri/</td><td class="pos">n.</td><td class="cn">总结；概括</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    💡 说明：本表依据 2026 秋人教版（2026 新版）新课标九年级上册 Unit 1《Our Changing World》教材词汇表整理；音标采用英式（DJ）标注。点击页头按钮可一键隐藏单词列或释义列，方便自测。
+  </div>
+
+  <footer>© 2026 豆豆助理 · 人教版九年级上册 Unit 1 课标单词表</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function makeToggle(btnId, cls, showText, hideText){
+    var btn = document.getElementById(btnId);
+    if(!btn) return;
+    function sync(){
+      btn.textContent = document.body.classList.contains(cls) ? showText : hideText;
+    }
+    btn.addEventListener('click', function(){
+      document.body.classList.toggle(cls);
+      sync();
+    });
+    sync();
+  }
+  makeToggle('btnToggleWord', 'hide-word', '显示单词列', '隐藏单词列');
+  makeToggle('btnToggleCn', 'hide-cn', '显示释义列', '隐藏释义列');
+})();
+</script>
+</body>
+</html>
