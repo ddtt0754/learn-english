@@ -27,6 +27,33 @@
   .note{background:#fff8ef;border-left:4px solid #f5a623;border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0 4px;font-size:13px;line-height:1.9;color:#7a5b23;}
   footer{text-align:center;font-size:12px;color:#8aa09a;margin-top:28px;letter-spacing:1px;}
   @media print{body{background:#fff;padding:0;}header{box-shadow:none;}.speech,.trans{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 隐藏/显示音标注释切换按钮 */
+  .top-toggle{
+    margin-top:12px;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:38px;
+    padding:0 18px;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s,transform .08s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .top-toggle:active{transform:scale(.97);}
+  @media (hover:hover){
+    .top-toggle:hover{background:rgba(255,255,255,.30);}
+  }
+  /* 一键隐藏红色音标词性释义小字（加粗单词保留） */
+  body.hide-ph .ref{display:none;}
 </style>
 </head>
 <body>
@@ -35,7 +62,8 @@
     <span class="badge">2026秋 · 人教PEP版（2024新版）· 汕头2027中考口语演讲</span>
     <h1>英语演讲稿 · 六年级上册 Unit 3 Healthy life</h1>
     <p>全覆盖 20 个课标单词（加粗 + 红色音标 / 词性 / 释义）</p>
-  </header>
+      <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
 
   <div class="speech">
     <div class="title">A Healthy Life</div>
@@ -68,5 +96,21 @@
 
   <footer>© 2026 豆豆助理 · 汕头 2027 中考口语演讲训练 · 人教PEP六年级上册 Unit 3</footer>
 </div>
+
+<script>
+(function(){
+  "use strict";
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  if(!btnTogglePh) return;
+  function syncLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncLabel();
+  });
+  syncLabel();
+})();
+</script>
 </body>
 </html>
