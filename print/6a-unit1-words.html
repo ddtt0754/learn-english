@@ -30,6 +30,35 @@
   .cn{color:#4a5a63;}
   .note{background:#fff8ef;border-left:4px solid #f5a623;border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0 4px;font-size:13.5px;line-height:1.9;color:#7a5b23;}
   footer{text-align:center;font-size:12px;color:#8aa09a;margin-top:30px;letter-spacing:1px;}
+
+  /* 隐藏/显示列 切换按钮 */
+  .top-toggle{
+    margin:12px 5px 0;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:38px;
+    padding:0 16px;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s,transform .08s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .top-toggle:active{transform:scale(.97);}
+  @media (hover:hover){
+    .top-toggle:hover{background:rgba(255,255,255,.30);}
+  }
+  /* 一键隐藏/恢复 单词列（第 2 列） */
+  body.hide-word th:nth-child(2),body.hide-word td:nth-child(2){display:none;}
+  /* 一键隐藏/恢复 释义列（第 5 列） */
+  body.hide-cn th:nth-child(5),body.hide-cn td:nth-child(5){display:none;}
 </style>
 </head>
 <body>
@@ -38,7 +67,9 @@
     <span class="badge">2026秋 · 人教PEP新课标 · 六年级上册</span>
     <h1>六年级上册 Unit 1 Travel</h1>
     <p>旅行见闻 · 课标单词表（含音标 / 词性 / 释义）</p>
-  </header>
+      <button class="top-toggle" id="btnToggleWord" type="button">隐藏单词列</button>
+    <button class="top-toggle" id="btnToggleCn" type="button">隐藏释义列</button>
+</header>
   <div class="tip">本单元话题为 <b>旅行见闻</b>。教材词汇表共 <b>19 个课标单词</b>。</div>
   <div class="section-title">📖 课标单词表（19 词条）</div>
   <div class="card">
@@ -70,5 +101,25 @@
   <div class="note">💡 说明：本表依据 2026 秋人教 PEP（新课标）六年级上册 Unit 1《Travel》教材词汇表整理；音标采用英式（DJ）标注。</div>
   <footer>© 2026 豆豆助理 · 六年级上册 Unit 1 课标单词表</footer>
 </div>
+
+<script>
+(function(){
+  "use strict";
+  function makeToggle(btnId, cls, showText, hideText){
+    var btn = document.getElementById(btnId);
+    if(!btn) return;
+    function sync(){
+      btn.textContent = document.body.classList.contains(cls) ? showText : hideText;
+    }
+    btn.addEventListener('click', function(){
+      document.body.classList.toggle(cls);
+      sync();
+    });
+    sync();
+  }
+  makeToggle('btnToggleWord', 'hide-word', '显示单词列', '隐藏单词列');
+  makeToggle('btnToggleCn', 'hide-cn', '显示释义列', '隐藏释义列');
+})();
+</script>
 </body>
 </html>
