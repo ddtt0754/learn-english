@@ -287,7 +287,7 @@
  *
  * 文件命名规则（print 目录内）：
  *   演讲稿：级数-单元数-speech.html（九年级上册 Unit 1 特殊：9a-unit1_speech.html）
- *   单词表：级数-单元数-words.html（九年级上册暂无单词表）
+ *   单词表：级数-单元数-words.html（九年级上册已生成 9a-unit1~7-words.html）
  * 用法：
  *   mk("四年级", 6)  → 生成 Unit 1~6，speech + words 都有
  *   mk("九年级", 7, {speechOnly:true}) → 只生成 speech，words 为 null
@@ -311,13 +311,13 @@ function mk(grade, n, opt){
    3a: Unit 1；4a/5a/6a: Unit 1~6；7a: Unit 1~7；8a: Unit 1~8；9a: Unit 1~7（仅演讲稿）
    后续生成新单元后，直接在该年级 mk() 的 n 上 +1 即可 */
 const DATA = {
-  "三年级": { "上册": mk("三年级",1) },
+  "三年级": { "上册": mk("三年级",6) },
   "四年级": { "上册": mk("四年级",6) },
   "五年级": { "上册": mk("五年级",6) },
   "六年级": { "上册": mk("六年级",6) },
   "七年级": { "上册": mk("七年级",7) },
   "八年级": { "上册": mk("八年级",8) },
-  "九年级": { "上册": mk("九年级",7, {speechOnly:true}) }
+  "九年级": { "上册": mk("九年级",7) }
 };
 /* 九年级 Unit 1 演讲稿文件名为特殊格式 */
 DATA["九年级"]["上册"][0].speech = "9a-unit1_speech.html";
