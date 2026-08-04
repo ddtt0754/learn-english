@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>短文听读说写训练 · 全学段英语学习站 · 用途与使用说明</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:760px;}
+
+  /* 顶部标题卡 */
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:23px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:4px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  /* 章节 */
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:16px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+  .kbd{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12.5px;color:#2f6ba3;font-weight:600;}
+  .pill{display:inline-block;background:#eefaf4;border:1px solid #cdeee0;border-radius:999px;padding:2px 12px;font-size:12px;color:#1fa873;font-weight:600;margin:2px 2px;}
+  .tip-box{background:#fff8ef;border-left:4px solid #f5a623;border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0 4px;font-size:13.5px;line-height:1.9;color:#7a5b23;}
+  .entry-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+  .entry{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:14px;padding:16px;text-align:center;}
+  .entry .icon{font-size:30px;}
+  .entry .name{font-size:15px;font-weight:700;color:#2f6ba3;margin:6px 0 2px;}
+  .entry .desc{font-size:12.5px;color:#6b7c86;line-height:1.7;}
+  @media (max-width:560px){.entry-grid{grid-template-columns:1fr;}}
+  .feature{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed #e8f0ec;}
+  .feature:last-child{border-bottom:none;}
+  .feature .f-icon{flex-shrink:0;width:40px;height:40px;border-radius:12px;background:#eefaf4;display:flex;align-items:center;justify-content:center;font-size:20px;}
+  .feature .f-body b{color:#2f6ba3;font-size:14.5px;}
+  .feature .f-body p{font-size:13.5px;color:#5a6c76;margin:2px 0 0;}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0;}
+  .flow .step{background:#fff;border:1.5px solid #cdeee0;border-radius:12px;padding:10px 14px;font-size:13px;color:#2f6ba3;font-weight:600;}
+  .flow .arrow{color:#8aa09a;font-size:14px;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:9px 10px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:8px 10px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>📖 短文听读说写训练</h1>
+    <p class="sub">全学段英语学习站 · 用途与使用说明</p>
+    <p class="meta">人教版（PEP）新课标 · 小学 3~6 年级 + 初中 7~9 年级 · 92 个单元</p>
+  </header>
+
+  <!-- 一、网站是什么 -->
+  <section class="sec">
+    <h2><span class="no">一</span>这个网站是做什么的？</h2>
+    <p>这是一个基于 <b>人教版（PEP）新课标英语教材</b> 的 H5 网页学习站，把小学三年级到初中九年级共 14 个学期、92 个单元的内容，整合成一套「<b>听、读、说、写</b>」四维训练资源。所有页面均为<b>单文件 HTML</b>，无需安装任何软件、无需联网依赖，打开浏览器即可使用，手机 / 平板 / 电脑通用。</p>
+    <p>每个单元都配套两类内容：</p>
+    <ul>
+      <li><b>📖 课标单词表</b> —— 教材全部课标单词（含音标、词性、释义），支持「隐藏单词列 / 隐藏释义列」自测；</li>
+      <li><b>🎧 跟读练习页</b> —— 把本单元的演讲稿 / 对话稿逐句拆开，用 <b>美式女声</b> 朗读，一句一句跟读练口语；</li>
+      <li><b>🖨️ 打印版页面</b> —— 单词表与演讲稿的「打印友好版」，一键隐藏注释后可直接打印成默写卷 / 讲义。</li>
+    </ul>
+    <p>内容还兼顾了 <b>汕头 2027 中考</b> 口语考试的情境要求，演讲稿话题贴合考纲。</p>
+  </section>
+
+  <!-- 二、网站构成 -->
+  <section class="sec">
+    <h2><span class="no">二</span>网站由哪几部分组成？</h2>
+    <p>网站有两个入口，从 <span class="kbd">index.html</span>（全学段导航主页）进入后即可互相切换：</p>
+    <div class="entry-grid">
+      <div class="entry">
+        <div class="icon">🎧</div>
+        <div class="name">跟读练习站（主站）</div>
+        <div class="desc">入口：<span class="kbd">index.html</span><br>92 个单元跟读页，逐句美式发音跟读、循环播放、同步高亮，练「听、说」。</div>
+      </div>
+      <div class="entry">
+        <div class="icon">🖨️</div>
+        <div class="name">打印版（辅助站）</div>
+        <div class="desc">入口：主页顶部按钮 → <span class="kbd">print/index.html</span><br>92 个打印页（46 份单词表 + 46 份演讲稿/对话稿），可隐藏注释后打印，练「读、写」。</div>
+      </div>
+    </div>
+    <p class="tip-box">💡 在跟读练习站主页顶部的绿色渐变标题卡内，有一个「🖨️ 打印版 · 单词表 &amp; 演讲稿」按钮，点击即可进入打印站。</p>
+  </section>
+
+  <!-- 三、如何开始使用 -->
+  <section class="sec">
+    <h2><span class="no">三</span>如何开始使用？</h2>
+    <h3>① 选择年级与单元</h3>
+    <div class="flow">
+      <span class="step">打开 index.html</span><span class="arrow">→</span>
+      <span class="step">点年级标签（三~九年级）</span><span class="arrow">→</span>
+      <span class="step">选学期（上/下册）</span><span class="arrow">→</span>
+      <span class="step">点单元卡片</span><span class="arrow">→</span>
+      <span class="step">进入跟读页</span>
+    </div>
+    <ul>
+      <li>年级可通过顶部<b>标签页</b>或<b>下拉框</b>双向切换，选中后下方九宫格自动显示该学期全部单元；</li>
+      <li>九宫格内的单元卡片点击后变绿显示「打开中…」再跳转，手机触摸友好；</li>
+      <li>需要打印版时，点主页顶部「🖨️ 打印版」按钮进入打印站，同样按年级、单元选择。</li>
+    </ul>
+
+    <h3>② 一个单元能看到什么？</h3>
+    <table>
+      <thead><tr><th>页面类型</th><th>内容</th><th>核心功能</th></tr></thead>
+      <tbody>
+        <tr><td>📖 单词表</td><td>课标单词（音标/词性/释义）</td><td>隐藏单词列、隐藏释义列，英汉互译自测</td></tr>
+        <tr><td>📝 演讲稿/对话稿</td><td>单元主题短文或双人对话，词条全覆盖</td><td>隐藏音标注释、整篇中文翻译、打印</td></tr>
+        <tr><td>🎧 跟读 H5</td><td>逐句拆分 + 中文对照</td><td>美式女声单句朗读、全文循环、同步高亮</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 四、跟读页功能 -->
+  <section class="sec">
+    <h2><span class="no">四</span>跟读练习页功能详解</h2>
+    <div class="feature"><div class="f-icon">▶️</div><div class="f-body"><b>逐句播放 / 暂停</b><p>每一句英文末尾都有「播放 / 暂停」按钮，也可直接点击句子播放；暂停后再次播放会从暂停处继续。</p></div></div>
+    <div class="feature"><div class="f-icon">🔁</div><div class="f-body"><b>全文循环播放（最多 10 轮）</b><p>页面底部固定控制条：点击「▶ 全文循环播放」从第一句开始循环，最多 10 遍，控制条上方实时显示当前轮数；「■ 停止全部朗读」随时终止。</p></div></div>
+    <div class="feature"><div class="f-icon">👩‍🏫</div><div class="f-body"><b>美式女声朗读（只读英文）</b><p>使用浏览器原生 Web Speech API，自动优先选择 en-US 女声（Samantha / Zira / Google US 等），零第三方依赖；每句朗读时严格只读英文，音标注释与中文绝不会被读出。</p></div></div>
+    <div class="feature"><div class="f-icon">🎯</div><div class="f-body"><b>同步高亮</b><p>正在朗读的句子淡黄高亮并自动滚动居中，所在卡片的中文翻译块同步变蓝，原文 / 中文 / 单词注释一眼区分。</p></div></div>
+    <div class="feature"><div class="f-icon">🙈</div><div class="f-body"><b>隐藏 / 显示音标注释</b><p>页头「隐藏音标注释」按钮一键隐藏全部红色音标词性释义小字（加粗单词保留），用于遮挡自测，再次点击恢复。</p></div></div>
+  </section>
+
+  <!-- 五、打印版功能 -->
+  <section class="sec">
+    <h2><span class="no">五</span>打印版（print 站）功能详解</h2>
+    <div class="feature"><div class="f-icon">🖨️</div><div class="f-body"><b>打印友好设计</b><p>所有打印页都带「打印样式」：打印时自动去除背景、阴影，保留清晰的黑白文字，直接 Ctrl/Cmd + P 即可输出。</p></div></div>
+    <div class="feature"><div class="f-icon">🎴</div><div class="f-body"><b>单词表双列自测</b><p>页头两个按钮：<span class="kbd">隐藏单词列</span>（只看音标释义默写英文）、<span class="kbd">隐藏释义列</span>（只看单词音标默写中文），可组合出不同题型。</p></div></div>
+    <div class="feature"><div class="f-icon">📝</div><div class="f-body"><b>演讲稿 / 对话稿</b><p>词条加粗 + 红色音标词性释义标注，底部附整篇中文翻译；「隐藏音标注释」后可当纯净版朗读或测试材料。</p></div></div>
+    <div class="feature"><div class="f-icon">🔍</div><div class="f-body"><b>词汇全覆盖校验</b><p>每个页面的橙色提示条列明本单元全部课标单词，并注明「全部嵌入、无遗漏」，方便核对。</p></div></div>
+  </section>
+
+  <!-- 六、适用场景 -->
+  <section class="sec">
+    <h2><span class="no">六</span>适合在哪些场景使用？</h2>
+    <ul>
+      <li><b>🏫 课堂听读训练</b> —— 教师投屏讲解，学生逐句跟读、循环听全文；</li>
+      <li><b>🏠 课后自主学习</b> —— 学生手机打开即练，先跟读再遮挡注释自测，家长无需装软件；</li>
+      <li><b>📄 打印默写 / 讲义</b> —— 打印版单词表做成默写卷、演讲稿做成晨读材料；</li>
+      <li><b>🎤 中考口语备考</b> —— 汕头 2027 中考口语情境演讲稿，话题与考纲贴合，适合模拟演讲；</li>
+      <li><b>👨‍👩‍👧 亲子共学</b> —— 对话稿形式的双人角色跟读，适合家长与孩子分角色练习。</li>
+    </ul>
+  </section>
+
+  <!-- 七、小贴士 -->
+  <section class="sec">
+    <h2><span class="no">七</span>使用小贴士</h2>
+    <div class="tip-box">
+      <b>关于朗读声音：</b>朗读依赖浏览器的语音合成（Web Speech API），推荐使用 Chrome / Edge / Safari。Windows 系统一般自带 Microsoft 美音女声；若首次点击没有声音，多半是语音列表还未加载完，再点一次即可，页面已做自动重选处理。
+    </div>
+    <div class="tip-box">
+      <b>关于离线使用：</b>所有页面都是自包含的单文件 HTML，把「短文听读说写训练-全学段」整个文件夹拷贝到 U 盘或本地，不联网也能正常使用（仅语音朗读需要浏览器自带语音，同样离线可用）。
+    </div>
+    <div class="tip-box">
+      <b>关于打印：</b>在打印版页面按 Ctrl/Cmd + P，建议在打印设置里勾选「背景图形」以保留卡片底色（可选），不勾选也能得到清晰的黑白文稿。
+    </div>
+  </section>
+
+  <footer>© 2026 两英豆豆教练 · 短文听读说写训练 · 全学段英语学习站</footer>
+</div>
+</body>
+</html>
