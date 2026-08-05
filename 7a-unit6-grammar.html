@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>A Day in the Life · 语法精读</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--green:#2ebd85;--blue:#2f9df0;--text:#33434b;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);color:var(--text);line-height:1.9;min-height:100vh;display:flex;justify-content:center;padding:28px 16px 60px}
+.container{width:100%;max-width:800px}
+.title-card{position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;box-shadow:0 14px 30px rgba(47,157,240,.25)}
+.title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14)}
+.title-card::before{width:120px;height:120px;top:-40px;right:-30px}
+.title-card::after{width:70px;height:70px;bottom:-24px;left:-16px}
+.title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700}
+.title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94}
+.title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88}
+.sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow)}
+.sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec}
+.sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0}
+.sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px}
+.sec p{font-size:14.5px;color:#4a5a63;margin:8px 0}
+.sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none}
+.sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative}
+.sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0)}
+.sec ul li b{color:#2f6ba3}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600}
+tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top}
+tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b}
+tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fafdfc}
+.tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px}
+.tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873}
+.tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a}
+.sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+@media(max-width:560px){.sum-grid{grid-template-columns:1fr}}
+.sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px}
+.sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px}
+.sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3}
+footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px}
+@media print{body{background:#fff}.sec{box-shadow:none;border:1px solid #ddd}}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="title-card"><h1>⏰ A Day in the Life</h1><p class="sub">七年级上册 Unit 6 · 语法精读与固定搭配分类</p><p class="meta">2024新版 · 人教 PEP · 39 个课标单词</p></header>
+<section class="sec"><h2><span class="no">一</span>语法要点逐段解读</h2>
+<h3>¶ 开场</h3><table><thead><tr><th style="width:55%">句子要点</th><th style="width:45%">语法点</th></tr></thead><tbody>
+<tr><td class="sen">Good morning… Today, my topic is <i>A Day in My Life</i>.</td><td class="gram">问候语</td></tr>
+</tbody></table>
+<h3>¶ 早晨日常</h3><table><thead><tr><th style="width:55%">句子要点</th><th style="width:45%">语法点</th></tr></thead><tbody>
+<tr><td class="sen">I usually get up at a quarter past six.</td><td class="gram"><b>usually</b> 频度副词 · <b>get up</b> · 时间表达</td></tr>
+<tr><td class="sen">I take a shower, get dressed, and brush my teeth.</td><td class="gram"><b>take a shower / get dressed / brush teeth</b> 晨间三部曲</td></tr>
+<tr><td class="sen">I make use of my morning time to read.</td><td class="gram"><b>make use of</b> = 利用 · <b>to read</b> 目的状语</td></tr>
+<tr><td class="sen">I am on duty this week, so it is my duty to arrive early.</td><td class="gram"><b>on duty</b> · so 结果 · <b>it is ... to do</b> 形式主语</td></tr>
+</tbody></table>
+<h3>¶ 校园生活</h3><table><thead><tr><th style="width:55%">句子要点</th><th style="width:45%">语法点</th></tr></thead><tbody>
+<tr><td class="sen">At school, I have classes in the morning.</td><td class="gram"><b>have classes</b></td></tr>
+<tr><td class="sen">As a school reporter, I also write about our school life.</td><td class="gram"><b>As + 身份</b> · <b>write about</b></td></tr>
+<tr><td class="sen">Around noon, I have lunch in the dining hall.</td><td class="gram"><b>around noon</b> · <b>have lunch</b></td></tr>
+</tbody></table>
+<h3>¶ 芬兰朋友</h3><table><thead><tr><th style="width:55%">句子要点</th><th style="width:45%">语法点</th></tr></thead><tbody>
+<tr><td class="sen">My Finnish friend Sam lives in the north. In winter, it is dark outside for most of the day.</td><td class="gram">一般现在时 · <b>in the north</b> · <b>for most of</b></td></tr>
+<tr><td class="sen">He plays ice hockey and stays active.</td><td class="gram">一般现在时 · <b>stays active</b> = 保持活跃</td></tr>
+</tbody></table>
+<h3>¶ 结束语</h3><table><thead><tr><th style="width:55%">句子要点</th><th style="width:45%">语法点</th></tr></thead><tbody>
+<tr><td class="sen">A good daily routine makes a good life.</td><td class="gram"><b>make + 宾</b> · <b>daily routine</b></td></tr>
+<tr><td class="sen">Use every minute well, and every day will become beautiful!</td><td class="gram">祈使句 + and 结果 · 一般将来时 will</td></tr>
+</tbody></table>
+
+</section>
+<section class="sec"><h2><span class="no">二</span>固定搭配分类</h2>
+<h3>日常活动</h3><table><thead><tr><th>短语</th><th>释义</th></tr></thead><tbody>
+<tr><td>get up / get dressed</td><td>起床/穿衣</td></tr>
+<tr><td>take a shower</td><td>洗澡</td></tr>
+<tr><td>have classes / have lunch</td><td>上课/吃午饭</td></tr>
+<tr><td>make use of</td><td>利用</td></tr>
+<tr><td>stays active</td><td>保持活跃</td></tr>
+</tbody></table>
+<h3>时间表达</h3><table><thead><tr><th>短语</th><th>释义</th></tr></thead><tbody>
+<tr><td>at a quarter past six</td><td>六点一刻</td></tr>
+<tr><td>around noon</td><td>大约中午</td></tr>
+<tr><td>for most of the day</td><td>一天大部分时间</td></tr>
+<tr><td>on duty</td><td>值班</td></tr>
+</tbody></table>
+
+</section>
+<section class="sec"><h2><span class="no">三</span>语法总结</h2><h3>时态</h3>
+<table><thead><tr><th>时态</th><th>次数</th><th>典型例句</th></tr></thead><tbody>
+<tr><td><span class="tag">一般现在时</span></td><td>主体</td><td class="sen">get up / have classes / lives</td></tr>
+<tr><td><span class="tag">一般将来时</span></td><td>1 处</td><td class="sen">will become</td></tr>
+</tbody></table><p style="font-size:14px;color:#4a5a63">全篇一般现在时（日常行为）配合频度副词（usually/never）。重点：时刻表达法、形式主语 it is ... to do。</p>
+<h3>统计</h3><div class="sum-grid"><div class="sum-item"><div class="label">时态</div><div class="value">2 种</div></div>
+<div class="sum-item"><div class="label">频度副词</div><div class="value">usually/never/sometimes/always</div></div>
+<div class="sum-item"><div class="label">it 形式主语</div><div class="value">1 处</div></div></div><h3>备考要点</h3><ul><li><b>时刻表达</b>：a quarter past six / at about twelve——中考听力常考</li>
+<li><b>频度副词位置</b>：实义动词前（usually get up），be 后（is always）</li>
+<li><b>祈使句 + and</b>：Use every minute well, and... = If 条件句同义</li></ul></section>
+<footer>© 2026 豆豆助理 · 七年级上册 Unit 6 · 语法精读分析</footer>
+</div></body></html>

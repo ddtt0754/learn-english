@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>Happy Birthday! · 语法精读</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--green:#2ebd85;--blue:#2f9df0;--text:#33434b;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);color:var(--text);line-height:1.9;min-height:100vh;display:flex;justify-content:center;padding:28px 16px 60px}
+.container{width:100%;max-width:800px}
+.title-card{position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;box-shadow:0 14px 30px rgba(47,157,240,.25)}
+.title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14)}
+.title-card::before{width:120px;height:120px;top:-40px;right:-30px}
+.title-card::after{width:70px;height:70px;bottom:-24px;left:-16px}
+.title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700}
+.title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94}
+.title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88}
+.sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow)}
+.sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec}
+.sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0}
+.sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px}
+.sec p{font-size:14.5px;color:#4a5a63;margin:8px 0}
+.sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none}
+.sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative}
+.sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0)}
+.sec ul li b{color:#2f6ba3}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600}
+tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top}
+tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b}
+tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fafdfc}
+.tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px}
+.tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873}
+.tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a}
+.sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+@media(max-width:560px){.sum-grid{grid-template-columns:1fr}}
+.sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px}
+.sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px}
+.sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3}
+footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px}
+@media print{body{background:#fff}.sec{box-shadow:none;border:1px solid #ddd}}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="title-card"><h1>🎂 Happy Birthday!</h1><p class="sub">七年级上册 Unit 7 · 语法精读与固定搭配分类</p><p class="meta">2024新版 · 人教 PEP · 35 个课标单词</p></header>
+<section class="sec"><h2><span class="no">一</span>语法要点逐段解读</h2>
+<h3>¶ 开场</h3><table><thead><tr><th style="width:55%">句子要点</th><th style="width:45%">语法点</th></tr></thead><tbody>
+<tr><td class="sen">Good morning… Today, my topic is <i>A Happy Birthday</i>.</td><td class="gram">问候语</td></tr>
+</tbody></table>
+<h3>¶ 生日日期</h3><table><thead><tr><th style="width:55%">句子要点</th><th style="width:45%">语法点</th></tr></thead><tbody>
+<tr><td class="sen">What is your birthday date? My birthday is on August 2nd.</td><td class="gram">特殊疑问句 · <b>on + 日期</b></td></tr>
+<tr><td class="sen">It is a very special day for me, and my family always celebrates it.</td><td class="gram">主系表 · <b>for me</b> · always 频度副词</td></tr>
+</tbody></table>
+<h3>¶ 生日准备</h3><table><thead><tr><th style="width:55%">句子要点</th><th style="width:45%">语法点</th></tr></thead><tbody>
+<tr><td class="sen">This year, I wanted to do something special.</td><td class="gram">一般过去时 · <b>something + adj.</b> 后置定语</td></tr>
+<tr><td class="sen">I wrote a shopping list and went to the store with my mum.</td><td class="gram">一般过去时 · <b>shopping list</b> · <b>went to</b></td></tr>
+<tr><td class="sen">The store was having a sale. I bought a kilo of apples and some yogurt.</td><td class="gram">过去进行时 was having · 一般过去时 bought · <b>a kilo of</b></td></tr>
+</tbody></table>
+<h3>¶ 庆祝活动</h3><table><thead><tr><th style="width:55%">句子要点</th><th style="width:45%">语法点</th></tr></thead><tbody>
+<tr><td class="sen">On my birthday, my family held a big celebration.</td><td class="gram">一般过去时 held · <b>on my birthday</b></td></tr>
+<tr><td class="sen">Everyone sang Happy Birthday in different languages.</td><td class="gram">一般过去时 sang · <b>in different languages</b></td></tr>
+<tr><td class="sen">My grandma cooked long noodles, a symbol of long life.</td><td class="gram">一般过去时 · <b>a symbol of</b> = …的象征</td></tr>
+</tbody></table>
+<h3>¶ 国家节日</h3><table><thead><tr><th style="width:55%">句子要点</th><th style="width:45%">语法点</th></tr></thead><tbody>
+<tr><td class="sen">In China, we also celebrate national festivals.</td><td class="gram"><b>In China</b> · <b>national festivals</b></td></tr>
+<tr><td class="sen">The national day marks the founding of our country.</td><td class="gram">一般现在时 · <b>marks</b> = 纪念</td></tr>
+</tbody></table>
+<h3>¶ 结束语</h3><table><thead><tr><th style="width:55%">句子要点</th><th style="width:45%">语法点</th></tr></thead><tbody>
+<tr><td class="sen">Birthdays are not just about cakes. They are symbols of growing up.</td><td class="gram"><b>not just about</b> · <b>symbols of</b></td></tr>
+<tr><td class="sen">Cherish every birthday and enjoy every moment of life!</td><td class="gram">祈使句 and 并列</td></tr>
+</tbody></table>
+
+</section>
+<section class="sec"><h2><span class="no">二</span>固定搭配分类</h2>
+<h3>生日活动</h3><table><thead><tr><th>短语</th><th>释义</th></tr></thead><tbody>
+<tr><td>a kilo of</td><td>一公斤</td></tr>
+<tr><td>something special</td><td>特别的东西</td></tr>
+<tr><td>a symbol of</td><td>…的象征</td></tr>
+<tr><td>not just about</td><td>不仅仅是</td></tr>
+<tr><td>grow up</td><td>长大</td></tr>
+</tbody></table>
+<h3>介词短语</h3><table><thead><tr><th>短语</th><th>释义</th></tr></thead><tbody>
+<tr><td>on + 日期</td><td>在具体某一天</td></tr>
+<tr><td>in different languages</td><td>用不同语言</td></tr>
+<tr><td>for me</td><td>对我来说</td></tr>
+<tr><td>in China</td><td>在中国</td></tr>
+</tbody></table>
+
+</section>
+<section class="sec"><h2><span class="no">三</span>语法总结</h2><h3>时态</h3>
+<table><thead><tr><th>时态</th><th>次数</th><th>典型例句</th></tr></thead><tbody>
+<tr><td><span class="tag">一般过去时</span></td><td>主体</td><td class="sen">wanted / wrote / went / bought / sang / held</td></tr>
+<tr><td><span class="tag">一般现在时</span></td><td>3 处</td><td class="sen">is / celebrates / marks</td></tr>
+<tr><td><span class="tag">过去进行时</span></td><td>1 处</td><td class="sen">was having a sale</td></tr>
+</tbody></table><p style="font-size:14px;color:#4a5a63">全册唯一以一般过去时为主体的单元——讲述已发生的生日庆祝。重点：不规则动词过去式、something + adj.。</p>
+<h3>统计</h3><div class="sum-grid"><div class="sum-item"><div class="label">时态</div><div class="value">3 种（一般过去为主 + 一般现在 + 过去进行）</div></div>
+<div class="sum-item"><div class="label">不规则动词</div><div class="value">went / bought / sang / held / wrote</div></div>
+<div class="sum-item"><div class="label">重点</div><div class="value">something + adj. / a symbol of / 日期表达</div></div></div><h3>备考要点</h3><ul><li><b>不规则动词过去式</b>：go→went / buy→bought / sing→sang / hold→held——七年级上必背</li>
+<li><b>something + adj.</b>：something special（不定代词 + 形容词后置）——中考固定搭配</li>
+<li><b>on + 日期</b>：on August 2nd（具体某天用 on）vs in August（月份用 in）</li></ul></section>
+<footer>© 2026 豆豆助理 · 七年级上册 Unit 7 · 语法精读分析</footer>
+</div></body></html>
