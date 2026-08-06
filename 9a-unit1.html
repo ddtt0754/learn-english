@@ -181,10 +181,12 @@
     white-space:nowrap;
   }
   .page-footer a:active{transform:scale(.97);}
-  .page-footer a.home{background:#fff;color:var(--ink);border:1.5px solid #cfd9d2;box-shadow:0 2px 6px rgba(0,0,0,.04);}
-  .page-footer a.grammar{background:#fff;color:var(--accent);border:1.5px solid var(--accent);box-shadow:0 2px 6px rgba(46,158,107,.10);}
-  .page-footer a.oral{background:linear-gradient(135deg,#35d29a,#2f9df0);box-shadow:0 4px 14px rgba(47,157,240,.25);}
-  .page-footer a.oral:hover{box-shadow:0 6px 18px rgba(47,157,240,.32);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral{
+    background:#fff;color:var(--accent);border:1.5px solid var(--accent);
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
 
   .loop-info{
     position:absolute;top:-22px;left:50%;transform:translateX(-50%);

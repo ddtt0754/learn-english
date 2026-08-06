@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>AI 口语对话 · Unit 6 Beyond Earth · 汕头2027中考</title>
+<style>
+:root{--green:#2ebd85;--green-deep:#1fa873;--green-light:#eefaf4;--green-border:#cdeee0;--blue:#2f9df0;--blue-deep:#2f6ba3;--blue-light:#eef4fb;--blue-border:#d3e5f6;--red:#d93025;--red-light:#fce8e6;--orange:#e37400;--orange-light:#fef7e0;--text:#33434b;--text-muted:#8aa09a;--card:#fff;--bg-grad:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;background:var(--bg-grad);color:var(--text);line-height:1.9;min-height:100vh;display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom))}
+.container{width:100%;max-width:640px}
+
+/* Header */
+.header{position:relative;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);border-radius:22px;padding:24px 20px 20px;text-align:center;color:#fff;box-shadow:0 14px 30px rgba(47,157,240,.25);margin-bottom:14px;overflow:hidden}
+.header::before,.header::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14)}
+.header::before{width:120px;height:120px;top:-40px;right:-30px}
+.header::after{width:70px;height:70px;bottom:-24px;left:-16px}
+.header h1{position:relative;font-size:18px;font-weight:700;letter-spacing:2px;text-shadow:0 2px 6px rgba(0,0,0,.12)}
+.header .sub{position:relative;font-size:11.5px;opacity:.94;margin-top:6px;letter-spacing:2px}
+.header .badge{position:relative;display:inline-block;background:rgba(255,255,255,.2);border-radius:999px;padding:2px 12px;font-size:10.5px;margin-top:8px;letter-spacing:1px}
+
+/* Progress bar */
+.prog-wrap{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12px;color:var(--text-muted);background:#fff;border-radius:12px;padding:10px 14px;box-shadow:var(--shadow)}
+.prog-bar{flex:1;height:5px;background:#d9f2e8;border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--blue));border-radius:3px;transition:width .3s}
+
+/* Chat area */
+.chat{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.msg{max-width:90%;padding:12px 16px;border-radius:16px;font-size:14.5px;line-height:1.8;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.msg.ai{align-self:flex-start;background:#fff;border:1.5px solid var(--green-border);border-bottom-left-radius:4px;box-shadow:0 2px 6px rgba(47,157,240,.06)}
+.msg.ai .label{font-size:10px;color:var(--green-deep);font-weight:700;margin-bottom:4px;letter-spacing:1px}
+.msg.ai b{color:var(--blue-deep)}
+.msg.user{align-self:flex-end;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);color:#fff;border-bottom-right-radius:4px;box-shadow:0 2px 6px rgba(47,157,240,.18)}
+.msg.score{align-self:flex-end;background:var(--green-light);border:1.5px solid var(--green-border);color:var(--green-deep);font-size:12px;padding:8px 14px;border-radius:12px;text-align:center}
+.msg.score .stars{font-size:16px;letter-spacing:2px}
+.msg.keywords{font-size:11.5px;opacity:.85}
+
+/* Input area */
+.input-area{position:sticky;bottom:12px;background:var(--card);border-radius:18px;padding:14px;box-shadow:0 -2px 16px rgba(47,157,240,.10);border:1.5px solid var(--green-border)}
+.recog-box{background:var(--blue-light);border:1.5px solid var(--blue-border);border-radius:12px;padding:12px;min-height:44px;font-size:14px;color:var(--text-muted);text-align:center;margin-bottom:10px;transition:all .3s}
+.recog-box.has-text{color:var(--text);border-color:var(--green-border);background:#fff}
+.recog-box.recording{border-color:var(--red);box-shadow:0 0 12px rgba(217,48,37,.20);background:#fff}
+.text-fallback{margin-bottom:10px}
+.text-fallback input{width:100%;border:1.5px solid var(--blue-border);border-radius:12px;padding:10px 14px;font-size:14px;font-family:inherit;color:var(--text);box-sizing:border-box;outline:none;transition:border .3s;background:#fff}
+.text-fallback input:focus{border-color:var(--blue);box-shadow:0 0 8px rgba(47,157,240,.18)}
+.text-fallback input::placeholder{color:var(--text-muted)}
+.btn-row{display:flex;gap:8px}
+.btn{flex:1;padding:13px;border:none;border-radius:14px;font-size:14.5px;font-weight:700;cursor:pointer;touch-action:manipulation;transition:all .2s}
+.btn:active{transform:scale(.97)}
+.btn-talk{background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;box-shadow:0 4px 12px rgba(47,157,240,.18)}
+.btn-talk.recording{background:linear-gradient(135deg,#666,#444);animation:blink .8s infinite;box-shadow:none}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.5}}
+.btn-submit{background:var(--blue-deep);color:#fff;box-shadow:0 4px 12px rgba(47,157,240,.18)}
+.btn-submit:disabled{background:#c0c8d4;color:#888;cursor:not-allowed;box-shadow:none}
+.btn-reset{background:#fff;border:2px solid var(--green-border);color:var(--text-muted);padding:13px 16px;border-radius:14px;font-size:14px;cursor:pointer;flex:0}
+
+/* Report */
+.report-card{display:none;background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-top:14px}
+.report-card.show{display:block}
+.report-card h2{text-align:center;font-size:19px;margin-bottom:8px}
+.report-card .total{text-align:center;font-size:44px;font-weight:800;margin:8px 0}
+.report-card .total.excellent{color:var(--green-deep)}
+.report-card .total.good{color:var(--blue-deep)}
+.report-card .total.fair{color:var(--orange)}
+.report-card .total.poor{color:var(--red)}
+.report-card .grade{text-align:center;font-size:15px;font-weight:700;margin-bottom:14px}
+.score-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.score-cell{background:var(--blue-light);border-radius:10px;padding:12px;text-align:center}
+.score-cell .sc-label{font-size:11px;color:var(--text-muted)}
+.score-cell .sc-val{font-size:20px;font-weight:800;margin:4px 0;color:var(--blue-deep)}
+.score-cell .sc-stars{font-size:13px}
+.tip{padding:12px 16px;border-radius:12px;font-size:13px;margin:10px 0;line-height:1.8}
+.tip.success{background:var(--green-light);border-left:4px solid var(--green)}
+.tip.info{background:var(--blue-light);border-left:4px solid var(--blue)}
+.tip.warn{background:var(--orange-light);border-left:4px solid var(--orange)}
+.unsupported{display:none;text-align:center;padding:40px;color:var(--red);font-size:15px}
+.unsupported.show{display:block}
+footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+    <h1>🤖 AI 口语对话 · Beyond Earth</h1>
+    <p class="sub">九年级上册 Unit 6 · 主题对话互动练习</p>
+    <span class="badge">汕头 2027 中考英语听说 · 情景问答 & 口头作文训练</span>
+</div>
+
+<div class="unsupported" id="unsupported">
+    <p style="font-size:36px">⚠️</p>
+    <p><b>浏览器不支持语音识别</b></p>
+    <p>请使用 <b>Chrome</b> 或 <b>Edge</b> 打开</p>
+</div>
+
+<div id="app">
+    <div class="prog-wrap">
+        <span>对话进度</span>
+        <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+        <span id="progLabel">0 / 5</span>
+    </div>
+
+    <div class="chat" id="chat"></div>
+
+    <div class="input-area" id="inputArea">
+        <div class="recog-box" id="recogBox">🎤 点击"开始回答"录制你的回答</div>
+        <div class="text-fallback" id="textFallback" style="display:none">
+            <input type="text" id="textInput" placeholder="在此输入你的英文回答…" maxlength="500">
+        </div>
+        <div class="btn-row">
+            <button class="btn btn-talk" id="btnTalk" onclick="toggleRecord()">🎙️ 开始回答</button>
+            <button class="btn btn-submit" id="btnSubmit" onclick="submitAnswer()" disabled>✅ 提交回答</button>
+            <button class="btn-reset" onclick="resetAll()">🔄</button>
+        </div>
+    </div>
+
+    <div class="report-card" id="reportCard">
+        <h2>📊 对话测评报告</h2>
+        <div class="total" id="totalScore">-</div>
+        <div class="grade" id="gradeLabel"></div>
+        <div class="score-grid">
+            <div class="score-cell"><div class="sc-label">内容相关</div><div class="sc-val" id="rContent">-</div><div class="sc-stars" id="rsContent"></div></div>
+            <div class="score-cell"><div class="sc-label">语法准确</div><div class="sc-val" id="rGrammar">-</div><div class="sc-stars" id="rsGrammar"></div></div>
+            <div class="score-cell"><div class="sc-label">词汇运用</div><div class="sc-val" id="rVocab">-</div><div class="sc-stars" id="rsVocab"></div></div>
+            <div class="score-cell"><div class="sc-label">流利表达</div><div class="sc-val" id="rFluency">-</div><div class="sc-stars" id="rsFluency"></div></div>
+        </div>
+        <div class="tip" id="reportTip"></div>
+        <div style="text-align:center;margin-top:12px">
+            <button class="btn btn-submit" onclick="resetAll()" style="max-width:200px">🔄 再来一轮</button>
+        </div>
+    </div>
+</div>
+<footer>© 2026 豆豆助理 · 汕头 2027 中考英语听说 · AI 对话练习</footer>
+</div>
+
+<script>
+// ===== DIALOGUE QUESTIONS =====
+const DIALOGUE = [
+    {
+        "ai": "Hi there! 👋 Let's talk about space exploration. What tools do we use to look at the sky? Use words like <b>telescope</b>, <b>satellite</b>, <b>rocket</b>, and <b>spacecraft</b>.",
+        "keywords": [
+            "telescope",
+            "sky",
+            "satellite",
+            "rocket",
+            "spacecraft",
+            "manned",
+            "unmanned",
+            "craft",
+            "rover",
+            "Mars",
+            "launch"
+        ],
+        "sampleAnswer": "With a telescope, we can see deep into the night sky. Satellites orbit the earth, and rockets send spacecraft into space. Some spaceships are manned, others unmanned, but both require great craft. Rovers can explore the surface of Mars. The launch of each rocket is a miracle."
+    },
+    {
+        "ai": "😊 Good! How do astronauts live and work in space? Use words like <b>astronaut</b>, <b>operate</b>, <b>board</b>, <b>fall asleep</b>, and <b>movement</b>.",
+        "keywords": [
+            "astronaut",
+            "operate",
+            "machine",
+            "station",
+            "movement",
+            "board",
+            "button",
+            "tie",
+            "bed",
+            "fall asleep",
+            "free",
+            "maintain"
+        ],
+        "sampleAnswer": "Astronauts must carefully operate every machine and maintain the space station. Their movements are slow but free on board. Hundreds of buttons shine on the control panel. They must tie themselves to bed, otherwise they will float away in their sleep. Falling asleep in zero gravity is very hard."
+    },
+    {
+        "ai": "👍 Great! How difficult are space missions? Use words like <b>mission</b>, <b>training</b>, <b>cancel</b>, <b>geology</b>, <b>survey</b>, and <b>publish</b>.",
+        "keywords": [
+            "mission",
+            "training",
+            "billions",
+            "cancel",
+            "geology",
+            "land",
+            "survey",
+            "data",
+            "publish",
+            "report",
+            "cooperate with",
+            "weather"
+        ],
+        "sampleAnswer": "Space missions are never easy. They require years of training and may cost billions. Scientists often cooperate with each other. In case of bad weather, they may have to cancel the launch. Before landing, they study the geology of Mars. After each flight, they survey the data and publish a report."
+    },
+    {
+        "ai": "🌟 What mysteries does the universe hold? Use words like <b>galaxy</b>, <b>solar</b>, <b>exoplanets</b>, <b>gods</b>, and <b>Voyager</b>.",
+        "keywords": [
+            "mysterious",
+            "galaxy",
+            "solar",
+            "exoplanets",
+            "gods",
+            "sky",
+            "Proxima Centauri",
+            "set foot on",
+            "planet",
+            "dream",
+            "Voyager"
+        ],
+        "sampleAnswer": "The universe is full of mysteries: the solar system, the Milky Way galaxy, and strange exoplanets beyond. Ancient people believed gods lived in the sky. Today Voyager 1 has flown out of the galaxy and is heading to Proxima Centauri. No one has set foot on another planet yet, but the dream is getting closer."
+    },
+    {
+        "ai": "🌟 Last question! What does space exploration mean to humans, and what can we as junior students do? Speak freely for about 30 seconds.",
+        "keywords": [
+            "human beings",
+            "Mars",
+            "planet",
+            "Ann",
+            "young",
+            "astronaut",
+            "dream",
+            "beyond",
+            "crazy",
+            "mystery",
+            "courage"
+        ],
+        "sampleAnswer": "Mars is not crowded yet, but one day humans may live there. In the future, a young astronaut like Ann will take us into a brand-new world. Space is the new frontier. Some say space travel is crazy, but every great dream starts with a brave idea. Let's keep dreaming and exploring."
+    }
+];
+
+
+let currentQ = 0;
+let recording = false;
+let activeRec = null;
+let retryCount = 0;
+let retryTimer = null;    // timeout ID for network retry
+let recognizedText = '';
+let answerStartTime = 0;
+let results = [];
+let speechSupported = false;
+
+const $ = id => document.getElementById(id);
+
+// Init Speech API (singleton)
+const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+if (!SpeechRecognitionAPI) {
+    $('unsupported').classList.add('show');
+    $('app').style.display = 'none';
+} else {
+    speechSupported = true;
+    // Pre-create and pre-test microphone permission
+    const warmupRec = new SpeechRecognitionAPI();
+    warmupRec.lang = 'en-US';
+    warmupRec.interimResults = true;
+    warmupRec.maxAlternatives = 1;
+    warmupRec.continuous = false;
+    // Warm up: request mic permission early via a dummy start/stop
+    try {
+        warmupRec.start();
+        warmupRec.onstart = () => { warmupRec.stop(); };
+        warmupRec.onend = () => { startDialogue(); };
+        warmupRec.onerror = () => { startDialogue(); }; // fallback
+    } catch(e) {
+        // If warm-up fails, still try to start dialogue
+        startDialogue();
+    }
+}
+
+function newRecognition() {
+    // Always create a fresh instance — reusing a stale one causes "network" errors
+    const r = new SpeechRecognitionAPI();
+    r.lang = 'en-US';
+    r.interimResults = true;
+    r.continuous = false;
+    r.maxAlternatives = 1;
+    return r;
+}
+
+function startDialogue() {
+    currentQ = 0;
+    results = [];
+    $('chat').innerHTML = '';
+    $('reportCard').classList.remove('show');
+    $('inputArea').style.display = 'block';
+    $('progFill').style.width = '0%';
+    $('progLabel').textContent = '0 / 5';
+    addAIMessage(DIALOGUE[0].ai);
+    resetRecog();
+}
+
+function addAIMessage(text) {
+    const div = document.createElement('div');
+    div.className = 'msg ai';
+    div.innerHTML = '<div class="label">🤖 AI 考官</div>' + text;
+    $('chat').appendChild(div);
+    $('chat').scrollTop = $('chat').scrollHeight;
+}
+
+function addUserMessage(text) {
+    const div = document.createElement('div');
+    div.className = 'msg user';
+    div.textContent = text;
+    $('chat').appendChild(div);
+    $('chat').scrollTop = $('chat').scrollHeight;
+}
+
+function addScoreMessage(score, content, grammar, vocab) {
+    const div = document.createElement('div');
+    div.className = 'msg score';
+    const stars = score >= 85 ? '⭐⭐⭐⭐⭐' : score >= 70 ? '⭐⭐⭐⭐' : score >= 55 ? '⭐⭐⭐' : score >= 40 ? '⭐⭐' : '⭐';
+    div.innerHTML = `<div class="stars">${stars}</div>内容 ${content} · 语法 ${grammar} · 词汇 ${vocab}<br><span style="font-size:18px;font-weight:700">综合 ${score} 分</span>`;
+    $('chat').appendChild(div);
+    $('chat').scrollTop = $('chat').scrollHeight;
+}
+
+// ===== RECORDING =====
+function toggleRecord() {
+    if (recording) { stopRecord(); return; }
+    startRecord();
+}
+
+function startRecord() {
+    // Cancel any pending retry
+    if (retryTimer) { clearTimeout(retryTimer); retryTimer = null; }
+    
+    // Destroy any previous stale instance
+    if (activeRec) {
+        try { activeRec.onresult = null; activeRec.onerror = null; activeRec.onend = null; activeRec.onstart = null; } catch(e) {}
+        try { activeRec.abort(); } catch(e) {}
+        activeRec = null;
+    }
+
+    // Always create a fresh instance — reusing causes "network" errors
+    const rec = newRecognition();
+    activeRec = rec;
+    answerStartTime = Date.now();
+    recognizedText = '';
+
+    rec.onresult = (e) => {
+        let t = '';
+        for (let i = 0; i < e.results.length; i++) t += e.results[i][0].transcript;
+        recognizedText = t;
+        $('recogBox').textContent = t.trim() || '🎤 正在聆听…';
+        $('recogBox').className = 'recog-box has-text recording';
+    };
+
+    rec.onerror = (e) => {
+        // Always detach to prevent delayed events from firing
+        try { rec.onresult = rec.onerror = rec.onend = rec.onstart = null; } catch(ex) {}
+        if (e.error === 'no-speech') {
+            $('recogBox').textContent = '⚠️ 未检测到语音，请靠近麦克风再试（可重录）';
+        } else if (e.error === 'not-allowed') {
+            $('recogBox').textContent = '🔒 麦克风权限未允许。请点击浏览器地址栏左侧的锁图标，开启麦克风权限后刷新页面。';
+        } else if (e.error === 'network') {
+            // Clean up current instance before retrying
+            recording = false;
+            activeRec = null;
+            if (retryCount < 2) {
+                retryCount++;
+                $('recogBox').textContent = '🔄 连接中…(第' + retryCount + '次重试)';
+                retryTimer = setTimeout(() => {
+                    retryTimer = null;
+                    if (!recording) startRecord();  // only retry if user hasn't stopped
+                }, 800);
+                return;
+            }
+            // Retries exhausted — show text fallback
+            $('recogBox').textContent = '⚠️ 语音服务暂时不可用。请在下方输入框中输入你的回答，然后点击提交。';
+            showTextFallback();
+        } else if (e.error === 'aborted') {
+            $('recogBox').textContent = '⏹ 录音已停止';
+        } else {
+            $('recogBox').textContent = '⚠️ ' + e.error + '。可重试录音或使用文字输入。';
+            showTextFallback();
+        }
+        recording = false;
+        activeRec = null;
+        retryCount = 0;
+        $('btnTalk').textContent = '🎙️ 重试录音';
+        $('btnTalk').className = 'btn btn-talk';
+        $('recogBox').className = 'recog-box';
+    };
+
+    rec.onend = () => {
+        // Only handle normal completion (not error/abort/manual-stop)
+        if (activeRec !== rec || !recording) return;
+        recording = false;
+        activeRec = null;
+        retryCount = 0;
+        const finalText = recognizedText.trim();
+        if (finalText) {
+            $('recogBox').textContent = '✅ 已识别：' + finalText;
+            $('recogBox').className = 'recog-box has-text';
+        } else {
+            $('recogBox').textContent = '⏹ 录音结束，未识别到语音。请点击下方"重试录音"，或直接在输入框输入文字后点提交。';
+            $('recogBox').className = 'recog-box';
+            // 主动展开文字输入兜底，让用户能继续
+            showTextFallback();
+        }
+        $('btnTalk').textContent = '🎙️ 重试录音';
+        $('btnTalk').className = 'btn btn-talk';
+        // 只要有任何一种输入（语音已识别 or 文字输入框已展开）即可提交
+        const fallbackOpen = $('textFallback').style.display !== 'none';
+        $('btnSubmit').disabled = !finalText && !fallbackOpen;
+    };
+
+    rec.onstart = () => {
+        recording = true;
+        retryCount = 0;
+        $('btnTalk').textContent = '⏹ 停止录音';
+        $('btnTalk').className = 'btn btn-talk recording';
+        $('recogBox').textContent = '🎤 正在聆听你的回答…';
+        $('recogBox').className = 'recog-box recording';
+        $('btnSubmit').disabled = true;
+        // Hide text fallback if visible
+        hideTextFallback();
+    };
+
+    try {
+        rec.start();
+    } catch(e) {
+        $('recogBox').textContent = '⚠️ 无法启动录音: ' + e.message + '。请允许麦克风权限后刷新。';
+        recording = false;
+        activeRec = null;
+        showTextFallback();
+    }
+}
+
+function stopRecord() {
+    // Cancel any pending network retry
+    if (retryTimer) { clearTimeout(retryTimer); retryTimer = null; }
+    const rec = activeRec;
+    if (rec) {
+        try { rec.onresult = null; rec.onerror = null; rec.onend = null; rec.onstart = null; } catch(e) {}
+        try { rec.abort(); } catch(e) {}
+        activeRec = null;
+    }
+    recording = false;
+    retryCount = 0;
+    const finalText = recognizedText.trim();
+    if (rec) {  // 用户主动点击了停止
+        if (finalText) {
+            $('recogBox').textContent = '✅ 已识别：' + finalText;
+            $('recogBox').className = 'recog-box has-text';
+        } else {
+            $('recogBox').textContent = '⏹ 已停止，未识别到语音。请点击下方"重试录音"，或直接在输入框输入文字后点提交。';
+            $('recogBox').className = 'recog-box';
+            showTextFallback();
+        }
+    } else {
+        $('recogBox').className = 'recog-box has-text';
+    }
+    $('btnTalk').textContent = '🎙️ 重试录音';
+    $('btnTalk').className = 'btn btn-talk';
+    const fallbackOpen = $('textFallback').style.display !== 'none';
+    $('btnSubmit').disabled = !finalText && !fallbackOpen;
+}
+
+// Text-input fallback
+function showTextFallback() {
+    $('textFallback').style.display = 'block';
+    $('btnSubmit').disabled = false;
+}
+
+function hideTextFallback() {
+    $('textFallback').style.display = 'none';
+}
+
+function resetRecog() {
+    if (retryTimer) { clearTimeout(retryTimer); retryTimer = null; }
+    recognizedText = '';
+    $('recogBox').textContent = '🎤 点击"开始回答"录制你的回答';
+    $('recogBox').className = 'recog-box';
+    $('btnSubmit').disabled = true;
+    $('btnTalk').textContent = '🎙️ 开始回答';
+    $('btnTalk').className = 'btn btn-talk';
+    hideTextFallback();
+    $('textInput').value = '';
+    retryCount = 0;
+}
+
+// ===== EVALUATION =====
+function submitAnswer() {
+    // Accept voice result OR text-input fallback
+    let text = recognizedText.trim();
+    const fallbackText = $('textInput') ? $('textInput').value.trim() : '';
+    if (!text && fallbackText) text = fallbackText;
+    if (!text) return;
+    stopRecord();
+    addUserMessage(text);
+    
+    const q = DIALOGUE[currentQ];
+    const recLower = text.toLowerCase();
+    
+    // Content: keyword coverage
+    const keywordsFound = q.keywords.filter(kw => recLower.includes(kw.toLowerCase())).length;
+    const content = Math.min(100, Math.round((keywordsFound / Math.max(q.keywords.length, 1)) * 100));
+    
+    // Grammar: simple check - sentence structure, length
+    const words = recLower.replace(/[.,!?;:]/g,'').split(/\s+/).filter(w=>w.length>0);
+    let grammar = 100;
+    if (words.length < 4) grammar = 40;
+    else if (words.length < 8) grammar = 60;
+    else if (words.length < 12) grammar = 75;
+    // Penalize very short answers
+    if (text.length < 20) grammar = Math.min(grammar, 50);
+    grammar = Math.max(30, grammar);
+    
+    // Vocabulary: diversity
+    const uniqueWords = new Set(words);
+    const vocab = Math.min(100, Math.round((uniqueWords.size / Math.max(words.length, 1)) * 100 + 30));
+    
+    // Total for this answer
+    const total = Math.round(content * 0.4 + grammar * 0.3 + vocab * 0.3);
+    
+    addScoreMessage(total, content, grammar, vocab);
+    results.push({ qIndex: currentQ, content, grammar, vocab, total });
+    
+    // Move to next
+    currentQ++;
+    $('progFill').style.width = Math.round((currentQ / DIALOGUE.length) * 100) + '%';
+    $('progLabel').textContent = Math.min(currentQ, DIALOGUE.length) + ' / ' + DIALOGUE.length;
+    
+    if (currentQ >= DIALOGUE.length) {
+        showReport();
+    } else {
+        setTimeout(() => {
+            addAIMessage(DIALOGUE[currentQ].ai);
+            resetRecog();
+        }, 800);
+    }
+}
+
+// ===== REPORT =====
+function showReport() {
+    $('inputArea').style.display = 'none';
+    $('reportCard').classList.add('show');
+    
+    const avg = results.reduce((a,b) => a + b.total, 0) / results.length;
+    const total = Math.round(avg);
+    const el = $('totalScore');
+    el.textContent = total;
+    el.className = 'total ' + (total >= 85 ? 'excellent' : total >= 70 ? 'good' : total >= 55 ? 'fair' : 'poor');
+    
+    const stars = s => s >= 85 ? '⭐⭐⭐⭐⭐' : s >= 70 ? '⭐⭐⭐⭐' : s >= 55 ? '⭐⭐⭐' : s >= 40 ? '⭐⭐' : '⭐';
+    const ac = Math.round(results.reduce((a,b)=>a+b.content,0)/results.length);
+    const ag = Math.round(results.reduce((a,b)=>a+b.grammar,0)/results.length);
+    const av = Math.round(results.reduce((a,b)=>a+b.vocab,0)/results.length);
+    const af = Math.round(Math.min(100, (ac + ag + av) / 3));
+    
+    $('rContent').textContent = ac; $('rsContent').textContent = stars(ac);
+    $('rGrammar').textContent = ag; $('rsGrammar').textContent = stars(ag);
+    $('rVocab').textContent = av; $('rsVocab').textContent = stars(av);
+    $('rFluency').textContent = af; $('rsFluency').textContent = stars(af);
+    
+    $('gradeLabel').textContent = total >= 90 ? '🏆 A+ — 表达自如，词汇丰富，语法准确' :
+        total >= 80 ? '👍 A — 内容完整，表达清晰，偶有小失误' :
+        total >= 70 ? '📖 B — 基本达标，个别词发音需加强' :
+        total >= 60 ? '💪 C — 有提升空间，建议多练口语' : '📚 D — 建议先模仿跟读，再尝试独立表达';
+    
+    let tipHtml = '';
+    if (total >= 85) tipHtml = '🏆 <b>优秀！</b>你的口语表达流畅自然，词汇运用恰当。中考口语稳拿高分，继续保持！';
+    else if (total >= 70) tipHtml = '👍 <b>良好！</b>建议多练习长句表达，注意使用单元核心词汇（如 shortage, government, miracle 等）。';
+    else if (total >= 55) tipHtml = '📖 <b>加油！</b>建议先听课文录音跟读，熟悉核心词汇后再尝试对话练习。每天 10 分钟口语必有进步。';
+    else tipHtml = '💪 <b>别灰心！</b>口语需要多听多说。建议从模仿课文录音开始，一天一个 Topic，坚持 30 天看效果。';
+    $('reportTip').innerHTML = tipHtml;
+    $('reportTip').className = 'tip ' + (total >= 85 ? 'success' : total >= 70 ? 'info' : 'warn');
+}
+
+function resetAll() {
+    if (recording) { stopRecord(); }
+    results = [];
+    currentQ = 0;
+    recognizedText = '';
+    retryCount = 0;
+    $('reportCard').classList.remove('show');
+    $('inputArea').style.display = 'block';
+    $('progFill').style.width = '0%';
+    $('progLabel').textContent = '0 / 5';
+    $('chat').innerHTML = '';
+    addAIMessage(DIALOGUE[0].ai);
+    resetRecog();
+}
+</script>
+</body>
+</html>
