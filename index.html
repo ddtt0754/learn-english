@@ -75,7 +75,7 @@
 
   /* 顶部入口按钮（打印版 / 使用说明） */
   .top-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px;}
-  .print-btn,.readme-btn{
+  .print-btn,.readme-btn,.word-btn{
     position:relative;
     display:inline-flex;
     align-items:center;
@@ -95,9 +95,9 @@
     user-select:none;
     -webkit-user-select:none;
   }
-  .print-btn:active,.readme-btn:active{transform:scale(.96);}
+  .print-btn:active,.readme-btn:active,.word-btn:active{transform:scale(.96);}
   @media (hover:hover){
-    .print-btn:hover,.readme-btn:hover{background:rgba(255,255,255,.32);box-shadow:0 4px 14px rgba(255,255,255,.25);}
+    .print-btn:hover,.readme-btn:hover,.word-btn:hover{background:rgba(255,255,255,.32);box-shadow:0 4px 14px rgba(255,255,255,.25);}
   }
 
   /* ============ 年级标签页（3~9 年级共 7 个，4 列两行） ============ */
@@ -264,7 +264,7 @@
     <p class="sub">听<b>·</b>读<b>·</b>说<b>·</b>写</p>
     <div class="top-btns">
       <a class="print-btn" href="print/index.html">🖨️ 打印版 · 单词表 &amp; 演讲稿</a>
-      <a class="readme-btn" href="readme.html">📘 使用说明</a>
+      <a class="word-btn" href="https://qwertylearner.cn/gallery" target="_blank" rel="noopener">🔤 单词训练</a>
     </div>
   </header>
 
@@ -288,7 +288,10 @@
   <div class="grid" id="grid"></div>
 
   <!-- 底部版权 -->
-  <footer>© 2026 两英豆豆教练</footer>
+  <div style="text-align:center;margin:18px 0 6px;">
+    <a href="readme.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:#fff;color:#1fa873;border:1.5px solid #2ebd85;border-radius:14px;font-size:13.5px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s;" onmousedown="this.style.transform='scale(.96)'" onmouseup="this.style.transform=''" ontouchend="this.style.transform=''">📘 网站说明</a>
+  </div>
+  <footer>© 2026 两英豆豆教练<br/><br/></footer>
 </div>
 
 <script>
