@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>人教版英语 3-9 年级 · 单元语法知识导图</title>
+<style>
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#1f2937; --sub:#6b7280; --line:#e5e7eb;
+  --accent:#4f6df5; --accent-soft:#eef1fe; --new:#0ea5a0; --old:#d97706;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px}
+header.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.wrap{max-width:860px;margin:0 auto;padding:0 14px}
+.hero{padding:18px 0 6px}
+.hero h1{font-size:20px;font-weight:800;letter-spacing:.5px}
+.hero p{font-size:12.5px;color:var(--sub);margin-top:2px}
+.search{margin:10px 0 12px;position:relative}
+.search input{width:100%;padding:10px 14px 10px 38px;border:1.5px solid var(--line);border-radius:999px;font-size:14px;background:#fff;outline:none;transition:.2s}
+.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.search .icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--sub);font-size:15px}
+.grades{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}
+.grades::-webkit-scrollbar{display:none}
+.gpill{flex:0 0 auto;padding:7px 16px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-size:13.5px;font-weight:600;color:var(--sub);cursor:pointer;transition:.15s;white-space:nowrap}
+.gpill.on{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(79,109,245,.3)}
+.vols{display:flex;gap:8px;padding:0 0 12px;overflow-x:auto;scrollbar-width:none}
+.vols::-webkit-scrollbar{display:none}
+.vtab{flex:1;min-width:150px;text-align:left;padding:9px 12px;border-radius:12px;background:#fff;border:1.5px solid var(--line);cursor:pointer;transition:.15s}
+.vtab .t{font-size:14px;font-weight:700}
+.vtab .s{font-size:11px;margin-top:2px}
+.vtab.on{border-color:var(--accent);background:var(--accent-soft)}
+.badge{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 8px;border-radius:999px;vertical-align:middle}
+.badge.new{background:#d9f5f3;color:var(--new)}
+.badge.old{background:#fdf0dc;color:var(--old)}
+main{padding:6px 0 60px}
+.notice{font-size:12px;color:var(--old);background:#fdf6ea;border:1px solid #f3e3c3;border-radius:10px;padding:8px 12px;margin:8px 0 12px}
+.overview{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px}
+.chip{font-size:11.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--sub);cursor:pointer}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.unit{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.unit-head{display:flex;align-items:center;gap:10px;padding:13px 14px;cursor:pointer;user-select:none}
+.unit-num{flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--accent-soft);color:var(--accent);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.unit-title{flex:1;min-width:0}
+.unit-title .en{font-size:15px;font-weight:700;line-height:1.3}
+.unit-title .cn{font-size:12px;color:var(--sub)}
+.unit-count{flex:0 0 auto;font-size:11px;color:var(--sub);background:var(--bg);border-radius:999px;padding:2px 9px}
+.arrow{flex:0 0 auto;color:var(--sub);transition:transform .25s;font-size:13px}
+.unit.open .arrow{transform:rotate(90deg)}
+.unit-body{display:none;padding:2px 14px 16px}
+.unit.open .unit-body{display:block}
+.tree{position:relative;margin-top:8px}
+.root{display:flex;justify-content:center;margin-bottom:4px}
+.root span{font-size:12px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),#7c8ff8);padding:4px 14px;border-radius:999px;box-shadow:0 3px 8px rgba(79,109,245,.25)}
+.branches{position:relative;padding-left:18px}
+.branches::before{content:"";position:absolute;left:5px;top:-6px;bottom:14px;width:2px;background:linear-gradient(var(--accent),#c7d0fb);border-radius:2px}
+.gnode{position:relative;background:#fbfbfe;border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-top:10px}
+.gnode::before{content:"";position:absolute;left:-17px;top:20px;width:13px;height:2px;background:#c7d0fb}
+.gnode::after{content:"";position:absolute;left:-7px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 2px var(--accent-soft)}
+.gname{font-size:14px;font-weight:700;color:var(--accent)}
+.gdesc{font-size:13px;margin-top:4px;color:#374151}
+.ex{margin-top:8px;border-left:3px solid var(--accent-soft);padding-left:10px}
+.ex .en{font-size:13.5px;font-weight:600;color:#111827}
+.ex .cn{font-size:12px;color:var(--sub)}
+.ex+.ex{margin-top:6px}
+.empty{text-align:center;color:var(--sub);padding:40px 0;font-size:14px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;margin:10px 0 4px}
+.toolbar .stat{font-size:12px;color:var(--sub)}
+.toolbar button{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--sub);cursor:pointer}
+.toolbar button:hover{color:var(--accent);border-color:var(--accent)}
+footer{text-align:center;font-size:11.5px;color:var(--sub);padding:20px 0 30px}
+mark{background:#fff2a8;border-radius:3px;padding:0 1px}
+/* 顶部品牌标题卡（绿蓝渐变，与全站一致） */
+.brand-wrap{max-width:860px;margin:0 auto;padding:18px 14px 0}
+.title-card{position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);border-radius:22px;padding:26px 20px 22px;text-align:center;color:#fff;overflow:hidden;box-shadow:0 14px 30px rgba(47,157,240,.25)}
+.title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14)}
+.title-card::before{width:120px;height:120px;top:-40px;right:-30px}
+.title-card::after{width:70px;height:70px;bottom:-24px;left:-16px}
+.title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12)}
+.title-card .sub{position:relative;margin-top:8px;font-size:13px;letter-spacing:4px;opacity:.94}
+.title-card .meta{position:relative;margin-top:10px;font-size:12px;opacity:.88;letter-spacing:1px}
+/* 返回首页按钮 */
+.back-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 24px;background:#fff;color:#1fa873;border:1.5px solid #2ebd85;border-radius:14px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s}
+.back-btn:active{transform:scale(.97)}
+@media(min-width:640px){.hero h1{font-size:24px}.gname{font-size:15px}}
+
+/* 教练微信号提示框 */
+.coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.coach-tip .tip{visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;box-shadow:0 6px 18px rgba(47,157,240,.35);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.coach-tip .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#2f9df0}
+.coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+.coach-footer{text-align:center;padding:14px 0 18px;color:var(--text2,#7f8c8d);font-size:.75rem}
+
+</style>
+</head>
+<body>
+<div class="brand-wrap">
+  <header class="title-card">
+    <h1>📚 单元语法知识导图</h1>
+    <p class="sub">年级语法 · 知识图谱</p>
+    <p class="meta">人教版 3-9 年级 · 依据 2024 新课标教改新版教材整理</p>
+  </header>
+</div>
+<header class="top">
+  <div class="wrap">
+    <div class="hero">
+      <p>绿色标 = 新版教材 ｜ 橙色标 = 旧版参考（新版尚未发行）</p>
+    </div>
+    <div class="search">
+      <span class="icon">🔍</span>
+      <input id="q" type="search" placeholder="搜索语法点，如：一般过去时、there be、比较级…" oninput="onSearch(this.value)">
+    </div>
+    <div class="grades" id="grades"></div>
+    <div class="vols" id="vols"></div>
+  </div>
+</header>
+<main class="wrap" id="main"></main>
+<div class="wrap" style="text-align:center;margin:18px auto 4px;">
+  <a href="index.html" class="back-btn">🏠 返回主页</a>
+</div>
+<footer>
+  整理自公开教材目录与教学参考资料，供学习使用 ｜ 新版五下/六年级/九年级教材发行后可更新
+</footer>
+<script>
+/* ================= 数据 ================= */
+const DATA = [
+{grade:"三年级", color:"#f59e0b", vols:[
+ {title:"三年级上册", ed:"new", edLabel:"新版·2024秋", units:[
+  {n:"U1",en:"Making friends",cn:"交朋友",g:[
+   {n:"What's...? 询问姓名",d:"用 What 开头的特殊疑问句问别人的名字，回答用 My name's... 或 I'm...。",e:[["What's your name? — My name is Mike.","你叫什么名字？——我叫迈克。"],["Hello, I'm Sarah.","你好，我是萨拉。"]]},
+   {n:"打招呼与问候",d:"见面说 Hello / Hi / Good morning；初次见面说 Nice to meet you.，回应加 too。",e:[["Good morning! — Good morning!","早上好！——早上好！"],["Nice to meet you. — Nice to meet you too.","很高兴认识你。——我也很高兴认识你。"]]}]},
+  {n:"U2",en:"Different families",cn:"不同的家庭",g:[
+   {n:"This is... 介绍他人",d:"向别人介绍身边的人用 This is...，后面直接加人物或称呼。",e:[["This is my mum.","这是我的妈妈。"],["This is my friend, Chen Jie.","这是我的朋友陈洁。"]]},
+   {n:"Who 引导的问句",d:"用 Who（谁）询问人物身份。",e:[["Who lives with you? — My family.","谁和你住在一起？——我的家人。"]]}]},
+  {n:"U3",en:"Amazing animals",cn:"神奇的动物",g:[
+   {n:"What's this/that? 询问事物",d:"this 指近处的东西，that 指远处的东西，回答都用 It's a/an...。",e:[["What's this? — It's a panda.","这是什么？——它是一只熊猫。"],["What's that? — It's an elephant.","那是什么？——它是一头大象。"]]},
+   {n:"Do you have...? 一般疑问句",d:"问对方“有没有”，用 Yes, I do. / No, I don't. 回答。",e:[["Do you have a pet? — Yes, I do.","你有宠物吗？——是的，我有。"],["Do you have a dog? — No, I don't.","你有狗吗？——不，我没有。"]]}]},
+  {n:"U4",en:"Plants around us",cn:"我们身边的植物",g:[
+   {n:"Do you like...? 询问喜好",d:"问对方喜不喜欢某物，后面常接复数名词。",e:[["Do you like apples? — Yes, I do.","你喜欢苹果吗？——是的，我喜欢。"],["Do you like bananas? — No, I don't.","你喜欢香蕉吗？——不，我不喜欢。"]]},
+   {n:"名词复数初步",d:"表示一类事物时常在名词后加 -s。",e:[["I like grapes.","我喜欢葡萄。"],["I don't like oranges.","我不喜欢橙子。"]]}]},
+  {n:"U5",en:"The colourful world",cn:"多彩的世界",g:[
+   {n:"What colour 询问颜色",d:"What colour is it? 问颜色，回答 It's + 颜色。",e:[["What colour is it? — It's red.","它是什么颜色？——它是红色的。"]]},
+   {n:"表达喜好 I like...",d:"说出自己喜欢的颜色。",e:[["What colours do you like? — I like red and pink.","你喜欢什么颜色？——我喜欢红色和粉色。"]]}]},
+  {n:"U6",en:"Useful numbers",cn:"有用的数字",g:[
+   {n:"How many 询问数量",d:"How many + 复数名词，用数字回答。",e:[["How many books? — Five.","几本书？——五本。"]]},
+   {n:"How old 询问年龄",d:"How old are you? 问岁数，回答 I'm + 数字 (+ years old)。",e:[["How old are you? — I'm nine (years old).","你几岁了？——我九岁。"]]}]}
+ ]},
+ {title:"三年级下册", ed:"new", edLabel:"新版·2025春", units:[
+  {n:"U1",en:"Meeting new people",cn:"结识新朋友",g:[
+   {n:"Where...from? 询问来源",d:"问对方来自哪里，回答 I'm from + 国家。",e:[["Where are you from? — I'm from China.","你来自哪里？——我来自中国。"]]},
+   {n:"be 动词 am/is/are",d:"我（I）用 am，你（you）用 are，他/她/它用 is。",e:[["He is a new student.","他是一名新同学。"],["She is from the UK.","她来自英国。"]]}]},
+  {n:"U2",en:"Expressing yourself",cn:"表达自我",g:[
+   {n:"形容词描述外貌",d:"用 It's + 形容词 描述事物的样子；用 has 描述“长着”。",e:[["It's small and cute.","它又小又可爱。"],["It has long ears.","它长着长耳朵。"]]},
+   {n:"表达感受与喜爱",d:"用 I like/love... 表达喜爱之情。",e:[["I love my dog.","我爱我的狗。"],["I like it very much.","我非常喜欢它。"]]}]},
+  {n:"U3",en:"Learning better",cn:"更好地学习",g:[
+   {n:"Can I...? 表请求",d:"礼貌地请求借用物品，回答 Sure. / Here you are.",e:[["Can I use your ruler? — Sure. Here you are.","我能用一下你的尺子吗？——当然，给你。"]]},
+   {n:"感官动词",d:"用 I + see/hear/smell/taste/touch 描述感觉。",e:[["I see with my eyes.","我用眼睛看。"],["I smell with my nose.","我用鼻子闻。"]]}]},
+  {n:"U4",en:"Healthy food",cn:"健康饮食",g:[
+   {n:"Would you like...? 礼貌提供食物",d:"回答用 Yes, please. / No, thanks.",e:[["Would you like some milk? — Yes, please.","你想喝点牛奶吗？——好的，谢谢。"]]},
+   {n:"I'd like... 表达想要",d:"I'd like = I would like，后面接想要的东西。",e:[["I'd like some bread and eggs.","我想要一些面包和鸡蛋。"],["Can I have some water? — Here you are.","我能喝点水吗？——给你。"]]}]},
+  {n:"U5",en:"Old toys",cn:"旧玩具",g:[
+   {n:"Where 询问位置 + 方位介词",d:"Where is...? 问在哪里，用 in / on / under + 地点回答。",e:[["Where is my ball? — It's under the chair.","我的球在哪里？——它在椅子下面。"],["The boat is in the box.","小船在盒子里。"]]},
+   {n:"Is it...? 确认位置",d:"一般疑问句，用 Yes, it is. / No, it isn't. 回答。",e:[["Is it on the desk? — Yes, it is.","它在桌子上吗？——是的。"]]}]},
+  {n:"U6",en:"Numbers in life",cn:"生活中的数字",g:[
+   {n:"How many...do you have? 询问数量",d:"借助助动词 do 提问拥有的数量。",e:[["How many books do you have? — I have fifteen.","你有多少本书？——我有十五本。"]]},
+   {n:"数字的运用（11-20+）",d:"用数字表达数量、做简单统计和选择。",e:[["How many do we need? — We need twelve.","我们需要多少个？——我们需要十二个。"]]}]}
+ ]}
+]},
+{grade:"四年级", color:"#10b981", vols:[
+ {title:"四年级上册", ed:"new", edLabel:"新版·2025秋", units:[
+  {n:"U1",en:"Helping at home",cn:"在家帮忙",g:[
+   {n:"名词所有格 's",d:"在人名或称呼后加 's，表示“某人的”。",e:[["This is my father's coat.","这是我爸爸的外套。"],["My mother's bag is big.","妈妈的包很大。"]]},
+   {n:"情态动词 can 表能力",d:"can + 动词原形，表示“会做某事”。",e:[["I can clean the room.","我会打扫房间。"],["Can you wash the dishes? — Yes, I can.","你会洗碗吗？——是的，我会。"]]}]},
+  {n:"U2",en:"My friends",cn:"我的朋友们",g:[
+   {n:"第三人称描述 He/She is/has...",d:"描述朋友的外貌和性格，he/she 后用 is 或 has。",e:[["She is tall and friendly.","她又高又友好。"],["He has short hair.","他留着短发。"]]},
+   {n:"第三人称喜好 likes",d:"主语是 he/she 时，like 要加 -s（三单初步）。",e:[["He likes sports.","他喜欢运动。"],["She likes reading books.","她喜欢看书。"]]}]},
+  {n:"U3",en:"Places we live in",cn:"我们居住的地方",g:[
+   {n:"there be 句型",d:"There is + 单数，There are + 复数，表示某地存在某物。",e:[["There is a park in our community.","我们社区里有一个公园。"],["There are many shops near my home.","我家附近有很多商店。"]]}]},
+  {n:"U4",en:"Helping in the community",cn:"服务社区",g:[
+   {n:"What...do? 询问职业",d:"用 What does he/she do? 问他人的工作。",e:[["What does your uncle do? — He is a doctor.","你叔叔是做什么的？——他是一名医生。"]]},
+   {n:"职业与助人表达",d:"介绍社区工作者及其贡献。",e:[["A cleaner keeps the streets clean.","清洁工让街道保持干净。"],["We can help our community.","我们可以为社区出一份力。"]]}]},
+  {n:"U5",en:"The weather and us",cn:"天气与我们",g:[
+   {n:"天气问答 How's the weather?",d:"询问天气状况，用 It's + 天气词 回答。",e:[["How's the weather today? — It's sunny and warm.","今天天气怎么样？——晴朗又暖和。"]]},
+   {n:"现在进行时初步",d:"be + 动词-ing 表示“正在做某事”，be 动词不能丢。",e:[["What are you doing? — I'm reading a book.","你正在做什么？——我正在看书。"],["They are playing in the snow.","他们正在雪地里玩。"]]}]},
+  {n:"U6",en:"Changing for the seasons",cn:"随季节变化",g:[
+   {n:"四季与着装 wear",d:"用 wear + 衣物 说不同季节穿什么。",e:[["What do you wear in winter? — I wear a warm coat.","冬天你穿什么？——我穿暖和的外套。"]]},
+   {n:"季节活动（一般现在时）",d:"用一般现在时说不同季节常做的事。",e:[["We fly kites in spring.","春天我们放风筝。"],["We eat ice cream in summer.","夏天我们吃冰淇淋。"]]}]}
+ ]},
+ {title:"四年级下册", ed:"new", edLabel:"新版·2026春", units:[
+  {n:"U1",en:"Class rules",cn:"班级规则",g:[
+   {n:"祈使句（肯定式）",d:"动词原形开头，直接发出指令或提出要求。",e:[["Keep the classroom clean.","保持教室干净。"],["Put up your hand to speak.","发言请举手。"]]},
+   {n:"祈使句（否定式 Don't...）",d:"Don't + 动词原形，表示“不要做某事”。",e:[["Don't eat in class.","不要在课堂上吃东西。"],["Don't be late for class.","上课不要迟到。"]]}]},
+  {n:"U2",en:"Family rules",cn:"家庭规则",g:[
+   {n:"祈使句的家庭运用",d:"用肯定/否定祈使句说家规。",e:[["Tidy your room.","整理你的房间。"],["Don't watch TV for too long.","不要看太久电视。"]]},
+   {n:"礼貌请求 Can you...?",d:"请家人帮忙做某事。",e:[["Can you pass me the book? — Sure.","你能把书递给我吗？——好的。"]]}]},
+  {n:"U3",en:"Time for school",cn:"上学时间",g:[
+   {n:"时间问答 What time is it?",d:"询问时刻，用 It's + 数字 + o'clock 回答。",e:[["What time is it? — It's seven o'clock.","几点了？——七点了。"]]},
+   {n:"It's time for/to...",d:"该做某事了：for 后接名词，to 后接动词原形。",e:[["It's time for school.","该上学了。"],["It's time to get up.","该起床了。"]]}]},
+  {n:"U4",en:"Going shopping",cn:"去购物",g:[
+   {n:"购物交际 How much...?",d:"How much 问价格，单数用 is，复数用 are。",e:[["Can I help you? — I want a T-shirt.","您要买什么？——我想要一件T恤。"],["How much is it? — It's fifty yuan.","它多少钱？——五十元。"],["How much are they? — They're twenty yuan.","它们多少钱？——二十元。"]]},
+   {n:"评价与试穿",d:"用 It's/They're + 形容词 评价商品；try on 试穿。",e:[["These shoes are nice. Can I try them on?","这双鞋不错，我能试穿吗？"]]}]},
+  {n:"U5",en:"Farms and us",cn:"农场与我们",g:[
+   {n:"What/How many...do you have?",d:"借助助动词 do 询问拥有的动物。",e:[["What animals do you have on the farm? — I have cows and sheep.","你农场里有什么动物？——我有奶牛和绵羊。"],["How many cows do you have? — I have twenty.","你有多少头奶牛？——我有二十头。"]]},
+   {n:"What are these/those?",d:"these 指近处、those 指远处，回答统一用 They're...；注意名词复数（sheep 单复同形、tomato→tomatoes）。",e:[["What are these? — They're tomatoes.","这些是什么？——它们是西红柿。"],["What are those? — They're sheep.","那些是什么？——它们是绵羊。"]]}]},
+  {n:"U6",en:"On the farm",cn:"在农场上",g:[
+   {n:"现在进行时 What are they doing?",d:"描述正在发生的动作：be + 动词-ing。",e:[["What are they doing on the farm? — They are feeding the chickens.","他们在农场上干什么？——他们正在喂鸡。"],["Mr Wang is putting the tomatoes in boxes.","王先生正在把西红柿装箱。"]]},
+   {n:"三单与 come from",d:"主语是单数/不可数时动词用三单；疑问句借助 does，后接动词原形。",e:[["Where does milk come from? — It comes from cows.","牛奶来自哪里？——它来自奶牛。"],["What do they grow on the farm? — They grow rice.","他们在农场种什么？——他们种水稻。"]]}]}
+ ]}
+]},
+{grade:"五年级", color:"#8b5cf6", vols:[
+ {title:"五年级上册", ed:"new", edLabel:"新版·2026秋", units:[
+  {n:"U1",en:"Different friends",cn:"不同的朋友",g:[
+   {n:"What's...like? 询问人物特征",d:"like 在这里是介词“像”，用来问外貌或性格；回答用 主语 + be + 形容词。",e:[["What's he like?","他什么样？"],["He's tall and hard-working.","他又高又勤奋。"]]},
+   {n:"情态动词 can 表能力",d:"can 后接动词原形，无人称变化；否定 can't，疑问句 can 提前。",e:[["I can make a robot.","我会制作机器人。"],["Can you speak Chinese?","你会说中文吗？"]]},
+   {n:"be good at + 动词-ing",d:"at 是介词，后面的动词要加 -ing，表示“擅长做某事”。",e:[["He is good at playing football.","他擅长踢足球。"],["She is good at drawing pictures.","她擅长画画。"]]}]},
+  {n:"U2",en:"My feelings",cn:"我的心情",g:[
+   {n:"系动词 look/feel + 形容词",d:"look（看起来）和 feel（感觉）是感官系动词，后面只能接形容词。",e:[["You look sad.","你看起来很难过。"],["We feel happy.","我们感到很开心。"]]},
+   {n:"询问心情 How do you feel?",d:"关心他人情绪的句型，答语用 主语 + be + 情绪形容词。",e:[["How do you feel? — I'm worried.","你感觉怎么样？——我很担心。"],["What's the matter?","怎么了？"]]},
+   {n:"Why not + 动词原形?",d:"委婉提建议的句型，后面直接接动词原形。",e:[["Why not do both?","为什么不两个都做呢？"],["Why not talk to your parents?","为什么不和父母谈谈呢？"]]}]},
+  {n:"U3",en:"Work and play",cn:"学习与玩耍",g:[
+   {n:"一般现在时（含三单）",d:"表示经常性动作；主语是 he/she 时动词加 -s/-es，疑问用 does（动词还原）。",e:[["What do you have on Wednesdays?","你周三有什么课？"],["She has music on Fridays.","她周五有音乐课。"]]},
+   {n:"频度副词 usually/often/sometimes",d:"表示动作频率，位置在实义动词前、be 动词后。",e:[["I often play football at the weekend.","我周末经常踢足球。"],["She is sometimes shy.","她有时害羞。"]]},
+   {n:"介词 on + 星期",d:"星期前用 on，首字母大写；星期加 s 表示“每周……”。",e:[["I have PE on Mondays.","我每周一有体育课。"],["We visit grandparents on Sundays.","我们每周日看望祖父母。"]]}]},
+  {n:"U4",en:"Healthy habits",cn:"健康习惯",g:[
+   {n:"情态动词 should/shouldn't",d:"表示“应该/不应该”，用来提健康建议，后接动词原形。",e:[["You should eat healthy food.","你应该吃健康的食物。"],["You shouldn't play on the phone so often.","你不应该这么频繁地玩手机。"]]},
+   {n:"一般现在时描述习惯",d:"与 usually、every day 等连用；三单动词加 -s/-es。",e:[["I brush my teeth twice a day.","我每天刷两次牙。"],["He gets enough sleep every day.","他每天睡眠充足。"]]},
+   {n:"否定祈使句 Don't...",d:"用来提醒、劝阻别人不要做某事。",e:[["Don't check your phone in bed.","不要在床上看手机。"],["Don't eat too much candy.","不要吃太多糖。"]]}]},
+  {n:"U5",en:"Food we eat",cn:"我们吃的食物",g:[
+   {n:"would like 想要",d:"would like + 名词/to do，语气比 want 委婉；I'd like = I would like。",e:[["What would you like to eat? — I'd like beef and rice.","你想吃什么？——我想吃牛肉和米饭。"],["Would you like some soup?","你想来点汤吗？"]]},
+   {n:"可数与不可数名词",d:"rice、beef、soup 等不可数名词没有复数；表请求的问句中用 some 不用 any。",e:[["Can I have some ice cream, please?","请问我能吃点冰激凌吗？"],["Yes, but just a little.","可以，不过只能吃一点。"]]},
+   {n:"come from 询问来源",d:"问事物来自哪里用 Where does...come from?，答句动词用 comes。",e:[["Where does your coconut come from?","你的椰子来自哪里？"],["It comes from Hainan.","它来自海南。"]]}]},
+  {n:"U6",en:"Nature and us",cn:"自然与我们",g:[
+   {n:"There be 句型（就近原则）",d:"There is + 单数/不可数，There are + 复数；多个名词并列时看最近的那个。",e:[["There is a lake in the forest.","森林里有一个湖。"],["There are many mountains in the park.","公园里有许多山。"]]},
+   {n:"一般将来时 will",d:"will 后接动词原形，表示将要发生的动作或天气。",e:[["There will be heavy rain tomorrow.","明天将会有大雨。"],["It will be a fine day.","将会是个好天气。"]]},
+   {n:"安全提醒 should + Don't",d:"用 should 提建议，用 Don't + 动词原形 发出警示。",e:[["You should check the weather report first.","你应该先查看天气预报。"],["Don't go hiking in bad weather.","恶劣天气不要去远足。"]]}]}
+ ]},
+ {title:"五年级下册", ed:"old", edLabel:"旧版参考·新版预计2027春", units:[
+  {n:"U1",en:"My day",cn:"我的一天",g:[
+   {n:"一般现在时（作息）",d:"用 When do you...? 询问作息，回答 I...at + 时间。",e:[["When do you get up?","你几点起床？"],["I eat breakfast at 7:00.","我七点吃早饭。"]]},
+   {n:"频度副词",d:"always/usually/often/sometimes 描述活动频率。",e:[["I usually do morning exercises.","我通常做早操。"],["I often go shopping on Saturdays.","我周六常去购物。"]]}]},
+  {n:"U2",en:"My favourite season",cn:"最喜欢的季节",g:[
+   {n:"Which...like best? 询问最爱",d:"Which season do you like best? 问最喜欢的季节。",e:[["Which season do you like best? — Summer.","你最喜欢哪个季节？——夏天。"]]},
+   {n:"because 说原因",d:"because + 句子解释喜欢的原因。",e:[["I like spring because there are beautiful flowers.","我喜欢春天，因为有美丽的花。"]]}]},
+  {n:"U3",en:"My school calendar",cn:"校历",g:[
+   {n:"月份与 in/on",d:"in + 月份，on + 具体日期。",e:[["When is Tree Planting Day? — It's in March.","植树节在什么时候？——在三月。"],["The party is on April 1st.","聚会在4月1日。"]]},
+   {n:"will 初步（将来）",d:"will + 动词原形表示将要做某事。",e:[["I'll eat mooncakes with my family.","我将和家人吃月饼。"],["We'll have a school trip.","我们将有一次郊游。"]]}]},
+  {n:"U4",en:"When is the art show?",cn:"艺术节在何时",g:[
+   {n:"序数词",d:"1st/2nd/3rd 特殊，其余加 th（five→fifth，twenty→twentieth）。",e:[["My birthday is on May 5th.","我的生日是5月5日。"],["April Fool's Day is on April 1st.","愚人节在4月1日。"]]},
+   {n:"日期表达",d:"on + 月份 + 序数词；回答 When is...? 用 It's on...。",e:[["When is your birthday? — It's on June 2nd.","你的生日在什么时候？——6月2日。"]]}]},
+  {n:"U5",en:"Whose dog is it?",cn:"这是谁的狗",g:[
+   {n:"物主代词",d:"形容词性（my/your/his）后接名词；名词性（mine/yours/his）单独使用。",e:[["Whose dog is it? — It's mine.","这是谁的狗？——是我的。"],["The book is hers.","这本书是她的。"]]},
+   {n:"现在进行时引入",d:"be + 动词-ing 描述正在发生的动作。",e:[["The dog is sleeping.","狗正在睡觉。"],["The rabbit is playing with its friends.","兔子正在和朋友们玩。"]]}]},
+  {n:"U6",en:"Work quietly!",cn:"安静学习",g:[
+   {n:"现在进行时（巩固）",d:"be + 动词-ing；变化：直接加 ing、去 e 加 ing、双写尾字母加 ing。",e:[["What are you doing? — I'm reading a book.","你在做什么？——我在看书。"],["She is listening to music.","她正在听音乐。"]]},
+   {n:"祈使句（规则）",d:"动词原形开头表命令提醒，否定加 Don't。",e:[["Talk quietly.","小声讲话。"],["Don't eat in class.","不要在课上吃东西。"]]}]}
+ ]}
+]},
+{grade:"六年级", color:"#ef4444", vols:[
+ {title:"六年级上册", ed:"old", edLabel:"旧版参考·新版预计2027秋", units:[
+  {n:"U1",en:"How can I get there?",cn:"问路",g:[
+   {n:"问路指路句型",d:"Where is the...? 问位置；How can I get there? 问路线；指路用 Turn left/right、Go straight。",e:[["Where is the science museum?","科学博物馆在哪里？"],["Turn left at the bookstore.","在书店左转。"]]},
+   {n:"方位介词",d:"next to/near/behind/in front of 描述地点位置。",e:[["It's next to the park.","它紧挨着公园。"],["The hospital is in front of the school.","医院在学校前面。"]]}]},
+  {n:"U2",en:"Ways to go to school",cn:"上学方式",g:[
+   {n:"交通方式 by+交通工具",d:"by + 交通工具（无冠词），步行固定用 on foot。",e:[["I go to school by bus.","我乘公交上学。"],["Usually I come on foot.","我通常步行来。"]]},
+   {n:"一般现在时三单",d:"主语是 he/she/it 时助动词用 does，动词 go→goes。",e:[["How does she go to work? — She goes by car.","她怎么上班？——开车去。"]]},
+   {n:"祈使句与 must",d:"Don't + 动词原形表禁止，must 表“必须”。",e:[["Don't go at the red light.","红灯不要走。"],["You must stop and wait.","你必须停下等待。"]]}]},
+  {n:"U3",en:"My weekend plan",cn:"周末计划",g:[
+   {n:"一般将来时 be going to",d:"be + going to + 动词原形，表计划打算，常配 tomorrow、next week。",e:[["What are you going to do tomorrow?","你明天打算做什么？"],["I'm going to see a film.","我打算去看电影。"]]},
+   {n:"be going to 句型转换",d:"否定在 be 后加 not，疑问句 be 提前。",e:[["Are you going to take a trip? — Yes, I am.","你要去旅行吗？——是的。"],["She isn't going to visit her grandma.","她不打算看望奶奶。"]]}]},
+  {n:"U4",en:"I have a pen pal",cn:"笔友",g:[
+   {n:"like + doing 表爱好",d:"like/hobbies 后接动词-ing 表达爱好。",e:[["What are your hobbies? — I like reading stories.","你的爱好是什么？——我喜欢读故事。"],["He likes doing kung fu.","他喜欢练功夫。"]]},
+   {n:"三单疑问句 Does...?",d:"Does + 三单主语 + 动词原形。",e:[["Does he live in Sydney? — Yes, he does.","他住在悉尼吗？——是的。"],["Does she like dancing?","她喜欢跳舞吗？"]]}]},
+  {n:"U5",en:"What does he do?",cn:"职业",g:[
+   {n:"职业询问 What does...do?",d:"What does/do + 主语 + do? 询问职业。",e:[["What does he do? — He's a businessman.","他是做什么的？——他是商人。"],["What does your mother do?","你妈妈是做什么的？"]]},
+   {n:"工作地点与方式",d:"Where does...work? / How does...go to work? 注意三单变化。",e:[["She works in a hospital.","她在医院工作。"],["He goes to work by bike.","他骑车上班。"]]}]},
+  {n:"U6",en:"How do you feel?",cn:"感受",g:[
+   {n:"情绪表达 feel",d:"How do/does...feel? 问感受，主语 + feel(s) + 情绪形容词。",e:[["How do you feel? — I feel happy.","你感觉怎么样？——我很开心。"],["The cat is afraid of the mouse.","猫害怕老鼠。"]]},
+   {n:"should 提建议",d:"should + 动词原形表“应该”。",e:[["You should take a deep breath.","你应该深呼吸。"],["He should see a doctor.","他应该去看医生。"]]}]}
+ ]},
+ {title:"六年级下册", ed:"old", edLabel:"旧版参考·新版预计2028春", units:[
+  {n:"U1",en:"How tall are you?",cn:"比较",g:[
+   {n:"形容词比较级",d:"两者比较用 比较级 + than；规则：加 er、去 e 加 r、变 y 为 i 加 er、双写加 er。",e:[["I'm taller than you.","我比你高。"],["Your bag is heavier than mine.","你的包比我的重。"]]},
+   {n:"How 引导的测量疑问句",d:"How tall/heavy/old...? 询问身高、体重、年龄。",e:[["How tall are you? — I'm 1.65 metres.","你多高？——我1.65米。"],["How heavy are you?","你多重？"]]}]},
+  {n:"U2",en:"Last weekend",cn:"上周末",g:[
+   {n:"一般过去时（规则动词）",d:"动词加 ed 表过去；标志词 yesterday、last weekend。",e:[["What did you do last weekend? — I cleaned my room.","你上周末做了什么？——我打扫了房间。"],["I watched TV yesterday.","我昨天看了电视。"]]},
+   {n:"过去时的疑问与回答",d:"Did + 主语 + 动词原形；Yes,...did. / No,...didn't.",e:[["Did you wash your clothes? — Yes, I did.","你洗衣服了吗？——洗了。"]]}]},
+  {n:"U3",en:"Where did you go?",cn:"去了哪里",g:[
+   {n:"一般过去时（不规则动词）",d:"go→went、see→saw、eat→ate、ride→rode、buy→bought 等需熟记。",e:[["Where did you go? — I went to Turpan.","你去了哪里？——我去了吐鲁番。"],["We rode bikes there.","我们在那里骑了自行车。"]]},
+   {n:"过去方式询问",d:"How did you go there? 问过去出行的方式。",e:[["How did you go there? — I went by plane.","你怎么去的？——坐飞机去的。"]]}]},
+  {n:"U4",en:"Then and now",cn:"今昔对比",g:[
+   {n:"There be 过去式",d:"There was + 单数 / There were + 复数，描述过去存在的事物。",e:[["There was no gym in my school before.","以前我们学校没有体育馆。"],["Now there is a big library.","现在有一个大图书馆。"]]},
+   {n:"could/couldn't 今昔对比",d:"could 是 can 的过去式，表示过去的能力。",e:[["I couldn't ride a bike before.","我以前不会骑自行车。"],["Now I can go cycling every day.","现在我可以每天骑车。"]]}]}
+ ]}
+]},
+{grade:"七年级", color:"#0ea5e9", vols:[
+ {title:"七年级上册", ed:"new", edLabel:"新版·2024秋", units:[
+  {n:"SU1",en:"Starter: Hello!",cn:"问候与字母",g:[
+   {n:"问候与自我介绍",d:"26个字母书写与发音；问候语及询问姓名。",e:[["What's your name? — My name's Li Ming.","你叫什么名字？——我叫李明。"],["Nice to meet you.","很高兴认识你。"]]}]},
+  {n:"SU2",en:"Starter: Keep Tidy!",cn:"学习用品与位置",g:[
+   {n:"what 特殊疑问句 + be 一般疑问句",d:"What 问物品；be 动词 is/are 提前构成一般疑问句。",e:[["What do you have in your schoolbag?","你书包里有什么？"],["Is it in your schoolbag? — No, it isn't.","它在你书包里吗？——不在。"]]}]},
+  {n:"SU3",en:"Starter: Welcome!",cn:"农家院与数量",g:[
+   {n:"指示词 this/that/these/those",d:"近处用 this/these，远处用 that/those。",e:[["What's that? — It's a cat.","那是什么？——是一只猫。"],["What are these? — They're carrot plants.","这些是什么？——是胡萝卜苗。"]]},
+   {n:"How many + 复数名词",d:"询问数量。",e:[["How many apple trees does he have?","他有多少棵苹果树？"]]}]},
+  {n:"U1",en:"You and Me",cn:"你和我",g:[
+   {n:"be 动词的一般现在时",d:"I 用 am，he/she/it 及单数用 is，you/we/they 及复数用 are；否定在 be 后加 not，疑问把 be 提到句首。",e:[["I am a student.","我是一名学生。"],["She is my good friend.","她是我的好朋友。"],["Are you in Class 1? — Yes, I am.","你在一班吗？——是的。"]]},
+   {n:"人称代词与形容词性物主代词",d:"主格（I/you/he/she/it/we/they）作主语；my/your/his/her/its/our/their 后接名词表所属。",e:[["His name is Peter.","他的名字叫彼得。"],["This is our English teacher.","这是我们的英语老师。"]]}]},
+  {n:"U2",en:"We're Family!",cn:"我们是一家人",g:[
+   {n:"实义动词的一般现在时",d:"三单动词加 -s/-es（have→has）；疑问与否定借助 do/does，does 后动词还原。",e:[["She has a ping-pong bat.","她有一只乒乓球拍。"],["Does your father like sport? — Yes, he does.","你爸爸喜欢运动吗？——是的。"],["They don't watch TV every day.","他们不是每天看电视。"]]},
+   {n:"名词所有格 -'s",d:"单数名词加 's；以 s 结尾的复数只加 '；共同拥有在最后一个人名后加 's。",e:[["This is Teng Fei's grandpa.","这是腾飞的爷爷。"],["These are my parents' books.","这些是我父母的书。"]]}]},
+  {n:"U3",en:"My School",cn:"我的学校",g:[
+   {n:"there be 句型",d:"There is/are + 名词 + 地点；is 接单数或不可数，are 接复数；遵循就近原则。",e:[["There is a library in our school.","我们学校有一个图书馆。"],["There are 40 students in my class.","我班有40名学生。"],["Is there a gym? — Yes, there is.","有体育馆吗？——有。"]]},
+   {n:"方位介词（短语）",d:"in front of、behind、between...and...、next to、across from 描述位置。",e:[["The dining hall is behind the classroom building.","餐厅在教学楼后面。"],["The library is next to the sports field.","图书馆紧挨着运动场。"]]}]},
+  {n:"U4",en:"My Favourite Subject",cn:"最喜欢的学科",g:[
+   {n:"连词 and/but/because",d:"and 表并列“和”，but 表转折“但是”，because 表原因“因为”，回答 why 问句。",e:[["I like English and maths.","我喜欢英语和数学。"],["History is difficult but interesting.","历史难但有趣。"],["I like PE because it's exciting.","我喜欢体育，因为它令人兴奋。"]]}]},
+  {n:"U5",en:"Fun Clubs",cn:"有趣的社团",g:[
+   {n:"情态动词 can 表能力",d:"can + 动词原形，不随人称变化；否定 can't；疑问 Can 提句首。",e:[["I can play the guitar.","我会弹吉他。"],["Can you swim? — No, I can't.","你会游泳吗？——不会。"],["She can't dance, but she can sing.","她不会跳舞，但会唱歌。"]]}]},
+  {n:"U6",en:"A Day in the Life",cn:"生活中的一天",g:[
+   {n:"时间表达法",d:"整点用 基数词+o'clock；非整点顺读或用 past/to；what time/when 提问，介词 at 接时刻。",e:[["What time do you get up? — At six thirty.","你几点起床？——六点半。"],["School starts at eight o'clock.","八点开始上课。"]]},
+   {n:"频度副词",d:"always/usually/often/sometimes/never 表频率，位于 be 动词后、实义动词前。",e:[["I always brush my teeth at 7:00.","我总在7点刷牙。"],["He is never late for school.","他上学从不迟到。"]]}]},
+  {n:"U7",en:"Happy Birthday!",cn:"生日快乐",g:[
+   {n:"基数词与序数词",d:"基数词表数量，序数词表顺序；日期用“月份+序数词”。",e:[["My birthday is on 2nd August.","我的生日是8月2日。"],["There are twelve months in a year.","一年有十二个月。"]]},
+   {n:"特殊疑问句综合",d:"when 问时间、how old 问年龄、how much 问价格；结构：疑问词 + 一般疑问句语序。",e:[["When is your birthday?","你的生日是什么时候？"],["How old are you? — I'm thirteen.","你多大了？——十三岁。"],["How much is the cake?","这个蛋糕多少钱？"]]}]}
+ ]},
+ {title:"七年级下册", ed:"new", edLabel:"新版·2025春", units:[
+  {n:"U1",en:"Animal Friends",cn:"动物朋友",g:[
+   {n:"what/why/where 特殊疑问句",d:"what 问事物、why 问原因（because 回答）、where 问地点；助动词 do/does 随主语变化。",e:[["Why do you like pandas? — Because they're cute.","你为什么喜欢熊猫？——因为它们可爱。"],["Where are lions from?","狮子来自哪里？"]]},
+   {n:"形容词的用法",d:"形容词作表语（be+形容词）或定语（形容词+名词）。",e:[["Elephants are smart and friendly.","大象聪明又友好。"],["It's a lovely dog.","它是一只可爱的狗。"]]},
+   {n:"可数名词复数",d:"规则变化（加 -s/-es、变 y 为 i 加 -es）及常见不规则变化。",e:[["Foxes live in the forest.","狐狸生活在森林里。"]]}]},
+  {n:"U2",en:"No Rules, No Order",cn:"无规矩不成方圆",g:[
+   {n:"祈使句",d:"动词原形开头表命令/要求；否定式 Don't + 动词原形。",e:[["Wear the school uniform.","穿校服。"],["Don't run in the hallways.","不要在走廊里跑。"]]},
+   {n:"can / have to / must",d:"can 表“可以”，must 表“必须”（主观），have to 表“不得不”（客观，有 has to 变化）；后接动词原形。",e:[["We must keep quiet in the library.","我们在图书馆必须保持安静。"],["I have to wear a uniform on Mondays.","周一我不得不穿校服。"],["Can we eat in class? — No, you can't.","我们能在课上吃东西吗？——不能。"]]}]},
+  {n:"U3",en:"Keep Fit",cn:"保持健康",g:[
+   {n:"名词性物主代词",d:"mine/yours/his/hers/ours/theirs 独立使用，相当于“形容词性物主代词+名词”。",e:[["This basketball is mine.","这个篮球是我的。"],["Is this your baseball? — No, it's hers.","这是你的棒球吗？——不，是她的。"]]},
+   {n:"How often 与频率表达",d:"how often 问频率，用 once a week / three times a month 或频度副词回答。",e:[["How often do you exercise? — Three times a week.","你多久锻炼一次？——一周三次。"],["I usually play football after school.","我通常放学后踢足球。"]]}]},
+  {n:"U4",en:"Eat Well",cn:"吃得好",g:[
+   {n:"选择疑问句",d:"用 or 提供选项，回答选其一，不用 Yes/No。",e:[["Do you like noodles or rice? — Noodles.","你喜欢面条还是米饭？——面条。"],["Would you like tea or juice?","你要茶还是果汁？"]]},
+   {n:"可数与不可数名词",d:"可数名词用 many/a few/how many 修饰；不可数名词用 much/a little/how much，数量借助“量词+of”。",e:[["I'd like some bread and a glass of milk.","我想要些面包和一杯牛奶。"],["How many eggs do we need?","我们需要几个鸡蛋？"]]}]},
+  {n:"U5",en:"Here and Now",cn:"此时此刻",g:[
+   {n:"现在进行时（一）",d:"be (am/is/are) + 动词-ing 表说话时正在进行；标志词 now/right now/at the moment。",e:[["What are you doing right now? — I'm reading.","你现在在做什么？——我在看书。"],["She is playing tennis now.","她正在打网球。"],["They aren't watching TV.","他们没在看电视。"]]}]},
+  {n:"U6",en:"Rain or Shine",cn:"阴晴雨雪",g:[
+   {n:"现在进行时 vs 一般现在时",d:"进行时表此刻正进行（now），一般现在时表经常习惯（usually, every day）；看时间状语判时态。",e:[["It's raining. The children are playing in the snow.","下雨了，孩子们在雪地里玩。"],["He usually plays football, but now he is flying a kite.","他通常踢足球，但现在正在放风筝。"],["What's the weather like today?","今天天气怎么样？"]]}]},
+  {n:"U7",en:"A Day to Remember",cn:"难忘的一天",g:[
+   {n:"一般过去时（一）",d:"be 动词过去式 was/were；规则动词加 -ed；标志词 yesterday/last week/...ago。",e:[["How was your school trip? — It was great.","你的学校旅行怎么样？——很棒。"],["We visited a farm last Saturday.","上周六我们参观了农场。"],["They were very tired but happy.","他们很累但很开心。"]]}]},
+  {n:"U8",en:"Once upon a Time",cn:"从前（故事）",g:[
+   {n:"一般过去时（二）",d:"不规则动词过去式（go→went, see→saw, take→took）；疑问/否定借助 did，did 后动词还原。",e:[["Once upon a time, there was a king.","从前，有一位国王。"],["Did you read the story? — Yes, I did.","你读过这个故事吗？——读过。"],["The lion didn't eat the mouse.","狮子没有吃掉老鼠。"]]}]}
+ ]}
+]},
+{grade:"八年级", color:"#6366f1", vols:[
+ {title:"八年级上册", ed:"new", edLabel:"新版·2025秋", units:[
+  {n:"U1",en:"Happy Holiday",cn:"快乐假期",g:[
+   {n:"复合不定代词",d:"someone/anything/everyone 等作主语时谓语用单数；形容词修饰不定代词须后置。",e:[["Did you go anywhere interesting?","你去了什么有趣的地方吗？"],["Everything was ready for the trip.","旅行的一切都准备好了。"]]},
+   {n:"一般过去时（复习）",d:"表过去发生的动作，动词用过去式。",e:[["I went to the beach last summer.","去年夏天我去了海边。"]]}]},
+  {n:"U2",en:"Home Sweet Home",cn:"甜蜜的家",g:[
+   {n:"can/could 表请求与许可",d:"Could you (please) do...? 更委婉；Can/Could I do...? 征求许可；回答用 can/can't。",e:[["Could you please take out the rubbish?","请你倒一下垃圾好吗？"],["Could I use your phone? — Yes, you can.","我能用下你的电话吗？——可以。"]]}]},
+  {n:"U3",en:"Same or Different?",cn:"相同还是不同",g:[
+   {n:"形容词/副词原级与比较级",d:"两者比较用比较级 + than；as...as 表“和……一样”，否定 not as/so...as。",e:[["Tina is taller than her sister.","蒂娜比她姐姐高。"],["Tom runs as fast as Jack.","汤姆跑得和杰克一样快。"]]}]},
+  {n:"U4",en:"Amazing Plants and Animals",cn:"神奇的动植物",g:[
+   {n:"形容词/副词最高级",d:"三者及以上用最高级（-est 或 most+），形容词最高级前加 the，常配 in/of 范围。",e:[["The panda is one of the most popular animals in China.","熊猫是中国最受欢迎的动物之一。"],["Which plant grows (the) fastest?","哪种植物长得最快？"]]}]},
+  {n:"U5",en:"What a Delicious Meal!",cn:"美味的一餐",g:[
+   {n:"感叹句",d:"What (a/an) + 形容词 + 名词（+主谓）；How + 形容词/副词（+主谓）。",e:[["What a delicious meal it is!","多么美味的一顿饭啊！"],["How wonderful the soup tastes!","这汤尝起来真棒！"]]},
+   {n:"可数/不可数名词（巩固）",d:"不可数名词无复数，用量词表达数量。",e:[["a piece of bread","一片面包"]]}]},
+  {n:"U6",en:"Plan for Yourself",cn:"规划自己",g:[
+   {n:"be going to 表将来",d:"be going to + 动词原形，表计划打算或有迹象要发生的事。",e:[["I'm going to be a doctor when I grow up.","我长大后打算当医生。"]]},
+   {n:"动词不定式作宾语",d:"want/decide/hope/plan 等动词后接 to do。",e:[["She decided to learn cooking.","她决定学烹饪。"]]}]},
+  {n:"U7",en:"When Tomorrow Comes",cn:"当明天到来",g:[
+   {n:"will 一般将来时",d:"will + 动词原形，表预测或临时决定，否定 won't；常配 tomorrow, in the future。",e:[["People will live to be 200 years old.","人们将会活到200岁。"],["Will there be less pollution? — Yes, there will.","污染会更少吗？——会的。"]]}]},
+  {n:"U8",en:"Let's Communicate!",cn:"交流表达",g:[
+   {n:"if 引导的条件状语从句",d:"主句用一般将来时，if 从句用一般现在时（主将从现）。",e:[["If you work hard, you will get good grades.","如果你努力学习，就会取得好成绩。"],["If it rains tomorrow, we will stay at home.","如果明天下雨，我们就待在家里。"]]}]}
+ ]},
+ {title:"八年级下册", ed:"new", edLabel:"新版·2026春", units:[
+  {n:"U1",en:"Time to Relax",cn:"放松时刻",g:[
+   {n:"动词不定式 to do",d:"否定 not to do；用法：作宾语（decide to do）、宾补（tell sb. to do）、目的状语（为了）。",e:[["I decide to paint in my free time.","我决定空闲时画画。"],["The instructor told Emma not to give up.","教练告诉艾玛不要放弃。"],["I listen to music to relax.","我听音乐来放松。"]]}]},
+  {n:"U2",en:"Stay Healthy",cn:"保持健康",g:[
+   {n:"反身代词",d:"myself/yourself/himself 等表“某人自己”，常配 enjoy oneself、look after oneself。",e:[["He hurt himself while playing basketball.","他打篮球时伤到了自己。"]]},
+   {n:"should/could 表建议",d:"should/shouldn't + 动词原形，就健康等问题提建议。",e:[["You should drink enough water every day.","你应该每天喝足够的水。"]]}]},
+  {n:"U3",en:"Growing Up",cn:"成长",g:[
+   {n:"used to do 过去常常",d:"used to + 动词原形表过去常做（现在不了）；否定 didn't use to，疑问 Did...use to。",e:[["I used to be afraid of speaking in public.","我过去害怕当众讲话。"]]},
+   {n:"让步/时间/目的状语从句",d:"although 表让步（不与 but 连用），until 表“直到”，so that 表目的。",e:[["Although it was difficult, she didn't give up.","虽然很难，但她没有放弃。"],["He practices every day so that he can improve.","他每天练习以便能提高。"]]}]},
+  {n:"U4",en:"The Wonders of Nature",cn:"自然奇观",g:[
+   {n:"比较级与最高级（拓展）",d:"不规则变化：good/well→better→best；bad→worse→worst；many/much→more→most；大数字 hundred/thousand/million。",e:[["The Amazon is one of the longest rivers in the world.","亚马孙河是世界最长河流之一。"],["Thousands of birds live in the forest.","数千只鸟生活在这片森林里。"]]}]},
+  {n:"U5",en:"Nature's Temper",cn:"自然的脾气",g:[
+   {n:"过去进行时 + when/while",d:"was/were + 动词-ing 表过去某时正在进行；when + 短暂动作，while + 延续动作。",e:[["What were you doing when the rainstorm came?","暴风雨来时你在做什么？"],["While we were walking along the beach, we noticed strange waves.","我们在海滩散步时，注意到了异常的海浪。"]]}]},
+  {n:"U6",en:"Crossing Cultures",cn:"跨文化",g:[
+   {n:"状语从句进阶 + 主将从现",d:"as soon as“一……就”，unless“除非”，so that“以便”；时间/条件从句用一般现在时代替将来。",e:[["I will call you as soon as I arrive.","我一到就给你打电话。"],["Unless it rains, the game will go on.","除非下雨，否则比赛照常进行。"]]}]},
+  {n:"U7",en:"A Good Read",cn:"一本好书",g:[
+   {n:"现在完成时（基础）",d:"have/has + 过去分词；already 用于肯定句，yet 用于否定/疑问句末；have been to（去过已回）≠ have gone to（去了未回）。",e:[["I have already finished reading the book.","我已经读完这本书了。"],["Have you ever been to Beijing?","你去过北京吗？"],["She has gone to the library.","她去图书馆了（还没回来）。"]]}]},
+  {n:"U8",en:"Making a Difference",cn:"有所作为",g:[
+   {n:"现在完成时（进阶 for/since）",d:"for + 时间段、since + 时间点表持续，须用延续性动词；How long 提问时长。",e:[["I have volunteered for two years.","我做志愿者两年了。"],["He has helped people in need since 2024.","他自2024年起帮助有困难的人。"]]},
+   {n:"make sb. do sth. 复习",d:"make + 人 + 动词原形（使某人做某事）；make + 人 + 形容词。",e:[["Helping others makes us feel happy.","帮助别人使我们感到快乐。"]]}]}
+ ]}
+]},
+{grade:"九年级", color:"#ec4899", vols:[
+ {title:"九年级全一册", ed:"old", edLabel:"旧版参考·新版预计2026秋后发行", units:[
+  {n:"U1",en:"How can we become good learners?",cn:"学习方法",g:[
+   {n:"by + 动名词表方式",d:"by + 动词-ing 表示“通过……方式”，回答 How 引导的问句。",e:[["I study English by reading aloud.","我通过大声朗读学英语。"],["She improves her writing by keeping a diary.","她通过写日记提高写作。"]]}]},
+  {n:"U2",en:"I think that mooncakes are delicious!",cn:"节日",g:[
+   {n:"宾语从句（that/if/whether）",d:"宾语从句用陈述语序；陈述句作宾语用 that（可省），一般疑问句用 if/whether（是否）。",e:[["I think that mooncakes are delicious.","我认为月饼很好吃。"],["I wonder whether they will come.","我想知道他们是否会来。"]]},
+   {n:"感叹句",d:"What + (a/an) + 形 + 名；How + 形/副。",e:[["What an interesting story it is!","多有趣的故事啊！"]]}]},
+  {n:"U3",en:"Could you please tell me...?",cn:"问路咨询",g:[
+   {n:"疑问词引导的宾语从句",d:"由 where/when/how 引导，必须用陈述语序（疑问词+主语+谓语）。",e:[["Could you tell me where the restrooms are?","你能告诉我洗手间在哪里吗？"],["Do you know when the store closes?","你知道商店几点关门吗？"]]}]},
+  {n:"U4",en:"I used to be afraid of the dark.",cn:"今昔变化",g:[
+   {n:"used to do",d:"used to + 动词原形表“过去常常（现在不了）”；否定 didn't use to；区分 be used to doing（习惯于）。",e:[["I used to be afraid of the dark.","我过去怕黑。"],["He didn't use to like vegetables.","他过去不喜欢吃蔬菜。"]]}]},
+  {n:"U5",en:"What are the shirts made of?",cn:"产品制造",g:[
+   {n:"一般现在时的被动语态",d:"am/is/are + 过去分词，主语是动作的承受者；by 引出执行者；be made of/from/in。",e:[["The shirts are made of cotton.","这些衬衫是棉制的。"],["Tea is grown in many parts of China.","中国许多地方种茶。"]]}]},
+  {n:"U6",en:"When was it invented?",cn:"发明",g:[
+   {n:"一般过去时的被动语态",d:"was/were + 过去分词，表过去某时“被做”，常用于发明、建造话题。",e:[["The telephone was invented in 1876.","电话发明于1876年。"],["This bridge was built 100 years ago.","这座桥建于100年前。"]]}]},
+  {n:"U7",en:"Teenagers should be allowed...",cn:"规则与许可",g:[
+   {n:"含情态动词的被动语态",d:"情态动词（should/must/can）+ be + 过去分词，表“应该/必须/可以被做”。",e:[["Teenagers should be allowed to choose their own clothes.","应该允许青少年自己选衣服。"],["Homework must be finished on time.","作业必须按时完成。"]]}]},
+  {n:"U8",en:"It must belong to Carla.",cn:"推测",g:[
+   {n:"情态动词表推测",d:"must“一定”（把握最大）；might/could“可能”；can't“不可能”；后接动词原形。",e:[["The book must be Carla's.","这本书一定是卡拉的。"],["He can't be at home; the light is off.","他不可能在家，灯关着。"],["It might rain later.","过会儿可能会下雨。"]]}]},
+  {n:"U9",en:"I like music that I can dance to.",cn:"音乐与电影",g:[
+   {n:"定语从句",d:"that/which/who 引导从句修饰名词（先行词）；指人用 who/that，指物用 which/that。",e:[["I like music that I can dance to.","我喜欢能跟着跳舞的音乐。"],["She is the girl who won the singing competition.","她就是赢得歌唱比赛的女孩。"]]}]},
+  {n:"U10",en:"You're supposed to shake hands.",cn:"礼仪风俗",g:[
+   {n:"be supposed to do",d:"表“应该/被期望做某事”；另学 It is + 形容词 + to do（it 作形式主语）。",e:[["You're supposed to shake hands when you meet.","见面时你应该握手。"],["It is polite to arrive on time.","准时到达是有礼貌的。"]]}]},
+  {n:"U11",en:"Sad movies make me cry.",cn:"情感",g:[
+   {n:"make 作使役动词",d:"make sb. do sth.（省 to 不定式）；make sb. + 形容词“使某人感到……”。",e:[["Sad movies make me cry.","悲伤的电影让我哭。"],["The good news made her happy.","这个好消息使她高兴。"]]}]},
+  {n:"U12",en:"Life is full of the unexpected.",cn:"意外",g:[
+   {n:"过去完成时",d:"had + 过去分词，表“过去的过去”，常配 by the time/before。",e:[["By the time I got up, my brother had left.","我起床时，哥哥已经走了。"],["The bus had already gone when I arrived.","我到的时候公交车已经开走了。"]]}]},
+  {n:"U13",en:"We're trying to save the earth!",cn:"环保",g:[
+   {n:"综合复习：时态与被动",d:"围绕环保话题综合运用进行时、完成时、被动语态、情态动词。",e:[["We're trying to save the earth.","我们正在努力拯救地球。"],["The river used to be so clean.","这条河过去很干净。"]]}]},
+  {n:"U14",en:"I remember meeting all of you in Grade 7.",cn:"回顾与告别",g:[
+   {n:"remember doing / to do",d:"remember doing“记得做过（已做）”；remember to do“记得要去做（未做）”；forget 用法同。",e:[["I remember meeting all of you in Grade 7.","我记得七年级时见过你们大家。"],["Remember to turn off the lights when you leave.","离开时记得关灯。"]]}]}
+ ]}
+]}
+];
+
+/* ================= 渲染逻辑 ================= */
+let curG = 0, curV = 0, keyword = "";
+const $ = s => document.querySelector(s);
+
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function hl(s){
+  s = esc(s);
+  if(!keyword) return s;
+  const k = esc(keyword).replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  return s.replace(new RegExp("("+k+")","gi"),"<mark>$1</mark>");
+}
+
+function renderGrades(){
+  $("#grades").innerHTML = DATA.map((g,i)=>
+    `<div class="gpill ${i===curG?"on":""}" style="${i===curG?`background:${g.color};border-color:${g.color};box-shadow:0 4px 12px ${g.color}55`:""}" onclick="pickGrade(${i})">${g.grade}</div>`
+  ).join("");
+}
+function renderVols(){
+  const g = DATA[curG];
+  $("#vols").innerHTML = g.vols.map((v,i)=>
+    `<div class="vtab ${i===curV?"on":""}" style="${i===curV?`border-color:${g.color};background:${g.color}14`:""}" onclick="pickVol(${i})">
+      <div class="t">${v.title}</div>
+      <div class="s"><span class="badge ${v.ed}">${v.ed==="new"?"新版教材":"旧版参考"}</span> <span style="color:var(--sub)">${v.edLabel}</span></div>
+    </div>`
+  ).join("");
+}
+function match(u){
+  if(!keyword) return true;
+  const k = keyword.toLowerCase();
+  return (u.en+u.cn).toLowerCase().includes(k) ||
+    u.g.some(p => p.n.toLowerCase().includes(k) || p.d.toLowerCase().includes(k) ||
+      p.e.some(x => x[0].toLowerCase().includes(k) || x[1].includes(keyword)));
+}
+
+function renderMain(){
+  const g = DATA[curG], v = g.vols[curV];
+  const units = v.units.filter(match);
+  let totalG = v.units.reduce((s,u)=>s+u.g.length,0);
+  let html = "";
+  if(v.ed==="old"){
+    html += `<div class="notice">⚠️ 本册 2024 教改新版教材尚未发行，以下内容为现行旧版教材语法整理，供过渡参考；新版发行后建议更新。</div>`;
+  }
+  html += `<div class="toolbar">
+    <span class="stat">${v.title} ｜ ${v.units.length} 个单元 · ${totalG} 个语法点${keyword?` ｜ 命中 ${units.length} 个单元`:""}</span>
+    <span>
+      <button onclick="toggleAll(true)">全部展开</button>
+      <button onclick="toggleAll(false)">全部收起</button>
+    </span>
+  </div>`;
+  // 语法点总览 chips
+  html += `<div class="overview">` + v.units.map((u,i)=>
+    u.g.map(p=>`<span class="chip" onclick="jump(${i})" title="${esc(u.n+" "+u.en)}">${esc(p.n.split(/[（(：:]/)[0])}</span>`).join("")
+  ).join("") + `</div>`;
+
+  if(!units.length){
+    html += `<div class="empty">没有找到匹配「${esc(keyword)}」的内容，换个关键词试试～</div>`;
+  }
+  units.forEach((u)=>{
+    const idx = v.units.indexOf(u);
+    html += `<div class="unit ${keyword?"open":""}" id="unit${idx}">
+      <div class="unit-head" onclick="this.parentElement.classList.toggle('open')">
+        <div class="unit-num" style="background:${g.color}1a;color:${g.color}">${u.n}</div>
+        <div class="unit-title">
+          <div class="en">${hl(u.en)}</div>
+          <div class="cn">${hl(u.cn)}</div>
+        </div>
+        <span class="unit-count">${u.g.length} 个语法点</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div class="unit-body">
+        <div class="tree">
+          <div class="root"><span style="background:linear-gradient(135deg,${g.color},${g.color}bb)">${u.n} · ${esc(u.en)}</span></div>
+          <div class="branches" style="--c:${g.color}">
+          ${u.g.map(p=>`
+            <div class="gnode">
+              <div class="gname" style="color:${g.color}">${hl(p.n)}</div>
+              <div class="gdesc">${hl(p.d)}</div>
+              ${p.e.map(x=>`<div class="ex"><div class="en">${hl(x[0])}</div><div class="cn">${hl(x[1])}</div></div>`).join("")}
+            </div>`).join("")}
+          </div>
+        </div>
+      </div>
+    </div>`;
+  });
+  $("#main").innerHTML = html;
+}
+
+function pickGrade(i){ curG=i; curV=0; renderGrades(); renderVols(); renderMain(); window.scrollTo({top:0}); }
+function pickVol(i){ curV=i; renderVols(); renderMain(); }
+function onSearch(v){ keyword=v.trim(); renderMain(); if(keyword) document.querySelectorAll(".unit").forEach(u=>u.classList.add("open")); }
+function toggleAll(open){ document.querySelectorAll(".unit").forEach(u=>u.classList.toggle("open",open)); }
+function jump(i){
+  const el = document.getElementById("unit"+i);
+  if(el){ el.classList.add("open"); el.scrollIntoView({behavior:"smooth",block:"start"}); }
+}
+
+renderGrades(); renderVols(); renderMain();
+</script>
+<footer class="coach-footer">&copy; <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span></footer>
+</body>
+</html>

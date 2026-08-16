@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>自然拼读 · 发音规则</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+  --card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+}
+body{
+  font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+  background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+  color:var(--text);line-height:1.9;min-height:100vh;
+  display:flex;justify-content:center;padding:24px 16px calc(40px + env(safe-area-inset-bottom));
+}
+.container{width:100%;max-width:760px;}
+.title-card{
+  position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+  border-radius:22px;padding:30px 20px 24px;text-align:center;color:#fff;overflow:hidden;
+  box-shadow:0 14px 30px rgba(47,157,240,.25);
+}
+.title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+.title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+.title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+.title-card h1{position:relative;font-size:23px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+.title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:4px;opacity:.94;}
+.title-card .meta{position:relative;margin-top:12px;font-size:12px;opacity:.88;letter-spacing:1px;}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+.video-btn{
+  position:relative;display:inline-flex;align-items:center;gap:8px;
+  padding:12px 28px;
+  background:rgba(255,255,255,.95);color:var(--green-deep);
+  border:none;border-radius:999px;font-size:15px;font-weight:700;
+  box-shadow:0 6px 18px rgba(255,255,255,.4);
+  cursor:pointer;transition:transform .15s, box-shadow .15s;font-family:inherit;
+  text-decoration:none;
+}
+.video-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,255,255,.5)}
+.video-btn:active{transform:scale(.97)}
+.video-btn .play-ico{font-size:18px}
+.sec{background:#fff;border-radius:var(--radius);padding:22px 22px 18px;margin-top:18px;box-shadow:var(--shadow);}
+.sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+.sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+.snd-band{background:linear-gradient(90deg,#35d29a,#2f9df0);color:#fff;text-align:center;padding:8px 14px;border-radius:10px;font-weight:700;letter-spacing:2px;font-size:15px;margin:14px 0 8px;box-shadow:0 4px 12px rgba(47,157,240,.18)}
+.point-row{display:flex;align-items:flex-start;gap:10px;padding:8px 4px;border-bottom:1px dashed #eef4f2}
+.point-row:last-child{border-bottom:none}
+.point-row .lbl{width:104px;flex-shrink:0;color:#1fa873;font-weight:600;font-size:13.5px;padding-top:2px}
+.point-row .syms{flex:1;font-size:14px;color:#4a5a63}
+.tag{display:inline-block;padding:4px 11px;background:#eefaf4;border:1px solid #cdeee0;border-radius:8px;font-size:13px;color:#2f6ba3;font-weight:600;margin:2px 3px;font-family:"Lucida Sans Unicode","Arial Unicode MS",sans-serif}
+.tag b{color:#1fa873}
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;padding:11px 26px;
+  background:#fff;color:#1fa873;border:1.5px solid #2ebd85;border-radius:14px;
+  font-size:14px;font-weight:700;text-decoration:none;
+  box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s;
+}
+.back-btn:active{transform:scale(.97)}
+.back-wrap{text-align:center;margin:24px 0 6px}
+footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px}
+.coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.coach-tip .tip{visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;box-shadow:0 6px 18px rgba(47,157,240,.35);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.coach-tip .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#2f9df0}
+.coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔤 自然拼读 · 发音规则</h1>
+    <p class="sub">114 个发音规则 · 见词能读</p>
+    <p class="meta">系统学拼读 · 点视频即可播放</p>
+    <div class="btn-row">
+      <button class="video-btn" onclick="openVideo()"><span class="play-ico">🎬</span>视频播放</button>
+      <a class="video-btn" href="phonics200.html"><span class="play-ico">📋</span>200 条常用规则表</a>
+    </div>
+  </header>
+
+  <section class="sec">
+    <h2><span class="no">一</span>什么是自然拼读（Phonics）</h2>
+    <p style="font-size:14.5px;color:#4a5a63">自然拼读是研究<b style="color:#1fa873">字母及字母组合与发音之间对应关系</b>的方法。掌握规律后，见到单词能大致读出来、听到读音能大致拼写出来——是英语阅读的基石。</p>
+    <div class="snd-band">六 大 核 心 规 则 族</div>
+    <p style="font-size:14px;color:#4a5a63">短元音 ｜ 长元音（magic e）｜ 元音组合 ｜ 辅音组合 ｜ R 控制音 ｜ 特殊/沉默字母</p>
+  </section>
+
+  <section class="sec">
+    <h2><span class="no">二</span>核心拼读规则</h2>
+
+    <div class="point-row">
+      <div class="lbl">短元音 CVC</div>
+      <div class="syms"><b>闭音节</b>：辅音+元音+辅音，元音发短音。<br>如 <span class="tag">c<b>a</b>t /kæt/</span><span class="tag">p<b>e</b>n /pen/</span><span class="tag">d<b>o</b>g /dɒg/</span></div>
+    </div>
+    <div class="point-row">
+      <div class="lbl">长元音 CVCE</div>
+      <div class="syms"><b>magic e</b>：元音+辅音+e，e 不发音，前元音发长音。<br>如 <span class="tag">c<b>a</b>ke /keɪk/</span><span class="tag">n<b>o</b>te /nəʊt/</span></div>
+    </div>
+    <div class="point-row">
+      <div class="lbl">元音组合</div>
+      <div class="syms">两个元音一起，通常发第一个的长音或固定音。<br>如 <span class="tag">ee→/iː/</span><span class="tag">oa→/əʊ/</span><span class="tag">ai→/eɪ/</span><span class="tag">ou→/aʊ/</span><span class="tag">oo→/uː/·/ʊ/</span></div>
+    </div>
+    <div class="point-row">
+      <div class="lbl">辅音组合</div>
+      <div class="syms">两个辅音相邻，分别或合起来发音。<br>如 <span class="tag">sh /ʃ/</span><span class="tag">ch /tʃ/</span><span class="tag">th /θ/·/ð/</span><span class="tag">bl·st·br（连读）</span></div>
+    </div>
+    <div class="point-row">
+      <div class="lbl">R 控制音</div>
+      <div class="syms">元音后接 r，发音被 r 改变。<br>如 <span class="tag">ar /ɑː/</span><span class="tag">or /ɔː/</span><span class="tag">er·ir·ur /ɜː/</span></div>
+    </div>
+    <div class="point-row">
+      <div class="lbl">特殊规则</div>
+      <div class="syms">沉默字母、c/g 软硬音、词尾等。<br>如 <span class="tag">k<b>n</b>ow（k 不读）</span><span class="tag">c→/s/ 前接 e,i,y</span></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="no">三</span>学习提示</h2>
+    <ul style="margin-left:4px;padding-left:0;list-style:none">
+      <li style="font-size:14.5px;color:#4a5a63;padding:6px 0 6px 26px;position:relative">
+        <span style="position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0)"></span>
+        <b>先单音，后组合</b>：先熟记 26 个字母音，再学字母组合，规则才能串成网。
+      </li>
+      <li style="font-size:14.5px;color:#4a5a63;padding:6px 0 6px 26px;position:relative">
+        <span style="position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0)"></span>
+        <b>拼出来，读出来</b>：用"声形对应"逐段拼读单词，比死记字母顺序更有效。
+      </li>
+      <li style="font-size:14.5px;color:#4a5a63;padding:6px 0 6px 26px;position:relative">
+        <span style="position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0)"></span>
+        <b>在阅读里练</b>：结合分级读物反复应用，规则自然内化。
+      </li>
+    </ul>
+  </section>
+
+  <div class="back-wrap">
+    <a href="../index.html" class="back-btn">🏠 返回首页</a>
+  </div>
+  <footer>© 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span> · 自然拼读 · 发音规则</footer>
+</div>
+
+<script>
+function openVideo(){
+  var w = Math.min(960, Math.floor(screen.availWidth * 0.92));
+  var h = Math.min(620, Math.floor(screen.availHeight * 0.88));
+  var left = Math.floor((screen.availWidth - w) / 2);
+  var top = Math.floor((screen.availHeight - h) / 2);
+  window.open('spelling_video.html', 'spellingVideo',
+    'width=' + w + ',height=' + h + ',left=' + left + ',top=' + top +
+    ',resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no,status=no');
+}
+</script>
+</body>
+</html>

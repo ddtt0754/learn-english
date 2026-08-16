@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>新概念英语</title>
+<style>
+:root {
+  --bg: #f5f7fa;
+  --text: #2c3e50;
+  --text2: #7f8c8d;
+  --card: #fff;
+  --shadow: 0 2px 16px rgba(0,0,0,.06);
+  --radius: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  background: var(--bg); color: var(--text); min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center;
+}
+.container { max-width: 560px; width: 100%; padding: 32px 20px 0; flex: 1; }
+
+/* Header */
+.header { text-align: center; margin-bottom: 36px; }
+.header h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: .04em; margin-bottom: 6px; }
+.header .sub { font-size: .85rem; color: var(--text2); font-weight: 400; }
+
+/* 两宫格 2×1 */
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 32px; }
+.grid a {
+  text-decoration: none; display: block;
+  background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 32px 20px; text-align: center; transition: transform .15s, box-shadow .15s;
+  border: 2px solid transparent; cursor: pointer;
+}
+.grid a:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,.1); }
+.grid a:active { transform: scale(.97); }
+.grid .card-icon { font-size: 2.8rem; margin-bottom: 12px; }
+.grid .card-title { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.grid .card-desc { font-size: .75rem; color: var(--text2); line-height: 1.5; }
+
+/* 暂未上线占位 */
+.placeholder { text-align: center; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 60px 24px; margin-bottom: 32px; }
+.placeholder .ph-icon { font-size: 3rem; margin-bottom: 18px; }
+.placeholder .ph-text { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 30px; letter-spacing: .04em; }
+.placeholder .ph-back { display: inline-flex; align-items: center; gap: 6px; padding: 12px 32px; border-radius: 999px; border: 2px solid #2ebd85; background: #fff; color: #1fa873; font-size: 15px; font-weight: 700; cursor: pointer; transition: transform .15s, box-shadow .15s; font-family: inherit; }
+.placeholder .ph-back:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(46,158,107,.18); }
+.placeholder .ph-back:active { transform: scale(.97); }
+
+/* 各格子的强调色 */
+.book1 { border-color: #22c55e; }
+.book1 .card-icon { color: #22c55e; }
+.book1:hover { border-color: #16a34a; }
+
+.book2 { border-color: #3b82f6; }
+.book2 .card-icon { color: #3b82f6; }
+.book2:hover { border-color: #2563eb; }
+
+/* Footer */
+.site-footer {
+  text-align: center; padding: 16px 0 20px;
+  color: var(--text2); font-size: .75rem;
+  border-top: 1px solid #e2e8f0; margin-top: auto;
+}
+.site-footer a { color: #8aa09a; text-decoration: none; }
+.site-footer a:hover { color: #2ebd85; }
+
+/* 移动端 1 列 */
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; gap: 14px; }
+  .header h1 { font-size: 1.4rem; }
+}
+
+
+/* 教练微信号提示框 */
+.coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.coach-tip .tip{visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;box-shadow:0 6px 18px rgba(47,157,240,.35);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.coach-tip .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#2f9df0}
+.coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+.coach-footer{text-align:center;padding:14px 0 18px;color:var(--text2,#7f8c8d);font-size:.75rem}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>新概念英语</h1>
+    <div class="sub">经典教材 · 系统进阶</div>
+  </div>
+
+  <div class="placeholder">
+    <div class="ph-icon">📚</div>
+    <div class="ph-text">该板块只支持线下学习</div>
+    <button class="ph-back" onclick="history.back()">【返回上一页】</button>
+  </div>
+</div>
+
+<footer class="site-footer"><a href="../index.html">🏠 返回首页</a> &nbsp;·&nbsp; &copy; <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span></footer>
+
+</body>
+</html>

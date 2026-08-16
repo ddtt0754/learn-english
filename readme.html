@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#2ebd85">
-<title>短文听读说写训练 · 全学段英语学习站 · 用途与使用说明</title>
+<title>英语专项培优训练 · 全站用途与使用说明</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   :root{
@@ -64,158 +64,165 @@
   tbody td{padding:8px 10px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
   tbody tr:last-child td{border-bottom:none;}
   footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+
+/* 教练微信号提示框 */
+.coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.coach-tip .tip{visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;box-shadow:0 6px 18px rgba(47,157,240,.35);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.coach-tip .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#2f9df0}
+.coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* 模块卡片（六宫格） */
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0;}
+.mod{background:#fff;border:2px solid #e3f1ea;border-radius:14px;padding:16px 12px;text-align:center;transition:transform .15s,box-shadow .15s;text-decoration:none;}
+.mod:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(47,157,240,.14)}
+.mod .m-icon{font-size:30px;}
+.mod .m-title{font-size:14.5px;font-weight:700;margin:6px 0 3px;}
+.mod .m-desc{font-size:11.5px;color:#8aa09a;line-height:1.6;}
+.mod.c0{border-color:#3b82f6;} .mod.c0 .m-icon{color:#3b82f6;} .mod.c0 .m-title{color:#3b82f6;}
+.mod.c1{border-color:#22c55e;} .mod.c1 .m-icon{color:#22c55e;} .mod.c1 .m-title{color:#22c55e;}
+.mod.c2{border-color:#f59e0b;} .mod.c2 .m-icon{color:#f59e0b;} .mod.c2 .m-title{color:#f59e0b;}
+.mod.c3{border-color:#a855f7;} .mod.c3 .m-icon{color:#a855f7;} .mod.c3 .m-title{color:#a855f7;}
+.mod.c4{border-color:#06b6d4;} .mod.c4 .m-icon{color:#06b6d4;} .mod.c4 .m-title{color:#06b6d4;}
+.mod.c5{border-color:#ec4899;} .mod.c5 .m-icon{color:#ec4899;} .mod.c5 .m-title{color:#ec4899;}
+@media (max-width:560px){.mod-grid{grid-template-columns:repeat(2,1fr);}}
+
+.back-wrap{text-align:center;margin:24px 0 6px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;padding:11px 26px;background:#fff;color:#1fa873;border:1.5px solid #2ebd85;border-radius:14px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s}
+.back-btn:active{transform:scale(.97)}
 </style>
 </head>
 <body>
 <div class="container">
 
   <header class="title-card">
-    <h1>📖 短文听读说写训练</h1>
-    <p class="sub">全学段英语学习站 · 用途与使用说明</p>
-    <p class="meta">人教版（PEP）新课标 · 小学 3~6 年级 + 初中 7~9 年级 · 92 个单元</p>
+    <h1>📘 英语专项培优训练</h1>
+    <p class="sub">全学段英语学习站 · 全站用途与使用说明</p>
+    <p class="meta">单词 · 语法 · 短文 · 新概念 · 语音 · 课程资源 · 六大模块</p>
   </header>
 
   <!-- 一、网站是什么 -->
   <section class="sec">
-    <h2><span class="no">一</span>这个网站是做什么的？</h2>
-    <p>这是一个基于 <b>人教版（PEP）新课标英语教材</b> 的 H5 网页学习站，把小学三年级到初中九年级共 14 个学期、92 个单元的内容，整合成一套「<b>听、读、说、写</b>」四维训练资源。所有页面均为<b>单文件 HTML</b>，无需安装任何软件、无需联网依赖，打开浏览器即可使用，手机 / 平板 / 电脑通用。</p>
-    <p>每个单元配套四类核心内容：</p>
-    <ul>
-      <li><b>📖 课标单词表</b> —— 教材全部课标单词（含音标、词性、释义），支持「隐藏单词列 / 隐藏释义列」自测；</li>
-      <li><b>🎧 跟读练习页</b> —— 将本单元的演讲稿 / 对话稿逐句拆开，用 <b>美式女声</b> 朗读，一句一句跟读练口语；每个跟读页底部还配有「<b>📖 语法解读</b>」和「<b>🎤 口语测评</b>」快捷入口；</li>
-      <li><b>🖨️ 打印版页面</b> —— 单词表与演讲稿的「打印友好版」，一键隐藏注释后可直接打印成默写卷 / 讲义；</li>
-      <li><b>🤖 AI 口语测评</b> —— 基于该单元演讲稿主题的 <b>AI 语音对话互动</b>（Web Speech API），5 轮情景问答、自动评分、生成四维测评报告。</li>
-    </ul>
-    <p>此外，主页顶栏还提供「<b>🔤 单词训练</b>」入口（跳转至 qwertylearner.cn），可作为课外单词拼写强化练习。</p>
-    <p>内容兼顾 <b>汕头 2027 中考</b> 口语考试的情境要求，演讲稿话题贴合考纲。</p>
+    <h2><span class="no">一</span>这个站点包含什么？</h2>
+    <p>「英语专项培优训练」是一个面向<b>小学三年级到初中九年级</b>的 H5 网页学习站，把单词、语法、短文跟读、新概念英语、语音基础和名师课程资源整合进<b>同一个入口</b>。所有页面均为<b>单文件 HTML</b>，无需安装软件、无强制联网依赖，打开浏览器即可使用，手机 / 平板 / 电脑通用。</p>
+    <p>从首页 <span class="kbd">index.html</span> 进入后，可一键切换到以下六大模块：</p>
+    <div class="mod-grid">
+      <div class="mod c0"><div class="m-icon">🔤</div><div class="m-title">单词练习</div><div class="m-desc">拼写强化 · 词义巩固</div></div>
+      <div class="mod c1"><div class="m-icon">📖</div><div class="m-title">语法练习</div><div class="m-desc">知识导图 · 每日一练</div></div>
+      <div class="mod c2"><div class="m-icon">📚</div><div class="m-title">短文练习</div><div class="m-desc">演讲稿 · 听读说写</div></div>
+      <div class="mod c3"><div class="m-icon">🎓</div><div class="m-title">新概念英语</div><div class="m-desc">经典教材 · 情景视频</div></div>
+      <div class="mod c4"><div class="m-icon">🗣️</div><div class="m-title">语音基础</div><div class="m-desc">音标 · 拼读 · 连读 · 语调</div></div>
+      <div class="mod c5"><div class="m-icon">📦</div><div class="m-title">课程资源</div><div class="m-desc">学习方法 · 视频资料</div></div>
+    </div>
+    <p class="tip-box">💡 首页设有<b>手机号验证锁屏</b>：首次访问需输入已登记手机号，验证通过后可 7 天内免登录。如手机无网络或本地打开，会自动降级为内置哈希校验。</p>
   </section>
 
-  <!-- 二、网站构成 -->
+  <!-- 二、六大模块构成 -->
   <section class="sec">
-    <h2><span class="no">二</span>网站由哪几部分组成？</h2>
-    <p>网站有三个核心入口，从 <span class="kbd">index.html</span>（全学段导航主页）进入后即可互相切换：</p>
+    <h2><span class="no">二</span>六大模块分别是什么？</h2>
     <div class="entry-grid">
       <div class="entry">
-        <div class="icon">🎧</div>
-        <div class="name">跟读练习站（主站）</div>
-        <div class="desc">入口：<span class="kbd">index.html</span><br>92 个单元跟读页，逐句美式发音跟读、循环播放、同步高亮，练「听、说」。每个跟读页底部均设有「语法解读」「口语测评」快捷入口。</div>
+        <div class="icon">🔤</div>
+        <div class="name">单词练习</div>
+        <div class="desc">入口：首页卡片 → 外部平台<br>跳转 qwertylearner.cn，课外单词拼写强化与词义巩固练习。</div>
       </div>
       <div class="entry">
-        <div class="icon">🖨️</div>
-        <div class="name">打印版（辅助站）</div>
-        <div class="desc">入口：主页顶部按钮 → <span class="kbd">print/index.html</span><br>92 个打印页（46 份单词表 + 46 份演讲稿/对话稿），可隐藏注释后打印，练「读、写」。</div>
+        <div class="icon">📖</div>
+        <div class="name">语法练习</div>
+        <div class="desc">入口：<span class="kbd">grammar/index.html</span><br>3~9 年级语法知识导图、中考语法每日一练，以及 34 天 / 34 课系统训练。</div>
       </div>
       <div class="entry">
-        <div class="icon">🤖</div>
-        <div class="name">AI 口语测评</div>
-        <div class="desc">入口：跟读页底部「🎤 口语测评」→ <span class="kbd">9a-unitN-oral-test.html</span><br>基于 Web Speech API 的 AI 英语口语对话练习，5 轮情景问答，自动评分并生成报告。</div>
+        <div class="icon">📚</div>
+        <div class="name">短文练习</div>
+        <div class="desc">入口：<span class="kbd">passage/index.html</span><br>人教版 PEP 新课标 92 个单元，逐句美式跟读、语法解读、AI 口语测评、打印版。</div>
+      </div>
+      <div class="entry">
+        <div class="icon">🎓</div>
+        <div class="name">新概念英语</div>
+        <div class="desc">入口：<span class="kbd">nce/index.html</span><br>经典教材第 1 册 / 第 2 册导航，系统进阶学习。</div>
+      </div>
+      <div class="entry">
+        <div class="icon">🗣️</div>
+        <div class="name">语音基础</div>
+        <div class="desc">入口：<span class="kbd">pronunciation/index.html</span><br>国际音标、自然拼读、连读弱读、五大语调 4 大专题，配套讲解视频。</div>
+      </div>
+      <div class="entry">
+        <div class="icon">📦</div>
+        <div class="name">课程资源</div>
+        <div class="desc">入口：<span class="kbd">resources/index.html</span><br>何凯文系统讲语法 12 讲精讲视频，点击即弹窗播放。</div>
       </div>
     </div>
-    <p class="tip-box">💡 在跟读练习站主页顶部的绿蓝渐变标题卡内，有三个快捷按钮：「🖨️ 打印版」「🔤 单词训练」「📘 网站说明」。其中「🔤 单词训练」在新窗口打开外部拼写练习平台 qwertylearner.cn。</p>
+    <p class="tip-box">💡 每个子模块页底部都提供「🏠 返回首页」按钮，可随时回到 <span class="kbd">index.html</span> 切换其他模块。详细的分模块说明可查看 <span class="kbd">passage/readme.html</span>。</p>
   </section>
 
-  <!-- 三、如何开始使用 -->
+  <!-- 三、各模块功能详解 -->
   <section class="sec">
-    <h2><span class="no">三</span>如何开始使用？</h2>
-    <h3>① 选择年级与单元</h3>
-    <div class="flow">
-      <span class="step">打开 index.html</span><span class="arrow">→</span>
-      <span class="step">点年级标签（三~九年级）</span><span class="arrow">→</span>
-      <span class="step">选学期（上/下册）</span><span class="arrow">→</span>
-      <span class="step">点单元卡片</span><span class="arrow">→</span>
-      <span class="step">进入跟读页</span>
-    </div>
-    <ul>
-      <li>年级可通过顶部<b>标签页</b>或<b>下拉框</b>双向切换，选中后下方九宫格自动显示该学期全部单元；</li>
-      <li>九宫格内的单元卡片点击后变绿显示「打开中…」再跳转，手机触摸友好；</li>
-      <li>需要打印版时，点主页顶部「🖨️ 打印版」按钮进入打印站，同样按年级、单元选择。</li>
-    </ul>
+    <h2><span class="no">三</span>各模块功能详解</h2>
 
-    <h3>② 一个单元能看到什么？</h3>
-    <table>
-      <thead><tr><th>页面类型</th><th>内容</th><th>核心功能</th></tr></thead>
-      <tbody>
-        <tr><td>📖 单词表</td><td>课标单词（音标/词性/释义）</td><td>隐藏单词列、隐藏释义列，英汉互译自测</td></tr>
-        <tr><td>📝 演讲稿/对话稿</td><td>单元主题短文或双人对话，词条全覆盖</td><td>隐藏音标注释、整篇中文翻译、打印</td></tr>
-        <tr><td>🎧 跟读 H5</td><td>逐句拆分 + 中文对照</td><td>美式女声单句朗读、全文循环、同步高亮</td></tr>
-      </tbody>
-    </table>
+    <h3>① 单词练习</h3>
+    <div class="feature"><div class="f-icon">🔤</div><div class="f-body"><b>外部拼写平台</b><p>点击首页「单词练习」卡片会新窗口打开 qwertylearner.cn 画廊，作为课外单词拼写与词义巩固的强化练习，与站内短文单词表互补。</p></div></div>
+
+    <h3>② 语法练习（grammar/）</h3>
+    <div class="feature"><div class="f-icon">🗺️</div><div class="f-body"><b>单元语法知识导图</b><p>knowledge_map.html 汇总 3~9 年级语法思维导图，一图掌握各年级语法体系。</p></div></div>
+    <div class="feature"><div class="f-icon">✏️</div><div class="f-body"><b>中考语法每日一练</b><p>daily_practice.html 提供中考语法每日精练，循序渐进巩固考点。</p></div></div>
+    <div class="feature"><div class="f-icon">📅</div><div class="f-body"><b>34 天 / 34 课系统训练</b><p>day1~day34.html 为按天递进的语法训练，lesson1~lesson34.html 为配套讲解讲义，适合长期跟练。</p></div></div>
+
+    <h3>③ 短文练习（passage/）</h3>
+    <div class="feature"><div class="f-icon">🎧</div><div class="f-body"><b>逐句跟读</b><p>92 个单元跟读页（如 3a-unit1.html、7a-unit1.html、9a-unit1.html）支持逐句美式女声朗读、全文循环、同步高亮，练「听、说」。</p></div></div>
+    <div class="feature"><div class="f-icon">📖</div><div class="f-body"><b>语法解读 + AI 口语测评</b><p>每个跟读页底部设有「📖 语法解读」（*-grammar.html）与「🎤 口语测评」（9a-unitN-oral-test.html）快捷入口，形成「跟读 → 语法 → 口语」训练闭环。</p></div></div>
+    <div class="feature"><div class="f-icon">🖨️</div><div class="f-body"><b>打印版</b><p>print/ 目录提供单词表与演讲稿的打印友好版，可隐藏注释后直接打印成默写卷 / 讲义。</p></div></div>
+    <p class="tip-box">💡 短文练习模块的完整用法见 <span class="kbd">passage/readme.html</span>（用途与使用说明）。</p>
+
+    <h3>④ 新概念英语（nce/）</h3>
+    <div class="feature"><div class="f-icon">📗</div><div class="f-body"><b>经典教材导航</b><p>nce/index.html 提供第 1 册 / 第 2 册入口，按经典教材系统进阶。当前为教材导航占位，后续可继续填充课文精读与音频内容。</p></div></div>
+
+    <h3>⑤ 语音基础（pronunciation/）</h3>
+    <div class="feature"><div class="f-icon">🔤</div><div class="f-body"><b>国际音标</b><p>IPA.html —— 48 个音标口诀秒记，点音标即可听发音，打牢发音底层基础。</p></div></div>
+    <div class="feature"><div class="f-icon">📚</div><div class="f-body"><b>自然拼读</b><p>spelling.html —— 114 个发音规则，建立「见词能读、听音能写」的拼读能力。</p></div></div>
+    <div class="feature"><div class="f-icon">🔗</div><div class="f-body"><b>连读弱读</b><p>connected.html —— 连读规则、弱读规律、自然语流，让口语更地道流畅。</p></div></div>
+    <div class="feature"><div class="f-icon">🎵</div><div class="f-body"><b>五大语调</b><p>intonation.html —— 语调规则与自然节奏，掌握英语的轻重缓急。</p></div></div>
+    <p class="tip-box">💡 以上四个专题页均内置讲解视频弹窗（深色播放页 + 倍速 / 暂停 / 关闭控制条 + 键盘快捷键），点击卡片或播放按钮即可居中弹出观看。</p>
+
+    <h3>⑥ 课程资源（resources/）</h3>
+    <div class="feature"><div class="f-icon">🎓</div><div class="f-body"><b>何凯文系统讲语法 · 12 讲</b><p>resources/index.html 罗列 12 节精讲菜单：极速背单词方法、十大词性、介词、四大类动词、16 种时态、句式与语法、特殊句式、6 种从句、语法框架、长难句拆解、口语提升等。点击任意一节即弹窗播放对应视频。</p></div></div>
   </section>
 
-  <!-- 四、跟读页功能 -->
+  <!-- 四、手机号验证 -->
   <section class="sec">
-    <h2><span class="no">四</span>跟读练习页功能详解</h2>
-    <div class="feature"><div class="f-icon">▶️</div><div class="f-body"><b>逐句播放 / 暂停</b><p>每一句英文末尾都有「播放 / 暂停」按钮，也可直接点击句子播放；暂停后再次播放会从暂停处继续。</p></div></div>
-    <div class="feature"><div class="f-icon">🔁</div><div class="f-body"><b>全文循环播放（最多 10 轮）</b><p>页面底部固定控制条：点击「▶ 全文循环播放」从第一句开始循环，最多 10 遍，控制条上方实时显示当前轮数；「■ 停止全部朗读」随时终止。</p></div></div>
-    <div class="feature"><div class="f-icon">👩‍🏫</div><div class="f-body"><b>美式女声朗读（只读英文）</b><p>使用浏览器原生 Web Speech API，自动优先选择 en-US 女声（Samantha / Zira / Google US 等），零第三方依赖；每句朗读时严格只读英文，音标注释与中文绝不会被读出。</p></div></div>
-    <div class="feature"><div class="f-icon">🎯</div><div class="f-body"><b>同步高亮</b><p>正在朗读的句子淡黄高亮并自动滚动居中，所在卡片的中文翻译块同步变蓝，原文 / 中文 / 单词注释一眼区分。</p></div></div>
-    <div class="feature"><div class="f-icon">🙈</div><div class="f-body"><b>隐藏 / 显示音标注释</b><p>页头「隐藏音标注释」按钮一键隐藏全部红色音标词性释义小字（加粗单词保留），用于遮挡自测，再次点击恢复。</p></div></div>
+    <h2><span class="no">四</span>关于首页手机号验证</h2>
+    <div class="feature"><div class="f-icon">🔐</div><div class="f-body"><b>首次访问验证</b><p>打开 <span class="kbd">index.html</span> 会弹出验证卡片，需输入已登记的 11 位手机号。验证通过后写入浏览器本地存储，<b>7 天内免登录</b>；过期后重新弹出验证。</p></div></div>
+    <div class="feature"><div class="f-icon">🔒</div><div class="f-body"><b>隐私安全</b><p>校验在本地完成：手机号经 SHA-256 哈希后与名单比对，<b>不保存明文手机号</b>。无网络或本地打开时，自动降级为内置哈希名单校验。</p></div></div>
+    <div class="feature"><div class="f-icon">👨‍👩‍👧</div><div class="f-body"><b>仅限已登记用户</b><p>页面底部「两英豆豆教练」处悬停 / 点击可查看微信号，如有访问疑问可联系教练登记手机号。</p></div></div>
   </section>
 
-  <!-- 五、打印版功能 -->
+  <!-- 五、使用小贴士 -->
   <section class="sec">
-    <h2><span class="no">五</span>打印版（print 站）功能详解</h2>
-    <div class="feature"><div class="f-icon">🖨️</div><div class="f-body"><b>打印友好设计</b><p>所有打印页都带「打印样式」：打印时自动去除背景、阴影，保留清晰的黑白文字，直接 Ctrl/Cmd + P 即可输出。</p></div></div>
-    <div class="feature"><div class="f-icon">🎴</div><div class="f-body"><b>单词表双列自测</b><p>页头两个按钮：<span class="kbd">隐藏单词列</span>（只看音标释义默写英文）、<span class="kbd">隐藏释义列</span>（只看单词音标默写中文），可组合出不同题型。</p></div></div>
-    <div class="feature"><div class="f-icon">📝</div><div class="f-body"><b>演讲稿 / 对话稿</b><p>词条加粗 + 红色音标词性释义标注，底部附整篇中文翻译；「隐藏音标注释」后可当纯净版朗读或测试材料。</p></div></div>
-    <div class="feature"><div class="f-icon">🔍</div><div class="f-body"><b>词汇全覆盖校验</b><p>每个页面的橙色提示条列明本单元全部课标单词，并注明「全部嵌入、无遗漏」，方便核对。</p></div></div>
-  </section>
-
-  <!-- 六、语法解读 -->
-  <section class="sec">
-    <h2><span class="no">六</span>语法解读页功能详解</h2>
-    <div class="feature"><div class="f-icon">📖</div><div class="f-body"><b>逐句语法精析</b><p>对演讲稿的每一句话进行语法拆解：标注句型结构（主谓宾 / 主系表 / 定语从句等）、讲解关键语法点（时态 / 从句 / 被动语态等）、分析重点短语搭配。适合深度学习与中考语法复习。</p></div></div>
-    <div class="feature"><div class="f-icon">🔗</div><div class="f-body"><b>从跟读页直达</b><p>每个跟读页底部都有「<b>📖 语法解读</b>」按钮（白底绿边），点击即跳到对应单元的语法讲解页，无需回到导航主页。</p></div></div>
-    <div class="feature"><div class="f-icon">📋</div><div class="f-body"><b>覆盖全部课标语法点</b><p>语法讲解与课文词条一一对应，确保学完跟读之后，能立即巩固本单元的重点语法结构，实现「听说先行、语法跟上」。</p></div></div>
-  </section>
-
-  <!-- 七、AI 口语测评 -->
-  <section class="sec">
-    <h2><span class="no">七</span>AI 口语测评页功能详解</h2>
-    <div class="feature"><div class="f-icon">🎤</div><div class="f-body"><b>AI 语音对话互动</b><p>基于浏览器原生 Web Speech API（语音识别 + 语音合成），围绕本单元演讲稿主题进行 <b>5 轮情景问答</b>。AI 考官逐轮提问，学生用英文口头回答。如浏览器不支持语音识别，自动降级为文字输入模式。</p></div></div>
-    <div class="feature"><div class="f-icon">📊</div><div class="f-body"><b>四维自动评分</b><p>每轮回答综合评估四个维度：<b>内容相关性</b>（关键词覆盖率）、<b>语法准确度</b>（句子结构完整性）、<b>词汇运用</b>（多样性）、<b>流利表达</b>。最终生成 <b>A+ / A / B / C / D</b> 等级报告。</p></div></div>
-    <div class="feature"><div class="f-icon">📝</div><div class="f-body"><b>评分 + 示范答案</b><p>每题均提供 AI 示例答案，学生可对照学习地道的英文表达方式。评分维度参考 <b>汕头 2027 中考口语考纲</b>，帮助学生在仿真场景中训练情景问答和口头作文。</p></div></div>
-    <div class="feature"><div class="f-icon">🔗</div><div class="f-body"><b>从跟读页直达</b><p>每个跟读页底部都有「<b>🎤 口语测评</b>」按钮（白底绿边），点击即跳到对应单元的 AI 口语对话页，形成「<b>跟读 → 语法 → 口语测评</b>」三步训练闭环。</p></div></div>
-  </section>
-
-  <!-- 八、适用场景 -->
-  <section class="sec">
-    <h2><span class="no">八</span>适合在哪些场景使用？</h2>
-    <ul>
-      <li><b>🏫 课堂听读训练</b> —— 教师投屏讲解，学生逐句跟读、循环听全文；</li>
-      <li><b>🏠 课后自主学习</b> —— 学生手机打开即练，先跟读再遮挡注释自测，家长无需装软件；</li>
-      <li><b>📄 打印默写 / 讲义</b> —— 打印版单词表做成默写卷、演讲稿做成晨读材料；</li>
-      <li><b>🎤 中考口语备考</b> —— 汕头 2027 中考口语情境演讲稿，话题与考纲贴合，适合模拟演讲；</li>
-      <li><b>👨‍👩‍👧 亲子共学</b> —— 对话稿形式的双人角色跟读，适合家长与孩子分角色练习。</li>
-    </ul>
-  </section>
-
-  <!-- 九、小贴士 -->
-  <section class="sec">
-    <h2><span class="no">九</span>使用小贴士</h2>
+    <h2><span class="no">五</span>使用小贴士</h2>
     <div class="tip-box">
-      <b>关于朗读声音：</b>朗读依赖浏览器的语音合成（Web Speech API），推荐使用 Chrome / Edge / Safari。Windows 系统一般自带 Microsoft 美音女声；若首次点击没有声音，多半是语音列表还未加载完，再点一次即可，页面已做自动重选处理。
+      <b>关于朗读声音：</b>跟读与语音页的朗读依赖浏览器语音合成（Web Speech API），推荐使用 Chrome / Edge / Safari。若首次点击没有声音，多半是语音列表尚未加载完，再点一次即可，页面已做自动重选处理。
     </div>
     <div class="tip-box">
-      <b>关于离线使用：</b>所有页面都是自包含的单文件 HTML，把「短文听读说写训练-全学段」整个文件夹拷贝到 U 盘或本地，不联网也能正常使用（仅语音朗读需要浏览器自带语音，同样离线可用）。
+      <b>关于离线使用：</b>所有页面都是自包含的单文件 HTML，把整个「英语专项培优训练」文件夹拷贝到 U 盘或本地，不联网也能正常使用（仅语音朗读需要浏览器自带语音，同样离线可用）。
     </div>
     <div class="tip-box">
       <b>关于打印：</b>在打印版页面按 Ctrl/Cmd + P，建议在打印设置里勾选「背景图形」以保留卡片底色（可选），不勾选也能得到清晰的黑白文稿。
     </div>
-  </section>
-
-  <!-- 十、英语学习法 -->
-  <section class="sec">
-    <h2><span class="no">十</span>4567学习法</h2>
     <div class="tip-box">
-      <b>关于4567学习法：</b>本站全面贯彻豆豆教练独创的4567英语学习法（即四维五遍六天七复述），既能兼顾校内考试，又能最终实现真正听说自由。
+      <b>关于视频弹窗：</b>课程资源与语音基础模块的讲解视频会以居中弹窗播放，支持 <span class="kbd">空格</span> 暂停、<span class="kbd">← / →</span> 调整倍速、<span class="kbd">Esc</span> 关闭。
     </div>
   </section>
 
-  <div style="text-align:center;margin:24px 0 6px;">
-    <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 24px;background:#fff;color:#1fa873;border:1.5px solid #2ebd85;border-radius:14px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s;" onmousedown="this.style.transform='scale(.97)'" onmouseup="this.style.transform=''" ontouchend="this.style.transform=''">🏠 返回首页</a>
+  <!-- 六、英语学习法 -->
+  <section class="sec">
+    <h2><span class="no">六</span>4567 学习法</h2>
+    <div class="tip-box">
+      <b>关于 4567 学习法：</b>本站全面贯彻豆豆教练独创的 4567 英语学习法（即四维五遍六天七复述），既能兼顾校内考试，又能最终实现真正听说自由。建议结合「短文跟读 → 语法解读 → 口语测评」三步闭环每日坚持。
+    </div>
+  </section>
+
+  <div class="back-wrap">
+    <a href="index.html" class="back-btn">🏠 返回首页</a>
   </div>
-  <footer>© 2026 两英豆豆教练 ·  全学段英语学习站</footer>
+  <footer>© 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span> · 英语专项培优训练 · 全站用途与使用说明</footer>
 </div>
 </body>
 </html>
