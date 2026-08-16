@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2ebd85">
+<title>七年级上册 Unit 6 A Day in the Life · 课标单词表</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    min-height:100vh;
+    padding:24px 14px 60px;
+    color:#33434b;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+  header{
+    text-align:center;
+    background:linear-gradient(135deg,#35d29a,#2f9df0);
+    color:#fff;border-radius:18px;
+    padding:30px 22px 26px;
+    box-shadow:0 10px 30px rgba(47,157,240,.18);
+  }
+  header .badge{
+    display:inline-block;background:rgba(255,255,255,.22);
+    border-radius:999px;padding:4px 14px;font-size:13px;letter-spacing:1px;
+    margin-bottom:12px;
+  }
+  header h1{font-size:24px;margin-bottom:8px;}
+  header p{font-size:14px;opacity:.92;}
+  .tip{
+    background:#fff;border-radius:14px;padding:14px 18px;
+    margin:18px 0 8px;font-size:14px;line-height:1.9;
+    box-shadow:0 4px 14px rgba(47,157,240,.08);
+  }
+  .tip b{color:#1fa873;}
+  .section-title{
+    font-size:18px;margin:26px 0 12px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .section-title::before{
+    content:"";width:5px;height:20px;border-radius:3px;
+    background:linear-gradient(180deg,#35d29a,#2f9df0);
+  }
+  .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(47,157,240,.08);}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  thead th{
+    background:#f0faf6;color:#1fa873;font-size:13.5px;
+    padding:11px 10px;text-align:left;white-space:nowrap;
+    border-bottom:2px solid #d9f2e8;
+  }
+  tbody td{
+    padding:11px 10px;border-bottom:1px solid #eef4f2;vertical-align:top;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfb;}
+  .num{color:#8aa09a;font-size:12.5px;width:40px;}
+  .word{font-weight:700;font-size:16px;color:#2f6ba3;}
+  .ipa{color:#b05a2e;font-family:"Segoe UI",Georgia,serif;white-space:nowrap;}
+  .pos{color:#1fa873;font-weight:600;white-space:nowrap;}
+  .cn{color:#4a5a63;}
+  .note{
+    background:#fff8ef;border-left:4px solid #f5a623;
+    border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0 4px;
+    font-size:13.5px;line-height:1.9;color:#7a5b23;
+  }
+  footer{text-align:center;font-size:12px;color:#8aa09a;margin-top:30px;letter-spacing:1px;}
+  @media print{
+    body{background:#fff;padding:0;}
+    header{box-shadow:none;}
+    .card{box-shadow:none;border:1px solid #ddd;}
+  }
+  /* 隐藏/显示列 切换按钮 */
+  .top-toggle{
+    margin:12px 5px 0;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:38px;
+    padding:0 16px;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s,transform .08s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .top-toggle:active{transform:scale(.97);}
+  @media (hover:hover){
+    .top-toggle:hover{background:rgba(255,255,255,.30);}
+  }
+  /* 一键隐藏/恢复 单词列（第 2 列） */
+  body.hide-word th:nth-child(2),body.hide-word td:nth-child(2){display:none;}
+  /* 一键隐藏/恢复 释义列（第 5 列） */
+  body.hide-cn th:nth-child(5),body.hide-cn td:nth-child(5){display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">2026秋 · 人教新目标版（2024新版）· 新课标</span>
+    <h1>七年级上册 Unit 6 A Day in the Life</h1>
+    <p>一天的生活 · 课标单词表（含音标 / 词性 / 释义）</p>
+      <button class="top-toggle" id="btnToggleWord" type="button">隐藏单词列</button>
+    <button class="top-toggle" id="btnToggleCn" type="button">隐藏释义列</button>
+</header>
+
+  <div class="tip">本单元话题为 <b>一天的生活（A Day in the Life）</b>，围绕日常作息、时间表达、校园生活与他人日常对比展开。教材词汇表核心课标词共 <b>38 个词条</b>（含 10 个短语）。</div>
+  <div class="section-title">📖 一、课标单词表（教材词汇表 38 词条）</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>#</th><th>单词/短语</th><th>音标（英式）</th><th>词性</th><th>释义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="word">make use of</td><td class="ipa">/ˌmeɪk ˈjuːz əv/</td><td class="pos">phr.</td><td class="cn">使用；利用……</td></tr>
+        <tr><td class="num">2</td><td class="word">quarter</td><td class="ipa">/ˈkwɔːtə(r)/</td><td class="pos">n.</td><td class="cn">一刻钟；四等份之一</td></tr>
+        <tr><td class="num">3</td><td class="word">shower</td><td class="ipa">/ˈʃaʊə(r)/</td><td class="pos">n. &amp; v.</td><td class="cn">淋浴；淋浴器；洗淋浴</td></tr>
+        <tr><td class="num">4</td><td class="word">take a shower</td><td class="ipa">/ˌteɪk ə ˈʃaʊə(r)/</td><td class="pos">phr.</td><td class="cn">淋浴；洗淋浴</td></tr>
+        <tr><td class="num">5</td><td class="word">get dressed</td><td class="ipa">/ˌɡet ˈdrest/</td><td class="pos">phr.</td><td class="cn">穿衣服</td></tr>
+        <tr><td class="num">6</td><td class="word">brush</td><td class="ipa">/brʌʃ/</td><td class="pos">v. &amp; n.</td><td class="cn">（用刷子）刷；刷子；画笔</td></tr>
+        <tr><td class="num">7</td><td class="word">tooth</td><td class="ipa">/tuːθ/</td><td class="pos">n.</td><td class="cn">牙齿（pl. teeth）</td></tr>
+        <tr><td class="num">8</td><td class="word">duty</td><td class="ipa">/ˈdjuːti/</td><td class="pos">n.</td><td class="cn">值班；职责</td></tr>
+        <tr><td class="num">9</td><td class="word">on duty</td><td class="ipa">/ˌɒn ˈdjuːti/</td><td class="pos">phr.</td><td class="cn">值班</td></tr>
+        <tr><td class="num">10</td><td class="word">usually</td><td class="ipa">/ˈjuːʒuəli/</td><td class="pos">adv.</td><td class="cn">通常地；一般地</td></tr>
+        <tr><td class="num">11</td><td class="word">get up</td><td class="ipa">/ˌɡet ˈʌp/</td><td class="pos">phr.</td><td class="cn">起床；站起</td></tr>
+        <tr><td class="num">12</td><td class="word">reporter</td><td class="ipa">/rɪˈpɔːtə(r)/</td><td class="pos">n.</td><td class="cn">记者</td></tr>
+        <tr><td class="num">13</td><td class="word">around</td><td class="ipa">/əˈraʊnd/</td><td class="pos">prep. &amp; adv.</td><td class="cn">大约；环绕；到处</td></tr>
+        <tr><td class="num">14</td><td class="word">homework</td><td class="ipa">/ˈhəʊmwɜːk/</td><td class="pos">n.</td><td class="cn">家庭作业</td></tr>
+        <tr><td class="num">15</td><td class="word">go to bed</td><td class="ipa">/ˌɡəʊ tə ˈbed/</td><td class="pos">phr.</td><td class="cn">上床睡觉</td></tr>
+        <tr><td class="num">16</td><td class="word">saying</td><td class="ipa">/ˈseɪɪŋ/</td><td class="pos">n.</td><td class="cn">谚语；格言</td></tr>
+        <tr><td class="num">17</td><td class="word">rise</td><td class="ipa">/raɪz/</td><td class="pos">v. &amp; n.</td><td class="cn">起床；升起；增长 / 增加；增强</td></tr>
+        <tr><td class="num">18</td><td class="word">stay</td><td class="ipa">/steɪ/</td><td class="pos">v.</td><td class="cn">停留；待</td></tr>
+        <tr><td class="num">19</td><td class="word">routine</td><td class="ipa">/ruːˈtiːn/</td><td class="pos">n.</td><td class="cn">常规</td></tr>
+        <tr><td class="num">20</td><td class="word">restaurant</td><td class="ipa">/ˈrestrɒnt/</td><td class="pos">n.</td><td class="cn">餐馆；餐厅</td></tr>
+        <tr><td class="num">21</td><td class="word">housework</td><td class="ipa">/ˈhaʊswɜːk/</td><td class="pos">n.</td><td class="cn">家务劳动</td></tr>
+        <tr><td class="num">22</td><td class="word">while</td><td class="ipa">/waɪl/</td><td class="pos">n. &amp; conj.</td><td class="cn">一段时间；一会儿；在……期间；当……的时候</td></tr>
+        <tr><td class="num">23</td><td class="word">weekend</td><td class="ipa">/ˌwiːkˈend/</td><td class="pos">n.</td><td class="cn">周末</td></tr>
+        <tr><td class="num">24</td><td class="word">at weekends</td><td class="ipa">/ˌæt wiːkˈendz/</td><td class="pos">phr.</td><td class="cn">在周末</td></tr>
+        <tr><td class="num">25</td><td class="word">daily</td><td class="ipa">/ˈdeɪli/</td><td class="pos">adj.</td><td class="cn">每日的；日常的</td></tr>
+        <tr><td class="num">26</td><td class="word">daily routine</td><td class="ipa">/ˌdeɪli ruːˈtiːn/</td><td class="pos">phr.</td><td class="cn">日常生活</td></tr>
+        <tr><td class="num">27</td><td class="word">only</td><td class="ipa">/ˈəʊnli/</td><td class="pos">adv.</td><td class="cn">只；仅</td></tr>
+        <tr><td class="num">28</td><td class="word">break</td><td class="ipa">/breɪk/</td><td class="pos">n. &amp; v.</td><td class="cn">休息；间断；（使）破碎；损坏</td></tr>
+        <tr><td class="num">29</td><td class="word">Finnish</td><td class="ipa">/ˈfɪnɪʃ/</td><td class="pos">n. &amp; adj.</td><td class="cn">芬兰语；芬兰的</td></tr>
+        <tr><td class="num">30</td><td class="word">finish</td><td class="ipa">/ˈfɪnɪʃ/</td><td class="pos">v.</td><td class="cn">结束；完成</td></tr>
+        <tr><td class="num">31</td><td class="word">hockey</td><td class="ipa">/ˈhɒki/</td><td class="pos">n.</td><td class="cn">曲棍球</td></tr>
+        <tr><td class="num">32</td><td class="word">ice hockey</td><td class="ipa">/ˌaɪs ˈhɒki/</td><td class="pos">phr.</td><td class="cn">冰球运动；冰上曲棍球</td></tr>
+        <tr><td class="num">33</td><td class="word">already</td><td class="ipa">/ɔːlˈredi/</td><td class="pos">adv.</td><td class="cn">已经；早已</td></tr>
+        <tr><td class="num">34</td><td class="word">dark</td><td class="ipa">/dɑːk/</td><td class="pos">adj.</td><td class="cn">昏暗的；深色的</td></tr>
+        <tr><td class="num">35</td><td class="word">outside</td><td class="ipa">/ˌaʊtˈsaɪd/</td><td class="pos">adv. &amp; adj. &amp; prep.</td><td class="cn">在外面；外面的；在……外面</td></tr>
+        <tr><td class="num">36</td><td class="word">part</td><td class="ipa">/pɑːt/</td><td class="pos">n.</td><td class="cn">部分</td></tr>
+        <tr><td class="num">37</td><td class="word">everyday</td><td class="ipa">/ˈevrideɪ/</td><td class="pos">adj.</td><td class="cn">每天的；日常的</td></tr>
+        <tr><td class="num">38</td><td class="word">prepare</td><td class="ipa">/prɪˈpeə(r)/</td><td class="pos">v.</td><td class="cn">把……预备好；准备</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">💡 说明：本表依据 2026 秋人教版（2024 新版）新课标七年级上册 Unit 6《A Day in the Life》教材词汇表整理；音标采用英式（DJ）标注。</div>
+  <footer>© 2026 豆豆助理 · 七年级上册 Unit 6 A Day in the Life 课标单词表</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function makeToggle(btnId, cls, showText, hideText){
+    var btn = document.getElementById(btnId);
+    if(!btn) return;
+    function sync(){
+      btn.textContent = document.body.classList.contains(cls) ? showText : hideText;
+    }
+    btn.addEventListener('click', function(){
+      document.body.classList.toggle(cls);
+      sync();
+    });
+    sync();
+  }
+  makeToggle('btnToggleWord', 'hide-word', '显示单词列', '隐藏单词列');
+  makeToggle('btnToggleCn', 'hide-cn', '显示释义列', '隐藏释义列');
+})();
+</script>
+</body>
+</html>

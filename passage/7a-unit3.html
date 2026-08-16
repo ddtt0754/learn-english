@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>7a unit3 演讲稿 · 跟读 H5</title>
+<style>
+  :root{--bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;--red:#e53935;--accent:#2e9e6b;--cn-bg:#f1f6fb;--cn-line:#4a90d9;--hi-en:#fff6da;--hi-en-line:#ffb300;--hi-cn:#e3f2fd;--hi-cn-line:#1e88e5;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;padding-bottom:84px;-webkit-font-smoothing:antialiased;}
+  header{background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;padding:18px 16px 16px;text-align:center;box-shadow:0 2px 10px rgba(46,158,107,.25);}
+  header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.5px;}
+  header p{margin:4px 0 0;font-size:12px;opacity:.92;}
+  .top-toggle{margin-top:10px;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 16px;border:1.5px solid rgba(255,255,255,.85);background:rgba(255,255,255,.16);color:#fff;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,transform .08s;}
+  .top-toggle:active{transform:scale(.97);}
+  .wrap{max-width:760px;margin:0 auto;padding:14px 12px 8px;}
+  .card{background:var(--card);border-radius:14px;padding:14px 14px 12px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .card-title{font-size:13px;font-weight:700;color:var(--accent);margin:0 0 8px;padding-left:10px;border-left:4px solid var(--accent);}
+  .en-sentence{position:relative;padding:10px 12px;margin:8px 0;border-radius:10px;background:#fbfdfc;border:1px solid #eef3f1;font-size:16px;transition:background .25s,box-shadow .25s;cursor:pointer;}
+  .en-sentence strong{font-weight:700;color:#16242c;}
+  .en-sentence .ph{color:var(--red);font-size:.82em;font-family:"Arial",sans-serif;margin:0 2px;white-space:nowrap;transition:opacity .2s;}
+  body.hide-ph .ph{display:none;}
+  .en-sentence.speaking{background:var(--hi-en);box-shadow:inset 0 0 0 2px var(--hi-en-line);}
+  .cn{background:var(--cn-bg);border-left:4px solid var(--cn-line);border-radius:0 10px 10px 0;padding:10px 12px;margin:10px 0 2px;color:#4a5a66;font-size:15px;transition:background .25s,border-color .25s;}
+  .cn.cn-speaking{background:var(--hi-cn);border-left-color:var(--hi-cn-line);color:#1b3a52;}
+  .controls{display:flex;gap:8px;margin-top:10px;}
+  .btn{flex:1;min-height:42px;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;user-select:none;}
+  .btn:active{transform:scale(.97);}
+  .btn-play{background:var(--accent);color:#fff;}
+  .btn-play:hover{filter:brightness(1.05);}
+  .btn-pause{background:#fff;color:var(--accent);border:1.5px solid var(--accent);}
+  .btn-pause:disabled{opacity:.45;cursor:default;}
+  .global-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:1px solid #e3eae6;box-shadow:0 -3px 14px rgba(30,50,40,.08);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;max-width:760px;margin:0 auto;}
+  .global-bar .gbtn{flex:1;min-height:46px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;}
+  .global-bar .gbtn:active{transform:scale(.97);}
+  .gbtn-loop{background:var(--accent);color:#fff;}
+  .gbtn-stop{background:#fdecec;color:var(--red);border:1.5px solid #f4b9b9;}
+  .loop-info{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--muted);background:#fff;padding:2px 10px;border-radius:10px;border:1px solid #e3eae6;white-space:nowrap;}
+  .hint{text-align:center;font-size:12px;color:var(--muted);margin:4px 0 2px;}
+  .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
+  .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}</style>
+</head>
+<body>
+
+<header>
+  <h1>My School · 跟读 H5</h1>
+  <p>人教版七年级上册 Unit 3 ｜ 汕头 2027 中考 ｜ 美式女声 · 单句跟读（只朗读英文）</p>
+  <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
+
+<div class="wrap" id="content">
+  <div class="card">
+    <div class="card-title">开场 · 校园地图</div>
+    <div class="en-sentence" data-spoken="Good morning, my dear teachers and friends! Today, my topic is My School, My Home.">Good morning, my dear teachers and friends! Today, my topic is <i>My School, My Home</i>.</div>
+    <div class="en-sentence" data-spoken="Hello, everyone! Welcome to my school! Look at the map first.">Hello, everyone! Welcome to my school! Look at the map first.</div>
+    <div class="en-sentence" data-spoken="Our dining hall is across from the office building.">Our <strong>dining</strong> <span class="ph">/ˈdaɪnɪŋ/ n. 进餐；用餐</span> <strong>hall</strong> <span class="ph">/hɔːl/ n. 礼堂；大厅</span> is <strong>across from</strong> <span class="ph">/əˈkrɒs frɒm/ phr. 在……对面</span> the <strong>office</strong> <span class="ph">/ˈɒfɪs/ n. 办公室</span> <strong>building</strong> <span class="ph">/ˈbɪldɪŋ/ n. 建筑物；房子</span>.</div>
+    <div class="en-sentence" data-spoken="The gym is next to the sports field.">The <strong>gym</strong> <span class="ph">/dʒɪm/ n. 体育馆；健身房</span> is next to the <strong>sports field</strong> <span class="ph">/ˈspɔːts fiːld/ phr. 运动场</span>.</div>
+    <div class="en-sentence" data-spoken="There is a large library in front of the art building.">There is a <strong>large</strong> <span class="ph">/lɑːdʒ/ adj. 大的；大号的</span> library <strong>in front of</strong> <span class="ph">/ˌɪn ˈfrʌnt əv/ phr. 在……前面</span> the art building.</div>
+    <div class="en-sentence" data-spoken="My classroom is in the tall building across the field.">My classroom is in the tall building <strong>across</strong> <span class="ph">/əˈkrɒs/ prep. 过；穿过</span> the <strong>field</strong> <span class="ph">/fiːld/ n. 场地；田地</span>.</div>
+    <div class="en-sentence" data-spoken="Every corner of our school is beautiful.">Every <strong>corner</strong> <span class="ph">/ˈkɔːnə(r)/ n. 角；墙角；街角</span> of our school is beautiful.</div>
+    <div class="cn">大家早上好！今天我演讲的题目是《我的学校，我的家》。大家好！欢迎来到我的学校！先看地图吧。我们的餐厅在办公楼对面。体育馆紧挨着运动场。艺术楼前面有一座大图书馆。我的教室在穿过操场的那栋高楼里。我们学校的每一个角落都很美。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">① 教室设施</div>
+    <div class="en-sentence" data-spoken="Our classroom is very smart.">Our classroom is very <strong>smart</strong> <span class="ph">/smɑːt/ adj. 智能的；聪明的</span>.</div>
+    <div class="en-sentence" data-spoken="We have a whiteboard, a screen and many lockers.">We have a <strong>whiteboard</strong> <span class="ph">/ˈwaɪtbɔːd/ n. 白板；白色书写板</span>, a <strong>screen</strong> <span class="ph">/skriːn/ n. 屏幕；银幕</span> and many <strong>lockers</strong> <span class="ph">/ˈlɒkə(r)/ n. 有锁储物柜；寄物柜</span>.</div>
+    <div class="en-sentence" data-spoken="My desk drawer is small but clean.">My desk <strong>drawer</strong> <span class="ph">/drɔː(r)/ n. 抽屉</span> is small but clean.</div>
+    <div class="en-sentence" data-spoken="At the back of the classroom, there is a bookcase full of books."><strong>At the back of</strong> <span class="ph">/ˌæt ðə ˈbæk əv/ phr. 在……后面</span> the classroom, there is a <strong>bookcase</strong> <span class="ph">/ˈbʊkkeɪs/ n. 书柜；书架</span> full of books.</div>
+    <div class="en-sentence" data-spoken="We put up our pictures on the wall.">We <strong>put up</strong> <span class="ph">/ˌpʊt ˈʌp/ phr. 张贴；搭建</span> our pictures on the wall.</div>
+    <div class="en-sentence" data-spoken="The notice on the board says, School Open Day is coming! It is very important.">The <strong>notice</strong> <span class="ph">/ˈnəʊtɪs/ n. 通知；注意</span> on the board says, "School Open Day is coming!" It is very <strong>important</strong> <span class="ph">/ɪmˈpɔːtnt/ adj. 重要的</span>.</div>
+    <div class="en-sentence" data-spoken="Different from other classrooms, ours is very special."><strong>Different from</strong> <span class="ph">/ˈdɪfrənt frəm/ phr. 与……不同</span> other classrooms, ours is very <strong>special</strong> <span class="ph">/ˈspeʃl/ adj. 特别的；特殊的</span>.</div>
+    <div class="cn">我们的教室非常智能。我们有白板、屏幕和许多储物柜。我的书桌抽屉虽小但很干净。教室后面有一个装满书的书柜。我们把图画张贴在墙上。板上的通知写着："校园开放日就要到了！"这很重要。与其他教室不同，我们的教室很特别。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">② 学校生活</div>
+    <div class="en-sentence" data-spoken="At school, we do exercises every morning and raise the flag."><strong>At school</strong> <span class="ph">/ˌæt ˈskuːl/ phr. 在学校</span>, we <strong>do exercises</strong> <span class="ph">/ˌduː ˈeksəsaɪzɪz/ phr. 做体操；锻炼</span> every morning and <strong>raise</strong> <span class="ph">/reɪz/ v. 使升高；提高</span> the <strong>flag</strong> <span class="ph">/flæɡ/ n. 旗；旗帜</span>.</div>
+    <div class="en-sentence" data-spoken="Most of us like sports."><strong>Most</strong> <span class="ph">/məʊst/ adj. &amp; pron. 大多数；最多</span> of us like sports.</div>
+    <div class="en-sentence" data-spoken="After class, we change seats and play games.">After class, we <strong>change</strong> <span class="ph">/tʃeɪndʒ/ v. 改变；变化</span> <strong>seats</strong> <span class="ph">/siːt/ n. 座位</span> and play games.</div>
+    <div class="en-sentence" data-spoken="How about you? Do you like your school?"><strong>How about</strong> <span class="ph">/ˌhaʊ əˈbaʊt/ phr. ……怎么样？</span> you? Do you like your school?</div>
+    <div class="en-sentence" data-spoken="The food in the dining hall sounds delicious, and it smells amazing.">The food in the dining hall <strong>sounds</strong> <span class="ph">/saʊnd/ v. 听起来；好像</span> <strong>delicious</strong> <span class="ph">/dɪˈlɪʃəs/ adj. 美味的；可口的</span>, and it smells <strong>amazing</strong> <span class="ph">/əˈmeɪzɪŋ/ adj. 令人惊奇的</span>.</div>
+    <div class="en-sentence" data-spoken="Our school is modern and beautiful. I want to send a photo of our school to my friend.">Our school is <strong>modern</strong> <span class="ph">/ˈmɒdn/ adj. 现代的；当代的</span> and beautiful. I want to <strong>send</strong> <span class="ph">/send/ v. 邮寄；发送</span> a photo of our school to my friend.</div>
+    <div class="en-sentence" data-spoken="Yours is beautiful, too. Our schools sound similar to each other."><strong>Yours</strong> <span class="ph">/jɔːz/ pron. 你的（名词性物主代词）</span> is beautiful, too. Our schools sound <strong>similar</strong> <span class="ph">/ˈsɪmələ(r)/ adj. 类似的；相像的</span> to each other.</div>
+    <div class="cn">在学校，我们每天早上做体操、升国旗。我们大多数人都喜欢运动。课后，我们换座位做游戏。你呢？你喜欢你的学校吗？餐厅的食物听起来很美味，闻起来也令人惊叹。我们的学校现代又美丽。我想给朋友发一张我们学校的照片。你的学校也很美。我们的学校听起来很相似。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">③ 结束语</div>
+    <div class="en-sentence" data-spoken="My friends, my school is like a warm home.">My friends, my school is like a warm home.</div>
+    <div class="en-sentence" data-spoken="We study, play and grow up together here.">We study, play and grow up together here.</div>
+    <div class="en-sentence" data-spoken="See you next time — bye for now! That's all. Thank you for listening!">See you next time — <strong>bye for now</strong> <span class="ph">/ˌbaɪ fə ˈnaʊ/ phr. 再见</span>! That's all. Thank you for listening!</div>
+    <div class="cn">朋友们，我的学校就像一个温暖的家。我们在这里学习、玩耍、一起成长。下次见——再见！我的演讲到此结束，谢谢大家！</div>
+  </div>
+
+  <p class="hint">点击句子或【播放】即可跟读（只朗读英文），红色为单词音标注释，蓝框为中文翻译。</p>
+
+  <div class="full-translation" id="fullTranslation">
+    <h2>整篇中文翻译</h2>
+    <p>尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《我的学校，我的家》。</p>
+    <p>大家好！欢迎来到我的学校！先看地图吧。我们的餐厅在办公楼对面。体育馆紧挨着运动场。艺术楼前面有一座大图书馆。我的教室在穿过操场的那栋高楼里。我们学校的每一个角落都很美。</p>
+    <p>我们的教室非常智能。我们有白板、屏幕和许多储物柜。我的书桌抽屉虽小但很干净。教室后面有一个装满书的书柜。我们把图画张贴在墙上。板上的通知写着："校园开放日就要到了！"这很重要，请一定要看。与其他教室不同，我们的教室很特别。</p>
+    <p>在学校，我们每天早上做体操、升国旗。我们大多数人都喜欢运动。课后，我们换座位做游戏。你呢？你喜欢你的学校吗？餐厅的食物听起来很美味，闻起来也令人惊叹。我们的学校现代又美丽。我想给朋友发一张我们学校的照片。你的学校也很美。我们的学校听起来很相似。</p>
+    <p>朋友们，我的学校就像一个温暖的家。我们在这里学习、玩耍、一起成长。下次见——再见！我的演讲到此结束，谢谢大家！</p>
+  </div>
+</div>
+
+<div class="global-bar">
+  <span class="loop-info" id="loopInfo">未播放</span>
+  <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
+  <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var synth = window.speechSynthesis;
+  var MAX_LOOP = 10;
+  var sentences = Array.prototype.slice.call(document.querySelectorAll('.en-sentence'));
+  sentences.forEach(function(el, i){
+    var ctl = document.createElement('div');
+    ctl.className = 'controls';
+    var bPlay = document.createElement('button');
+    bPlay.className = 'btn btn-play';
+    bPlay.textContent = '▶ 播放';
+    var bPause = document.createElement('button');
+    bPause.className = 'btn btn-pause';
+    bPause.textContent = '⏸ 暂停';
+    bPause.disabled = true;
+    ctl.appendChild(bPlay);
+    ctl.appendChild(bPause);
+    el.appendChild(ctl);
+    bPlay.addEventListener('click', function(e){ e.stopPropagation(); playSingle(i); });
+    bPause.addEventListener('click', function(e){ e.stopPropagation(); pauseCurrent(); });
+    el.addEventListener('click', function(){ playSingle(i); });
+  });
+  var mode = 'idle', currentIdx = -1, paused = false, token = 0, loopCount = 0;
+  var loopInfo = document.getElementById('loopInfo');
+  function pickVoice(){
+    if(!synth) return null;
+    var vs = synth.getVoices() || [];
+    var en = vs.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('en') === 0; });
+    if(!en.length) return null;
+    var fav = en.filter(function(v){
+      var n = v.name.toLowerCase();
+      return /female|samantha|zira|google us|karen|tessa|victoria|allison|google UK English Female|Microsoft.*Zira|Microsoft.*Aria/i.test(n)
+        && (v.lang.toLowerCase().indexOf('en-us') === 0 || v.default);
+    });
+    if(fav.length) return fav[0];
+    var us = en.filter(function(v){ return v.lang.toLowerCase() === 'en-us'; });
+    if(us.length) return us[0];
+    return en[0];
+  }
+  function clearHighlight(){
+    sentences.forEach(function(s){ s.classList.remove('speaking'); });
+    document.querySelectorAll('.cn').forEach(function(c){ c.classList.remove('cn-speaking'); });
+  }
+  function highlight(i){
+    clearHighlight();
+    var s = sentences[i];
+    if(!s) return;
+    s.classList.add('speaking');
+    s.scrollIntoView({behavior:'smooth', block:'center'});
+    var card = s.closest('.card');
+    if(card){
+      var cn = card.querySelector('.cn');
+      if(cn) cn.classList.add('cn-speaking');
+    }
+  }
+  function setPauseBtn(){
+    sentences.forEach(function(s){
+      var b = s.querySelector('.btn-pause');
+      if(b) b.disabled = !(paused && currentIdx === sentences.indexOf(s) && mode !== 'idle');
+    });
+  }
+  function speak(index, nextMode){
+    if(!synth){ alert('当前浏览器不支持语音朗读（Web Speech API）。'); return; }
+    synth.cancel();
+    var myToken = ++token;
+    currentIdx = index;
+    mode = nextMode;
+    paused = false;
+    var text = sentences[index].getAttribute('data-spoken') || sentences[index].textContent;
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 0.92;
+    u.pitch = 1.05;
+    u.onend = function(){
+      if(myToken !== token) return;
+      if(mode === 'all'){ advanceAll(); }
+      else { mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn(); }
+    };
+    u.onerror = function(){ if(myToken !== token) return; mode='idle'; currentIdx=-1; clearHighlight(); setPauseBtn(); };
+    highlight(index);
+    setPauseBtn();
+    synth.speak(u);
+  }
+  function advanceAll(){
+    if(mode !== 'all') return;
+    var next = currentIdx + 1;
+    if(next < sentences.length){ speak(next, 'all'); }
+    else {
+      loopCount++;
+      if(loopCount < MAX_LOOP){
+        loopInfo.textContent = '第 ' + (loopCount+1) + ' / ' + MAX_LOOP + ' 轮';
+        speak(0, 'all');
+      } else {
+        loopInfo.textContent = '已完成 ' + MAX_LOOP + ' 轮';
+        mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn();
+      }
+    }
+  }
+  function playSingle(i){
+    if(paused && mode !== 'idle' && currentIdx === i){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '单句跟读';
+    speak(i, 'single');
+  }
+  function pauseCurrent(){
+    if(synth && synth.speaking && !synth.paused){ synth.pause(); paused = true; setPauseBtn(); }
+  }
+  function stopAll(){
+    if(synth) synth.cancel();
+    token++; mode = 'idle'; currentIdx = -1; paused = false; loopCount = 0;
+    clearHighlight(); setPauseBtn();
+    loopInfo.textContent = '已停止';
+  }
+  document.getElementById('btnLoop').addEventListener('click', function(){
+    if(mode === 'all' && !paused){ pauseCurrent(); loopInfo.textContent = '已暂停'; return; }
+    if(paused && mode === 'all'){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '第 1 / ' + MAX_LOOP + ' 轮';
+    speak(0, 'all');
+  });
+  document.getElementById('btnStop').addEventListener('click', stopAll);
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  function syncToggleLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncToggleLabel();
+  });
+  syncToggleLabel();
+  if(synth && typeof synth.onvoiceschanged !== 'undefined'){
+    synth.onvoiceschanged = function(){ /* voices ready */ };
+  }
+})();
+</script>
+</body>
+</html>

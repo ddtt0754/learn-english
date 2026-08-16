@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2ebd85">
+<title>When Tomorrow Comes · 课标单词表</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);min-height:100vh;padding:24px 14px 60px;color:#33434b;}
+  .wrap{max-width:760px;margin:0 auto;}
+  header{text-align:center;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;border-radius:18px;padding:30px 22px 26px;box-shadow:0 10px 30px rgba(47,157,240,.18);}
+  header .badge{display:inline-block;background:rgba(255,255,255,.22);border-radius:999px;padding:4px 14px;font-size:13px;letter-spacing:1px;margin-bottom:12px;}
+  header h1{font-size:24px;margin-bottom:8px;}
+  header p{font-size:14px;opacity:.92;}
+  .tip{background:#fff;border-radius:14px;padding:14px 18px;margin:18px 0 8px;font-size:14px;line-height:1.9;box-shadow:0 4px 14px rgba(47,157,240,.08);}
+  .tip b{color:#1fa873;}
+  .section-title{font-size:18px;margin:26px 0 12px;display:flex;align-items:center;gap:8px;}
+  .section-title::before{content:"";width:5px;height:20px;border-radius:3px;background:linear-gradient(180deg,#35d29a,#2f9df0);}
+  .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(47,157,240,.08);}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  thead th{background:#f0faf6;color:#1fa873;font-size:13.5px;padding:11px 10px;text-align:left;white-space:nowrap;border-bottom:2px solid #d9f2e8;}
+  tbody td{padding:11px 10px;border-bottom:1px solid #eef4f2;vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfb;}
+  .num{color:#8aa09a;font-size:12.5px;width:40px;}
+  .word{font-weight:700;font-size:16px;color:#2f6ba3;}
+  .ipa{color:#b05a2e;font-family:"Segoe UI",Georgia,serif;white-space:nowrap;}
+  .pos{color:#1fa873;font-weight:600;white-space:nowrap;}
+  .cn{color:#4a5a63;}
+  .note{background:#fff8ef;border-left:4px solid #f5a623;border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0 4px;font-size:13.5px;line-height:1.9;color:#7a5b23;}
+  footer{text-align:center;font-size:12px;color:#8aa09a;margin-top:30px;letter-spacing:1px;}
+  @media print{body{background:#fff;padding:0;}header{box-shadow:none;}.card{box-shadow:none;border:1px solid #ddd;}}
+  /* 隐藏/显示列 切换按钮 */
+  .top-toggle{
+    margin:12px 5px 0;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:38px;
+    padding:0 16px;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s,transform .08s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .top-toggle:active{transform:scale(.97);}
+  @media (hover:hover){
+    .top-toggle:hover{background:rgba(255,255,255,.30);}
+  }
+  /* 一键隐藏/恢复 单词列（第 2 列） */
+  body.hide-word th:nth-child(2),body.hide-word td:nth-child(2){display:none;}
+  /* 一键隐藏/恢复 释义列（第 5 列） */
+  body.hide-cn th:nth-child(5),body.hide-cn td:nth-child(5){display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">2026秋 · 人教新目标版（2025新版）· 新课标</span>
+    <h1>When Tomorrow Comes</h1>
+    <p>当明天到来 · 课标单词表（含音标 / 词性 / 释义）</p>
+      <button class="top-toggle" id="btnToggleWord" type="button">隐藏单词列</button>
+    <button class="top-toggle" id="btnToggleCn" type="button">隐藏释义列</button>
+</header>
+  <div class="tip">本单元话题为 <b>当明天到来（When Tomorrow Comes）</b>，围绕未来预测、科技发展与人工智能展开。教材词汇表核心课标词共 <b>54 个词条</b>。</div>
+  <div class="section-title">📖 课标单词表（教材词汇表）</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>#</th><th>单词/短语</th><th>音标（英式）</th><th>词性</th><th>释义</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="word">prediction</td><td class="ipa">/prɪˈdɪkʃn/</td><td class="pos">n.</td><td class="cn">预测；预言</td></tr>
+        <tr><td class="num">2</td><td class="word">outer</td><td class="ipa">/ˈaʊtə(r)/</td><td class="pos">adj.</td><td class="cn">外围的；外表的</td></tr>
+        <tr><td class="num">3</td><td class="word">worse</td><td class="ipa">/wɜːs/</td><td class="pos">adj. &amp; adv.</td><td class="cn">（bad/badly 的比较级）更差的；更糟的</td></tr>
+        <tr><td class="num">4</td><td class="word">sci-fi</td><td class="ipa">/ˈsaɪfaɪ/</td><td class="pos">n.</td><td class="cn">科幻小说（或影片等）</td></tr>
+        <tr><td class="num">5</td><td class="word">ticket</td><td class="ipa">/ˈtɪkɪt/</td><td class="pos">n.</td><td class="cn">票；券</td></tr>
+        <tr><td class="num">6</td><td class="word">positive</td><td class="ipa">/ˈpɒzətɪv/</td><td class="pos">adj.</td><td class="cn">乐观的；积极的；良好的</td></tr>
+        <tr><td class="num">7</td><td class="word">traffic</td><td class="ipa">/ˈtræfɪk/</td><td class="pos">n.</td><td class="cn">交通；运输</td></tr>
+        <tr><td class="num">8</td><td class="word">technology</td><td class="ipa">/tekˈnɒlədʒi/</td><td class="pos">n.</td><td class="cn">科技；工艺</td></tr>
+        <tr><td class="num">9</td><td class="word">video</td><td class="ipa">/ˈvɪdiəʊ/</td><td class="pos">n. &amp; v.</td><td class="cn">视频；录像；录视频</td></tr>
+        <tr><td class="num">10</td><td class="word">transport</td><td class="ipa">/ˈtrænspɔːt/</td><td class="pos">n. &amp; v.</td><td class="cn">交通运输系统；运输；运送</td></tr>
+        <tr><td class="num">11</td><td class="word">system</td><td class="ipa">/ˈsɪstəm/</td><td class="pos">n.</td><td class="cn">系统</td></tr>
+        <tr><td class="num">12</td><td class="word">efficient</td><td class="ipa">/ɪˈfɪʃnt/</td><td class="pos">adj.</td><td class="cn">效率高的；有功效的</td></tr>
+        <tr><td class="num">13</td><td class="word">education</td><td class="ipa">/ˌedʒuˈkeɪʃn/</td><td class="pos">n.</td><td class="cn">教育</td></tr>
+        <tr><td class="num">14</td><td class="word">length</td><td class="ipa">/leŋθ/</td><td class="pos">n.</td><td class="cn">时长；长度</td></tr>
+        <tr><td class="num">15</td><td class="word">topic</td><td class="ipa">/ˈtɒpɪk/</td><td class="pos">n.</td><td class="cn">话题；题目；标题</td></tr>
+        <tr><td class="num">16</td><td class="word">partner</td><td class="ipa">/ˈpɑːtnə(r)/</td><td class="pos">n.</td><td class="cn">搭档；同伴</td></tr>
+        <tr><td class="num">17</td><td class="word">pass</td><td class="ipa">/pɑːs/</td><td class="pos">v. &amp; n.</td><td class="cn">及格；通过；通行证</td></tr>
+        <tr><td class="num">18</td><td class="word">winner</td><td class="ipa">/ˈwɪnə(r)/</td><td class="pos">n.</td><td class="cn">优胜者；成功者</td></tr>
+        <tr><td class="num">19</td><td class="word">cure</td><td class="ipa">/kjʊə(r)/</td><td class="pos">n. &amp; v.</td><td class="cn">药物；疗法；治愈</td></tr>
+        <tr><td class="num">20</td><td class="word">cancer</td><td class="ipa">/ˈkænsə(r)/</td><td class="pos">n.</td><td class="cn">癌症</td></tr>
+        <tr><td class="num">21</td><td class="word">concert</td><td class="ipa">/ˈkɒnsət/</td><td class="pos">n.</td><td class="cn">音乐会；演奏会</td></tr>
+        <tr><td class="num">22</td><td class="word">cash</td><td class="ipa">/kæʃ/</td><td class="pos">n.</td><td class="cn">现金；金钱</td></tr>
+        <tr><td class="num">23</td><td class="word">wallet</td><td class="ipa">/ˈwɒlɪt/</td><td class="pos">n.</td><td class="cn">钱包；皮夹</td></tr>
+        <tr><td class="num">24</td><td class="word">guest</td><td class="ipa">/ɡest/</td><td class="pos">n.</td><td class="cn">客人；宾客</td></tr>
+        <tr><td class="num">25</td><td class="word">author</td><td class="ipa">/ˈɔːθə(r)/</td><td class="pos">n.</td><td class="cn">作者；作家</td></tr>
+        <tr><td class="num">26</td><td class="word">futurist</td><td class="ipa">/ˈfjuːtʃərɪst/</td><td class="pos">n.</td><td class="cn">未来学家</td></tr>
+        <tr><td class="num">27</td><td class="word">everywhere</td><td class="ipa">/ˈevriweə(r)/</td><td class="pos">adv.</td><td class="cn">到处；所有地方</td></tr>
+        <tr><td class="num">28</td><td class="word">service</td><td class="ipa">/ˈsɜːvɪs/</td><td class="pos">n.</td><td class="cn">服务；公共服务</td></tr>
+        <tr><td class="num">29</td><td class="word">disaster</td><td class="ipa">/dɪˈzɑːstə(r)/</td><td class="pos">n.</td><td class="cn">灾难；不幸</td></tr>
+        <tr><td class="num">30</td><td class="word">emergency</td><td class="ipa">/ɪˈmɜːdʒənsi/</td><td class="pos">n.</td><td class="cn">突发事件；紧急情况</td></tr>
+        <tr><td class="num">31</td><td class="word">disappear</td><td class="ipa">/ˌdɪsəˈpɪə(r)/</td><td class="pos">v.</td><td class="cn">消失；不见</td></tr>
+        <tr><td class="num">32</td><td class="word">challenging</td><td class="ipa">/ˈtʃælɪndʒɪŋ/</td><td class="pos">adj.</td><td class="cn">挑战性的</td></tr>
+        <tr><td class="num">33</td><td class="word">pilot</td><td class="ipa">/ˈpaɪlət/</td><td class="pos">n.</td><td class="cn">飞行员；领航员</td></tr>
+        <tr><td class="num">34</td><td class="word">expert</td><td class="ipa">/ˈekspɜːt/</td><td class="pos">n. &amp; adj.</td><td class="cn">专家；行家；熟练的</td></tr>
+        <tr><td class="num">35</td><td class="word">replace</td><td class="ipa">/rɪˈpleɪs/</td><td class="pos">v.</td><td class="cn">代替；取代</td></tr>
+        <tr><td class="num">36</td><td class="word">creativity</td><td class="ipa">/ˌkriːeɪˈtɪvəti/</td><td class="pos">n.</td><td class="cn">创造力</td></tr>
+        <tr><td class="num">37</td><td class="word">emotional</td><td class="ipa">/ɪˈməʊʃənl/</td><td class="pos">adj.</td><td class="cn">情感的；情绪的</td></tr>
+        <tr><td class="num">38</td><td class="word">intelligence</td><td class="ipa">/ɪnˈtelɪdʒəns/</td><td class="pos">n.</td><td class="cn">智力；智慧</td></tr>
+        <tr><td class="num">39</td><td class="word">mention</td><td class="ipa">/ˈmenʃn/</td><td class="pos">v.</td><td class="cn">提到；写到</td></tr>
+        <tr><td class="num">40</td><td class="word">accept</td><td class="ipa">/əkˈsept/</td><td class="pos">v.</td><td class="cn">接受；相信</td></tr>
+        <tr><td class="num">41</td><td class="word">influence</td><td class="ipa">/ˈɪnfluəns/</td><td class="pos">v. &amp; n.</td><td class="cn">影响；作用</td></tr>
+        <tr><td class="num">42</td><td class="word">creative</td><td class="ipa">/kriˈeɪtɪv/</td><td class="pos">adj.</td><td class="cn">创造性的；创作的</td></tr>
+        <tr><td class="num">43</td><td class="word">impossible</td><td class="ipa">/ɪmˈpɒsəbl/</td><td class="pos">adj.</td><td class="cn">不可能的</td></tr>
+        <tr><td class="num">44</td><td class="word">quality</td><td class="ipa">/ˈkwɒləti/</td><td class="pos">n. &amp; adj.</td><td class="cn">素质；质量；品质；优质的</td></tr>
+        <tr><td class="num">45</td><td class="word">develop</td><td class="ipa">/dɪˈveləp/</td><td class="pos">v.</td><td class="cn">增强；发展；开发</td></tr>
+        <tr><td class="num">46</td><td class="word">valuable</td><td class="ipa">/ˈvæljuəbl/</td><td class="pos">adj.</td><td class="cn">很有用的；宝贵的</td></tr>
+        <tr><td class="num">47</td><td class="word">challenge</td><td class="ipa">/ˈtʃælɪndʒ/</td><td class="pos">n. &amp; v.</td><td class="cn">挑战；向（某人）挑战</td></tr>
+        <tr><td class="num">48</td><td class="word">public</td><td class="ipa">/ˈpʌblɪk/</td><td class="pos">adj.</td><td class="cn">公共的；公众的</td></tr>
+        <tr><td class="num">49</td><td class="word">medical</td><td class="ipa">/ˈmedɪkl/</td><td class="pos">adj.</td><td class="cn">医学的；医疗的</td></tr>
+        <tr><td class="num">50</td><td class="word">industry</td><td class="ipa">/ˈɪndəstri/</td><td class="pos">n.</td><td class="cn">行业；工业</td></tr>
+        <tr><td class="num">51</td><td class="word">task</td><td class="ipa">/tɑːsk/</td><td class="pos">n.</td><td class="cn">任务；工作</td></tr>
+        <tr><td class="num">52</td><td class="word">depend</td><td class="ipa">/dɪˈpend/</td><td class="pos">v.</td><td class="cn">取决于；依靠</td></tr>
+        <tr><td class="num">53</td><td class="word">depend on</td><td class="ipa">/dɪˈpend ɒn/</td><td class="pos">phr.</td><td class="cn">取决于；依靠</td></tr>
+        <tr><td class="num">54</td><td class="word">outer space</td><td class="ipa">/ˌaʊtə ˈspeɪs/</td><td class="pos">phr.</td><td class="cn">太空；外层空间</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">💡 说明：本表依据 2026 秋人教版（2025 新版，人教新目标版）新课标八年级上册教材词汇表整理；音标采用英式（DJ）标注。单元生词量大、含部分跨学科词汇，属新教材正常容量。</div>
+  <footer>© 2026 豆豆助理 · When Tomorrow Comes 课标单词表</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function makeToggle(btnId, cls, showText, hideText){
+    var btn = document.getElementById(btnId);
+    if(!btn) return;
+    function sync(){
+      btn.textContent = document.body.classList.contains(cls) ? showText : hideText;
+    }
+    btn.addEventListener('click', function(){
+      document.body.classList.toggle(cls);
+      sync();
+    });
+    sync();
+  }
+  makeToggle('btnToggleWord', 'hide-word', '显示单词列', '隐藏单词列');
+  makeToggle('btnToggleCn', 'hide-cn', '显示释义列', '隐藏释义列');
+})();
+</script>
+</body>
+</html>

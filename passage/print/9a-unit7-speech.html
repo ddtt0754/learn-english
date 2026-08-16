@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2ebd85">
+<title>九年级上册 Unit 7 英语演讲稿 · Feel the Rhythm</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    min-height:100vh;
+    padding:24px 14px 60px;
+    color:#33434b;
+    line-height:1.8;
+  }
+  .wrap{max-width:780px;margin:0 auto;}
+  header{
+    text-align:center;
+    background:linear-gradient(135deg,#35d29a,#2f9df0);
+    color:#fff;border-radius:18px;
+    padding:30px 22px 26px;
+    box-shadow:0 10px 30px rgba(47,157,240,.18);
+  }
+  header .badge{
+    display:inline-block;background:rgba(255,255,255,.22);
+    border-radius:999px;padding:4px 14px;font-size:12.5px;letter-spacing:1px;
+    margin-bottom:12px;
+  }
+  header h1{font-size:23px;margin-bottom:8px;}
+  header p{font-size:14px;opacity:.92;}
+  .speech{
+    background:#fff;border-radius:16px;
+    padding:34px 30px 30px;margin-top:20px;
+    box-shadow:0 4px 16px rgba(47,157,240,.08);
+    font-size:16.5px;letter-spacing:.2px;
+  }
+  .speech .title{font-size:19px;font-weight:700;color:#2f6ba3;text-align:center;margin-bottom:6px;}
+  .speech .greet{text-align:center;color:#8aa09a;font-size:14px;margin-bottom:18px;}
+  .speech p{margin:14px 0;text-align:justify;}
+  .word{font-weight:700;color:#1f3a5c;}
+  .ref{color:#d4372a;font-size:13px;font-weight:600;white-space:normal;}
+  .ref .ipa{font-family:"Segoe UI",Georgia,serif;}
+  .trans{
+    background:#fff;border-radius:16px;padding:28px 30px;margin-top:16px;
+    box-shadow:0 4px 16px rgba(47,157,240,.08);
+  }
+  .trans .t-title{
+    font-size:15px;font-weight:700;color:#1fa873;
+    border-bottom:2px solid #d9f2e8;padding-bottom:8px;margin-bottom:12px;
+  }
+  .trans p{margin:12px 0;font-size:15px;color:#4a5a63;text-align:justify;}
+  .trans .t-greet{color:#8aa09a;text-align:center;font-size:13.5px;margin-bottom:14px;}
+  .note{
+    background:#fff8ef;border-left:4px solid #f5a623;
+    border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0 4px;
+    font-size:13px;line-height:1.9;color:#7a5b23;
+  }
+  footer{text-align:center;font-size:12px;color:#8aa09a;margin-top:28px;letter-spacing:1px;}
+  @media print{
+    body{background:#fff;padding:0;}
+    header{box-shadow:none;}
+    .speech,.trans{box-shadow:none;border:1px solid #ddd;}
+  }
+
+  /* 隐藏/显示音标注释切换按钮 */
+  .top-toggle{
+    margin-top:12px;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:38px;
+    padding:0 18px;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s,transform .08s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .top-toggle:active{transform:scale(.97);}
+  @media (hover:hover){
+    .top-toggle:hover{background:rgba(255,255,255,.30);}
+  }
+  /* 一键隐藏红色音标词性释义小字（加粗单词保留） */
+  body.hide-ph .ref{display:none;}
+
+  /* 语法解读入口按钮 */
+  .grammar-btn{
+    display:block;text-align:center;
+    margin:12px 0 0;
+    padding:0; /* 由 a 控制 */
+  }
+  .grammar-btn a{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:10px 26px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:#fff;border-radius:999px;
+    font-size:13.5px;font-weight:600;letter-spacing:1px;
+    text-decoration:none;
+    box-shadow:0 4px 14px rgba(102,126,234,.25);
+    transition:transform .08s,box-shadow .2s;
+    touch-action:manipulation;
+  }
+  .grammar-btn a:active{transform:scale(.97);}
+  @media (hover:hover){
+    .grammar-btn a:hover{box-shadow:0 6px 20px rgba(102,126,234,.35);}
+  }
+  @media print{.grammar-btn{display:none;}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">2026秋 · 人教新目标版 · 汕头2027中考口语演讲</span>
+    <h1>英语演讲稿 · Unit 7 Feel the Rhythm</h1>
+    <p>全覆盖 85 个课标单词（加粗 + 红色音标 / 词性 / 释义）</p>
+      <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
+
+  <div class="speech">
+    <div class="title">Feel the Rhythm</div>
+    <div class="greet">感受节奏</div>
+
+    <p>Good morning, my dear teachers and friends! Today, my topic is <em>Feel the Rhythm</em>.</p>
+
+    <p>Music is everywhere, and every kind of music has its own <span class="word">rhythm</span> <span class="ref">/ˈrɪðm/ n. 节奏；韵律</span>. We have <span class="word">folk</span> <span class="ref">/fəʊk/ adj. 民间的 n. 民间音乐</span> songs, <span class="word">traditional</span> <span class="ref">/trəˈdɪʃənl/ adj. 传统的；习俗的</span> <span class="word">tunes</span> <span class="ref">/tjuːn/ n. 曲调；旋律 v. 调音</span>, <span class="word">pop</span> <span class="ref">/pɒp/ n. 流行音乐 v. 蹦出 adj. 流行的</span> music, <span class="word">jazz</span> <span class="ref">/dʒæz/ n. 爵士乐</span>, <span class="word">rap</span> <span class="ref">/ræp/ n. 说唱乐 v. 表演说唱乐</span>, <span class="word">blues</span> <span class="ref">/bluːz/ n. 布鲁斯音乐；蓝调</span> and <span class="word">classical</span> <span class="ref">/ˈklæsɪkl/ adj. 古典的；经典的</span> music. Each <span class="word">style</span> <span class="ref">/staɪl/ n. 风格；方式</span> tells a different story, and <span class="word">whatever</span> <span class="ref">/wɒtˈevə(r)/ pron. 无论什么；任何（事物）</span> music you like, you can always find joy in it.</p>
+
+    <p>Instruments bring music to life. The <span class="word">piano</span> <span class="ref">/piˈænəʊ/ n. 钢琴</span> and the <span class="word">keyboard</span> <span class="ref">/ˈkiːbɔːd/ n. 电子琴；键盘</span> can play many keys, while the <span class="word">guitar</span> <span class="ref">/ɡɪˈtɑː(r)/ n. 吉他</span>, the <span class="word">violin</span> <span class="ref">/ˌvaɪəˈlɪn/ n. 小提琴</span>, the <span class="word">flute</span> <span class="ref">/fluːt/ n. 长笛</span> and the <span class="word">trumpet</span> <span class="ref">/ˈtrʌmpɪt/ n. 小号；喇叭</span> each have a <span class="word">unique</span> <span class="ref">/juˈniːk/ adj. 独特的；独一无二的</span> <span class="word">sound</span> <span class="ref">/saʊnd/ n. 声音 v. 听起来</span>. The <span class="word">drum</span> <span class="ref">/drʌm/ n. 鼓</span> gives us a strong <span class="word">beat</span> <span class="ref">/biːt/ n. 节拍；节奏</span>. With an <span class="word">electric</span> <span class="ref">/ɪˈlektrɪk/ adj. 电的；令人激动的</span> guitar or an <span class="word">electronic</span> <span class="ref">/ˌɪlekˈtrɒnɪk/ adj. 电子的</span> keyboard, young musicians can <span class="word">create</span> <span class="ref">/kriˈeɪt/ v. 创造；创作</span> modern sounds. Even <span class="word">without</span> <span class="ref">/wɪˈðaʊt/ prep. 没有；无</span> any instrument, people can <span class="word">whistle</span> <span class="ref">/ˈwɪsl/ v. &amp; n. 吹口哨；口哨声</span> or <span class="word">hum</span> <span class="ref">/hʌm/ v. &amp; n. 哼唱；嗡嗡声</span> a <span class="word">melody</span> <span class="ref">/ˈmelədi/ n. 旋律；曲调</span>, and some like to <span class="word">strum</span> <span class="ref">/strʌm/ v. 弹拨（吉他等弦乐器）</span> a guitar in the park.</p>
+
+    <p>Great <span class="word">musicians</span> <span class="ref">/mjuˈzɪʃn/ n. 音乐家</span> are often <span class="word">gifted</span> <span class="ref">/ˈɡɪftɪd/ adj. 有天赋的</span>, and some are true <span class="word">geniuses</span> <span class="ref">/ˈdʒiːniəs/ n. 天才人物；天赋</span>. A <span class="word">talented</span> <span class="ref">/ˈtæləntɪd/ adj. 有才能的；有天赋的</span> <span class="word">pianist</span> <span class="ref">/ˈpɪənɪst/ n. 钢琴家；钢琴演奏者</span> can <span class="word">master</span> <span class="ref">/ˈmɑːstə(r)/ v. &amp; n. 掌握；精通；大师</span> the piano after years of practice. A <span class="word">composer</span> <span class="ref">/kəmˈpəʊzə(r)/ n. 作曲家</span> writes music, a <span class="word">singer</span> <span class="ref">/ˈsɪŋə(r)/ n. 歌手</span> sings the <span class="word">song</span> <span class="ref">/sɒŋ/ n. 歌曲</span>, and a <span class="word">performer</span> <span class="ref">/pəˈfɔːmə(r)/ n. 演奏者；表演者</span> brings it to the stage. The drummer <span class="word">beats</span> <span class="ref">/biːt/ v. 敲打（鼓）；击败 n. 节拍</span> the drums with great power. A <span class="word">conductor</span> <span class="ref">/kənˈdʌktə(r)/ n. 指挥</span> <span class="word">conducts</span> <span class="ref">/kənˈdʌkt/ v. 指挥（乐队/合唱团）；引导</span> the <span class="word">orchestra</span> <span class="ref">/ˈɔːkɪstrə/ n. 管弦乐队</span>, and every member of the <span class="word">band</span> <span class="ref">/bænd/ n. 乐队</span> plays their part. The singer has a sweet <span class="word">voice</span> <span class="ref">/vɔɪs/ n. 嗓音；声音</span>, and the <span class="word">applause</span> <span class="ref">/əˈplɔːz/ n. 掌声；喝彩</span> fills the hall. <span class="word">Hats off</span> <span class="ref">/ˌhæts ˈɒf/ phr. （向某人）表示敬佩</span> to all <span class="word">professional</span> <span class="ref">/prəˈfeʃənl/ adj. 专业的；职业的</span> musicians who <span class="word">pour</span> <span class="ref">/pɔː(r)/ v. 倾倒；倒出；倾泻</span> their hearts into music!</p>
+
+    <p>When we enjoy music, we can <span class="word">tap (one's feet)</span> <span class="ref">/ˌtæp wʌnz ˈfiːt/ phr. 用脚打拍子</span> to the beat, <span class="word">sing along to</span> <span class="ref">/ˌsɪŋ əˈlɒŋ tuː/ phr. 随着……唱</span> the <span class="word">chorus</span> <span class="ref">/ˈkɔːrəs/ n. 合唱；副歌；合唱团</span>, and <span class="word">dance to</span> <span class="ref">/ˌdɑːns tuː/ phr. 随着……跳舞</span> the rhythm. We can <span class="word">download</span> <span class="ref">/ˌdaʊnˈləʊd/ v. 下载</span> songs from the internet, <span class="word">comment</span> <span class="ref">/ˈkɒment/ v. &amp; n. 评论；批评</span> on our favourite artists, and <span class="word">rate</span> <span class="ref">/reɪt/ v. 评价；给……评分 n. 比率</span> a <span class="word">live</span> <span class="ref">/laɪv/ adj. 现场的；活的 adv. 现场地</span> <span class="word">performance</span> <span class="ref">/pəˈfɔːməns/ n. 演出；表演</span>. We may <span class="word">compose</span> <span class="ref">/kəmˈpəʊz/ v. 作曲；创作；组成</span> a simple melody with the keyboard, read the <span class="word">lyrics</span> <span class="ref">/ˈlɪrɪk/ n. 歌词 adj. 抒情的</span> of a new <span class="word">album</span> <span class="ref">/ˈælbəm/ n. 专辑；音乐专辑</span>, or <span class="word">record</span> <span class="ref">/rɪˈkɔːd/ v. 录制；记录</span> our own songs on the phone. A famous singer may <span class="word">release</span> <span class="ref">/rɪˈliːs/ v. &amp; n. 发布；发行；释放</span> a new album every year. We should not make <span class="word">noise</span> <span class="ref">/nɔɪz/ n. 噪音；声音</span> during a <span class="word">concert</span> <span class="ref">/ˈkɒnsət/ n. 音乐会</span>; instead, we should listen <span class="word">softly</span> <span class="ref">/ˈsɒftli/ adv. 轻柔地；柔和地</span> and <span class="word">applaud</span> <span class="ref">/əˈplɔːd/ v. 鼓掌；称赞</span> <span class="word">loudly</span> <span class="ref">/ˈlaʊdli/ adv. 大声地；响亮地</span> when the performance ends. Some songs are <span class="word">soulful</span> <span class="ref">/ˈsəʊlfl/ adj. 深情的；真挚的</span> and <span class="word">emotional</span> <span class="ref">/ɪˈməʊʃənl/ adj. 情感上的；感人的</span>, some are <span class="word">romantic</span> <span class="ref">/rəʊˈmæntɪk/ adj. 浪漫的；爱情的</span> and <span class="word">golden</span> <span class="ref">/ˈɡəʊldən/ adj. 金色的；黄金般的</span>, and some are so powerful that they <span class="word">inspire</span> <span class="ref">/ɪnˈspaɪə(r)/ v. 鼓舞；激励；激发灵感</span> us and <span class="word">improve</span> <span class="ref">/ɪmˈpruːv/ v. 改善；提高</span> our lives. Music can <span class="word">express</span> <span class="ref">/ɪkˈspres/ v. 表达；表露</span> our feelings and <span class="word">broaden</span> <span class="ref">/ˈbrɔːdn/ v. 拓宽；扩大</span> our minds. We can even <span class="word">perform</span> <span class="ref">/pəˈfɔːm/ v. 表演；演出；表现</span> a short song for our friends at a party.</p>
+
+    <p>Music is a <span class="word">valuable</span> <span class="ref">/ˈvæljuəbl/ adj. 贵重的；宝贵的</span> gift to everyone, even to <span class="word">deaf</span> <span class="ref">/def/ adj. 聋的</span> people who can feel the vibration. <span class="word">Nowadays</span> <span class="ref">/ˈnaʊədeɪz/ adv. 现今；现在</span>, music is <span class="word">popular</span> <span class="ref">/ˈpɒpjələ(r)/ adj. 受欢迎的；流行的</span> everywhere, and many people listen to it <span class="word">regularly</span> <span class="ref">/ˈreɡjələli/ adv. 定期地；经常地</span>, with or without headphones. <span class="word">Through</span> <span class="ref">/θruː/ prep. 通过；穿过</span> music, we can connect with each other, whatever our differences, and music makes us more <span class="word">creative</span> <span class="ref">/kriˈeɪtɪv/ adj. 有创造力的</span>. We may even hum a tune <span class="word">proudly</span> <span class="ref">/ˈpraʊdli/ adv. 骄傲地；自豪地</span> on our way to school. So let us open our hearts, enjoy every <span class="word">verse</span> <span class="ref">/vɜːs/ n. 诗句；歌曲的段落</span> and every chorus, and feel the rhythm of life!</p>
+
+    <p>That's all. Thank you for listening!</p>
+  </div>
+
+  <div class="trans">
+    <div class="t-title">📄 整篇中文翻译</div>
+    <p class="t-greet">《感受节奏》</p>
+    <p>尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《感受节奏》。</p>
+    <p>音乐无处不在，每一种音乐都有它自己的节奏。我们有民歌、传统曲调、流行音乐、爵士乐、说唱乐、布鲁斯和古典音乐。每一种风格都讲述着不同的故事，无论你喜欢什么音乐，你总能在其中找到快乐。</p>
+    <p>乐器让音乐活起来。钢琴和电子琴能弹奏许多琴键，而吉他、小提琴、长笛和小号各有其独特的声音。鼓给我们强烈的节拍。有了电吉他或电子琴，年轻的音乐家们可以创作出现代的声音。即使没有任何乐器，人们也能吹口哨或哼一段旋律，还有人喜欢在公园里弹拨吉他。</p>
+    <p>伟大的音乐家往往天赋过人，有些人是真正的天才。有才华的钢琴家经过多年练习，可以精通钢琴。作曲家创作乐曲，歌手演唱歌曲，表演者把它带上舞台。指挥家指挥管弦乐队，乐队每一位成员都各司其职。歌手嗓音甜美，掌声响彻大厅。向所有把心血倾注于音乐的专业音乐家们致敬！</p>
+    <p>欣赏音乐时，我们可以跟着节拍用脚打拍子，跟着副歌一起唱，跟着节奏跳舞。我们可以从网上下载歌曲，评论喜欢的艺人，给一场现场演出评分。我们可以读新专辑的歌词，也可以用手机录下自己的歌。著名的歌手每年可能发布一张新专辑。音乐会期间我们不应该制造噪音；相反，演出结束时我们应静静地聆听、热烈地鼓掌。有些歌曲深情而感人，有些浪漫而金光闪闪，有些则力量强大，激励着我们，改善我们的生活。音乐可以表达我们的情感，开阔我们的心胸。我们甚至可以在聚会上为朋友表演一首短歌。</p>
+    <p>音乐是送给每个人的珍贵礼物，甚至包括能感受到振动的聋人。如今，音乐处处流行，很多人定期听音乐，戴不戴耳机都可以。通过音乐，无论彼此有何差异，我们都能相互联结，音乐也让我们更有创造力。我们甚至可以在上学路上骄傲地哼上一段小曲。所以，让我们敞开心扉，享受每一段歌词、每一句副歌，感受生命的节奏！</p>
+    <p>我的演讲到此结束，谢谢大家！</p>
+  </div>
+
+  <div class="note">
+    ✅ 词汇全覆盖检查：85 个课标单词/短语（rhythm / folk / traditional / pop / jazz / rap / blues / classical / piano / guitar / drum / violin / flute / trumpet / keyboard / composer / pianist / performer / musician / singer / gifted / genius / electronic / electric / lyric / comment / download / sing along to / dance to / rate / tap (one's feet) / perform / compose / record / release / applaud / whistle / hum / beat (the drums) / strum / conduct / express / inspire / improve / master / create / pour / broaden / soulful / romantic / golden / valuable / professional / deaf / unique / talented / creative / emotional / popular / live / style / performance / song / melody / beat / concert / album / tune / verse / chorus / orchestra / band / noise / voice / sound / applause / proudly / loudly / softly / regularly / nowadays / without / through / whatever / hats off (to sb.)）全部嵌入，无遗漏、无粘连。
+  </div>
+
+    <div class="grammar-btn">
+    <a href="../9a-unit7-grammar.html">📘 语法解读 · 逐句精读分析</a>
+  </div>
+
+<footer>© 2026 豆豆助理 · 汕头 2027 中考口语演讲训练 · 人教九年级上册 Unit 7</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  if(!btnTogglePh) return;
+  function syncLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncLabel();
+  });
+  syncLabel();
+})();
+</script>
+</body>
+</html>

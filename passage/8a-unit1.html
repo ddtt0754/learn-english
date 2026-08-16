@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Unit 1 演讲稿 · 跟读 H5</title>
+<style>
+  :root{--bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;--red:#e53935;--accent:#2e9e6b;--cn-bg:#f1f6fb;--cn-line:#4a90d9;--hi-en:#fff6da;--hi-en-line:#ffb300;--hi-cn:#e3f2fd;--hi-cn-line:#1e88e5;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;padding-bottom:84px;-webkit-font-smoothing:antialiased;}
+  header{background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;padding:18px 16px 16px;text-align:center;box-shadow:0 2px 10px rgba(46,158,107,.25);}
+  header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.5px;}
+  header p{margin:4px 0 0;font-size:12px;opacity:.92;}
+  .top-toggle{margin-top:10px;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 16px;border:1.5px solid rgba(255,255,255,.85);background:rgba(255,255,255,.16);color:#fff;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,transform .08s;}
+  .top-toggle:active{transform:scale(.97);}
+  .wrap{max-width:760px;margin:0 auto;padding:14px 12px 8px;}
+  .card{background:var(--card);border-radius:14px;padding:14px 14px 12px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .card-title{font-size:13px;font-weight:700;color:var(--accent);margin:0 0 8px;padding-left:10px;border-left:4px solid var(--accent);}
+  .en-sentence{position:relative;padding:10px 12px;margin:8px 0;border-radius:10px;background:#fbfdfc;border:1px solid #eef3f1;font-size:16px;transition:background .25s,box-shadow .25s;cursor:pointer;}
+  .en-sentence strong{font-weight:700;color:#16242c;}
+  .en-sentence .ph{color:var(--red);font-size:.82em;font-family:"Arial",sans-serif;margin:0 2px;white-space:nowrap;transition:opacity .2s;}
+  body.hide-ph .ph{display:none;}
+  .en-sentence.speaking{background:var(--hi-en);box-shadow:inset 0 0 0 2px var(--hi-en-line);}
+  .cn{background:var(--cn-bg);border-left:4px solid var(--cn-line);border-radius:0 10px 10px 0;padding:10px 12px;margin:10px 0 2px;color:#4a5a66;font-size:15px;transition:background .25s,border-color .25s;}
+  .cn.cn-speaking{background:var(--hi-cn);border-left-color:var(--hi-cn-line);color:#1b3a52;}
+  .controls{display:flex;gap:8px;margin-top:10px;}
+  .btn{flex:1;min-height:42px;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;user-select:none;}
+  .btn:active{transform:scale(.97);}
+  .btn-play{background:var(--accent);color:#fff;}
+  .btn-play:hover{filter:brightness(1.05);}
+  .btn-pause{background:#fff;color:var(--accent);border:1.5px solid var(--accent);}
+  .btn-pause:disabled{opacity:.45;cursor:default;}
+  .global-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:1px solid #e3eae6;box-shadow:0 -3px 14px rgba(30,50,40,.08);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;max-width:760px;margin:0 auto;}
+  .global-bar .gbtn{flex:1;min-height:46px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;}
+  .global-bar .gbtn:active{transform:scale(.97);}
+  .gbtn-loop{background:var(--accent);color:#fff;}
+  .gbtn-stop{background:#fdecec;color:var(--red);border:1.5px solid #f4b9b9;}
+  .loop-info{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--muted);background:#fff;padding:2px 10px;border-radius:10px;border:1px solid #e3eae6;white-space:nowrap;}
+  .hint{text-align:center;font-size:12px;color:var(--muted);margin:4px 0 2px;}
+  .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
+  .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
+  .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>A Wonderful Holiday · 跟读 H5</h1>
+  <p>人教版八年级上册 Unit 1 ｜ 汕头 2027 中考 ｜ 美式女声 · 单句跟读（只朗读英文）</p>
+  <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
+
+<div class="wrap" id="content">
+
+  <div class="card">
+    <div class="card-title">开场</div>
+    <div class="en-sentence" data-spoken="Good morning, my dear teachers and friends! Today, my topic is A Wonderful Holiday.">Good morning, my dear teachers and friends! Today, my topic is <i>A Wonderful Holiday</i>.</div>
+    <div class="cn">大家早上好！今天我演讲的题目是《一个美好的假期》。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">① 假期规划与出发</div>
+    <div class="en-sentence" data-spoken="During the summer vacation, my family and I decided to go to a small town for a holiday."><strong>During</strong> <span class="ph">/ˈdjʊərɪŋ/ prep. 在……期间</span> the summer <strong>vacation</strong> <span class="ph">/vəˈkeɪʃn/ n. 假期；度假</span>, my family and I decided to go to a small <strong>town</strong> <span class="ph">/taʊn/ n. 镇；商业区</span> for a holiday.</div>
+    <div class="en-sentence" data-spoken="We stayed at a comfortable hotel, and we were ready to explore everywhere.">We stayed at a <strong>comfortable</strong> <span class="ph">/ˈkʌmftəbl/ adj. 使人舒服的；舒适的</span> <strong>hotel</strong> <span class="ph">/həʊˈtel/ n. 旅馆；旅社</span>, and we were <strong>ready to</strong> <span class="ph">/ˌredi tə/ phr. ready to do sth 马上要；愿意做</span> explore everywhere.</div>
+    <div class="en-sentence" data-spoken="Everything was ready for the trip, and we could go anywhere we liked.">Everything was <strong>ready</strong> <span class="ph">/ˈredi/ adj. 准备好的；现成的</span> for the trip, and we could go <strong>anywhere</strong> <span class="ph">/ˈeniweə(r)/ adv. &amp; pron. 在任何地方</span> we liked.</div>
+    <div class="en-sentence" data-spoken="We made a budget before we left, and we took out our passports and some money.">We made a <strong>budget</strong> <span class="ph">/ˈbʌdʒɪt/ n. 预算 v. 精打细算</span> before we left, and we took out our <strong>passports</strong> <span class="ph">/ˈpɑːspɔːt/ n. 护照</span> and some money.</div>
+    <div class="en-sentence" data-spoken="My mother might book the train tickets, and I looked for a map of the town.">My mother <strong>might</strong> <span class="ph">/maɪt/ modal v. 可能；可以</span> book the train tickets, and I <strong>looked for</strong> <span class="ph">/ˌlʊk ˈfɔː(r)/ phr. 寻找</span> a map of the town.</div>
+    <div class="en-sentence" data-spoken="We planned to camp in a summer camp near the lake.">We planned to <strong>camp</strong> <span class="ph">/kæmp/ n. 度假营；营地 v. 露营</span> in a summer camp near the lake.</div>
+    <div class="en-sentence" data-spoken="We got together at the station and set off happily.">We <strong>got together</strong> <span class="ph">/ˌɡet təˈɡeðə(r)/ phr. 聚会；相聚</span> at the <strong>station</strong> <span class="ph">/ˈsteɪʃn/ n. 火车站；公共汽车站</span> and set off happily.</div>
+    <div class="cn">暑假期间，我和家人决定去一个小镇度假。我们住在一家舒适的旅馆里，准备好好探索一番。一切都为旅行准备妥当，我们想去哪儿就去哪儿。出发前我们做了预算，带上了护照和钱。妈妈可能去订火车票，我去找小镇的地图。我们计划在湖边的夏令营露营。我们在车站集合，开心地出发了。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">② 小镇风景</div>
+    <div class="en-sentence" data-spoken="The town was an ancient place, and we visited a beautiful palace on the square.">The town was an <strong>ancient</strong> <span class="ph">/ˈeɪnʃənt/ adj. 古代的；古老的</span> place, and we visited a beautiful <strong>palace</strong> <span class="ph">/ˈpæləs/ n. 王宫；宫殿</span> on the <strong>square</strong> <span class="ph">/skweə(r)/ n. 广场；正方形</span>.</div>
+    <div class="en-sentence" data-spoken="A tall tower stood beside it, and the whole view was fantastic.">A tall <strong>tower</strong> <span class="ph">/ˈtaʊə(r)/ n. 塔；塔楼</span> stood beside it, and the whole view was <strong>fantastic</strong> <span class="ph">/fænˈtæstɪk/ adj. 极好的；了不起的</span>.</div>
+    <div class="en-sentence" data-spoken="The landscape was amazing: the green countryside, the clear sky, and the colourful rainbow towards the east.">The <strong>landscape</strong> <span class="ph">/ˈlændskeɪp/ n. 风景；景色</span> was amazing: the green <strong>countryside</strong> <span class="ph">/ˈkʌntrisaɪd/ n. 乡村；农村</span>, the clear <strong>sky</strong> <span class="ph">/skaɪ/ n. 天；天空</span>, and the colourful <strong>rainbow</strong> <span class="ph">/ˈreɪnbəʊ/ n. 虹；彩虹</span> <strong>towards</strong> <span class="ph">/təˈwɔːdz/ prep. 向；朝</span> the east.</div>
+    <div class="en-sentence" data-spoken="The scenery took my breath away.">The <strong>scenery</strong> <span class="ph">/ˈsiːnəri/ n. 风景；景色</span> <strong>took my breath away</strong> <span class="ph">/ˌteɪk maɪ ˈbreθ əˈweɪ/ phr. 令人惊叹；让人叹绝</span>.</div>
+    <div class="en-sentence" data-spoken="Especially at noon, we sat in the sun and watched the clouds."><strong>Especially</strong> <span class="ph">/ɪˈspeʃəli/ adv. 尤其；特别</span> at <strong>noon</strong> <span class="ph">/nuːn/ n. 正午；中午</span>, we sat <strong>in the sun</strong> <span class="ph">/ˌɪn ðə ˈsʌn/ phr. 在阳光下</span> and watched the clouds.</div>
+    <div class="en-sentence" data-spoken="We bought some silk scarves and lovely artwork as gifts.">We bought some <strong>silk</strong> <span class="ph">/sɪlk/ n. 丝绸；（蚕）丝</span> <strong>scarves</strong> <span class="ph">/skɑːf/ n. 围巾；披巾</span> and lovely <strong>artwork</strong> <span class="ph">/ˈɑːtwɜːk/ n. 艺术作品；插图</span> as gifts.</div>
+    <div class="en-sentence" data-spoken="Thousands of people visit this place every year, and nothing can describe its beauty."><strong>Thousands of</strong> <span class="ph">/ˌθaʊzndz əv/ phr. 数以千计的</span> people visit this place every year, and <strong>nothing</strong> <span class="ph">/ˈnʌθɪŋ/ pron. 没有任何东西</span> can describe its beauty.</div>
+    <div class="en-sentence" data-spoken="I was not bored for even a moment; I could easily forget all my worries.">I was not <strong>bored</strong> <span class="ph">/bɔːd/ adj. 厌倦的；烦闷的</span> for even a moment; I could <strong>easily</strong> <span class="ph">/ˈiːzɪli/ adv. 容易地；轻易地</span> <strong>forget</strong> <span class="ph">/fəˈɡet/ v. 忘记；遗忘</span> all my worries.</div>
+    <div class="cn">小镇是个古老的地方，我们参观了广场上一座美丽的宫殿。旁边耸立着一座高塔，整个景色棒极了。风景美不胜收：翠绿的乡村、晴朗的天空，还有东方那道绚丽的彩虹。这景色美得令人叹为观止。尤其是正午时分，我们坐在阳光下看云卷云舒。我们买了一些丝绸围巾和可爱的工艺品作为礼物。每年成千上万的人来这里参观，没有什么能形容它的美。我一点也不觉得无聊，很容易就把所有烦恼抛到了脑后。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">③ 乡村与意外</div>
+    <div class="en-sentence" data-spoken="We also visited a faraway village.">We also visited a <strong>faraway</strong> <span class="ph">/ˈfɑːrəweɪ/ adj. 远方的；遥远的</span> village.</div>
+    <div class="en-sentence" data-spoken="There, we met a guide who showed us around.">There, we met a <strong>guide</strong> <span class="ph">/ɡaɪd/ n. 导游；指南 v. 指导</span> who showed us around.</div>
+    <div class="en-sentence" data-spoken="We saw some strange plants and a deer in the fields, and we heard an accordion playing somewhere.">We saw some <strong>strange</strong> <span class="ph">/streɪndʒ/ adj. 奇怪的；陌生的</span> plants and a <strong>deer</strong> <span class="ph">/dɪə(r)/ n. 鹿</span> in the fields, and we heard an <strong>accordion</strong> <span class="ph">/əˈkɔːdiən/ n. 手风琴</span> playing <strong>somewhere</strong> <span class="ph">/ˈsʌmweə(r)/ adv. 在某处；到某处</span>.</div>
+    <div class="en-sentence" data-spoken="The villagers were regular people with warm smiles.">The villagers were <strong>regular</strong> <span class="ph">/ˈreɡjələ(r)/ adj. 平常的；有规律的</span> people with warm smiles.</div>
+    <div class="en-sentence" data-spoken="We were surprised by the peace of the countryside.">We were <strong>surprised</strong> <span class="ph">/səˈpraɪzd/ adj. 惊奇的；惊讶的</span> by the <strong>peace</strong> <span class="ph">/piːs/ n. 和平；太平</span> of the countryside.</div>
+    <div class="en-sentence" data-spoken="During the trip, I felt sick on the bus, but I was fine later.">During the trip, I felt <strong>sick</strong> <span class="ph">/sɪk/ adj. 生病的；恶心的</span> on the bus, but I was fine later.</div>
+    <div class="en-sentence" data-spoken="We ate steamed chicken soup for lunch, and we had nothing but delicious local food.">We ate <strong>steamed chicken soup</strong> <span class="ph">/ˌstiːmd ˈtʃɪkɪn suːp/ n. 汽锅鸡</span> for lunch, and we had <strong>nothing but</strong> <span class="ph">/ˌnʌθɪŋ ˈbʌt/ phr. 只有；只是</span> delicious local food.</div>
+    <div class="en-sentence" data-spoken="Even my forgetful grandma remembered every happy moment.">Even my <strong>forgetful</strong> <span class="ph">/fəˈɡetfl/ adj. 健忘的；好忘事的</span> grandma remembered every happy moment.</div>
+    <div class="en-sentence" data-spoken="When we turned around to leave, I almost cried tears of joy.">When we <strong>turned around</strong> <span class="ph">/ˌtɜːn əˈraʊnd/ phr. 转身；翻转</span> to leave, I almost cried <strong>tears</strong> <span class="ph">/tɪə(r)/ n. 眼泪；泪水</span> of joy.</div>
+    <div class="en-sentence" data-spoken="We could probably say this was the best holiday ever!">We could <strong>probably</strong> <span class="ph">/ˈprɒbəbli/ adv. 很可能；大概</span> say this was the best holiday ever!</div>
+    <div class="cn">我们还去了一个遥远的小村庄。在那里，我们遇到了一位导游，他带我们四处参观。我们在田野里看到了一些奇怪的植物和一只鹿，还听到某个地方传来手风琴声。村民们都是面带温暖笑容的普通人。乡村的宁静让我们感到惊讶。旅途中，我在车上感到有些恶心，但后来就好了。午饭我们吃了汽锅鸡，除了美味的地方菜，别的什么都没有。就连健忘的奶奶也记住了每一个快乐的瞬间。当我们转身离开时，我几乎流下了喜悦的泪水。我们大概可以说，这是有史以来最棒的一次假期！</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">④ 俄罗斯之行</div>
+    <div class="en-sentence" data-spoken="Later, we went to Moscow, Russia, and we learned about Russian history.">Later, we went to Moscow, Russia, and we learned about <strong>Russian</strong> <span class="ph">/ˈrʌʃn/ adj. 俄罗斯的 n. 俄罗斯人；俄语</span> history.</div>
+    <div class="en-sentence" data-spoken="The Russian people fought against the enemy bravely in the fight, and their victory was a great one.">The Russian people <strong>fought against</strong> <span class="ph">/ˌfɔːt əˈgenst/ phr. fight against 与……作战</span> the enemy bravely in the <strong>fight</strong> <span class="ph">/faɪt/ n. 战斗；搏斗 v. 打仗</span>, and their <strong>victory</strong> <span class="ph">/ˈvɪktəri/ n. 胜利；成功</span> was a great one.</div>
+    <div class="en-sentence" data-spoken="Standing at the palace gate, I felt a strong peace in my heart.">Standing at the palace gate, I felt a strong <strong>peace</strong> <span class="ph">/piːs/ n. 和平；太平</span> in my heart.</div>
+    <div class="en-sentence" data-spoken="We visited the Red Square, and we stood up to watch the changing of the guard.">We visited the Red Square, and we <strong>stood up</strong> <span class="ph">/ˌstænd ˈʌp/ phr. 站起；起立</span> to watch the changing of the guard.</div>
+    <div class="en-sentence" data-spoken="During the cold days, our breath became white in the air, and the wind blew against our faces.">During the cold days, our <strong>breath</strong> <span class="ph">/breθ/ n. 呼吸的空气；一口气</span> became white in the air, and the wind blew <strong>against</strong> <span class="ph">/əˈgenst/ prep. 反对；与……相反；紧靠</span> our faces.</div>
+    <div class="en-sentence" data-spoken="The war taught us to cherish peace and never forget the past.">The war taught us to cherish peace and never <strong>forget</strong> <span class="ph">/fəˈɡet/ v. 忘记；遗忘</span> the past.</div>
+    <div class="en-sentence" data-spoken="The happy photos remind me of that wonderful day.">The happy photos <strong>remind</strong> <span class="ph">/rɪˈmaɪnd/ v. 提醒；使想起</span> me of that wonderful day.</div>
+    <div class="cn">后来，我们去了俄罗斯的莫斯科，了解了俄罗斯的历史。俄罗斯人民在战争中英勇地反抗敌人，他们的胜利是伟大的。站在宫殿门前，我感到心中涌起一股强烈的和平之感。我们参观了红场，站起来观看卫兵换岗。在寒冷的日子里，我们的呼吸在空气中变成白雾，寒风迎面吹来。战争教会我们珍惜和平，永不忘记过去。那些快乐的照片让我想起那美好的一天。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⑤ 结束语</div>
+    <div class="en-sentence" data-spoken="My friends, a holiday is not only about travel; it is about memories, friendship and peace.">My friends, a holiday is not only about travel; it is about memories, friendship and peace.</div>
+    <div class="en-sentence" data-spoken="Let us enjoy every moment and keep the beauty in our hearts!">Let us enjoy every moment and keep the beauty in our hearts!</div>
+    <div class="en-sentence" data-spoken="That's all. Thank you for listening!">That's all. Thank you for listening!</div>
+    <div class="cn">朋友们，假期不仅仅是旅行，更是关于回忆、友谊与和平。让我们享受每一个瞬间，把美好留在心中！我的演讲到此结束，谢谢大家！</div>
+  </div>
+
+  <p class="hint">点击句子或【播放】即可跟读（只朗读英文），红色为单词音标注释，蓝框为中文翻译。</p>
+
+  <div class="full-translation" id="fullTranslation">
+    <h2>整篇中文翻译</h2>
+    <p>大家早上好！今天我演讲的题目是《一个美好的假期》。</p>
+    <p>暑假期间，我和家人决定去一个小镇度假。我们住在一家舒适的旅馆里，准备好好探索一番。一切都为旅行准备妥当，我们想去哪儿就去哪儿。出发前我们做了预算，带上了护照和钱。妈妈可能去订火车票，我去找小镇的地图。我们计划在湖边的夏令营露营。我们在车站集合，开心地出发了。</p>
+    <p>小镇是个古老的地方，我们参观了广场上一座美丽的宫殿。旁边耸立着一座高塔，整个景色棒极了。风景美不胜收：翠绿的乡村、晴朗的天空，还有东方那道绚丽的彩虹。这景色美得令人叹为观止。尤其是正午时分，我们坐在阳光下看云卷云舒。我们买了一些丝绸围巾和可爱的工艺品作为礼物。每年成千上万的人来这里参观，没有什么能形容它的美。我一点也不觉得无聊，很容易就把所有烦恼抛到了脑后。</p>
+    <p>我们还去了一个遥远的小村庄。在那里，我们遇到了一位导游，他带我们四处参观。我们在田野里看到了一些奇怪的植物和一只鹿，还听到某个地方传来手风琴声。村民们都是面带温暖笑容的普通人。乡村的宁静让我们感到惊讶。旅途中，我在车上感到有些恶心，但后来就好了。午饭我们吃了汽锅鸡，除了美味的地方菜，别的什么都没有。就连健忘的奶奶也记住了每一个快乐的瞬间。当我们转身离开时，我几乎流下了喜悦的泪水。我们大概可以说，这是有史以来最棒的一次假期！</p>
+    <p>后来，我们去了俄罗斯的莫斯科，了解了俄罗斯的历史。俄罗斯人民在战争中英勇地反抗敌人，他们的胜利是伟大的。站在宫殿门前，我感到心中涌起一股强烈的和平之感。我们参观了红场，站起来观看卫兵换岗。在寒冷的日子里，我们的呼吸在空气中变成白雾，寒风迎面吹来。战争教会我们珍惜和平，永不忘记过去。那些快乐的照片让我想起那美好的一天。</p>
+    <p>朋友们，假期不仅仅是旅行，更是关于回忆、友谊与和平。让我们享受每一个瞬间，把美好留在心中！我的演讲到此结束，谢谢大家！</p>
+  </div>
+</div>
+
+<div class="global-bar">
+  <span class="loop-info" id="loopInfo">未播放</span>
+  <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
+  <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var synth = window.speechSynthesis;
+  var MAX_LOOP = 10;
+  var sentences = Array.prototype.slice.call(document.querySelectorAll('.en-sentence'));
+  sentences.forEach(function(el, i){
+    var ctl = document.createElement('div');
+    ctl.className = 'controls';
+    var bPlay = document.createElement('button');
+    bPlay.className = 'btn btn-play';
+    bPlay.textContent = '▶ 播放';
+    var bPause = document.createElement('button');
+    bPause.className = 'btn btn-pause';
+    bPause.textContent = '⏸ 暂停';
+    bPause.disabled = true;
+    ctl.appendChild(bPlay);
+    ctl.appendChild(bPause);
+    el.appendChild(ctl);
+    bPlay.addEventListener('click', function(e){ e.stopPropagation(); playSingle(i); });
+    bPause.addEventListener('click', function(e){ e.stopPropagation(); pauseCurrent(); });
+    el.addEventListener('click', function(){ playSingle(i); });
+  });
+  var mode = 'idle', currentIdx = -1, paused = false, token = 0, loopCount = 0;
+  var loopInfo = document.getElementById('loopInfo');
+  function pickVoice(){
+    if(!synth) return null;
+    var vs = synth.getVoices() || [];
+    var en = vs.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('en') === 0; });
+    if(!en.length) return null;
+    var fav = en.filter(function(v){
+      var n = v.name.toLowerCase();
+      return /female|samantha|zira|google us|karen|tessa|victoria|allison|google UK English Female|Microsoft.*Zira|Microsoft.*Aria/i.test(n)
+        && (v.lang.toLowerCase().indexOf('en-us') === 0 || v.default);
+    });
+    if(fav.length) return fav[0];
+    var us = en.filter(function(v){ return v.lang.toLowerCase() === 'en-us'; });
+    if(us.length) return us[0];
+    return en[0];
+  }
+  function clearHighlight(){
+    sentences.forEach(function(s){ s.classList.remove('speaking'); });
+    document.querySelectorAll('.cn').forEach(function(c){ c.classList.remove('cn-speaking'); });
+  }
+  function highlight(i){
+    clearHighlight();
+    var s = sentences[i];
+    if(!s) return;
+    s.classList.add('speaking');
+    s.scrollIntoView({behavior:'smooth', block:'center'});
+    var card = s.closest('.card');
+    if(card){
+      var cn = card.querySelector('.cn');
+      if(cn) cn.classList.add('cn-speaking');
+    }
+  }
+  function setPauseBtn(){
+    sentences.forEach(function(s){
+      var b = s.querySelector('.btn-pause');
+      if(b) b.disabled = !(paused && currentIdx === sentences.indexOf(s) && mode !== 'idle');
+    });
+  }
+  function speak(index, nextMode){
+    if(!synth){ alert('当前浏览器不支持语音朗读（Web Speech API）。'); return; }
+    synth.cancel();
+    var myToken = ++token;
+    currentIdx = index;
+    mode = nextMode;
+    paused = false;
+    var text = sentences[index].getAttribute('data-spoken') || sentences[index].textContent;
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 0.92;
+    u.pitch = 1.05;
+    u.onend = function(){
+      if(myToken !== token) return;
+      if(mode === 'all'){ advanceAll(); }
+      else { mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn(); }
+    };
+    u.onerror = function(){ if(myToken !== token) return; mode='idle'; currentIdx=-1; clearHighlight(); setPauseBtn(); };
+    highlight(index);
+    setPauseBtn();
+    synth.speak(u);
+  }
+  function advanceAll(){
+    if(mode !== 'all') return;
+    var next = currentIdx + 1;
+    if(next < sentences.length){ speak(next, 'all'); }
+    else {
+      loopCount++;
+      if(loopCount < MAX_LOOP){
+        loopInfo.textContent = '第 ' + (loopCount+1) + ' / ' + MAX_LOOP + ' 轮';
+        speak(0, 'all');
+      } else {
+        loopInfo.textContent = '已完成 ' + MAX_LOOP + ' 轮';
+        mode = 'idle'; currentIdx = -1; clearHighlight(); setPauseBtn();
+      }
+    }
+  }
+  function playSingle(i){
+    if(paused && mode !== 'idle' && currentIdx === i){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '单句跟读';
+    speak(i, 'single');
+  }
+  function pauseCurrent(){
+    if(synth && synth.speaking && !synth.paused){ synth.pause(); paused = true; setPauseBtn(); }
+  }
+  function stopAll(){
+    if(synth) synth.cancel();
+    token++; mode = 'idle'; currentIdx = -1; paused = false; loopCount = 0;
+    clearHighlight(); setPauseBtn();
+    loopInfo.textContent = '已停止';
+  }
+  document.getElementById('btnLoop').addEventListener('click', function(){
+    if(mode === 'all' && !paused){ pauseCurrent(); loopInfo.textContent = '已暂停'; return; }
+    if(paused && mode === 'all'){ synth.resume(); paused = false; setPauseBtn(); return; }
+    loopCount = 0;
+    loopInfo.textContent = '第 1 / ' + MAX_LOOP + ' 轮';
+    speak(0, 'all');
+  });
+  document.getElementById('btnStop').addEventListener('click', stopAll);
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  function syncToggleLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncToggleLabel();
+  });
+  syncToggleLabel();
+  if(synth && typeof synth.onvoiceschanged !== 'undefined'){
+    synth.onvoiceschanged = function(){ /* voices ready */ };
+  }
+})();
+</script>
+</body>
+</html>

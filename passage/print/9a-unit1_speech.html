@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2ebd85">
+<title>九年级上册 Unit 1 英语演讲稿 · Our Changing World</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    min-height:100vh;
+    padding:24px 14px 60px;
+    color:#33434b;
+    line-height:1.8;
+  }
+  .wrap{max-width:780px;margin:0 auto;}
+  header{
+    text-align:center;
+    background:linear-gradient(135deg,#35d29a,#2f9df0);
+    color:#fff;border-radius:18px;
+    padding:30px 22px 26px;
+    box-shadow:0 10px 30px rgba(47,157,240,.18);
+  }
+  header .badge{
+    display:inline-block;background:rgba(255,255,255,.22);
+    border-radius:999px;padding:4px 14px;font-size:12.5px;letter-spacing:1px;
+    margin-bottom:12px;
+  }
+  header h1{font-size:23px;margin-bottom:8px;}
+  header p{font-size:14px;opacity:.92;}
+
+  /* 隐藏/显示音标注释切换按钮 */
+  .top-toggle{
+    margin-top:12px;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:38px;
+    padding:0 18px;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s,transform .08s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .top-toggle:active{transform:scale(.97);}
+  @media (hover:hover){
+    .top-toggle:hover{background:rgba(255,255,255,.30);}
+  }
+  /* 一键隐藏红色音标词性释义小字（加粗单词保留） */
+  body.hide-ph .ref{display:none;}
+
+  .speech{
+    background:#fff;border-radius:16px;
+    padding:34px 30px 30px;margin-top:20px;
+    box-shadow:0 4px 16px rgba(47,157,240,.08);
+    font-size:16.5px;letter-spacing:.2px;
+  }
+  .speech .title{
+    font-size:19px;font-weight:700;color:#2f6ba3;text-align:center;margin-bottom:6px;
+  }
+  .speech .greet{text-align:center;color:#8aa09a;font-size:14px;margin-bottom:18px;}
+  .speech p{margin:14px 0;text-align:justify;}
+  .word{font-weight:700;color:#1f3a5c;}
+  .ref{color:#d4372a;font-size:13px;font-weight:600;white-space:normal;}
+  .ref .ipa{font-family:"Segoe UI",Georgia,serif;}
+
+  .trans{
+    background:#fff;border-radius:16px;
+    padding:28px 30px;margin-top:16px;
+    box-shadow:0 4px 16px rgba(47,157,240,.08);
+  }
+  .trans .t-title{
+    font-size:15px;font-weight:700;color:#1fa873;
+    border-bottom:2px solid #d9f2e8;padding-bottom:8px;margin-bottom:12px;
+  }
+  .trans p{margin:12px 0;font-size:15px;color:#4a5a63;text-align:justify;}
+  .trans .t-greet{color:#8aa09a;text-align:center;font-size:13.5px;margin-bottom:14px;}
+
+  .note{
+    background:#fff8ef;border-left:4px solid #f5a623;
+    border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0 4px;
+    font-size:13px;line-height:1.9;color:#7a5b23;
+  }
+  footer{text-align:center;font-size:12px;color:#8aa09a;margin-top:28px;letter-spacing:1px;}
+  @media print{
+    body{background:#fff;padding:0;}
+    header{box-shadow:none;}
+    .speech,.trans{box-shadow:none;border:1px solid #ddd;}
+  }
+
+  /* 语法解读入口按钮 */
+  .grammar-btn{
+    display:block;text-align:center;
+    margin:12px 0 0;
+    padding:0; /* 由 a 控制 */
+  }
+  .grammar-btn a{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:10px 26px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:#fff;border-radius:999px;
+    font-size:13.5px;font-weight:600;letter-spacing:1px;
+    text-decoration:none;
+    box-shadow:0 4px 14px rgba(102,126,234,.25);
+    transition:transform .08s,box-shadow .2s;
+    touch-action:manipulation;
+  }
+  .grammar-btn a:active{transform:scale(.97);}
+  @media (hover:hover){
+    .grammar-btn a:hover{box-shadow:0 6px 20px rgba(102,126,234,.35);}
+  }
+  @media print{.grammar-btn{display:none;}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">2026秋 · 人教新目标版 · 汕头2027中考口语演讲</span>
+    <h1>英语演讲稿 · Unit 1 Our Changing World</h1>
+    <p>全覆盖 53 个课标单词（加粗 + 红色音标 / 词性 / 释义）</p>
+    <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+  </header>
+
+  <div class="speech">
+    <div class="title">Our Changing World</div>
+    <div class="greet">我们的世界在变化</div>
+
+    <p>Good morning, everyone. Our world is changing every day. Let me share a story with you.</p>
+
+    <p>In my hometown, a <span class="word">sandstorm</span> <span class="ref">/ˈsændstɔːrm/ n. 沙尘暴</span> sometimes sweeps through. The land is <span class="word">sandy</span> <span class="ref">/ˈsændi/ adj. 铺满沙子的；含沙的</span>, and the <span class="word">soil</span> <span class="ref">/sɔɪl/ n. 土壤</span> is poor. We have a <span class="word">shortage</span> <span class="ref">/ˈʃɔːrtɪdʒ/ n. 短缺；不足</span> of clean water, so our <span class="word">farmland</span> <span class="ref">/ˈfɑːrmlænd/ n. 耕地；农田</span> is shrinking. We never <span class="word">lack</span> <span class="ref">/læk/ v. &amp; n. 缺乏</span> hope, but a <span class="word">bush</span> <span class="ref">/bʊʃ/ n. 灌木</span> can hardly grow, and even a tree's <span class="word">root</span> <span class="ref">/ruːt/ n. 根</span> is hard to find. The old road is <span class="word">rough</span> <span class="ref">/rʌf/ adj. 崎岖的；粗糙的</span> and <span class="word">narrow</span> <span class="ref">/ˈnæroʊ/ adj. 狭窄的</span>.</p>
+
+    <p>Then our <span class="word">government</span> <span class="ref">/ˈɡʌvərnmənt/ n. 政府</span> steps in to help. They have built <span class="word">greenhouse</span>s <span class="ref">/ˈɡriːnhaʊs/ n. 温室；大棚</span> to grow <span class="word">corn</span> <span class="ref">/kɔːrn/ n. 玉米；谷物</span>. They have opened a <span class="word">wide</span> <span class="ref">/waɪd/ adj. 宽阔的</span> <span class="word">highway</span> <span class="ref">/ˈhaɪweɪ/ n. 公路；高速公路</span> and a new <span class="word">railway</span> <span class="ref">/ˈreɪlweɪ/ n. 铁路</span>. The hills are <span class="word">covered with</span> <span class="ref">/bi ˈkʌvərd wɪð/ phr. 被……覆盖</span> green trees. These efforts <span class="word">bring about</span> <span class="ref">/brɪŋ əˈbaʊt/ v. 带来；引起</span> a better life, and they <span class="word">ease</span> <span class="ref">/iːz/ v. &amp; n. 减轻；缓解</span> the burden on farmers. Now a <span class="word">villager</span> <span class="ref">/ˈvɪlɪdʒər/ n. 村民</span> lives in a bright <span class="word">flat</span> <span class="ref">/flæt/ n. 公寓</span> with safe <span class="word">housing</span> <span class="ref">/ˈhaʊzɪŋ/ n. 住房；住宅</span>. We are <span class="word">satisfied with</span> <span class="ref">/bi ˈsætɪsfaɪd wɪð/ phr. 对……感到满意</span> our quiet, clean town.</p>
+
+    <p>Technology also helps us. We use <span class="word">e-payment</span> <span class="ref">/ˈiː peɪmənt/ n. 电子支付</span> and many <span class="word">electronic</span> <span class="ref">/ɪˌlekˈtrɑːnɪk/ adj. 电子的</span> tools. They are <span class="word">convenient</span> <span class="ref">/kənˈviːniənt/ adj. 方便的；便利的</span> and <span class="word">high-tech</span> <span class="ref">/ˌhaɪ ˈtek/ adj. 高科技的</span>. We can <span class="word">link</span> <span class="ref">/lɪŋk/ v. &amp; n. 连接；联系</span> to the world through the internet, and listen to <span class="word">audio</span> <span class="ref">/ˈɔːdiəʊ/ n. &amp; adj. 音频（的）</span> books <span class="word">easily</span> <span class="ref">/ˈiːzəli/ adv. 容易地</span>. <span class="word">Man-made</span> <span class="ref">/ˌmæn ˈmeɪd/ adj. 人造的；非天然的</span> satellites <span class="word">support</span> <span class="ref">/səˈpɔːrt/ v. &amp; n. 支持</span> our studies, and they help us <span class="word">greatly</span> <span class="ref">/ˈɡreɪtli/ adv. 大大地；非常</span>.</p>
+
+    <p>Let me tell you a story from <span class="word">Mombasa</span> <span class="ref">/mɒmˈbæsə/ n. 蒙巴萨（肯尼亚城市）</span>, a busy <span class="word">port</span> <span class="ref">/pɔːrt/ n. 港口</span> in Kenya. A young <span class="word">Kenyan</span> <span class="ref">/ˈkenjən/ n. &amp; adj. 肯尼亚人（的）</span>, a <span class="word">truck</span> <span class="ref">/trʌk/ n. 卡车</span> <span class="word">manager</span> <span class="ref">/ˈmænɪdʒər/ n. 经理</span>, runs his <span class="word">business</span> <span class="ref">/ˈbɪznəs/ n. 生意；商业</span> there. He sends each <span class="word">product</span> <span class="ref">/ˈprɑːdʌkt/ n. 产品</span> by truck to the <span class="word">capital</span> <span class="ref">/ˈkæpɪtl/ n. 首都</span>. The new railway connects the port to the city. This is a real <span class="word">miracle</span> <span class="ref">/ˈmɪrəkl/ n. 奇迹</span>. The <span class="word">attraction</span> <span class="ref">/əˈtrækʃn/ n. 向往的地方；吸引力</span> of this new life is strong, and it brings real <span class="word">benefit</span> <span class="ref">/ˈbenɪfɪt/ n. &amp; v. 益处；使受益</span> to people. Our <span class="word">socialist</span> <span class="ref">/ˈsoʊʃəlɪst/ adj. 社会主义的</span> friends <span class="word">lead</span> <span class="ref">/liːd/ v. 带领；过（某种生活）</span> a happy life. Even the <span class="word">dust</span> <span class="ref">/dʌst/ n. 尘土</span> on the old <span class="word">path</span> <span class="ref">/pɑːθ/ n. 小路；小径</span> is gone.</p>
+
+    <p>The <span class="word">Olympic Games</span> <span class="ref">/ðə əˈlɪmpɪk ˈɡeɪmz/ n. 奥林匹克运动会</span> bring nations together. As <span class="word">junior</span> <span class="ref">/ˈdʒuːniər/ adj. 低年级的；初级的</span> students, we hold a <span class="word">discussion</span> <span class="ref">/dɪˈskʌʃn/ n. 讨论</span> on every <span class="word">aspect</span> <span class="ref">/ˈæspekt/ n. 方面</span> of change. In <span class="word">summary</span> <span class="ref">/ˈsʌməri/ n. 总结；概括</span>, our world is changing for the better. Let us welcome the change with a smile.</p>
+
+    <p>Thank you.</p>
+  </div>
+
+  <div class="trans">
+    <div class="t-title">📄 整篇中文翻译</div>
+    <p class="t-greet">《我们的世界在变化》</p>
+    <p>大家早上好。我们的世界每天都在变化。让我和大家分享一个故事。</p>
+    <p>在我的家乡，沙尘暴有时会席卷而来。土地布满黄沙，土壤贫瘠。我们缺乏干净的水，因此耕地在不断萎缩。我们从不缺少希望，但灌木几乎难以生长，甚至连一棵树的根也难觅踪迹。那条老路崎岖而狭窄。</p>
+    <p>后来，政府伸出了援手。他们建起温室来种植玉米，修通了宽阔的公路和一条新铁路。山坡披上了绿树。这些努力带来了更好的生活，也减轻了农民的负担。如今，村民住在明亮的公寓里，拥有安全的住房。我们对自己宁静、洁净的城镇感到满意。</p>
+    <p>科技也在帮助我们。我们使用电子支付和许多电子工具。它们方便又高科技。我们通过互联网与全世界相连，也能轻松地收听有声读物。人造卫星支持着我们的学业，给予我们极大的帮助。</p>
+    <p>让我给大家讲一个来自蒙巴萨的故事，那是肯尼亚一座繁忙的港口城市。一位年轻的肯尼亚人，一名卡车经理，在那里经营着自己的生意。他用卡车把每件产品送往首都。新铁路把港口和城市连接在了一起。这是一个真正的奇迹。这种新生活的吸引力很强，也给人们带来了实实在在的益处。我们的社会主义伙伴过着幸福的生活。就连旧小路上的尘土也消失了。</p>
+    <p>奥林匹克运动会把各国凝聚在一起。作为初中生，我们围绕变化的方方面面展开讨论。总之，我们的世界正朝着更好的方向改变。让我们微笑着迎接变化。</p>
+    <p>谢谢。</p>
+  </div>
+
+  <div class="note">
+    ✅ 词汇全覆盖检查：53 个课标单词（sandstorm / sandy / soil / shortage / farmland / lack / bush / root / rough / narrow / government / greenhouse / corn / wide / highway / railway / covered with / bring about / ease / villager / flat / housing / satisfied with / e-payment / electronic / convenient / high-tech / link / audio / easily / man-made / support / greatly / Mombasa / port / Kenyan / truck / manager / business / product / capital / miracle / attraction / benefit / socialist / lead / dust / path / Olympic Games / junior / discussion / aspect / summary）全部嵌入演讲稿，无遗漏、无粘连。
+  </div>
+
+    <div class="grammar-btn">
+    <a href="../9a-unit1-grammar.html">📘 语法解读 · 逐句精读分析</a>
+  </div>
+
+<footer>© 2026 豆豆助理 · 汕头 2027 中考口语演讲训练 · 人教九年级上册 Unit 1</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  if(!btnTogglePh) return;
+  function syncLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncLabel();
+  });
+  syncLabel();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2ebd85">
+<title>七年级上册 Unit 4 英语演讲稿 · My Favourite Subject</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    min-height:100vh;
+    padding:24px 14px 60px;
+    color:#33434b;
+    line-height:1.8;
+  }
+  .wrap{max-width:780px;margin:0 auto;}
+  header{
+    text-align:center;
+    background:linear-gradient(135deg,#35d29a,#2f9df0);
+    color:#fff;border-radius:18px;
+    padding:30px 22px 26px;
+    box-shadow:0 10px 30px rgba(47,157,240,.18);
+  }
+  header .badge{
+    display:inline-block;background:rgba(255,255,255,.22);
+    border-radius:999px;padding:4px 14px;font-size:12.5px;letter-spacing:1px;
+    margin-bottom:12px;
+  }
+  header h1{font-size:23px;margin-bottom:8px;}
+  header p{font-size:14px;opacity:.92;}
+  .speech{
+    background:#fff;border-radius:16px;
+    padding:34px 30px 30px;margin-top:20px;
+    box-shadow:0 4px 16px rgba(47,157,240,.08);
+    font-size:16.5px;letter-spacing:.2px;
+  }
+  .speech .title{font-size:19px;font-weight:700;color:#2f6ba3;text-align:center;margin-bottom:6px;}
+  .speech .greet{text-align:center;color:#8aa09a;font-size:14px;margin-bottom:18px;}
+  .speech p{margin:14px 0;text-align:justify;}
+  .word{font-weight:700;color:#1f3a5c;}
+  .ref{color:#d4372a;font-size:13px;font-weight:600;white-space:normal;}
+  .ref .ipa{font-family:"Segoe UI",Georgia,serif;}
+  .trans{
+    background:#fff;border-radius:16px;padding:28px 30px;margin-top:16px;
+    box-shadow:0 4px 16px rgba(47,157,240,.08);
+  }
+  .trans .t-title{
+    font-size:15px;font-weight:700;color:#1fa873;
+    border-bottom:2px solid #d9f2e8;padding-bottom:8px;margin-bottom:12px;
+  }
+  .trans p{margin:12px 0;font-size:15px;color:#4a5a63;text-align:justify;}
+  .trans .t-greet{color:#8aa09a;text-align:center;font-size:13.5px;margin-bottom:14px;}
+  .note{
+    background:#fff8ef;border-left:4px solid #f5a623;
+    border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0 4px;
+    font-size:13px;line-height:1.9;color:#7a5b23;
+  }
+  footer{text-align:center;font-size:12px;color:#8aa09a;margin-top:28px;letter-spacing:1px;}
+  @media print{
+    body{background:#fff;padding:0;}
+    header{box-shadow:none;}
+    .speech,.trans{box-shadow:none;border:1px solid #ddd;}
+  }
+
+  /* 隐藏/显示音标注释切换按钮 */
+  .top-toggle{
+    margin-top:12px;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:38px;
+    padding:0 18px;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s,transform .08s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .top-toggle:active{transform:scale(.97);}
+  @media (hover:hover){
+    .top-toggle:hover{background:rgba(255,255,255,.30);}
+  }
+  /* 一键隐藏红色音标词性释义小字（加粗单词保留） */
+  body.hide-ph .ref{display:none;}
+
+  .grammar-btn{display:block;text-align:center;margin:12px 0 0}
+  .grammar-btn a{display:inline-flex;align-items:center;gap:6px;padding:10px 26px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:999px;font-size:13.5px;font-weight:600;text-decoration:none;box-shadow:0 4px 14px rgba(102,126,234,.25);transition:transform .08s}
+  .grammar-btn a:active{transform:scale(.97)}
+  @media(hover:hover){.grammar-btn a:hover{box-shadow:0 6px 20px rgba(102,126,234,.35)}}
+  @media print{.grammar-btn{display:none}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">2026秋 · 人教新目标版 · 汕头2027中考口语演讲</span>
+    <h1>英语演讲稿 · 七年级上册 Unit 4 My Favourite Subject</h1>
+    <p>全覆盖 29 个课标单词（加粗 + 红色音标 / 词性 / 释义）</p>
+      <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
+</header>
+
+  <div class="speech">
+    <div class="title">My Favourite Subject</div>
+    <div class="greet">我最喜欢的科目</div>
+
+    <p>Good morning, my dear teachers and friends! Today, my topic is <em>My Favourite Subject</em>.</p>
+
+    <p><span class="word">As</span> <span class="ref">/æz/ prep. 如同；作为</span> a student, I have many classes every day. My favourite subject is maths, because I am <span class="word">good with</span> <span class="ref">/ɡʊd wɪð/ phr. 灵巧的；善于应付……的</span> <span class="word">numbers</span> <span class="ref">/ˈnʌmbə(r)/ n. 数字；号码</span>. Why do I like maths? The <span class="word">reason</span> <span class="ref">/ˈriːzn/ n. 原因；理由</span> is simple: numbers are beautiful. My brother likes <span class="word">biology</span> <span class="ref">/baɪˈɒlədʒi/ n. 生物学</span>, and my sister loves <span class="word">geography</span> <span class="ref">/dʒiˈɒɡrəfi/ n. 地理（学）</span>. <span class="word">History</span> <span class="ref">/ˈhɪstri/ n. 历史；历史课</span> tells us about the <span class="word">past</span> <span class="ref">/pɑːst/ n. 过去</span>, and it is very interesting. What about <span class="word">IT</span> <span class="ref">/ˌaɪ ˈtiː/ abbr. 信息技术</span>? I like it, too, because computers are <span class="word">useful</span> <span class="ref">/ˈjuːsfl/ adj. 有用的；有益的</span> in our <span class="word">life</span> <span class="ref">/laɪf/ n. 生活；生命</span>.</p>
+
+    <p>My English teacher is <span class="word">excellent</span> <span class="ref">/ˈeksələnt/ adj. 优秀的；极好的</span>. She can <span class="word">help me with</span> <span class="ref">/help wɪð/ phr. 帮助某人做（某事）</span> my English every <span class="word">term</span> <span class="ref">/tɜːm/ n. 学期</span>. She says, "<span class="word">Remember</span> <span class="ref">/rɪˈmembə(r)/ v. 记住；记起</span>, English is useful, but never feel <span class="word">bored</span> <span class="ref">/ˈbɔːrɪŋ/ adj. 乏味的</span> — learning can be <span class="word">exciting</span> <span class="ref">/ɪkˈsaɪtɪŋ/ adj. 令人激动的</span>!" She asks us to <span class="word">listen to</span> <span class="ref">/ˈlɪsn tuː/ phr. 听；倾听</span> her carefully, and her classes are never <span class="word">boring</span> <span class="ref">/ˈbɔːrɪŋ/ adj. 乏味的；令人生厌的</span>. She plays the piano, an <span class="word">instrument</span> <span class="ref">/ˈɪnstrəmənt/ n. 乐器；器械</span> I love, and she sings like a real <span class="word">singer</span> <span class="ref">/ˈsɪŋə(r)/ n. 歌手</span>. It sounds like <span class="word">magic</span> <span class="ref">/ˈmædʒɪk/ n. 魔法；魔力</span>!</p>
+
+    <p>I <span class="word">wake up</span> <span class="ref">/ˌweɪk ˈʌp/ phr. 醒来</span> early and <span class="word">get up</span> <span class="ref">/ˌɡet ˈʌp/ phr. 起床</span> at six o'clock every morning. I am <span class="word">good at</span> <span class="ref">/ˌɡʊd ˈæt/ phr. 擅长</span> maths, and I do my homework carefully. Sometimes I have a <span class="word">problem</span> <span class="ref">/ˈprɒbləm/ n. 难题；困难</span>, but I never give up. My dream is <span class="word">the same as</span> <span class="ref">/ðə seɪm æz/ phr. 与……相同</span> my father's: I want to be a <span class="word">scientist</span> <span class="ref">/ˈsaɪəntɪst/ n. 科学家</span> <span class="word">in the future</span> <span class="ref">/ˌɪn ðə ˈfjuːtʃə(r)/ phr. 将来；未来</span>. In the <span class="word">future</span> <span class="ref">/ˈfjuːtʃə(r)/ n. 将来；未来</span>, I will work out difficult problems and make the world better.</p>
+
+    <p>My friends, choose a subject you love and learn it well. Every subject is a window to a new world!</p>
+
+    <p>That's all. Thank you for listening!</p>
+  </div>
+
+  <div class="trans">
+    <div class="t-title">📄 整篇中文翻译</div>
+    <p class="t-greet">《我最喜欢的科目》</p>
+    <p>尊敬的老师们，亲爱的同学们，早上好！今天我演讲的题目是《我最喜欢的科目》。</p>
+    <p>作为一名学生，我每天有很多课。我最喜欢的科目是数学，因为我善于和数字打交道。为什么我喜欢数学？原因很简单：数字很美。我哥哥喜欢生物学，我姐姐喜欢地理。历史告诉我们过去的事，非常有趣。信息技术课怎么样？我也喜欢它，因为电脑在我们的生活中很有用。</p>
+    <p>我的英语老师非常优秀。她每个学期都能帮助我学英语。她说："记住，英语很有用，但不要觉得无聊——学习可以让人兴奋！"她让我们认真听她讲，她的课从不乏味。她弹钢琴——那是我喜欢的乐器——而且她唱起歌来像真正的歌手。那听起来就像魔法！</p>
+    <p>我每天早起，六点起床。我擅长数学，作业做得很认真。有时我会遇到难题，但我从不放弃。我的梦想和我爸爸的一样：将来我想成为一名科学家。在未来，我要解决难题，让世界变得更美好。</p>
+    <p>朋友们，选择一门你喜欢的科目并学好它吧。每一门科目都是一扇通向新世界的窗户！</p>
+    <p>我的演讲到此结束，谢谢大家！</p>
+  </div>
+
+  <div class="note">
+    ✅ 词汇全覆盖检查：29 个课标单词/短语（biology / number / reason / geography / history / remember / useful / boring / exciting / as / past / IT / excellent / instrument / singer / future / term / problem / magic / life / scientist / wake up / get up / good at / listen to / the same as / help sb. with / good with / in the future）全部嵌入，无遗漏、无粘连。
+  </div>
+
+    <div class="grammar-btn">
+    <a href="../7a-unit4-grammar.html">📘 语法解读 · 逐句精读分析</a>
+  </div>
+
+<footer>© 2026 豆豆助理 · 汕头 2027 中考口语演讲训练 · 人教七年级上册 Unit 4</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var btnTogglePh = document.getElementById('btnTogglePh');
+  if(!btnTogglePh) return;
+  function syncLabel(){
+    btnTogglePh.textContent = document.body.classList.contains('hide-ph') ? '显示音标注释' : '隐藏音标注释';
+  }
+  btnTogglePh.addEventListener('click', function(){
+    document.body.classList.toggle('hide-ph');
+    syncLabel();
+  });
+  syncLabel();
+})();
+</script>
+</body>
+</html>

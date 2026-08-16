@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>短文听读说写训练</title>
+<style>
+  /* ============ 全局 ============ */
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;
+    --green-deep:#1fa873;
+    --blue:#2f9df0;
+    --text:#33434b;
+    --text-light:#8aa09a;
+    --card:#ffffff;
+    --shadow:0 8px 22px rgba(47,157,240,.10);
+    --radius:16px;
+  }
+  html,body{height:100%;}
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+    min-height:100vh;
+  }
+  .container{
+    width:100%;
+    max-width:520px;               /* 手机/PC 均居中，PC 上限制最大宽度 */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  /* ============ 顶部标题卡（绿蓝渐变） ============ */
+  .title-card{
+    position:relative;
+    width:100%;
+    background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;
+    padding:30px 20px 26px;
+    text-align:center;
+    color:#fff;
+    overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.14);
+  }
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{
+    position:relative;
+    font-size:24px;
+    letter-spacing:3px;
+    font-weight:700;
+    text-shadow:0 2px 6px rgba(0,0,0,.12);
+  }
+  .title-card .sub{
+    position:relative;
+    margin-top:10px;
+    font-size:13px;
+    letter-spacing:6px;
+    opacity:.92;
+  }
+  .title-card .sub b{font-weight:600;margin:0 2px;}
+
+  /* 顶部入口按钮（打印版 / 使用说明） */
+  .top-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px;}
+  .print-btn,.readme-btn,.word-btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:10px 22px;
+    background:rgba(255,255,255,.20);
+    border:1.5px solid rgba(255,255,255,.85);
+    color:#fff;
+    border-radius:999px;
+    font-size:13.5px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-decoration:none;
+    cursor:pointer;
+    transition:background .2s,transform .08s,box-shadow .2s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .print-btn:active,.readme-btn:active,.word-btn:active{transform:scale(.96);}
+  @media (hover:hover){
+    .print-btn:hover,.readme-btn:hover,.word-btn:hover{background:rgba(255,255,255,.32);box-shadow:0 4px 14px rgba(255,255,255,.25);}
+  }
+
+  /* ============ 年级标签页（3~9 年级共 7 个，4 列两行） ============ */
+  .tabs{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:16px;
+  }
+  .tab{
+    border:none;
+    background:#fff;
+    color:var(--text-light);
+    font-size:14px;
+    padding:10px 0;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(47,157,240,.08);
+    transition:transform .15s ease,box-shadow .25s,background-color .25s,color .25s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .tab:active{transform:scale(.95);}
+  .tab.active{
+    background:linear-gradient(135deg,#35d29a,#2f9df0);
+    color:#fff;
+    font-weight:600;
+    box-shadow:0 8px 16px rgba(47,157,240,.28);
+  }
+
+  /* ============ 下拉单选（年级 + 学期） ============ */
+  .controls{
+    width:100%;
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+  }
+  .select-wrap{position:relative;flex:1;}
+  .select-wrap select{
+    width:100%;
+    appearance:none;
+    -webkit-appearance:none;
+    border:1.5px solid #d8ebe3;
+    border-radius:12px;
+    background:#fff;
+    padding:11px 34px 11px 14px;
+    font-size:15px;
+    color:var(--text);
+    cursor:pointer;
+    outline:none;
+    transition:border-color .25s,box-shadow .25s;
+  }
+  .select-wrap select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(46,189,133,.15);}
+  .select-wrap::after{
+    content:"";
+    position:absolute;
+    right:14px;top:50%;
+    width:7px;height:7px;
+    border-right:2px solid #9db8ae;
+    border-bottom:2px solid #9db8ae;
+    transform:translateY(-65%) rotate(45deg);
+    pointer-events:none;
+  }
+
+  /* ============ 当前学期信息栏 ============ */
+  .info{
+    width:100%;
+    margin-top:14px;
+    background:#fff;
+    border-radius:12px;
+    padding:9px 12px;
+    text-align:center;
+    font-size:13px;
+    color:var(--text-light);
+    box-shadow:0 4px 10px rgba(47,157,240,.06);
+  }
+  .info b{color:var(--green-deep);font-weight:600;}
+
+  /* ============ 3×3 九宫格 ============ */
+  .grid{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);   /* 固定三列，行数随单元数自动扩展 */
+    gap:12px;
+    margin-top:14px;
+  }
+  .cell{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:24px 8px 20px;
+    text-align:center;
+    text-decoration:none;
+    color:var(--text);
+    cursor:pointer;
+    border:1.5px solid transparent;
+    transition:transform .15s ease,background-color .3s,color .3s,box-shadow .3s,border-color .3s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout:none;
+    animation:riseIn .35s ease backwards;
+  }
+  @keyframes riseIn{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @media (hover:hover){
+    .cell:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(47,157,240,.16);}
+  }
+  .cell:active{transform:scale(.95);}       /* 触摸按压缩放至 95% */
+  .cell .num{
+    position:absolute;
+    top:9px;left:12px;
+    font-size:11px;
+    font-weight:700;
+    color:#a8d9c3;
+    transition:color .3s;
+  }
+  .cell .icon{font-size:26px;line-height:1;}
+  .cell .name{font-size:15px;font-weight:600;letter-spacing:.5px;transition:color .3s;}
+  .cell .hint{font-size:10px;color:#b3c4be;letter-spacing:2px;transition:color .3s;}
+
+  /* 点击后：整格变绿 + 显示"打开中…" */
+  .cell.opening{
+    background:linear-gradient(135deg,#2ebd85,#22a06f);
+    border-color:var(--green-deep);
+    box-shadow:0 10px 22px rgba(46,189,133,.35);
+  }
+  .cell.opening .num{color:rgba(255,255,255,.75);}
+  .cell.opening .name,.cell.opening .hint{color:#fff;}
+
+  /* ============ 底部版权 ============ */
+  footer{
+    width:100%;
+    margin-top:26px;
+    text-align:center;
+    font-size:12px;
+    color:#a8bcb4;
+    letter-spacing:1px;
+  }
+
+  @media (max-width:360px){
+    .title-card h1{font-size:20px;letter-spacing:2px;}
+    .tab{font-size:13px;}
+    .cell .name{font-size:14px;}
+  }
+
+/* 教练微信号提示框 */
+.coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.coach-tip .tip{visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;box-shadow:0 6px 18px rgba(47,157,240,.35);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.coach-tip .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#2f9df0}
+.coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+.coach-footer{text-align:center;padding:14px 0 18px;color:var(--text2,#7f8c8d);font-size:.75rem}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部标题 -->
+  <header class="title-card">
+    <h1>📖 短文听读说写训练</h1>
+    <div class="top-btns">
+      <a class="print-btn" href="print/index.html">🖨️ 打印版 · 单词表 &amp; 演讲稿</a>
+    </div>
+  </header>
+
+  <!-- 年级标签页（选择年级后自动切换） -->
+  <nav class="tabs" id="tabs"></nav>
+
+  <!-- 下拉单选：年级 + 学期 -->
+  <div class="controls">
+    <div class="select-wrap">
+      <select id="gradeSelect" aria-label="选择年级"></select>
+    </div>
+    <div class="select-wrap">
+      <select id="semesterSelect" aria-label="选择学期"></select>
+    </div>
+  </div>
+
+  <!-- 当前学期信息 -->
+  <p class="info" id="info"></p>
+
+  <!-- 3×3 九宫格 -->
+  <div class="grid" id="grid"></div>
+
+  <!-- 底部导航 -->
+  <div style="text-align:center;margin:18px 0 6px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
+    <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:#fff;color:#1fa873;border:1.5px solid #2ebd85;border-radius:14px;font-size:13.5px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s;" onmousedown="this.style.transform='scale(.96)'" onmouseup="this.style.transform=''" ontouchend="this.style.transform=''">🏠 返回首页</a>
+    <a href="readme.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:#fff;color:#1fa873;border:1.5px solid #2ebd85;border-radius:14px;font-size:13.5px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s;" onmousedown="this.style.transform='scale(.96)'" onmouseup="this.style.transform=''" ontouchend="this.style.transform=''">📘 本站说明</a>
+  </div>
+  <footer>© 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span><br/><br/></footer>
+</div>
+
+<script>
+/* =====================================================================
+ * ★ 静态数据区 —— 后期修改单元名称 / 数量 / 链接，只需改动这里 ★
+ *
+ * 教材：英语新课标人教版 3-9 年级（小学 3-6 + 初中 7-9）
+ * 用法：
+ *   mk(年级, 学期, 数量)  生成该学期的单元，如 mk("三年级","上册",6)
+ *   网址格式：级数-单元数.html（上册=a，下册=b，unit 后跟数字）
+ *             三年级上册第 1 单元 → 3a-unit1.html
+ *             七年级上册第 1 单元 → 7a-unit1.html
+ *             八年级下册第 2 单元 → 8b-unit2.html
+ *             九年级下册第 3 单元 → 9b-unit3.html
+ *   单个修改：把某个单元换成 { name:"Unit 1", url:"真实文件名.html" }
+ *   增删年级 / 学期 / 单元数：直接改 DATA，标签页和下拉会自动同步
+ * ===================================================================== */
+
+/* 级数与学期代码映射（上册=a，下册=b）——必须定义在 DATA 之前 */
+const GRADE_NO = { "三年级":3, "四年级":4, "五年级":5, "六年级":6, "七年级":7, "八年级":8, "九年级":9 };
+
+/* 生成单元数据：Unit 1 ~ Unit n，网址格式为 级数-单元数.html
+   例：八年级下册第 2 单元 → 8b-unit2.html */
+function mk(grade, sem, n){
+  const g = GRADE_NO[grade] || "";
+  const s = sem === "上册" ? "a" : "b";
+  return Array.from({ length:n }, (_,i)=>({
+    name: "Unit "+(i+1),
+    url: g + s + "-unit" + (i+1) + ".html"
+  }));
+}
+
+/* 单元数为各年级常见结构，可按实际教材修改：
+   小学 3-6 年级各学期 6 单元（六年级下册 4 单元）
+   七年级上 9 / 下 12，八年级上、下各 10，九年级上、下各 7 */
+const DATA = {
+  "三年级": {
+    "上册": mk("三年级","上册",6),
+    "下册": mk("三年级","下册",6)
+  },
+  "四年级": {
+    "上册": mk("四年级","上册",6),
+    "下册": mk("四年级","下册",6)
+  },
+  "五年级": {
+    "上册": mk("五年级","上册",6),
+    "下册": mk("五年级","下册",6)
+  },
+  "六年级": {
+    "上册": mk("六年级","上册",6),
+    "下册": mk("六年级","下册",4)   // 六年级下册实际只有 4 个单元 → 只显示 4 个格子
+  },
+  "七年级": {
+    "上册": mk("七年级","上册",7),
+    "下册": mk("七年级","下册",8)
+  },
+  "八年级": {
+    "上册": mk("八年级","上册",8),
+    "下册": mk("八年级","下册",8)
+  },
+  "九年级": {
+    "上册": mk("九年级","上册",7),
+    "下册": mk("九年级","下册",7)
+  }
+};
+
+/* ================= 渲染逻辑（一般无需修改） ================= */
+const tabsEl = document.getElementById("tabs");
+const gradeSelect = document.getElementById("gradeSelect");
+const semesterSelect = document.getElementById("semesterSelect");
+const infoEl = document.getElementById("info");
+const gridEl = document.getElementById("grid");
+
+const state = { grade: Object.keys(DATA)[0], semester: "" };
+
+/* 取当前年级的学期列表（自动从数据中读取，可自行增删） */
+function getSemesters(){
+  const sems = DATA[state.grade] ? Object.keys(DATA[state.grade]) : [];
+  return sems.length ? sems : ["上册"];
+}
+
+/* 年级标签页 */
+function buildTabs(){
+  tabsEl.innerHTML = "";
+  Object.keys(DATA).forEach(g=>{
+    const b = document.createElement("button");
+    b.className = "tab" + (g===state.grade ? " active" : "");
+    b.textContent = g;
+    b.dataset.grade = g;
+    b.addEventListener("click", ()=>selectGrade(g));
+    tabsEl.appendChild(b);
+  });
+}
+
+/* 年级下拉 */
+function buildGradeSelect(){
+  gradeSelect.innerHTML = "";
+  Object.keys(DATA).forEach(g=>{
+    const o = document.createElement("option");
+    o.value = g;
+    o.textContent = g;
+    gradeSelect.appendChild(o);
+  });
+  gradeSelect.value = state.grade;
+}
+
+/* 学期下拉 */
+function buildSemesterSelect(){
+  semesterSelect.innerHTML = "";
+  const sems = getSemesters();
+  if(!sems.includes(state.semester)) state.semester = sems[0];
+  sems.forEach(s=>{
+    const o = document.createElement("option");
+    o.value = s;
+    o.textContent = s;
+    semesterSelect.appendChild(o);
+  });
+  semesterSelect.value = state.semester;
+}
+
+/* 选择年级：标签页 + 下拉双向同步，并自动切换内容 */
+function selectGrade(g){
+  if(!DATA[g]) return;
+  state.grade = g;
+  gradeSelect.value = g;
+  [...tabsEl.children].forEach(t=>t.classList.toggle("active", t.dataset.grade===g));
+  buildSemesterSelect();
+  renderGrid();
+}
+
+/* 渲染九宫格（按单元顺序，实际几个单元显示几个格子） */
+function renderGrid(){
+  const units = (DATA[state.grade] && DATA[state.grade][state.semester]) || [];
+  infoEl.innerHTML = `当前：<b>${state.grade}</b> · <b>${state.semester}</b> · 共 <b>${units.length}</b> 个单元`;
+  gridEl.innerHTML = "";
+
+  units.forEach((u,i)=>{
+    const a = document.createElement("a");
+    a.className = "cell";
+    a.href = u.url;
+    a.style.animationDelay = (i*40)+"ms";
+    a.innerHTML =
+      `<span class="num">${String(i+1).padStart(2,"0")}</span>` +
+      `<span class="icon">📖</span>` +
+      `<span class="name"></span>` +
+      `<span class="hint">听 · 读 · 说 · 写</span>`;
+    a.querySelector(".name").textContent = u.name;
+
+    a.addEventListener("click", e=>{
+      e.preventDefault();   /* 先整格变绿显示"打开中…"，再跳转到真实网址 */
+      a.classList.add("opening");
+      a.querySelector(".name").textContent = "打开中…";
+      a.querySelector(".hint").textContent = "";
+      setTimeout(()=>{
+        location.href = u.url;   /* 跳转到 级数-单元数.html，如 8b-unit2.html */
+      }, 500);
+    });
+
+    gridEl.appendChild(a);
+  });
+}
+
+/* 事件绑定 */
+gradeSelect.addEventListener("change", ()=>selectGrade(gradeSelect.value));
+semesterSelect.addEventListener("change", ()=>{ state.semester = semesterSelect.value; renderGrid(); });
+
+/* 初始化 */
+state.semester = getSemesters()[0];
+buildTabs();
+buildGradeSelect();
+buildSemesterSelect();
+renderGrid();
+</script>
+</body>
+</html>

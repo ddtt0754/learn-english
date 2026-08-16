@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2ebd85">
+<title>七年级上册 Unit 4 My Favourite Subject · 课标单词表</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    min-height:100vh;
+    padding:24px 14px 60px;
+    color:#33434b;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+  header{
+    text-align:center;
+    background:linear-gradient(135deg,#35d29a,#2f9df0);
+    color:#fff;border-radius:18px;
+    padding:30px 22px 26px;
+    box-shadow:0 10px 30px rgba(47,157,240,.18);
+  }
+  header .badge{
+    display:inline-block;background:rgba(255,255,255,.22);
+    border-radius:999px;padding:4px 14px;font-size:13px;letter-spacing:1px;
+    margin-bottom:12px;
+  }
+  header h1{font-size:24px;margin-bottom:8px;}
+  header p{font-size:14px;opacity:.92;}
+  .tip{
+    background:#fff;border-radius:14px;padding:14px 18px;
+    margin:18px 0 8px;font-size:14px;line-height:1.9;
+    box-shadow:0 4px 14px rgba(47,157,240,.08);
+  }
+  .tip b{color:#1fa873;}
+  .section-title{
+    font-size:18px;margin:26px 0 12px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .section-title::before{
+    content:"";width:5px;height:20px;border-radius:3px;
+    background:linear-gradient(180deg,#35d29a,#2f9df0);
+  }
+  .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(47,157,240,.08);}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  thead th{
+    background:#f0faf6;color:#1fa873;font-size:13.5px;
+    padding:11px 10px;text-align:left;white-space:nowrap;
+    border-bottom:2px solid #d9f2e8;
+  }
+  tbody td{
+    padding:11px 10px;border-bottom:1px solid #eef4f2;vertical-align:top;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfb;}
+  .num{color:#8aa09a;font-size:12.5px;width:40px;}
+  .word{font-weight:700;font-size:16px;color:#2f6ba3;}
+  .ipa{color:#b05a2e;font-family:"Segoe UI",Georgia,serif;white-space:nowrap;}
+  .pos{color:#1fa873;font-weight:600;white-space:nowrap;}
+  .cn{color:#4a5a63;}
+  .note{
+    background:#fff8ef;border-left:4px solid #f5a623;
+    border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0 4px;
+    font-size:13.5px;line-height:1.9;color:#7a5b23;
+  }
+  footer{text-align:center;font-size:12px;color:#8aa09a;margin-top:30px;letter-spacing:1px;}
+  @media print{
+    body{background:#fff;padding:0;}
+    header{box-shadow:none;}
+    .card{box-shadow:none;border:1px solid #ddd;}
+  }
+  /* 隐藏/显示列 切换按钮 */
+  .top-toggle{
+    margin:12px 5px 0;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:38px;
+    padding:0 16px;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s,transform .08s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .top-toggle:active{transform:scale(.97);}
+  @media (hover:hover){
+    .top-toggle:hover{background:rgba(255,255,255,.30);}
+  }
+  /* 一键隐藏/恢复 单词列（第 2 列） */
+  body.hide-word th:nth-child(2),body.hide-word td:nth-child(2){display:none;}
+  /* 一键隐藏/恢复 释义列（第 5 列） */
+  body.hide-cn th:nth-child(5),body.hide-cn td:nth-child(5){display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">2026秋 · 人教新目标版（2024新版）· 新课标</span>
+    <h1>七年级上册 Unit 4 My Favourite Subject</h1>
+    <p>我最喜欢的科目 · 课标单词表（含音标 / 词性 / 释义）</p>
+      <button class="top-toggle" id="btnToggleWord" type="button">隐藏单词列</button>
+    <button class="top-toggle" id="btnToggleCn" type="button">隐藏释义列</button>
+</header>
+
+  <div class="tip">本单元话题为 <b>我最喜欢的科目（My Favourite Subject）</b>，围绕谈论学科、课程安排、学习原因与时间表达展开。教材词汇表核心课标词共 <b>29 个词条</b>（Section A 12 + Section B 9 + 短语 8）。</div>
+  <div class="section-title">📖 一、Section A 课标单词（P111 · 12 词）</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>#</th><th>单词/短语</th><th>音标（英式）</th><th>词性</th><th>释义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="word">biology</td><td class="ipa">/baɪˈɒlədʒi/</td><td class="pos">n.</td><td class="cn">生物学</td></tr>
+        <tr><td class="num">2</td><td class="word">number</td><td class="ipa">/ˈnʌmbə(r)/</td><td class="pos">n.</td><td class="cn">数字；号码</td></tr>
+        <tr><td class="num">3</td><td class="word">reason</td><td class="ipa">/ˈriːzn/</td><td class="pos">n.</td><td class="cn">原因；理由</td></tr>
+        <tr><td class="num">4</td><td class="word">geography</td><td class="ipa">/dʒiˈɒɡrəfi/</td><td class="pos">n.</td><td class="cn">地理（学）</td></tr>
+        <tr><td class="num">5</td><td class="word">history</td><td class="ipa">/ˈhɪstri/</td><td class="pos">n.</td><td class="cn">历史；历史课</td></tr>
+        <tr><td class="num">6</td><td class="word">remember</td><td class="ipa">/rɪˈmembə(r)/</td><td class="pos">v.</td><td class="cn">记住；记起</td></tr>
+        <tr><td class="num">7</td><td class="word">useful</td><td class="ipa">/ˈjuːsfl/</td><td class="pos">adj.</td><td class="cn">有用的；有益的</td></tr>
+        <tr><td class="num">8</td><td class="word">boring</td><td class="ipa">/ˈbɔːrɪŋ/</td><td class="pos">adj.</td><td class="cn">乏味的；令人生厌的</td></tr>
+        <tr><td class="num">9</td><td class="word">exciting</td><td class="ipa">/ɪkˈsaɪtɪŋ/</td><td class="pos">adj.</td><td class="cn">令人激动的；使人兴奋的</td></tr>
+        <tr><td class="num">10</td><td class="word">as</td><td class="ipa">/æz/</td><td class="pos">prep. &amp; conj.</td><td class="cn">如同；作为；当……时；由于</td></tr>
+        <tr><td class="num">11</td><td class="word">past</td><td class="ipa">/pɑːst/</td><td class="pos">n. &amp; adj. &amp; prep.</td><td class="cn">过去；过去的；在……之后</td></tr>
+        <tr><td class="num">12</td><td class="word">IT</td><td class="ipa">/ˌaɪ ˈtiː/</td><td class="pos">abbr.</td><td class="cn">信息技术（= information technology）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-title">📖 二、Section B 课标单词（P112 · 9 词）</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>#</th><th>单词/短语</th><th>音标（英式）</th><th>词性</th><th>释义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="word">excellent</td><td class="ipa">/ˈeksələnt/</td><td class="pos">adj.</td><td class="cn">优秀的；极好的</td></tr>
+        <tr><td class="num">2</td><td class="word">instrument</td><td class="ipa">/ˈɪnstrəmənt/</td><td class="pos">n.</td><td class="cn">乐器；器械；工具</td></tr>
+        <tr><td class="num">3</td><td class="word">singer</td><td class="ipa">/ˈsɪŋə(r)/</td><td class="pos">n.</td><td class="cn">歌手</td></tr>
+        <tr><td class="num">4</td><td class="word">future</td><td class="ipa">/ˈfjuːtʃə(r)/</td><td class="pos">n.</td><td class="cn">将来；未来</td></tr>
+        <tr><td class="num">5</td><td class="word">term</td><td class="ipa">/tɜːm/</td><td class="pos">n.</td><td class="cn">学期</td></tr>
+        <tr><td class="num">6</td><td class="word">problem</td><td class="ipa">/ˈprɒbləm/</td><td class="pos">n.</td><td class="cn">难题；困难</td></tr>
+        <tr><td class="num">7</td><td class="word">magic</td><td class="ipa">/ˈmædʒɪk/</td><td class="pos">n. &amp; adj.</td><td class="cn">魔法；魔力；魔术；有魔力的</td></tr>
+        <tr><td class="num">8</td><td class="word">life</td><td class="ipa">/laɪf/</td><td class="pos">n.</td><td class="cn">生活；生命（pl. lives）</td></tr>
+        <tr><td class="num">9</td><td class="word">scientist</td><td class="ipa">/ˈsaɪəntɪst/</td><td class="pos">n.</td><td class="cn">科学家</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-title">📌 三、重点短语（8 个）</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>#</th><th>单词/短语</th><th>音标（英式）</th><th>词性</th><th>释义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="word">wake up</td><td class="ipa">/ˌweɪk ˈʌp/</td><td class="pos">phr.</td><td class="cn">醒来</td></tr>
+        <tr><td class="num">2</td><td class="word">get up</td><td class="ipa">/ˌɡet ˈʌp/</td><td class="pos">phr.</td><td class="cn">起床</td></tr>
+        <tr><td class="num">3</td><td class="word">good at</td><td class="ipa">/ˌɡʊd ˈæt/</td><td class="pos">phr.</td><td class="cn">擅长</td></tr>
+        <tr><td class="num">4</td><td class="word">listen to</td><td class="ipa">/ˈlɪsn tuː/</td><td class="pos">phr.</td><td class="cn">听；倾听</td></tr>
+        <tr><td class="num">5</td><td class="word">the same as</td><td class="ipa">/ðə seɪm æz/</td><td class="pos">phr.</td><td class="cn">与……相同</td></tr>
+        <tr><td class="num">6</td><td class="word">help sb. with</td><td class="ipa">/help wɪð/</td><td class="pos">phr.</td><td class="cn">帮助某人做（某事）</td></tr>
+        <tr><td class="num">7</td><td class="word">good with</td><td class="ipa">/ɡʊd wɪð/</td><td class="pos">phr.</td><td class="cn">灵巧的；善于应付……的</td></tr>
+        <tr><td class="num">8</td><td class="word">in the future</td><td class="ipa">/ˌɪn ðə ˈfjuːtʃə(r)/</td><td class="pos">phr.</td><td class="cn">将来；未来</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-title">🎒 四、小学部分复习词</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>#</th><th>单词/短语</th><th>音标（英式）</th><th>词性</th><th>释义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="pos" colspan="2" style="white-space:normal;">复习词</td><td colspan="3" class="cn">subject /ˈsʌbdʒɪkt/ n. 科目；Chinese /ˌtʃaɪˈniːz/ n. 语文；maths /mæθs/ n. 数学；English /ˈɪŋɡlɪʃ/ n. 英语；science /ˈsaɪəns/ n. 科学；art /ɑːt/ n. 美术；音乐 music /ˈmjuːzɪk/ n. 音乐；PE /ˌpiː ˈiː/ n. 体育；Monday～Sunday 星期一到星期日；today /təˈdeɪ/ n. 今天；tomorrow /təˈmɒrəʊ/ n. 明天；morning /ˈmɔːnɪŋ/ n. 早晨；afternoon /ˌɑːftəˈnuːn/ n. 下午；evening /ˈiːvnɪŋ/ n. 晚上；class /klɑːs/ n. 班级；课；lesson /ˈlesn/ n. 课；课程；teacher /ˈtiːtʃə(r)/ n. 教师；interesting /ˈɪntrəstɪŋ/ adj. 有趣的；fun /fʌn/ adj. 有趣的；difficult /ˈdɪfɪkəlt/ adj. 困难的；easy /ˈiːzi/ adj. 容易的；busy /ˈbɪzi/ adj. 忙的；free /friː/ adj. 空闲的；finish /ˈfɪnɪʃ/ v. 完成；because /bɪˈkɒz/ conj. 因为；why /waɪ/ adv. 为什么；when /wen/ adv. 什么时候；who /huː/ pron. 谁</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">💡 说明：本表依据 2026 秋人教版（2024 新版）新课标七年级上册 Unit 4《My Favourite Subject》教材词汇表整理；音标采用英式（DJ）标注。学科、星期等基础词多为小学已学，供复习巩固。</div>
+  <footer>© 2026 豆豆助理 · 七年级上册 Unit 4 My Favourite Subject 课标单词表</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function makeToggle(btnId, cls, showText, hideText){
+    var btn = document.getElementById(btnId);
+    if(!btn) return;
+    function sync(){
+      btn.textContent = document.body.classList.contains(cls) ? showText : hideText;
+    }
+    btn.addEventListener('click', function(){
+      document.body.classList.toggle(cls);
+      sync();
+    });
+    sync();
+  }
+  makeToggle('btnToggleWord', 'hide-word', '显示单词列', '隐藏单词列');
+  makeToggle('btnToggleCn', 'hide-cn', '显示释义列', '隐藏释义列');
+})();
+</script>
+</body>
+</html>

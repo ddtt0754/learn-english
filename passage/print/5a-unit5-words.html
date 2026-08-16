@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2ebd85">
+<title>五年级上册 Unit 5 课标单词表 · Food and Plants</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);min-height:100vh;padding:24px 14px 60px;color:#33434b;}
+  .wrap{max-width:760px;margin:0 auto;}
+  header{text-align:center;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;border-radius:18px;padding:30px 22px 26px;box-shadow:0 10px 30px rgba(47,157,240,.18);}
+  header .badge{display:inline-block;background:rgba(255,255,255,.22);border-radius:999px;padding:4px 14px;font-size:13px;letter-spacing:1px;margin-bottom:12px;}
+  header h1{font-size:24px;margin-bottom:8px;}
+  header p{font-size:14px;opacity:.92;}
+  .tip{background:#fff;border-radius:14px;padding:14px 18px;margin:18px 0 8px;font-size:14px;line-height:1.9;box-shadow:0 4px 14px rgba(47,157,240,.08);}
+  .tip b{color:#1fa873;}
+  .section-title{font-size:18px;margin:26px 0 12px;display:flex;align-items:center;gap:8px;}
+  .section-title::before{content:"";width:5px;height:20px;border-radius:3px;background:linear-gradient(180deg,#35d29a,#2f9df0);}
+  .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(47,157,240,.08);}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  thead th{background:#f0faf6;color:#1fa873;font-size:13.5px;padding:11px 10px;text-align:left;border-bottom:2px solid #d9f2e8;}
+  tbody td{padding:11px 10px;border-bottom:1px solid #eef4f2;vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfb;}
+  .num{color:#8aa09a;font-size:12.5px;width:40px;}
+  .word{font-weight:700;font-size:16px;color:#2f6ba3;}
+  .ipa{color:#b05a2e;font-family:"Segoe UI",Georgia,serif;white-space:nowrap;}
+  .pos{color:#1fa873;font-weight:600;white-space:nowrap;}
+  .cn{color:#4a5a63;}
+  .note{background:#fff8ef;border-left:4px solid #f5a623;border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0 4px;font-size:13.5px;line-height:1.9;color:#7a5b23;}
+  footer{text-align:center;font-size:12px;color:#8aa09a;margin-top:30px;letter-spacing:1px;}
+
+  /* 隐藏/显示列 切换按钮 */
+  .top-toggle{
+    margin:12px 5px 0;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:38px;
+    padding:0 16px;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s,transform .08s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .top-toggle:active{transform:scale(.97);}
+  @media (hover:hover){
+    .top-toggle:hover{background:rgba(255,255,255,.30);}
+  }
+  /* 一键隐藏/恢复 单词列（第 2 列） */
+  body.hide-word th:nth-child(2),body.hide-word td:nth-child(2){display:none;}
+  /* 一键隐藏/恢复 释义列（第 5 列） */
+  body.hide-cn th:nth-child(5),body.hide-cn td:nth-child(5){display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">2026秋 · 人教PEP新课标 · 五年级上册</span>
+    <h1>五年级上册 Unit 5 Food and Plants</h1>
+    <p>食物与植物 · 课标单词表（含音标 / 词性 / 释义）</p>
+      <button class="top-toggle" id="btnToggleWord" type="button">隐藏单词列</button>
+    <button class="top-toggle" id="btnToggleCn" type="button">隐藏释义列</button>
+</header>
+  <div class="tip">本单元话题为 <b>食物与植物</b>。教材词汇表共 <b>21 个课标单词（含短语）</b>。</div>
+  <div class="section-title">📖 课标单词表（21 词条）</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>#</th><th>单词</th><th>音标（英式）</th><th>词性</th><th>释义</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="word">hungry</td><td class="ipa">/ˈhʌŋɡri/</td><td class="pos">adj.</td><td class="cn">感到饿的</td></tr>
+        <tr><td class="num">2</td><td class="word">beef</td><td class="ipa">/biːf/</td><td class="pos">n.</td><td class="cn">牛肉</td></tr>
+        <tr><td class="num">3</td><td class="word">ice cream</td><td class="ipa">/ˌaɪs ˈkriːm/</td><td class="pos">n.</td><td class="cn">（一份）冰激凌</td></tr>
+        <tr><td class="num">4</td><td class="word">little</td><td class="ipa">/ˈlɪtl/</td><td class="pos">adj.</td><td class="cn">少许；一点</td></tr>
+        <tr><td class="num">5</td><td class="word">dumpling</td><td class="ipa">/ˈdʌmplɪŋ/</td><td class="pos">n.</td><td class="cn">饺子；汤圆</td></tr>
+        <tr><td class="num">6</td><td class="word">tea</td><td class="ipa">/tiː/</td><td class="pos">n.</td><td class="cn">茶叶；茶；茶水</td></tr>
+        <tr><td class="num">7</td><td class="word">hamburger</td><td class="ipa">/ˈhæmbɜːɡə(r)/</td><td class="pos">n.</td><td class="cn">汉堡包；汉堡牛肉饼</td></tr>
+        <tr><td class="num">8</td><td class="word">Mrs</td><td class="ipa">/ˈmɪsɪz/</td><td class="pos">n.</td><td class="cn">（用于女子的姓氏或姓名前）太太，夫人</td></tr>
+        <tr><td class="num">9</td><td class="word">coconut</td><td class="ipa">/ˈkəʊkənʌt/</td><td class="pos">n.</td><td class="cn">椰子</td></tr>
+        <tr><td class="num">10</td><td class="word">interesting</td><td class="ipa">/ˈɪntrəstɪŋ/</td><td class="pos">adj.</td><td class="cn">有趣的；有吸引力的</td></tr>
+        <tr><td class="num">11</td><td class="word">seed</td><td class="ipa">/siːd/</td><td class="pos">n.</td><td class="cn">种子；籽</td></tr>
+        <tr><td class="num">12</td><td class="word">pull</td><td class="ipa">/pʊl/</td><td class="pos">v.</td><td class="cn">拔出；抽出</td></tr>
+        <tr><td class="num">13</td><td class="word">pull up</td><td class="ipa">/ˌpʊl ˈʌp/</td><td class="pos">phr.</td><td class="cn">拔出</td></tr>
+        <tr><td class="num">14</td><td class="word">stem</td><td class="ipa">/stem/</td><td class="pos">n.</td><td class="cn">（花草的）茎；（花或叶的）梗，柄</td></tr>
+        <tr><td class="num">15</td><td class="word">root</td><td class="ipa">/ruːt/</td><td class="pos">n.</td><td class="cn">根；根茎</td></tr>
+        <tr><td class="num">16</td><td class="word">lotus</td><td class="ipa">/ˈləʊtəs/</td><td class="pos">n.</td><td class="cn">莲属植物</td></tr>
+        <tr><td class="num">17</td><td class="word">lake</td><td class="ipa">/leɪk/</td><td class="pos">n.</td><td class="cn">湖；湖泊</td></tr>
+        <tr><td class="num">18</td><td class="word">world</td><td class="ipa">/wɜːld/</td><td class="pos">n.</td><td class="cn">世界；地球；天下</td></tr>
+        <tr><td class="num">19</td><td class="word">round</td><td class="ipa">/raʊnd/</td><td class="pos">adj.</td><td class="cn">圆形的；环形的；球形的</td></tr>
+        <tr><td class="num">20</td><td class="word">different</td><td class="ipa">/ˈdɪfrənt/</td><td class="pos">adj.</td><td class="cn">不同的；有区别的；有差异的</td></tr>
+        <tr><td class="num">21</td><td class="word">way</td><td class="ipa">/weɪ/</td><td class="pos">n.</td><td class="cn">方法；手段；途径；方式</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">💡 说明：本表依据 2026 秋人教 PEP（新课标）五年级上册 Unit 5《Food and Plants》教材词汇表整理；音标采用英式（DJ）标注。</div>
+  <footer>© 2026 豆豆助理 · 五年级上册 Unit 5 课标单词表</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function makeToggle(btnId, cls, showText, hideText){
+    var btn = document.getElementById(btnId);
+    if(!btn) return;
+    function sync(){
+      btn.textContent = document.body.classList.contains(cls) ? showText : hideText;
+    }
+    btn.addEventListener('click', function(){
+      document.body.classList.toggle(cls);
+      sync();
+    });
+    sync();
+  }
+  makeToggle('btnToggleWord', 'hide-word', '显示单词列', '隐藏单词列');
+  makeToggle('btnToggleCn', 'hide-cn', '显示释义列', '隐藏释义列');
+})();
+</script>
+</body>
+</html>
