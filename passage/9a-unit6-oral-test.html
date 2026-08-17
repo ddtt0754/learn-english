@@ -2,583 +2,302 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#2ebd85">
-<title>AI 口语对话 · Unit 6 Beyond Earth · 汕头2027中考</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>广东（汕头）中考英语听说 · 备考训练</title>
 <style>
-:root{--green:#2ebd85;--green-deep:#1fa873;--green-light:#eefaf4;--green-border:#cdeee0;--blue:#2f9df0;--blue-deep:#2f6ba3;--blue-light:#eef4fb;--blue-border:#d3e5f6;--red:#d93025;--red-light:#fce8e6;--orange:#e37400;--orange-light:#fef7e0;--text:#33434b;--text-muted:#8aa09a;--card:#fff;--bg-grad:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px}
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;background:var(--bg-grad);color:var(--text);line-height:1.9;min-height:100vh;display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom))}
-.container{width:100%;max-width:640px}
+:root{
+  --blue:#2e9e6b;
+  --blue2:#3bb98a;
+  --blue-d:#1f7d56;
+  --bg:#eef4f0;
+  --card:#ffffff;
+  --line:#e3ede9;
+  --ink:#22303a;
+  --sub:#6b7c86;
+  --radius:16px;
+  --shadow:0 6px 20px rgba(46,158,107,.10);
+  --brand:linear-gradient(135deg,#2e9e6b,#3bb98a);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  background:var(--bg);color:var(--ink);min-height:100vh;line-height:1.7;
+  -webkit-tap-highlight-color:transparent;
+}
+.container{max-width:780px;width:100%;margin:0 auto;padding:0 16px 70px}
 
-/* Header */
-.header{position:relative;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);border-radius:22px;padding:24px 20px 20px;text-align:center;color:#fff;box-shadow:0 14px 30px rgba(47,157,240,.25);margin-bottom:14px;overflow:hidden}
-.header::before,.header::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14)}
-.header::before{width:120px;height:120px;top:-40px;right:-30px}
-.header::after{width:70px;height:70px;bottom:-24px;left:-16px}
-.header h1{position:relative;font-size:18px;font-weight:700;letter-spacing:2px;text-shadow:0 2px 6px rgba(0,0,0,.12)}
-.header .sub{position:relative;font-size:11.5px;opacity:.94;margin-top:6px;letter-spacing:2px}
-.header .badge{position:relative;display:inline-block;background:rgba(255,255,255,.2);border-radius:999px;padding:2px 12px;font-size:10.5px;margin-top:8px;letter-spacing:1px}
+/* 页头 */
+.hero{position:relative;overflow:hidden;background:var(--brand);color:#fff;
+  border-radius:0 0 22px 22px;padding:26px 20px 20px;box-shadow:0 8px 22px rgba(46,158,107,.25)}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.16)}
+.hero::before{width:120px;height:120px;top:-46px;right:-26px}
+.hero::after{width:64px;height:64px;bottom:-24px;left:-16px;background:rgba(255,255,255,.1)}
+.hero h1{font-size:1.3rem;font-weight:800;letter-spacing:.02em;position:relative}
+.hero .sub{font-size:.78rem;opacity:.95;margin-top:3px;position:relative}
 
-/* Progress bar */
-.prog-wrap{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12px;color:var(--text-muted);background:#fff;border-radius:12px;padding:10px 14px;box-shadow:var(--shadow)}
-.prog-bar{flex:1;height:5px;background:#d9f2e8;border-radius:3px;overflow:hidden}
-.prog-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--blue));border-radius:3px;transition:width .3s}
+/* 三大板块切换 */
+.tabs{display:flex;gap:8px;margin:16px 0 18px}
+.tab{flex:1;background:#fff;border:1.5px solid var(--line);color:var(--sub);
+  font-weight:700;font-size:.82rem;padding:12px 6px;border-radius:12px;cursor:pointer;
+  text-align:center;line-height:1.35;transition:all .15s}
+.tab small{display:block;font-weight:500;font-size:.66rem;opacity:.85;margin-top:2px}
+.tab.active{background:var(--brand);border-color:transparent;color:#fff;
+  box-shadow:0 6px 16px rgba(46,158,107,.3)}
+.tab:active{transform:scale(.97)}
 
-/* Chat area */
-.chat{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-.msg{max-width:90%;padding:12px 16px;border-radius:16px;font-size:14.5px;line-height:1.8;animation:fadeIn .3s ease}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.msg.ai{align-self:flex-start;background:#fff;border:1.5px solid var(--green-border);border-bottom-left-radius:4px;box-shadow:0 2px 6px rgba(47,157,240,.06)}
-.msg.ai .label{font-size:10px;color:var(--green-deep);font-weight:700;margin-bottom:4px;letter-spacing:1px}
-.msg.ai b{color:var(--blue-deep)}
-.msg.user{align-self:flex-end;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);color:#fff;border-bottom-right-radius:4px;box-shadow:0 2px 6px rgba(47,157,240,.18)}
-.msg.score{align-self:flex-end;background:var(--green-light);border:1.5px solid var(--green-border);color:var(--green-deep);font-size:12px;padding:8px 14px;border-radius:12px;text-align:center}
-.msg.score .stars{font-size:16px;letter-spacing:2px}
-.msg.keywords{font-size:11.5px;opacity:.85}
+/* 题型卡片 */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 16px 18px;margin-bottom:16px;box-shadow:var(--shadow);overflow:hidden}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;
+  padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.card-name{font-size:1rem;font-weight:800;color:var(--ink)}
+.card-name .pn{color:var(--blue);margin-right:6px}
+.score{background:#e6f4ec;color:var(--blue-d);font-weight:800;font-size:.74rem;
+  padding:4px 11px;border-radius:999px;white-space:nowrap}
+.label{font-size:.72rem;font-weight:800;color:var(--blue);margin:12px 0 6px;letter-spacing:.04em;
+  display:flex;align-items:center;gap:5px}
+.rules{background:#eef6f1;border-radius:10px;padding:11px 13px;font-size:.8rem;color:#2e4a3c;line-height:1.7}
+.rules b{color:var(--blue-d)}
+.example{background:#fbfdfc;border:1px solid #eef3f1;border-radius:10px;padding:13px 15px;
+  font-size:.88rem;color:var(--ink);line-height:1.85}
+.example .spk{font-weight:800;color:var(--blue)}
+.example .note{font-size:.74rem;color:var(--blue-d);font-weight:700;display:block;margin-bottom:6px}
+.mind{list-style:none;margin-top:6px}
+.mind li{position:relative;padding:6px 0 6px 20px;font-size:.84rem;border-bottom:1px dashed #eef3fb}
+.mind li:last-child{border-bottom:none}
+.mind li::before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--blue2)}
+.mind b{color:var(--blue-d)}
+.scene{background:#fff8e8;border:1px solid #f3e2a8;border-radius:9px;padding:10px 13px;font-size:.83rem;color:#6b5a17;line-height:1.7}
+.scene b{color:#9a7b12}
 
-/* Input area */
-.input-area{position:sticky;bottom:12px;background:var(--card);border-radius:18px;padding:14px;box-shadow:0 -2px 16px rgba(47,157,240,.10);border:1.5px solid var(--green-border)}
-.recog-box{background:var(--blue-light);border:1.5px solid var(--blue-border);border-radius:12px;padding:12px;min-height:44px;font-size:14px;color:var(--text-muted);text-align:center;margin-bottom:10px;transition:all .3s}
-.recog-box.has-text{color:var(--text);border-color:var(--green-border);background:#fff}
-.recog-box.recording{border-color:var(--red);box-shadow:0 0 12px rgba(217,48,37,.20);background:#fff}
-.text-fallback{margin-bottom:10px}
-.text-fallback input{width:100%;border:1.5px solid var(--blue-border);border-radius:12px;padding:10px 14px;font-size:14px;font-family:inherit;color:var(--text);box-sizing:border-box;outline:none;transition:border .3s;background:#fff}
-.text-fallback input:focus{border-color:var(--blue);box-shadow:0 0 8px rgba(47,157,240,.18)}
-.text-fallback input::placeholder{color:var(--text-muted)}
-.btn-row{display:flex;gap:8px}
-.btn{flex:1;padding:13px;border:none;border-radius:14px;font-size:14.5px;font-weight:700;cursor:pointer;touch-action:manipulation;transition:all .2s}
-.btn:active{transform:scale(.97)}
-.btn-talk{background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;box-shadow:0 4px 12px rgba(47,157,240,.18)}
-.btn-talk.recording{background:linear-gradient(135deg,#666,#444);animation:blink .8s infinite;box-shadow:none}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.5}}
-.btn-submit{background:var(--blue-deep);color:#fff;box-shadow:0 4px 12px rgba(47,157,240,.18)}
-.btn-submit:disabled{background:#c0c8d4;color:#888;cursor:not-allowed;box-shadow:none}
-.btn-reset{background:#fff;border:2px solid var(--green-border);color:var(--text-muted);padding:13px 16px;border-radius:14px;font-size:14px;cursor:pointer;flex:0}
+/* 操作按钮 */
+.actions{display:flex;gap:10px;margin-top:14px}
+.btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;
+  font-family:inherit;font-weight:700;font-size:.8rem;padding:11px 8px;border-radius:11px;
+  cursor:pointer;transition:transform .12s;border:1.5px solid transparent}
+.btn:active{transform:scale(.96)}
+.btn-prompt{background:var(--brand);color:#fff;box-shadow:0 5px 14px rgba(46,158,107,.28)}
+.btn-passage{background:#fff;color:var(--blue-d);border-color:var(--blue);box-shadow:0 5px 14px rgba(46,158,107,.18)}
 
-/* Report */
-.report-card{display:none;background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-top:14px}
-.report-card.show{display:block}
-.report-card h2{text-align:center;font-size:19px;margin-bottom:8px}
-.report-card .total{text-align:center;font-size:44px;font-weight:800;margin:8px 0}
-.report-card .total.excellent{color:var(--green-deep)}
-.report-card .total.good{color:var(--blue-deep)}
-.report-card .total.fair{color:var(--orange)}
-.report-card .total.poor{color:var(--red)}
-.report-card .grade{text-align:center;font-size:15px;font-weight:700;margin-bottom:14px}
-.score-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
-.score-cell{background:var(--blue-light);border-radius:10px;padding:12px;text-align:center}
-.score-cell .sc-label{font-size:11px;color:var(--text-muted)}
-.score-cell .sc-val{font-size:20px;font-weight:800;margin:4px 0;color:var(--blue-deep)}
-.score-cell .sc-stars{font-size:13px}
-.tip{padding:12px 16px;border-radius:12px;font-size:13px;margin:10px 0;line-height:1.8}
-.tip.success{background:var(--green-light);border-left:4px solid var(--green)}
-.tip.info{background:var(--blue-light);border-left:4px solid var(--blue)}
-.tip.warn{background:var(--orange-light);border-left:4px solid var(--orange)}
-.unsupported{display:none;text-align:center;padding:40px;color:var(--red);font-size:15px}
-.unsupported.show{display:block}
-footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px}
+/* 中间 AI 对话训练区 */
+.ai-area{margin:8px 0 22px;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.ai-bar{background:var(--brand);color:#fff;font-weight:800;font-size:.86rem;
+  padding:12px 16px;display:flex;align-items:center;gap:7px}
+.ai-bar .dot{width:8px;height:8px;border-radius:50%;background:#7dffce;box-shadow:0 0 0 3px rgba(125,255,206,.35)}
+.ai-area iframe{width:100%;height:500px;border:0;display:block;background:#eef6f1}
+.ai-fallback{font-size:.72rem;color:var(--sub);text-align:center;padding:8px;border-top:1px solid var(--line)}
+.ai-fallback a{color:var(--blue);font-weight:700}
+
+/* 页尾 */
+.foot{text-align:center;color:var(--sub);font-size:.74rem;line-height:1.7;padding-top:8px}
+.foot .strong{color:var(--blue-d);font-weight:800;font-size:.82rem}
+.btn-home{display:inline-block;margin-top:14px;background:var(--brand);color:#fff;font-weight:800;font-size:.84rem;
+  padding:11px 28px;border-radius:12px;text-decoration:none;box-shadow:0 5px 14px rgba(46,158,107,.28);transition:transform .12s}
+.btn-home:active{transform:scale(.96)}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:42px;transform:translateX(-50%) translateY(20px);
+  background:rgba(31,45,61,.94);color:#fff;font-weight:700;font-size:.82rem;
+  padding:11px 22px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.22);
+  opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;z-index:99;display:flex;align-items:center;gap:7px}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast .ck{color:#5dffb0;font-weight:900}
+
+@media (max-width:560px){
+  .hero h1{font-size:1.12rem}
+  .tab{font-size:.76rem;padding:11px 4px}
+  .tab small{font-size:.62rem}
+  .card-name{font-size:.94rem}
+  .actions{flex-direction:column;gap:8px}
+  .btn{width:100%}
+  .ai-area iframe{height:420px}
+  .container{padding:0 12px 70px}
+}
 </style>
 </head>
 <body>
+
 <div class="container">
-<div class="header">
-    <h1>🤖 AI 口语对话 · Beyond Earth</h1>
-    <p class="sub">九年级上册 Unit 6 · 主题对话互动练习</p>
-    <span class="badge">汕头 2027 中考英语听说 · 情景问答 & 口头作文训练</span>
-</div>
 
-<div class="unsupported" id="unsupported">
-    <p style="font-size:36px">⚠️</p>
-    <p><b>浏览器不支持语音识别</b></p>
-    <p>请使用 <b>Chrome</b> 或 <b>Edge</b> 打开</p>
-</div>
+  <!-- 页头 -->
+  <div class="hero">
+    <h1>广东（汕头）中考英语听说 · 备考训练</h1>
+    <div class="sub">满分 30 分 · 三大板块 · 五大题型 · 配 AI 教练陪练</div>
+  </div>
 
-<div id="app">
-    <div class="prog-wrap">
-        <span>对话进度</span>
-        <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
-        <span id="progLabel">0 / 5</span>
+  <!-- 三大板块切换 -->
+  <div class="tabs">
+    <div class="tab active" onclick="showPart('1',this)">Part1 模仿朗读<small>短文朗读6 分</small></div>
+    <div class="tab" onclick="showPart('2',this)">Part2 信息获取<small>短对话9分 + 长独白6分</small></div>
+    <div class="tab" onclick="showPart('3',this)">Part3 转述及询问<small>转述6分 + 询问3分</small></div>
+  </div>
+
+  <!-- ===== 题型卡片区（按板块切换显示）===== -->
+
+  <!-- 训练文本（演讲稿全文 · 仅 Part1 显示）-->
+  <div class="card" data-part="1">
+    <div class="card-top">
+      <div class="card-name">📄 训练文本</div>
     </div>
+    <div class="label">📜 演讲稿全文（Unit 6 · Beyond Earth）</div>
+    <div class="example training-text" style="white-space:pre-wrap">Good morning, my dear teachers and friends! Today, my topic is Beyond Earth. Since ancient times, human beings have dreamed of flying beyond the earth. We look at the stars and ask: what is out there?
 
-    <div class="chat" id="chat"></div>
+With a telescope, we can see far into the night sky. Our satellites circle the earth, and rockets launch spacecraft into space. Some spaceships are manned, and some are unmanned, but all of them need great craft to build. A rover can explore the surface of Mars. Astronauts must operate every machine carefully and maintain the station every day. When they work on board, their movement is slow and free. On the control board, hundreds of buttons light up. They have to tie themselves to their beds, or they may float away in their sleep. Astronauts are often asleep at first, but it is hard to fall asleep in a weightless room.
 
-    <div class="input-area" id="inputArea">
-        <div class="recog-box" id="recogBox">🎤 点击"开始回答"录制你的回答</div>
-        <div class="text-fallback" id="textFallback" style="display:none">
-            <input type="text" id="textInput" placeholder="在此输入你的英文回答…" maxlength="500">
-        </div>
-        <div class="btn-row">
-            <button class="btn btn-talk" id="btnTalk" onclick="toggleRecord()">🎙️ 开始回答</button>
-            <button class="btn btn-submit" id="btnSubmit" onclick="submitAnswer()" disabled>✅ 提交回答</button>
-            <button class="btn-reset" onclick="resetAll()">🔄</button>
-        </div>
+A space mission is never easy. It requires years of training, and it can cost billions or even trillions of dollars. Scientists often cooperate with each other to finish the work. In case of bad weather, they may have to cancel the launch. Before landing, they study the geology of Mars. After every trip, they survey the data and publish their findings in reports. Some people say the idea of space travel is crazy, but every great dream starts with a brave idea. The universe is full of mysterious things: the solar system, the galaxy, and strange exoplanets far beyond our sun. Even ancient people believed that gods lived in the sky. Today, Voyager 1 has travelled far beyond our galaxy, and it is flying towards Proxima Centauri. No one has set foot on another planet yet, but the dream is getting closer. Mars is not crowded with people, but one day, human beings may live there. Someday, a young astronaut like Ann will take us to a completely new world.
+
+My friends, space is the new frontier. Let us keep dreaming, keep learning, and never stop exploring! That's all. Thank you for listening!</div>
+    <div class="actions">
+      <button class="btn btn-passage" onclick="copyText(TRAINING_TEXT,this)">📋 复制文本</button>
     </div>
+  </div>
 
-    <div class="report-card" id="reportCard">
-        <h2>📊 对话测评报告</h2>
-        <div class="total" id="totalScore">-</div>
-        <div class="grade" id="gradeLabel"></div>
-        <div class="score-grid">
-            <div class="score-cell"><div class="sc-label">内容相关</div><div class="sc-val" id="rContent">-</div><div class="sc-stars" id="rsContent"></div></div>
-            <div class="score-cell"><div class="sc-label">语法准确</div><div class="sc-val" id="rGrammar">-</div><div class="sc-stars" id="rsGrammar"></div></div>
-            <div class="score-cell"><div class="sc-label">词汇运用</div><div class="sc-val" id="rVocab">-</div><div class="sc-stars" id="rsVocab"></div></div>
-            <div class="score-cell"><div class="sc-label">流利表达</div><div class="sc-val" id="rFluency">-</div><div class="sc-stars" id="rsFluency"></div></div>
-        </div>
-        <div class="tip" id="reportTip"></div>
-        <div style="text-align:center;margin-top:12px">
-            <button class="btn btn-submit" onclick="resetAll()" style="max-width:200px">🔄 再来一轮</button>
-        </div>
+  <!-- Part1 模仿朗读 -->
+  <div class="card" data-part="1">
+    <div class="card-top">
+      <div class="card-name"><span class="pn">Part1</span>模仿朗读</div>
+      <div class="score">6 分</div>
     </div>
+    <div class="label">📐 中考考试规则</div>
+    <div class="rules">
+      先听一遍完整音频（短文约 <b>110–130 词</b>）→ <b>30 秒</b>预览文本 → <b>70 秒</b>内朗读全文并录音。（本次仅需任意朗读上文两段即可）<br>
+      评分四维：<b>①发音准确</b>　<b>②流畅不停顿</b>　<b>③完整不漏词</b>　<b>④语调自然</b>。
+    </div>
+    <div class="actions">
+      <button class="btn btn-prompt" onclick="copyText(DATA.p1.prompt,this)">📋 复制提示词</button>
+    </div>
+  </div>
+
+  <!-- Part2 问答5道 -->
+  <div class="card" data-part="2">
+    <div class="card-top">
+      <div class="card-name"><span class="pn">Part2</span>问答5道</div>
+      <div class="score">15 分</div>
+    </div>
+    <div class="label">📐 中考考试规则</div>
+    <div class="rules">
+      短对话问答共 <b>3 段对话</b>，每段 <b>2 小题</b>，<b>每题 1.5 分</b>。一段短对话播放两遍，之后依次抛出 2 个问题，每道题听完后 <b>8 秒内口头回答</b>。<br>
+      一段独白播放 <b>两遍</b>，之后连续 <b>4 道问题</b>，每题1.5分 <b>8 秒</b>口头作答。<br>
+      ⚠️ <b>尽量用完整句子作答，只答单词会大量扣分。</b>信息出现顺序基本与出题顺序一致，草稿纸上<b>只记关键词</b>即可。
+    </div>
+    <div class="actions">
+      <button class="btn btn-prompt" onclick="copyText(DATA.p2.prompt,this)">📋 复制提示词</button>
+    </div>
+  </div>
+
+  <!-- Part3-1 信息转述 -->
+  <div class="card" data-part="3">
+    <div class="card-top">
+      <div class="card-name"><span class="pn">Part3-1</span>信息转述</div>
+      <div class="score">6 分</div>
+    </div>
+    <div class="label">📐 中考考试规则</div>
+    <div class="rules">
+      听一段独白音频 <b>两遍</b>，屏幕同时给出<b>思维导图要点</b>，<b>40–50 秒</b>准备时间，之后 <b>60 秒</b>内连贯口述一段话，串联全部要点。<br>
+      ⚠️ <b>不能零散逐个念要点，要用连接词串成完整语段。</b>
+    </div>
+    <div class="actions">
+      <button class="btn btn-prompt" onclick="copyText(DATA.p31.prompt,this)">📋 复制提示词</button>
+    </div>
+  </div>
+
+  <!-- Part3-2 口头询问 -->
+  <div class="card" data-part="3">
+    <div class="card-top">
+      <div class="card-name"><span class="pn">Part3-2</span>口头询问</div>
+      <div class="score">3 分</div>
+    </div>
+    <div class="label">📐 中考考试规则</div>
+    <div class="rules">
+      给出场景文字提示，<b>10 秒</b>准备，<b>8 秒</b>内自己造出一句<b>特殊疑问句</b>（what / when / where / how 等）提问。<br>
+      ⚠️ <b>不能是一般疑问句。</b>
+    </div>
+    <div class="actions">
+      <button class="btn btn-prompt" onclick="copyText(DATA.p32.prompt,this)">📋 复制提示词</button>
+    </div>
+  </div>
+
+  <!-- 中间 AI 对话训练区 -->
+  <div class="ai-area">
+    <div class="ai-bar"><span class="dot"></span>AI 对话训练区 · 豆豆教练</div>
+    <iframe src="https://www.doubao.com/chat/" title="豆包对话训练" loading="lazy" referrerpolicy="no-referrer"></iframe>
+  </div>
+
+  <!-- 页尾 -->
+    <div class="foot">
+    <div class="strong">广东中考 · 英语听说训练</div>
+    <div>切换上方板块查看对应题型；卡片内【复制提示词】可一键发送给AI 教练，顶部【复制文本】可复制演讲稿全文练习朗读。<br>© 2026 两英豆豆教练</div>
+    <a href="index.html" class="btn-home">🏠 返回主页</a>
+  </div>
+
 </div>
-<footer>© 2026 豆豆助理 · 汕头 2027 中考英语听说 · AI 对话练习</footer>
-</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"><span class="ck">✓</span><span id="toast-msg">已复制</span></div>
 
 <script>
-// ===== DIALOGUE QUESTIONS =====
-const DIALOGUE = [
-    {
-        "ai": "Hi there! 👋 Let's talk about space exploration. What tools do we use to look at the sky? Use words like <b>telescope</b>, <b>satellite</b>, <b>rocket</b>, and <b>spacecraft</b>.",
-        "keywords": [
-            "telescope",
-            "sky",
-            "satellite",
-            "rocket",
-            "spacecraft",
-            "manned",
-            "unmanned",
-            "craft",
-            "rover",
-            "Mars",
-            "launch"
-        ],
-        "sampleAnswer": "With a telescope, we can see deep into the night sky. Satellites orbit the earth, and rockets send spacecraft into space. Some spaceships are manned, others unmanned, but both require great craft. Rovers can explore the surface of Mars. The launch of each rocket is a miracle."
-    },
-    {
-        "ai": "😊 Good! How do astronauts live and work in space? Use words like <b>astronaut</b>, <b>operate</b>, <b>board</b>, <b>fall asleep</b>, and <b>movement</b>.",
-        "keywords": [
-            "astronaut",
-            "operate",
-            "machine",
-            "station",
-            "movement",
-            "board",
-            "button",
-            "tie",
-            "bed",
-            "fall asleep",
-            "free",
-            "maintain"
-        ],
-        "sampleAnswer": "Astronauts must carefully operate every machine and maintain the space station. Their movements are slow but free on board. Hundreds of buttons shine on the control panel. They must tie themselves to bed, otherwise they will float away in their sleep. Falling asleep in zero gravity is very hard."
-    },
-    {
-        "ai": "👍 Great! How difficult are space missions? Use words like <b>mission</b>, <b>training</b>, <b>cancel</b>, <b>geology</b>, <b>survey</b>, and <b>publish</b>.",
-        "keywords": [
-            "mission",
-            "training",
-            "billions",
-            "cancel",
-            "geology",
-            "land",
-            "survey",
-            "data",
-            "publish",
-            "report",
-            "cooperate with",
-            "weather"
-        ],
-        "sampleAnswer": "Space missions are never easy. They require years of training and may cost billions. Scientists often cooperate with each other. In case of bad weather, they may have to cancel the launch. Before landing, they study the geology of Mars. After each flight, they survey the data and publish a report."
-    },
-    {
-        "ai": "🌟 What mysteries does the universe hold? Use words like <b>galaxy</b>, <b>solar</b>, <b>exoplanets</b>, <b>gods</b>, and <b>Voyager</b>.",
-        "keywords": [
-            "mysterious",
-            "galaxy",
-            "solar",
-            "exoplanets",
-            "gods",
-            "sky",
-            "Proxima Centauri",
-            "set foot on",
-            "planet",
-            "dream",
-            "Voyager"
-        ],
-        "sampleAnswer": "The universe is full of mysteries: the solar system, the Milky Way galaxy, and strange exoplanets beyond. Ancient people believed gods lived in the sky. Today Voyager 1 has flown out of the galaxy and is heading to Proxima Centauri. No one has set foot on another planet yet, but the dream is getting closer."
-    },
-    {
-        "ai": "🌟 Last question! What does space exploration mean to humans, and what can we as junior students do? Speak freely for about 30 seconds.",
-        "keywords": [
-            "human beings",
-            "Mars",
-            "planet",
-            "Ann",
-            "young",
-            "astronaut",
-            "dream",
-            "beyond",
-            "crazy",
-            "mystery",
-            "courage"
-        ],
-        "sampleAnswer": "Mars is not crowded yet, but one day humans may live there. In the future, a young astronaut like Ann will take us into a brand-new world. Space is the new frontier. Some say space travel is crazy, but every great dream starts with a brave idea. Let's keep dreaming and exploring."
-    }
-];
+/* ===== Unit6 演讲稿全文（训练文本，供复制）===== */
+const TRAINING_TEXT = `Good morning, my dear teachers and friends! Today, my topic is Beyond Earth. Since ancient times, human beings have dreamed of flying beyond the earth. We look at the stars and ask: what is out there?
 
+With a telescope, we can see far into the night sky. Our satellites circle the earth, and rockets launch spacecraft into space. Some spaceships are manned, and some are unmanned, but all of them need great craft to build. A rover can explore the surface of Mars. Astronauts must operate every machine carefully and maintain the station every day. When they work on board, their movement is slow and free. On the control board, hundreds of buttons light up. They have to tie themselves to their beds, or they may float away in their sleep. Astronauts are often asleep at first, but it is hard to fall asleep in a weightless room.
 
-let currentQ = 0;
-let recording = false;
-let activeRec = null;
-let retryCount = 0;
-let retryTimer = null;    // timeout ID for network retry
-let recognizedText = '';
-let answerStartTime = 0;
-let results = [];
-let speechSupported = false;
+A space mission is never easy. It requires years of training, and it can cost billions or even trillions of dollars. Scientists often cooperate with each other to finish the work. In case of bad weather, they may have to cancel the launch. Before landing, they study the geology of Mars. After every trip, they survey the data and publish their findings in reports. Some people say the idea of space travel is crazy, but every great dream starts with a brave idea. The universe is full of mysterious things: the solar system, the galaxy, and strange exoplanets far beyond our sun. Even ancient people believed that gods lived in the sky. Today, Voyager 1 has travelled far beyond our galaxy, and it is flying towards Proxima Centauri. No one has set foot on another planet yet, but the dream is getting closer. Mars is not crowded with people, but one day, human beings may live there. Someday, a young astronaut like Ann will take us to a completely new world.
 
-const $ = id => document.getElementById(id);
+My friends, space is the new frontier. Let us keep dreaming, keep learning, and never stop exploring! That's all. Thank you for listening!`;
 
-// Init Speech API (singleton)
-const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
-if (!SpeechRecognitionAPI) {
-    $('unsupported').classList.add('show');
-    $('app').style.display = 'none';
-} else {
-    speechSupported = true;
-    // Pre-create and pre-test microphone permission
-    const warmupRec = new SpeechRecognitionAPI();
-    warmupRec.lang = 'en-US';
-    warmupRec.interimResults = true;
-    warmupRec.maxAlternatives = 1;
-    warmupRec.continuous = false;
-    // Warm up: request mic permission early via a dummy start/stop
-    try {
-        warmupRec.start();
-        warmupRec.onstart = () => { warmupRec.stop(); };
-        warmupRec.onend = () => { startDialogue(); };
-        warmupRec.onerror = () => { startDialogue(); }; // fallback
-    } catch(e) {
-        // If warm-up fails, still try to start dialogue
-        startDialogue();
-    }
+/* ===== 五题型 AI 教练提示词 + 可复制短文（严格按中考听说考评维度）===== */
+const DATA = {
+  p1:{
+    prompt:`你是广东中考英语听说（机考）资深考官与陪练。请按以下四个评分维度为我生成并批改「模仿朗读」训练：\n①发音准确（单词读音、重音、爆破到位）2分；\n②流畅不停顿（语速自然、少卡顿）2分；\n③完整不漏词（不跳读、不漏读）1分；\n④语调自然（句调与停顿符合英文习惯）1分。\n请任取上面短文中两段作为训练文本，再列出3个朗读易错点提示。当我朗读后，请逐维度给出改进建议与示范读法。`
+  },
+  p2:{
+    prompt:`你是广东中考英语听说教练。请生成「问答」训练：根据上面短文出5道问题，要求我用完整句子口头作答（注意：只答单词会大量扣分），每题限时8秒口头作答。\n评分维度：①信息准确1分；②回答完整（使用完整句子）1分；③语言正确0.5分；④发音清晰0.5分。\n听记策略（关键词速记），先给出对话与问题，等我回答后逐题按维度点评，并给出标准完整句参考。`
+  },
+  p31:{
+    prompt:`你是广东中考英语听说教练。请生成「信息转述」训练：根据上面短文生成思维导图要点，准备40–50秒、在60秒内用连接词把全部要点串成完整语段（不可零散逐个念要点）。\n评分维度：①要点覆盖完整2分；②内容准确2分；③语言连贯（衔接词运用）1分；④语法与发音正确1分。\n提供独白与要点，等我口述后按维度评分并给参考范文。`
+  },
+  p32:{
+    prompt:`你是广东中考英语听说教练。请生成「口头询问」训练：根据上面短文主题场景文字提示，要求我造一句特殊疑问句（what/when/where/how 等），限时8秒，且不能是一艘疑问句（一般疑问句）。\n评分维度：①句式正确（特殊疑问句）1分；②疑问词恰当1分；③信息合理1分。\n提供场景，等我提问后点评并给参考问句。`
+  }
+};
+
+/* ===== 复制 + Toast ===== */
+let toastTimer;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toast-msg').textContent=msg||'已复制';
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),1500);
+}
+function copyText(text){
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).then(()=>showToast('已复制')).catch(()=>fallbackCopy(text));
+  }else{
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text){
+  const ta=document.createElement('textarea');
+  ta.value=text; ta.style.position='fixed'; ta.style.top='-999px'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand('copy'); showToast('已复制'); }
+  catch(e){ showToast('复制失败，请手动复制'); }
+  document.body.removeChild(ta);
 }
 
-function newRecognition() {
-    // Always create a fresh instance — reusing a stale one causes "network" errors
-    const r = new SpeechRecognitionAPI();
-    r.lang = 'en-US';
-    r.interimResults = true;
-    r.continuous = false;
-    r.maxAlternatives = 1;
-    return r;
+/* ===== 板块切换 ===== */
+function showPart(p, el){
+  document.querySelectorAll('.card').forEach(c=>{
+    c.style.display = (c.dataset.part===p) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  if(el) el.classList.add('active');
 }
-
-function startDialogue() {
-    currentQ = 0;
-    results = [];
-    $('chat').innerHTML = '';
-    $('reportCard').classList.remove('show');
-    $('inputArea').style.display = 'block';
-    $('progFill').style.width = '0%';
-    $('progLabel').textContent = '0 / 5';
-    addAIMessage(DIALOGUE[0].ai);
-    resetRecog();
-}
-
-function addAIMessage(text) {
-    const div = document.createElement('div');
-    div.className = 'msg ai';
-    div.innerHTML = '<div class="label">🤖 AI 考官</div>' + text;
-    $('chat').appendChild(div);
-    $('chat').scrollTop = $('chat').scrollHeight;
-}
-
-function addUserMessage(text) {
-    const div = document.createElement('div');
-    div.className = 'msg user';
-    div.textContent = text;
-    $('chat').appendChild(div);
-    $('chat').scrollTop = $('chat').scrollHeight;
-}
-
-function addScoreMessage(score, content, grammar, vocab) {
-    const div = document.createElement('div');
-    div.className = 'msg score';
-    const stars = score >= 85 ? '⭐⭐⭐⭐⭐' : score >= 70 ? '⭐⭐⭐⭐' : score >= 55 ? '⭐⭐⭐' : score >= 40 ? '⭐⭐' : '⭐';
-    div.innerHTML = `<div class="stars">${stars}</div>内容 ${content} · 语法 ${grammar} · 词汇 ${vocab}<br><span style="font-size:18px;font-weight:700">综合 ${score} 分</span>`;
-    $('chat').appendChild(div);
-    $('chat').scrollTop = $('chat').scrollHeight;
-}
-
-// ===== RECORDING =====
-function toggleRecord() {
-    if (recording) { stopRecord(); return; }
-    startRecord();
-}
-
-function startRecord() {
-    // Cancel any pending retry
-    if (retryTimer) { clearTimeout(retryTimer); retryTimer = null; }
-    
-    // Destroy any previous stale instance
-    if (activeRec) {
-        try { activeRec.onresult = null; activeRec.onerror = null; activeRec.onend = null; activeRec.onstart = null; } catch(e) {}
-        try { activeRec.abort(); } catch(e) {}
-        activeRec = null;
-    }
-
-    // Always create a fresh instance — reusing causes "network" errors
-    const rec = newRecognition();
-    activeRec = rec;
-    answerStartTime = Date.now();
-    recognizedText = '';
-
-    rec.onresult = (e) => {
-        let t = '';
-        for (let i = 0; i < e.results.length; i++) t += e.results[i][0].transcript;
-        recognizedText = t;
-        $('recogBox').textContent = t.trim() || '🎤 正在聆听…';
-        $('recogBox').className = 'recog-box has-text recording';
-    };
-
-    rec.onerror = (e) => {
-        // Always detach to prevent delayed events from firing
-        try { rec.onresult = rec.onerror = rec.onend = rec.onstart = null; } catch(ex) {}
-        if (e.error === 'no-speech') {
-            $('recogBox').textContent = '⚠️ 未检测到语音，请靠近麦克风再试（可重录）';
-        } else if (e.error === 'not-allowed') {
-            $('recogBox').textContent = '🔒 麦克风权限未允许。请点击浏览器地址栏左侧的锁图标，开启麦克风权限后刷新页面。';
-        } else if (e.error === 'network') {
-            // Clean up current instance before retrying
-            recording = false;
-            activeRec = null;
-            if (retryCount < 2) {
-                retryCount++;
-                $('recogBox').textContent = '🔄 连接中…(第' + retryCount + '次重试)';
-                retryTimer = setTimeout(() => {
-                    retryTimer = null;
-                    if (!recording) startRecord();  // only retry if user hasn't stopped
-                }, 800);
-                return;
-            }
-            // Retries exhausted — show text fallback
-            $('recogBox').textContent = '⚠️ 语音服务暂时不可用。请在下方输入框中输入你的回答，然后点击提交。';
-            showTextFallback();
-        } else if (e.error === 'aborted') {
-            $('recogBox').textContent = '⏹ 录音已停止';
-        } else {
-            $('recogBox').textContent = '⚠️ ' + e.error + '。可重试录音或使用文字输入。';
-            showTextFallback();
-        }
-        recording = false;
-        activeRec = null;
-        retryCount = 0;
-        $('btnTalk').textContent = '🎙️ 重试录音';
-        $('btnTalk').className = 'btn btn-talk';
-        $('recogBox').className = 'recog-box';
-    };
-
-    rec.onend = () => {
-        // Only handle normal completion (not error/abort/manual-stop)
-        if (activeRec !== rec || !recording) return;
-        recording = false;
-        activeRec = null;
-        retryCount = 0;
-        const finalText = recognizedText.trim();
-        if (finalText) {
-            $('recogBox').textContent = '✅ 已识别：' + finalText;
-            $('recogBox').className = 'recog-box has-text';
-        } else {
-            $('recogBox').textContent = '⏹ 录音结束，未识别到语音。请点击下方"重试录音"，或直接在输入框输入文字后点提交。';
-            $('recogBox').className = 'recog-box';
-            // 主动展开文字输入兜底，让用户能继续
-            showTextFallback();
-        }
-        $('btnTalk').textContent = '🎙️ 重试录音';
-        $('btnTalk').className = 'btn btn-talk';
-        // 只要有任何一种输入（语音已识别 or 文字输入框已展开）即可提交
-        const fallbackOpen = $('textFallback').style.display !== 'none';
-        $('btnSubmit').disabled = !finalText && !fallbackOpen;
-    };
-
-    rec.onstart = () => {
-        recording = true;
-        retryCount = 0;
-        $('btnTalk').textContent = '⏹ 停止录音';
-        $('btnTalk').className = 'btn btn-talk recording';
-        $('recogBox').textContent = '🎤 正在聆听你的回答…';
-        $('recogBox').className = 'recog-box recording';
-        $('btnSubmit').disabled = true;
-        // Hide text fallback if visible
-        hideTextFallback();
-    };
-
-    try {
-        rec.start();
-    } catch(e) {
-        $('recogBox').textContent = '⚠️ 无法启动录音: ' + e.message + '。请允许麦克风权限后刷新。';
-        recording = false;
-        activeRec = null;
-        showTextFallback();
-    }
-}
-
-function stopRecord() {
-    // Cancel any pending network retry
-    if (retryTimer) { clearTimeout(retryTimer); retryTimer = null; }
-    const rec = activeRec;
-    if (rec) {
-        try { rec.onresult = null; rec.onerror = null; rec.onend = null; rec.onstart = null; } catch(e) {}
-        try { rec.abort(); } catch(e) {}
-        activeRec = null;
-    }
-    recording = false;
-    retryCount = 0;
-    const finalText = recognizedText.trim();
-    if (rec) {  // 用户主动点击了停止
-        if (finalText) {
-            $('recogBox').textContent = '✅ 已识别：' + finalText;
-            $('recogBox').className = 'recog-box has-text';
-        } else {
-            $('recogBox').textContent = '⏹ 已停止，未识别到语音。请点击下方"重试录音"，或直接在输入框输入文字后点提交。';
-            $('recogBox').className = 'recog-box';
-            showTextFallback();
-        }
-    } else {
-        $('recogBox').className = 'recog-box has-text';
-    }
-    $('btnTalk').textContent = '🎙️ 重试录音';
-    $('btnTalk').className = 'btn btn-talk';
-    const fallbackOpen = $('textFallback').style.display !== 'none';
-    $('btnSubmit').disabled = !finalText && !fallbackOpen;
-}
-
-// Text-input fallback
-function showTextFallback() {
-    $('textFallback').style.display = 'block';
-    $('btnSubmit').disabled = false;
-}
-
-function hideTextFallback() {
-    $('textFallback').style.display = 'none';
-}
-
-function resetRecog() {
-    if (retryTimer) { clearTimeout(retryTimer); retryTimer = null; }
-    recognizedText = '';
-    $('recogBox').textContent = '🎤 点击"开始回答"录制你的回答';
-    $('recogBox').className = 'recog-box';
-    $('btnSubmit').disabled = true;
-    $('btnTalk').textContent = '🎙️ 开始回答';
-    $('btnTalk').className = 'btn btn-talk';
-    hideTextFallback();
-    $('textInput').value = '';
-    retryCount = 0;
-}
-
-// ===== EVALUATION =====
-function submitAnswer() {
-    // Accept voice result OR text-input fallback
-    let text = recognizedText.trim();
-    const fallbackText = $('textInput') ? $('textInput').value.trim() : '';
-    if (!text && fallbackText) text = fallbackText;
-    if (!text) return;
-    stopRecord();
-    addUserMessage(text);
-    
-    const q = DIALOGUE[currentQ];
-    const recLower = text.toLowerCase();
-    
-    // Content: keyword coverage
-    const keywordsFound = q.keywords.filter(kw => recLower.includes(kw.toLowerCase())).length;
-    const content = Math.min(100, Math.round((keywordsFound / Math.max(q.keywords.length, 1)) * 100));
-    
-    // Grammar: simple check - sentence structure, length
-    const words = recLower.replace(/[.,!?;:]/g,'').split(/\s+/).filter(w=>w.length>0);
-    let grammar = 100;
-    if (words.length < 4) grammar = 40;
-    else if (words.length < 8) grammar = 60;
-    else if (words.length < 12) grammar = 75;
-    // Penalize very short answers
-    if (text.length < 20) grammar = Math.min(grammar, 50);
-    grammar = Math.max(30, grammar);
-    
-    // Vocabulary: diversity
-    const uniqueWords = new Set(words);
-    const vocab = Math.min(100, Math.round((uniqueWords.size / Math.max(words.length, 1)) * 100 + 30));
-    
-    // Total for this answer
-    const total = Math.round(content * 0.4 + grammar * 0.3 + vocab * 0.3);
-    
-    addScoreMessage(total, content, grammar, vocab);
-    results.push({ qIndex: currentQ, content, grammar, vocab, total });
-    
-    // Move to next
-    currentQ++;
-    $('progFill').style.width = Math.round((currentQ / DIALOGUE.length) * 100) + '%';
-    $('progLabel').textContent = Math.min(currentQ, DIALOGUE.length) + ' / ' + DIALOGUE.length;
-    
-    if (currentQ >= DIALOGUE.length) {
-        showReport();
-    } else {
-        setTimeout(() => {
-            addAIMessage(DIALOGUE[currentQ].ai);
-            resetRecog();
-        }, 800);
-    }
-}
-
-// ===== REPORT =====
-function showReport() {
-    $('inputArea').style.display = 'none';
-    $('reportCard').classList.add('show');
-    
-    const avg = results.reduce((a,b) => a + b.total, 0) / results.length;
-    const total = Math.round(avg);
-    const el = $('totalScore');
-    el.textContent = total;
-    el.className = 'total ' + (total >= 85 ? 'excellent' : total >= 70 ? 'good' : total >= 55 ? 'fair' : 'poor');
-    
-    const stars = s => s >= 85 ? '⭐⭐⭐⭐⭐' : s >= 70 ? '⭐⭐⭐⭐' : s >= 55 ? '⭐⭐⭐' : s >= 40 ? '⭐⭐' : '⭐';
-    const ac = Math.round(results.reduce((a,b)=>a+b.content,0)/results.length);
-    const ag = Math.round(results.reduce((a,b)=>a+b.grammar,0)/results.length);
-    const av = Math.round(results.reduce((a,b)=>a+b.vocab,0)/results.length);
-    const af = Math.round(Math.min(100, (ac + ag + av) / 3));
-    
-    $('rContent').textContent = ac; $('rsContent').textContent = stars(ac);
-    $('rGrammar').textContent = ag; $('rsGrammar').textContent = stars(ag);
-    $('rVocab').textContent = av; $('rsVocab').textContent = stars(av);
-    $('rFluency').textContent = af; $('rsFluency').textContent = stars(af);
-    
-    $('gradeLabel').textContent = total >= 90 ? '🏆 A+ — 表达自如，词汇丰富，语法准确' :
-        total >= 80 ? '👍 A — 内容完整，表达清晰，偶有小失误' :
-        total >= 70 ? '📖 B — 基本达标，个别词发音需加强' :
-        total >= 60 ? '💪 C — 有提升空间，建议多练口语' : '📚 D — 建议先模仿跟读，再尝试独立表达';
-    
-    let tipHtml = '';
-    if (total >= 85) tipHtml = '🏆 <b>优秀！</b>你的口语表达流畅自然，词汇运用恰当。中考口语稳拿高分，继续保持！';
-    else if (total >= 70) tipHtml = '👍 <b>良好！</b>建议多练习长句表达，注意使用单元核心词汇（如 shortage, government, miracle 等）。';
-    else if (total >= 55) tipHtml = '📖 <b>加油！</b>建议先听课文录音跟读，熟悉核心词汇后再尝试对话练习。每天 10 分钟口语必有进步。';
-    else tipHtml = '💪 <b>别灰心！</b>口语需要多听多说。建议从模仿课文录音开始，一天一个 Topic，坚持 30 天看效果。';
-    $('reportTip').innerHTML = tipHtml;
-    $('reportTip').className = 'tip ' + (total >= 85 ? 'success' : total >= 70 ? 'info' : 'warn');
-}
-
-function resetAll() {
-    if (recording) { stopRecord(); }
-    results = [];
-    currentQ = 0;
-    recognizedText = '';
-    retryCount = 0;
-    $('reportCard').classList.remove('show');
-    $('inputArea').style.display = 'block';
-    $('progFill').style.width = '0%';
-    $('progLabel').textContent = '0 / 5';
-    $('chat').innerHTML = '';
-    addAIMessage(DIALOGUE[0].ai);
-    resetRecog();
-}
+/* 默认显示 Part1 */
+showPart('1', document.querySelector('.tab'));
 </script>
 </body>
 </html>

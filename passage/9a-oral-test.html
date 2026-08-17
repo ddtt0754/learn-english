@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>九年级（9A）英语听说 · 口语测评导航</title>
+<style>
+:root{
+  --blue:#2e9e6b;
+  --blue2:#3bb98a;
+  --blue-d:#1f7d56;
+  --bg:#eef4f0;
+  --card:#ffffff;
+  --line:#e3ede9;
+  --ink:#22303a;
+  --sub:#6b7c86;
+  --radius:16px;
+  --shadow:0 6px 20px rgba(46,158,107,.10);
+  --brand:linear-gradient(135deg,#2e9e6b,#3bb98a);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  background:var(--bg);color:var(--ink);min-height:100vh;line-height:1.7;
+  -webkit-tap-highlight-color:transparent;
+}
+.container{max-width:920px;width:100%;margin:0 auto;padding:0 16px 70px}
+
+/* 页头 */
+.hero{position:relative;overflow:hidden;background:var(--brand);color:#fff;
+  border-radius:0 0 22px 22px;padding:30px 22px 24px;box-shadow:0 8px 22px rgba(46,158,107,.25)}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.16)}
+.hero::before{width:130px;height:130px;top:-50px;right:-28px}
+.hero::after{width:70px;height:70px;bottom:-26px;left:-18px;background:rgba(255,255,255,.1)}
+.hero h1{font-size:1.35rem;font-weight:800;letter-spacing:.02em;position:relative}
+.hero .sub{font-size:.82rem;opacity:.95;margin-top:6px;position:relative}
+.hero .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 14px;
+  font-size:.74rem;font-weight:700;position:relative}
+
+/* 说明 */
+.intro{margin:18px 2px 14px;font-size:.84rem;color:var(--sub)}
+.intro b{color:var(--blue-d)}
+
+/* 卡片网格 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 16px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;
+  transition:transform .14s,box-shadow .14s}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(46,158,107,.18)}
+.card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.badge{background:var(--brand);color:#fff;font-weight:800;font-size:.74rem;
+  padding:4px 12px;border-radius:999px;letter-spacing:.03em}
+.theme{font-size:1.04rem;font-weight:800;color:var(--ink);line-height:1.3}
+.theme-cn{font-size:.82rem;color:var(--blue-d);font-weight:700;margin-top:3px}
+.desc{font-size:.78rem;color:var(--sub);margin:10px 0 14px;flex:1}
+.cta{display:block;text-align:center;background:var(--brand);color:#fff;font-weight:800;
+  font-size:.84rem;padding:11px;border-radius:12px;text-decoration:none;
+  box-shadow:0 5px 14px rgba(46,158,107,.28);transition:transform .12s}
+.cta:active{transform:scale(.97)}
+.src{display:block;text-align:center;font-size:.74rem;color:var(--blue);
+  font-weight:700;text-decoration:none;margin-top:9px;padding:4px}
+.src:active{opacity:.7}
+
+/* 页尾 */
+.foot{text-align:center;color:var(--sub);font-size:.74rem;line-height:1.7;padding-top:26px}
+.foot .strong{color:var(--blue-d);font-weight:800;font-size:.84rem}
+.btn-home{display:inline-block;margin-top:14px;background:var(--brand);color:#fff;font-weight:800;font-size:.84rem;
+  padding:11px 28px;border-radius:12px;text-decoration:none;box-shadow:0 5px 14px rgba(46,158,107,.28);transition:transform .12s}
+.btn-home:active{transform:scale(.96)}
+
+@media (max-width:560px){
+  .hero h1{font-size:1.16rem}
+  .grid{grid-template-columns:1fr;gap:14px}
+  .container{padding:0 12px 70px}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 页头 -->
+  <div class="hero">
+    <h1>九年级（9A）英语听说 · 口语测评训练</h1>
+    <div class="sub">广东（汕头）中考英语听说 · 备考陪练</div>
+    <span class="pill">7 个单元 · 满分 30 分 · 五大题型 · AI 教练陪练</span>
+  </div>
+
+  <div class="intro">
+    点击下方任意单元卡片，进入对应 <b>口语测评训练页</b>：含三大板块（模仿朗读 / 信息获取 / 转述及询问）、五类题型考试规则、单元演讲稿全文与一键复制、内置豆包 AI 教练对话区。
+  </div>
+
+  <!-- 卡片网格 -->
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-head"><span class="badge">Unit 1</span></div>
+      <div class="theme">Our Changing World</div>
+      <div class="theme-cn">我们变化的世界</div>
+      <div class="desc">模仿朗读 · 信息获取 · 转述询问，AI 教练陪练。</div>
+      <a class="cta" href="9a-unit1-oral-test.html">开始口语测评训练 →</a>
+      <a class="src" href="9a-unit1.html">📄 演讲稿原文</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="badge">Unit 2</span></div>
+      <div class="theme">Inspiring People</div>
+      <div class="theme-cn">鼓舞人心的人</div>
+      <div class="desc">模仿朗读 · 信息获取 · 转述询问，AI 教练陪练。</div>
+      <a class="cta" href="9a-unit2-oral-test.html">开始口语测评训练 →</a>
+      <a class="src" href="9a-unit2.html">📄 演讲稿原文</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="badge">Unit 3</span></div>
+      <div class="theme">How to Learn Smart</div>
+      <div class="theme-cn">聪明地学习</div>
+      <div class="desc">模仿朗读 · 信息获取 · 转述询问，AI 教练陪练。</div>
+      <a class="cta" href="9a-unit3-oral-test.html">开始口语测评训练 →</a>
+      <a class="src" href="9a-unit3.html">📄 演讲稿原文</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="badge">Unit 4</span></div>
+      <div class="theme">Our Memory, Our Treasure</div>
+      <div class="theme-cn">记忆是宝藏</div>
+      <div class="desc">模仿朗读 · 信息获取 · 转述询问，AI 教练陪练。</div>
+      <a class="cta" href="9a-unit4-oral-test.html">开始口语测评训练 →</a>
+      <a class="src" href="9a-unit4.html">📄 演讲稿原文</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="badge">Unit 5</span></div>
+      <div class="theme">The Power of Ideas</div>
+      <div class="theme-cn">思想的力量</div>
+      <div class="desc">模仿朗读 · 信息获取 · 转述询问，AI 教练陪练。</div>
+      <a class="cta" href="9a-unit5-oral-test.html">开始口语测评训练 →</a>
+      <a class="src" href="9a-unit5.html">📄 演讲稿原文</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="badge">Unit 6</span></div>
+      <div class="theme">Beyond Earth</div>
+      <div class="theme-cn">超越地球（太空）</div>
+      <div class="desc">模仿朗读 · 信息获取 · 转述询问，AI 教练陪练。</div>
+      <a class="cta" href="9a-unit6-oral-test.html">开始口语测评训练 →</a>
+      <a class="src" href="9a-unit6.html">📄 演讲稿原文</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="badge">Unit 7</span></div>
+      <div class="theme">Feel the Rhythm</div>
+      <div class="theme-cn">感受节奏（音乐）</div>
+      <div class="desc">模仿朗读 · 信息获取 · 转述询问，AI 教练陪练。</div>
+      <a class="cta" href="9a-unit7-oral-test.html">开始口语测评训练 →</a>
+      <a class="src" href="9a-unit7.html">📄 演讲稿原文</a>
+    </div>
+
+  </div>
+
+  <!-- 页尾 -->
+  <div class="foot">
+    <div class="strong">广东中考 · 英语听说训练</div>
+    <div>每个单元含完整题型规则、演讲稿全文与 AI 教练陪练。<br>© 2026 两英豆豆教练</div>
+    <a href="../index.html" class="btn-home">🏠 返回主页</a>
+  </div>
+
+</div>
+
+</body>
+</html>
