@@ -41,6 +41,44 @@
   .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
   .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
   .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  
+  /* 底部导航：返回首页 / 语法解读 / 口语测评 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    min-height:42px;
+    padding:10px 14px;
+    border-radius:14px;
+    font-size:14px;
+    font-weight:700;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);
+    transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;
+    white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral{
+    background:#fff;color:var(--accent);border:1.5px solid var(--accent);
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+
   @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}
 </style>
 </head>
@@ -67,8 +105,8 @@
     <div class="card-title">② 秋冬与衣物</div>
     <div class="en-sentence" data-spoken="In autumn, the leaves fall from the trees. Then winter comes. It snows, and it is very cold.">In autumn, the <strong>leaves</strong> <span class="ph">/liːf/ n. 叶（复数 leaves）</span> <strong>fall</strong> <span class="ph">/fɔːl/ v. 落下</span> from the trees. <strong>Then</strong> <span class="ph">/ðen/ adv. 然后；那时</span> winter comes. It <strong>snows</strong> <span class="ph">/snəʊ/ v. 下雪</span>, and it is very cold.</div>
     <div class="en-sentence" data-spoken="I put on my sweater, my coat and my gloves.">I put on my <strong>sweater</strong> <span class="ph">/ˈswetə(r)/ n. 毛衣</span>, my <strong>coat</strong> <span class="ph">/kəʊt/ n. 大衣；外套</span> and my <strong>gloves</strong> <span class="ph">/ɡlʌv/ n. 手套</span>.</div>
-    <div class="en-sentence" data-spoken="My socks keep my feet warm. "Whose coat is this?" I ask.">My <strong>socks</strong> <span class="ph">/sɒk/ n. 短袜</span> keep my feet warm. "<strong>Whose</strong> <span class="ph">/huːz/ pron. 谁的</span> coat is this?" I ask.</div>
-    <div class="en-sentence" data-spoken=""It is mine," my brother says. Which season do I like best?">"It is <strong>mine</strong> <span class="ph">/maɪn/ pron. 我的</span>," my brother says. <strong>Which</strong> <span class="ph">/wɪtʃ/ pron. 哪一个；哪一些</span> season do I like best?</div>
+    <div class="en-sentence" data-spoken="My socks keep my feet warm. &quot;Whose coat is this?&quot; I ask.">My <strong>socks</strong> <span class="ph">/sɒk/ n. 短袜</span> keep my feet warm. "<strong>Whose</strong> <span class="ph">/huːz/ pron. 谁的</span> coat is this?" I ask.</div>
+    <div class="en-sentence" data-spoken="&quot;It is mine,&quot; my brother says. Which season do I like best?">"It is <strong>mine</strong> <span class="ph">/maɪn/ pron. 我的</span>," my brother says. <strong>Which</strong> <span class="ph">/wɪtʃ/ pron. 哪一个；哪一些</span> season do I like best?</div>
     <div class="en-sentence" data-spoken="I like them all, because my family gets together in every season!">I like them all, because my family <strong>gets together</strong> <span class="ph">/ˌɡet təˈɡeðə(r)/ phr. 聚会</span> in every season!</div>
     <div class="cn">秋天，树叶从树上落下。然后冬天来了。下雪了，天气很冷。我穿上毛衣、大衣，戴上手套。我的袜子让我的脚保持温暖。&quot;这是谁的外套？&quot;我问。&quot;是我的，&quot;我弟弟说。我最喜欢哪个季节？四个都喜欢，因为每个季节我们家都会团聚！</div>
   </div>
@@ -94,6 +132,14 @@
   <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
   <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
 </div>
+
+
+<!-- 底部导航：返回首页 / 语法解读 / 口语测评 -->
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回首页</a>
+  <a href="4a-unit6-grammar.html" class="grammar">📖 语法解读</a>
+  <a href="4a-unit6-oral-test.html" class="oral">🎤 口语测评</a>
+</nav>
 
 <script>
 (function(){

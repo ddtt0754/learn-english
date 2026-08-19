@@ -41,6 +41,44 @@
   .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
   .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
   .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  
+  /* 底部导航：返回首页 / 语法解读 / 口语测评 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    min-height:42px;
+    padding:10px 14px;
+    border-radius:14px;
+    font-size:14px;
+    font-weight:700;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);
+    transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;
+    white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral{
+    background:#fff;color:var(--accent);border:1.5px solid var(--accent);
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+
   @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}
 </style>
 </head>
@@ -60,20 +98,20 @@
   </div>
   <div class="card">
     <div class="card-title">① 美丽的自然</div>
-    <div class="en-sentence" data-spoken="Nature  is beautiful. There are rivers , forests  and high mountains . I love to go hiking  in the mountains. I can see a waterfall  and hear the wind ."><strong>Nature</strong> <span class="ph">/ˈneɪtʃə(r)/ n. 自然界；大自然</span> is beautiful. There are <strong>rivers</strong> <span class="ph">/ˈrɪvə(r)/ n. 河；江</span>, <strong>forests</strong> <span class="ph">/ˈfɒrɪst/ n. 森林；林区</span> and high <strong>mountains</strong> <span class="ph">/ˈmaʊntən/ n. 高山；山岳</span>. I love to <strong>go hiking</strong> <span class="ph">/ˌɡəʊ ˈhaɪkɪŋ/ phr. 徒步旅行</span> in the mountains. I can see a <strong>waterfall</strong> <span class="ph">/ˈwɔːtəfɔːl/ n. 瀑布</span> and hear the <strong>wind</strong> <span class="ph">/wɪnd/ n. 风；气流</span>.</div>
-    <div class="en-sentence" data-spoken="Last summer, we went on a trip  to Huangshan, a famous  mountain. We stayed in a hotel  and had great fun.">Last summer, we went on a <strong>trip</strong> <span class="ph">/trɪp/ n. （尤指短程往返的）旅行，旅游，出行</span> to Huangshan, a <strong>famous</strong> <span class="ph">/ˈfeɪməs/ adj. 著名的；出名的</span> mountain. We stayed in a <strong>hotel</strong> <span class="ph">/həʊˈtel/ n. 旅馆；旅社</span> and had great fun.</div>
+    <div class="en-sentence" data-spoken="Nature is beautiful. There are rivers, forests and high mountains. I love to go hiking in the mountains. I can see a waterfall and hear the wind."><strong>Nature</strong> <span class="ph">/ˈneɪtʃə(r)/ n. 自然界；大自然</span> is beautiful. There are <strong>rivers</strong> <span class="ph">/ˈrɪvə(r)/ n. 河；江</span>, <strong>forests</strong> <span class="ph">/ˈfɒrɪst/ n. 森林；林区</span> and high <strong>mountains</strong> <span class="ph">/ˈmaʊntən/ n. 高山；山岳</span>. I love to <strong>go hiking</strong> <span class="ph">/ˌɡəʊ ˈhaɪkɪŋ/ phr. 徒步旅行</span> in the mountains. I can see a <strong>waterfall</strong> <span class="ph">/ˈwɔːtəfɔːl/ n. 瀑布</span> and hear the <strong>wind</strong> <span class="ph">/wɪnd/ n. 风；气流</span>.</div>
+    <div class="en-sentence" data-spoken="Last summer, we went on a trip to Huangshan, a famous mountain. We stayed in a hotel and had great fun.">Last summer, we went on a <strong>trip</strong> <span class="ph">/trɪp/ n. （尤指短程往返的）旅行，旅游，出行</span> to Huangshan, a <strong>famous</strong> <span class="ph">/ˈfeɪməs/ adj. 著名的；出名的</span> mountain. We stayed in a <strong>hotel</strong> <span class="ph">/həʊˈtel/ n. 旅馆；旅社</span> and had great fun.</div>
     <div class="cn">大自然很美。有河流、森林和高山。我喜欢去山里徒步。我能看到瀑布，听到风声。去年夏天，我们去了黄山——一座著名的山。我们住在旅馆里，玩得很开心。</div>
   </div>
   <div class="card">
     <div class="card-title">② 天气与安全</div>
-    <div class="en-sentence" data-spoken="But the weather can be dangerous .">But the weather can be <strong>dangerous</strong> <span class="ph">/ˈdeɪndʒərəs/ adj. 有危险的；不安全的</span>.</div>
-    <div class="en-sentence" data-spoken="When it rains heavy , we must close  the windows and bring an umbrella  or a raincoat . When there is fog , we cannot see well. A flood  or a fire  is very serious.">When it rains <strong>heavy</strong> <span class="ph">/ˈhevi/ adj. 程度大的；严重的</span>, we must <strong>close</strong> <span class="ph">/kləʊz/ v. 关；关闭；闭上</span> the windows and bring an <strong>umbrella</strong> <span class="ph">/ʌmˈbrelə/ n. 伞；雨伞</span> or a <strong>raincoat</strong> <span class="ph">/ˈreɪnkəʊt/ n. 雨衣</span>. When there is <strong>fog</strong> <span class="ph">/fɒɡ/ n. 雾</span>, we cannot see well. A <strong>flood</strong> <span class="ph">/flʌd/ n. 洪水；水灾</span> or a <strong>fire</strong> <span class="ph">/ˈfaɪə(r)/ n. 火；火灾</span> is very serious.</div>
-    <div class="en-sentence" data-spoken="So before  we go out, we should know  the weather and bring  what we need.">So <strong>before</strong> <span class="ph">/bɪˈfɔː(r)/ prep. &amp; conj. 在……之前</span> we go out, we should <strong>know</strong> <span class="ph">/nəʊ/ v. 知道；了解</span> the weather and <strong>bring</strong> <span class="ph">/brɪŋ/ v. 带……到某处；带来；取来</span> what we need.</div>
+    <div class="en-sentence" data-spoken="But the weather can be dangerous.">But the weather can be <strong>dangerous</strong> <span class="ph">/ˈdeɪndʒərəs/ adj. 有危险的；不安全的</span>.</div>
+    <div class="en-sentence" data-spoken="When it rains heavily, we must close the windows and bring an umbrella or a raincoat. When there is fog, we cannot see well. A flood or a fire is very serious.">When it rains <strong>heavily</strong> <span class="ph">/ˈhevɪli/ adv. 猛烈地；大量地</span>, we must <strong>close</strong> <span class="ph">/kləʊz/ v. 关；关闭；闭上</span> the windows and bring an <strong>umbrella</strong> <span class="ph">/ʌmˈbrelə/ n. 伞；雨伞</span> or a <strong>raincoat</strong> <span class="ph">/ˈreɪnkəʊt/ n. 雨衣</span>. When there is <strong>fog</strong> <span class="ph">/fɒɡ/ n. 雾</span>, we cannot see well. A <strong>flood</strong> <span class="ph">/flʌd/ n. 洪水；水灾</span> or a <strong>fire</strong> <span class="ph">/ˈfaɪə(r)/ n. 火；火灾</span> is very serious.</div>
+    <div class="en-sentence" data-spoken="So before we go out, we should know the weather and bring what we need.">So <strong>before</strong> <span class="ph">/bɪˈfɔː(r)/ prep. &amp; conj. 在……之前</span> we go out, we should <strong>know</strong> <span class="ph">/nəʊ/ v. 知道；了解</span> the weather and <strong>bring</strong> <span class="ph">/brɪŋ/ v. 带……到某处；带来；取来</span> what we need.</div>
     <div class="cn">但是天气可能很危险。下大雨时，我们必须关好窗户，带上雨伞或雨衣。有雾时，我们看不清楚。洪水或火灾非常严重。所以出门前，我们应该了解天气，带上需要的东西。</div>
   </div>
   <div class="card">
     <div class="card-title">结束语</div>
-    <div class="en-sentence" data-spoken="On a fine  day, do not worry  — go out and enjoy the sunshine!">On a <strong>fine</strong> <span class="ph">/faɪn/ adj. 晴朗的</span> day, do not <strong>worry</strong> <span class="ph">/ˈwʌri/ v. 担心；担忧；发愁</span> — go out and enjoy the sunshine!</div>
+    <div class="en-sentence" data-spoken="On a fine day, do not worry — go out and enjoy the sunshine!">On a <strong>fine</strong> <span class="ph">/faɪn/ adj. 晴朗的</span> day, do not <strong>worry</strong> <span class="ph">/ˈwʌri/ v. 担心；担忧；发愁</span> — go out and enjoy the sunshine!</div>
     <div class="en-sentence" data-spoken="My friends, nature gives us so much. Let us enjoy it, but always be careful with the weather!">My friends, nature gives us so much. Let us enjoy it, but always be careful with the weather!</div>
     <div class="en-sentence" data-spoken="That's all. Thank you for listening!">That's all. Thank you for listening!</div>
     <div class="cn">晴朗的日子里，不要担心——出去享受阳光吧！ 朋友们，大自然给我们这么多。让我们享受它，但始终注意天气！ 我的演讲到此结束，谢谢大家！</div>
@@ -95,6 +133,14 @@
   <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
   <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
 </div>
+
+
+<!-- 底部导航：返回首页 / 语法解读 / 口语测评 -->
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回首页</a>
+  <a href="5a-unit6-grammar.html" class="grammar">📖 语法解读</a>
+  <a href="5a-unit6-oral-test.html" class="oral">🎤 口语测评</a>
+</nav>
 
 <script>
 (function(){

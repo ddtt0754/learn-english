@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>广东（汕头）中考英语听说 · 备考训练</title>
+<style>
+:root{
+  --blue:#2e9e6b;
+  --blue2:#3bb98a;
+  --blue-d:#1f7d56;
+  --bg:#eef4f0;
+  --card:#ffffff;
+  --line:#e3ede9;
+  --ink:#22303a;
+  --sub:#6b7c86;
+  --radius:16px;
+  --shadow:0 6px 20px rgba(46,158,107,.10);
+  --brand:linear-gradient(135deg,#2e9e6b,#3bb98a);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  background:var(--bg);color:var(--ink);min-height:100vh;line-height:1.7;
+  -webkit-tap-highlight-color:transparent;
+}
+.container{max-width:780px;width:100%;margin:0 auto;padding:0 16px 70px}
+
+/* 页头 */
+.hero{position:relative;overflow:hidden;background:var(--brand);color:#fff;
+  border-radius:0 0 22px 22px;padding:26px 20px 20px;box-shadow:0 8px 22px rgba(46,158,107,.25)}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.16)}
+.hero::before{width:120px;height:120px;top:-46px;right:-26px}
+.hero::after{width:64px;height:64px;bottom:-24px;left:-16px;background:rgba(255,255,255,.1)}
+.hero h1{font-size:1.3rem;font-weight:800;letter-spacing:.02em;position:relative}
+.hero .sub{font-size:.78rem;opacity:.95;margin-top:3px;position:relative}
+
+/* 三大板块切换 */
+.tabs{display:flex;gap:8px;margin:16px 0 18px}
+.tab{flex:1;background:#fff;border:1.5px solid var(--line);color:var(--sub);
+  font-weight:700;font-size:.82rem;padding:12px 6px;border-radius:12px;cursor:pointer;
+  text-align:center;line-height:1.35;transition:all .15s}
+.tab small{display:block;font-weight:500;font-size:.66rem;opacity:.85;margin-top:2px}
+.tab.active{background:var(--brand);border-color:transparent;color:#fff;
+  box-shadow:0 6px 16px rgba(46,158,107,.3)}
+.tab:active{transform:scale(.97)}
+
+/* 题型卡片 */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 16px 18px;margin-bottom:16px;box-shadow:var(--shadow);overflow:hidden}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;
+  padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.card-name{font-size:1rem;font-weight:800;color:var(--ink)}
+.card-name .pn{color:var(--blue);margin-right:6px}
+.score{background:#e6f4ec;color:var(--blue-d);font-weight:800;font-size:.74rem;
+  padding:4px 11px;border-radius:999px;white-space:nowrap}
+.label{font-size:.72rem;font-weight:800;color:var(--blue);margin:12px 0 6px;letter-spacing:.04em;
+  display:flex;align-items:center;gap:5px}
+.rules{background:#eef6f1;border-radius:10px;padding:11px 13px;font-size:.8rem;color:#2e4a3c;line-height:1.7}
+.rules b{color:var(--blue-d)}
+.example{background:#fbfdfc;border:1px solid #eef3f1;border-radius:10px;padding:13px 15px;
+  font-size:.88rem;color:var(--ink);line-height:1.85}
+.example .spk{font-weight:800;color:var(--blue)}
+.example .note{font-size:.74rem;color:var(--blue-d);font-weight:700;display:block;margin-bottom:6px}
+.mind{list-style:none;margin-top:6px}
+.mind li{position:relative;padding:6px 0 6px 20px;font-size:.84rem;border-bottom:1px dashed #eef3fb}
+.mind li:last-child{border-bottom:none}
+.mind li::before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--blue2)}
+.mind b{color:var(--blue-d)}
+.scene{background:#fff8e8;border:1px solid #f3e2a8;border-radius:9px;padding:10px 13px;font-size:.83rem;color:#6b5a17;line-height:1.7}
+.scene b{color:#9a7b12}
+
+/* 操作按钮 */
+.actions{display:flex;gap:10px;margin-top:14px}
+.btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;
+  font-family:inherit;font-weight:700;font-size:.8rem;padding:11px 8px;border-radius:11px;
+  cursor:pointer;transition:transform .12s;border:1.5px solid transparent}
+.btn:active{transform:scale(.96)}
+.btn-prompt{background:var(--brand);color:#fff;box-shadow:0 5px 14px rgba(46,158,107,.28)}
+.btn-passage{background:#fff;color:var(--blue-d);border-color:var(--blue);box-shadow:0 5px 14px rgba(46,158,107,.18)}
+
+/* 中间 AI 对话训练区 */
+.ai-area{margin:8px 0 22px;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.ai-bar{background:var(--brand);color:#fff;font-weight:800;font-size:.86rem;
+  padding:12px 16px;display:flex;align-items:center;gap:7px}
+.ai-bar .dot{width:8px;height:8px;border-radius:50%;background:#7dffce;box-shadow:0 0 0 3px rgba(125,255,206,.35)}
+.ai-area iframe{width:100%;height:500px;border:0;display:block;background:#eef6f1}
+.ai-fallback{font-size:.72rem;color:var(--sub);text-align:center;padding:8px;border-top:1px solid var(--line)}
+.ai-fallback a{color:var(--blue);font-weight:700}
+
+/* 页尾 */
+.foot{text-align:center;color:var(--sub);font-size:.74rem;line-height:1.7;padding-top:8px}
+.foot .strong{color:var(--blue-d);font-weight:800;font-size:.82rem}
+.btn-home{display:inline-block;margin-top:14px;background:var(--brand);color:#fff;font-weight:800;font-size:.84rem;
+  padding:11px 28px;border-radius:12px;text-decoration:none;box-shadow:0 5px 14px rgba(46,158,107,.28);transition:transform .12s}
+.btn-home:active{transform:scale(.96)}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:42px;transform:translateX(-50%) translateY(20px);
+  background:rgba(31,45,61,.94);color:#fff;font-weight:700;font-size:.82rem;
+  padding:11px 22px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.22);
+  opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;z-index:99;display:flex;align-items:center;gap:7px}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast .ck{color:#5dffb0;font-weight:900}
+
+@media (max-width:560px){
+  .hero h1{font-size:1.12rem}
+  .tab{font-size:.76rem;padding:11px 4px}
+  .tab small{font-size:.62rem}
+  .card-name{font-size:.94rem}
+  .actions{flex-direction:column;gap:8px}
+  .btn{width:100%}
+  .ai-area iframe{height:420px}
+  .container{padding:0 12px 70px}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 页头 -->
+  <div class="hero">
+    <h1>广东（汕头）中考英语听说 · 备考训练</h1>
+    <div class="sub">六年级上册 Unit 4 · Managing Money Well · 满分 30 分 · 三大板块 · 五大题型 · 配 AI 教练陪练</div>
+  </div>
+
+  <!-- 三大板块切换 -->
+  <div class="tabs">
+    <div class="tab active" onclick="showPart('1',this)">Part1 模仿朗读<small>短文朗读6 分</small></div>
+    <div class="tab" onclick="showPart('2',this)">Part2 信息获取<small>短对话9分 + 长独白6分</small></div>
+    <div class="tab" onclick="showPart('3',this)">Part3 转述及询问<small>转述6分 + 询问3分</small></div>
+  </div>
+
+  <!-- ===== 题型卡片区（按板块切换显示）===== -->
+
+  <!-- 训练文本（演讲稿全文 · 仅 Part1 显示）-->
+  <div class="card" data-part="1">
+    <div class="card-top">
+      <div class="card-name">📄 训练文本</div>
+    </div>
+    <div class="label">📜 演讲稿全文（六年级上册 Unit 4 · Managing Money Well）</div>
+    <div class="example training-text" style="white-space:pre-wrap">Good morning, my dear teachers and friends! Today, my topic is Managing Money Well.
+
+I get pocket money from my parents every month. I put it in my schoolbag and save up for things I want. I write a list of goods I need. Sometimes I buy a drink, but usually I keep my money. Last week, there was a big sale in the shop, so I bought a ticket for the science museum.
+
+With my money, I can buy many useful things. I bought a microscope to look at small things, and I got a new haircut. The barber's service was good, and my haircut looks nice. I feel lucky to have pocket money, and I always use it well. I never spend money on useless things, and I am saving up for a new schoolbag.
+
+My friends, money is useful, but we must use it wisely. Save a little every month, and you will be happy!
+
+That's all. Thank you for listening!</div>
+    <div class="actions">
+      <button class="btn btn-passage" onclick="copyText(TRAINING_TEXT,this)">📋 复制文本</button>
+    </div>
+  </div>
+
+  <!-- Part1 模仿朗读 -->
+  <div class="card" data-part="1">
+    <div class="card-top">
+      <div class="card-name"><span class="pn">Part1</span>模仿朗读</div>
+      <div class="score">6 分</div>
+    </div>
+    <div class="label">📐 中考考试规则</div>
+    <div class="rules">
+      先听一遍完整音频（短文约 <b>70–90 词</b>）→ <b>30 秒</b>预览文本 → <b>70 秒</b>内朗读全文并录音。（本次仅需任意朗读上文两段即可）<br>
+      评分四维：<b>①发音准确</b>　<b>②流畅不停顿</b>　<b>③完整不漏词</b>　<b>④语调自然</b>。
+    </div>
+    <div class="actions">
+      <button class="btn btn-prompt" onclick="copyText(DATA.p1.prompt,this)">📋 复制提示词</button>
+    </div>
+  </div>
+
+  <!-- Part2 问答5道 -->
+  <div class="card" data-part="2">
+    <div class="card-top">
+      <div class="card-name"><span class="pn">Part2</span>问答5道</div>
+      <div class="score">15 分</div>
+    </div>
+    <div class="label">📐 中考考试规则</div>
+    <div class="rules">
+      短对话问答共 <b>3 段对话</b>，每段 <b>2 小题</b>，<b>每题 1.5 分</b>。一段短对话播放两遍，之后依次抛出 2 个问题，每道题听完后 <b>8 秒内口头回答</b>。<br>
+      一段独白播放 <b>两遍</b>，之后连续 <b>4 道问题</b>，每题1.5分 <b>8 秒</b>口头作答。<br>
+      ⚠️ <b>尽量用完整句子作答，只答单词会大量扣分。</b>信息出现顺序基本与出题顺序一致，草稿纸上<b>只记关键词</b>即可。
+    </div>
+    <div class="actions">
+      <button class="btn btn-prompt" onclick="copyText(DATA.p2.prompt,this)">📋 复制提示词</button>
+    </div>
+  </div>
+
+  <!-- Part3-1 信息转述 -->
+  <div class="card" data-part="3">
+    <div class="card-top">
+      <div class="card-name"><span class="pn">Part3-1</span>信息转述</div>
+      <div class="score">6 分</div>
+    </div>
+    <div class="label">📐 中考考试规则</div>
+    <div class="rules">
+      听一段独白音频 <b>两遍</b>，屏幕同时给出<b>思维导图要点</b>，<b>40–50 秒</b>准备时间，之后 <b>60 秒</b>内连贯口述一段话，串联全部要点。<br>
+      ⚠️ <b>不能零散逐个念要点，要用连接词串成完整语段。</b>
+    </div>
+    <div class="actions">
+      <button class="btn btn-prompt" onclick="copyText(DATA.p31.prompt,this)">📋 复制提示词</button>
+    </div>
+  </div>
+
+  <!-- Part3-2 口头询问 -->
+  <div class="card" data-part="3">
+    <div class="card-top">
+      <div class="card-name"><span class="pn">Part3-2</span>口头询问</div>
+      <div class="score">3 分</div>
+    </div>
+    <div class="label">📐 中考考试规则</div>
+    <div class="rules">
+      给出场景文字提示，<b>10 秒</b>准备，<b>8 秒</b>内自己造出一句<b>特殊疑问句</b>（what / when / where / how 等）提问。<br>
+      ⚠️ <b>不能是一般疑问句。</b>
+    </div>
+    <div class="actions">
+      <button class="btn btn-prompt" onclick="copyText(DATA.p32.prompt,this)">📋 复制提示词</button>
+    </div>
+  </div>
+
+  <!-- 中间 AI 对话训练区 -->
+  <div class="ai-area">
+    <div class="ai-bar"><span class="dot"></span>AI 对话训练区 · 豆豆教练</div>
+    <iframe src="https://www.doubao.com/chat/" title="豆包对话训练" loading="lazy" referrerpolicy="no-referrer"></iframe>
+  </div>
+
+  <!-- 页尾 -->
+    <div class="foot">
+    <div class="strong">广东中考 · 英语听说训练</div>
+    <div>切换上方板块查看对应题型；卡片内【复制提示词】可一键发送给AI 教练，顶部【复制文本】可复制演讲稿全文练习朗读。<br>© 2026 两英豆豆教练</div>
+    <a href="index.html" class="btn-home">🏠 返回主页</a>
+  </div>
+
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"><span class="ck">✓</span><span id="toast-msg">已复制</span></div>
+
+<script>
+/* ===== 六年级上册 Unit 4 演讲稿全文（训练文本，供复制）===== */
+const TRAINING_TEXT = `Good morning, my dear teachers and friends! Today, my topic is Managing Money Well.
+
+I get pocket money from my parents every month. I put it in my schoolbag and save up for things I want. I write a list of goods I need. Sometimes I buy a drink, but usually I keep my money. Last week, there was a big sale in the shop, so I bought a ticket for the science museum.
+
+With my money, I can buy many useful things. I bought a microscope to look at small things, and I got a new haircut. The barber's service was good, and my haircut looks nice. I feel lucky to have pocket money, and I always use it well. I never spend money on useless things, and I am saving up for a new schoolbag.
+
+My friends, money is useful, but we must use it wisely. Save a little every month, and you will be happy!
+
+That's all. Thank you for listening!`;
+
+/* ===== 五题型 AI 教练提示词 + 可复制短文（严格按中考听说考评维度）===== */
+const DATA = {
+  p1:{
+    prompt:`你是广东中考英语听说（机考）资深考官与陪练。请按以下四个评分维度为我生成并批改「模仿朗读」训练：\n①发音准确（单词读音、重音、爆破到位）2分；\n②流畅不停顿（语速自然、少卡顿）2分；\n③完整不漏词（不跳读、不漏读）1分；\n④语调自然（句调与停顿符合英文习惯）1分。\n请任取上面短文中两段作为训练文本，再列出3个朗读易错点提示。当我朗读后，请逐维度给出改进建议与示范读法。`
+  },
+  p2:{
+    prompt:`你是广东中考英语听说教练。请生成「问答」训练：根据上面短文出5道问题，要求我用完整句子口头作答（注意：只答单词会大量扣分），每题限时8秒口头作答。\n评分维度：①信息准确1分；②回答完整（使用完整句子）1分；③语言正确0.5分；④发音清晰0.5分。\n听记策略（关键词速记），先给出对话与问题，等我回答后逐题按维度点评，并给出标准完整句参考。`
+  },
+  p31:{
+    prompt:`你是广东中考英语听说教练。请生成「信息转述」训练：根据上面短文生成思维导图要点，准备40–50秒、在60秒内用连接词把全部要点串成完整语段（不可零散逐个念要点）。\n评分维度：①要点覆盖完整2分；②内容准确2分；③语言连贯（衔接词运用）1分；④语法与发音正确1分。\n提供独白与要点，等我口述后按维度评分并给参考范文。`
+  },
+  p32:{
+    prompt:`你是广东中考英语听说教练。请生成「口头询问」训练：根据上面短文主题场景文字提示，要求我造一句特殊疑问句（what/when/where/how 等），限时8秒，且不能是一般疑问句（一般疑问句）。\n评分维度：①句式正确（特殊疑问句）1分；②疑问词恰当1分；③信息合理1分。\n提供场景，等我提问后点评并给参考问句。`
+  }
+};
+
+/* ===== 复制 + Toast ===== */
+let toastTimer;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toast-msg').textContent=msg||'已复制';
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),1500);
+}
+function copyText(text){
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).then(()=>showToast('已复制')).catch(()=>fallbackCopy(text));
+  }else{
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text){
+  const ta=document.createElement('textarea');
+  ta.value=text; ta.style.position='fixed'; ta.style.top='-999px'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand('copy'); showToast('已复制'); }
+  catch(e){ showToast('复制失败，请手动复制'); }
+  document.body.removeChild(ta);
+}
+
+/* ===== 板块切换 ===== */
+function showPart(p, el){
+  document.querySelectorAll('.card').forEach(c=>{
+    c.style.display = (c.dataset.part===p) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  if(el) el.classList.add('active');
+}
+/* 默认显示 Part1 */
+showPart('1', document.querySelector('.tab'));
+</script>
+</body>
+</html>

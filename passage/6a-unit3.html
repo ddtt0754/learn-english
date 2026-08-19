@@ -40,6 +40,44 @@
   .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
   .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
   .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  
+  /* 底部导航：返回首页 / 语法解读 / 口语测评 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    min-height:42px;
+    padding:10px 14px;
+    border-radius:14px;
+    font-size:14px;
+    font-weight:700;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);
+    transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;
+    white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral{
+    background:#fff;color:var(--accent);border:1.5px solid var(--accent);
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+
   @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}</style>
 </head>
 <body>
@@ -59,18 +97,18 @@
 
   <div class="card">
     <div class="card-title">① 生病的一天</div>
-    <div class="en-sentence" data-spoken="Last week, I had a bad cold . My head hurt, and I had a runny nose and a fever .">Last week, I had a bad <strong>cold</strong> <span class="ph">/kəʊld/ n. 感冒</span>. My <strong>head</strong> <span class="ph">/hed/ n. 头；头部</span> hurt, and I had a <strong>runny nose</strong> <span class="ph">/ˌrʌni ˈnəʊz/ phr. 流鼻涕</span> and a <strong>fever</strong> <span class="ph">/ˈfiːvə(r)/ n. 发烧；发热</span>.</div>
-    <div class="en-sentence" data-spoken="I coughed all day. I felt unhappy and ill . I cried because I couldn't go out to play.">I <strong>coughed</strong> <span class="ph">/kɒf/ n. &amp; v. 咳嗽</span> all day. I felt <strong>unhappy</strong> <span class="ph">/ʌnˈhæpi/ adj. 不快乐的；难过的</span> and <strong>ill</strong> <span class="ph">/ɪl/ adj. 不舒服；有病</span>. I <strong>cried</strong> <span class="ph">/kraɪ/ v. 哭；哭泣</span> because I couldn't go out to play.</div>
+    <div class="en-sentence" data-spoken="Last week, I had a bad cold. My head hurt, and I had a runny nose and a fever.">Last week, I had a bad <strong>cold</strong> <span class="ph">/kəʊld/ n. 感冒</span>. My <strong>head</strong> <span class="ph">/hed/ n. 头；头部</span> hurt, and I had a <strong>runny nose</strong> <span class="ph">/ˌrʌni ˈnəʊz/ phr. 流鼻涕</span> and a <strong>fever</strong> <span class="ph">/ˈfiːvə(r)/ n. 发烧；发热</span>.</div>
+    <div class="en-sentence" data-spoken="I coughed all day. I felt unhappy and ill. I cried because I couldn't go out to play.">I <strong>coughed</strong> <span class="ph">/kɒf/ n. &amp; v. 咳嗽</span> all day. I felt <strong>unhappy</strong> <span class="ph">/ʌnˈhæpi/ adj. 不快乐的；难过的</span> and <strong>ill</strong> <span class="ph">/ɪl/ adj. 不舒服；有病</span>. I <strong>cried</strong> <span class="ph">/kraɪ/ v. 哭；哭泣</span> because I couldn't go out to play.</div>
     <div class="en-sentence" data-spoken="My mother called the doctor, and I drank a glass of warm water.">My mother <strong>called</strong> <span class="ph">/kɔːl/ v. （给……）打电话</span> the doctor, and I drank a <strong>glass</strong> <span class="ph">/ɡlɑːs/ n. 一杯（的量）；玻璃</span> of warm water.</div>
     <div class="cn">上周，我得了重感冒。我头疼、流鼻涕、发烧，整天咳嗽。我又难过又不舒服，因为不能出去玩，还哭了。妈妈给医生打了电话，我喝了一杯温水。</div>
   </div>
 
   <div class="card">
     <div class="card-title">② 看护与康复</div>
-    <div class="en-sentence" data-spoken="The doctor said, &quot;You may feel better soon . Do not stay up late.">The doctor said, "You <strong>may</strong> <span class="ph">/meɪ/ modal v. 也许；可能</span> feel <strong>better</strong> <span class="ph">/ˈbetə(r)/ adj. 好转的</span> <strong>soon</strong> <span class="ph">/suːn/ adv. 很快；马上</span>. Do not <strong>stay up</strong> <span class="ph">/ˌsteɪ ˈʌp/ phr. 熬夜</span> late.</div>
-    <div class="en-sentence" data-spoken="Have a healthy diet .&quot; I discussed my health with my mum.">Have a healthy <strong>diet</strong> <span class="ph">/ˈdaɪət/ n. 日常饮食</span>." I <strong>discussed</strong> <span class="ph">/dɪˈskʌs/ v. 讨论；商量</span> my health with my mum.</div>
-    <div class="en-sentence" data-spoken="She made another plan for me: eat more fruit, exercise every day, and watch less video .">She made <strong>another</strong> <span class="ph">/əˈnʌðə(r)/ adj. 另一</span> plan for me: eat more fruit, exercise every day, and watch less <strong>video</strong> <span class="ph">/ˈvɪdiəʊ/ n. 视频；录像</span>.</div>
-    <div class="en-sentence" data-spoken="She added , &quot;You will get better in a few days.&quot; My teacher emailed me about the lessons, and my friends called me to cheer me up.">She <strong>added</strong> <span class="ph">/æd/ v. 补充说；增加</span>, "You will get better in a few days." My teacher <strong>emailed</strong> <span class="ph">/ˈiːmeɪl/ n. 电子邮件</span> me about the lessons, and my friends called me to cheer me up.</div>
+    <div class="en-sentence" data-spoken="The doctor said, &quot;You may feel better soon. Do not stay up late.">The doctor said, "You <strong>may</strong> <span class="ph">/meɪ/ modal v. 也许；可能</span> feel <strong>better</strong> <span class="ph">/ˈbetə(r)/ adj. 好转的</span> <strong>soon</strong> <span class="ph">/suːn/ adv. 很快；马上</span>. Do not <strong>stay up</strong> <span class="ph">/ˌsteɪ ˈʌp/ phr. 熬夜</span> late.</div>
+    <div class="en-sentence" data-spoken="Have a healthy diet.&quot; I discussed my health with my mum.">Have a healthy <strong>diet</strong> <span class="ph">/ˈdaɪət/ n. 日常饮食</span>." I <strong>discussed</strong> <span class="ph">/dɪˈskʌs/ v. 讨论；商量</span> my health with my mum.</div>
+    <div class="en-sentence" data-spoken="She made another plan for me: eat more fruit, exercise every day, and watch less video.">She made <strong>another</strong> <span class="ph">/əˈnʌðə(r)/ adj. 另一</span> plan for me: eat more fruit, exercise every day, and watch less <strong>video</strong> <span class="ph">/ˈvɪdiəʊ/ n. 视频；录像</span>.</div>
+    <div class="en-sentence" data-spoken="She added, &quot;You will get better in a few days.&quot; My teacher emailed me about the lessons, and my friends called me to cheer me up.">She <strong>added</strong> <span class="ph">/æd/ v. 补充说；增加</span>, "You will get better in a few days." My teacher <strong>emailed</strong> <span class="ph">/ˈiːmeɪl/ n. 电子邮件</span> me about the lessons, and my friends called me to cheer me up.</div>
     <div class="cn">医生说："你很快就会好转。不要熬夜。保持健康的饮食。"我和妈妈讨论了健康问题。她为我制定了另一个计划：多吃水果、每天锻炼、少看视频。她补充说："你几天后就会好的。"老师给我发了关于课程的电子邮件，朋友们也打电话来鼓励我。</div>
   </div>
 
@@ -98,6 +136,14 @@
   <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
   <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
 </div>
+
+
+<!-- 底部导航：返回首页 / 语法解读 / 口语测评 -->
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回首页</a>
+  <a href="6a-unit3-grammar.html" class="grammar">📖 语法解读</a>
+  <a href="6a-unit3-oral-test.html" class="oral">🎤 口语测评</a>
+</nav>
 
 <script>
 (function(){

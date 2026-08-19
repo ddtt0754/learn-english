@@ -52,6 +52,23 @@
   }
   /* 一键隐藏红色音标词性释义小字（加粗单词保留） */
   body.hide-ph .ref{display:none;}
+
+  /* 功能入口按钮：语法解读 / 口语测评 */
+  .func-btns{
+    display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 0;justify-content:center;
+  }
+  .func-btns a{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:11px 22px;border-radius:999px;
+    font-size:13.5px;font-weight:600;letter-spacing:.5px;
+    text-decoration:none;color:#fff;
+    transition:transform .08s,box-shadow .2s;touch-action:manipulation;
+    box-shadow:0 4px 14px rgba(0,0,0,.10);
+  }
+  .func-btns a:active{transform:scale(.97);}
+  .func-btns a.grammar{background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 4px 14px rgba(102,126,234,.25);}
+  .func-btns a.oral{background:linear-gradient(135deg,#2e9e6b,#3bb98a);box-shadow:0 4px 14px rgba(46,158,107,.25);}
+  @media print{.func-btns{display:none;}}
 </style>
 </head>
 <body>
@@ -68,7 +85,7 @@
     <div class="greet">自然与天气</div>
     <p>Good morning, my dear teachers and friends! Today, my topic is <em>Nature and Weather</em>.</p>
     <p><span class="word">Nature</span> <span class="ref">/ˈneɪtʃə(r)/ n. 自然界；大自然</span> is beautiful. There are <span class="word">rivers</span> <span class="ref">/ˈrɪvə(r)/ n. 河；江</span>, <span class="word">forests</span> <span class="ref">/ˈfɒrɪst/ n. 森林；林区</span> and high <span class="word">mountains</span> <span class="ref">/ˈmaʊntən/ n. 高山；山岳</span>. I love to <span class="word">go hiking</span> <span class="ref">/ˌɡəʊ ˈhaɪkɪŋ/ phr. 徒步旅行</span> in the mountains. I can see a <span class="word">waterfall</span> <span class="ref">/ˈwɔːtəfɔːl/ n. 瀑布</span> and hear the <span class="word">wind</span> <span class="ref">/wɪnd/ n. 风；气流</span>. Last summer, we went on a <span class="word">trip</span> <span class="ref">/trɪp/ n. （尤指短程往返的）旅行，旅游，出行</span> to Huangshan, a <span class="word">famous</span> <span class="ref">/ˈfeɪməs/ adj. 著名的；出名的</span> mountain. We stayed in a <span class="word">hotel</span> <span class="ref">/həʊˈtel/ n. 旅馆；旅社</span> and had great fun.</p>
-    <p>But the weather can be <span class="word">dangerous</span> <span class="ref">/ˈdeɪndʒərəs/ adj. 有危险的；不安全的</span>. When it rains <span class="word">heavy</span> <span class="ref">/ˈhevi/ adj. 程度大的；严重的</span>, we must <span class="word">close</span> <span class="ref">/kləʊz/ v. 关；关闭；闭上</span> the windows and bring an <span class="word">umbrella</span> <span class="ref">/ʌmˈbrelə/ n. 伞；雨伞</span> or a <span class="word">raincoat</span> <span class="ref">/ˈreɪnkəʊt/ n. 雨衣</span>. When there is <span class="word">fog</span> <span class="ref">/fɒɡ/ n. 雾</span>, we cannot see well. A <span class="word">flood</span> <span class="ref">/flʌd/ n. 洪水；水灾</span> or a <span class="word">fire</span> <span class="ref">/ˈfaɪə(r)/ n. 火；火灾</span> is very serious. So <span class="word">before</span> <span class="ref">/bɪˈfɔː(r)/ prep. &amp; conj. 在……之前</span> we go out, we should <span class="word">know</span> <span class="ref">/nəʊ/ v. 知道；了解</span> the weather and <span class="word">bring</span> <span class="ref">/brɪŋ/ v. 带……到某处；带来；取来</span> what we need.</p>
+    <p>But the weather can be <span class="word">dangerous</span> <span class="ref">/ˈdeɪndʒərəs/ adj. 有危险的；不安全的</span>. When it rains <span class="word">heavily</span> <span class="ref">/ˈhevɪli/ adv. 猛烈地；大量地</span>, we must <span class="word">close</span> <span class="ref">/kləʊz/ v. 关；关闭；闭上</span> the windows and bring an <span class="word">umbrella</span> <span class="ref">/ʌmˈbrelə/ n. 伞；雨伞</span> or a <span class="word">raincoat</span> <span class="ref">/ˈreɪnkəʊt/ n. 雨衣</span>. When there is <span class="word">fog</span> <span class="ref">/fɒɡ/ n. 雾</span>, we cannot see well. A <span class="word">flood</span> <span class="ref">/flʌd/ n. 洪水；水灾</span> or a <span class="word">fire</span> <span class="ref">/ˈfaɪə(r)/ n. 火；火灾</span> is very serious. So <span class="word">before</span> <span class="ref">/bɪˈfɔː(r)/ prep. &amp; conj. 在……之前</span> we go out, we should <span class="word">know</span> <span class="ref">/nəʊ/ v. 知道；了解</span> the weather and <span class="word">bring</span> <span class="ref">/brɪŋ/ v. 带……到某处；带来；取来</span> what we need.</p>
     <p>On a <span class="word">fine</span> <span class="ref">/faɪn/ adj. 晴朗的</span> day, do not <span class="word">worry</span> <span class="ref">/ˈwʌri/ v. 担心；担忧；发愁</span> — go out and enjoy the sunshine!</p>
     <p>My friends, nature gives us so much. Let us enjoy it, but always be careful with the weather!</p>
     <p>That's all. Thank you for listening!</p>
@@ -86,6 +103,11 @@
   </div>
 
   <div class="note">✅ 词汇全覆盖检查：23 个课标单词（river / nature / waterfall / forest / famous / mountain / wind / trip / dangerous / heavy / hotel / close / umbrella / raincoat / worry / fine / fog / flood / fire / know / before / go hiking / bring）全部嵌入，无遗漏、无粘连。</div>
+
+  <div class="func-btns">
+    <a href="../5a-unit6-grammar.html" class="grammar">📘 语法解读</a>
+    <a href="../5a-unit6-oral-test.html" class="oral">🎤 口语测评</a>
+  </div>
   <footer>© 2026 豆豆助理 · 人教PEP五年级上册 Unit 6</footer>
 </div>
 

@@ -41,6 +41,44 @@
   .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
   .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
   .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  
+  /* 底部导航：返回首页 / 语法解读 / 口语测评 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    min-height:42px;
+    padding:10px 14px;
+    border-radius:14px;
+    font-size:14px;
+    font-weight:700;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);
+    transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;
+    white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral{
+    background:#fff;color:var(--accent);border:1.5px solid var(--accent);
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+
   @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}
 </style>
 </head>
@@ -60,14 +98,14 @@
   </div>
   <div class="card">
     <div class="card-title">① 上学日</div>
-    <div class="en-sentence" data-spoken="I usually  start  my week on Monday . My favourite subject  is English, because  it is fun.">I <strong>usually</strong> <span class="ph">/ˈjuːʒuəli/ adv. 通常地；经常地</span> <strong>start</strong> <span class="ph">/stɑːt/ v. 开始</span> my week on <strong>Monday</strong> <span class="ph">/ˈmʌndeɪ/ n. 星期一</span>. My favourite <strong>subject</strong> <span class="ph">/ˈsʌbdʒɪkt/ n. 科目；学科</span> is English, <strong>because</strong> <span class="ph">/bɪˈkɒz/ conj. 因为</span> it is fun.</div>
-    <div class="en-sentence" data-spoken="On Tuesday  and Wednesday , I have PE and art lessons .">On <strong>Tuesday</strong> <span class="ph">/ˈtjuːzdeɪ/ n. 星期二</span> and <strong>Wednesday</strong> <span class="ph">/ˈwenzdeɪ/ n. 星期三</span>, I have PE and art <strong>lessons</strong> <span class="ph">/ˈlesn/ n. 课；一节课</span>.</div>
-    <div class="en-sentence" data-spoken="On Thursday , we do a maths quiz, and I can answer  most questions. On Friday , we play ping-pong  in the gym. I love my school days!">On <strong>Thursday</strong> <span class="ph">/ˈθɜːzdeɪ/ n. 星期四</span>, we do a maths quiz, and I can <strong>answer</strong> <span class="ph">/ˈɑːnsə(r)/ v. &amp; n. 答复；回答</span> most questions. On <strong>Friday</strong> <span class="ph">/ˈfraɪdeɪ/ n. 星期五</span>, we play <strong>ping-pong</strong> <span class="ph">/ˈpɪŋpɒŋ/ n. 乒乓球</span> in the gym. I love my school days!</div>
+    <div class="en-sentence" data-spoken="I usually start my week on Monday. My favourite subject is English, because it is fun.">I <strong>usually</strong> <span class="ph">/ˈjuːʒuəli/ adv. 通常地；经常地</span> <strong>start</strong> <span class="ph">/stɑːt/ v. 开始</span> my week on <strong>Monday</strong> <span class="ph">/ˈmʌndeɪ/ n. 星期一</span>. My favourite <strong>subject</strong> <span class="ph">/ˈsʌbdʒɪkt/ n. 科目；学科</span> is English, <strong>because</strong> <span class="ph">/bɪˈkɒz/ conj. 因为</span> it is fun.</div>
+    <div class="en-sentence" data-spoken="On Tuesday and Wednesday, I have PE and art lessons.">On <strong>Tuesday</strong> <span class="ph">/ˈtjuːzdeɪ/ n. 星期二</span> and <strong>Wednesday</strong> <span class="ph">/ˈwenzdeɪ/ n. 星期三</span>, I have PE and art <strong>lessons</strong> <span class="ph">/ˈlesn/ n. 课；一节课</span>.</div>
+    <div class="en-sentence" data-spoken="On Thursday, we do a maths quiz, and I can answer most questions. On Friday, we play ping-pong in the gym. I love my school days!">On <strong>Thursday</strong> <span class="ph">/ˈθɜːzdeɪ/ n. 星期四</span>, we do a maths quiz, and I can <strong>answer</strong> <span class="ph">/ˈɑːnsə(r)/ v. &amp; n. 答复；回答</span> most questions. On <strong>Friday</strong> <span class="ph">/ˈfraɪdeɪ/ n. 星期五</span>, we play <strong>ping-pong</strong> <span class="ph">/ˈpɪŋpɒŋ/ n. 乒乓球</span> in the gym. I love my school days!</div>
     <div class="cn">我通常从星期一开始我的一周。我最喜欢的科目是英语，因为它很有趣。星期二和星期三，我有体育课和美术课。星期四，我们做数学小测验，我能回答大多数问题。星期五，我们在体育馆打乒乓球。我爱我的上学日！</div>
   </div>
   <div class="card">
     <div class="card-title">② 晚上与周末</div>
-    <div class="en-sentence" data-spoken="In the evening , I do my homework, and at night  I read storybooks. On the weekend , I am free. On Saturday , I visit  my grandparents . They live near a park. On Sunday , I sometimes  go swimming with my dad.">In the <strong>evening</strong> <span class="ph">/ˈiːvnɪŋ/ n. 晚上；傍晚</span>, I do my homework, and at <strong>night</strong> <span class="ph">/naɪt/ n. 夜；夜晚</span> I read storybooks. On the <strong>weekend</strong> <span class="ph">/ˌwiːkˈend/ n. 周末</span>, I am free. On <strong>Saturday</strong> <span class="ph">/ˈsætədeɪ/ n. 星期六</span>, I <strong>visit</strong> <span class="ph">/ˈvɪzɪt/ v. 看望；拜访；参观</span> my <strong>grandparents</strong> <span class="ph">/ˈɡrænpeərənt/ n. 祖父；祖母；外祖父；外祖母</span>. They live near a park. On <strong>Sunday</strong> <span class="ph">/ˈsʌndeɪ/ n. 星期日</span>, I <strong>sometimes</strong> <span class="ph">/ˈsʌmtaɪmz/ adv. 有时；间或</span> go swimming with my dad.</div>
+    <div class="en-sentence" data-spoken="In the evening, I do my homework, and at night I read storybooks. On the weekend, I am free. On Saturday, I visit my grandparents. They live near a park. On Sunday, I sometimes go swimming with my dad.">In the <strong>evening</strong> <span class="ph">/ˈiːvnɪŋ/ n. 晚上；傍晚</span>, I do my homework, and at <strong>night</strong> <span class="ph">/naɪt/ n. 夜；夜晚</span> I read storybooks. On the <strong>weekend</strong> <span class="ph">/ˌwiːkˈend/ n. 周末</span>, I am free. On <strong>Saturday</strong> <span class="ph">/ˈsætədeɪ/ n. 星期六</span>, I <strong>visit</strong> <span class="ph">/ˈvɪzɪt/ v. 看望；拜访；参观</span> my <strong>grandparents</strong> <span class="ph">/ˈɡrænpeərənt/ n. 祖父；祖母；外祖父；外祖母</span>. They live near a park. On <strong>Sunday</strong> <span class="ph">/ˈsʌndeɪ/ n. 星期日</span>, I <strong>sometimes</strong> <span class="ph">/ˈsʌmtaɪmz/ adv. 有时；间或</span> go swimming with my dad.</div>
     <div class="cn">晚上我做作业，夜里读故事书。周末我空闲。星期六我去看望爷爷奶奶。他们住在公园附近。星期天我有时和爸爸去游泳。</div>
   </div>
   <div class="card">
@@ -93,6 +131,14 @@
   <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
   <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
 </div>
+
+
+<!-- 底部导航：返回首页 / 语法解读 / 口语测评 -->
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回首页</a>
+  <a href="5a-unit3-grammar.html" class="grammar">📖 语法解读</a>
+  <a href="5a-unit3-oral-test.html" class="oral">🎤 口语测评</a>
+</nav>
 
 <script>
 (function(){

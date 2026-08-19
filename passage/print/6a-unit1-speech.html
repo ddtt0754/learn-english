@@ -52,6 +52,23 @@
   }
   /* 一键隐藏红色音标词性释义小字（加粗单词保留） */
   body.hide-ph .ref{display:none;}
+
+  /* 功能入口按钮：语法解读 / 口语测评 */
+  .func-btns{
+    display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 0;justify-content:center;
+  }
+  .func-btns a{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:11px 22px;border-radius:999px;
+    font-size:13.5px;font-weight:600;letter-spacing:.5px;
+    text-decoration:none;color:#fff;
+    transition:transform .08s,box-shadow .2s;touch-action:manipulation;
+    box-shadow:0 4px 14px rgba(0,0,0,.10);
+  }
+  .func-btns a:active{transform:scale(.97);}
+  .func-btns a.grammar{background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 4px 14px rgba(102,126,234,.25);}
+  .func-btns a.oral{background:linear-gradient(135deg,#2e9e6b,#3bb98a);box-shadow:0 4px 14px rgba(46,158,107,.25);}
+  @media print{.func-btns{display:none;}}
 </style>
 </head>
 <body>
@@ -80,6 +97,11 @@
   </div>
 
   <div class="note">✅ 词汇全覆盖检查：18 个课标单词（was / climb / kilometre / gingerbread house / send / go〔went〕/ thousand / clay / see〔saw〕/ village / eat〔ate〕/ dry / take〔took〕/ view / inspiring / bamboo / pumpkin / restaurant / airport）全部嵌入，无遗漏、无粘连。</div>
+
+  <div class="func-btns">
+    <a href="../6a-unit1-grammar.html" class="grammar">📘 语法解读</a>
+    <a href="../6a-unit1-oral-test.html" class="oral">🎤 口语测评</a>
+  </div>
   <footer>© 2026 豆豆助理 · 人教PEP六年级上册 Unit 1</footer>
 </div>
 

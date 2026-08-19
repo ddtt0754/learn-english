@@ -41,6 +41,44 @@
   .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
   .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
   .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  
+  /* 底部导航：返回首页 / 语法解读 / 口语测评 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    min-height:42px;
+    padding:10px 14px;
+    border-radius:14px;
+    font-size:14px;
+    font-weight:700;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);
+    transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;
+    white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral{
+    background:#fff;color:var(--accent);border:1.5px solid var(--accent);
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+
   @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}
 </style>
 </head>
@@ -60,19 +98,19 @@
   </div>
   <div class="card">
     <div class="card-title">① 星期一的一天</div>
-    <div class="en-sentence" data-spoken="On Monday  morning, I felt sad . My good friend Lily was worried , too. "What's the matter ?" I asked. She had a big project  to finish . We went to the school centre  and worked together. We agreed  to do it, both  of us. At last, we finished it, and we were so excited !">On <strong>Monday</strong> <span class="ph">/ˈmʌndeɪ/ n. 星期一</span> morning, I felt <strong>sad</strong> <span class="ph">/sæd/ adj. 悲哀的；难过的</span>. My good friend Lily was <strong>worried</strong> <span class="ph">/ˈwʌrid/ adj. 担心的；担忧的</span>, too. "What's the <strong>matter</strong> <span class="ph">/ˈmætə(r)/ n. 事情；问题</span>?" I asked. She had a big <strong>project</strong> <span class="ph">/ˈprɒdʒekt/ n. 项目；方案</span> to <strong>finish</strong> <span class="ph">/ˈfɪnɪʃ/ v. 完成；做好</span>. We went to the school <strong>centre</strong> <span class="ph">/ˈsentə(r)/ n. 中心</span> and worked together. We <strong>agreed</strong> <span class="ph">/əˈɡriː/ v. 同意；赞成</span> to do it, <strong>both</strong> <span class="ph">/bəʊθ/ pron. &amp; adj. 两者；两个（都）</span> of us. At last, we finished it, and we were so <strong>excited</strong> <span class="ph">/ɪkˈsaɪtɪd/ adj. 激动的；兴奋的</span>!</div>
+    <div class="en-sentence" data-spoken="On Monday morning, I felt sad. My good friend Lily was worried, too. &quot;What's the matter?&quot; I asked. She had a big project to finish. We went to the school centre and worked together. We agreed to do it, both of us. At last, we finished it, and we were so excited!">On <strong>Monday</strong> <span class="ph">/ˈmʌndeɪ/ n. 星期一</span> morning, I felt <strong>sad</strong> <span class="ph">/sæd/ adj. 悲哀的；难过的</span>. My good friend Lily was <strong>worried</strong> <span class="ph">/ˈwʌrid/ adj. 担心的；担忧的</span>, too. "What's the <strong>matter</strong> <span class="ph">/ˈmætə(r)/ n. 事情；问题</span>?" I asked. She had a big <strong>project</strong> <span class="ph">/ˈprɒdʒekt/ n. 项目；方案</span> to <strong>finish</strong> <span class="ph">/ˈfɪnɪʃ/ v. 完成；做好</span>. We went to the school <strong>centre</strong> <span class="ph">/ˈsentə(r)/ n. 中心</span> and worked together. We <strong>agreed</strong> <span class="ph">/əˈɡriː/ v. 同意；赞成</span> to do it, <strong>both</strong> <span class="ph">/bəʊθ/ pron. &amp; adj. 两者；两个（都）</span> of us. At last, we finished it, and we were so <strong>excited</strong> <span class="ph">/ɪkˈsaɪtɪd/ adj. 激动的；兴奋的</span>!</div>
     <div class="cn">星期一早上，我感到难过。我的好朋友莉莉也很担心。&quot;怎么啦？&quot;我问。她有一个大项目要完成。我们去了学校中心，一起做。我们俩都同意一起做。最后，我们完成了，我们非常兴奋！</div>
   </div>
   <div class="card">
     <div class="card-title">② 弟弟的情绪</div>
-    <div class="en-sentence" data-spoken="Sometimes my brother gets angry .">Sometimes my brother gets <strong>angry</strong> <span class="ph">/ˈæŋɡri/ adj. 愤怒的；生气的</span>.</div>
-    <div class="en-sentence" data-spoken="He thinks everything is wrong , and he is afraid  of making mistakes. My parents  tell us, "Do not be afraid. Just ask  for help." We learn that every feeling is okay.">He thinks everything is <strong>wrong</strong> <span class="ph">/rɒŋ/ adj. 错误的</span>, and he is <strong>afraid</strong> <span class="ph">/əˈfreɪd/ adj. 担心；害怕</span> of making mistakes. My <strong>parents</strong> <span class="ph">/ˈpeərənt/ n. 父亲；母亲</span> tell us, "Do not be afraid. Just <strong>ask</strong> <span class="ph">/ɑːsk/ v. 问；询问</span> for help." We learn that every feeling is okay.</div>
+    <div class="en-sentence" data-spoken="Sometimes my brother gets angry.">Sometimes my brother gets <strong>angry</strong> <span class="ph">/ˈæŋɡri/ adj. 愤怒的；生气的</span>.</div>
+    <div class="en-sentence" data-spoken="He thinks everything is wrong, and he is afraid of making mistakes. My parents tell us, &quot;Do not be afraid. Just ask for help.&quot; We learn that every feeling is okay.">He thinks everything is <strong>wrong</strong> <span class="ph">/rɒŋ/ adj. 错误的</span>, and he is <strong>afraid</strong> <span class="ph">/əˈfreɪd/ adj. 担心；害怕</span> of making mistakes. My <strong>parents</strong> <span class="ph">/ˈpeərənt/ n. 父亲；母亲</span> tell us, "Do not be afraid. Just <strong>ask</strong> <span class="ph">/ɑːsk/ v. 问；询问</span> for help." We learn that every feeling is okay.</div>
     <div class="cn">有时我弟弟会生气。他觉得一切都是错的，他害怕犯错。我的父母告诉我们：&quot;不要害怕。需要帮助就开口求助。&quot;我们学会了：每一种感受都是正常的。</div>
   </div>
   <div class="card">
     <div class="card-title">③ 艾米的离别信</div>
-    <div class="en-sentence" data-spoken="Last month, my friend Amy had to move  to another city. We were sad, but she wrote me a letter.">Last month, my friend Amy had to <strong>move</strong> <span class="ph">/muːv/ v. 搬家；移动</span> to another city. We were sad, but she wrote me a letter.</div>
-    <div class="en-sentence" data-spoken="At the end, she wrote, "Yours  truly, Amy." I keep the letter in my desk, and it makes me happy.">At the end, she wrote, "<strong>Yours</strong> <span class="ph">/jɔːz/ pron. 您的（用于书信结尾的签名前）</span> truly, Amy." I keep the letter in my desk, and it makes me happy.</div>
+    <div class="en-sentence" data-spoken="Last month, my friend Amy had to move to another city. We were sad, but she wrote me a letter.">Last month, my friend Amy had to <strong>move</strong> <span class="ph">/muːv/ v. 搬家；移动</span> to another city. We were sad, but she wrote me a letter.</div>
+    <div class="en-sentence" data-spoken="At the end, she wrote, &quot;Yours truly, Amy.&quot; I keep the letter in my desk, and it makes me happy.">At the end, she wrote, "<strong>Yours</strong> <span class="ph">/jɔːz/ pron. 您的（用于书信结尾的签名前）</span> truly, Amy." I keep the letter in my desk, and it makes me happy.</div>
     <div class="cn">上个月，我的朋友艾米不得不搬到另一个城市。我们很难过，但她给我写了一封信。信的结尾她写道：&quot;您的真诚的艾米。&quot;我把信放在书桌里，它让我开心。</div>
   </div>
   <div class="card">
@@ -99,6 +137,14 @@
   <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
   <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
 </div>
+
+
+<!-- 底部导航：返回首页 / 语法解读 / 口语测评 -->
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回首页</a>
+  <a href="5a-unit2-grammar.html" class="grammar">📖 语法解读</a>
+  <a href="5a-unit2-oral-test.html" class="oral">🎤 口语测评</a>
+</nav>
 
 <script>
 (function(){

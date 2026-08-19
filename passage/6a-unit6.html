@@ -40,6 +40,44 @@
   .full-translation{background:var(--card);border-radius:14px;padding:14px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid #e9efe9;}
   .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
   .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
+  
+  /* 底部导航：返回首页 / 语法解读 / 口语测评 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    min-height:42px;
+    padding:10px 14px;
+    border-radius:14px;
+    font-size:14px;
+    font-weight:700;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);
+    transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;
+    white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral{
+    background:#fff;color:var(--accent);border:1.5px solid var(--accent);
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+
   @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}</style>
 </head>
 <body>
@@ -67,9 +105,9 @@
 
   <div class="card">
     <div class="card-title">② 节约能源</div>
-    <div class="en-sentence" data-spoken="We must not waste resources . If we use too much energy, the resources may run out one day.">We must not waste <strong>resources</strong> <span class="ph">/rɪˈsɔːs/ n. 资源</span>. If we use too much energy, the resources may <strong>run out</strong> <span class="ph">/ˌrʌn ˈaʊt/ phr. 用完</span> one day.</div>
-    <div class="en-sentence" data-spoken="We should reduce the use of electricity. Here are some quick tips: turn off the lights, unplug the chargers, and take a short shower .">We should <strong>reduce</strong> <span class="ph">/rɪˈdjuːs/ v. 减少</span> the use of electricity. Here are some <strong>quick</strong> <span class="ph">/kwɪk/ adj. 迅速的；快的</span> tips: turn off the lights, <strong>unplug</strong> <span class="ph">/ˌʌnˈplʌɡ/ v. 拔掉……的电源插头</span> the chargers, and take a short <strong>shower</strong> <span class="ph">/ˈʃaʊə(r)/ n. 淋浴</span>.</div>
-    <div class="en-sentence" data-spoken="These small actions can make a big difference . A few minutes of care can change our future.">These small actions can make a big <strong>difference</strong> <span class="ph">/ˈdɪfrəns/ n. 差别；不同（之处）</span>. A <strong>few</strong> <span class="ph">/fjuː/ adj. 不多；很少</span> minutes of care can <strong>change</strong> <span class="ph">/tʃeɪndʒ/ v. （使）不同；改变</span> our future.</div>
+    <div class="en-sentence" data-spoken="We must not waste resources. If we use too much energy, the resources may run out one day.">We must not waste <strong>resources</strong> <span class="ph">/rɪˈsɔːs/ n. 资源</span>. If we use too much energy, the resources may <strong>run out</strong> <span class="ph">/ˌrʌn ˈaʊt/ phr. 用完</span> one day.</div>
+    <div class="en-sentence" data-spoken="We should reduce the use of electricity. Here are some quick tips: turn off the lights, unplug the chargers, and take a short shower.">We should <strong>reduce</strong> <span class="ph">/rɪˈdjuːs/ v. 减少</span> the use of electricity. Here are some <strong>quick</strong> <span class="ph">/kwɪk/ adj. 迅速的；快的</span> tips: turn off the lights, <strong>unplug</strong> <span class="ph">/ˌʌnˈplʌɡ/ v. 拔掉……的电源插头</span> the chargers, and take a short <strong>shower</strong> <span class="ph">/ˈʃaʊə(r)/ n. 淋浴</span>.</div>
+    <div class="en-sentence" data-spoken="These small actions can make a big difference. A few minutes of care can change our future.">These small actions can make a big <strong>difference</strong> <span class="ph">/ˈdɪfrəns/ n. 差别；不同（之处）</span>. A <strong>few</strong> <span class="ph">/fjuː/ adj. 不多；很少</span> minutes of care can <strong>change</strong> <span class="ph">/tʃeɪndʒ/ v. （使）不同；改变</span> our future.</div>
     <div class="cn">我们绝不能浪费资源。如果我们用太多能源，总有一天资源会耗尽。我们应该减少用电。这里有一些快速小贴士：关灯、拔掉充电器、洗短一点的热水澡。这些小小的举动能带来巨大的不同。几分钟的用心就能改变我们的未来。</div>
   </div>
 
@@ -97,6 +135,14 @@
   <button class="gbtn gbtn-loop" id="btnLoop">▶ 全文循环播放</button>
   <button class="gbtn gbtn-stop" id="btnStop">■ 停止全部朗读</button>
 </div>
+
+
+<!-- 底部导航：返回首页 / 语法解读 / 口语测评 -->
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回首页</a>
+  <a href="6a-unit6-grammar.html" class="grammar">📖 语法解读</a>
+  <a href="6a-unit6-oral-test.html" class="oral">🎤 口语测评</a>
+</nav>
 
 <script>
 (function(){

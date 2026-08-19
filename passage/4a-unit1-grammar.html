@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>Unit 1 Helping at Home · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+  .pill{display:inline-block;background:#eefaf4;border:1px solid #cdeee0;border-radius:999px;padding:2px 12px;font-size:12px;color:#1fa873;font-weight:600;margin:2px 3px;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Helping at Home</h1>
+    <p class="sub">四年级上册 Unit 1 · 语法精读与固定搭配分类</p>
+    <p class="meta">2026秋 · 人教PEP（2025新版）· 19 个课标单词 · 汕头 2027 中考口语演讲</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>以下按段落逐句拆解，标注核心语法点与句式结构（全文以<b>一般现在时</b>为主体）。</p>
+
+    <h3>¶ 1 · 开场</h3>
+    <table>
+      <thead><tr><th style="width:55%">句子</th><th style="width:45%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen"><b>Good morning</b>, my dear teachers and friends!</td><td class="gram">问候语 · dear <span class="tag">形容词</span> 修饰名词 teachers / friends</td></tr>
+      <tr><td class="sen">Today, my <b>topic is</b> <i>Helping at Home</i>.</td><td class="gram"><span class="tag">主系表</span> · topic 主语 · Helping at Home 演讲题目（斜体专有标题）</td></tr>
+      </tbody>
+    </table>
+
+    <h3>¶ 2 · 忙碌的父母</h3>
+    <table>
+      <thead><tr><th style="width:55%">句子</th><th style="width:45%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">My parents <b>are</b> very <b>busy</b> every day.</td><td class="gram"><span class="tag">主系表</span> · very <span class="tag g">副词</span> 修饰形容词 busy · every day 时间状语</td></tr>
+      <tr><td class="sen">My father <b>is</b> a doctor, my mother <b>is</b> a nurse, and my grandpa <b>is</b> a farmer.</td><td class="gram"><span class="tag">主系表</span> × 3 · and <span class="tag r">并列句</span> · a + 职业名词表身份</td></tr>
+      <tr><td class="sen">They <b>are</b> often tired <b>after work</b>.</td><td class="gram">主系表 · often <span class="tag g">频率副词</span> · after work <span class="tag g">介词短语</span> 作时间状语</td></tr>
+      <tr><td class="sen"><b>So</b> I <b>like</b> to help at home.</td><td class="gram"><span class="tag">主谓宾</span> · like <span class="tag g">to do</span> 喜欢做某事 · So 表结果 · at home 介词短语</td></tr>
+      </tbody>
+    </table>
+
+    <h3>¶ 3 · 我在家帮忙</h3>
+    <table>
+      <thead><tr><th style="width:55%">句子</th><th style="width:45%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">I <b>help</b> my mother <b>cook</b> dinner and <b>clean</b> the room.</td><td class="gram">主谓宾+宾补 · <span class="tag g">help sb (to) do</span> · and <span class="tag r">并列</span> 两动词 cook / clean</td></tr>
+      <tr><td class="sen">I <b>sweep</b> the floor every day.</td><td class="gram">主谓宾 · every day 时间状语</td></tr>
+      <tr><td class="sen">I also <b>look after</b> my little brother.</td><td class="gram">主谓宾 · <span class="tag g">look after</span> 固定短语=照顾 · also 副词置实义动词前</td></tr>
+      <tr><td class="sen">He <b>is</b> a cute <b>child</b>.</td><td class="gram">主系表 · cute <span class="tag">形容词</span> 修饰 child</td></tr>
+      <tr><td class="sen"><b>Sometimes</b> I <b>do</b> chores together with my family.</td><td class="gram">主谓宾 · Sometimes <span class="tag g">频率副词</span> · together with <span class="tag g">介词短语</span></td></tr>
+      <tr><td class="sen">Every job <b>is</b> important, <b>whether</b> it is an office worker <b>or</b> a factory worker.</td><td class="gram">主系表 · <span class="tag r">whether…or</span> 让步状语从句 · or <span class="tag r">并列连词</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3>¶ 4 · 快乐的家</h3>
+    <table>
+      <thead><tr><th style="width:55%">句子</th><th style="width:45%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen"><b>At school</b>, we also <b>have</b> PE, and I <b>play</b> games with my friends.</td><td class="gram">主谓宾 · At school <span class="tag g">地点状语</span> · and <span class="tag r">并列句</span> · <span class="tag g">play games with</span> 搭配</td></tr>
+      <tr><td class="sen">All the people in my family <b>are</b> happy <b>when</b> we help each other.</td><td class="gram">主系表 · when <span class="tag r">时间状语从句</span> · in my family 介词短语作定语 · <span class="tag g">help each other</span></td></tr>
+      <tr><td class="sen"><b>Doing</b> housework <b>is</b> my favourite part of the day!</td><td class="gram"><span class="tag g">动名词</span> Doing housework 作主语（单数）· of the day 介词短语</td></tr>
+      <tr><td class="sen">That's all. <b>Thank you for listening</b>!</td><td class="gram">That's = That is · <span class="tag g">Thank you for + 动名词</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配分类整理 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配分类整理</h2>
+
+    <h3>🔹 动词短语 (Verb Phrases)</h3>
+    <table>
+      <thead><tr><th>短语</th><th>释义</th><th>例句出处</th></tr></thead>
+      <tbody>
+      <tr><td><b>look after</b></td><td>照顾</td><td class="sen">look after my little brother</td></tr>
+      <tr><td><b>help at home</b></td><td>在家帮忙</td><td class="sen">like to help at home</td></tr>
+      <tr><td><b>do chores</b></td><td>做家务</td><td class="sen">do chores together with my family</td></tr>
+      <tr><td><b>play games</b></td><td>玩游戏</td><td class="sen">play games with my friends</td></tr>
+      <tr><td><b>help each other</b></td><td>互相帮助</td><td class="sen">when we help each other</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔹 形容词短语 (Adjective Phrases)</h3>
+    <table>
+      <thead><tr><th>短语</th><th>释义</th><th>例句出处</th></tr></thead>
+      <tbody>
+      <tr><td><b>very busy</b></td><td>非常忙碌的</td><td class="sen">parents are very busy</td></tr>
+      <tr><td><b>a cute child</b></td><td>一个可爱的孩子</td><td class="sen">He is a cute child</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔹 名词短语 (Noun Phrases)</h3>
+    <table>
+      <thead><tr><th>短语</th><th>释义</th><th>例句出处</th></tr></thead>
+      <tbody>
+      <tr><td><b>my favourite part</b></td><td>我最喜欢的部分</td><td class="sen">my favourite part of the day</td></tr>
+      <tr><td><b>an office worker</b></td><td>公司职员</td><td class="sen">whether it is an office worker</td></tr>
+      <tr><td><b>a factory worker</b></td><td>工厂工人</td><td class="sen">or a factory worker</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔹 介词短语 (Prepositional Phrases)</h3>
+    <table>
+      <thead><tr><th>短语</th><th>释义</th><th>例句出处</th></tr></thead>
+      <tbody>
+      <tr><td><b>every day</b></td><td>每天</td><td class="sen">busy every day / sweep the floor every day</td></tr>
+      <tr><td><b>after work</b></td><td>下班后</td><td class="sen">tired after work</td></tr>
+      <tr><td><b>at home</b></td><td>在家</td><td class="sen">help at home</td></tr>
+      <tr><td><b>at school</b></td><td>在学校</td><td class="sen">At school, we also have PE</td></tr>
+      <tr><td><b>with my family</b></td><td>和我的家人</td><td class="sen">together with my family</td></tr>
+      <tr><td><b>with my friends</b></td><td>和我的朋友们</td><td class="sen">play games with my friends</td></tr>
+      <tr><td><b>of the day</b></td><td>今天的</td><td class="sen">favourite part of the day</td></tr>
+      <tr><td><b>in my family</b></td><td>在我家里</td><td class="sen">people in my family</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔹 动词搭配 (Verb Collocations)</h3>
+    <table>
+      <thead><tr><th>搭配</th><th>释义</th><th>例句出处</th></tr></thead>
+      <tbody>
+      <tr><td><b>like to do</b></td><td>喜欢做某事</td><td class="sen">like to help at home</td></tr>
+      <tr><td><b>help sb (to) do</b></td><td>帮助某人做某事</td><td class="sen">help my mother cook dinner</td></tr>
+      <tr><td><b>be busy</b></td><td>忙碌</td><td class="sen">are very busy</td></tr>
+      <tr><td><b>have PE</b></td><td>上体育课</td><td class="sen">we also have PE</td></tr>
+      <tr><td><b>sweep the floor</b></td><td>扫地</td><td class="sen">sweep the floor every day</td></tr>
+      <tr><td><b>clean the room</b></td><td>打扫房间</td><td class="sen">clean the room</td></tr>
+      <tr><td><b>cook dinner</b></td><td>做晚饭</td><td class="sen">cook dinner</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔹 副词与特殊结构</h3>
+    <table>
+      <thead><tr><th>词</th><th>词性</th><th>作用</th></tr></thead>
+      <tbody>
+      <tr><td><b>very</b></td><td>副词</td><td>修饰形容词 busy（程度）</td></tr>
+      <tr><td><b>often / sometimes / also</b></td><td>频率/语气副词</td><td>often 常 / sometimes 有时 / also 也（置实义动词前）</td></tr>
+      <tr><td><b>together</b></td><td>副词</td><td>一起（与 with 连用）</td></tr>
+      <tr><td><b>Doing housework</b></td><td>动名词</td><td>作主语，谓语用单数 is</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+
+    <h3>📊 时态与句型分布</h3>
+    <table>
+      <thead><tr><th>项目</th><th>出现情况</th><th>典型例句</th></tr></thead>
+      <tbody>
+      <tr><td><span class="tag">一般现在时</span></td><td>全文主体（14+ 句）</td><td class="sen">My parents are busy. / I help my mother cook.</td></tr>
+      <tr><td><span class="tag">主系表 SVC</span></td><td>约 8 句</td><td class="sen">My father is a doctor. / He is a cute child.</td></tr>
+      <tr><td><span class="tag">主谓宾 SVO</span></td><td>约 6 句</td><td class="sen">I sweep the floor. / We have PE.</td></tr>
+      </tbody>
+    </table>
+    <p>演讲稿以<b>一般现在时</b>为主体（描述日常家务与家庭情况），少量并列句（and / or）与两个从句（when 时间状语、whether…or 让步）让叙述更连贯。</p>
+
+    <h3>📊 语法专项统计</h3>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">并列连词</div><div class="value">and（多处）/ or（whether…or）</div></div>
+      <div class="sum-item"><div class="label">频率副词</div><div class="value">every day / often / sometimes / also</div></div>
+      <div class="sum-item"><div class="label">非谓语</div><div class="value">like to do / help do / Thank you for doing / 动名词主语</div></div>
+      <div class="sum-item"><div class="label">从句</div><div class="value">when 时间状语 1 处 / whether…or 让步 1 处</div></div>
+      <div class="sum-item"><div class="label">固定搭配</div><div class="value">约 12 组（look after / do chores / play games 等）</div></div>
+      <div class="sum-item"><div class="label">朗读时长</div><div class="value">约 1~1.5 分钟，节奏轻快</div></div>
+    </div>
+
+    <h3>🎯 中考备考要点（四年级基础）</h3>
+    <ul>
+      <li><b>一般现在时</b>：主语三单时 be 用 is、实义动词加 -s，本文 parents are / father is 是高频考点</li>
+      <li><b>like to do vs like doing</b>：本文 like to help，区分"喜欢做某事"两种写法</li>
+      <li><b>help 句型</b>：help sb (to) do 中 to 可省，help my mother cook 是完形与写作高频结构</li>
+      <li><b>固定搭配</b>：look after / do chores / play games / sweep the floor / clean the room 是写作与听力高频词</li>
+      <li><b>动名词作主语</b>：Doing housework is... 谓语用单数，是"非谓语"启蒙结构</li>
+      <li><b>whether…or</b>：表示"无论是……还是……"，写作中可替换 if，使句式更丰富</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 四年级上册 Unit 1 · 语法精读分析</footer>
+</div>
+</body>
+</html>
