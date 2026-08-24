@@ -115,6 +115,27 @@ body{
   .ai-area iframe{height:420px}
   .container{padding:0 12px 70px}
 }
+  /* 底部导航：返回 / 语法解读 / 口语测评 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(28px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
 </style>
 </head>
 <body>
@@ -124,7 +145,7 @@ body{
   <!-- 页头 -->
   <div class="hero">
     <h1>广东（汕头）中考英语听说 · 备考训练</h1>
-    <div class="sub">六年级上册 Unit 1 · My Favourite Trip · 满分 30 分 · 三大板块 · 五大题型 · 配 AI 教练陪练</div>
+    <div class="sub">满分 30 分 · 三大板块 · 五大题型 · 配 AI 教练陪练</div>
   </div>
 
   <!-- 三大板块切换 -->
@@ -141,14 +162,14 @@ body{
     <div class="card-top">
       <div class="card-name">📄 训练文本</div>
     </div>
-    <div class="label">📜 演讲稿全文（六年级上册 Unit 1 · My Favourite Trip）</div>
-    <div class="example training-text" style="white-space:pre-wrap">Good morning, my dear teachers and friends! Today, my topic is My Favourite Trip.
+    <div class="label">📜 演讲稿全文（7A Unit 1 · You and Me）</div>
+    <div class="example training-text" style="white-space:pre-wrap">Good morning, my dear teachers and friends! Today, my topic is You and Me, the story of making friends. Hello, everyone! Hey, let me tell you about myself. My full name is Chen Ming. My first name is Ming, and my last name is Chen. I am in Grade 7, and I am a new classmate in Class 1. Our class teacher is Miss Li, and she is very kind. I am from China, a big country with a long history.
 
-Last summer, I went to a small village with my parents. The village was about ten kilometres away from our city, and we climbed a mountain about a thousand metres high. We walked through the village and saw beautiful fields and rivers. The view from the top was really inspiring.
+On my first day, I wanted to make friends with my new classmates. We got to know each other step by step. I asked each student about his or her name and age. We found that we had the same hobby: music! Both my new friends and I like the guitar and tennis. One of my friends is a twin, and he looks the same as his brother. We often help each other, and we never feel lonely. Sometimes I make a mistake when I speak English, but my friends say, It's okay, everyone makes mistakes. What about you? Do you have other hobbies?
 
-We saw bamboo trees and a gingerbread house in the village. We ate pumpkin soup in a nice restaurant, and the food was delicious. We also visited an airport nearby. In the old days, people used clay to make houses, and the roads were dry and dusty. I took many photos with my camera, and I sent them to my friends. After the trip, I felt I had learned a lot about our beautiful country!
+Our classroom is full of laughter and songs. We have a school band, and my friends play the guitar in it. In the school canteen, we eat rice, vegetables and tofu. At home, my grandma cooks with a big pot, and my parrot likes to say hello to me. I post my happy photos online, and my friends like them a lot. Even on rainy days, we are happy together. We chat about everything: music, sports, food and even our dreams.
 
-That's all. Thank you for listening!</div>
+My friends, a good friend is a treasure. Let us say hello with a smile, get to know each other, and enjoy our school life together! That's all. Thank you for listening!</div>
     <div class="actions">
       <button class="btn btn-passage" onclick="copyText(TRAINING_TEXT,this)">📋 复制文本</button>
     </div>
@@ -162,7 +183,7 @@ That's all. Thank you for listening!</div>
     </div>
     <div class="label">📐 中考考试规则</div>
     <div class="rules">
-      先听一遍完整音频（短文约 <b>70–90 词</b>）→ <b>30 秒</b>预览文本 → <b>70 秒</b>内朗读全文并录音。（本次仅需任意朗读上文两段即可）<br>
+      先听一遍完整音频（短文约 <b>110–130 词</b>）→ <b>30 秒</b>预览文本 → <b>70 秒</b>内朗读全文并录音。（本次仅需任意朗读上文两段即可）<br>
       评分四维：<b>①发音准确</b>　<b>②流畅不停顿</b>　<b>③完整不漏词</b>　<b>④语调自然</b>。
     </div>
     <div class="actions">
@@ -229,7 +250,12 @@ That's all. Thank you for listening!</div>
     <div class="foot">
     <div class="strong">广东中考 · 英语听说训练</div>
     <div>切换上方板块查看对应题型；卡片内【复制提示词】可一键发送给AI 教练，顶部【复制文本】可复制演讲稿全文练习朗读。<br>© 2026 两英豆豆教练</div>
-    <a href="index.html" class="btn-home">🏠 返回主页</a>
+      <nav class="page-footer">
+    <a href="index.html" class="home">🏠 返回主页</a>
+    <a href="7a-unit1-grammar.html" class="grammar">📖 语法解读</a>
+    <a href="7a-unit1-oral-test.html" class="oral">🎤 口语测评</a>
+  </nav>
+
   </div>
 
 </div>
@@ -238,14 +264,14 @@ That's all. Thank you for listening!</div>
 <div class="toast" id="toast"><span class="ck">✓</span><span id="toast-msg">已复制</span></div>
 
 <script>
-/* ===== 六年级上册 Unit 1 演讲稿全文（训练文本，供复制）===== */
-const TRAINING_TEXT = `Good morning, my dear teachers and friends! Today, my topic is My Favourite Trip.
+/* ===== 7A Unit1 演讲稿全文（训练文本，供复制）===== */
+const TRAINING_TEXT = `Good morning, my dear teachers and friends! Today, my topic is You and Me, the story of making friends. Hello, everyone! Hey, let me tell you about myself. My full name is Chen Ming. My first name is Ming, and my last name is Chen. I am in Grade 7, and I am a new classmate in Class 1. Our class teacher is Miss Li, and she is very kind. I am from China, a big country with a long history.
 
-Last summer, I went to a small village with my parents. The village was about ten kilometres away from our city, and we climbed a mountain about a thousand metres high. We walked through the village and saw beautiful fields and rivers. The view from the top was really inspiring.
+On my first day, I wanted to make friends with my new classmates. We got to know each other step by step. I asked each student about his or her name and age. We found that we had the same hobby: music! Both my new friends and I like the guitar and tennis. One of my friends is a twin, and he looks the same as his brother. We often help each other, and we never feel lonely. Sometimes I make a mistake when I speak English, but my friends say, It's okay, everyone makes mistakes. What about you? Do you have other hobbies?
 
-We saw bamboo trees and a gingerbread house in the village. We ate pumpkin soup in a nice restaurant, and the food was delicious. We also visited an airport nearby. In the old days, people used clay to make houses, and the roads were dry and dusty. I took many photos with my camera, and I sent them to my friends. After the trip, I felt I had learned a lot about our beautiful country!
+Our classroom is full of laughter and songs. We have a school band, and my friends play the guitar in it. In the school canteen, we eat rice, vegetables and tofu. At home, my grandma cooks with a big pot, and my parrot likes to say hello to me. I post my happy photos online, and my friends like them a lot. Even on rainy days, we are happy together. We chat about everything: music, sports, food and even our dreams.
 
-That's all. Thank you for listening!`;
+My friends, a good friend is a treasure. Let us say hello with a smile, get to know each other, and enjoy our school life together! That's all. Thank you for listening!`;
 
 /* ===== 五题型 AI 教练提示词 + 可复制短文（严格按中考听说考评维度）===== */
 const DATA = {
@@ -259,7 +285,7 @@ const DATA = {
     prompt:`你是广东中考英语听说教练。请生成「信息转述」训练：根据上面短文生成思维导图要点，准备40–50秒、在60秒内用连接词把全部要点串成完整语段（不可零散逐个念要点）。\n评分维度：①要点覆盖完整2分；②内容准确2分；③语言连贯（衔接词运用）1分；④语法与发音正确1分。\n提供独白与要点，等我口述后按维度评分并给参考范文。`
   },
   p32:{
-    prompt:`你是广东中考英语听说教练。请生成「口头询问」训练：根据上面短文主题场景文字提示，要求我造一句特殊疑问句（what/when/where/how 等），限时8秒，且不能是一般疑问句（一般疑问句）。\n评分维度：①句式正确（特殊疑问句）1分；②疑问词恰当1分；③信息合理1分。\n提供场景，等我提问后点评并给参考问句。`
+    prompt:`你是广东中考英语听说教练。请生成「口头询问」训练：根据上面短文主题场景文字提示，要求我造一句特殊疑问句（what/when/where/how 等），限时8秒，且不能是一艘疑问句（一般疑问句）。\n评分维度：①句式正确（特殊疑问句）1分；②疑问词恰当1分；③信息合理1分。\n提供场景，等我提问后点评并给参考问句。`
   }
 };
 

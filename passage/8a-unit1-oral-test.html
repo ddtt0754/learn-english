@@ -115,6 +115,27 @@ body{
   .ai-area iframe{height:420px}
   .container{padding:0 12px 70px}
 }
+  /* 底部导航：返回 / 语法解读 / 口语测评 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(28px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
 </style>
 </head>
 <body>
@@ -124,7 +145,7 @@ body{
   <!-- 页头 -->
   <div class="hero">
     <h1>广东（汕头）中考英语听说 · 备考训练</h1>
-    <div class="sub">六年级上册 Unit 1 · My Favourite Trip · 满分 30 分 · 三大板块 · 五大题型 · 配 AI 教练陪练</div>
+    <div class="sub">满分 30 分 · 三大板块 · 五大题型 · 配 AI 教练陪练</div>
   </div>
 
   <!-- 三大板块切换 -->
@@ -141,14 +162,18 @@ body{
     <div class="card-top">
       <div class="card-name">📄 训练文本</div>
     </div>
-    <div class="label">📜 演讲稿全文（六年级上册 Unit 1 · My Favourite Trip）</div>
-    <div class="example training-text" style="white-space:pre-wrap">Good morning, my dear teachers and friends! Today, my topic is My Favourite Trip.
+    <div class="label">📜 演讲稿全文（8A Unit 1 · A Wonderful Holiday）</div>
+    <div class="example training-text" style="white-space:pre-wrap">Good morning, my dear teachers and friends! Today, my topic is A Wonderful Holiday.
 
-Last summer, I went to a small village with my parents. The village was about ten kilometres away from our city, and we climbed a mountain about a thousand metres high. We walked through the village and saw beautiful fields and rivers. The view from the top was really inspiring.
+During the summer vacation, my family and I decided to go to a small town for a holiday. We stayed at a comfortable hotel, and we were ready to explore everywhere. Everything was ready for the trip, and we could go anywhere we liked. We made a budget before we left, and we took out our passports and some money. My mother might book the train tickets, and I looked for a map of the town. We planned to go to a summer camp near the lake. We got together at the station and set off happily.
 
-We saw bamboo trees and a gingerbread house in the village. We ate pumpkin soup in a nice restaurant, and the food was delicious. We also visited an airport nearby. In the old days, people used clay to make houses, and the roads were dry and dusty. I took many photos with my camera, and I sent them to my friends. After the trip, I felt I had learned a lot about our beautiful country!
+The town was an ancient place, and we visited a beautiful palace on the square. A tall tower stood beside it, and the whole view was fantastic. The landscape was amazing: the green countryside, the clear sky, and the colorful rainbow towards the east. The scenery took my breath away. Especially at noon, we sat in the sun and watched the clouds. We bought some silk scarves and lovely artwork as gifts. Thousands of people visit this place every year, and nothing can describe its beauty. I was not bored for even a moment; I could easily forget all my worries.
 
-That's all. Thank you for listening!</div>
+We also visited a faraway village. There, we met a guide who showed us around. We saw some strange plants and a deer in the fields, and we heard an accordion playing somewhere. The villagers were regular people with warm smiles. We were surprised by the peace of the countryside. During the trip, I felt sick on the bus, but I was fine later. We ate steamed chicken soup for lunch, and we had nothing but delicious local food. Even my forgetful grandma remembered every happy moment. When we turned around to leave, I almost cried tears of joy. We could probably say this was the best holiday ever!
+
+Later, we went to Moscow, Russia, and we learned about Russian history. The Russian people fought against the enemy bravely, and their victory was a great one. Standing at the palace gate, I felt a strong peace in my heart. We visited the Red Square, and we stood up to watch the changing of the guard. During the cold days, our breath became white in the air, and the wind blew against our faces. The war taught us to cherish peace and never forget the past. The happy photos remind me of that wonderful day.
+
+My friends, a holiday is not only about travel; it is about memories, friendship and peace. Let us enjoy every moment and keep the beauty in our hearts! That's all. Thank you for listening!</div>
     <div class="actions">
       <button class="btn btn-passage" onclick="copyText(TRAINING_TEXT,this)">📋 复制文本</button>
     </div>
@@ -162,7 +187,7 @@ That's all. Thank you for listening!</div>
     </div>
     <div class="label">📐 中考考试规则</div>
     <div class="rules">
-      先听一遍完整音频（短文约 <b>70–90 词</b>）→ <b>30 秒</b>预览文本 → <b>70 秒</b>内朗读全文并录音。（本次仅需任意朗读上文两段即可）<br>
+      先听一遍完整音频（短文约 <b>110–130 词</b>）→ <b>30 秒</b>预览文本 → <b>70 秒</b>内朗读全文并录音。（本次仅需任意朗读上文两段即可）<br>
       评分四维：<b>①发音准确</b>　<b>②流畅不停顿</b>　<b>③完整不漏词</b>　<b>④语调自然</b>。
     </div>
     <div class="actions">
@@ -229,7 +254,12 @@ That's all. Thank you for listening!</div>
     <div class="foot">
     <div class="strong">广东中考 · 英语听说训练</div>
     <div>切换上方板块查看对应题型；卡片内【复制提示词】可一键发送给AI 教练，顶部【复制文本】可复制演讲稿全文练习朗读。<br>© 2026 两英豆豆教练</div>
-    <a href="index.html" class="btn-home">🏠 返回主页</a>
+      <nav class="page-footer">
+    <a href="index.html" class="home">🏠 返回主页</a>
+    <a href="8a-unit1-grammar.html" class="grammar">📖 语法解读</a>
+    <a href="8a-unit1-oral-test.html" class="oral">🎤 口语测评</a>
+  </nav>
+
   </div>
 
 </div>
@@ -238,14 +268,18 @@ That's all. Thank you for listening!</div>
 <div class="toast" id="toast"><span class="ck">✓</span><span id="toast-msg">已复制</span></div>
 
 <script>
-/* ===== 六年级上册 Unit 1 演讲稿全文（训练文本，供复制）===== */
-const TRAINING_TEXT = `Good morning, my dear teachers and friends! Today, my topic is My Favourite Trip.
+/* ===== 8A Unit 1 演讲稿全文（训练文本，供复制）===== */
+const TRAINING_TEXT = `Good morning, my dear teachers and friends! Today, my topic is A Wonderful Holiday.
 
-Last summer, I went to a small village with my parents. The village was about ten kilometres away from our city, and we climbed a mountain about a thousand metres high. We walked through the village and saw beautiful fields and rivers. The view from the top was really inspiring.
+During the summer vacation, my family and I decided to go to a small town for a holiday. We stayed at a comfortable hotel, and we were ready to explore everywhere. Everything was ready for the trip, and we could go anywhere we liked. We made a budget before we left, and we took out our passports and some money. My mother might book the train tickets, and I looked for a map of the town. We planned to go to a summer camp near the lake. We got together at the station and set off happily.
 
-We saw bamboo trees and a gingerbread house in the village. We ate pumpkin soup in a nice restaurant, and the food was delicious. We also visited an airport nearby. In the old days, people used clay to make houses, and the roads were dry and dusty. I took many photos with my camera, and I sent them to my friends. After the trip, I felt I had learned a lot about our beautiful country!
+The town was an ancient place, and we visited a beautiful palace on the square. A tall tower stood beside it, and the whole view was fantastic. The landscape was amazing: the green countryside, the clear sky, and the colorful rainbow towards the east. The scenery took my breath away. Especially at noon, we sat in the sun and watched the clouds. We bought some silk scarves and lovely artwork as gifts. Thousands of people visit this place every year, and nothing can describe its beauty. I was not bored for even a moment; I could easily forget all my worries.
 
-That's all. Thank you for listening!`;
+We also visited a faraway village. There, we met a guide who showed us around. We saw some strange plants and a deer in the fields, and we heard an accordion playing somewhere. The villagers were regular people with warm smiles. We were surprised by the peace of the countryside. During the trip, I felt sick on the bus, but I was fine later. We ate steamed chicken soup for lunch, and we had nothing but delicious local food. Even my forgetful grandma remembered every happy moment. When we turned around to leave, I almost cried tears of joy. We could probably say this was the best holiday ever!
+
+Later, we went to Moscow, Russia, and we learned about Russian history. The Russian people fought against the enemy bravely, and their victory was a great one. Standing at the palace gate, I felt a strong peace in my heart. We visited the Red Square, and we stood up to watch the changing of the guard. During the cold days, our breath became white in the air, and the wind blew against our faces. The war taught us to cherish peace and never forget the past. The happy photos remind me of that wonderful day.
+
+My friends, a holiday is not only about travel; it is about memories, friendship and peace. Let us enjoy every moment and keep the beauty in our hearts! That's all. Thank you for listening!`;
 
 /* ===== 五题型 AI 教练提示词 + 可复制短文（严格按中考听说考评维度）===== */
 const DATA = {
@@ -259,7 +293,7 @@ const DATA = {
     prompt:`你是广东中考英语听说教练。请生成「信息转述」训练：根据上面短文生成思维导图要点，准备40–50秒、在60秒内用连接词把全部要点串成完整语段（不可零散逐个念要点）。\n评分维度：①要点覆盖完整2分；②内容准确2分；③语言连贯（衔接词运用）1分；④语法与发音正确1分。\n提供独白与要点，等我口述后按维度评分并给参考范文。`
   },
   p32:{
-    prompt:`你是广东中考英语听说教练。请生成「口头询问」训练：根据上面短文主题场景文字提示，要求我造一句特殊疑问句（what/when/where/how 等），限时8秒，且不能是一般疑问句（一般疑问句）。\n评分维度：①句式正确（特殊疑问句）1分；②疑问词恰当1分；③信息合理1分。\n提供场景，等我提问后点评并给参考问句。`
+    prompt:`你是广东中考英语听说教练。请生成「口头询问」训练：根据上面短文主题场景文字提示，要求我造一句特殊疑问句（what/when/where/how 等），限时8秒，且不能是一艘疑问句（一般疑问句）。\n评分维度：①句式正确（特殊疑问句）1分；②疑问词恰当1分；③信息合理1分。\n提供场景，等我提问后点评并给参考问句。`
   }
 };
 

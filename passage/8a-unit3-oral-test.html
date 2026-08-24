@@ -115,6 +115,27 @@ body{
   .ai-area iframe{height:420px}
   .container{padding:0 12px 70px}
 }
+  /* 底部导航：返回 / 语法解读 / 口语测评 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(28px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
 </style>
 </head>
 <body>
@@ -124,7 +145,7 @@ body{
   <!-- 页头 -->
   <div class="hero">
     <h1>广东（汕头）中考英语听说 · 备考训练</h1>
-    <div class="sub">六年级上册 Unit 1 · My Favourite Trip · 满分 30 分 · 三大板块 · 五大题型 · 配 AI 教练陪练</div>
+    <div class="sub">满分 30 分 · 三大板块 · 五大题型 · 配 AI 教练陪练</div>
   </div>
 
   <!-- 三大板块切换 -->
@@ -141,12 +162,14 @@ body{
     <div class="card-top">
       <div class="card-name">📄 训练文本</div>
     </div>
-    <div class="label">📜 演讲稿全文（六年级上册 Unit 1 · My Favourite Trip）</div>
-    <div class="example training-text" style="white-space:pre-wrap">Good morning, my dear teachers and friends! Today, my topic is My Favourite Trip.
+    <div class="label">📜 演讲稿全文（8A Unit 3 · Same or Different）</div>
+    <div class="example training-text" style="white-space:pre-wrap">Good morning, my dear teachers and friends! Today, my topic is Same or Different?
 
-Last summer, I went to a small village with my parents. The village was about ten kilometres away from our city, and we climbed a mountain about a thousand metres high. We walked through the village and saw beautiful fields and rivers. The view from the top was really inspiring.
+My best friend Tom and I are different in appearance but alike in personality. I am shy, and I am not as outgoing as Tom is — he is outgoing and loud, while I am quiet. I am a little lazy about sports, but Tom is hard-working. We have something in common, though: we both love music. We met by accident at the music club. He can play the flute, and he is tall and slim. We share our hobbies every day. Our friendship grows stronger because of our differences. Tom is straightforward and honest. He never hides his opinion. I am serious and careful, and my strength is solving problems. In a difficult situation, I try to reach the answer myself and never expect others to do it for me. Sometimes we disagree, but we never hurt each other's feelings. We exchange small gifts on birthdays. His warm character always makes me smile. Our problems become less difficult when we work together.
 
-We saw bamboo trees and a gingerbread house in the village. We ate pumpkin soup in a nice restaurant, and the food was delicious. We also visited an airport nearby. In the old days, people used clay to make houses, and the roads were dry and dusty. I took many photos with my camera, and I sent them to my friends. After the trip, I felt I had learned a lot about our beautiful country!
+Last week, we attended the school art festival. Tom won a prize for his flute performance! Congratulations! I told everyone about the difference in population between big cities and small towns, and the average rainfall per year in our city. These facts may sound boring, but we made them interesting. In my spare time, I read novels — reading is a great pleasure for me. I look in the mirror to practise my speech, and my interest in writing grows day by day. I always have spare time for my hobbies.
+
+Every person has a unique personality and a different sense of humour. We may have differences, but we also have similarities. In my opinion, friends don't need to be the same; they just need to care about each other. Every difficulty has a silver lining, and every friendship is valuable. It is pleasant to have a friend like Tom.
 
 That's all. Thank you for listening!</div>
     <div class="actions">
@@ -162,7 +185,7 @@ That's all. Thank you for listening!</div>
     </div>
     <div class="label">📐 中考考试规则</div>
     <div class="rules">
-      先听一遍完整音频（短文约 <b>70–90 词</b>）→ <b>30 秒</b>预览文本 → <b>70 秒</b>内朗读全文并录音。（本次仅需任意朗读上文两段即可）<br>
+      先听一遍完整音频（短文约 <b>110–130 词</b>）→ <b>30 秒</b>预览文本 → <b>70 秒</b>内朗读全文并录音。（本次仅需任意朗读上文两段即可）<br>
       评分四维：<b>①发音准确</b>　<b>②流畅不停顿</b>　<b>③完整不漏词</b>　<b>④语调自然</b>。
     </div>
     <div class="actions">
@@ -229,7 +252,12 @@ That's all. Thank you for listening!</div>
     <div class="foot">
     <div class="strong">广东中考 · 英语听说训练</div>
     <div>切换上方板块查看对应题型；卡片内【复制提示词】可一键发送给AI 教练，顶部【复制文本】可复制演讲稿全文练习朗读。<br>© 2026 两英豆豆教练</div>
-    <a href="index.html" class="btn-home">🏠 返回主页</a>
+      <nav class="page-footer">
+    <a href="index.html" class="home">🏠 返回主页</a>
+    <a href="8a-unit3-grammar.html" class="grammar">📖 语法解读</a>
+    <a href="8a-unit3-oral-test.html" class="oral">🎤 口语测评</a>
+  </nav>
+
   </div>
 
 </div>
@@ -238,12 +266,14 @@ That's all. Thank you for listening!</div>
 <div class="toast" id="toast"><span class="ck">✓</span><span id="toast-msg">已复制</span></div>
 
 <script>
-/* ===== 六年级上册 Unit 1 演讲稿全文（训练文本，供复制）===== */
-const TRAINING_TEXT = `Good morning, my dear teachers and friends! Today, my topic is My Favourite Trip.
+/* ===== 8A Unit 3 演讲稿全文（训练文本，供复制）===== */
+const TRAINING_TEXT = `Good morning, my dear teachers and friends! Today, my topic is Same or Different?
 
-Last summer, I went to a small village with my parents. The village was about ten kilometres away from our city, and we climbed a mountain about a thousand metres high. We walked through the village and saw beautiful fields and rivers. The view from the top was really inspiring.
+My best friend Tom and I are different in appearance but alike in personality. I am shy, and I am not as outgoing as Tom is — he is outgoing and loud, while I am quiet. I am a little lazy about sports, but Tom is hard-working. We have something in common, though: we both love music. We met by accident at the music club. He can play the flute, and he is tall and slim. We share our hobbies every day. Our friendship grows stronger because of our differences. Tom is straightforward and honest. He never hides his opinion. I am serious and careful, and my strength is solving problems. In a difficult situation, I try to reach the answer myself and never expect others to do it for me. Sometimes we disagree, but we never hurt each other's feelings. We exchange small gifts on birthdays. His warm character always makes me smile. Our problems become less difficult when we work together.
 
-We saw bamboo trees and a gingerbread house in the village. We ate pumpkin soup in a nice restaurant, and the food was delicious. We also visited an airport nearby. In the old days, people used clay to make houses, and the roads were dry and dusty. I took many photos with my camera, and I sent them to my friends. After the trip, I felt I had learned a lot about our beautiful country!
+Last week, we attended the school art festival. Tom won a prize for his flute performance! Congratulations! I told everyone about the difference in population between big cities and small towns, and the average rainfall per year in our city. These facts may sound boring, but we made them interesting. In my spare time, I read novels — reading is a great pleasure for me. I look in the mirror to practise my speech, and my interest in writing grows day by day. I always have spare time for my hobbies.
+
+Every person has a unique personality and a different sense of humour. We may have differences, but we also have similarities. In my opinion, friends don't need to be the same; they just need to care about each other. Every difficulty has a silver lining, and every friendship is valuable. It is pleasant to have a friend like Tom.
 
 That's all. Thank you for listening!`;
 
@@ -259,7 +289,7 @@ const DATA = {
     prompt:`你是广东中考英语听说教练。请生成「信息转述」训练：根据上面短文生成思维导图要点，准备40–50秒、在60秒内用连接词把全部要点串成完整语段（不可零散逐个念要点）。\n评分维度：①要点覆盖完整2分；②内容准确2分；③语言连贯（衔接词运用）1分；④语法与发音正确1分。\n提供独白与要点，等我口述后按维度评分并给参考范文。`
   },
   p32:{
-    prompt:`你是广东中考英语听说教练。请生成「口头询问」训练：根据上面短文主题场景文字提示，要求我造一句特殊疑问句（what/when/where/how 等），限时8秒，且不能是一般疑问句（一般疑问句）。\n评分维度：①句式正确（特殊疑问句）1分；②疑问词恰当1分；③信息合理1分。\n提供场景，等我提问后点评并给参考问句。`
+    prompt:`你是广东中考英语听说教练。请生成「口头询问」训练：根据上面短文主题场景文字提示，要求我造一句特殊疑问句（what/when/where/how 等），限时8秒，且不能是一艘疑问句（一般疑问句）。\n评分维度：①句式正确（特殊疑问句）1分；②疑问词恰当1分；③信息合理1分。\n提供场景，等我提问后点评并给参考问句。`
   }
 };
 
