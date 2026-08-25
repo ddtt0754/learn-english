@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Our Changing World · 单词拼写练习</title>
+<style>
+  :root{--bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;--red:#e53935;--accent:#2e9e6b;--accent2:#3bb98a;--line:#e9efe9;--soft:#f4f9f6;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;padding-bottom:84px;-webkit-font-smoothing:antialiased;}
+  header{background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;padding:16px 14px 12px;text-align:center;box-shadow:0 2px 10px rgba(46,158,107,.25);}
+  header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.5px;}
+  header p{margin:4px 0 0;font-size:12px;opacity:.92;}
+  .bar{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:11px;flex-wrap:wrap;}
+  .timer{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.85);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;}
+  .toggle-btn{min-height:38px;padding:0 15px;border:1.5px solid rgba(255,255,255,.85);background:rgba(255,255,255,.16);color:#fff;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,transform .08s;}
+  .toggle-btn:active{transform:scale(.97);}
+  .toggle-btn.active{background:#fff;color:var(--accent);border-color:#fff;}
+  .wrap{max-width:760px;margin:0 auto;padding:14px 12px 8px;}
+  .tip{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 14px;font-size:13px;color:var(--muted);}
+  .tip b{color:var(--accent);}
+  .card{background:var(--card);border-radius:14px;padding:14px 16px 16px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid var(--line);}
+  .card-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .seq{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(46,158,107,.25);}
+  .btn-play{flex:0 0 auto;min-height:34px;padding:0 14px;border:none;border-radius:18px;background:var(--accent);color:#fff;font-size:13px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:transform .08s,filter .2s;}
+  .btn-play:active{transform:scale(.97);}
+  .btn-play:hover{filter:brightness(1.05);}
+  .en-sentence{font-size:16.5px;padding:6px 2px;}
+  @media (min-width:760px){.en-sentence{font-size:17.5px;}}
+  .blank{display:inline-flex;flex-direction:column;vertical-align:baseline;margin:0 2px;}
+  .spell{width:7.5em;min-width:64px;padding:4px 8px;border:1.5px solid var(--accent);border-radius:8px;font-size:15px;text-align:center;color:var(--ink);background:#fff;outline:none;transition:border-color .15s,box-shadow .15s;font-family:inherit;}
+  .spell:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(46,158,107,.15);}
+  .spell.correct{border-color:#2e9e6b;background:#eafaf1;color:#1f7d56;}
+  .spell.wrong{border-color:var(--red);background:#fdecec;color:var(--red);}
+  .blank-hint{font-size:12px;color:var(--muted);text-align:center;margin-top:2px;line-height:1.4;display:none;}
+  .blank-hint .ph{color:var(--red);font-family:"Arial",sans-serif;}
+  .fixed-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:1px solid var(--line);box-shadow:0 -3px 14px rgba(30,50,40,.08);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;max-width:760px;margin:0 auto;}
+  .fixed-bar .fbtn{flex:1;min-height:46px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .08s,filter .2s;}
+  .fixed-bar .fbtn:active{transform:scale(.97);}
+  .fbtn-submit{background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;box-shadow:0 4px 12px rgba(46,158,107,.22);}
+  .fbtn-book{background:#fff;color:var(--accent);border:1.5px solid var(--accent);flex:0 0 auto;min-width:120px;}
+  .fbtn-reset{background:#fff;color:var(--muted);border:1.5px solid var(--line);flex:0 0 auto;min-width:84px;}
+  .report{background:var(--card);border-radius:14px;padding:16px 16px 18px;margin:0 0 14px;box-shadow:0 3px 14px rgba(30,50,40,.07);border:1px solid var(--line);}
+  .report h2{font-size:17px;color:var(--accent);margin:0 0 12px;padding-left:10px;border-left:4px solid var(--accent);}
+  .stats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .stat{flex:1 1 30%;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center;}
+  .stat .num{font-size:22px;font-weight:800;color:var(--accent);line-height:1.1;}
+  .stat .lab{font-size:12px;color:var(--muted);margin-top:2px;}
+  .stat.bad .num{color:var(--red);}
+  .wrong-card{border:1px solid #f4d3d3;background:#fff7f7;border-radius:12px;padding:12px 14px;margin:0 0 12px;}
+  .wrong-sentence{font-size:16px;line-height:1.85;margin-bottom:8px;}
+  .err-word{color:var(--red);font-weight:800;border-bottom:2px solid var(--red);padding:0 2px;}
+  .wrong-detail{font-size:13.5px;color:#5a4a4a;}
+  .wrong-detail .correct{color:var(--red);font-weight:700;}
+  .wrong-detail .your{color:var(--red);}
+  .add-book{margin-top:10px;min-height:36px;padding:0 14px;border:1.5px solid var(--accent);background:#fff;color:var(--accent);border-radius:18px;font-size:13px;font-weight:700;cursor:pointer;transition:transform .08s,background .2s;}
+  .add-book:active{transform:scale(.97);}
+  .add-book.added{background:var(--accent);color:#fff;cursor:default;}
+  .report-actions{display:flex;gap:10px;margin-top:6px;}
+  .report-actions button{flex:1;min-height:44px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;}
+  .btn-retry{background:var(--accent);color:#fff;}
+  .all-correct{background:#eafaf1;border:1px solid #bfe9cf;color:#1f7d56;border-radius:12px;padding:14px;text-align:center;font-size:15px;font-weight:700;}
+  .modal{position:fixed;inset:0;background:rgba(20,40,30,.5);display:none;align-items:flex-start;justify-content:center;padding:24px 12px;z-index:50;overflow:auto;}
+  .modal.show{display:flex;}
+  .book-panel{background:#fff;border-radius:16px;max-width:680px;width:100%;padding:18px 18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.2);}
+  .book-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+  .book-head h3{margin:0;font-size:17px;color:var(--accent);}
+  .book-close{border:none;background:var(--soft);color:var(--muted);border-radius:10px;min-width:36px;min-height:36px;font-size:18px;cursor:pointer;}
+  .book-tools{display:flex;gap:10px;margin-bottom:12px;}
+  .book-tools button{flex:1;min-height:40px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;border:1.5px solid var(--accent);}
+  .btn-print{background:var(--accent);color:#fff;}
+  .btn-clear{background:#fff;color:var(--red);border-color:#f0b9b9;}
+  .book-list{max-height:60vh;overflow:auto;}
+  .book-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;}
+  .book-item .bi-word{font-size:16px;font-weight:700;color:var(--ink);min-width:84px;}
+  .book-item .bi-ph{color:var(--red);font-family:"Arial",sans-serif;font-size:13px;}
+  .book-item .bi-gloss{color:var(--muted);font-size:13px;flex:1;}
+  .book-item .bi-del{border:none;background:#fdecec;color:var(--red);border-radius:8px;min-width:34px;min-height:34px;font-size:16px;cursor:pointer;}
+  .book-empty{text-align:center;color:var(--muted);padding:28px 10px;font-size:14px;}
+  
+  
+  
+  @media print{
+    body{padding:0;background:#fff;}
+    body *{visibility:hidden;}
+    #bookModal,#bookModal *{visibility:visible;}
+    #bookModal{position:absolute;inset:0;display:flex!important;background:#fff;padding:0;align-items:flex-start;}
+    .book-panel{box-shadow:none;max-width:none;width:100%;}
+    .book-tools,.book-close{display:none!important;}
+    .book-item{border:1px solid #ccc;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+  /* 底部导航：返回主页 / 语法解读 / 口语测评 / 拼写练习 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Unit 1 · 单词拼写练习</h1>
+  <p>人教版九年级上册 · 汕头 2027 中考 · 美式女声听音拼写</p>
+  <div class="bar">
+    <span class="timer">⏱ 用时 <b id="timer">00:00</b></span>
+    <button class="toggle-btn" id="btnPh" type="button">音标提示</button>
+    <button class="toggle-btn" id="btnGloss" type="button">释义提示</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="tip">每句生词已隐藏，请在空格中拼写；点击 <b>▶ 播放</b> 听句子语音；顶部标签可切换<b>音标/释义</b>提示。全部完成后点击底部<b>提交</b>出具报告。</div>
+  <div id="content"></div>
+  <div id="reportArea"></div>
+</div>
+
+<div class="fixed-bar">
+  <button class="fbtn fbtn-reset" id="btnReset" type="button">重置</button>
+  <button class="fbtn fbtn-book" id="btnBook" type="button">📒 错词本 (0)</button>
+  <button class="fbtn fbtn-submit" id="btnSubmit" type="button">提交</button>
+</div>
+
+<!-- 错词本弹窗 -->
+<div class="modal" id="bookModal" aria-hidden="true">
+  <div class="book-panel">
+    <div class="book-head">
+      <h3>📒 错词本</h3>
+      <button class="book-close" id="bookClose" type="button">×</button>
+    </div>
+    <div class="book-tools">
+      <button class="btn-print" id="btnPrint" type="button">💻 打印</button>
+      <button class="btn-clear" id="btnClear" type="button">🗑 清空</button>
+    </div>
+    <div class="book-list" id="bookList"></div>
+  </div>
+</div>
+
+<!-- 底部导航：返回主页 / 语法解读 / 口语测评 / 拼写练习 -->
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回主页</a>
+  <a href="9a-unit1-grammar.html" class="grammar">📖 语法解读</a>
+  <a href="9a-unit1-oral-test.html" class="oral">🎤 口语测评</a>
+  <a href="9a-unit1-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav>
+
+<script>
+"use strict";
+const DATA = {"sentences": [{"seq": 1, "spoken": "In my hometown, a sandstorm sometimes sweeps through.", "display": "In my hometown, a \u00010\u0002 sometimes sweeps through.", "widxs": [0]}, {"seq": 2, "spoken": "The land is sandy, and the soil is poor.", "display": "The land is \u00011\u0002, and the \u00012\u0002 is poor.", "widxs": [1, 2]}, {"seq": 3, "spoken": "We have a shortage of clean water, so our farmland is shrinking.", "display": "We have a \u00013\u0002 of clean water, so our \u00014\u0002 is shrinking.", "widxs": [3, 4]}, {"seq": 4, "spoken": "We never lack hope, but a bush can hardly grow, and even a tree's root is hard to find.", "display": "We never \u00015\u0002 hope, but a \u00016\u0002 can hardly grow, and even a tree's \u00017\u0002 is hard to find.", "widxs": [5, 6, 7]}, {"seq": 5, "spoken": "The old road is rough and narrow.", "display": "The old road is \u00018\u0002 and \u00019\u0002.", "widxs": [8, 9]}, {"seq": 6, "spoken": "Then our government steps in to help.", "display": "Then our \u000110\u0002 steps in to help.", "widxs": [10]}, {"seq": 7, "spoken": "They have built greenhouses to grow corn.", "display": "They have built \u000111\u0002.", "widxs": [11]}, {"seq": 8, "spoken": "They have opened a wide highway and a new railway.", "display": "They have opened a \u000112\u0002 \u000113\u0002 and a new \u000114\u0002.", "widxs": [12, 13, 14]}, {"seq": 9, "spoken": "The hills are covered with green trees.", "display": "The hills are \u000115\u0002 green trees.", "widxs": [15]}, {"seq": 10, "spoken": "These efforts bring about a better life, and they ease the burden on farmers.", "display": "These efforts \u000116\u0002 a better life, and they \u000117\u0002 the burden on farmers.", "widxs": [16, 17]}, {"seq": 11, "spoken": "Now a villager lives in a bright flat with safe housing.", "display": "Now a \u000118\u0002 lives in a bright \u000119\u0002 with safe \u000120\u0002.", "widxs": [18, 19, 20]}, {"seq": 12, "spoken": "We are satisfied with our quiet, clean town.", "display": "We are \u000121\u0002 our quiet, clean town.", "widxs": [21]}, {"seq": 13, "spoken": "We use e-payment and many electronic tools.", "display": "We use \u000122\u0002 and many \u000123\u0002 tools.", "widxs": [22, 23]}, {"seq": 14, "spoken": "They are convenient and high-tech.", "display": "They are \u000124\u0002 and \u000125\u0002.", "widxs": [24, 25]}, {"seq": 15, "spoken": "We can link to the world through the internet, and listen to audio books easily.", "display": "We can \u000126\u0002 to the world through the internet, and listen to \u000127\u0002 books \u000128\u0002.", "widxs": [26, 27, 28]}, {"seq": 16, "spoken": "Man-made satellites support our studies, and they help us greatly.", "display": "\u000129\u0002 satellites \u000130\u0002 our studies, and they help us \u000131\u0002.", "widxs": [29, 30, 31]}, {"seq": 17, "spoken": "Let me tell you a story from Mombasa, a busy port in Kenya.", "display": "Let me tell you a story from \u000132\u0002, a busy \u000133\u0002 in Kenya.", "widxs": [32, 33]}, {"seq": 18, "spoken": "A young Kenyan, a truck manager, runs his business there.", "display": "A young \u000134\u0002, a \u000135\u0002 \u000136\u0002, runs his \u000137\u0002 there.", "widxs": [34, 35, 36, 37]}, {"seq": 19, "spoken": "He sends each product by truck to the capital.", "display": "He sends each \u000138\u0002 by truck to the \u000139\u0002.", "widxs": [38, 39]}, {"seq": 20, "spoken": "This is a real miracle.", "display": "This is a real \u000140\u0002.", "widxs": [40]}, {"seq": 21, "spoken": "The attraction of this new life is strong, and it brings real benefit to people.", "display": "The \u000141\u0002 of this new life is strong, and it brings real \u000142\u0002 to people.", "widxs": [41, 42]}, {"seq": 22, "spoken": "Our socialist friends lead a happy life.", "display": "Our \u000143\u0002 friends \u000144\u0002 a happy life.", "widxs": [43, 44]}, {"seq": 23, "spoken": "Even the dust on the old path is gone.", "display": "Even the \u000145\u0002 on the old \u000146\u0002 is gone.", "widxs": [45, 46]}, {"seq": 24, "spoken": "The Olympic Games bring nations together.", "display": "The \u000147\u0002 bring nations together.", "widxs": [47]}, {"seq": 25, "spoken": "As junior students, we hold a discussion on every aspect of change.", "display": "As \u000148\u0002 students, we hold a \u000149\u0002 on every \u000150\u0002 of change.", "widxs": [48, 49, 50]}, {"seq": 26, "spoken": "In summary, our world is changing for the better.", "display": "In \u000151\u0002, our world is changing for the better.", "widxs": [51]}], "words": [{"word": "sandstorm", "ph": "/ˈsændstɔːrm/", "gloss": "n. 沙尘暴"}, {"word": "sandy", "ph": "/ˈsændi/", "gloss": "adj. 铺满沙子的；含沙的"}, {"word": "soil", "ph": "/sɔɪl/", "gloss": "n. 土壤"}, {"word": "shortage", "ph": "/ˈʃɔːrtɪdʒ/", "gloss": "n. 短缺；不足"}, {"word": "farmland", "ph": "/ˈfɑːrmlænd/", "gloss": "n. 耕地；农田"}, {"word": "lack", "ph": "/læk/", "gloss": "v. & n. 缺乏"}, {"word": "bush", "ph": "/bʊʃ/", "gloss": "n. 灌木"}, {"word": "root", "ph": "/ruːt/", "gloss": "n. 根"}, {"word": "rough", "ph": "/rʌf/", "gloss": "adj. 崎岖的；粗糙的"}, {"word": "narrow", "ph": "/ˈnæroʊ/", "gloss": "adj. 狭窄的"}, {"word": "government", "ph": "/ˈɡʌvərnmənt/", "gloss": "n. 政府"}, {"word": "greenhouse</strong>s <span class=\"ph\">/ˈɡriːnhaʊs/ n. 温室；大棚</span> to grow <strong>corn", "ph": "/kɔːrn/", "gloss": "n. 玉米；谷物"}, {"word": "wide", "ph": "/waɪd/", "gloss": "adj. 宽阔的"}, {"word": "highway", "ph": "/ˈhaɪweɪ/", "gloss": "n. 公路；高速公路"}, {"word": "railway", "ph": "/ˈreɪlweɪ/", "gloss": "n. 铁路"}, {"word": "covered with", "ph": "/bi ˈkʌvərd wɪð/", "gloss": "phr. 被……覆盖"}, {"word": "bring about", "ph": "/brɪŋ əˈbaʊt/", "gloss": "v. 带来；引起"}, {"word": "ease", "ph": "/iːz/", "gloss": "v. & n. 减轻；缓解"}, {"word": "villager", "ph": "/ˈvɪlɪdʒər/", "gloss": "n. 村民"}, {"word": "flat", "ph": "/flæt/", "gloss": "n. 公寓"}, {"word": "housing", "ph": "/ˈhaʊzɪŋ/", "gloss": "n. 住房；住宅"}, {"word": "satisfied with", "ph": "/bi ˈsætɪsfaɪd wɪð/", "gloss": "phr. 对……感到满意"}, {"word": "e-payment", "ph": "/ˈiː peɪmənt/", "gloss": "n. 电子支付"}, {"word": "electronic", "ph": "/ɪˌlekˈtrɑːnɪk/", "gloss": "adj. 电子的"}, {"word": "convenient", "ph": "/kənˈviːniənt/", "gloss": "adj. 方便的；便利的"}, {"word": "high-tech", "ph": "/ˌhaɪ ˈtek/", "gloss": "adj. 高科技的"}, {"word": "link", "ph": "/lɪŋk/", "gloss": "v. & n. 连接；联系"}, {"word": "audio", "ph": "/ˈɔːdiəʊ/", "gloss": "n. & adj. 音频（的）"}, {"word": "easily", "ph": "/ˈiːzəli/", "gloss": "adv. 容易地"}, {"word": "Man-made", "ph": "/ˌmæn ˈmeɪd/", "gloss": "adj. 人造的；非天然的"}, {"word": "support", "ph": "/səˈpɔːrt/", "gloss": "v. & n. 支持"}, {"word": "greatly", "ph": "/ˈɡreɪtli/", "gloss": "adv. 大大地；非常"}, {"word": "Mombasa", "ph": "/mɒmˈbæsə/", "gloss": "n. 蒙巴萨（肯尼亚城市）"}, {"word": "port", "ph": "/pɔːrt/", "gloss": "n. 港口"}, {"word": "Kenyan", "ph": "/ˈkenjən/", "gloss": "n. & adj. 肯尼亚人（的）"}, {"word": "truck", "ph": "/trʌk/", "gloss": "n. 卡车"}, {"word": "manager", "ph": "/ˈmænɪdʒər/", "gloss": "n. 经理"}, {"word": "business", "ph": "/ˈbɪznəs/", "gloss": "n. 生意；商业"}, {"word": "product", "ph": "/ˈprɑːdʌkt/", "gloss": "n. 产品"}, {"word": "capital", "ph": "/ˈkæpɪtl/", "gloss": "n. 首都"}, {"word": "miracle", "ph": "/ˈmɪrəkl/", "gloss": "n. 奇迹"}, {"word": "attraction", "ph": "/əˈtrækʃn/", "gloss": "n. 向往的地方；吸引力"}, {"word": "benefit", "ph": "/ˈbenɪfɪt/", "gloss": "n. & v. 益处；使受益"}, {"word": "socialist", "ph": "/ˈsoʊʃəlɪst/", "gloss": "adj. 社会主义的"}, {"word": "lead", "ph": "/liːd/", "gloss": "v. 带领；过（某种生活）"}, {"word": "dust", "ph": "/dʌst/", "gloss": "n. 尘土"}, {"word": "path", "ph": "/pɑːθ/", "gloss": "n. 小路；小径"}, {"word": "Olympic Games", "ph": "/ðə əˈlɪmpɪk ˈɡeɪmz/", "gloss": "n. 奥林匹克运动会"}, {"word": "junior", "ph": "/ˈdʒuːniər/", "gloss": "adj. 低年级的；初级的"}, {"word": "discussion", "ph": "/dɪˈskʌʃn/", "gloss": "n. 讨论"}, {"word": "aspect", "ph": "/ˈæspekt/", "gloss": "n. 方面"}, {"word": "summary", "ph": "/ˈsʌməri/", "gloss": "n. 总结；概括"}]};
+const WORDS = DATA.words;
+const SENTENCES = DATA.sentences;
+const UNIT = "9A Unit 1 · Our Changing World";
+const STORE_KEY = "spelling_wrongbook_v1";
+
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function appendLiteral(parent,text){var t=document.createElement("span");t.innerHTML=text;while(t.firstChild)parent.appendChild(t.firstChild);}
+
+/* ---------- 渲染句子 ---------- */
+const content=document.getElementById("content");
+const TOKEN_RE=/(\d+)/g;
+SENTENCES.forEach(function(s){
+  const card=document.createElement("div");card.className="card";
+  const head=document.createElement("div");head.className="card-head";
+  const seq=document.createElement("span");seq.className="seq";seq.textContent=s.seq;
+  const pbtn=document.createElement("button");pbtn.className="btn-play";pbtn.type="button";pbtn.textContent="▶ 播放";
+  pbtn.addEventListener("click",function(){playText(s.spoken);});
+  head.appendChild(seq);head.appendChild(pbtn);
+  const en=document.createElement("div");en.className="en-sentence";
+  const parts=s.display.split(TOKEN_RE);
+  parts.forEach(function(part,i){
+    if(i%2===1){
+      const widx=parseInt(part,10);
+      const blank=document.createElement("span");blank.className="blank";
+      const inp=document.createElement("input");inp.className="spell";inp.type="text";inp.autocomplete="off";inp.spellcheck=false;inp.dataset.w=widx;
+      const hint=document.createElement("span");hint.className="blank-hint";hint.dataset.w=widx;
+      blank.appendChild(inp);blank.appendChild(hint);en.appendChild(blank);
+    }else{appendLiteral(en,part);}
+  });
+  card.appendChild(head);card.appendChild(en);content.appendChild(card);
+});
+
+/* ---------- 提示切换 ---------- */
+let showPh=false,showGloss=false;
+function updateHints(){
+  document.querySelectorAll(".blank-hint").forEach(function(el){
+    const w=WORDS[parseInt(el.dataset.w,10)];
+    let ph="",gl="";
+    if(showPh) ph='<span class="ph">'+escapeHtml(w.ph)+"</span>";
+    if(showGloss) gl='<span class="gl">'+escapeHtml(w.gloss)+"</span>";
+    const txt=ph+(ph&&gl?"  ·  ":"")+gl;
+    el.innerHTML=txt;
+    el.style.display=txt?"block":"none";
+  });
+}
+document.getElementById("btnPh").addEventListener("click",function(){showPh=!showPh;this.classList.toggle("active",showPh);updateHints();});
+document.getElementById("btnGloss").addEventListener("click",function(){showGloss=!showGloss;this.classList.toggle("active",showGloss);updateHints();});
+
+/* ---------- 语音播放 ---------- */
+const synth=window.speechSynthesis;
+function pickVoice(){
+  if(!synth)return null;
+  const vs=synth.getVoices()||[];
+  const en=vs.filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf("en")===0;});
+  if(!en.length)return null;
+  const fav=en.filter(function(v){const n=v.name.toLowerCase();return /female|samantha|zira|google us|karen|tessa|victoria|allison|aria/i.test(n)&&(v.lang.toLowerCase().indexOf("en-us")===0||v.default);});
+  if(fav.length)return fav[0];
+  const us=en.filter(function(v){return v.lang.toLowerCase()==="en-us";});
+  return us.length?us[0]:en[0];
+}
+function playText(text){
+  if(!synth){alert("当前浏览器不支持语音朗读（Web Speech API）。");return;}
+  synth.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang="en-US";const v=pickVoice();if(v)u.voice=v;
+  u.rate=0.92;u.pitch=1.05;
+  synth.speak(u);
+}
+if(synth&&typeof synth.onvoiceschanged!=="undefined"){synth.onvoiceschanged=function(){};}
+
+/* ---------- 计时 ---------- */
+const startTime=Date.now();
+let frozen=false;
+function fmt(ms){const s=Math.floor(ms/1000);const m=Math.floor(s/60);const r=s%60;return (m<10?"0":"")+m+":"+(r<10?"0":"")+r;}
+function tick(){if(frozen)return;document.getElementById("timer").textContent=fmt(Date.now()-startTime);}
+const timerId=setInterval(tick,1000);tick();
+
+/* ---------- 错词本 ---------- */
+function loadBook(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||"[]");}catch(e){return [];}}
+function saveBook(b){localStorage.setItem(STORE_KEY,JSON.stringify(b));}
+function updateBookCount(){const n=loadBook().length;document.getElementById("btnBook").textContent="📒 错词本 ("+n+")";}
+function addToBook(idx){
+  const w=WORDS[idx];const book=loadBook();
+  if(book.some(function(x){return x.word===w.word;}))return false;
+  book.push({word:w.word,ph:w.ph,gloss:w.gloss,unit:UNIT,ts:Date.now()});
+  saveBook(book);updateBookCount();return true;
+}
+function renderBook(){
+  const book=loadBook();const list=document.getElementById("bookList");
+  if(!book.length){list.innerHTML='<div class="book-empty">错词本还是空的。在练习报告中点击“加入错词本”即可收录。</div>';return;}
+  let h="";
+  book.forEach(function(x){
+    h+='<div class="book-item"><span class="bi-word">'+escapeHtml(x.word)+'</span>'
+      +'<span class="bi-ph">'+escapeHtml(x.ph)+'</span>'
+      +'<span class="bi-gloss">'+escapeHtml(x.gloss)+'</span>'
+      +'<button class="bi-del" data-w="'+escapeHtml(x.word)+'" title="删除">×</button></div>';
+  });
+  list.innerHTML=h;
+}
+updateBookCount();
+const bookModal=document.getElementById("bookModal");
+document.getElementById("btnBook").addEventListener("click",function(){renderBook();bookModal.classList.add("show");bookModal.setAttribute("aria-hidden","false");});
+document.getElementById("bookClose").addEventListener("click",function(){bookModal.classList.remove("show");bookModal.setAttribute("aria-hidden","true");});
+bookModal.addEventListener("click",function(e){if(e.target===bookModal){bookModal.classList.remove("show");}});
+document.getElementById("btnPrint").addEventListener("click",function(){window.print();});
+document.getElementById("btnClear").addEventListener("click",function(){if(confirm("确定清空错词本？")){localStorage.removeItem(STORE_KEY);renderBook();updateBookCount();}});
+document.getElementById("bookList").addEventListener("click",function(e){const b=e.target.closest(".bi-del");if(!b)return;const w=b.dataset.w;const book=loadBook().filter(function(x){return x.word!==w;});saveBook(book);renderBook();updateBookCount();});
+
+/* ---------- 提交 ---------- */
+function sentenceOf(widx){for(let i=0;i<SENTENCES.length;i++){if(SENTENCES[i].widxs.indexOf(widx)>=0)return SENTENCES[i];}return null;}
+function renderRedSentence(s,redWidx){
+  const parts=s.display.split(TOKEN_RE);let html="";
+  parts.forEach(function(part,i){
+    if(i%2===1){const widx=parseInt(part,10);
+      if(widx===redWidx){html+='<span class="err-word">'+escapeHtml(WORDS[widx].word)+"</span>";}
+      else{html+=escapeHtml(WORDS[widx].word);}
+    }else{html+=escapeHtml(part);}
+  });
+  return html;
+}
+function submit(){
+  if(frozen)return;
+  frozen=true;clearInterval(timerId);
+  const elapsed=Date.now()-startTime;
+  const results=[];let correct=0;
+  WORDS.forEach(function(w,idx){
+    const inp=document.querySelector('.spell[data-w="'+idx+'"]');
+    const val=(inp?inp.value:"").trim().replace(/\s+/g," ");
+    const ans=w.word.trim().replace(/\s+/g," ");
+    const ok=val.length>0&&val.toLowerCase()===ans.toLowerCase();
+    if(inp){inp.classList.add(ok?"correct":"wrong");}
+    if(ok)correct++;else results.push({idx:idx,val:val});
+  });
+  const total=WORDS.length;const wrong=results.length;const acc=total?Math.round(correct/total*100):0;
+  const area=document.getElementById("reportArea");
+  let h='<div class="report"><h2>练习报告</h2>';
+  h+='<div class="stats">'
+    +'<div class="stat"><div class="num">'+fmt(elapsed)+'</div><div class="lab">用时</div></div>'
+    +'<div class="stat"><div class="num">'+total+'</div><div class="lab">总词数</div></div>'
+    +'<div class="stat"><div class="num">'+correct+'</div><div class="lab">正确</div></div>'
+    +'<div class="stat bad"><div class="num">'+wrong+'</div><div class="lab">错误</div></div>'
+    +'<div class="stat"><div class="num">'+acc+'%</div><div class="lab">正确率</div></div>'
+    +'</div>';
+  if(!wrong){
+    h+='<div class="all-correct">🎉 全部拼写正确！用时 '+fmt(elapsed)+'，正确率 100%。</div>';
+  }else{
+    h+='<div class="wrong-list">';
+    results.forEach(function(r){
+      const w=WORDS[r.idx];const s=sentenceOf(r.idx);
+      h+='<div class="wrong-card">';
+      h+='<div class="wrong-sentence">句'+s.seq+'：'+renderRedSentence(s,r.idx)+'</div>';
+      h+='<div class="wrong-detail">正确：<b class="correct">'+escapeHtml(w.word)+'</b>'
+        +' <span class="ph" style="color:#e53935;font-family:Arial">'+escapeHtml(w.ph)+'</span> '+escapeHtml(w.gloss)
+        +'<br>你的答案：<span class="your">'+(r.val?escapeHtml(r.val):"(空)")+'</span></div>';
+      h+='<button class="add-book" data-w="'+r.idx+'">＋ 加入错词本</button>';
+      h+='</div>';
+    });
+    h+='</div>';
+  }
+  h+='<div class="report-actions"><button class="btn-retry" id="btnRetry" type="button">↻ 重新练习</button></div>';
+  h+='</div>';
+  area.innerHTML=h;
+  area.scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.getElementById("btnSubmit").addEventListener("click",submit);
+document.getElementById("reportArea").addEventListener("click",function(e){
+  const rb=e.target.closest(".add-book");
+  if(rb&&!rb.classList.contains("added")){addToBook(parseInt(rb.dataset.w,10));rb.textContent="✓ 已加入错词本";rb.classList.add("added");}
+  const rt=e.target.closest("#btnRetry");
+  if(rt){location.reload();}
+});
+
+/* ---------- 重置 ---------- */
+document.getElementById("btnReset").addEventListener("click",function(){
+  if(frozen&&!confirm("当前已提交，重置将清空答案并重新计时，是否继续？"))return;
+  document.querySelectorAll(".spell").forEach(function(inp){inp.value="";inp.classList.remove("correct","wrong");});
+  document.getElementById("reportArea").innerHTML="";
+  if(frozen){location.reload();}
+});
+</script>
+</body>
+</html>

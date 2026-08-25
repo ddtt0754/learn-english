@@ -93,9 +93,6 @@ body{
 /* 页尾 */
 .foot{text-align:center;color:var(--sub);font-size:.74rem;line-height:1.7;padding-top:8px}
 .foot .strong{color:var(--blue-d);font-weight:800;font-size:.82rem}
-.btn-home{display:inline-block;margin-top:14px;background:var(--brand);color:#fff;font-weight:800;font-size:.84rem;
-  padding:11px 28px;border-radius:12px;text-decoration:none;box-shadow:0 5px 14px rgba(46,158,107,.28);transition:transform .12s}
-.btn-home:active{transform:scale(.96)}
 
 /* Toast */
 .toast{position:fixed;left:50%;bottom:42px;transform:translateX(-50%) translateY(20px);
@@ -115,6 +112,28 @@ body{
   .ai-area iframe{height:420px}
   .container{padding:0 12px 70px}
 }
+  /* 底部导航：返回主页 / 语法解读 / 口语测评 / 拼写练习 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(28px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
 </style>
 </head>
 <body>
@@ -233,7 +252,6 @@ That's all. Thank you for listening!</div>
     <div class="foot">
     <div class="strong">广东中考 · 英语听说训练</div>
     <div>切换上方板块查看对应题型；卡片内【复制提示词】可一键发送给AI 教练，顶部【复制文本】可复制演讲稿全文练习朗读。<br>© 2026 两英豆豆教练</div>
-    <a href="index.html" class="btn-home">🏠 返回主页</a>
   </div>
 
 </div>
@@ -307,5 +325,11 @@ function showPart(p, el){
 /* 默认显示 Part1 */
 showPart('1', document.querySelector('.tab'));
 </script>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回主页</a>
+  <a href="5a-unit2-grammar.html" class="grammar">📖 语法解读</a>
+  <a href="5a-unit2-oral-test.html" class="oral">🎤 口语测评</a>
+  <a href="5a-unit2-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav>
 </body>
 </html>

@@ -100,6 +100,17 @@
   body.hide-word th:nth-child(2),body.hide-word td:nth-child(2){display:none;}
   /* 一键隐藏/恢复 释义列（第 5 列） */
   body.hide-cn th:nth-child(5),body.hide-cn td:nth-child(5){display:none;}
+
+  /* 底部返回主页按钮（链接至 passage/index.html） */
+  .back-home{
+    display:flex;align-items:center;justify-content:center;gap:6px;
+    width:max-content;margin:18px auto 0;padding:12px 34px;
+    background:#fff;color:#1fa873;border:1.5px solid #2e9e6b;border-radius:14px;
+    font-size:14.5px;font-weight:700;text-decoration:none;
+    box-shadow:0 4px 12px rgba(46,158,107,.12);
+    transition:transform .15s;touch-action:manipulation;user-select:none;-webkit-user-select:none;
+  }
+  .back-home:active{transform:scale(.97);}
 </style>
 </head>
 <body>
@@ -139,6 +150,7 @@
   </div>
   <div class="note">💡 说明：本表依据 2026 秋人教 PEP（新课标）三年级上册 Unit 6《Useful Numbers》教材词汇表整理；音标采用英式（DJ）标注。</div>
   <footer>© 2026 豆豆助理 · 三年级上册 Unit 6 课标单词表</footer>
+<a class="back-home" href="../index.html">🏠 返回主页</a>
 </div>
 
 <script>

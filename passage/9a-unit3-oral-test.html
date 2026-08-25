@@ -115,7 +115,12 @@ body{
   .ai-area iframe{height:420px}
   .container{padding:0 12px 70px}
 }
-  /* 底部导航：返回 / 语法解读 / 口语测评 */
+  
+  
+  
+  
+  
+  /* 底部导航：返回主页 / 语法解读 / 口语测评 / 拼写练习 */
   .page-footer{
     max-width:760px;
     margin:18px auto calc(28px + env(safe-area-inset-bottom));
@@ -132,7 +137,8 @@ body{
   .page-footer a:active{transform:scale(.97);}
   .page-footer a.home,
   .page-footer a.grammar,
-  .page-footer a.oral{
+  .page-footer a.oral,
+  .page-footer a.spelling{
     background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
     box-shadow:0 2px 6px rgba(46,158,107,.10);
   }
@@ -252,11 +258,12 @@ My friends, learning is a wonderful journey. Let us learn smart, grow strong, an
     <div class="foot">
     <div class="strong">广东中考 · 英语听说训练</div>
     <div>切换上方板块查看对应题型；卡片内【复制提示词】可一键发送给AI 教练，顶部【复制文本】可复制演讲稿全文练习朗读。<br>© 2026 两英豆豆教练</div>
-      <nav class="page-footer">
-    <a href="index.html" class="home">🏠 返回主页</a>
-    <a href="9a-unit3-grammar.html" class="grammar">📖 语法解读</a>
-    <a href="9a-unit3-oral-test.html" class="oral">🎤 口语测评</a>
-  </nav>
+      <nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回主页</a>
+  <a href="9a-unit3-grammar.html" class="grammar">📖 语法解读</a>
+  <a href="9a-unit3-oral-test.html" class="oral">🎤 口语测评</a>
+  <a href="9a-unit3-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav>
 
   </div>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Unit 1 演讲稿 · 跟读 H5</title>
+<title>Unit 1 对话稿 · 跟读 H5</title>
 <style>
   :root{--bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;--red:#e53935;--accent:#2e9e6b;--cn-bg:#f1f6fb;--cn-line:#4a90d9;--hi-en:#fff6da;--hi-en-line:#ffb300;--hi-cn:#e3f2fd;--hi-cn-line:#1e88e5;}
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
@@ -19,6 +19,8 @@
   .card-title{font-size:13px;font-weight:700;color:var(--accent);margin:0 0 8px;padding-left:10px;border-left:4px solid var(--accent);}
   .en-sentence{position:relative;padding:10px 12px;margin:8px 0;border-radius:10px;background:#fbfdfc;border:1px solid #eef3f1;font-size:16px;transition:background .25s,box-shadow .25s;cursor:pointer;}
   .en-sentence strong{font-weight:700;color:#16242c;}
+  .en-sentence .spk{display:inline-block;font-weight:700;color:#2e9e6b;background:#e8f5ee;border-radius:6px;padding:0 8px;margin-right:6px;font-size:14px;}
+  .en-sentence .spk.b{color:#2f6ba3;background:#eef4fb;}
   .en-sentence .ph{color:var(--red);font-size:.82em;font-family:"Arial",sans-serif;margin:0 2px;white-space:nowrap;transition:opacity .2s;}
   body.hide-ph .ph{display:none;}
   .en-sentence.speaking{background:var(--hi-en);box-shadow:inset 0 0 0 2px var(--hi-en-line);}
@@ -42,41 +44,71 @@
   .full-translation h2{font-size:14px;color:var(--cn-line);margin:0 0 10px;padding-left:10px;border-left:4px solid var(--cn-line);font-weight:700;}
   .full-translation p{margin:9px 0;color:#4a5a66;font-size:15px;line-height:1.8;}
   @media (min-width:760px){.en-sentence{font-size:17px;}.card{padding:18px 20px;}}
+  /* 底部导航：返回主页 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>A Good Friend · 跟读 H5</h1>
-  <p>人教PEP三年级上册 Unit 1 ｜ 汕头 2027 中考 ｜ 美式女声 · 单句跟读（只朗读英文）</p>
+  <h1>A Good Friend · 对话跟读 H5</h1>
+  <p>人教PEP三年级上册 Unit 1 ｜ 汕头 2027 中考 ｜ 双人对话 · 美式女声 · 单句跟读（只朗读英文）</p>
   <button class="top-toggle" id="btnTogglePh" type="button">隐藏音标注释</button>
 </header>
 
 <div class="wrap" id="content">
   <div class="card">
-    <div class="card-title">开场</div>
-    <div class="en-sentence" data-spoken="Good morning, my dear teachers and friends! Today, my topic is A Good Friend.">Good morning, my dear teachers and friends! Today, my topic is <i>A Good Friend</i>.</div>
-    <div class="cn">大家早上好！今天我演讲的题目是《好朋友》。</div>
+    <div class="card-title">开场 · 聊聊好朋友</div>
+    <div class="en-sentence" data-spoken="Amy: Good morning, Mike! Let's talk about our good friend."><span class="spk">Amy:</span> Good morning, Mike! Let's talk about our good friend.</div>
+    <div class="en-sentence" data-spoken="Mike: Good morning, Amy! Good idea!"><span class="spk b">Mike:</span> Good morning, Amy! Good idea!</div>
+    <div class="cn">艾米：早上好，迈克！我们来聊聊我们的好朋友吧。 迈克：早上好，艾米！好主意！</div>
   </div>
   <div class="card">
     <div class="card-title">① 我的好朋友</div>
-    <div class="en-sentence" data-spoken="I have a good friend.">I have a good <strong>friend</strong> <span class="ph">/frend/ n. 朋友</span>.</div>
-    <div class="en-sentence" data-spoken="He has two big eyes, two ears, a small mouth and two long arms.">He has two big <strong>eyes</strong> <span class="ph">/aɪ/ n. 眼睛</span>, two <strong>ears</strong> <span class="ph">/ɪə(r)/ n. 耳朵</span>, a small <strong>mouth</strong> <span class="ph">/maʊθ/ n. 嘴</span> and two long <strong>arms</strong> <span class="ph">/ɑːm/ n. 胳膊</span>.</div>
-    <div class="en-sentence" data-spoken="He can smile and say 'Hello!'">He <strong>can</strong> <span class="ph">/kæn/ v. 可以</span> <strong>smile</strong> <span class="ph">/smaɪl/ v. 微笑</span> and <strong>say</strong> <span class="ph">/seɪ/ v. 说；讲</span> "Hello!"</div>
-    <div class="en-sentence" data-spoken="He likes to share his toys with me.">He likes to <strong>share</strong> <span class="ph">/ʃeə(r)/ v. 分享</span> his <strong>toys</strong> <span class="ph">/tɔɪ/ n. 玩具</span> with me.</div>
-    <div class="en-sentence" data-spoken="When I listen to him, he listens to me too.">When I <strong>listen</strong> <span class="ph">/ˈlɪsn/ v. 听；倾听</span> to him, he listens to me too.</div>
-    <div class="en-sentence" data-spoken="We help each other, and we wave our hands and say 'Goodbye' at the end of the day.">We <strong>help</strong> <span class="ph">/help/ v. 帮助</span> each other, and we wave our <strong>hands</strong> <span class="ph">/hænd/ n. 手</span> and say "<strong>Goodbye</strong> <span class="ph">/ˌɡʊdˈbaɪ/ interj. 再见</span>" at the end of the day.</div>
-    <div class="en-sentence" data-spoken="He is a nice boy, and a good friend always plays fair.">He is a <strong>nice</strong> <span class="ph">/naɪs/ adj. 令人愉快的；友好的</span> boy, and a <strong>good</strong> <span class="ph">/ɡʊd/ adj. 好的</span> friend always plays fair.</div>
-    <div class="en-sentence" data-spoken="I am happy to have a friend like him, and I hope we can be good friends, too!">I am happy to have a friend like him, <strong>and</strong> <span class="ph">/ænd/ conj. 和；与</span> I hope we can be good friends, too!</div>
-    <div class="cn">我有一个好朋友。他有一双大眼睛、两只耳朵、一张小嘴和两条长胳膊。他会微笑，会说"你好！"他喜欢和我分享他的玩具。当我倾听他时，他也会倾听我。我们互相帮助，一天结束时，我们会挥手说"再见"。他是一个友好的男孩，好朋友总是遵守规则。有这样的朋友我很开心，我也希望我们能成为好朋友！</div>
-    <div class="en-sentence" data-spoken="That's all. Thank you for listening!">That's all. Thank you for listening!</div>
-    <div class="cn">我的演讲到此结束，谢谢大家！</div>
+    <div class="en-sentence" data-spoken="Amy: I have a good friend."><span class="spk">Amy:</span> I have a good <strong>friend</strong> <span class="ph">/frend/ n. 朋友</span>.</div>
+    <div class="en-sentence" data-spoken="Mike: Really? Tell me about him."><span class="spk b">Mike:</span> Really? Tell me about him.</div>
+    <div class="en-sentence" data-spoken="Amy: He has two big eyes, two ears, a small mouth and two long arms."><span class="spk">Amy:</span> He has two big <strong>eyes</strong> <span class="ph">/aɪ/ n. 眼睛</span>, two <strong>ears</strong> <span class="ph">/ɪə(r)/ n. 耳朵</span>, a small <strong>mouth</strong> <span class="ph">/maʊθ/ n. 嘴</span> and two long <strong>arms</strong> <span class="ph">/ɑːm/ n. 胳膊</span>.</div>
+    <div class="en-sentence" data-spoken="Mike: Wow! Can he smile?"><span class="spk b">Mike:</span> Wow! <strong>Can</strong> <span class="ph">/kæn/ v. 可以</span> he <strong>smile</strong> <span class="ph">/smaɪl/ v. 微笑</span>?</div>
+    <div class="en-sentence" data-spoken="Amy: Yes, he can smile and say 'Hello!'"><span class="spk">Amy:</span> Yes, he can smile and <strong>say</strong> <span class="ph">/seɪ/ v. 说；讲</span> "Hello!"</div>
+    <div class="en-sentence" data-spoken="Mike: That's nice! Does he like to share his toys with you?"><span class="spk b">Mike:</span> That's nice! Does he like to <strong>share</strong> <span class="ph">/ʃeə(r)/ v. 分享</span> his <strong>toys</strong> <span class="ph">/tɔɪ/ n. 玩具</span> with you?</div>
+    <div class="en-sentence" data-spoken="Amy: Yes! He likes to share his toys with me."><span class="spk">Amy:</span> Yes! He likes to share his toys with me.</div>
+    <div class="en-sentence" data-spoken="Mike: When you listen to him, does he listen to you too?"><span class="spk b">Mike:</span> When you <strong>listen</strong> <span class="ph">/ˈlɪsn/ v. 听；倾听</span> to him, does he listen to you too?</div>
+    <div class="en-sentence" data-spoken="Amy: Yes, when I listen to him, he listens to me too."><span class="spk">Amy:</span> Yes, when I listen to him, he listens to me too.</div>
+    <div class="en-sentence" data-spoken="Mike: Do you help each other?"><span class="spk b">Mike:</span> Do you <strong>help</strong> <span class="ph">/help/ v. 帮助</span> each other?</div>
+    <div class="en-sentence" data-spoken="Amy: Yes, we help each other, and we wave our hands and say 'Goodbye' at the end of the day."><span class="spk">Amy:</span> Yes, we help each other, and we wave our <strong>hands</strong> <span class="ph">/hænd/ n. 手</span> and say "<strong>Goodbye</strong> <span class="ph">/ˌɡʊdˈbaɪ/ interj. 再见</span>" at the end of the day.</div>
+    <div class="en-sentence" data-spoken="Mike: He is a nice boy, and a good friend always plays fair."><span class="spk b">Mike:</span> He is a <strong>nice</strong> <span class="ph">/naɪs/ adj. 令人愉快的；友好的</span> boy, and a <strong>good</strong> <span class="ph">/ɡʊd/ adj. 好的</span> friend always plays fair.</div>
+    <div class="en-sentence" data-spoken="Amy: I am happy to have a friend like him, and I hope we can be good friends, too!"><span class="spk">Amy:</span> I am happy to have a friend like him, <strong>and</strong> <span class="ph">/ænd/ conj. 和；与</span> I hope we can be good friends, too!</div>
+    <div class="cn">艾米：我有一个好朋友。 迈克：真的吗？跟我说说他吧。 艾米：他有一双大眼睛、两只耳朵、一张小嘴和两条长胳膊。 迈克：哇！他会微笑吗？ 艾米：会，他会微笑，还会说“你好！”。 迈克：真棒！他喜欢和你分享玩具吗？ 艾米：喜欢！他喜欢和我分享他的玩具。 迈克：你倾听他的时候，他也会倾听你吗？ 艾米：会，当我倾听他时，他也会倾听我。 迈克：你们互相帮助吗？ 艾米：是的，我们互相帮助，一天结束时我们会挥手说“再见”。 迈克：他是一个友好的男孩，好朋友总是遵守规则。 艾米：有这样的朋友我很开心，我也希望我们能成为好朋友！</div>
   </div>
-  <p class="hint">点击句子或【播放】即可跟读（只朗读英文），红色为单词音标注释，蓝框为中文翻译。</p>
+  <div class="card">
+    <div class="card-title">② 告别</div>
+    <div class="en-sentence" data-spoken="Mike: That's all for today!"><span class="spk b">Mike:</span> That's all for today!</div>
+    <div class="en-sentence" data-spoken="Amy: Goodbye! See you tomorrow!"><span class="spk">Amy:</span> Goodbye! See you tomorrow!</div>
+    <div class="cn">迈克：今天就到这里吧！ 艾米：再见！明天见！</div>
+  </div>
+  <p class="hint">点击句子或【播放】即可跟读对话（只朗读英文），红色为单词音标注释，蓝框为中文翻译。</p>
   <div class="full-translation" id="fullTranslation">
     <h2>整篇中文翻译</h2>
-    <p>大家早上好！今天我演讲的题目是《好朋友》。</p>
-    <p>我有一个好朋友。他有一双大眼睛、两只耳朵、一张小嘴和两条长胳膊。他会微笑，会说"你好！"他喜欢和我分享他的玩具。当我倾听他时，他也会倾听我。我们互相帮助，一天结束时，我们会挥手说"再见"。他是一个友好的男孩，好朋友总是遵守规则。有这样的朋友我很开心，我也希望我们能成为好朋友！</p>
+    <p>艾米：早上好，迈克！我们来聊聊我们的好朋友吧。 迈克：早上好，艾米！好主意！</p>
+    <p>艾米：我有一个好朋友。 迈克：真的吗？跟我说说他吧。 艾米：他有一双大眼睛、两只耳朵、一张小嘴和两条长胳膊。 迈克：哇！他会微笑吗？ 艾米：会，他会微笑，还会说“你好！”。 迈克：真棒！他喜欢和你分享玩具吗？ 艾米：喜欢！他喜欢和我分享他的玩具。 迈克：你倾听他的时候，他也会倾听你吗？ 艾米：会，当我倾听他时，他也会倾听我。 迈克：你们互相帮助吗？ 艾米：是的，我们互相帮助，一天结束时我们会挥手说“再见”。 迈克：他是一个友好的男孩，好朋友总是遵守规则。 艾米：有这样的朋友我很开心，我也希望我们能成为好朋友！</p>
+    <p>迈克：今天就到这里吧！ 艾米：再见！明天见！</p>
   </div>
 </div>
 
@@ -224,5 +256,8 @@
   }
 })();
 </script>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回主页</a>
+</nav>
 </body>
 </html>

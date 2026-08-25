@@ -305,7 +305,7 @@
 
   <!-- 底部版权 -->
   <div style="text-align:center;margin:18px 0 6px;">
-    <a class="back-home" href="../index.html">🏠 返回首页</a>
+    <a class="back-home" href="../index.html">🏠 返回主页</a>
   </div>
   <footer>© 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span> · 打印版导航<br/><br/><br/></footer>
 </div>
@@ -324,6 +324,10 @@
  * ===================================================================== */
 
 const GRADE_NO = { "三年级":3, "四年级":4, "五年级":5, "六年级":6, "七年级":7, "八年级":8, "九年级":9 };
+
+/* 部分年级内容形式为对话稿（如三年级），其余为演讲稿；用于按钮与统计文案 */
+const DOC_LABEL = { "三年级": "对话稿" };
+function docLabel(g){ return DOC_LABEL[g] || "演讲稿"; }
 
 /* 生成单元数据：默认 speech + words 双入口；speechOnly=true 时只有演讲稿 */
 function mk(grade, n, opt){
@@ -424,7 +428,7 @@ function bindEntry(a, url){
 function renderGrid(){
   const units = (DATA[state.grade] && DATA[state.grade][state.semester]) || [];
   const withWords = units.filter(u=>u.words).length;
-  infoEl.innerHTML = `当前：<b>${state.grade}</b> · <b>${state.semester}</b> · 共 <b>${units.length}</b> 个单元（演讲稿 ${units.length} 份 · 单词表 ${withWords} 份）`;
+  infoEl.innerHTML = `当前：<b>${state.grade}</b> · <b>${state.semester}</b> · 共 <b>${units.length}</b> 个单元（${docLabel(state.grade)} ${units.length} 份 · 单词表 ${withWords} 份）`;
   gridEl.innerHTML = "";
 
   units.forEach((u,i)=>{
@@ -443,7 +447,7 @@ function renderGrid(){
     const bSpeech = document.createElement("a");
     bSpeech.className = "btn-link";
     bSpeech.href = u.speech;
-    bSpeech.innerHTML = "<span>📝 演讲稿</span>";
+    bSpeech.innerHTML = "<span>📝 " + docLabel(state.grade) + "</span>";
     entry.appendChild(bSpeech);
 
     if(u.words){

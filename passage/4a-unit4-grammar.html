@@ -61,6 +61,28 @@
 
   footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
   @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+  /* 底部导航：返回主页 / 语法解读 / 口语测评 / 拼写练习 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(28px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
 </style>
 </head>
 <body>
@@ -216,6 +238,12 @@
   </section>
 
   <footer>© 2026 豆豆助理 · 四年级上册 Unit 4 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回主页</a>
+  <a href="4a-unit4-grammar.html" class="grammar">📖 语法解读</a>
+  <a href="4a-unit4-oral-test.html" class="oral">🎤 口语测评</a>
+  <a href="4a-unit4-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav>
 </div>
 </body>
 </html>
