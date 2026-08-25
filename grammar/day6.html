@@ -191,7 +191,7 @@ function submit(){
   if(errs.length){
     html += '<div class="err-box"><h3>❌ 出错题目（'+errs.length+' 题）</h3>';
     errs.forEach(function(d){
-      const ref = Array.isArray(d.q.a) ? d.q.a.join(' / ') : d.q.a;
+      const ref = d.sec.type === 'choice' ? String.fromCharCode(65 + d.q.a) : (Array.isArray(d.q.a) ? d.q.a.join(' / ') : d.q.a);
       let userAns = '';
       if(d.sec.type==='choice'){ userAns = d.ans===null ? '未作答' : String.fromCharCode(65+d.ans); }
       else { userAns = d.ans || '未作答'; }
