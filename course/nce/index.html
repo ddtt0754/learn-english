@@ -41,14 +41,6 @@ body {
 .grid .card-title { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
 .grid .card-desc { font-size: .75rem; color: var(--text2); line-height: 1.5; }
 
-/* 暂未上线占位 */
-.placeholder { text-align: center; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 60px 24px; margin-bottom: 32px; }
-.placeholder .ph-icon { font-size: 3rem; margin-bottom: 18px; }
-.placeholder .ph-text { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 30px; letter-spacing: .04em; }
-.placeholder .ph-back { display: inline-flex; align-items: center; gap: 6px; padding: 12px 32px; border-radius: 999px; border: 2px solid #2ebd85; background: #fff; color: #1fa873; font-size: 15px; font-weight: 700; cursor: pointer; transition: transform .15s, box-shadow .15s; font-family: inherit; }
-.placeholder .ph-back:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(46,158,107,.18); }
-.placeholder .ph-back:active { transform: scale(.97); }
-
 /* 各格子的强调色 */
 .book1 { border-color: #22c55e; }
 .book1 .card-icon { color: #22c55e; }
@@ -91,14 +83,21 @@ body {
     <div class="sub">经典教材 · 系统进阶</div>
   </div>
 
-  <div class="placeholder">
-    <div class="ph-icon">📚</div>
-    <div class="ph-text">该板块只支持线下学习</div>
-    <button class="ph-back" onclick="history.back()">【返回上一页】</button>
+  <div class="grid">
+    <a href="#" class="book1">
+      <div class="card-icon">📗</div>
+      <div class="card-title">第 1 册</div>
+      <div class="card-desc">入门基础 · 课文精读</div>
+    </a>
+    <a href="#" class="book2">
+      <div class="card-icon">📘</div>
+      <div class="card-title">第 2 册</div>
+      <div class="card-desc">进阶提升 · 语法巩固</div>
+    </a>
   </div>
 </div>
 
-<footer class="site-footer"><a href="../index.html">🏠 返回首页</a> &nbsp;·&nbsp; &copy; <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span></footer>
+<footer class="site-footer"><a href="../index.html">🏠 返回主页</a> &nbsp;·&nbsp; &copy; <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span></footer>
 
 </body>
 </html>

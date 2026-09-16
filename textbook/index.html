@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="R5aXtZEp3CK8a1EHoxDZrQ">
+<head data-page-node-id="AzqLwj6VusBYLZuG81Nhx2">
+<meta charset="UTF-8" data-page-node-id="Byc7gkyREsF85tpSxTMKkf">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="EMAKKUlw2RmpwjTAMoEROa">
+<meta name="theme-color" content="#2ebd85" data-page-node-id="dALLbWRGAXGUE3qbJQ4Gkw">
+<title>人教版PEP英语单元同步学习</title>
+<style>
+  /* ============ 全局 ============ */
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;
+    --green-deep:#1fa873;
+    --blue:#2f9df0;
+    --text:#33434b;
+    --text-light:#8aa09a;
+    --card:#ffffff;
+    --shadow:0 8px 22px rgba(47,157,240,.10);
+    --radius:16px;
+  }
+  html,body{height:100%;}
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+    min-height:100vh;
+  }
+  .container{
+    width:100%;
+    max-width:520px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  /* ============ 顶部标题卡（绿蓝渐变） ============ */
+  .title-card{
+    position:relative;
+    width:100%;
+    background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;
+    padding:30px 20px 26px;
+    text-align:center;
+    color:#fff;
+    overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.14);
+  }
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{
+    position:relative;
+    font-size:24px;
+    letter-spacing:3px;
+    font-weight:700;
+    text-shadow:0 2px 6px rgba(0,0,0,.12);
+  }
+  .title-card .sub{
+    position:relative;
+    margin-top:10px;
+    font-size:13px;
+    letter-spacing:4px;
+    opacity:.92;
+  }
+  .title-card .sub b{font-weight:600;margin:0 2px;}
+
+  /* 数据来源说明 */
+  .source{
+    width:100%;
+    margin-top:10px;
+    text-align:center;
+    font-size:11px;
+    line-height:1.5;
+    color:#8aa09a;
+    letter-spacing:.3px;
+    padding:0 8px;
+  }
+
+  /* ============ 年级标签页（3~6 年级共 4 个，单行 4 列） ============ */
+  .tabs{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:16px;
+  }
+  .tab{
+    border:none;
+    background:#fff;
+    color:var(--text-light);
+    font-size:14px;
+    padding:10px 0;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(47,157,240,.08);
+    transition:transform .15s ease,box-shadow .25s,background-color .25s,color .25s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .tab:active{transform:scale(.95);}
+  .tab.active{
+    background:linear-gradient(135deg,#35d29a,#2f9df0);
+    color:#fff;
+    font-weight:600;
+    box-shadow:0 8px 16px rgba(47,157,240,.28);
+  }
+
+  /* ============ 下拉单选（年级 + 学期） ============ */
+  .controls{
+    width:100%;
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+  }
+  .select-wrap{position:relative;flex:1;}
+  .select-wrap select{
+    width:100%;
+    appearance:none;
+    -webkit-appearance:none;
+    border:1.5px solid #d8ebe3;
+    border-radius:12px;
+    background:#fff;
+    padding:11px 34px 11px 14px;
+    font-size:15px;
+    color:var(--text);
+    cursor:pointer;
+    outline:none;
+    transition:border-color .25s,box-shadow .25s;
+  }
+  .select-wrap select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(46,189,133,.15);}
+  .select-wrap::after{
+    content:"";
+    position:absolute;
+    right:14px;top:50%;
+    width:7px;height:7px;
+    border-right:2px solid #9db8ae;
+    border-bottom:2px solid #9db8ae;
+    transform:translateY(-65%) rotate(45deg);
+    pointer-events:none;
+  }
+
+  /* ============ 当前学期信息栏 ============ */
+  .info{
+    width:100%;
+    margin-top:14px;
+    background:#fff;
+    border-radius:12px;
+    padding:9px 12px;
+    text-align:center;
+    font-size:13px;
+    color:var(--text-light);
+    box-shadow:0 4px 10px rgba(47,157,240,.06);
+  }
+  .info b{color:var(--green-deep);font-weight:600;}
+
+  /* ============ 3×3 九宫格 ============ */
+  .grid{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:14px;
+  }
+  .cell{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:24px 8px 20px;
+    text-align:center;
+    text-decoration:none;
+    color:var(--text);
+    cursor:pointer;
+    border:1.5px solid transparent;
+    transition:transform .15s ease,background-color .3s,color .3s,box-shadow .3s,border-color .3s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout:none;
+    animation:riseIn .35s ease backwards;
+  }
+  @keyframes riseIn{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @media (hover:hover){
+    .cell:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(47,157,240,.16);}
+  }
+  .cell:active{transform:scale(.95);}
+  .cell .num{
+    position:absolute;
+    top:9px;left:12px;
+    font-size:11px;
+    font-weight:700;
+    color:#a8d9c3;
+    transition:color .3s;
+  }
+  .cell .icon{font-size:26px;line-height:1;}
+  .cell .name{font-size:15px;font-weight:600;letter-spacing:.5px;transition:color .3s;}
+  .cell .hint{font-size:10px;color:#b3c4be;letter-spacing:1px;transition:color .3s;line-height:1.3;padding:0 2px;}
+
+  /* 点击后：整格变绿 + 显示"打开中…" */
+  .cell.opening{
+    background:linear-gradient(135deg,#2ebd85,#22a06f);
+    border-color:var(--green-deep);
+    box-shadow:0 10px 22px rgba(46,189,133,.35);
+  }
+  .cell.opening .num{color:rgba(255,255,255,.75);}
+  .cell.opening .name,.cell.opening .hint{color:#fff;}
+
+  /* ============ 返回首页按钮 ============ */
+  .back-wrap{width:100%;text-align:center;margin-top:18px;}
+  .back-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:10px 22px;
+    background:#fff;
+    color:#1fa873;
+    border:1.5px solid #2ebd85;
+    border-radius:999px;
+    font-size:13.5px;
+    font-weight:700;
+    text-decoration:none;
+    box-shadow:0 4px 12px rgba(46,158,107,.12);
+    transition:transform .15s,background .25s,color .25s,box-shadow .25s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .back-btn:active{transform:scale(.96);}
+  @media (hover:hover){
+    .back-btn:hover{background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(47,157,240,.3);}
+  }
+
+  /* ============ 底部版权 ============ */
+  footer{
+    width:100%;
+    margin-top:22px;
+    text-align:center;
+    font-size:12px;
+    color:#a8bcb4;
+    letter-spacing:1px;
+  }
+
+  @media (max-width:360px){
+    .title-card h1{font-size:20px;letter-spacing:2px;}
+    .tab{font-size:13px;}
+    .cell .name{font-size:14px;}
+  }
+
+/* 教练微信号提示框 */
+.coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.coach-tip .tip{visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;box-shadow:0 6px 18px rgba(47,157,240,.35);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.coach-tip .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#2f9df0}
+.coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body data-page-node-id="YmGu7BxBQjLpZEry6d66DT">
+<div class="container" data-page-node-id="CEU8oyKDdwkxIXT1qKnEkT">
+
+  <!-- 顶部标题 -->
+  <header class="title-card" data-page-node-id="XqYAg2kBOduKPDSY8qiNW4">
+    <h1 data-page-node-id="x5Y1Kat2Fml0iH5Rwe5ziQ">📚 英语同步学 | 听 · 读 · 说 · 写</h1>
+    <div class="sub" data-page-node-id="QU0YPC37vUj8uooTwzPIAe">人教版PEP英语3-6 年级 · <b data-page-node-id="PO9Cnp05GrF1i388Mk9eFs">单元导航</b></div>
+  </header>
+
+  <!-- 数据来源（IMA 知识库 · 2026 新教材） -->
+  <p class="source" data-page-node-id="jqeKeWjN8vKUF0kI8EADcn">PEP 新教材（2022 课标版）</p>
+
+  <!-- 年级标签页（选择年级后自动切换） -->
+  <nav class="tabs" id="tabs" data-page-node-id="bewBRPZbZYdHTxTyb8pbWK"></nav>
+
+  <!-- 下拉单选：年级 + 学期 -->
+  <div class="controls" data-page-node-id="2Q867NTwDfP5EeVF6qpn7C">
+    <div class="select-wrap" data-page-node-id="cxm2unNBVT3NMcEb5IdjDu">
+      <select id="gradeSelect" aria-label="选择年级" data-page-node-id="ZWhhs4CgqGfAGbKIYKFAf3"></select>
+    </div>
+    <div class="select-wrap" data-page-node-id="4fDv4c1PipZraWDnXepSvm">
+      <select id="semesterSelect" aria-label="选择学期" data-page-node-id="YXeF8zwNIDYJLL7lyNlKAh"></select>
+    </div>
+  </div>
+
+  <!-- 当前学期信息 -->
+  <p class="info" id="info" data-page-node-id="ajyuSHMEyb6NVb3YP3jq0N"></p>
+
+  <!-- 3×3 九宫格 -->
+  <div class="grid" id="grid" data-page-node-id="3WE7l1Ez0bzlpV6Tp9aXZi"></div>
+
+  <!-- 返回首页 -->
+  <div class="back-wrap" data-page-node-id="YcTD6ZxnAJTFima47DtqIV">
+    <a class="back-btn" href="../index.html" data-page-node-id="HTSUEab3QhaqUhSBLLFJ4k">🏠 返回首页</a>
+  </div>
+
+  <footer data-page-node-id="d4IicWAY17JGY9iHXitblj">© 2026 <span class="coach-tip" tabindex="0" data-page-node-id="Fn5w34IBVTNHglrMMm9HJQ">两英豆豆教练<span class="tip" data-page-node-id="imCsaJrHEvdaip2I7CpwuA">微信号 ddtt0754</span></span><br data-page-node-id="albdegn7RcZWnZSiqJGHai"/><br data-page-node-id="dd3yTsovt5rhmM5EK5INyd"/></footer>
+</div>
+
+<script>
+/* =====================================================================
+ * ★ 静态数据区 —— 后期修改单元名称 / 数量 / 链接，只需改动这里 ★
+ *
+ * 教材：人教版PEP英语 3-6 年级（三年级~六年级，各上下册）
+ * 单元话题（topic）依据 IMA 知识库《【人教小学英语】电子课本3-6年级上下册》
+ *   （2026 人教版PEP 新教材，2022 课标版）提取 / 核对；
+ *   其中三年级下册由 IMA 原版 PDF 直接解析得出，其余年级经新教材教参核对。
+ * 上册=a → gradeXVolume1，下册=b → gradeXVolume2
+ * 每个单元点击后跳转到对应年级的电子教材视频目录
+ *   （resources/textbook/gradeXVolumeY/，该目录下已按 UnitN-*.mp4 归档视频）
+ * 若后续为每个单元单独建页，把 FOLDER 里的 url 改成具体单元页即可
+ *
+ * ⚠ 视频目录状态：三上/三下/四上/四下/五上/六上 已建；五下、六下 视频目录待建
+ *   （点击将暂时 404，建好对应 gradeXVolumeY 文件夹后即生效）
+ * ===================================================================== */
+
+/* 年级 → 资源目录映射（上册=Volume1，下册=Volume2） */
+const FOLDER = {
+  "三年级": { "上册":"../resources/textbook/grade3Volume1/", "下册":"../resources/textbook/grade3Volume2/" },
+  "四年级": { "上册":"../resources/textbook/grade4Volume1/", "下册":"../resources/textbook/grade4Volume2/" },
+  "五年级": { "上册":"../resources/textbook/grade5Volume1/", "下册":"../resources/textbook/grade5Volume2/" },
+  "六年级": { "上册":"../resources/textbook/grade6Volume1/", "下册":"../resources/textbook/grade6Volume2/" }
+};
+
+/* 单元页覆盖：未列出的单元仍跳转视频目录；已列出的单元跳转到对应单元页 / 情景视频页 */
+const UNIT_PAGES = {
+  "三年级": { "上册": {
+    1: "3a-unit1.html",
+    2: "3a-unit2.html",
+    3: "3a-unit3.html",
+    4: "3a-unit4.html",
+    5: "3a-unit5.html",
+    6: "3a-unit6.html"
+  }, "下册": {
+    1: "3b-unit1.html",
+    2: "3b-unit2.html",
+    3: "3b-unit3.html",
+    4: "3b-unit4.html",
+    5: "3b-unit5.html",
+    6: "3b-unit6.html"
+  } },
+  "四年级": { "上册": {
+    1: "4a-unit1.html",
+    2: "4a-unit2.html",
+    3: "4a-unit3.html",
+    4: "4a-unit4.html",
+    5: "4a-unit5.html",
+    6: "4a-unit6.html"
+  }, "下册": {
+    1: "4b-unit1.html",
+    2: "4b-unit2.html",
+    3: "4b-unit3.html",
+    4: "4b-unit4.html",
+    5: "4b-unit5.html",
+    6: "4b-unit6.html"
+  } },
+  "五年级": { "上册": {
+    1: "5a-unit1.html",
+    2: "5a-unit2.html",
+    3: "5a-unit3.html",
+    4: "5a-unit4.html",
+    5: "5a-unit5.html",
+    6: "5a-unit6.html"
+  }, "下册": {
+    1: "5b-unit1.html",
+    2: "5b-unit2.html",
+    3: "5b-unit3.html",
+    4: "5b-unit4.html",
+    5: "5b-unit5.html",
+    6: "5b-unit6.html"
+  } },
+  "六年级": { "上册": {
+    1: "6a-unit1.html",
+    2: "6a-unit2.html",
+    3: "6a-unit3.html",
+    4: "6a-unit4.html",
+    5: "6a-unit5.html",
+    6: "6a-unit6.html"
+  }, "下册": {
+    1: "6b-unit1.html",
+    2: "6b-unit2.html",
+    3: "6b-unit3.html",
+    4: "6b-unit4.html"
+  } }
+};
+
+/* 各年级各学期的单元话题（2026 PEP 新教材 / 2022 课标版；六年级下册实际 4 单元） */
+const TOPICS = {
+  "三年级": {
+    "上册": ["Making friends","Different families","Our animal friends","Plants around us","The colourful world","Useful numbers"],
+    "下册": ["Meeting new people","Expressing yourself","Learning better","Healthy food","Old toys","Numbers in life"]
+  },
+  "四年级": {
+    "上册": ["Helping at home","My friends","Places we live in","Helping in the community","The weather and us","Changing for the seasons"],
+    "下册": ["Class rules","Family rules","Time for school","Going shopping","Farms and us","On the farm"]
+  },
+  "五年级": {
+    "上册": ["Different friends","My feelings","Work and play","Healthy habits","Food we eat","Nature and us"],
+    "下册": ["Following the rules","Our community","Life in different seasons","My hometown","Travelling around","Making a travel plan"]
+  },
+  "六年级": {
+    "上册": ["Amazing landmarks","Getting together","Healthy life","Managing money well","Exploring space","Energy, nature and us"],
+    "下册": ["How tall are you?","Last weekend","Where did you go?","Then and now"]
+  }
+};
+
+/* ================= 渲染逻辑（一般无需修改） ================= */
+const tabsEl = document.getElementById("tabs");
+const gradeSelect = document.getElementById("gradeSelect");
+const semesterSelect = document.getElementById("semesterSelect");
+const infoEl = document.getElementById("info");
+const gridEl = document.getElementById("grid");
+
+const state = { grade: Object.keys(TOPICS)[0], semester: "" };
+
+/* 取当前年级的学期列表 */
+function getSemesters(){
+  const sems = TOPICS[state.grade] ? Object.keys(TOPICS[state.grade]) : [];
+  return sems.length ? sems : ["上册"];
+}
+
+/* 年级标签页 */
+function buildTabs(){
+  tabsEl.innerHTML = "";
+  Object.keys(TOPICS).forEach(g=>{
+    const b = document.createElement("button");
+    b.className = "tab" + (g===state.grade ? " active" : "");
+    b.textContent = g;
+    b.dataset.grade = g;
+    b.addEventListener("click", ()=>selectGrade(g));
+    tabsEl.appendChild(b);
+  });
+}
+
+/* 年级下拉 */
+function buildGradeSelect(){
+  gradeSelect.innerHTML = "";
+  Object.keys(TOPICS).forEach(g=>{
+    const o = document.createElement("option");
+    o.value = g;
+    o.textContent = g;
+    gradeSelect.appendChild(o);
+  });
+  gradeSelect.value = state.grade;
+}
+
+/* 学期下拉 */
+function buildSemesterSelect(){
+  semesterSelect.innerHTML = "";
+  const sems = getSemesters();
+  if(!sems.includes(state.semester)) state.semester = sems[0];
+  sems.forEach(s=>{
+    const o = document.createElement("option");
+    o.value = s;
+    o.textContent = s;
+    semesterSelect.appendChild(o);
+  });
+  semesterSelect.value = state.semester;
+}
+
+/* 选择年级：标签页 + 下拉双向同步，并自动切换内容 */
+function selectGrade(g){
+  if(!TOPICS[g]) return;
+  state.grade = g;
+  gradeSelect.value = g;
+  [...tabsEl.children].forEach(t=>t.classList.toggle("active", t.dataset.grade===g));
+  buildSemesterSelect();
+  renderGrid();
+}
+
+/* 渲染九宫格（按单元顺序，实际几个单元显示几个格子） */
+function renderGrid(){
+  const topics = (TOPICS[state.grade] && TOPICS[state.grade][state.semester]) || [];
+  const baseUrl = (FOLDER[state.grade] && FOLDER[state.grade][state.semester]) || "#";
+  infoEl.innerHTML = `当前：<b>${state.grade}</b> · <b>${state.semester}</b> · 共 <b>${topics.length}</b> 个单元`;
+  gridEl.innerHTML = "";
+
+  topics.forEach((topic,i)=>{
+    const unitNo = i+1;
+    const override = (UNIT_PAGES[state.grade] && UNIT_PAGES[state.grade][state.semester] && UNIT_PAGES[state.grade][state.semester][unitNo]);
+    const url = override || baseUrl;
+    const a = document.createElement("a");
+    a.className = "cell";
+    a.href = url;
+    a.style.animationDelay = (i*40)+"ms";
+    a.innerHTML =
+      `<span class="num">${String(i+1).padStart(2,"0")}</span>` +
+      `<span class="icon">📘</span>` +
+      `<span class="name"></span>` +
+      `<span class="hint"></span>`;
+    a.querySelector(".name").textContent = "Unit "+(i+1);
+    a.querySelector(".hint").textContent = topic;
+
+    a.addEventListener("click", e=>{
+      e.preventDefault();   /* 先整格变绿显示"打开中…"，再跳转到资源目录 */
+      a.classList.add("opening");
+      a.querySelector(".name").textContent = "打开中…";
+      a.querySelector(".hint").textContent = "";
+      setTimeout(()=>{
+        location.href = url;   /* 跳转到对应年级电子教材视频目录 */
+      }, 500);
+    });
+
+    gridEl.appendChild(a);
+  });
+}
+
+/* 事件绑定 */
+gradeSelect.addEventListener("change", ()=>selectGrade(gradeSelect.value));
+semesterSelect.addEventListener("change", ()=>{ state.semester = semesterSelect.value; renderGrid(); });
+
+/* 初始化 */
+state.semester = getSemesters()[0];
+buildTabs();
+buildGradeSelect();
+buildSemesterSelect();
+renderGrid();
+</script>
+</body>
+</html>

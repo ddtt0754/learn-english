@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="E0JnfOlpdNd3q50wnX0dI3">
+<head data-page-node-id="1qwqsdeGP1SBt16ILBbCx4">
+<meta charset="UTF-8" data-page-node-id="MQ0OAaEBHcY67YbJxK9d4O">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="ErF9LuTviiTKSIHx1fQjQ6">
+<meta name="theme-color" content="#2ebd85" data-page-node-id="LNtk9ZhxxS7idIh8kOrIcn">
+<title>英语课程中心 · 课程导航</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+  --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+}
+body{
+  font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+  background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+  color:var(--text);line-height:1.9;min-height:100vh;
+  display:flex;justify-content:center;padding:24px 16px calc(40px + env(safe-area-inset-bottom));
+}
+.container{width:100%;max-width:760px;}
+
+/* 顶部标题卡 */
+.title-card{
+  position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+  border-radius:22px;padding:30px 20px 24px;text-align:center;color:#fff;overflow:hidden;
+  box-shadow:0 14px 30px rgba(47,157,240,.25);
+}
+.title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+.title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+.title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+.title-card h1{position:relative;font-size:23px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+.title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:4px;opacity:.94;}
+
+/* 课程导航卡片 */
+.sec{background:#fff;border-radius:var(--radius);padding:18px 18px 16px;margin-top:18px;box-shadow:var(--shadow);}
+.sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+.sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+
+/* 课程入口 */
+.course{
+  display:flex;align-items:center;gap:16px;
+  padding:18px 16px;margin:12px 2px;border-radius:16px;
+  background:#f7fbf9;border:1.5px solid #e3f1ea;cursor:pointer;text-decoration:none;
+  transition:transform .14s,box-shadow .14s,background .14s;
+}
+.course:hover{background:#eefaf4;box-shadow:0 8px 20px rgba(46,158,107,.16);transform:translateY(-3px)}
+.course:active{transform:scale(.985)}
+.course .ico{
+  flex-shrink:0;width:52px;height:52px;border-radius:14px;
+  background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:26px;
+  box-shadow:0 5px 12px rgba(47,157,240,.28);
+}
+.course .info{flex:1;min-width:0}
+.course .ct{font-size:17px;font-weight:700;color:#2c3e48}
+.course .cs{font-size:12.5px;color:#8aa09a;margin-top:3px;letter-spacing:.5px}
+.course .enter{
+  flex-shrink:0;display:inline-flex;align-items:center;gap:5px;
+  padding:9px 16px;border-radius:999px;background:#fff;color:#1fa873;
+  border:1.5px solid #2ebd85;font-size:13px;font-weight:700;
+}
+.course:hover .enter{background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;border-color:transparent}
+
+footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px}
+
+/* 教练微信号提示框 */
+.coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.coach-tip .tip{visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;box-shadow:0 6px 18px rgba(47,157,240,.35);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.coach-tip .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#2f9df0}
+.coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* 返回首页按钮 */
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;padding:11px 26px;
+  background:#fff;color:#1fa873;border:1.5px solid #2ebd85;border-radius:999px;
+  font-size:14px;font-weight:700;text-decoration:none;
+  box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s,box-shadow .15s,background .15s;
+}
+.back-btn:hover{background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(47,157,240,.25)}
+.back-btn:active{transform:scale(.97)}
+.back-wrap{text-align:center;margin:22px 0 4px}
+</style>
+</head>
+<body data-page-node-id="R65rQMtr7v5LHf4OaRx3FT">
+<div class="container" data-page-node-id="ZFrea2bDG37O3XP0knQjLI">
+
+  <header class="title-card" data-page-node-id="FvcELqlnBsDv0VDC9GxGTd">
+    <h1 data-page-node-id="VM8RgtGdCZ3sPNT4wKpFqH">📚 英语课程中心</h1>
+    <p class="sub" data-page-node-id="8bAiGKEswsLg2LQPwipj21">COURSE NAVIGATION</p>
+  </header>
+
+  <section class="sec" data-page-node-id="3qedFJtxiif7rsDrYzeD6S">
+    <h2 data-page-node-id="CfoVIiaUimXa9fsspA0MNr"><span class="no" data-page-node-id="2NV0ELGvj6hu2I6V4jRVso"></span>课程列表</h2>
+
+    <a class="course" href="Hekaiwen-grammar/index.html" data-page-node-id="5FQ8wWHnEV59iWNbTChsIC">
+      <div class="ico" data-page-node-id="iFEM4on3h5FoAxGv74ndf7">📘</div>
+      <div class="info" data-page-node-id="Gm1nPKs6NcCat71DG7qAFp">
+        <div class="ct" data-page-node-id="T0Ev5KFv8AFi1KBFLE6ozm">何凯文系统讲语法</div>
+        <div class="cs" data-page-node-id="S2mhxovJ34WeixfRIl9NL2">体系化精讲 · 12 讲通关</div>
+      </div>
+      <div class="enter" data-page-node-id="JYejlQaUhYYR308r3lkTod">进入 ›</div>
+    </a>
+
+    <a class="course" href="nce/index.html" data-page-node-id="MDEkp3AiN1cMEgedvjpQwm">
+      <div class="ico" data-page-node-id="6R50j52PDLTqtMS2R6O0ao">📗</div>
+      <div class="info" data-page-node-id="n7lF3IInwilEkx7sdUV2NC">
+        <div class="ct" data-page-node-id="nnfbs93M7W8uNf9YfzxJvj">新概念英语</div>
+        <div class="cs" data-page-node-id="MOKmetk8J0603JPuz7X7LJ">第 1 册 / 第 2 册</div>
+      </div>
+      <div class="enter" data-page-node-id="3HCR7XgD4ROh0ABO56MVZA">进入 ›</div>
+    </a>
+
+  </section>
+
+  <div class="back-wrap" data-page-node-id="LLCD9gfr06A1v5rh4CU838">
+    <a class="back-btn" href="../index.html" data-page-node-id="1RmOaTCwADo7EURiIThfd7">🏠 返回首页</a>
+  </div>
+
+  <footer data-page-node-id="Ld4tuUF4YftoW5DZVxNb9P">    <span class="coach-tip" tabindex="0" data-page-node-id="sdIwlGzFARk8fVR3sljC26">
+    © 两英豆豆教练
+      <span class="tip" data-page-node-id="t5PBGxt4Ybx2zi7vQPKBlU">微信号：ddtt0754</span>
+    </span>
+  </footer>
+
+</div>
+</body>
+</html>

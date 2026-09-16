@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>何凯文系统讲语法 · 12 讲精讲</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+  --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+}
+body{
+  font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+  background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+  color:var(--text);line-height:1.9;min-height:100vh;
+  display:flex;justify-content:center;padding:24px 16px calc(40px + env(safe-area-inset-bottom));
+}
+.container{width:100%;max-width:760px;}
+
+/* 顶部标题卡 */
+.title-card{
+  position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+  border-radius:22px;padding:30px 20px 24px;text-align:center;color:#fff;overflow:hidden;
+  box-shadow:0 14px 30px rgba(47,157,240,.25);
+}
+.title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+.title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+.title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+.title-card h1{position:relative;font-size:23px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+.title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:4px;opacity:.94;}
+.title-card .meta{position:relative;margin-top:12px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+/* 章节 */
+.sec{background:#fff;border-radius:var(--radius);padding:18px 18px 12px;margin-top:18px;box-shadow:var(--shadow);}
+.sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+.sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+
+/* 课程菜单行 */
+.lesson{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 14px;margin:10px 2px;border-radius:14px;
+  background:#f7fbf9;border:1.5px solid #e3f1ea;cursor:pointer;
+  transition:transform .14s,box-shadow .14s,background .14s;
+}
+.lesson:hover{background:#eefaf4;box-shadow:0 6px 16px rgba(46,158,107,.14);transform:translateY(-2px)}
+.lesson:active{transform:scale(.985)}
+.lesson .idx{
+  flex-shrink:0;width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;
+  box-shadow:0 4px 10px rgba(47,157,240,.25);
+}
+.lesson .info{flex:1;min-width:0}
+.lesson .lt{font-size:15.5px;font-weight:700;color:#2c3e48}
+.lesson .ls{font-size:12px;color:#8aa09a;margin-top:2px;letter-spacing:.5px}
+.lesson .play{
+  flex-shrink:0;display:inline-flex;align-items:center;gap:5px;
+  padding:8px 14px;border-radius:999px;background:#fff;color:#1fa873;
+  border:1.5px solid #2ebd85;font-size:13px;font-weight:700;
+}
+.lesson:hover .play{background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;border-color:transparent}
+
+/* 返回按钮 */
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;padding:11px 26px;
+  background:#fff;color:#1fa873;border:1.5px solid #2ebd85;border-radius:14px;
+  font-size:14px;font-weight:700;text-decoration:none;
+  box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s;
+}
+.back-btn:active{transform:scale(.97)}
+.back-wrap{text-align:center;margin:24px 0 6px}
+
+/* 暂未上线占位 */
+.placeholder-sec{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 20px;text-align:center;}
+.placeholder-sec .ph-icon{font-size:3rem;margin-bottom:18px;}
+.placeholder-sec .ph-text{font-size:1.2rem;font-weight:700;color:#2c3e48;margin-bottom:32px;letter-spacing:.04em;}
+.placeholder-sec .ph-back{display:inline-flex;align-items:center;gap:6px;padding:13px 34px;border-radius:14px;border:1.5px solid #2ebd85;background:#fff;color:#1fa873;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s;}
+.placeholder-sec .ph-back:active{transform:scale(.97);}
+
+footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px}
+
+/* 教练微信号提示框 */
+.coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.coach-tip .tip{visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;box-shadow:0 6px 18px rgba(47,157,240,.35);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.coach-tip .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#2f9df0}
+.coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🎓 何凯文系统讲语法</h1>
+    <p class="sub">体系化精讲 · 12 讲通关</p>
+    <p class="meta">小初高通用 · 点击任意一节即可播放</p>
+  </header>
+
+  <!-- 暂未上线 -->
+  <section class="sec placeholder-sec">
+    <div class="ph-icon">📚</div>
+    <div class="ph-text">该板块只支持线下学习</div>
+    <button class="ph-back" onclick="history.back()">【返回上一页】</button>
+  </section>
+
+  <div class="back-wrap">
+    <a href="../index.html" class="back-btn">🏠 返回首页</a>
+  </div>
+  <footer>© 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span> · 何凯文系统讲语法 · 12 讲精讲</footer>
+</div>
+
+<script>
+// 弹出独立视频窗口（居中，自适应浏览器大小）
+function openVideo(n){
+  var w = Math.min(960, Math.floor(screen.availWidth * 0.92));
+  var h = Math.min(620, Math.floor(screen.availHeight * 0.88));
+  var left = Math.floor((screen.availWidth - w) / 2);
+  var top = Math.floor((screen.availHeight - h) / 2);
+  window.open('video' + n + '.html', 'hekaiwenVideo' + n,
+    'width=' + w + ',height=' + h + ',left=' + left + ',top=' + top +
+    ',resizable=yes,scrollbars=no,toolbar=no,menubar=no,location=no,status=no');
+}
+</script>
+</body>
+</html>

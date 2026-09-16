@@ -55,9 +55,9 @@ body {
 .passage .card-icon { color: #f59e0b; }
 .passage:hover { border-color: #d97706; }
 
-.nce { border-color: #a855f7; }
-.nce .card-icon { color: #a855f7; }
-.nce:hover { border-color: #9333ea; }
+.textbook { border-color: #a855f7; }
+.textbook .card-icon { color: #a855f7; }
+.textbook:hover { border-color: #9333ea; }
 
 .phonics { border-color: #06b6d4; }
 .phonics .card-icon { color: #06b6d4; }
@@ -192,12 +192,12 @@ body {
       <div class="card-title">短文练习</div>
       <div class="card-desc">演讲稿 · 听读说写</div>
     </a>
-    <a href="nce/index.html" class="nce">
+    <a href="textbook/index.html" class="textbook">
       <div class="card-icon">🎓</div>
-      <div class="card-title">新概念英语</div>
-      <div class="card-desc">经典教材 · 情景视频</div>
+      <div class="card-title">同步英语</div>
+      <div class="card-desc">校内教材 · 情景视频</div>
     </a>
-    <a href="resources/index.html" class="resources">
+    <a href="course/index.html" class="resources">
       <div class="card-icon">📦</div>
       <div class="card-title">课程资源</div>
       <div class="card-desc">学习方法 · 视频资料</div>
@@ -263,7 +263,9 @@ body {
     // 兜底哈希列表：fetch 失败（如本地 file:// 打开）时使用，仅存哈希不存明文
     var FALLBACK_HASHES = [
       '413b7b3d5700ad8a6b296c9d0e7107dbd7280a985c1c695db8646c278e510224',
-      'df225757a3ffcac2bd9643323af99631a53300b439da8ff4a8a41f889ce39704'
+      '679d49b6e57d426b2af961461512559700b9e4c01aa723f0b71682c5f07b31c3',
+      'df225757a3ffcac2bd9643323af99631a53300b439da8ff4a8a41f889ce39704',
+      'f33f356f0975feb01468d154687a812a113ffa87ac5091ecc99637a552f033e9',
     ];
 
     function check(phoneHash, hashes){
