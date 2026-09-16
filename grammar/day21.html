@@ -30,6 +30,8 @@ body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei
 .q .stem{font-size:14.5px}
 .q .blank{color:#e11d48;font-weight:700}
 .q input[type=text]{display:block;width:100%;margin-top:8px;padding:9px 12px;border:1.5px solid #d3e5f6;border-radius:10px;font-size:14px;font-family:inherit;outline:none;background:#fbfdff}
+.q .blanks{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.q .blanks input[type=text]{flex:1 1 120px;min-width:120px;max-width:220px;margin-top:0}
 .q input[type=text]:focus{border-color:var(--blue);box-shadow:0 0 0 3px #eef4fb}
 .q textarea{display:block;width:100%;margin-top:8px;padding:9px 12px;border:1.5px solid #d3e5f6;border-radius:10px;font-size:14px;font-family:inherit;outline:none;min-height:52px;resize:vertical;background:#fbfdff}
 .opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
@@ -74,7 +76,22 @@ footer{text-align:center;font-size:11.5px;color:#a8bcb4;padding:16px 0 28px}
 <div class="back-wrap"><a href="daily_practice.html" class="back-btn">🏠 返回目录</a></div>
 <footer>© 2026 两英豆豆教练 · 中考语法每日一练</footer>
 <script>
-const DATA = {"sections": [{"title": "一、判断划线部分的句子成分", "note": "选择正确成分", "type": "choice", "questions": [{"q": "The picture looks nice.", "options": ["主语", "谓语", "宾语", "表语"], "a": 0}, {"q": "Smoking is harmful to health.", "options": ["主语", "表语", "宾语", "定语"], "a": 0}, {"q": "Mike can play the guitar well.", "options": ["谓语", "状语", "宾语", "表语"], "a": 0}, {"q": "I often go to school on foot.", "options": ["主语", "谓语", "状语", "宾语"], "a": 2}, {"q": "She said that she was happy.", "options": ["主语", "宾语", "表语", "状语"], "a": 1}, {"q": "Tom is a doctor.", "options": ["主语", "谓语", "表语", "宾语"], "a": 2}, {"q": "We each have a mobile phone now.", "options": ["主语", "同位语", "状语", "宾语"], "a": 1}, {"q": "Swimming alone in the river is dangerous.", "options": ["主语", "表语", "状语", "宾语"], "a": 0}, {"q": "I have many things to do.", "options": ["宾语", "定语", "状语", "补语"], "a": 1}, {"q": "Jerry was late for school because he got up late.", "options": ["谓语", "状语", "宾语", "表语"], "a": 0}, {"q": "The boy who is reading a book is my brother.", "options": ["主语", "定语", "宾语", "表语"], "a": 1}, {"q": "Please keep the dog out.", "options": ["宾语", "宾语补足语", "状语", "定语"], "a": 1}, {"q": "The girl in pink is Alice.", "options": ["主语", "定语", "表语", "宾语"], "a": 1}, {"q": "I can see an English book on the table.", "options": ["主语", "宾语", "状语", "定语"], "a": 1}]}]};
+const DATA = {"sections": [{"title": "一、判断划线部分的句子成分", "note": "在横线上写出划线部分的句子成分", "type": "fill", "questions": [
+  {"q": "The picture looks nice.", "u": ["The picture", "nice"], "a": ["主语", "表语"]},
+  {"q": "Smoking is harmful to health.", "u": ["Smoking"], "a": "主语"},
+  {"q": "Mike can play the guitar well.", "u": ["can play", "well"], "a": ["谓语", "状语"]},
+  {"q": "I often go to school on foot.", "u": ["often"], "a": "状语"},
+  {"q": "She said that she was happy.", "u": ["that she was happy"], "a": "宾语"},
+  {"q": "Tom is a doctor.", "u": ["a doctor"], "a": "表语"},
+  {"q": "We each have a mobile phone now.", "u": ["each", "now"], "a": ["同位语", "状语"]},
+  {"q": "Swimming alone in the river is dangerous.", "u": ["Swimming alone in the river", "dangerous"], "a": ["主语", "表语"]},
+  {"q": "I have many things to do.", "u": ["many"], "a": "定语"},
+  {"q": "Jerry was late for school because he got up late.", "u": ["was late for", "because he got up late"], "a": ["谓语", "状语"]},
+  {"q": "The boy who is reading a book is my brother.", "u": ["who is reading a book"], "a": "定语"},
+  {"q": "Please keep the dog out.", "u": ["out"], "a": "宾语补足语"},
+  {"q": "The girl in pink is Alice.", "u": ["in pink"], "a": "定语"},
+  {"q": "I can see an English book on the table.", "u": ["an English book", "on the table"], "a": ["宾语", "状语"]}
+]}]};
 let startTime = Date.now();
 let timerInt = null;
 timerInt = setInterval(function(){
@@ -83,6 +100,20 @@ timerInt = setInterval(function(){
 }, 1000);
 
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function underlineStem(text, parts){
+  if(!parts || !parts.length) return text;
+  // escape once, then wrap each target (first occurrence only) in <u>…</u>
+  let s = esc(text);
+  parts.forEach(function(part){
+    const ep = esc(part);
+    const idx = s.indexOf(ep);
+    if(idx >= 0){
+      s = s.slice(0, idx) + '<u>' + ep + '</u>' + s.slice(idx + ep.length);
+    }
+  });
+  return s;
+}
 
 function render(){
   const root = document.getElementById('quiz');
@@ -93,43 +124,35 @@ function render(){
     sec.questions.forEach(function(q, qi){
       const id = 'q_'+si+'_'+qi;
       html += '<div class="q"><span class="qn">'+(qi+1)+'.</span>';
-      if(sec.type === 'choice'){
-        html += '<span class="stem">'+esc(q.q)+'</span><div class="opts">';
-        q.options.forEach(function(o, oi){
-          html += '<span class="opt" data-id="'+id+'" data-oi="'+oi+'">'+String.fromCharCode(65+oi)+'. '+esc(o)+'</span>';
-        });
-        html += '</div>';
-      } else if(sec.type === 'translate'){
-        html += '<span class="stem">'+esc(q.q)+'</span><textarea data-id="'+id+'" placeholder="请输入英文翻译…"></textarea>';
-      } else {
-        html += '<span class="stem">'+esc(q.q)+'</span><input type="text" data-id="'+id+'" autocomplete="off" placeholder="请输入答案">';
+      const blanks = Array.isArray(q.a) ? q.a.length : 1;
+      html += '<span class="stem">'+underlineStem(q.q, q.u)+'</span><div class="blanks">';
+      for(let bi=0; bi<blanks; bi++){
+        html += '<input type="text" data-id="'+id+'" data-bi="'+bi+'" autocomplete="off" placeholder="空'+(bi+1)+'">';
       }
+      html += '</div>';
       html += '</div>';
     });
     html += '</div>';
   });
   root.innerHTML = html;
-  // 绑定选择
-  document.querySelectorAll('.opt').forEach(function(el){
-    el.addEventListener('click', function(){
-      const id = el.getAttribute('data-id');
-      const oi = el.getAttribute('data-oi');
-      document.querySelectorAll('.opt[data-id="'+id+'"]').forEach(function(o){o.classList.remove('on');});
-      el.classList.add('on');
-    });
-  });
+
 }
 
 function getAnswer(si, qi){
   const id = 'q_'+si+'_'+qi;
   const sec = DATA.sections[si];
-  if(sec.type === 'choice'){
-    const on = document.querySelector('.opt.on[data-id="'+id+'"]');
-    return on ? parseInt(on.getAttribute('data-oi')) : null;
-  } else {
-    const el = document.querySelector('[data-id="'+id+'"]');
-    return el ? el.value.trim() : '';
+  const q = sec.questions[qi];
+  const blanks = Array.isArray(q.a) ? q.a.length : 1;
+  if(sec.type === 'fill' || sec.type === 'translate'){
+    const out = [];
+    for(let bi=0; bi<blanks; bi++){
+      const el = document.querySelector('[data-id="'+id+'"][data-bi="'+bi+'"]');
+      out.push(el ? el.value.trim() : '');
+    }
+    return blanks === 1 ? out[0] : out;
   }
+  const el = document.querySelector('[data-id="'+id+'"]');
+  return el ? el.value.trim() : '';
 }
 
 function norm(s){return String(s).toLowerCase().replace(/[^a-z0-9\u4e00-\u9fa5]/g,'');}
@@ -140,6 +163,7 @@ function judge(sec, q, ans){
   }
   // fill / translate
   const refs = Array.isArray(q.a) ? q.a : [q.a];
+  const anss = Array.isArray(ans) ? ans : [ans];
   if(sec.type === 'translate'){
     // 关键词匹配：参考答案中每个英文单词是否出现在学生答案中
     const refWords = String(refs[0]).toLowerCase().split(/[^a-z]+/).filter(function(w){return w.length>1;});
@@ -148,7 +172,11 @@ function judge(sec, q, ans){
     refWords.forEach(function(w){ if(ansWords.indexOf(w)>=0) hit++; });
     return refWords.length ? (hit/refWords.length) >= 0.5 : false;
   }
-  return refs.some(function(r){ return norm(r) === norm(ans) && norm(ans)!==''; });
+  if(refs.length !== anss.length) return false;
+  for(let i=0; i<refs.length; i++){
+    if(norm(anss[i]) === '' || norm(refs[i]) !== norm(anss[i])) return false;
+  }
+  return true;
 }
 
 function submit(){
@@ -191,10 +219,9 @@ function submit(){
   if(errs.length){
     html += '<div class="err-box"><h3>❌ 出错题目（'+errs.length+' 题）</h3>';
     errs.forEach(function(d){
-      const ref = d.sec.type === 'choice' ? String.fromCharCode(65 + d.q.a) : (Array.isArray(d.q.a) ? d.q.a.join(' / ') : d.q.a);
+      const ref = Array.isArray(d.q.a) ? d.q.a.join(' / ') : d.q.a;
       let userAns = '';
-      if(d.sec.type==='choice'){ userAns = d.ans===null ? '未作答' : String.fromCharCode(65+d.ans); }
-      else { userAns = d.ans || '未作答'; }
+      userAns = (Array.isArray(d.ans) ? d.ans.join(' / ') : (d.ans || '未作答'));
       html += '<div class="err-item"><div class="stem">'+(d.qi+1)+'. '+esc(d.q.q)+'</div><div>你的答案：<span class="wrong">'+esc(userAns)+'</span>　正确答案：<span class="right">'+esc(ref)+'</span></div></div>';
     });
     html += '</div>';
