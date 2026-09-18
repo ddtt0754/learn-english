@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 55 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Not a gold mine 并非金矿</h1>
+    <p class="sub">新概念英语第二册 Lesson 55 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 55（课本印刷页 256-259）· 18 个生词和短语 · 课文 10 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则「寻宝落空」的科普小品。语言点集中在 <b>现在完成时的被动语态</b>（has been invented / has been used / has been buried）、<b>would 表过去习惯</b>、<b>分词短语作状语</b>（Armed with… / hoping to find…），以及 in spite of、be confident that 等短语。</p>
+    <h3>¶ 1 · 探宝器问世（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Dreams of finding lost <b>treasure</b> almost came true recently.</td><td class="gram">dreams of doing sth. 做某事的梦想（of 后接动名词）· come true 变成现实 · recently 最近</td></tr>
+      <tr><td class="sen">A new machine called 'The <b>Revealer</b>' has been <b>invented</b> and it has been used to <b>detect</b> gold which has been buried in the ground.</td><td class="gram"><span class='tag b'>被动语态</span> has been invented / has been used / has been buried：三者都是现在完成时的被动式（has been + 过去分词）· a machine called … 被叫做……的机器 · use sth. to do sth. 用某物做某事</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 海盗的岩洞（句 3-5）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The machine was used in a <b>cave</b> near the <b>seashore</b> where — it is said — <b>pirates</b> used to hide <b>gold</b>.</td><td class="gram"><span class='tag b'>被动语态</span> was used · <span class='tag g'>定语从句</span> where 引导，修饰 a cave · it is said 据说（插入语）· used to do sth. 过去常常做某事</td></tr>
+      <tr><td class="sen">The pirates would often <b>bury</b> gold in the cave and then fail to collect it.</td><td class="gram"><span class='tag b'>would + 动词原形</span> 表示过去习惯性动作 · fail to do sth. 未能做某事 · collect it 取走它</td></tr>
+      <tr><td class="sen"><b>Armed</b> with the new machine, a search party went into the cave hoping to find buried treasure.</td><td class="gram">armed with 装备着（过去分词短语作状语，表状态）· a search party 探宝队 · hoping to find 希望找到（现在分词短语作状语，表目的）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 挖出金币（句 6-8）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The leader of the party was examining the <b>soil</b> near the <b>entrance</b> to the cave when the machine showed that there was gold under the ground.</td><td class="gram">the leader of the party 队长 · <span class='tag g'>时间状语从句</span> when 引导（正在……这时……）· <span class="tag g">宾语从句</span> that 引导，作 showed 的宾语 · the entrance to 通往……的入口</td></tr>
+      <tr><td class="sen">Very excited, the party dug a hole two feet deep.</td><td class="gram">Very excited 形容词短语作状语，说明队员们的状态 · two feet deep 作后置定语修饰 a hole · dig 的过去式 dug</td></tr>
+      <tr><td class="sen">They <b>finally</b> found a small gold coin which was almost <b>worthless</b>.</td><td class="gram">finally 最后 · <span class='tag g'>定语从句</span> which 引导，修饰 a gold coin · worthless 毫无价值的（worth + -less）· 与开篇「梦想找到宝藏」形成强烈落差</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 空铁皮箱（句 9-10）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The party then searched the whole cave <b>thoroughly</b> but did not find anything except an empty tin <b>trunk</b>.</td><td class="gram">search sth. 搜索某地 · thoroughly 彻底地（thorough + -ly）· not … anything except ＝ only，除……之外没有 · an empty tin trunk 一只空铁皮箱</td></tr>
+      <tr><td class="sen">In spite of this, many people are <b>confident</b> that 'The Revealer' may reveal something of <b>value</b> fairly soon.</td><td class="gram"><span class='tag b'>in spite of</span> 尽管（后接名词/代词，不能接句子）· be confident that … 对……有信心 · <span class='tag g'>宾语从句</span> that 引导 · of value ＝ valuable，有价值的 · fairly soon 不久</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">come true</td><td class="gram">变成现实：Dreams of finding lost treasure almost came true。</td></tr>
+      <tr><td class="sen">use sth. to do sth.</td><td class="gram">用某物做某事：it has been used to detect gold。</td></tr>
+      <tr><td class="sen">used to do sth.</td><td class="gram">过去常常做某事：pirates used to hide gold。</td></tr>
+      <tr><td class="sen">armed with</td><td class="gram">装备着，带有：Armed with the new machine, a search party went into the cave。</td></tr>
+      <tr><td class="sen">the entrance to</td><td class="gram">……的入口：the entrance to the cave。</td></tr>
+      <tr><td class="sen">in spite of</td><td class="gram">尽管：In spite of this, many people are confident that …。</td></tr>
+      <tr><td class="sen">of value</td><td class="gram">有价值的：reveal something of value。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">现在完成时的被动语态</div><div class="value">has been invented / has been used / has been buried</div></div>
+      <div class="sum-item"><div class="label">would + 动词原形</div><div class="value">表过去习惯性动作：The pirates would often bury gold…</div></div>
+      <div class="sum-item"><div class="label">分词短语作状语</div><div class="value">Armed with… / hoping to find…</div></div>
+      <div class="sum-item"><div class="label">定语从句</div><div class="value">where 修饰 cave；which 修饰 a gold coin</div></div>
+    </div>
+    <ul>
+      <li><b>现在完成时的被动语态</b>：has been invented ＝ 已经被发明出来。本课连续出现 has been invented / has been used / has been buried，都是「has been + 过去分词」，既说明动作已完成，又强调主语是被动的承受者。</li>
+      <li><b>would 表示过去的习惯</b>：The pirates would often bury gold in the cave and then fail to collect it. 这里的 would 不是「将要」，而是「过去常常」，与 used to 意思相近，但 would 只强调反复的动作，不涉及现在是否还有此习惯。</li>
+      <li><b>armed with / hoping to find 都是状语</b>：armed with the new machine 是过去分词短语作状语（表伴随状态，机器武装的是「探宝队」，故用过去分词）；hoping to find buried treasure 是现在分词短语作状语（表目的，希望是探宝队主动发出的动作，故用现在分词）。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 55 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson55.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson55-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson55-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

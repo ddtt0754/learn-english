@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 43 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Over the South Pole 飞越南极</h1>
+    <p class="sub">新概念英语第二册 Lesson 43 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 43（课本印刷页 194-197）· 13 个生词和短语 · 课文 8 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是记叙伯德飞越南极的短文。语言点集中在 <b>过去完成时与一般过去时的分工</b>、<b>be able to do</b> 与 could 的区别、<b>run into trouble</b> / <b>at one point</b> 等固定短语，以及 lie / clear / rise 这几个易混动词。</p>
+    <h3>¶ 1 · 首飞南极（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">In 1929, three years after his <b>flight</b> over the North Pole, the American <b>explorer</b>, R.E. Byrd, successfully flew over the South Pole for the first time.</td><td class="gram">three years after … 在……之后三年 · R.E. Byrd 是 the American explorer 的同位语 · for the first time 第一次</td></tr>
+      <tr><td class="sen"><b>Though</b>, at first, Byrd and his men were able to take a great many photographs of the mountains that <b>lay</b> below, they soon ran into <b>serious</b> trouble.</td><td class="gram"><span class='tag g'>让步状语从句</span> though 引导，主句前的 Though 与主句用逗号隔开 · that lay below 是定语从句，修饰 the mountains · run into trouble 陷入困境</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 险情（句 3-4）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">At one <b>point</b>, it <b>seemed</b> certain that their plane would <b>crash</b>.</td><td class="gram">at one point 在某一时刻 / 某一地点 · it seemed certain that … 看来肯定（it 是形式主语）· would crash 是过去将来时</td></tr>
+      <tr><td class="sen">It could only get over the mountains if it rose to 10,000 feet.</td><td class="gram"><span class='tag g'>条件状语从句</span> if 引导 · get over 越过，翻过 · rise to + 高度 上升到……</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 脱险（句 5-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Byrd at once ordered his men to throw out two heavy food <b>sacks</b>.</td><td class="gram">at once 立刻，马上 · order sb. to do sth. 命令某人做某事 · throw out 扔掉，抛出（抛掉重物以减轻飞机重量）</td></tr>
+      <tr><td class="sen">The plane was then able to rise and it <b>cleared</b> the mountains by 400 feet.</td><td class="gram">be able to do 能做成某事（强调做成，而非仅仅具备能力）· clear 在此是动词，意为「越过」· by 400 feet 以 400 英尺之差，by 表示「相差」</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 飞抵极点（句 7-8）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Byrd now knew that he would be able to reach the South <b>Pole</b> which was 300 miles away, for there were no more mountains in sight.</td><td class="gram"><span class="tag g">宾语从句</span> that 引导 · which was 300 miles away 是定语从句，修饰 the South Pole · for 是并列连词，表原因 · in sight 在视野之内</td></tr>
+      <tr><td class="sen">The <b>aircraft</b> was able to fly over the <b>endless</b> white <b>plains</b> without difficulty.</td><td class="gram">aircraft 单复数同形 · without difficulty 毫无困难地（介词短语作状语）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">run into trouble</td><td class="gram">陷入困境：they soon ran into serious trouble。</td></tr>
+      <tr><td class="sen">at one point</td><td class="gram">在某一时刻 / 某一地点：At one point, it seemed certain that their plane would crash.</td></tr>
+      <tr><td class="sen">get over</td><td class="gram">越过，翻过；也可表示「克服」：get over the mountains / get over a difficulty。</td></tr>
+      <tr><td class="sen">throw out</td><td class="gram">扔掉，抛出：order his men to throw out two heavy food sacks。</td></tr>
+      <tr><td class="sen">by + 数量</td><td class="gram">表示相差若干：it cleared the mountains by 400 feet（以 400 英尺之差越过山头）。</td></tr>
+      <tr><td class="sen">in sight</td><td class="gram">在视野之内，看得见：there were no more mountains in sight。</td></tr>
+      <tr><td class="sen">without difficulty</td><td class="gram">毫无困难地：fly over the endless white plains without difficulty。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">be able to do</div><div class="value">强调「做成某事」，可用于各种时态</div></div>
+      <div class="sum-item"><div class="label">could</div><div class="value">只表示「有能力」，不能表示将来做成</div></div>
+      <div class="sum-item"><div class="label">过去将来时</div><div class="value">would + 动词原形：their plane would crash</div></div>
+      <div class="sum-item"><div class="label">定语从句</div><div class="value">that lay below / which was 300 miles away</div></div>
+    </div>
+    <ul>
+      <li><b>be able to 与 could</b>：句 6 用 was able to rise，强调「果然升起来了」，是事实上的成功；如果只说 could rise，则仅表示「有升起来的能力」，未必真升起来了。谈到「在某一具体场合做成了某事」，要用 was/were able to，不用 could。</li>
+      <li><b>lie 的两个过去式</b>：lie（躺、位于）的过去式是 lay，过去分词是 lain；而 lay（放置）的过去式是 laid，过去分词 also laid。本课 that lay below 是 lie 的过去式，不要误当成 lay（放置）。</li>
+      <li><b>by 表「相差」</b>：it cleared the mountains by 400 feet ＝ 飞机以高出山头 400 英尺的高度飞越。同类用法还有 win by two goals（以两球之差取胜）、miss the train by five minutes（差五分钟没赶上火车）。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 43 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson43.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson43-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson43-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson43-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 10 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Not for jazz</h1>
+    <p class="sub">新概念英语第二册 Lesson 10 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 10（课本印刷页 48-51）· 11 个生词和短语 · 课文 12 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是「古钢琴被弄坏」的短文，语言点集中在 <b>被动语态</b>（一般过去时被动、现在进行时被动、情态类被动）与 <b>belong to / be made in / be allowed to</b> 等固定搭配。</p>
+    <h3>¶ 1 · 我们家的古钢琴（句 1-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">We have an old <b>musical</b> <b>instrument</b>.</td><td class="gram">musical 是形容词，修饰 instrument · instrument 泛指乐器</td></tr>
+      <tr><td class="sen">It is called a <b>clavichord</b>.</td><td class="gram"><span class='tag'>被动语态</span> is called = 被称为 · 主语 it 是动作的承受者，故用被动</td></tr>
+      <tr><td class="sen">It was made in Germany in 1681.</td><td class="gram">was made 是一般过去时被动 · in + 地点 / in + 年份，两个 in 含义不同</td></tr>
+      <tr><td class="sen">Our clavichord is kept in the living room.</td><td class="gram">is kept 表被动、也表状态 · keep 在这里意为「放置、保存」</td></tr>
+      <tr><td class="sen">It has belonged to our family for a long time.</td><td class="gram"><span class="tag g">belong to</span> 不用被动 · for + 一段时间与现在完成时连用</td></tr>
+      <tr><td class="sen">The instrument was bought by my grandfather many years ago.</td><td class="gram">was bought by … 被动语态用 by 引出动作执行者</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 古钢琴被弄坏（句 7-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen"><b>Recently</b> it was <b>damaged</b> by a visitor.</td><td class="gram"><span class='tag r'>被动</span> was damaged by 被…弄坏 · recently 常与过去时或现在完成时连用</td></tr>
+      <tr><td class="sen">She tried to play <b>jazz</b> on it!</td><td class="gram">play + 乐器用 on（play jazz on it）· 句末感叹号表示惊讶</td></tr>
+      <tr><td class="sen">She struck the <b>keys</b> too hard and two of the <b>strings</b> were broken.</td><td class="gram">struck 是 strike 的过去式 · two of the strings 表「其中的两根弦」· were broken 被动</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 父亲震惊与现在的处境（句 10-12）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">My father was <b>shocked</b>.</td><td class="gram">shocked 是形容词化的过去分词，表「感到震惊」</td></tr>
+      <tr><td class="sen">Now we are not <b>allowed</b> to <b>touch</b> it.</td><td class="gram"><span class='tag'>be allowed to do</span> 被允许做某事 · 否定式 are not allowed to</td></tr>
+      <tr><td class="sen">It is being repaired by a friend of my father's.</td><td class="gram"><span class='tag g'>现在进行时被动</span> is being repaired = 正在被修理 · a friend of my father's 是双重所有格</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">be made in + 地点/年份</td><td class="gram">制造于某地/某年：It was made in Germany in 1681.</td></tr>
+      <tr><td class="sen">belong to</td><td class="gram">属于（没有被动语态）：It has belonged to our family.</td></tr>
+      <tr><td class="sen">be allowed to do sth.</td><td class="gram">被允许做某事：We are not allowed to touch it.</td></tr>
+      <tr><td class="sen">a friend of my father's</td><td class="gram">双重所有格：我父亲的一位朋友。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">一般过去时被动</div><div class="value">was/were + 过去分词（was made / were broken）</div></div>
+      <div class="sum-item"><div class="label">现在进行时被动</div><div class="value">is/are being + 过去分词（is being repaired）</div></div>
+      <div class="sum-item"><div class="label">不定式被动</div><div class="value">be allowed to do sth.（被允许做某事）</div></div>
+      <div class="sum-item"><div class="label">固定搭配</div><div class="value">be called / be kept / belong to / be made in</div></div>
+    </div>
+    <ul>
+      <li><b>被动语态的核心是「主语承受动作」</b>：It was damaged by a visitor.（古钢琴被弄坏）；若说 A visitor damaged it. 则是主动。</li>
+      <li><b>belong to 没有被动语态</b>：It belongs to me.（✓）／It is belonged to me.（✗）。</li>
+      <li><b>双重所有格</b>：a friend of my father's = one of my father's friends；不能说 a friend of my father。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 10 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson10.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson10-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson10-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson10-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

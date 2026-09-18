@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>🎬 NCE Book1 Lesson 63 情景视频 · Thank you, doctor 谢谢你，大夫</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:linear-gradient(180deg,#0f172a,#1e293b);overflow:hidden}
+body{
+  font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+  display:flex;flex-direction:column;color:#fff;
+}
+.v-header{
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 14px;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+  color:#fff;font-size:15px;font-weight:700;letter-spacing:1px;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);text-align:center;
+}
+.v-header .sub{font-size:12px;font-weight:500;opacity:.92;letter-spacing:0}
+.v-main{flex:1;min-height:0;display:flex;gap:14px;padding:14px}
+.v-stage{flex:2;min-width:0;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.v-stage video{
+  max-width:100%;max-height:100%;width:auto;height:auto;
+  background:#000;border-radius:12px;box-shadow:0 18px 50px rgba(0,0,0,.5);
+}
+.v-now{flex-shrink:0;font-size:13px;color:#cbd5e1;text-align:center}
+.v-now b{color:#7dffce}
+
+.v-list{
+  flex:0 0 320px;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:8px;
+  padding-right:2px;
+}
+.v-list::-webkit-scrollbar{width:6px}
+.v-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:3px}
+.v-group{font-size:12px;font-weight:800;color:#7dffce;letter-spacing:.05em;margin:6px 2px 2px}
+.v-item{
+  display:flex;align-items:center;gap:10px;padding:11px 13px;border-radius:12px;cursor:pointer;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);
+  transition:background .15s,transform .1s,border-color .15s;
+}
+.v-item:hover{background:rgba(255,255,255,.13)}
+.v-item:active{transform:scale(.98)}
+.v-item.active{background:linear-gradient(135deg,rgba(53,210,154,.28),rgba(47,157,240,.28));border-color:#35d29a}
+.v-idx{
+  flex:0 0 26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:800;background:rgba(255,255,255,.14);color:#e2e8f0;
+}
+.v-item.active .v-idx{background:#35d29a;color:#0f172a}
+.v-info{flex:1;min-width:0}
+.v-name{font-size:13.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.v-page{font-size:11px;color:#94a3b8;margin-top:1px}
+.v-play{flex:0 0 auto;font-size:12px;color:#7dffce;font-weight:700}
+
+.v-controls{
+  flex-shrink:0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;
+  padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+  background:rgba(15,23,42,.95);
+}
+.vc-btn{
+  padding:10px 16px;background:rgba(255,255,255,.12);color:#fff;
+  border:1px solid rgba(255,255,255,.22);border-radius:10px;font-size:14px;
+  font-weight:600;cursor:pointer;transition:background .15s,transform .12s;
+  display:inline-flex;align-items:center;gap:6px;font-family:inherit;text-decoration:none;
+}
+.vc-btn:hover{background:rgba(255,255,255,.25)}
+.vc-btn:active{transform:scale(.95)}
+.vc-btn.home{background:#35d29a;color:#0f172a;border-color:transparent;font-weight:800}
+.vc-btn.home:hover{background:#2fbf8d}
+.vc-speed{color:#fff;font-size:13px;background:rgba(0,0,0,.45);padding:6px 14px;border-radius:8px;min-width:78px;text-align:center;font-weight:700}
+@media (max-width:760px){
+  .v-main{flex-direction:column;gap:10px;padding:10px}
+  .v-stage{flex:1 1 auto}
+  .v-list{flex:0 0 auto;max-height:38vh}
+  .vc-btn{padding:9px 13px;font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<div class="v-header">🎬 新概念英语第一册 Lesson 63 · Thank you, doctor 谢谢你，大夫 情景视频 <span class="sub">（共 2 个版本 · 点击列表切换）</span></div>
+
+<div class="v-main">
+  <div class="v-stage">
+    <video id="player" preload="metadata" playsinline controls autoplay></video>
+    <div class="v-now" id="nowTitle">正在播放：<b>—</b></div>
+  </div>
+  <div class="v-list" id="playlist"><!-- JS 生成 --></div>
+</div>
+
+<div class="v-controls">
+  <span class="vc-speed" id="speedLabel">1.0x</span>
+  <button class="vc-btn" onclick="prevVideo()">⏮ 上一个</button>
+  <button class="vc-btn" onclick="nextVideo()">⏭ 下一个</button>
+  <button class="vc-btn" onclick="slowDown()">⏪ 变慢</button>
+  <button class="vc-btn" onclick="speedUp()">⏩ 变快</button>
+  <button class="vc-btn" id="pauseBtn" onclick="togglePause()">⏸ 暂停</button>
+  <a class="vc-btn home" href="b1-lesson63.html">🏠 返回</a>
+</div>
+
+<script>
+"use strict";
+/* ===== 播放列表数据（视频来源：../../../resources/nce/book1/video/ Lesson 63 各版本） ===== */
+var BASE = "../../../resources/nce/book1/video/";
+var VIDEOS = [
+  {f:"V2/EP.31-Lesson63-V2.mp4", name:"Lesson 63 · Thank you, doctor 谢谢你，大夫", page:"V2 · 真人秀版"},
+  {f:"V3/EP.30-Lesson63-V3.mp4", name:"Lesson 63 · Thank you, doctor 谢谢你，大夫", page:"V3 · 电影版"}
+];
+
+var player = document.getElementById('player');
+var pauseBtn = document.getElementById('pauseBtn');
+var speedLabel = document.getElementById('speedLabel');
+var listEl = document.getElementById('playlist');
+var nowTitle = document.getElementById('nowTitle');
+var speeds = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
+var speedIdx = 2;
+var curIdx = 0;
+
+function renderList(){
+  var h = '<div class="v-group">Lesson 63 · Thank you, doctor 谢谢你，大夫</div>';
+  VIDEOS.forEach(function(v, i){
+    h += '<div class="v-item' + (i === curIdx ? ' active' : '') + '" data-i="' + i + '">'
+       +   '<span class="v-idx">' + (i + 1) + '</span>'
+       +   '<div class="v-info"><div class="v-name">' + v.name + '</div>'
+       +     '<div class="v-page">' + v.page + '</div></div>'
+       +   '<span class="v-play">▶</span>'
+       + '</div>';
+  });
+  listEl.innerHTML = h;
+}
+listEl.addEventListener('click', function(e){
+  var item = e.target.closest('.v-item');
+  if(item) playAt(parseInt(item.dataset.i, 10));
+});
+
+function playAt(i){
+  if(i < 0 || i >= VIDEOS.length) return;
+  curIdx = i;
+  var v = VIDEOS[i];
+  player.src = BASE + v.f;
+  player.playbackRate = speeds[speedIdx];
+  nowTitle.innerHTML = '正在播放：<b>' + v.name + '（' + v.page + '）</b>';
+  document.querySelectorAll('.v-item').forEach(function(el){
+    el.classList.toggle('active', parseInt(el.dataset.i, 10) === i);
+  });
+  var active = listEl.querySelector('.v-item.active');
+  if(active) active.scrollIntoView({block:'nearest'});
+  var p = player.play();
+  if(p && p.catch) p.catch(function(){ /* 自动播放被拦截，等待用户点击 */ });
+}
+function nextVideo(){ if(curIdx < VIDEOS.length - 1) playAt(curIdx + 1); }
+function prevVideo(){ if(curIdx > 0) playAt(curIdx - 1); }
+
+function togglePause(){
+  if(player.paused){ player.play(); pauseBtn.textContent = '⏸ 暂停'; }
+  else { player.pause(); pauseBtn.textContent = '▶ 继续'; }
+}
+function speedUp(){ if(speedIdx < speeds.length - 1) speedIdx++; applySpeed(); }
+function slowDown(){ if(speedIdx > 0) speedIdx--; applySpeed(); }
+function applySpeed(){
+  player.playbackRate = speeds[speedIdx];
+  speedLabel.textContent = speeds[speedIdx].toFixed(2).replace(/\.?0+$/, '') + 'x';
+}
+player.addEventListener('play', function(){ pauseBtn.textContent = '⏸ 暂停'; });
+player.addEventListener('pause', function(){ pauseBtn.textContent = '▶ 继续'; });
+player.addEventListener('ended', function(){
+  pauseBtn.textContent = '▶ 继续';
+  if(curIdx < VIDEOS.length - 1) playAt(curIdx + 1);
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') location.href = 'b1-lesson63.html';
+  if(e.key === ' '){ e.preventDefault(); togglePause(); }
+  if(e.key === 'ArrowLeft') slowDown();
+  if(e.key === 'ArrowRight') speedUp();
+  if(e.key === 'ArrowUp'){ e.preventDefault(); prevVideo(); }
+  if(e.key === 'ArrowDown'){ e.preventDefault(); nextVideo(); }
+});
+
+renderList();
+playAt(0);
+applySpeed();
+</script>
+
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b1-lesson63.html" class="grammar">📖 句子跟读</a>
+  <a href="b1-lesson63-grammar.html" class="grammar">📘 语法解读</a>
+  <a href="b1-lesson63-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b1-lesson63-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav>
+</body>
+</html>

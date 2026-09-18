@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 52 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 A pretty carpet 漂亮的地毯</h1>
+    <p class="sub">新概念英语第二册 Lesson 52 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 52（课本印刷页 244-247）· 4 个生词和短语 · 课文 9 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则「书当地毯」的生活小品。核心语言点是 <b>现在完成进行时 have been doing</b>（强调动作从过去持续到现在，并有现成结果），以及 <b>to make matters worse</b>、<b>get sth. in order</b>、<b>at the moment</b>、<b>in one's spare time</b> 等固定短语。</p>
+    <h3>¶ 1 · 搬家收拾（句 1-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">We have just moved into a new house and I <b>have been working</b> hard all morning.</td><td class="gram"><span class='tag b'>现在完成进行时</span> have been + 现在分词：强调动作从过去某时一直持续到现在，而且有现成结果（屋子还没收好）· move into 搬进 · all morning 整个上午</td></tr>
+      <tr><td class="sen">I <b>have been trying</b> to get my new room in order.</td><td class="gram">have been trying 与上句同属现在完成进行时 · get sth. in order 把某物整理好 / 收拾整齐</td></tr>
+      <tr><td class="sen">This has not been easy because I own over a thousand books.</td><td class="gram"><span class='tag g'>原因状语从句</span> because 引导 · over ＝ more than，超过 · a thousand books 一千本书（a thousand 前有数词时不加 -s）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 书铺满地（句 4-5）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen"><b>To make matters worse</b>, the room is rather small, so I have <b>temporarily</b> put my books on the floor.</td><td class="gram">to make matters worse 更糟糕的是（不定式短语作插入语）· rather 相当，颇为 · temporarily 暂时地（temporary + -ly）· so 引出结果</td></tr>
+      <tr><td class="sen">At the moment, they cover every <b>inch</b> of floor <b>space</b> and I <b>actually</b> have to walk on them to get in or out of the room.</td><td class="gram">at the moment 此刻，目前 · every inch of floor space 地板的每一点空隙 · actually 实际上（actual + -ly）· walk on them 踩在书上 · get in or out of 进出（房间）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 抬书橱（句 6-7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">A short while ago, my sister helped me to carry one of my old bookcases up the stairs.</td><td class="gram">a short while ago 不久以前 · help sb. (to) do sth. 帮某人做某事 · carry sth. up the stairs 把某物搬上楼</td></tr>
+      <tr><td class="sen">She went into my room and got a big surprise when she saw all those books on the floor.</td><td class="gram">get a big surprise 大吃一惊 · <span class='tag g'>时间状语从句</span> when 引导 · all those books 所有那些书</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 漂亮的地毯（句 8-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">'This is the prettiest carpet I have ever seen,' she said.</td><td class="gram"><span class='tag b'>定语从句</span> I have ever seen 修饰 the prettiest carpet，关系代词 that 被省略 · 从句用现在完成时，与「我见过的最……」这一最高级结构配套</td></tr>
+      <tr><td class="sen">She gazed at it for some time then added, 'You don't need bookcases at all. You can sit here in your spare time and read the carpet!'</td><td class="gram">gaze at 凝视，盯着看 · for some time 好一会儿 · not … at all 根本不 · in one's spare time 在某人的空闲时间 · read the carpet 把地毯当书读，全文的笑点</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">move into</td><td class="gram">搬进：We have just moved into a new house。</td></tr>
+      <tr><td class="sen">get sth. in order</td><td class="gram">把某物整理好：get my new room in order。</td></tr>
+      <tr><td class="sen">to make matters worse</td><td class="gram">更糟糕的是（作插入语）：To make matters worse, the room is rather small。</td></tr>
+      <tr><td class="sen">at the moment</td><td class="gram">此刻，目前：At the moment, they cover every inch of floor space。</td></tr>
+      <tr><td class="sen">every inch of</td><td class="gram">每一寸……：every inch of floor space。</td></tr>
+      <tr><td class="sen">help sb. (to) do sth.</td><td class="gram">帮某人做某事：my sister helped me to carry one of my old bookcases。</td></tr>
+      <tr><td class="sen">in one's spare time</td><td class="gram">在某人的空闲时间：You can sit here in your spare time。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">现在完成进行时</div><div class="value">have been doing：从过去持续到现在并有结果</div></div>
+      <div class="sum-item"><div class="label">最高级 + 定语从句</div><div class="value">the prettiest carpet I have ever seen</div></div>
+      <div class="sum-item"><div class="label">让步/插入短语</div><div class="value">to make matters worse / at the moment</div></div>
+      <div class="sum-item"><div class="label">not … at all</div><div class="value">根本不，一点也不</div></div>
+    </div>
+    <ul>
+      <li><b>现在完成进行时 vs 现在完成时</b>：I have been working hard all morning 强调「一上午一直在干」，而且现在还能看到结果（屋子乱着）；若说 I have worked hard all morning，只陈述「干完了」这个事实。本课通篇用进行式，正为了写出「忙到现在还没忙完」的状态。</li>
+      <li><b>the prettiest carpet I have ever seen</b>：这是「最高级 + 定语从句」的固定搭配，从句必须用现在完成时 have ever seen，不能写成 I ever saw。同类结构还有 the best film I have ever seen。</li>
+      <li><b>to make matters worse 是插入语</b>：它是一个独立的不定式短语，用逗号与主句隔开，作用是层层递进地说明处境有多糟。类似插入语还有 to tell the truth、to be honest。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 52 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson52.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson52-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson52-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson52-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

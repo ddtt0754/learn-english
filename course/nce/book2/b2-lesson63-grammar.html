@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 63 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 She was not amused 她并不觉得好笑</h1>
+    <p class="sub">新概念英语第二册 Lesson 63 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 63（课本印刷页 288-291）· 6 个生词和短语 · 课文 11 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则「父女之间的幽默落差」的小故事。语言点集中在 <b>a large circle of / admire sb. for sth.</b>、<b>the sort of thing + 定语从句</b>、<b>间接引语中的宾语从句</b>（问珍妮是否喜欢、为何不喜欢），以及 as soon as 引导的时间状语从句。</p>
+    <h3>¶ 1 · 交际家杰里米（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Jeremy Hampden has a large <b>circle</b> of friends and is very popular at parties.</td><td class="gram">a large circle of friends 一大圈朋友 · be popular at parties 在社交场合很受欢迎 · 用一般现在时陈述常态</td></tr>
+      <tr><td class="sen">Everybody <b>admires</b> him for his great sense of humour — everybody, that is, except his six-year-old daughter, Jenny.</td><td class="gram">admire sb. for sth. 因某事而佩服某人 · a sense of humour 幽默感 · that is 也就是说（插入语）· except 除……之外 · 破折号之后的补语是全篇的伏笔</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 婚礼演讲（句 3-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Recently, one of Jeremy's <b>closest</b> friends asked him to make a speech at a <b>wedding</b> <b>reception</b>.</td><td class="gram">ask sb. to do sth. 请某人做某事 · make a speech 作演讲 · a wedding reception 婚礼招待会（婚宴）· closest 是 close 的最高级</td></tr>
+      <tr><td class="sen">This is the <b>sort</b> of thing that Jeremy loves.</td><td class="gram">the sort of thing ……类的事情 · <span class='tag g'>定语从句</span> that Jeremy loves 修饰 the sort of thing</td></tr>
+      <tr><td class="sen">He prepared the speech carefully and went to the wedding with Jenny.</td><td class="gram">prepare sth. carefully 认真准备 · go to the wedding 参加婚礼 · 交代女儿同行的原因</td></tr>
+      <tr><td class="sen">He had included a large number of funny stories in the speech and, of course, it was a great success.</td><td class="gram"><span class="tag b">过去完成时</span> had included（演讲之前就已写入）· include sth. in sth. 把某物包括在某物中 · a large number of 许多（＋可数名词复数）· a great success 一次巨大的成功</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 女儿的反应（句 7-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">As soon as he had finished, Jenny told him she wanted to go home.</td><td class="gram"><span class='tag g'>时间状语从句</span> as soon as 引导 · <span class='tag b'>过去完成时</span> had finished（先讲完，再说话）· <span class='tag g'>宾语从句</span> she wanted to go home</td></tr>
+      <tr><td class="sen">Jeremy was a little disappointed by this but he did as his daughter asked.</td><td class="gram">be disappointed by 因……而失望 · a little 有点儿（修饰形容词）· do as sb. asks 按某人要求的做</td></tr>
+      <tr><td class="sen">On the way home, he asked Jenny if she had enjoyed the speech.</td><td class="gram"><span class='tag g'>宾语从句</span> if 引导（＝ whether，是否）· on the way home 在回家的路上 · had enjoyed 用过去完成时，指在婚礼当时是否喜欢</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 出人意料的答案（句 10-11）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">To his surprise, she said she hadn't.</td><td class="gram">to one's surprise 令某人惊讶的是 · she hadn't ＝ she hadn't enjoyed the speech（省略，避免重复）</td></tr>
+      <tr><td class="sen">Jeremy asked her why this was so and she told him that she did not like to see so many people laughing at him!</td><td class="gram"><span class='tag g'>宾语从句</span> why this was so（为何如此）· <span class='tag g'>宾语从句</span> that 引导 · like to do sth. 喜欢做某事 · see sb. doing sth. 看见某人正在做某事 · laugh at sb. 嘲笑某人 · 结尾以孩子的天真理解制造笑点</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">a large circle of</td><td class="gram">一大圈（朋友）：Jeremy Hampden has a large circle of friends。</td></tr>
+      <tr><td class="sen">admire sb. for sth.</td><td class="gram">因某事而佩服某人：Everybody admires him for his great sense of humour。</td></tr>
+      <tr><td class="sen">a sense of humour</td><td class="gram">幽默感：his great sense of humour。</td></tr>
+      <tr><td class="sen">make a speech</td><td class="gram">作演讲：asked him to make a speech at a wedding reception。</td></tr>
+      <tr><td class="sen">the sort of thing</td><td class="gram">……类的事情：This is the sort of thing that Jeremy loves。</td></tr>
+      <tr><td class="sen">a large number of</td><td class="gram">许多（＋可数名词复数）：a large number of funny stories。</td></tr>
+      <tr><td class="sen">to one's surprise</td><td class="gram">令某人惊讶的是：To his surprise, she said she hadn't。</td></tr>
+      <tr><td class="sen">laugh at sb.</td><td class="gram">嘲笑某人：so many people laughing at him。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">间接引语的宾语从句</div><div class="value">ask sb. if / why …（是否 / 为何）</div></div>
+      <div class="sum-item"><div class="label">过去完成时</div><div class="value">had included / had finished / had enjoyed</div></div>
+      <div class="sum-item"><div class="label">定语从句</div><div class="value">the sort of thing that Jeremy loves</div></div>
+      <div class="sum-item"><div class="label">see sb. doing sth.</div><div class="value">看见某人正在做某事</div></div>
+    </div>
+    <ul>
+      <li><b>间接引语中的时态后移</b>：直接引语 "Did you enjoy the speech?" 转为间接引语时变成 he asked Jenny if she had enjoyed the speech，一般过去时后移为过去完成时。本课句 9（if she had enjoyed）与句 11（why this was so、did not like）都是这一规则的体现。</li>
+      <li><b>the sort of thing that Jeremy loves</b>：the sort of thing 后接定语从句时，关系代词通常用 that（也可省略），不要用 which。同类还有 the kind of book that I like。</li>
+      <li><b>see sb. doing sth. 与 see sb. do sth.</b>：前者强调「看见某人正在做某事」（动作正在进行），后者强调「看见某人做了某事」（动作已完成）。句中 see so many people laughing at him 用现在分词，写的是珍妮看到的「一群人一直在笑」的画面。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 63 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson63.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson63-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson63-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson63-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

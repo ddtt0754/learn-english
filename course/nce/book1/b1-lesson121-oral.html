@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>新概念英语第一册 Lesson 121 · 口语练习</title>
+<style>
+:root{
+  --blue:#2e9e6b;
+  --blue2:#3bb98a;
+  --blue-d:#1f7d56;
+  --bg:#eef4f0;
+  --card:#ffffff;
+  --line:#e3ede9;
+  --ink:#22303a;
+  --sub:#6b7c86;
+  --radius:16px;
+  --shadow:0 6px 20px rgba(46,158,107,.10);
+  --brand:linear-gradient(135deg,#2e9e6b,#3bb98a);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  background:var(--bg);color:var(--ink);min-height:100vh;line-height:1.7;
+  -webkit-tap-highlight-color:transparent;
+}
+.container{max-width:780px;width:100%;margin:0 auto;padding:0 16px 70px}
+
+.hero{position:relative;overflow:hidden;background:var(--brand);color:#fff;margin-bottom:16px;
+  border-radius:0 0 22px 22px;padding:26px 20px 20px;box-shadow:0 8px 22px rgba(46,158,107,.25)}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.16)}
+.hero::before{width:120px;height:120px;top:-46px;right:-26px}
+.hero::after{width:64px;height:64px;bottom:-24px;left:-16px;background:rgba(255,255,255,.1)}
+.hero h1{font-size:1.3rem;font-weight:800;letter-spacing:.02em;position:relative}
+.hero .sub{font-size:.78rem;opacity:.95;margin-top:3px;position:relative}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 16px 18px;margin-bottom:16px;box-shadow:var(--shadow);overflow:hidden}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;
+  padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.card-name{font-size:1rem;font-weight:800;color:var(--ink)}
+.card-name .pn{color:var(--blue);margin-right:6px}
+.score{background:#e6f4ec;color:var(--blue-d);font-weight:800;font-size:.74rem;
+  padding:4px 11px;border-radius:999px;white-space:nowrap}
+.label{font-size:.72rem;font-weight:800;color:var(--blue);margin:12px 0 6px;letter-spacing:.04em;
+  display:flex;align-items:center;gap:5px}
+.rules{background:#eef6f1;border-radius:10px;padding:11px 13px;font-size:.8rem;color:#2e4a3c;line-height:1.7}
+.rules b{color:var(--blue-d)}
+
+.actions{display:flex;gap:10px;margin-top:14px}
+.btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;
+  font-family:inherit;font-weight:700;font-size:.8rem;padding:11px 8px;border-radius:11px;
+  cursor:pointer;transition:transform .12s;border:1.5px solid transparent}
+.btn:active{transform:scale(.96)}
+.btn-prompt{background:var(--brand);color:#fff;box-shadow:0 5px 14px rgba(46,158,107,.28)}
+
+.ai-area{margin:8px 0 22px;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.ai-bar{background:var(--brand);color:#fff;font-weight:800;font-size:.86rem;
+  padding:12px 16px;display:flex;align-items:center;gap:7px}
+.ai-bar .dot{width:8px;height:8px;border-radius:50%;background:#7dffce;box-shadow:0 0 0 3px rgba(125,255,206,.35)}
+.ai-area iframe{width:100%;height:100vh;height:100dvh;border:0;display:block;background:#eef6f1}
+.ai-fallback{font-size:.72rem;color:var(--sub);text-align:center;padding:8px;border-top:1px solid var(--line)}
+.ai-fallback a{color:var(--blue);font-weight:700}
+
+.foot{text-align:center;color:var(--sub);font-size:.74rem;line-height:1.7;padding-top:8px}
+.foot .strong{color:var(--blue-d);font-weight:800;font-size:.82rem}
+
+.toast{position:fixed;left:50%;bottom:42px;transform:translateX(-50%) translateY(20px);
+  background:rgba(31,45,61,.94);color:#fff;font-weight:700;font-size:.82rem;
+  padding:11px 22px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.22);
+  opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;z-index:99;display:flex;align-items:center;gap:7px}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast .ck{color:#5dffb0;font-weight:900}
+
+@media (max-width:560px){
+  .hero h1{font-size:1.12rem}
+  .card-name{font-size:.94rem}
+  .actions{flex-direction:column;gap:8px}
+  .btn{width:100%}
+  .container{padding:0 12px 70px}
+}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="hero">
+    <h1>新概念英语第一册 Lesson 121 · 口语练习</h1>
+    <div class="sub">The man in a hat 戴帽子的男人 · 戴帽子的男人 · 找回词典 · 配 AI 教练陪练</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <div class="card-name"><span class="pn">AI</span>一对一口语陪练</div>
+      <div class="score">问答</div>
+    </div>
+    <div class="label">📐 练习要求</div>
+    <div class="rules">
+      围绕本课标题 <b>The man in a hat 戴帽子的男人</b>（戴帽子的男人 · 找回词典）主题，AI 老师会出 <b>若干个简单问题</b>，
+      每个问题听完后，用 <b>完整句子口头作答</b>。<br>
+      ⚠️ 尽量说完整句子，不要只说一个词；优先用本课句型与词语：<b>I bought two expensive dictionaries here half an hour ago / Who served you, sir / The lady who is standing behind the counter / The books which are on the counter / The man who I served was wearing a hat / I recognize him now</b>
+    </div>
+    <div class="actions">
+      <button class="btn btn-prompt" onclick="copyText(DATA.p2.prompt,this)">📋 复制提示词</button>
+    </div>
+  </div>
+
+  <div class="ai-area">
+    <div class="ai-bar"><span class="dot"></span>AI 对话训练区 · 豆豆教练</div>
+    <iframe src="https://www.doubao.com/chat/" title="豆包对话训练" loading="lazy" referrerpolicy="no-referrer" allow="microphone *; camera *; autoplay *"></iframe>
+  </div>
+
+  <div class="foot">
+    <div class="strong">新概念英语口语训练</div>
+    <div>卡片内【复制提示词】可一键复制问答提示词，粘贴到下方豆包窗口即可开始 AI 陪练。<br>© 2026 两英豆豆教练</div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"><span class="ck">✓</span><span id="toast-msg">已复制</span></div>
+
+<script>
+/* ===== AI 教练提示词（问答互动）===== */
+const DATA = {
+  p2:{
+    prompt:`扮演一对一外教，围绕《新概念英语》第一册 Lesson 121 课文标题 “The man in a hat 戴帽子的男人” 进行口语训练。\n课文情景：顾客半小时前在店里买了两本昂贵的词典，却忘了带走。经理问他当时是谁接待的，他说是柜台后面那位女士。卡罗琳记不清了，只知道那人戴着帽子。经理便请顾客把帽子戴上——卡罗琳一看，立刻认出了他。\n规则：\n1. 每轮仅一句英文提问 +【中文解释】，一轮一问。\n2. 学生回答：先鼓励 → 精简纠错（中文，只纠关键错误）→ 下一题。\n3. 难度由浅入深，优先使用本课句型与单词（I bought two expensive dictionaries here half an hour ago / Who served you, sir / The lady who is standing behind the counter / The books which are on the counter / The man who I served was wearing a hat / I recognize him now），减少超纲。\n4. 听不懂就重复英文+中文释义；不替学生回答，不一次性多个问题。\n5. 问答5～8轮后，自动做简短练习总结。\n开场：\nI bought two expensive dictionaries here half an hour ago, but I forgot to take them with me.`
+  }
+};
+
+/* ===== 复制 + Toast ===== */
+let toastTimer;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toast-msg').textContent=msg||'已复制';
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),1500);
+}
+function copyText(text){
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).then(()=>showToast('已复制')).catch(()=>fallbackCopy(text));
+  }else{
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text){
+  const ta=document.createElement('textarea');
+  ta.value=text; ta.style.position='fixed'; ta.style.top='-999px'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand('copy'); showToast('已复制'); }
+  catch(e){ showToast('复制失败，请手动复制'); }
+  document.body.removeChild(ta);
+}
+</script>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b1-lesson121.html" class="grammar">📖 句子跟读</a>
+  <a href="b1-lesson121-grammar.html" class="grammar">📘 语法解读</a>
+  <a href="b1-lesson121-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav>
+</body>
+</html>

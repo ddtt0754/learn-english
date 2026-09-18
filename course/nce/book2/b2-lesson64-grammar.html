@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 64 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 The Channel Tunnel 海峡隧道</h1>
+    <p class="sub">新概念英语第二册 Lesson 64 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 64（课本印刷页 292-295）· 13 个生词和短语 · 课文 11 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一篇关于英法海峡隧道的说明文。语言点集中在 <b>虚拟语气</b>（would be … if … were built / If … had not feared …, would have been completed）、<b>suggest that … (should) be built</b>、<b>被动语态</b>，以及 put forward、serve as、draw in 等短语。</p>
+    <h3>¶ 1 · 最初的设想（句 1-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">In 1858, a French engineer, Aimé Thomé de Gamond, arrived in England with a plan for a twenty-one-mile <b>tunnel</b> under the English Channel.</td><td class="gram"><span class='tag b'>同位语</span> a French engineer, Aimé Thomé de Gamond, 人名作同位语 · a plan for ……的计划 · a twenty-one-mile tunnel 一条 21 英里长的隧道（数词＋名词单数作定语）</td></tr>
+      <tr><td class="sen">He said that it would be possible to build a platform in the centre of the Channel.</td><td class="gram"><span class='tag g'>宾语从句</span> that 引导 · it would be possible to do sth. 做某事是可能的（it 是形式主语，真正的主语是后面的不定式）· in the centre of 在……的中心</td></tr>
+      <tr><td class="sen">This platform would serve as a <b>port</b> and a railway station.</td><td class="gram">serve as 充当，用作（＝ be used as）· a railway station 火车站</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 通风难题与双轨方案（句 4-7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The tunnel would be well-<b>ventilated</b> if tall <b>chimneys</b> were built above <b>sea level</b>.</td><td class="gram"><span class='tag g'>条件状语从句</span> if 引导 · <span class='tag b'>虚拟语气</span> would be … if … were built（与现在事实相反）· well-ventilated 通风良好的 · chimney 烟囱 · sea level 海平面</td></tr>
+      <tr><td class="sen">In 1860, a better plan was put forward by an Englishman, William Low.</td><td class="gram"><span class='tag b'>被动语态</span> was put forward：被提出 · put forward 提出（计划、建议）</td></tr>
+      <tr><td class="sen">He suggested that a <b>double</b> railway-tunnel should be built.</td><td class="gram"><span class='tag b'>虚拟语气</span> suggest that … (should) be built：建议……（should 可省略）· double 双的 · a railway-tunnel 铁路隧道</td></tr>
+      <tr><td class="sen">This would solve the problem of <b>ventilation</b>, for if a train entered this tunnel, it would draw in fresh air behind it.</td><td class="gram"><span class='tag b'>虚拟语气</span> would solve / if a train entered / it would draw（对现在情况的假设）· <span class="tag g">并列连词 for</span> 表原因 · draw in 吸入 · fresh air 新鲜空气</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 功亏一篑（句 8-10）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Forty-two years later a tunnel was actually begun.</td><td class="gram">forty-two years later 42 年之后 · actually 竟然，居然（表惊讶）· 用被动语态 begun，强调「隧道」这一工程对象</td></tr>
+      <tr><td class="sen">If, at the time, the British had not <b>feared</b> <b>invasion</b>, it would have been completed.</td><td class="gram"><span class='tag b'>虚拟语气（与过去事实相反）</span> If … had not feared …, would have been completed · fear 害怕 · invasion 入侵</td></tr>
+      <tr><td class="sen">The world had to wait almost another 100 years for the Channel Tunnel.</td><td class="gram">have to wait for 不得不等待 · almost another 100 years 又将近 100 年</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 终于通车（句 11）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">It was <b>officially</b> opened on March 7, 1994, finally <b>connecting</b> Britain to the <b>European</b> <b>continent</b>.</td><td class="gram"><span class='tag b'>被动语态</span> was officially opened · <span class='tag b'>现在分词作结果状语</span> finally connecting Britain to the European continent：终于把英国与欧洲大陆连接起来 · officially 正式地</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">a plan for</td><td class="gram">……的计划：arrived in England with a plan for a twenty-one-mile tunnel。</td></tr>
+      <tr><td class="sen">serve as</td><td class="gram">充当，用作：This platform would serve as a port and a railway station。</td></tr>
+      <tr><td class="sen">put forward</td><td class="gram">提出（计划、建议）：a better plan was put forward by an Englishman。</td></tr>
+      <tr><td class="sen">draw in</td><td class="gram">吸入：it would draw in fresh air behind it。</td></tr>
+      <tr><td class="sen">at the time</td><td class="gram">当时：If, at the time, the British had not feared invasion…。</td></tr>
+      <tr><td class="sen">have to wait for</td><td class="gram">不得不等待：The world had to wait almost another 100 years。</td></tr>
+      <tr><td class="sen">connect … to …</td><td class="gram">把……与……连接起来：finally connecting Britain to the European continent。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">虚拟语气（与现在相反）</div><div class="value">would be … if … were built</div></div>
+      <div class="sum-item"><div class="label">虚拟语气（与过去相反）</div><div class="value">If … had not feared …, would have been completed</div></div>
+      <div class="sum-item"><div class="label">suggest + (should) do</div><div class="value">suggest that a tunnel (should) be built</div></div>
+      <div class="sum-item"><div class="label">被动语态</div><div class="value">was put forward / was actually begun / was officially opened</div></div>
+    </div>
+    <ul>
+      <li><b>两种虚拟语气</b>：本课同时出现「与现在事实相反」和「与过去事实相反」两种形式。The tunnel would be well-ventilated if tall chimneys were built above sea level. 是与现在（或将来）事实相反的假设，从句用过去式 were built、主句用 would be；If, at the time, the British had not feared invasion, it would have been completed. 是与过去事实相反的假设，从句用 had not feared、主句用 would have been completed。</li>
+      <li><b>suggest 后的虚拟语气</b>：He suggested that a double railway-tunnel should be built. suggest（建议）之后的 that 从句要用「(should) + 动词原形」，should 常被省略，写成 that a double railway-tunnel be built。同类动词还有 demand、insist、require 等。</li>
+      <li><b>for 引导的原因分句</b>：This would solve the problem of ventilation, for if a train entered this tunnel, it would draw in fresh air behind it. 这里 for 是并列连词，表「因为」，语气比 because 弱；后半句仍是与现在事实相反的虚拟假设。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 64 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson64.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson64-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson64-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson64-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 53 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Hot snake 触电的蛇</h1>
+    <p class="sub">新概念英语第二册 Lesson 53 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 53（课本印刷页 248-251）· 12 个生词和短语 · 课文 12 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则「蛇引起森林大火」的科普小小说。语言点集中在 <b>被动语态</b>（are caused / was wound）、<b>现在完成进行时 have been trying</b>、以及 in this way、find out、be wound round 等短语；句中还用到 wound 的两种含义。</p>
+    <h3>¶ 1 · 大火之后（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">At last <b>firemen</b> have put out a big forest fire in California.</td><td class="gram">at last 最后，终于 · put out 扑灭（火）· fireman 的复数是 firemen（不规则变化）</td></tr>
+      <tr><td class="sen">Since then, they <b>have been trying</b> to find out how the fire began.</td><td class="gram"><span class='tag b'>现在完成进行时</span> have been trying：从那以后一直试图（并持续到现在）· since then 从那时起，与完成时连用 · <span class='tag g'>宾语从句</span> how the fire began，作 find out 的宾语</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 排查原因（句 3-5）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Forest fires are often <b>caused</b> by broken glass or by cigarette ends which people carelessly throw away.</td><td class="gram"><span class='tag b'>被动语态</span> are caused by：由……引起 · broken glass 碎玻璃 · cigarette ends 烟头 · which people carelessly throw away 是定语从句，修饰 cigarette ends</td></tr>
+      <tr><td class="sen">Yesterday the firemen <b>examined</b> the ground carefully, but were not able to find any broken glass.</td><td class="gram">examine 仔细检查 · be not able to do sth. 未能做某事 · any 用于否定句中</td></tr>
+      <tr><td class="sen">They were also quite sure that a cigarette end did not start the fire.</td><td class="gram">be quite sure that … 十分肯定…… · <span class="tag g">宾语从句</span> that 引导 · start the fire 引起火灾</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 意外发现（句 6-8）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">This morning, however, a fireman <b>accidentally</b> discovered the cause.</td><td class="gram">however 作插入语，表转折 · accidentally 偶然地（accident + -al + -ly）· discover the cause 发现原因</td></tr>
+      <tr><td class="sen">He noticed the <b>remains</b> of a snake which was wound round the electric <b>wires</b> of a 16,000-<b>volt</b> <b>power line</b>.</td><td class="gram"><span class="tag b">被动语态</span> was wound round：被缠绕在……上 · the remains of a snake 一条蛇的残骸 · a 16,000-volt power line 一条 16,000 伏的高压线</td></tr>
+      <tr><td class="sen">In this way, he was able to <b>solve</b> the <b>mystery</b>.</td><td class="gram">in this way 就这样 · be able to do 能够做（强调成功）· solve the mystery 解开谜团</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 真相大白（句 9-12）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The explanation was simple but very unusual.</td><td class="gram">explanation 解释（explain 的名词形式）· simple but very unusual 简单却很不寻常，为下面的解释作铺垫</td></tr>
+      <tr><td class="sen">A bird had <b>snatched</b> up the snake from the ground and then dropped it on to the wires.</td><td class="gram"><span class="tag b">过去完成时</span> had snatched up：先发生的动作 · snatch up 抓起，攫取 · drop sth. on to 把某物丢到……上</td></tr>
+      <tr><td class="sen">The snake then wound itself round the wires.</td><td class="gram">wind oneself round ＝ 把自身缠绕在……上 · 注意 wind（/waɪnd/ 缠绕）与 wound（/wuːnd/ 伤口）拼写相同、读音不同</td></tr>
+      <tr><td class="sen">When it did so, it sent <b>sparks</b> down to the ground and these immediately started a fire.</td><td class="gram">do so 代替前面提到的动作（wound itself round the wires）· send … down to 把……送到 · spark 电火花 · 结尾把整条因果链收齐：蛇缠线 → 短路 → 火花落地 → 起火</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">put out</td><td class="gram">扑灭（火）；也可表示「伸出」：put out a big forest fire。</td></tr>
+      <tr><td class="sen">find out</td><td class="gram">查明，弄清楚：find out how the fire began。</td></tr>
+      <tr><td class="sen">in this way</td><td class="gram">就这样，用这种方法：In this way, he was able to solve the mystery。</td></tr>
+      <tr><td class="sen">be caused by</td><td class="gram">由……引起：Forest fires are often caused by broken glass。</td></tr>
+      <tr><td class="sen">be wound round</td><td class="gram">被缠绕在……上：a snake which was wound round the electric wires。</td></tr>
+      <tr><td class="sen">power line</td><td class="gram">电力线，输电线：the electric wires of a 16,000-volt power line。</td></tr>
+      <tr><td class="sen">hot</td><td class="gram">带电的，通电的（本课标题）：Hot snake ＝ 带电的蛇（触电的蛇）。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">现在完成进行时</div><div class="value">have been trying：一直试图（持续到现在）</div></div>
+      <div class="sum-item"><div class="label">被动语态</div><div class="value">are caused by / was wound round</div></div>
+      <div class="sum-item"><div class="label">宾语从句</div><div class="value">how the fire began 作 find out 的宾语</div></div>
+      <div class="sum-item"><div class="label">do so</div><div class="value">代替前面提到的动作，避免重复</div></div>
+    </div>
+    <ul>
+      <li><b>现在完成进行时 have been trying</b>：Since then, they have been trying to find out … 表示从过去某一时刻起一直持续到现在、并且还要继续下去的动作。如果说 have tried，只表示「试过了」；用进行式才写出「一直在试」的持续感。</li>
+      <li><b>wound 的两副面孔</b>：本课 was wound round 中的 wound 是 wind（/waɪnd/ 缠绕）的过去分词，读 /waʊnd/；而 wound 本身又是一个独立单词「伤口」（读 /wuːnd/）。看到 wound 要先看句子结构，再定读音与词义。</li>
+      <li><b>do so 的用法</b>：When it did so 中的 did so 代替 wound itself round the wires，避免重复。这是英语中常见的「替代」手段，类似的还有 do that、do it。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 53 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson53.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson53-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson53-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

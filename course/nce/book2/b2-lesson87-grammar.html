@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 87 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 A perfect alibi 极好的不在犯罪现场的罪证</h1>
+    <p class="sub">新概念英语第二册 Lesson 87 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 87（课本印刷页 398-401）· 6 个生词和短语 · 课文 10 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一段侦探对话。语言点集中在 <b>直接引语与叙述句的语序</b>（"…," said the man.）、<b>suggest that … 从句用陈述语序</b>、<b>过去完成时与一般过去时在对话中的分工</b>，以及 <b>on time</b>、<b>break down</b>、<b>be taken off the line</b> 等固定表达。</p>
+    <h3>¶ 1 · 嫌疑人的说辞（句 1-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"At the time the murder was <b>committed</b>, I was travelling on the 8 o'clock train to London," said the man.</td><td class="gram"><span class='tag g'>时间状语从句</span> the murder was committed 用被动语态，可理解为定语从句 that/which the murder was committed 的省略 · <span class='tag g'>定语从句</span> 定语从句修饰 the time 时 that 常可省略 · the 8 o'clock train to London 开往伦敦的八点钟的火车 · 叙述句用倒装语序 said the man</td></tr>
+      <tr><td class="sen">"Do you always catch such an early train?" asked the inspector.</td><td class="gram">catch a train 赶火车 · such an early train 这么早的火车 · 一般疑问句直接引语 + asked the inspector 的倒装叙述句</td></tr>
+      <tr><td class="sen">"Of course I do," answered the man. "I must be at work at 10 o'clock. My <b>employer</b> will <b>confirm</b> that I was there on time."</td><td class="gram">用 do 代替前面的 catch such an early train，避免重复 · be at work 在上班 · <span class='tag g'>宾语从句</span> that 引导作 confirm 的宾语 · on time 准时（注意与 in time 及时区分）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 探长的追问（句 4-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"Would a later train get you to work on time?" asked the inspector.</td><td class="gram">a later train 晚一点的火车 · get sb. to somewhere 使某人到达某处 · 用 would 提问，语气委婉</td></tr>
+      <tr><td class="sen">"I suppose it would, but I never catch a later train."</td><td class="gram">I suppose 我想，我以为 · it would 承前省略 get me to work on time · never 与一般现在时连用，表示一贯如此</td></tr>
+      <tr><td class="sen">"At what time did you arrive at the station?"</td><td class="gram">at what time 在几点钟 · arrive at the station 到达车站（arrive at 用于较小的地方，arrive in 用于城市、国家）</td></tr>
+      <tr><td class="sen">"At ten to eight. I bought a paper and waited for the train."</td><td class="gram">at ten to eight 七点五十分（ten to eight = 差十分八点）· buy a paper 买一份报纸 · wait for the train 等火车 · 回答省略了主语和谓语</td></tr>
+      <tr><td class="sen">"And you didn't notice anything unusual?"</td><td class="gram">notice 注意到 · anything unusual 任何异常的事情（形容词修饰 anything 等不定代词时要后置）· 用否定疑问句追问</td></tr>
+      <tr><td class="sen">"Of course not."</td><td class="gram">of course not 当然没有（简略回答，not 代替 I didn't notice anything unusual）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 揭穿谎言（句 10）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"I <b>suggest</b>," said the inspector, "that you are not telling the <b>truth</b>. I suggest that you did not catch the 8 o'clock train, but that you caught the 8.25 which would still get you to work on time. You see, on the morning of the murder, the 8 o'clock train did not run at all. It broke down at Ferngreen station and was taken off the line."</td><td class="gram"><span class='tag b'>suggest that …</span> 后接陈述语气的宾语从句（不用 should，也不倒装）· tell the truth 说实话 · <span class='tag g'>宾语从句</span> 三个并列的 that 从句作 suggest 的宾语 · <span class='tag g'>定语从句</span> which 引导修饰 the 8.25 · you see 你知道（插入语，引起对方注意）· break down 出故障，抛锚 · <span class='tag b'>被动语态</span> was taken off the line 被取消（不再开行）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">catch a train</td><td class="gram">赶火车：Do you always catch such an early train?</td></tr>
+      <tr><td class="sen">be at work</td><td class="gram">在上班：I must be at work at 10 o'clock。</td></tr>
+      <tr><td class="sen">on time</td><td class="gram">准时：confirm that I was there on time。</td></tr>
+      <tr><td class="sen">arrive at</td><td class="gram">到达（小地方）：did you arrive at the station。</td></tr>
+      <tr><td class="sen">anything unusual</td><td class="gram">任何异常的事情：you didn't notice anything unusual。</td></tr>
+      <tr><td class="sen">tell the truth</td><td class="gram">说实话：you are not telling the truth。</td></tr>
+      <tr><td class="sen">break down</td><td class="gram">出故障：It broke down at Ferngreen station。</td></tr>
+      <tr><td class="sen">be taken off the line</td><td class="gram">被取消开行：was taken off the line。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">直接引语 + 倒装叙述句</div><div class="value">"…," said the man. / asked the inspector.</div></div>
+      <div class="sum-item"><div class="label">suggest that …</div><div class="value">后接陈述语气的宾语从句</div></div>
+      <div class="sum-item"><div class="label">不定代词 + 形容词后置</div><div class="value">anything unusual</div></div>
+      <div class="sum-item"><div class="label">被动语态</div><div class="value">the murder was committed / was taken off the line</div></div>
+    </div>
+    <ul>
+      <li><b>suggest that 从句的语气</b>：suggest 表示「建议」时，从句用 (should) + 动词原形；但表示「提出、暗示、认为」时，从句用陈述语气。本课 I suggest that you are not telling the truth. 是「我认为你在撒谎」，所以用陈述语气。</li>
+      <li><b>at ten to eight</b>：英语用「分钟 + to + 钟点」表示「差几分几点」，如 ten to eight = 7:50；用「分钟 + past + 钟点」表示「几点过几分」，如 ten past eight = 8:10。半点用 half past eight (8:30)。</li>
+      <li><b>叙述句的倒装</b>：直接引语后面接「said the man / asked the inspector」时，主语和谓语要倒装；但如果主语是代词，则不用倒装，如 "…," he said.。这是新闻报道和小说对话中很常见的一种句式。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 87 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson87.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson87-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson87-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

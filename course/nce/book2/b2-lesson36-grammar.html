@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 36 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Across the Channel 横渡海峡</h1>
+    <p class="sub">新概念英语第二册 Lesson 36 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 36（课本印刷页 166-169）· 8 个生词和短语 · 课文 11 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是「11 岁女孩要横渡英吉利海峡」的体育新闻。语言点集中在 <b>be going to 表示打算与计划</b>、<b>将来进行时 will be watching</b>、<b>定语从句 who swam the Channel herself</b>，以及 among them will be … 这样的<b>倒装与后置</b>结构。</p>
+    <h3>¶ 1 · 一个 11 岁的挑战者（句 1-4）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Debbie Hart <b>is going to</b> swim across the English Channel tomorrow.</td><td class="gram">be going to do sth. 表示已经打算好的事 · across 横过、穿过（从一边到另一边）</td></tr>
+      <tr><td class="sen">She is going to set out from the French coast at five o'clock in the morning.</td><td class="gram">set out 出发 · 钟点用 at，且 o'clock 与具体钟点连用</td></tr>
+      <tr><td class="sen">… she hopes to set <b>up</b> a new world <b>record</b>.</td><td class="gram">set up 创（纪录）、建立 · record 作名词时重音在前 /ˈrekɔːd/</td></tr>
+      <tr><td class="sen">She is a <b>strong</b> <b>swimmer</b> and many people feel that she is sure to <b>succeed</b>.</td><td class="gram">名词 + 名词：a strong swimmer 游泳好手 · be sure to do sth. 一定会做某事</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 父亲与训练（句 5-7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Debbie's father will set out with her in a small boat.</td><td class="gram">will + 动词原形表将来 · with her 和她一起</td></tr>
+      <tr><td class="sen">Mr. Hart <b>has trained</b> his daughter for years.</td><td class="gram">现在完成时 has trained ＋ for years，强调持续多年直到现在</td></tr>
+      <tr><td class="sen">Tomorrow he <b>will be watching</b> her <b>anxiously</b> as she swims the long distance to England.</td><td class="gram"><span class='tag b'>将来进行时</span> will be + 现在分词，描写「明天此时正在做的事」· as 引导时间状语从句</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 路上的安排（句 8-11）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Debbie <b>intends to</b> take short rests every two hours.</td><td class="gram">intend to do sth. 打算做某事 · every two hours 每两小时</td></tr>
+      <tr><td class="sen">She will have something to drink but she will not eat any <b>solid</b> food.</td><td class="gram">something to drink 喝的东西（不定式作后置定语）· not … any ＝ no</td></tr>
+      <tr><td class="sen"><b>Most of</b> Debbie's school friends will be waiting for her on the English coast.</td><td class="gram">most of + the／物主代词 + 复数名词 · wait for sb. 等某人</td></tr>
+      <tr><td class="sen"><b>Among them will be</b> Debbie's mother, who swam the Channel herself when she was a girl.</td><td class="gram">介词短语置于句首引起倒装：Among them will be … · who swam … 是非限制性定语从句</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">be going to do sth.</td><td class="gram">打算做某事（已计划好）。</td></tr>
+      <tr><td class="sen">set out / set up</td><td class="gram">set out 出发 · set up 创立、创（纪录）。</td></tr>
+      <tr><td class="sen">be sure to do sth.</td><td class="gram">一定会做某事。</td></tr>
+      <tr><td class="sen">intend to do sth.</td><td class="gram">打算做某事。</td></tr>
+      <tr><td class="sen">most of + 复数名词</td><td class="gram">……中的大多数。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">be going to</div><div class="value">表示打算与计划（本课通篇用它介绍明天的安排）</div></div>
+      <div class="sum-item"><div class="label">将来进行时</div><div class="value">will be + doing：明天此时正在进行的动作</div></div>
+      <div class="sum-item"><div class="label">定语从句</div><div class="value">who swam the Channel herself（非限制性）</div></div>
+      <div class="sum-item"><div class="label">介词短语倒装</div><div class="value">Among them will be Debbie's mother.</div></div>
+    </div>
+    <ul>
+      <li><b>be going to 与 will</b>：be going to 强调「已经打算好的事」，will 侧重「将要发生」。本课通篇介绍明天的安排，所以大量使用 be going to。</li>
+      <li><b>Among them will be …</b> 是倒装：正常语序是 Debbie's mother will be among them，把介词短语提前是为了让 mother 后面能紧跟定语从句。</li>
+      <li><b>every two hours</b> 表示「每两小时一次」，不能说 every two hour；同类还有 every other day（每隔一天）。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 36 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson36.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson36-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson36-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson36-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

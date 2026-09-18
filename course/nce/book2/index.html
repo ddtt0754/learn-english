@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 · 课文六件套</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--blue:#2f9df0;--text:#33434b;--muted:#8aa09a;--shadow:0 8px 22px rgba(47,157,240,.10);
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);color:var(--text);
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:22px 14px 40px;
+  }
+  .container{width:100%;max-width:880px;}
+  .title-card{
+    position:relative;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:28px 20px 24px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:9px;font-size:13px;letter-spacing:2px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:12px;font-size:12px;opacity:.9;letter-spacing:1px;}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;}
+  @media (max-width:640px){.grid{grid-template-columns:repeat(2,1fr);gap:10px;}}
+  @media (max-width:360px){.grid{grid-template-columns:1fr;}}
+
+  .card{
+    position:relative;display:block;text-decoration:none;background:#fff;border-radius:16px;
+    padding:14px 12px 12px;box-shadow:var(--shadow);border:1.5px solid #e2f0ea;
+    transition:transform .15s,box-shadow .15s,border-color .15s;min-height:96px;
+  }
+  a.card:active{transform:scale(.97);}
+  a.card:hover{transform:translateY(-3px);border-color:#9fe0c6;box-shadow:0 10px 26px rgba(47,157,240,.16);}
+  .card .no{font-size:19px;font-weight:800;color:var(--green);letter-spacing:.5px;line-height:1.1;}
+  .card .t{margin-top:6px;font-size:12.5px;color:#4a5a63;line-height:1.45;min-height:36px;}
+  .card .badges{margin-top:8px;font-size:12px;letter-spacing:2px;}
+  .card.todo{background:#f6f8f9;border-color:#e8eef0;box-shadow:none;}
+  .card.todo .no{color:#b7c4c9;}
+  .card.todo .t{color:#a9b6bb;}
+  .news{position:absolute;top:8px;right:9px;font-size:10px;font-weight:700;color:#fff;
+        background:linear-gradient(135deg,#35d29a,#2f9df0);border-radius:8px;padding:1px 6px;}
+
+  .legend{margin-top:16px;text-align:center;font-size:12px;color:var(--muted);line-height:1.9;}
+  .tip-card{margin-top:18px;background:#fff;border-radius:16px;padding:16px 18px;box-shadow:var(--shadow);
+            border:1.5px solid #e2f0ea;font-size:13px;color:#4a5a63;line-height:1.95;}
+  .tip-card b{color:#2f6ba3;}
+  .tip-card .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;
+                 padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+
+  footer{width:100%;max-width:880px;text-align:center;font-size:12px;color:#a8bcb4;margin-top:26px;line-height:2;}
+  footer a{color:#2ebd85;text-decoration:none;font-weight:700;}
+  .coach-tip{position:relative;display:inline-block;cursor:pointer;}
+  .coach-tip .tip{visibility:hidden;opacity:0;position:absolute;bottom:150%;left:50%;transform:translateX(-50%);
+    background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:6px 12px;border-radius:10px;
+    font-size:12px;font-weight:700;white-space:nowrap;z-index:99;transition:opacity .2s;}
+  .coach-tip:hover .tip,.coach-tip:active .tip{visibility:visible;opacity:1;}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>新概念英语 · 第二册</h1>
+    <p class="sub">New Concept English Book 2 · 课文六件套</p>
+    <p class="meta">已上线 96 课 / 共 96 课</p>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="b2-lesson01.html">
+      <div class="no">Lesson 01</div>
+      <div class="t">A private conversation 私人谈话</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson02.html">
+      <div class="no">Lesson 02</div>
+      <div class="t">Breakfast or lunch? 早餐还是午餐？</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson03.html">
+      <div class="no">Lesson 03</div>
+      <div class="t">Please send me a card 请给我寄一张明信片</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson04.html">
+      <div class="no">Lesson 04</div>
+      <div class="t">An exciting trip 激动人心的旅行</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson05.html">
+      <div class="no">Lesson 05</div>
+      <div class="t">No wrong numbers 无错号之虞</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson06.html">
+      <div class="no">Lesson 06</div>
+      <div class="t">Percy Buttons 珀西·巴顿斯</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson07.html">
+      <div class="no">Lesson 07</div>
+      <div class="t">Too late 为时太晚</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson08.html">
+      <div class="no">Lesson 08</div>
+      <div class="t">The best and the worst 最好的和最差的</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson09.html">
+      <div class="no">Lesson 09</div>
+      <div class="t">A cold welcome 冷遇</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson10.html">
+      <div class="no">Lesson 10</div>
+      <div class="t">Not for jazz 不适于演奏爵士乐</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson11.html">
+      <div class="no">Lesson 11</div>
+      <div class="t">One good turn deserves another 礼尚往来</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson12.html">
+      <div class="no">Lesson 12</div>
+      <div class="t">Goodbye and good luck 再见，一路顺风</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson13.html">
+      <div class="no">Lesson 13</div>
+      <div class="t">The Greenwood Boys 绿林少年</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson14.html">
+      <div class="no">Lesson 14</div>
+      <div class="t">Do you speak English? 你会讲英语吗？</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson15.html">
+      <div class="no">Lesson 15</div>
+      <div class="t">Good news 佳音</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson16.html">
+      <div class="no">Lesson 16</div>
+      <div class="t">A polite request 彬彬有礼的要求</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson17.html">
+      <div class="no">Lesson 17</div>
+      <div class="t">Always young 青春常驻</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson18.html">
+      <div class="no">Lesson 18</div>
+      <div class="t">He often does this! 他经常干这种事！</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson19.html">
+      <div class="no">Lesson 19</div>
+      <div class="t">Sold out 票已售完</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson20.html">
+      <div class="no">Lesson 20</div>
+      <div class="t">One man in a boat 独坐孤舟</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson21.html">
+      <div class="no">Lesson 21</div>
+      <div class="t">Mad or not? 是不是疯了？</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson22.html">
+      <div class="no">Lesson 22</div>
+      <div class="t">A glass envelope 玻璃信封</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson23.html">
+      <div class="no">Lesson 23</div>
+      <div class="t">A new house 新居</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson24.html">
+      <div class="no">Lesson 24</div>
+      <div class="t">It could be worse 不幸中之万幸</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson25.html">
+      <div class="no">Lesson 25</div>
+      <div class="t">Do the English speak English? 英国人讲的是英语吗？</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson26.html">
+      <div class="no">Lesson 26</div>
+      <div class="t">The best art critics 最佳艺术评论家</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson27.html">
+      <div class="no">Lesson 27</div>
+      <div class="t">A wet night 雨夜</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson28.html">
+      <div class="no">Lesson 28</div>
+      <div class="t">No parking 禁止停车</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson29.html">
+      <div class="no">Lesson 29</div>
+      <div class="t">Taxi! 出租汽车！</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson30.html">
+      <div class="no">Lesson 30</div>
+      <div class="t">Football or polo? 足球还是水球？</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson31.html">
+      <div class="no">Lesson 31</div>
+      <div class="t">Success story 成功者的故事</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson32.html">
+      <div class="no">Lesson 32</div>
+      <div class="t">Shopping made easy 购物变得很方便</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson33.html">
+      <div class="no">Lesson 33</div>
+      <div class="t">Out of the darkness 冲出黑暗</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson34.html">
+      <div class="no">Lesson 34</div>
+      <div class="t">Quick work 破案“神速”</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson35.html">
+      <div class="no">Lesson 35</div>
+      <div class="t">Stop thief! 捉贼！</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson36.html">
+      <div class="no">Lesson 36</div>
+      <div class="t">Across the Channel 横渡海峡</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson37.html">
+      <div class="no">Lesson 37</div>
+      <div class="t">The Olympic Games 奥林匹克运动会</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson38.html">
+      <div class="no">Lesson 38</div>
+      <div class="t">Everything except the weather 唯独没有考虑到天气</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson39.html">
+      <div class="no">Lesson 39</div>
+      <div class="t">Am I all right? 我是否痊愈？</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson40.html">
+      <div class="no">Lesson 40</div>
+      <div class="t">Food and talk 进餐与交谈</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson41.html">
+      <div class="no">Lesson 41</div>
+      <div class="t">Do you call that a hat? 你把那个叫帽子吗？</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson42.html">
+      <div class="no">Lesson 42</div>
+      <div class="t">Not very musical 并非很懂音乐</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson43.html">
+      <div class="no">Lesson 43</div>
+      <div class="t">Over the South Pole 飞越南极</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson44.html">
+      <div class="no">Lesson 44</div>
+      <div class="t">Through the forest 穿过森林</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson45.html">
+      <div class="no">Lesson 45</div>
+      <div class="t">A clear conscience 问心无愧</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson46.html">
+      <div class="no">Lesson 46</div>
+      <div class="t">Expensive and uncomfortable 既昂贵又受罪</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson47.html">
+      <div class="no">Lesson 47</div>
+      <div class="t">A thirsty ghost 嗜酒的鬼魂</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson48.html">
+      <div class="no">Lesson 48</div>
+      <div class="t">Did you want to tell me something? 你想对我说什么吗？</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson49.html">
+      <div class="no">Lesson 49</div>
+      <div class="t">The end of a dream 美梦告终</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson50.html">
+      <div class="no">Lesson 50</div>
+      <div class="t">Taken for a ride 乘车兜风</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson51.html">
+      <div class="no">Lesson 51</div>
+      <div class="t">Reward for virtue 对美德的奖赏</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson52.html">
+      <div class="no">Lesson 52</div>
+      <div class="t">A pretty carpet 漂亮的地毯</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson53.html">
+      <div class="no">Lesson 53</div>
+      <div class="t">Hot snake 触电的蛇</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson54.html">
+      <div class="no">Lesson 54</div>
+      <div class="t">Sticky fingers 粘糊的手指</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson55.html">
+      <div class="no">Lesson 55</div>
+      <div class="t">Not a gold mine 并非金矿</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson56.html">
+      <div class="no">Lesson 56</div>
+      <div class="t">Faster than sound! 比声音还快！</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson57.html">
+      <div class="no">Lesson 57</div>
+      <div class="t">Can I help you, madam? 您要买什么，夫人？</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson58.html">
+      <div class="no">Lesson 58</div>
+      <div class="t">A blessing in disguise? 是因祸得福吗？</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson59.html">
+      <div class="no">Lesson 59</div>
+      <div class="t">In or out? 进来还是出去？</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson60.html">
+      <div class="no">Lesson 60</div>
+      <div class="t">The future 卜算未来</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson61.html">
+      <div class="no">Lesson 61</div>
+      <div class="t">Trouble with the Hubble 哈勃望远镜的困境</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson62.html">
+      <div class="no">Lesson 62</div>
+      <div class="t">After the fire 大火之后</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson63.html">
+      <div class="no">Lesson 63</div>
+      <div class="t">She was not amused 她并不觉得好笑</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson64.html">
+      <div class="no">Lesson 64</div>
+      <div class="t">The Channel Tunnel 海峡隧道</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson65.html">
+      <div class="no">Lesson 65</div>
+      <div class="t">Jumbo versus the police 小象对警察</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson66.html">
+      <div class="no">Lesson 66</div>
+      <div class="t">Sweet as honey! 像蜜一样甜！</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson67.html">
+      <div class="no">Lesson 67</div>
+      <div class="t">Volcanoes 火山</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson68.html">
+      <div class="no">Lesson 68</div>
+      <div class="t">Persistent 纠缠不休</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson69.html">
+      <div class="no">Lesson 69</div>
+      <div class="t">But not murder! 并非谋杀！</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson70.html">
+      <div class="no">Lesson 70</div>
+      <div class="t">Red for danger 危险的红色</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson71.html">
+      <div class="no">Lesson 71</div>
+      <div class="t">A famous clock 一个著名的大钟</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson72.html">
+      <div class="no">Lesson 72</div>
+      <div class="t">A car called Bluebird “蓝鸟”汽车</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson73.html">
+      <div class="no">Lesson 73</div>
+      <div class="t">The record-holder 纪录保持者</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson74.html">
+      <div class="no">Lesson 74</div>
+      <div class="t">Out of the limelight 舞台之外</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson75.html">
+      <div class="no">Lesson 75</div>
+      <div class="t">SOS 呼救信号</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson76.html">
+      <div class="no">Lesson 76</div>
+      <div class="t">April Fools' Day 愚人节</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson77.html">
+      <div class="no">Lesson 77</div>
+      <div class="t">A successful operation 一例成功的手术</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson78.html">
+      <div class="no">Lesson 78</div>
+      <div class="t">The last one? 最后一枝吗？</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson79.html">
+      <div class="no">Lesson 79</div>
+      <div class="t">By air 乘飞机</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson80.html">
+      <div class="no">Lesson 80</div>
+      <div class="t">The Crystal Palace 水晶宫</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson81.html">
+      <div class="no">Lesson 81</div>
+      <div class="t">Escape 脱逃</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson82.html">
+      <div class="no">Lesson 82</div>
+      <div class="t">Monster or fish? 是妖还是鱼？</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson83.html">
+      <div class="no">Lesson 83</div>
+      <div class="t">After the elections 大选之后</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson84.html">
+      <div class="no">Lesson 84</div>
+      <div class="t">On strike 罢工</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson85.html">
+      <div class="no">Lesson 85</div>
+      <div class="t">Never too old to learn 活到老学到老</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson86.html">
+      <div class="no">Lesson 86</div>
+      <div class="t">Out of control 失控</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson87.html">
+      <div class="no">Lesson 87</div>
+      <div class="t">A perfect alibi 极好的不在犯罪现场的罪证</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson88.html">
+      <div class="no">Lesson 88</div>
+      <div class="t">Trapped in a mine 困在矿井里</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson89.html">
+      <div class="no">Lesson 89</div>
+      <div class="t">A slip of the tongue 口误</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson90.html">
+      <div class="no">Lesson 90</div>
+      <div class="t">What's for supper? 晚餐吃什么？</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson91.html">
+      <div class="no">Lesson 91</div>
+      <div class="t">Three men in a basket 三人同篮</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson92.html">
+      <div class="no">Lesson 92</div>
+      <div class="t">Asking for trouble 自找麻烦</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson93.html">
+      <div class="no">Lesson 93</div>
+      <div class="t">A noble gift 崇高的礼物</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson94.html">
+      <div class="no">Lesson 94</div>
+      <div class="t">Future champions 未来的冠军</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+    <a class="card" href="b2-lesson95.html">
+      <div class="no">Lesson 95</div>
+      <div class="t">A fantasy 纯属虚构</div>
+      <div class="badges">📘🎤✏️🎬🖨</div>
+    </a>
+    <a class="card" href="b2-lesson96.html"><span class="news">NEW</span>
+      <div class="no">Lesson 96</div>
+      <div class="t">The dead return 亡灵返乡</div>
+      <div class="badges">📘🎤✏️🖨</div>
+    </a>
+  </div>
+
+  <div class="tip-card">
+    <b>每课六件套</b>：<span class="tag">📖 句子跟读</span><span class="tag">📘 语法解读</span><span class="tag">🎤 口语练习</span><span class="tag">✏️ 拼写练习</span><span class="tag">🎬 情景视频</span><span class="tag">🖨 打印稿</span><br>
+    跟读页顶部有 <b>音标释义 / 句子翻译</b> 开关与 <b>🖨 打印版</b>入口；本册尚无对应视频的课次不生成视频页。
+  </div>
+
+  <div class="legend">点课次数字进入该课「句子跟读」页 · 卡片右上角 <b>NEW</b> 为最近更新</div>
+
+</div>
+
+<footer>
+  <a href="../index.html">🏠 返回主页</a> &nbsp;·&nbsp;
+  <a href="../../index.html">📚 课程中心</a><br>
+  &copy; 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span>
+</footer>
+
+</body>
+</html>

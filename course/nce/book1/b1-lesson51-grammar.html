@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第一册 Lesson 51 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 A pleasant climate 宜人的气候</h1>
+    <p class="sub">新概念英语第一册 Lesson 51 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 1 · Lesson 51（课本印刷页 101-102）· 20 个生词和短语 · 课文 16 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是 <b>What's … like?</b>（……怎么样）的用法专课，用来问气候、天气与季节，同时系统出现 <b>月份名称</b>。</p>
+    <h3>¶ 1 · What's … like? 问「情况如何」（句 3、5、7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">What's the <b>climate like</b> in your country?</td><td class="gram"><span class='tag'>What's … like?</span> 问「……是什么样的」</td></tr>
+      <tr><td class="sen">What's the <b>weather like</b> in spring?</td><td class="gram">同样结构换名词：问春季天气如何</td></tr>
+      <tr><td class="sen">What's <b>it like</b> in summer?</td><td class="gram">it 指 the weather；like 是介词，不是动词「喜欢」</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 频率副词与天气动词（句 6、7、9、12、14-15）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">It's <b>often</b> windy in March.</td><td class="gram">often 常（频率）；windy = 有风的</td></tr>
+      <tr><td class="sen">It's <b>always</b> warm in April and May, but it <b>rains</b> <b>sometimes</b>.</td><td class="gram">always 总是 > often 常常 > sometimes 有时；rain 作动词用 it 作主语</td></tr>
+      <tr><td class="sen">The sun <b>shines</b> every day.</td><td class="gram">shines 第三人称单数；every day 表频率</td></tr>
+      <tr><td class="sen">It <b>snows</b> sometimes.</td><td class="gram">下雪：It snows. / It's snowing. 用 it 指天气</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 月份与季节（句 5-15）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">in <b>March</b> / in <b>April</b> / in <b>May</b> / in <b>June</b> / in <b>July</b> / in <b>August</b></td><td class="gram">月份前用介词 in；月份首字母必须大写</td></tr>
+      <tr><td class="sen">in <b>September</b> / in <b>November</b> / in <b>December</b> / in <b>January</b> / in <b>February</b></td><td class="gram">继续记月份；9 月 September、10 月 October、11 月 November、12 月 December</td></tr>
+      <tr><td class="sen">in <b>spring</b> / in <b>summer</b> / in <b>autumn</b> / in <b>winter</b></td><td class="gram">四季也用 in；季节名首字母一般小写</td></tr>
+      <tr><td class="sen">Is it cold <b>or</b> warm in autumn?</td><td class="gram">选择问句问「冷还是暖」</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">come from</td><td class="gram">来自。I come from Greece.</td></tr>
+      <tr><td class="sen">What's the climate like…?</td><td class="gram">……的气候怎么样？What's the climate like in your country?</td></tr>
+      <tr><td class="sen">What's the weather like…?</td><td class="gram">……的天气怎么样？What's the weather like in spring?</td></tr>
+      <tr><td class="sen">in spring / summer / autumn / winter</td><td class="gram">在春/夏/秋/冬季。四季前用 in。</td></tr>
+      <tr><td class="sen">in March / April / May…</td><td class="gram">在 3 月/4 月/5 月……（月份首字母大写，前面用 in）</td></tr>
+      <tr><td class="sen">It's often / always…</td><td class="gram">常常/总是……。It's often windy in March.</td></tr>
+      <tr><td class="sen">It rains / It snows sometimes</td><td class="gram">有时下雨 / 下雪。用 it 作主语指天气。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">核心句型</div><div class="value">What's … like?</div></div>
+      <div class="sum-item"><div class="label">本课生词</div><div class="value">20 个</div></div>
+      <div class="sum-item"><div class="label">课文句数</div><div class="value">16 句</div></div>
+      <div class="sum-item"><div class="label">重点内容</div><div class="value">月份 + 四季 + 频率副词</div></div>
+    </div>
+    <ul>
+      <li><b>like</b> 在此是介词「像」，不是动词「喜欢」：What's the weather like?</li>
+      <li><b>频率副词</b>位置：在 be 动词后（It's always warm），在实义动词前（It sometimes rains）。</li>
+      <li><b>月份首字母大写</b>，前面用介词 in；四季名一般不大写。</li>
+      <li>本课生词 20 个（含 12 个月份中的 9 个）全部嵌入课文句子，无遗漏。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第一册 Lesson 51 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b1-lesson51.html" class="grammar">📖 句子跟读</a>
+  <a href="b1-lesson51-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b1-lesson51-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b1-lesson51-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

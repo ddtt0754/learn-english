@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 59 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 In or out? 进来还是出去？</h1>
+    <p class="sub">新概念英语第二册 Lesson 59 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 59（课本印刷页 272-275）· 8 个生词和短语 · 课文 11 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则「聪明反被聪明误」的狗故事。语言点集中在 <b>used to do sth.</b>、<b>would do sth.（表过去习惯）</b>、<b>every time / as soon as / until</b> 等时间状语从句，以及 <b>so … (that) …</b> 结果状语从句。</p>
+    <h3>¶ 1 · 门口的狗（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Our dog, Rex, used to sit outside our front gate and <b>bark</b>.</td><td class="gram"><span class='tag b'>used to do sth.</span> 过去常常做某事（现在已不如此）· Rex 是狗的名字（作同位语）· outside our front gate 在我们前门外</td></tr>
+      <tr><td class="sen">Every time he wanted to come into the garden he would bark until someone opened the gate.</td><td class="gram"><span class='tag g'>时间状语从句</span> every time 引导（＝ whenever）· would + 动词原形（表过去习惯）· until 直到……为止</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 学会开门（句 3-4）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">As the neighbours complained of the noise, my husband spent weeks training him to <b>press</b> his <b>paw</b> on the <b>latch</b> to let himself in.</td><td class="gram"><span class='tag g'>原因状语从句</span> as 引导 · complain of 抱怨 · spend time (in) doing sth. 花时间做某事 · let oneself in 自己进来 · latch 门闩（不是门锁）</td></tr>
+      <tr><td class="sen">Rex soon became an <b>expert</b> at opening the gate.</td><td class="gram">become an expert at doing sth. 成为做某事的专家 · soon 不久 · 这是全文的第一个笑点：狗居然学会了开门</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 新的坏习惯（句 5-7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">However, when I was going out shopping last week, I noticed him in the garden near the gate.</td><td class="gram">however 然而（作插入语）· <span class='tag g'>时间状语从句</span> when 引导 · notice sb. + 地点 注意到某人在某处</td></tr>
+      <tr><td class="sen">This time he was barking so that someone would let him out!</td><td class="gram"><span class='tag g'>目的状语从句</span> so that 引导 · let sb. out 把某人放出去 · this time 这一次（与上次进门的动作相对）</td></tr>
+      <tr><td class="sen">Since then, he has <b>developed</b> another bad <b>habit</b>.</td><td class="gram"><span class='tag b'>现在完成时</span> has developed · since then 从那时起 · develop a habit 养成一种习惯</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 自作自受（句 8-11）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">As soon as he opens the gate from the outside, he comes into the garden and waits until the gate shuts.</td><td class="gram"><span class='tag g'>时间状语从句</span> as soon as 引导（一……就……）· from the outside 从外面 · wait until 等到……为止</td></tr>
+      <tr><td class="sen">Then he sits and barks until someone lets him out.</td><td class="gram">then 然后 · until 直到……为止 · let sb. out 放某人出去 · 与句 6 的 would let him out 呼应</td></tr>
+      <tr><td class="sen">After this he immediately lets himself in and begins barking again.</td><td class="gram">immediately 立刻 · let oneself in 自己进门 · begin doing sth. 开始做某事 · again 再一次，写出「循环往复」的荒唐</td></tr>
+      <tr><td class="sen">Yesterday my husband <b>removed</b> the gate and Rex got so annoyed we have not seen him since.</td><td class="gram">remove 拆掉，取下 · <span class="tag g">结果状语从句</span> so annoyed (that) …（that 被省略）· have not seen him since 从那以后就再没见过他</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">used to do sth.</td><td class="gram">过去常常做某事：Our dog, Rex, used to sit outside our front gate and bark。</td></tr>
+      <tr><td class="sen">complain of</td><td class="gram">抱怨：the neighbours complained of the noise。</td></tr>
+      <tr><td class="sen">spend time doing sth.</td><td class="gram">花时间做某事：my husband spent weeks training him。</td></tr>
+      <tr><td class="sen">let oneself in</td><td class="gram">自己进来：to press his paw on the latch to let himself in。</td></tr>
+      <tr><td class="sen">become an expert at</td><td class="gram">成为……的专家：Rex soon became an expert at opening the gate。</td></tr>
+      <tr><td class="sen">let sb. out</td><td class="gram">把某人放出去：someone would let him out。</td></tr>
+      <tr><td class="sen">develop a habit</td><td class="gram">养成一种习惯：he has developed another bad habit。</td></tr>
+      <tr><td class="sen">so … (that) …</td><td class="gram">如此……以致于……：Rex got so annoyed we have not seen him since。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">used to do sth.</div><div class="value">过去常常做某事（现在已不如此）</div></div>
+      <div class="sum-item"><div class="label">would + 动词原形</div><div class="value">表过去习惯性动作</div></div>
+      <div class="sum-item"><div class="label">时间状语从句</div><div class="value">every time / as / as soon as / until</div></div>
+      <div class="sum-item"><div class="label">so … (that) …</div><div class="value">结果状语从句，that 可省略</div></div>
+    </div>
+    <ul>
+      <li><b>used to do sth. 与 would do sth.</b>：两者都可表示过去的习惯，但 used to 强调「现在不再如此」，would 只强调过去反复的动作。本课 Our dog used to sit outside… 暗示狗曾经如此，正好与后文的「新习惯」形成对照。</li>
+      <li><b>every time 直接引导从句</b>：Every time he wanted to come into the garden… 中的 every time 是连词，等于 whenever，直接引导时间状语从句。同类还有 the moment、the first time 等。</li>
+      <li><b>so annoyed (that) we have not seen him since</b>：so + 形容词 + (that) 从句，表示「如此……以致于……」。口语中 that 常省略，于是出现 so annoyed we … 连着两个动词短语的情况，别误读为两个并列句。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 59 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson59.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson59-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson59-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson59-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

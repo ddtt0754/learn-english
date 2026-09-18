@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 57 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Can I help you, madam? 您要买什么，夫人？</h1>
+    <p class="sub">新概念英语第二册 Lesson 57 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 57（课本印刷页 264-267）· 7 个生词和短语 · 课文 11 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则「以貌取人」的幽默小故事。语言点集中在 <b>though 引导的让步状语从句</b>、<b>分词短语作状语</b>（Glancing… / Not realizing…）、<b>the way + 定语从句</b>，以及 make sb. do sth. 这一使役结构。</p>
+    <h3>¶ 1 · 橱窗前的妇女（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">A woman in <b>jeans</b> stood at the window of an expensive shop.</td><td class="gram">a woman in jeans 一个穿牛仔裤的妇女（in + 衣物表示穿着）· at the window of 在……的橱窗前 · an expensive shop 高档商店</td></tr>
+      <tr><td class="sen">Though she <b>hesitated</b> for a moment, she finally went in and asked to see a dress that was in the window.</td><td class="gram"><span class='tag g'>让步状语从句</span> though 引导 · hesitate for a moment 犹豫片刻 · ask to see 要求看 · <span class='tag g'>定语从句</span> that 引导，修饰 a dress</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 售货员的无礼（句 3-5）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The assistant who <b>served</b> her did not like the way she was dressed.</td><td class="gram">the assistant who served her 接待她的售货员（<span class='tag g'>定语从句</span>）· the way she was dressed 她穿着的样子（the way 后省略了 that / in which）· be dressed 穿着</td></tr>
+      <tr><td class="sen">Glancing at her <b>scornfully</b>, he told her that the dress was sold.</td><td class="gram">Glancing at her scornfully 现在分词短语作状语（表伴随）· scornfully 轻蔑地 · <span class='tag g'>宾语从句</span> that 引导，作 told 的直接宾语</td></tr>
+      <tr><td class="sen">The woman walked out of the shop angrily and decided to <b>punish</b> the assistant next day.</td><td class="gram">walk out of 走出 · angrily 愤怒地 · decide to do sth. 决定做某事 · punish 惩罚（这里指「教训」）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 次日反攻（句 6-8）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">She returned to the shop the following morning dressed in a <b>fur</b> coat, with a handbag in one hand and a long umbrella in the other.</td><td class="gram">the following morning 第二天早晨 · dressed in a fur coat 穿着裘皮大衣（过去分词短语作状语）· with a handbag in one hand and a long umbrella in the other 是 with 复合结构，描述随身携带的物品</td></tr>
+      <tr><td class="sen">After seeking out the rude assistant, she asked for the same dress.</td><td class="gram">seek out 找出，找到 · the rude assistant 那个无礼的售货员 · ask for 要求得到 · the same dress 同一件衣服</td></tr>
+      <tr><td class="sen">Not realizing who she was, the assistant was <b>eager</b> to serve her this time.</td><td class="gram">Not realizing who she was 现在分词短语作状语（表原因）· <span class='tag g'>宾语从句</span> who she was · be eager to do sth. 急于做某事 · this time 这一次</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 耐心的报复（句 9-11）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">With great difficulty, he climbed into the shop window to get the dress.</td><td class="gram">with great difficulty 费了好大劲儿（介词短语作状语）· climb into 爬进 · to get the dress 目的状语</td></tr>
+      <tr><td class="sen">As soon as she saw it, the woman said she did not like it.</td><td class="gram"><span class='tag g'>时间状语从句</span> as soon as 引导（一……就……）· <span class='tag g'>宾语从句</span> she did not like it，作 said 的宾语</td></tr>
+      <tr><td class="sen">She enjoyed herself making the assistant bring almost everything in the window before finally buying the dress she had first asked for.</td><td class="gram">enjoy oneself 玩得开心，自得其乐 · make sb. do sth. 让某人做某事（作宾补的不定式省 to）· before finally buying 在最终买下之前 · the dress she had first asked for 她最初要看的那件衣服（<span class='tag g'>定语从句</span>，关系代词被省略）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">in + 衣物</td><td class="gram">表示穿着：A woman in jeans。</td></tr>
+      <tr><td class="sen">the way sb. is dressed</td><td class="gram">某人穿着的样子：did not like the way she was dressed。</td></tr>
+      <tr><td class="sen">glance at</td><td class="gram">瞥一眼：Glancing at her scornfully。</td></tr>
+      <tr><td class="sen">seek out</td><td class="gram">找出，找到：After seeking out the rude assistant。</td></tr>
+      <tr><td class="sen">be eager to do sth.</td><td class="gram">急于做某事：the assistant was eager to serve her this time。</td></tr>
+      <tr><td class="sen">with great difficulty</td><td class="gram">费了好大劲儿：With great difficulty, he climbed into the shop window。</td></tr>
+      <tr><td class="sen">enjoy oneself</td><td class="gram">玩得开心，自得其乐：She enjoyed herself making the assistant bring…。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">让步状语从句</div><div class="value">Though she hesitated for a moment…</div></div>
+      <div class="sum-item"><div class="label">分词短语作状语</div><div class="value">Glancing… / Not realizing… / dressed in…</div></div>
+      <div class="sum-item"><div class="label">the way + 从句</div><div class="value">the way she was dressed</div></div>
+      <div class="sum-item"><div class="label">make sb. do sth.</div><div class="value">让某人做某事（作宾补的不定式省 to）</div></div>
+    </div>
+    <ul>
+      <li><b>Though she hesitated for a moment, she finally went in…</b>：though 引导让步状语从句，表示「虽然……但是……」。注意英语中 though 与 but 不能同时使用，两者只能择一。</li>
+      <li><b>三个分词短语的分工</b>：Glancing at her scornfully（伴随动作）、Not realizing who she was（原因）、dressed in a fur coat（状态）。现在分词强调主动、进行；过去分词强调被动、完成——「瞥」是售货员发出的动作，故用现在分词；「穿着」是妇女被装扮的状态，故用过去分词。</li>
+      <li><b>the way she was dressed</b>：the way 后面接定语从句时，习惯上省略关系词 that 或 in which，写成 the way she was dressed，意为「她穿着的样子」。同类还有 the way he speaks、the way it works。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 57 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson57.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson57-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson57-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson57-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

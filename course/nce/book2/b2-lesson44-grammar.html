@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 44 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Through the forest 穿过森林</h1>
+    <p class="sub">新概念英语第二册 Lesson 44 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 44（课本印刷页 198-201）· 9 个生词和短语 · 课文 8 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则主妇勇追劫匪的新闻小故事。语言点主要是 <b>过去完成时</b>（先发生的动作）与 <b>so … that … / such … that …</b> 两个结果状语从句，以及 out of breath、catch up with、go through、be in one's possession 等固定短语。</p>
+    <h3>¶ 1 · 林边遇袭（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Mrs. Anne Sterling did not think of the <b>risk</b> she was taking when she ran through a <b>forest</b> after two men.</td><td class="gram">think of 想到，考虑 · she was taking 是省略了关系代词的定语从句，修饰 the risk · run after 追赶</td></tr>
+      <tr><td class="sen">They had rushed up to her <b>while</b> she was having a <b>picnic</b> at the <b>edge</b> of a forest with her children and tried to steal her handbag.</td><td class="gram"><span class='tag b'>过去完成时</span> had rushed up 表示先发生的动作 · <span class='tag g'>时间状语从句</span> while 引导 · at the edge of 在……边上 · had rushed 与 tried 并列，共用助动词 had（即 had tried），只是后一个 had 被省略了</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 包被抢走（句 3-4）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">In the struggle, the <b>strap</b> broke and, with the bag in their <b>possession</b>, both men started running through the trees.</td><td class="gram">in the struggle 在争夺中 · with the bag in their possession 是 with 复合结构，表伴随 · in one's possession 归某人所有 · start doing sth. 开始做某事</td></tr>
+      <tr><td class="sen">Mrs. Sterling got <b>so</b> angry <b>that</b> she ran after them.</td><td class="gram"><span class='tag g'>结果状语从句</span> so + 形容词 + that 从句：如此……以致于……</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 紧追不舍（句 5-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">She was soon out of <b>breath</b>, but she continued to run.</td><td class="gram">out of breath 上气不接下气 · continue to do sth. 继续做某事 · but 表转折</td></tr>
+      <tr><td class="sen">When she caught up with them, she saw that they had sat down and were going through the <b>contents</b> of the bag, so she ran straight at them.</td><td class="gram"><span class='tag g'>宾语从句</span> that 引导，从句里 had sat down 与 were going through 并列 · catch up with 赶上，追上 · go through 翻看，检查 · run straight at 直冲过去</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 劫匪逃跑（句 7-8）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The men got <b>such</b> a fright <b>that</b> they dropped the bag and ran away.</td><td class="gram"><span class='tag g'>结果状语从句</span> such + a + 名词 + that 从句：如此……以致于…… · get a fright 吓一跳</td></tr>
+      <tr><td class="sen">'The strap needs <b>mending</b>,' said Mrs. Sterling later, 'but they did not steal anything.'</td><td class="gram"><span class='tag b'>need doing</span> ＝ need to be done，主动形式表被动意义 · 直接引语中插入 said Mrs. Sterling later，用倒装语序</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">run after</td><td class="gram">追赶：she ran through a forest after two men。</td></tr>
+      <tr><td class="sen">at the edge of</td><td class="gram">在……的边上：at the edge of a forest。</td></tr>
+      <tr><td class="sen">in one's possession</td><td class="gram">归某人所有，在某人的手里：with the bag in their possession。</td></tr>
+      <tr><td class="sen">out of breath</td><td class="gram">上气不接下气：She was soon out of breath.</td></tr>
+      <tr><td class="sen">catch up with</td><td class="gram">赶上，追上：When she caught up with them …</td></tr>
+      <tr><td class="sen">go through</td><td class="gram">翻看，检查；也可表示「经历」：going through the contents of the bag。</td></tr>
+      <tr><td class="sen">get a fright</td><td class="gram">吓一跳：The men got such a fright that they dropped the bag.</td></tr>
+      <tr><td class="sen">need doing</td><td class="gram">＝ need to be done，需要被做：The strap needs mending.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">so … that …</div><div class="value">so + 形容词/副词 + that 从句</div></div>
+      <div class="sum-item"><div class="label">such … that …</div><div class="value">such + a + 名词 + that 从句</div></div>
+      <div class="sum-item"><div class="label">过去完成时</div><div class="value">had rushed up / had sat down：先发生的动作</div></div>
+      <div class="sum-item"><div class="label">need doing</div><div class="value">主动形式表被动：The strap needs mending.</div></div>
+    </div>
+    <ul>
+      <li><b>so … that … 与 such … that …</b>：so 后面接形容词或副词（so angry that …）；such 后面接名词短语（such a fright that …）。判断口诀：so 后是「形/副」，such 后是「名」。</li>
+      <li><b>need doing ＝ need to be done</b>：The strap needs mending. 字面上是主动，意思却是「包带需要被修理」。同类动词还有 want、require：The room wants cleaning. / The car requires repairing.</li>
+      <li><b>过去完成时的「先发生」</b>：句 1 用 she was taking（正在冒的风险），句 2 用 had rushed up（先冲上来），句 6 用 had sat down（先坐下了）。凡是在另一个过去动作之前就已完成的动作，都用过去完成时。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 44 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson44.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson44-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson44-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson44-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

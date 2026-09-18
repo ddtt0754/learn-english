@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 39 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Am I all right? 我是否痊愈？</h1>
+    <p class="sub">新概念英语第二册 Lesson 39 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 39（课本印刷页 178-181）· 10 个生词和短语 · 课文 8 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则「病人自己打电话探听自己病情」的小幽默，主要语言点是<b>宾语从句</b>（whether / if / when 引导，以及从句的语序与时态呼应）、<b>被动语态 had been done / would be allowed</b>，还有 a Mr. + 姓名、ask for、inquire about 等用法。</p>
+    <h3>¶ 1 · 问病情被拒（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen"><b>While</b> John Gilbert was in hospital, he asked his doctor to tell him <b>whether</b> his <b>operation</b> had been <b>successful</b>, but the doctor refused to do so.</td><td class="gram"><span class='tag g'>时间状语从句</span> while 引导 · ask sb. to do sth. 请某人做某事 · <span class='tag g'>宾语从句</span> whether 引导，用陈述语序 · <span class='tag b'>过去完成时的被动</span> had been successful · refuse to do so 中 so 代替前面的动作</td></tr>
+      <tr><td class="sen">The <b>following</b> day, the <b>patient</b> asked for a bedside telephone.</td><td class="gram">the following day ＝ 第二天（＝ the next day）· ask for 索要 · a bedside telephone 床头电话</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 独自打电话（句 3-4）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">When he was <b>alone</b>, he telephoned the hospital <b>exchange</b> and asked for Doctor Millington.</td><td class="gram">alone 作形容词，表示「独自一人」· the hospital exchange 医院总机 / 交换台</td></tr>
+      <tr><td class="sen">When the doctor answered the phone, Mr. Gilbert said he was <b>inquiring</b> about a <b>certain</b> patient, a Mr. John Gilbert.</td><td class="gram">answer the phone 接电话 · inquire about sth. 询问某事 · a certain patient 某位病人 · <b>a Mr. John Gilbert</b> ＝ 一位名叫约翰·吉尔伯特的先生（a + 姓名表示「某一个叫这名字的人」）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 一问一答（句 5-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">He asked <b>if</b> Mr. Gilbert's operation had been successful and the doctor told him that it had been.</td><td class="gram"><span class='tag g'>宾语从句</span> if 引导 · 从句用陈述语序（主语 + 谓语）· 主句过去时，从句相应用过去完成时 · it had been 是省略式，完整为 it had been successful</td></tr>
+      <tr><td class="sen">He then asked <b>when</b> Mr. Gilbert would be allowed to go home and the doctor told him that he would have to stay in hospital for another two weeks.</td><td class="gram"><span class='tag g'>宾语从句</span> when 引导 · <span class='tag b'>过去将来时的被动</span> would be allowed to do sth. · for another two weeks 再住两个星期</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 真相揭晓（句 7-8）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Then Dr. Millington asked the <b>caller</b> if he was a <b>relative</b> of the patient.</td><td class="gram">the caller 打电话的人（call + -er）· a relative of the patient 病人的亲属</td></tr>
+      <tr><td class="sen">'No,' the <b>patient</b> answered, 'I am Mr. John Gilbert.'</td><td class="gram">点睛之笔：打电话探听病情的人，正是病人自己 · 直接引语中的问句与答句要成对理解</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">ask sb. to do sth.</td><td class="gram">请某人做某事：He asked his doctor to tell him the truth.</td></tr>
+      <tr><td class="sen">ask for</td><td class="gram">请求，索要：He asked for a bedside telephone.</td></tr>
+      <tr><td class="sen">the following day</td><td class="gram">第二天（＝ the next day），用于过去时叙述。</td></tr>
+      <tr><td class="sen">inquire about sth.</td><td class="gram">询问某事：He was inquiring about a certain patient.</td></tr>
+      <tr><td class="sen">a Mr. + 姓名</td><td class="gram">一位名叫……的先生：a Mr. John Gilbert；表示说话人只知道名字、不认识本人。</td></tr>
+      <tr><td class="sen">be allowed to do sth.</td><td class="gram">被允许做某事：He would be allowed to go home.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">宾语从句</div><div class="value">whether / if / when 引导，从句一律用陈述语序</div></div>
+      <div class="sum-item"><div class="label">过去完成时的被动</div><div class="value">had been + 过去分词：手术「被做了」</div></div>
+      <div class="sum-item"><div class="label">过去将来时的被动</div><div class="value">would be + 过去分词：will 的过去式 would</div></div>
+      <div class="sum-item"><div class="label">a + 姓名</div><div class="value">a Mr. John Gilbert 一位名叫约翰·吉尔伯特的先生</div></div>
+    </div>
+    <ul>
+      <li><b>宾语从句必须用陈述语序</b>：主句是 he asked，从句仍写 if Mr. Gilbert's operation had been successful，而不能写成 if had Mr. Gilbert's operation been successful。这是中国学生最常出错的地方。</li>
+      <li><b>if 与 whether</b>：两者都能引导「是否」的宾语从句，可互换。但介词后、与 or not 连用时只能用 whether：whether or not（✓）/ if or not（✗）。</li>
+      <li><b>a Mr. John Gilbert</b>：在姓名前加 a，表示「有一位叫这个名字的人」。因为接电话的医生并不认识打电话的人，只听到他说出的姓名，所以用 a Mr. … 这种说法。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 39 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson39.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson39-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson39-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson39-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 79 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 By air 乘飞机</h1>
+    <p class="sub">新概念英语第二册 Lesson 79 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 79（课本印刷页 366-369）· 6 个生词和短语 · 课文 11 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则「飞机折返」的追忆。语言点集中在 <b>used to do sth.</b>、<b>be used to doing sth.</b> 与 <b>be used to do sth.</b> 的辨析、<b>take charge of</b>、<b>only + 状语置句首引起的倒装</b>，以及 <b>as soon as</b> 引导的时间状语从句。</p>
+    <h3>¶ 1 · 童年飞行（句 1-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">I used to travel by air a great deal when I was a boy.</td><td class="gram"><span class='tag b'>used to do sth.</span> 过去常常做某事 · travel by air 乘飞机旅行 · a great deal 大量（作状语）· <span class="tag g">时间状语从句</span> when 引导</td></tr>
+      <tr><td class="sen">My <b>parents</b> used to live in South America and I used to fly there from Europe in the holidays.</td><td class="gram">两个 used to 并列，写出一段持续多年的习惯 · in the holidays 在假期里 · fly there from Europe 从欧洲飞到那里</td></tr>
+      <tr><td class="sen">A <b>flight attendant</b> would take charge of me and I never had an unpleasant experience.</td><td class="gram"><span class='tag b'>would + 动词原形</span> 表过去习惯性动作 · a flight attendant 空中乘务员 · take charge of 照管，负责 · never 从不 · an unpleasant experience 一次不愉快的经历</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 一次惊吓（句 4-5）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">I am used to travelling by air and only on one occasion have I ever felt <b>frightened</b>.</td><td class="gram"><span class='tag b'>be used to doing sth.</span> 习惯于做某事（to 是介词，后接动名词）· on one occasion 有一次 · <span class='tag b'>only + 状语置句首引起倒装</span> only on one occasion have I ever felt frightened（正常语序为 I have ever felt frightened only on one occasion）</td></tr>
+      <tr><td class="sen">After taking off, we were flying low over the city and slowly gaining height, when the plane suddenly turned round and flew back to the airport.</td><td class="gram">take off 起飞 · gain height 爬高 · <span class='tag g'>时间状语从句</span> when 引导（正在……这时突然……）· turn round 掉头 · fly back to 飞回</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 等待降落（句 6-7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">While we were waiting to land, a flight attendant told us to keep calm and to get off the plane quietly as soon as it had touched down.</td><td class="gram"><span class='tag g'>时间状语从句</span> while 引导 · wait to land 等待降落 · keep calm 保持镇静 · <span class='tag g'>时间状语从句</span> as soon as 引导（一……就……）· touch down （飞机）着陆</td></tr>
+      <tr><td class="sen">Everybody on board was worried and we were <b>curious</b> to find out what had happened.</td><td class="gram">on board 在（飞机）上 · be curious to do sth. 急于做某事，好奇地做某事 · find out 弄清楚 · <span class='tag g'>宾语从句</span> what had happened</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 真相与善后（句 8-11）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Later we learnt that there was a very important person on board.</td><td class="gram">learn 得知 · <span class='tag g'>宾语从句</span> that 引导 · a very important person 一位非常重要的人物</td></tr>
+      <tr><td class="sen">The police had been told that a <b>bomb</b> had been <b>planted</b> on the plane.</td><td class="gram"><span class='tag b'>过去完成时的被动语态</span> had been told / had been planted · plant a bomb 安放炸弹 · <span class='tag g'>宾语从句</span> that 引导</td></tr>
+      <tr><td class="sen">After we had landed, the plane was searched thoroughly.</td><td class="gram"><span class='tag g'>时间状语从句</span> after 引导 · <span class='tag b'>被动语态</span> was searched thoroughly：被彻底搜查</td></tr>
+      <tr><td class="sen">Fortunately, nothing was found and five hours later we were able to take off again.</td><td class="gram">fortunately 幸运的是 · <span class='tag b'>被动语态</span> was found · be able to do sth. 能够做某事 · take off again 再次起飞</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">used to do sth.</td><td class="gram">过去常常做某事：I used to travel by air a great deal。</td></tr>
+      <tr><td class="sen">travel by air</td><td class="gram">乘飞机旅行：I used to travel by air a great deal。</td></tr>
+      <tr><td class="sen">take charge of</td><td class="gram">照管，负责：A flight attendant would take charge of me。</td></tr>
+      <tr><td class="sen">be used to doing sth.</td><td class="gram">习惯于做某事：I am used to travelling by air。</td></tr>
+      <tr><td class="sen">on one occasion</td><td class="gram">有一次：only on one occasion have I ever felt frightened。</td></tr>
+      <tr><td class="sen">take off</td><td class="gram">起飞：After taking off, we were flying low over the city。</td></tr>
+      <tr><td class="sen">gain height</td><td class="gram">爬高：（飞行中）缓慢升高：slowly gaining height。</td></tr>
+      <tr><td class="sen">touch down</td><td class="gram">（飞机）着陆：as soon as it had touched down。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">used to do sth.</div><div class="value">过去常常做某事</div></div>
+      <div class="sum-item"><div class="label">be used to doing sth.</div><div class="value">习惯于做某事（to 为介词）</div></div>
+      <div class="sum-item"><div class="label">only + 状语置句首</div><div class="value">引起主句倒装：only on one occasion have I ever felt frightened</div></div>
+      <div class="sum-item"><div class="label">as soon as / when 时间从句</div><div class="value">as soon as it had touched down / when the plane turned round</div></div>
+    </div>
+    <ul>
+      <li><b>used to do / be used to doing / be used to do</b>：三者形似而义异。I used to travel by air 表示「过去常乘飞机」（used to + 动词原形）；I am used to travelling by air 表示「我习惯于乘飞机」（be used to + 动名词，to 是介词）；A knife is used to cut things 表示「刀被用来切东西」（be used to do sth.，被动语态的不定式）。</li>
+      <li><b>only + 状语置于句首引起倒装</b>：only on one occasion have I ever felt frightened 中，only on one occasion 移到句首，因此主句要用倒装语序 have I，而不是 I have。同类还有 Only then did he realize the truth.</li>
+      <li><b>when 引导的「正在……这时……」</b>：we were flying low over the city and slowly gaining height, when the plane suddenly turned round 中，when 表示「就在这时突然」，主句用过去进行时铺出持续的背景，when 从句用一般过去时点出突发动作。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 79 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson79.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson79-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson79-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

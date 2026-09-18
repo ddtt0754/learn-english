@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 67 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Volcanoes 火山</h1>
+    <p class="sub">新概念英语第二册 Lesson 67 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 67（课本印刷页 304-307）· 12 个生词和短语 · 课文 9 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则关于火山学家的报道。语言点集中在 <b>spend time doing sth.</b>、<b>manage to do sth.</b>、<b>be able to do</b>、<b>so that</b> 引导的目的状语从句，以及 any man alive 这类形容词后置的用法。</p>
+    <h3>¶ 1 · 终身研究火山（句 1）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Haroun Tazieff, the Polish scientist, has spent his lifetime studying <b>active</b> <b>volcanoes</b> and deep caves in all parts of the world.</td><td class="gram"><span class='tag b'>spend time doing sth.</span> has spent his lifetime studying：花费毕生精力做某事 · 同位语 the Polish scientist · in all parts of the world 在世界各地</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 基图罗火山（句 2-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">In 1948, he went to Lake <b>Kivu</b> in the <b>Congo</b> to observe a new volcano which he later named <b>Kituro</b>.</td><td class="gram"><span class='tag g'>定语从句</span> which 引导，修饰 a new volcano · name sth. Kituro 把某物命名为基图罗 · to observe 目的状语</td></tr>
+      <tr><td class="sen">Tazieff was able to set up his camp very close to the volcano while it was <b>erupting</b> <b>violently</b>.</td><td class="gram"><span class='tag g'>时间状语从句</span> while 引导 · set up 搭建 · close to 靠近 · be able to do sth. 能够做某事（强调「成功做到」）· erupt violently 猛烈喷发</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 岩浆逼近（句 4-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Though he <b>managed</b> to take a number of <b>brilliant</b> photographs, he could not stay near the volcano for very long.</td><td class="gram"><span class='tag g'>让步状语从句</span> though 引导 · manage to do sth. 设法做成某事 · a number of 若干，许多 · brilliant 精彩的</td></tr>
+      <tr><td class="sen">He noticed that a river of <b>liquid</b> rock was coming towards him.</td><td class="gram"><span class='tag g'>宾语从句</span> that 引导 · a river of 一条……的河流（比喻用法）· liquid rock 液态岩石（岩浆）· come towards 朝……涌来</td></tr>
+      <tr><td class="sen">It threatened to surround him completely, but Tazieff managed to <b>escape</b> just in time.</td><td class="gram">threaten to do sth. 有……的危险，扬言要…… · surround 包围 · escape 逃脱 · just in time 及时</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 往返测量（句 7-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">He waited until the volcano became quiet and he was able to return two days later.</td><td class="gram"><span class='tag g'>时间状语从句</span> until 引导 · become quiet 平静下来 · two days later 两天后</td></tr>
+      <tr><td class="sen">This time, he managed to climb into the mouth of Kituro so that he could take photographs and measure temperatures.</td><td class="gram"><span class='tag g'>目的状语从句</span> so that 引导 · the mouth of a volcano 火山口 · measure temperatures 测量温度</td></tr>
+      <tr><td class="sen">Tazieff has often risked his life in this way. He has been able to tell us more about active volcanoes than any man <b>alive</b>.</td><td class="gram">risk one's life 冒生命危险 · in this way 以这种方式 · <span class='tag g'>比较结构</span> more … than any man alive · any man alive 任何在世的人（alive 作后置定语，不能前置）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">spend time doing sth.</td><td class="gram">花时间做某事：has spent his lifetime studying active volcanoes。</td></tr>
+      <tr><td class="sen">be able to do sth.</td><td class="gram">能够做某事（强调成功做到）：Tazieff was able to set up his camp。</td></tr>
+      <tr><td class="sen">manage to do sth.</td><td class="gram">设法做成某事：he managed to take a number of brilliant photographs。</td></tr>
+      <tr><td class="sen">a number of</td><td class="gram">若干，许多（＋可数名词复数）：a number of brilliant photographs。</td></tr>
+      <tr><td class="sen">just in time</td><td class="gram">及时：Tazieff managed to escape just in time。</td></tr>
+      <tr><td class="sen">so that</td><td class="gram">以便，为了（引导目的状语从句）：so that he could take photographs。</td></tr>
+      <tr><td class="sen">risk one's life</td><td class="gram">冒生命危险：Tazieff has often risked his life in this way。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">spend time doing sth.</div><div class="value">spent his lifetime studying</div></div>
+      <div class="sum-item"><div class="label">不定式作目的状语</div><div class="value">to observe a new volcano / to take photographs</div></div>
+      <div class="sum-item"><div class="label">so that 引导目的从句</div><div class="value">so that he could take photographs and measure temperatures</div></div>
+      <div class="sum-item"><div class="label">形容词后置</div><div class="value">any man alive（alive 只能后置）</div></div>
+    </div>
+    <ul>
+      <li><b>spend time doing sth.</b>：本课 has spent his lifetime studying active volcanoes 中，spend 后面的动词要用动名词形式，不能写成 to study。同类还有 spend money on sth. （在某物上花钱）、spend time in doing sth.（花时间做某事）。</li>
+      <li><b>manage to do sth. 与 try to do sth.</b>：manage to do 强调「设法做成了」，try to do 只表示「试图做」，成败未定。本课 he managed to take … / managed to escape 都表示「成功地做到了」，语气比 try 更肯定。</li>
+      <li><b>any man alive 的语序</b>：alive 是表语形容词，作定语时必须后置，故说 any man alive（任何在世的人），不能说 any alive man。同类还有 the people present（在场的人）。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 67 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson67.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson67-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson67-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson67-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

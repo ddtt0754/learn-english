@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第一册 Lesson 121 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 The man in a hat 戴帽子的男人</h1>
+    <p class="sub">新概念英语第一册 Lesson 121 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 1 · Lesson 121（课本印刷页 241-242）· 4 个生词和短语 · 课文 15 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课围绕 <b>辨认顾客</b>，重点是 <b>定语从句</b>（who / which / that 引导），以及 <b>who</b> 与 <b>which</b> 在指人、指物时的区别。</p>
+    <h3>¶ 1 · 由 who 引导的定语从句（句 2、7、9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Who <b>served</b> you, sir?</td><td class="gram"><span class='tag'>定语从句</span> 先行词指人时用 who</td></tr>
+      <tr><td class="sen">He's the man <b>who</b> bought these books.</td><td class="gram">who 在从句中作主语</td></tr>
+      <tr><td class="sen">The man <b>who</b> I served was wearing a hat.</td><td class="gram">who 在从句中作宾语，可省略</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 由 which / that 引导的定语从句（句 3、5、14）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The lady <b>who</b> is standing behind the <b>counter</b>.</td><td class="gram">先行词指人用 who</td></tr>
+      <tr><td class="sen">The books <b>which</b> are on the counter.</td><td class="gram">先行词指物用 which</td></tr>
+      <tr><td class="sen">Is this the man <b>that</b> you served?</td><td class="gram">that 既可指人也可指物，多用于口语</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 现在完成时与过去时（句 1、9、15）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">I <b>bought</b> two expensive dictionaries here half an hour ago</td><td class="gram">half an hour ago 是过去时间，用过去时</td></tr>
+      <tr><td class="sen">but I <b>forgot</b> to take them with me.</td><td class="gram">forget to do = 忘了做（还没做）</td></tr>
+      <tr><td class="sen">I <b>recognize</b> him now.</td><td class="gram">一般现在时表此刻的状态</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">customer n. 顾客</td><td class="gram">本课对话人身份称谓，未在课文中作为句子成分出现。</td></tr>
+      <tr><td class="sen">manager n. 经理</td><td class="gram">本课对话人身份称谓，未在课文中作为句子成分出现。</td></tr>
+      <tr><td class="sen">forget to do sth.</td><td class="gram">忘记做某事。forgot to take them with me。</td></tr>
+      <tr><td class="sen">serve sb.</td><td class="gram">接待、招待某人。Who served you, sir?</td></tr>
+      <tr><td class="sen">behind the counter</td><td class="gram">在柜台后面。</td></tr>
+      <tr><td class="sen">put on</td><td class="gram">穿上、戴上。Would you put it on, please?</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">核心语法</div><div class="value">定语从句 who / which / that</div></div>
+      <div class="sum-item"><div class="label">本课生词</div><div class="value">6 个（2 个为称谓）</div></div>
+      <div class="sum-item"><div class="label">课文句数</div><div class="value">15 句</div></div>
+      <div class="sum-item"><div class="label">重点内容</div><div class="value">凭帽子认出顾客</div></div>
+    </div>
+    <ul>
+      <li><b>定语从句</b>：先行词指人用 <b>who</b> 或 that，指物用 <b>which</b> 或 that。</li>
+      <li>关系代词在从句中作<b>宾语</b>时可以省略：the man (who) I served。</li>
+      <li><b>forget to do</b> 表“忘记去做（还没做）”，与 forget doing（忘记做过）不同。</li>
+      <li>本课生词 6 个：customer、manager 为对话人身份称谓，已收入「固定搭配」表；其余 4 个全部嵌入课文句子，无遗漏。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第一册 Lesson 121 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b1-lesson121.html" class="grammar">📖 句子跟读</a>
+  <a href="b1-lesson121-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b1-lesson121-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

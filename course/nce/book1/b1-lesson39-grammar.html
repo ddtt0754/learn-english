@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第一册 Lesson 39 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Don't drop it! 别摔了！</h1>
+    <p class="sub">新概念英语第一册 Lesson 39 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 1 · Lesson 39（课本印刷页 77-78）· 5 个生词和短语 · 课文 13 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课主题是 <b>祈使句</b>（do / don't do）与 <b>be going to</b> 的配合：先说打算做什么，再说「别这样、放这里」这类指令。</p>
+    <h3>¶ 1 · be going to 表打算（句 1-2、5-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">What are you going to <b>do with</b> that vase?</td><td class="gram">do with + 物 = 怎么处理某物；这是本课的核心问句</td></tr>
+      <tr><td class="sen">I'm going to <b>put</b> it on this table.</td><td class="gram">put it on… 把它放在……上；it 指花瓶</td></tr>
+      <tr><td class="sen">I'm going to put it here, <b>in front of</b> the window.</td><td class="gram">in front of 在……前面（空间位置，后接名词）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 祈使句：肯定与否定（句 3-4、7-10）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen"><b>Give</b> it to me.</td><td class="gram"><span class='tag'>祈使句</span> 动词原形开头，主语 you 省略</td></tr>
+      <tr><td class="sen">Put it here, on this shelf.</td><td class="gram">肯定祈使句 + 地点状语，语气直接</td></tr>
+      <tr><td class="sen"><b>Don't do</b> that.</td><td class="gram"><span class='tag r'>否定祈使句</span> Don't + 动词原形</td></tr>
+      <tr><td class="sen"><b>Don't drop</b> it! / <b>Don't put</b> it there, Sam.</td><td class="gram">不要摔、不要放那儿；针对具体动作提出警告</td></tr>
+      <tr><td class="sen"><b>Be careful!</b></td><td class="gram">be 动词的祈使句用 Be：Be careful! / Be quiet!</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 指代与评价（句 11-13）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen"><b>There we are!</b></td><td class="gram">固定说法：成了/好了，表示事情办妥</td></tr>
+      <tr><td class="sen">It's a <b>lovely</b> vase.</td><td class="gram">lovely 形容词「漂亮的」，修饰 vase</td></tr>
+      <tr><td class="sen">Those <b>flowers</b> are lovely, <b>too</b>.</td><td class="gram">those + 复数名词 + are；too 表「也」</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">do with sth.</td><td class="gram">处理某物。What are you going to do with that vase?</td></tr>
+      <tr><td class="sen">in front of</td><td class="gram">在……前面。I'm going to put it here, in front of the window.</td></tr>
+      <tr><td class="sen">Don't do that.</td><td class="gram">别那样做（否定祈使句）。</td></tr>
+      <tr><td class="sen">Be careful!</td><td class="gram">小心点！be 动词的祈使句。</td></tr>
+      <tr><td class="sen">Don't drop it!</td><td class="gram">别摔了！drop 表「（使）掉下、摔落」。</td></tr>
+      <tr><td class="sen">put sth. on/in…</td><td class="gram">把某物放在……上/里。Put it here, on this shelf.</td></tr>
+      <tr><td class="sen">There we are!</td><td class="gram">好了！成了！（事情办妥时的口头语）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">核心句型</div><div class="value">祈使句 do / don't do</div></div>
+      <div class="sum-item"><div class="label">本课生词</div><div class="value">6 个</div></div>
+      <div class="sum-item"><div class="label">课文句数</div><div class="value">13 句</div></div>
+      <div class="sum-item"><div class="label">句型重点</div><div class="value">be going to + do with</div></div>
+    </div>
+    <ul>
+      <li><b>否定祈使句</b>用 Don't + 动词原形；<b>be 动词</b>的祈使句是 Be + 形容词（Be careful!）。</li>
+      <li><b>in front of</b> 是「在……前面」，与 <b>in the front of</b>（在……前部）不同。</li>
+      <li>生词表里的短语 <b>in front of</b> 已写入「固定搭配」表；课文句中标注的是单词 <b>front</b>。</li>
+      <li>本课生词 6 个（含短语）全部落位，无遗漏。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第一册 Lesson 39 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b1-lesson39.html" class="grammar">📖 句子跟读</a>
+  <a href="b1-lesson39-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b1-lesson39-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b1-lesson39-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 95 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 A fantasy 纯属虚构</h1>
+    <p class="sub">新概念英语第二册 Lesson 95 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 95（课本印刷页 430-433）· 11 个生词和短语 · 课文 9 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则虚构的讽刺小品。语言点集中在 <b>虚拟条件句</b>（If I had been, I would not have been able to …）、<b>go on doing sth.</b>、<b>set sth. on fire</b>、<b>break out</b>、<b>aim sth. at sb.</b> 等固定表达，以及 <b>have sth. done</b>（get that fellow posted）这一使役结构。</p>
+    <h3>¶ 1 · 大使的狼狈相（句 1-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">When the <b>Ambassador</b> of <b>Escalopia</b> returned home for lunch, his wife got a shock.</td><td class="gram"><span class='tag g'>时间状语从句</span> when 引导 · return home for lunch 回家吃午饭 · get a shock 吃了一惊 · 一开篇就抛出悬念，随后才慢慢道出原委</td></tr>
+      <tr><td class="sen">He looked pale and his clothes were in a <b>frightful</b> state.</td><td class="gram">look pale 脸色苍白 · in a frightful state 处于可怕的状态 · 由人到衣，两笔就把狼狈相写足</td></tr>
+      <tr><td class="sen">"What has happened?" she asked. "How did your clothes get into such a mess?"</td><td class="gram"><span class='tag b'>get into a mess</span> 弄得一团糟 · such a mess 如此脏乱 · 两个疑问句连发，语气急切</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 灭火器与大使馆（句 4-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"A <b>fire extinguisher</b>, my dear," answered the Ambassador <b>drily</b>. "University students set the <b>Embassy</b> on fire this morning."</td><td class="gram">drily 冷淡地，枯燥无味地（形容大使的回答不以为意）· <span class='tag b'>set sth. on fire</span> 放火烧某物 · the Embassy 大使馆 · 大使的回答故意省去主语和谓语，只答出关键信息，更显冷淡</td></tr>
+      <tr><td class="sen">"Good <b>heavens</b>!" exclaimed his wife. "And where were you at the time?"</td><td class="gram">Good heavens! 天哪！（表示惊讶的感叹语）· exclaim 惊叫 · at the time 当时 · 与丈夫的冷静形成对比</td></tr>
+      <tr><td class="sen">"I was in my office as usual," answered the Ambassador. "The fire broke out in the <b>basement</b>. I went down immediately, of course, and that fool, Horst, aimed a fire extinguisher at me. He thought I was on fire. I must <b>definitely</b> get that fellow <b>posted</b>."</td><td class="gram">as usual 像往常一样 · <span class='tag b'>break out</span>（火灾、战争等）突然发生 · aim sth. at sb. 把某物对准某人 · that fool, Horst 同位语，含轻蔑语气 · be on fire 着火 · <span class='tag b'>get sb. posted</span> 把某人调走（get + 宾语 + 过去分词，表示使某事被做）· definitely 肯定地</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 帽子上的洞（句 7-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The Ambassador's wife went on asking questions, when she suddenly noticed a big hole in her husband's hat.</td><td class="gram"><span class='tag b'>go on doing sth.</span> 继续做某事 · a big hole in her husband’s hat 丈夫帽子上的一个大洞 · 此处 when 表示「就在这时」，引出新的情节转折</td></tr>
+      <tr><td class="sen">"And how can you explain that?" she asked.</td><td class="gram">用 how can you explain that 追问，语气里已带怀疑 · 由「灭火器」转到「帽子」，话题一换，讽刺意味更浓</td></tr>
+      <tr><td class="sen">"Oh, that," said the Ambassador. "Someone fired a <b>shot</b> through my office window. Accurate, don't you think? Fortunately, I wasn't wearing it at the time. If I had been, I would not have been able to get home for lunch."</td><td class="gram">fire a shot 开了一枪 · through my office window 从我办公室的窗外 · accurate 准确的 · don’t you think? 你说是不是？（反问，语气自得）· <span class='tag b'>虚拟条件句（与过去相反）</span> If I had been, I would not have been able to get home for lunch.（从句用 had been，主句用 would not have been able to）· be able to do sth. 能够做某事 · 结尾以「幸亏没戴帽子」消解危险，笑话顺势收尾</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">return home for lunch</td><td class="gram">回家吃午饭：returned home for lunch。</td></tr>
+      <tr><td class="sen">get a shock</td><td class="gram">吃了一惊：his wife got a shock。</td></tr>
+      <tr><td class="sen">in a frightful state</td><td class="gram">处于可怕的状态：his clothes were in a frightful state。</td></tr>
+      <tr><td class="sen">get into a mess</td><td class="gram">弄得一团糟：How did your clothes get into such a mess?</td></tr>
+      <tr><td class="sen">set sth. on fire</td><td class="gram">放火烧某物：University students set the Embassy on fire。</td></tr>
+      <tr><td class="sen">as usual</td><td class="gram">像往常一样：I was in my office as usual。</td></tr>
+      <tr><td class="sen">break out</td><td class="gram">（火灾等）突然发生：The fire broke out in the basement。</td></tr>
+      <tr><td class="sen">aim sth. at sb.</td><td class="gram">把某物对准某人：aimed a fire extinguisher at me。</td></tr>
+      <tr><td class="sen">get sb. posted</td><td class="gram">把某人调走：I must definitely get that fellow posted。</td></tr>
+      <tr><td class="sen">go on doing sth.</td><td class="gram">继续做某事：went on asking questions。</td></tr>
+      <tr><td class="sen">fire a shot</td><td class="gram">开了一枪：Someone fired a shot through my office window。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">虚拟条件句（与过去相反）</div><div class="value">If I had been, I would not have been able to get home for lunch</div></div>
+      <div class="sum-item"><div class="label">get sth. done</div><div class="value">使某事被做：get that fellow posted</div></div>
+      <div class="sum-item"><div class="label">go on doing sth.</div><div class="value">继续做某事</div></div>
+      <div class="sum-item"><div class="label">when 表「就在这时」</div><div class="value">went on asking questions, when she suddenly noticed …</div></div>
+    </div>
+    <ul>
+      <li><b>If I had been, I would not have been able to …</b>：这是与过去事实相反的虚拟条件句。从句 If I had been (wearing it) 省略了重复部分，只留 had been；主句用 would not have been able to do sth.。全句意为「要是当时戴着帽子，我就不能回家吃午饭了」，把「中弹」说得轻描淡写，正是本课的幽默所在。</li>
+      <li><b>get sth. done 结构</b>：get + 宾语 + 过去分词，意为「使某事被做」「把某事处理好」。本课 I must definitely get that fellow posted. 即「我一定要把那个家伙调走」，posted 表示「被派往他处任职」。同类还有 get the work done、get my hair cut。</li>
+      <li><b>break out / set sth. on fire</b>：break out 指火灾、战争、疾病等「突然爆发」，不及物：The fire broke out in the basement.；set sth. on fire 意为「放火烧某物」，是及物结构：University students set the Embassy on fire.。两者常在同一话题中出现，要注意区分。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 95 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson95.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson95-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson95-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson95-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

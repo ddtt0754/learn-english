@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 46 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Expensive and uncomfortable 既昂贵又受罪</h1>
+    <p class="sub">新概念英语第二册 Lesson 46 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 46（课本印刷页 206-209）· 12 个生词和短语 · 课文 10 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则偷渡被发现的新闻。语言点集中在 <b>被动语态</b>（be astonished at / be discovered / be arrested / be confined to / be ordered to）、<b>It occurred to sb. to do sth.</b> 句型、以及 a number of、account for、on top of、admit doing sth. 等短语。</p>
+    <h3>¶ 1 · 卸货（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">When a plane from London arrived at Sydney airport, workers began to <b>unload</b> a number of <b>wooden</b> boxes which contained clothing.</td><td class="gram"><span class='tag g'>时间状语从句</span> when 引导 · a number of ＋ 复数名词 ＝ 若干 · which contained clothing 是定语从句，修饰 boxes</td></tr>
+      <tr><td class="sen">No one could account for the fact that one of the boxes was <b>extremely</b> heavy.</td><td class="gram"><span class='tag g'>同位语从句</span> that 引导，说明 the fact 的内容 · account for 说明……的原因；no one could account for 谁也弄不清 · extremely 极其，修饰 heavy</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 开箱（句 3-4）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">It suddenly <b>occurred</b> to one of the workers to open up the box.</td><td class="gram"><span class='tag b'>固定句型</span> It occurred to sb. to do sth. ＝ 某人突然想到做某事；it 是形式主语，真正的主语是 to open up the box · open up 打开</td></tr>
+      <tr><td class="sen">He was <b>astonished</b> at what he found.</td><td class="gram"><span class="tag b">被动语态</span> be astonished at 对……感到惊讶 · <span class="tag g">宾语从句</span> what 引导，作介词 at 的宾语（what ＝ the thing which）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 箱中有人（句 5-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">A man was lying in the box on top of a <b>pile</b> of <b>woollen</b> <b>goods</b>.</td><td class="gram">lie in the box 躺在箱子里 · on top of 在……之上 · a pile of 一堆 · goods 货物，永远用复数</td></tr>
+      <tr><td class="sen">He was <b>so</b> surprised at being <b>discovered</b> <b>that</b> he did not even try to run away.</td><td class="gram"><span class='tag g'>结果状语从句</span> so … that … · being discovered 是动名词的被动式，作介词 at 的宾语 · not even 甚至都不</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 认罪与代价（句 7-10）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">After he was arrested, the man <b>admitted</b> hiding in the box before the plane left London.</td><td class="gram"><span class="tag b">被动语态</span> be arrested 被捕 · <span class="tag b">admit doing sth.</span> 承认做过某事（admit 后接动名词，不接不定式）</td></tr>
+      <tr><td class="sen">He had had a long and uncomfortable trip, for he had been <b>confined</b> to the wooden box for over eighteen hours.</td><td class="gram">had had 是 have 的过去完成时（＝经历过）· for 是并列连词，表原因 · <span class="tag b">被动语态</span> be confined to 被关在……里 · over ＝ more than</td></tr>
+      <tr><td class="sen">The man was ordered to pay £3,500 for the cost of the trip. / The <b>normal</b> price of a ticket is £2,000!</td><td class="gram">be ordered to do sth. 被命令做某事 · the cost of the trip 旅费 · 结尾用「正常票价 2,000 英镑」与他被罚的 3,500 英镑作对比，形成讽刺</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">a number of</td><td class="gram">若干，许多，后接可数名词复数：a number of wooden boxes。</td></tr>
+      <tr><td class="sen">account for</td><td class="gram">说明……的原因；no one could account for the fact 谁也弄不清这个事实。</td></tr>
+      <tr><td class="sen">It occurred to sb. to do sth.</td><td class="gram">某人突然想到做某事：It occurred to one of the workers to open up the box.</td></tr>
+      <tr><td class="sen">be astonished at</td><td class="gram">对……感到惊讶：He was astonished at what he found.</td></tr>
+      <tr><td class="sen">on top of</td><td class="gram">在……之上：on top of a pile of woollen goods。</td></tr>
+      <tr><td class="sen">admit doing sth.</td><td class="gram">承认做过某事：the man admitted hiding in the box。</td></tr>
+      <tr><td class="sen">be confined to</td><td class="gram">被限制、被关在……里：he had been confined to the wooden box。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">同位语从句</div><div class="value">the fact that … ：that 从句说明 fact 的内容</div></div>
+      <div class="sum-item"><div class="label">It occurred to sb. to do</div><div class="value">某人突然想到做某事（it 为形式主语）</div></div>
+      <div class="sum-item"><div class="label">动名词的被动式</div><div class="value">being discovered 作介词宾语</div></div>
+      <div class="sum-item"><div class="label">admit doing</div><div class="value">admit 后接动名词，不接不定式</div></div>
+    </div>
+    <ul>
+      <li><b>同位语从句与定语从句</b>：the fact that one of the boxes was extremely heavy 中，that 从句说的是 the fact 本身的内容，叫同位语从句，that 只起连接作用、不作句子成分；而句 1 的 which contained clothing 是定语从句，which 在从句中作主语。</li>
+      <li><b>admit doing sth.</b>：admit 后面接动名词，不接不定式。the man admitted hiding in the box（✓）；admitted to hide（✗）。同类动词还有 enjoy、finish、avoid、suggest。</li>
+      <li><b>It occurred to sb. to do sth.</b>：这是英语中很常用的一种句型，it 是形式主语，真正的主语是后面的不定式。同类写法还有 It struck me that …、It happened that …。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 46 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson46.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson46-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson46-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson46-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

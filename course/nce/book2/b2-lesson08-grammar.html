@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 8 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 The best and the worst</h1>
+    <p class="sub">新概念英语第二册 Lesson 8 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 8（课本印刷页 40-43）· 5 个生词和短语 · 课文 7 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是「花园竞赛」的幽默短文，语言点集中在 <b>形容词的最高级</b>、<b>比较级（than / 不规则变化）</b>、<b>名词所有格</b>以及 <b>but 表示的转折</b>。</p>
+    <h3>¶ 1 · 乔的花园最漂亮（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Joe Sanders has the <b>most</b> beautiful garden in our town.</td><td class="gram"><span class='tag'>最高级</span> 多音节形容词用 the most + 原级 · 比较范围用 in our town</td></tr>
+      <tr><td class="sen">Nearly everybody enters for 'The Nicest Garden <b>Competition</b>' each year, but Joe wins every time.</td><td class="gram">enter for 意为「报名参加」· 单音节形容词 nicest 直接加 -est · but 表转折</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 比尔的花园更大（句 3-5）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Bill Frith's garden is larger than Joe's.</td><td class="gram"><span class='tag'>比较级</span> 单音节形容词加 -er + than · Joe's 后面省略了 garden</td></tr>
+      <tr><td class="sen">Bill works <b>harder</b> than Joe and grows more flowers and vegetables, but Joe's garden is more <b>interesting</b>.</td><td class="gram">hard 的比较级 harder 修饰动词 works · more + 多音节形容词构成比较级 · more flowers 的 more 是「更多」的限定词</td></tr>
+      <tr><td class="sen">He has made <b>neat</b> <b>paths</b> and has built a <b>wooden</b> bridge over a <b>pool</b>.</td><td class="gram">made 与 built 都是 has + 过去分词 · over a pool 指「在池塘上方」</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 我的花园最糟（句 6-7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">I like gardens too, but I do not like hard work.</td><td class="gram">do not like 用助动词 do 构成否定 · too 表「也」</td></tr>
+      <tr><td class="sen">Every year I enter for the garden competition too, and I always win a little prize for the <b>worst</b> garden in the town!</td><td class="gram"><span class="tag r">worst</span> bad → worse → worst，不规则最高级 · a prize for sth. 表「因…获奖」</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">enter for</td><td class="gram">报名参加（比赛）：enter for the competition。</td></tr>
+      <tr><td class="sen">every time</td><td class="gram">每次，作状语：Joe wins every time.</td></tr>
+      <tr><td class="sen">Bill's … than Joe's</td><td class="gram">比较级句型：A is larger than B；than 后可用名词所有格省略重复的名词。</td></tr>
+      <tr><td class="sen">win a prize for sth.</td><td class="gram">因某物获奖：win a little prize for the worst garden。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">最高级</div><div class="value">单音节加 -est；多音节用 the most + 原级：the most beautiful</div></div>
+      <div class="sum-item"><div class="label">比较级</div><div class="value">单音节加 -er + than；多音节用 more + 原级 + than</div></div>
+      <div class="sum-item"><div class="label">不规则变化</div><div class="value">good/well → better → best · bad/badly → worse → worst</div></div>
+      <div class="sum-item"><div class="label">比较范围</div><div class="value">in + 地点（最高级）· than + 比较对象（比较级）</div></div>
+    </div>
+    <ul>
+      <li><b>比较级与 than 搭配</b>：larger than Joe's（✓）／larger that Joe's（✗）；than 后面省略重复的名词时用所有格 Joe's。</li>
+      <li><b>最高级前必须加 the</b>：the most beautiful garden · the worst garden。</li>
+      <li><b>hard 与 hardly</b>：hard（努力地）→ harder（更努力）；hardly 是「几乎不」，意思完全不同。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 8 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson08.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson08-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson08-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson08-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

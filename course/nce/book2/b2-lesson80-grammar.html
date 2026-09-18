@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 80 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 The Crystal Palace 水晶宫</h1>
+    <p class="sub">新概念英语第二册 Lesson 80 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 80（课本印刷页 370-373）· 9 个生词和短语 · 课文 10 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则关于水晶宫的说明文。语言点集中在 <b>be made of</b>、<b>be used to do sth.</b>（被动）、<b>one of the + 最高级 + 复数名词</b>，以及 <b>on + 动名词</b> 表示「一……就……」的时间结构。</p>
+    <h3>¶ 1 · 不寻常的建筑（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Perhaps the most <b>extraordinary</b> building of the nineteenth century was the Crystal Palace, which was built in Hyde Park for the Great <b>Exhibition</b> of 1851.</td><td class="gram"><span class='tag g'>非限制性定语从句</span> which 引导 · the most extraordinary building 最不寻常的建筑 · for the Great Exhibition 为世界博览会（而建）· Hyde Park 海德公园</td></tr>
+      <tr><td class="sen">The Crystal Palace was different from all other buildings in the world, for it was made of <b>iron</b> and glass.</td><td class="gram">be different from 与……不同 · <span class='tag g'>并列连词 for</span> 表原因 · be made of 由……制成（能看出原料）· iron 铁</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 盛会与展品（句 3-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">It was one of the biggest buildings of all time and a lot of people from many countries came to see it.</td><td class="gram">one of the + 最高级 + 复数名词 · of all time 有史以来 · a lot of 许多 · from many countries 来自许多国家</td></tr>
+      <tr><td class="sen">A great many goods were sent to the exhibition from <b>various</b> parts of the world.</td><td class="gram"><span class='tag b'>被动语态</span> were sent to · a great many 许多（＋可数名词复数）· various parts of the world 世界各地</td></tr>
+      <tr><td class="sen">There was also a great deal of <b>machinery</b> on <b>display</b>.</td><td class="gram">a great deal of 大量的（修饰不可数名词）· machinery 机器（集合名词，不可数）· on display 展出</td></tr>
+      <tr><td class="sen">The most wonderful piece of machinery on show was Nasmyth's steam hammer.</td><td class="gram">the most wonderful piece of … 最奇妙的一台…… · on show 展出（＝ on display）· Nasmyth's steam hammer 内史密斯的蒸汽锤</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 参观者与赢利（句 7-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Though in those days, travelling was not as easy as it is today, <b>steam</b> boats carried thousands of visitors across the Channel from Europe.</td><td class="gram"><span class='tag g'>让步状语从句</span> though 引导 · not as … as … 不如……那样 · steam boats 汽船 · carry sb. across the Channel 把某人送过英吉利海峡 · in those days 当时</td></tr>
+      <tr><td class="sen">On arriving in England, they were taken to the Crystal Palace by train.</td><td class="gram"><span class='tag b'>on + 动名词</span> On arriving in England ＝ As soon as they arrived：一到英国就…… · <span class='tag b'>被动语态</span> were taken to · by train 乘火车</td></tr>
+      <tr><td class="sen">There were six million visitors in all, and the <b>profits</b> from the exhibition were used to build museums and <b>colleges</b>.</td><td class="gram">in all 总共 · the profits from ……的利润 · <span class='tag b'>be used to do sth.</span> 被用来做某事 · museums and colleges 博物馆和高等学院</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 迁址与焚毁（句 10）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Later, the Crystal Palace was moved to South London. It remained one of the most famous buildings in the world until it was burnt down in 1936.</td><td class="gram"><span class='tag b'>被动语态</span> was moved / was burnt down · remain 仍然是（系动词）· <span class="tag g">时间状语从句</span> until 引导 · burn down 烧毁 · it 指代 the Crystal Palace</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">be made of</td><td class="gram">由……制成（能看出原料）：it was made of iron and glass。</td></tr>
+      <tr><td class="sen">be different from</td><td class="gram">与……不同：was different from all other buildings。</td></tr>
+      <tr><td class="sen">of all time</td><td class="gram">有史以来：one of the biggest buildings of all time。</td></tr>
+      <tr><td class="sen">a great many</td><td class="gram">许多（＋可数名词复数）：A great many goods were sent to the exhibition。</td></tr>
+      <tr><td class="sen">a great deal of</td><td class="gram">大量的（＋不可数名词）：There was also a great deal of machinery。</td></tr>
+      <tr><td class="sen">on display / on show</td><td class="gram">展出：a great deal of machinery on display / on show。</td></tr>
+      <tr><td class="sen">on + 动名词</td><td class="gram">一……就……：On arriving in England, they were taken to the Crystal Palace。</td></tr>
+      <tr><td class="sen">be used to do sth.</td><td class="gram">被用来做某事：the profits were used to build museums and colleges。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">be made of</div><div class="value">由……制成（可见原料）</div></div>
+      <div class="sum-item"><div class="label">被动语态</div><div class="value">were sent to / were taken to / was moved / was burnt down</div></div>
+      <div class="sum-item"><div class="label">one of the + 最高级 + 复数名词</div><div class="value">one of the biggest buildings of all time</div></div>
+      <div class="sum-item"><div class="label">on + 动名词表时间</div><div class="value">On arriving in England …</div></div>
+    </div>
+    <ul>
+      <li><b>be made of 与 be made from</b>：be made of 指「由……制成」，通常能看出原料（it was made of iron and glass）；be made from 则指经过加工、已看不出原料（Wine is made from grapes）。本课水晶宫用钢和玻璃建成，原料一目了然，故用 made of。</li>
+      <li><b>on + 动名词表示时间</b>：On arriving in England, they were taken to the Crystal Palace by train. on 后接动名词，相当于 as soon as 引导的时间状语从句，意为「一到……就……」。同类还有 On hearing the news, she cried.（一听到这个消息她就哭了。）</li>
+      <li><b>并列连词 for 表原因</b>：The Crystal Palace was different from all other buildings in the world, for it was made of iron and glass. 这里的 for 是并列连词，表示「因为」，但语气比 because 弱，通常用来补充说明理由，且不能放在句首。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 80 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson80.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson80-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson80-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

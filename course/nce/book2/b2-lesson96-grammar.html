@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 96 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 The dead return 亡灵返乡</h1>
+    <p class="sub">新概念英语第二册 Lesson 96 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 96（课本印刷页 434-437）· 3 个生词和短语 · 课文 9 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一篇介绍日本亡灵节的说明文。语言点集中在 <b>被动语态</b>（is held / are said to / is laid out / are hung / is thrown / are placed）与<b>过去完成时的被动语态</b>（had been laid out / had been hung），以及 <b>be said to do sth.</b>、<b>lay out</b>、<b>be considered unlucky</b>、<b>drift out to sea</b> 等固定表达。</p>
+    <h3>¶ 1 · 亡灵节（句 1-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">A <b>Festival</b> for the Dead is held once a year in Japan.</td><td class="gram"><span class='tag b'>被动语态</span> is held 被举行 · a festival for the Dead 亡灵节 · once a year 每年一次 · 介词 for 表示「为……而设的」</td></tr>
+      <tr><td class="sen">This festival is a cheerful occasion, for on this day, the dead are said to return to their homes and they are welcomed by the living.</td><td class="gram">a cheerful occasion 一个欢乐的场合 · <span class='tag g'>并列连词</span> for 表示原因 · <span class='tag b'>be said to do sth.</span> 据说……· the dead 死者（the + 形容词表示一类人）· the living 生者 · <span class='tag b'>被动语态</span> are welcomed by</td></tr>
+      <tr><td class="sen">As they are expected to be hungry after their long journey, food is laid out for them.</td><td class="gram"><span class='tag g'>原因状语从句</span> as 引导 · <span class='tag b'>被动语态</span> are expected to be … / is laid out · <span class='tag b'>lay out</span> 摆开，摆放（食物等）· after their long journey 长途旅行之后</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 灯笼指引与通宵歌舞（句 4-5）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Specially-made <b>lanterns</b> are hung outside each house to help the dead to find their way.</td><td class="gram">specially-made lanterns 特制的灯笼（复合形容词作定语）· <span class='tag b'>被动语态</span> are hung · outside each house 在各家门外 · to help the dead to find their way 不定式表目的 · find one’s way 找到路</td></tr>
+      <tr><td class="sen">All night long, people dance and sing.</td><td class="gram">all night long 整夜 · dance and sing 载歌载舞 · 全句只六个词，与前后的被动语态形成节奏上的对比</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 清晨处置食物（句 6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">In the early morning, the food that had been laid out for the dead is thrown into a river or into the sea as it is considered unlucky for anyone living to eat it.</td><td class="gram">in the early morning 清晨 · <span class='tag g'>定语从句</span> that 引导修饰 the food · 从句用<span class='tag b'>过去完成时的被动语态</span> had been laid out（「摆」发生在「扔」之前）· <span class='tag b'>被动语态</span> is thrown into · <span class='tag g'>原因状语从句</span> as 引导 · <span class='tag b'>be considered unlucky</span> 被认为不吉利 · for anyone living to eat it 对任何活人来说吃它</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 灯笼入海（句 7-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">In towns that are near the sea, the tiny lanterns which had been hung in the streets the night before, are placed into the water when the festival is over.</td><td class="gram"><span class='tag g'>定语从句</span> that 与 which 各引导一个，层层修饰 · <span class='tag b'>过去完成时的被动语态</span> had been hung · the night before 前一天夜里 · <span class='tag b'>被动语态</span> are placed into the water · <span class='tag g'>时间状语从句</span> when 引导 · be over 结束</td></tr>
+      <tr><td class="sen">Thousands of lanterns slowly drift out to sea guiding the dead on their return journey to the other world.</td><td class="gram">thousands of 成千上万 · drift out to sea 漂向大海 · <span class='tag g'>现在分词短语作状语</span> guiding the dead … 伴随着主句的动作 · on their return journey 在返回的旅途中 · the other world 另一个世界，阴间</td></tr>
+      <tr><td class="sen">This is a moving <b>spectacle</b>, for crowds of people stand on the shore watching the lanterns drifting away until they can be seen no more.</td><td class="gram">a moving spectacle 一个动人的场面 · <span class='tag g'>并列连词</span> for 表示原因 · crowds of people 成群的人 · stand on the shore 站在岸边 · <span class='tag b'>watch sth. doing sth.</span> 看着某物正在做某事 · drift away 漂远 · <span class='tag g'>时间状语从句</span> until 引导 · be seen no more 再也看不见（被动语态 + no more 的否定）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">once a year</td><td class="gram">每年一次：is held once a year in Japan。</td></tr>
+      <tr><td class="sen">be said to do sth.</td><td class="gram">据说……：the dead are said to return to their homes。</td></tr>
+      <tr><td class="sen">be expected to do sth.</td><td class="gram">被料想会做某事：they are expected to be hungry。</td></tr>
+      <tr><td class="sen">lay out</td><td class="gram">摆开，摆放：food is laid out for them。</td></tr>
+      <tr><td class="sen">find one's way</td><td class="gram">找到路：to help the dead to find their way。</td></tr>
+      <tr><td class="sen">all night long</td><td class="gram">整夜：All night long, people dance and sing。</td></tr>
+      <tr><td class="sen">be considered unlucky</td><td class="gram">被认为不吉利：it is considered unlucky for anyone living to eat it。</td></tr>
+      <tr><td class="sen">be over</td><td class="gram">结束：when the festival is over。</td></tr>
+      <tr><td class="sen">drift out to sea</td><td class="gram">漂向大海：Thousands of lanterns slowly drift out to sea。</td></tr>
+      <tr><td class="sen">the other world</td><td class="gram">另一个世界，阴间：their return journey to the other world。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">被动语态</div><div class="value">is held / are said to / is laid out / are hung / is thrown / are placed</div></div>
+      <div class="sum-item"><div class="label">过去完成时的被动语态</div><div class="value">had been laid out / had been hung（点明先后）</div></div>
+      <div class="sum-item"><div class="label">be said to do sth.</div><div class="value">据说……</div></div>
+      <div class="sum-item"><div class="label">现在分词作状语</div><div class="value">guiding the dead on their return journey …</div></div>
+    </div>
+    <ul>
+      <li><b>be said to do sth.</b>：the dead are said to return to their homes 意为「据说死者会回到家里」。这一结构相当于 It is said that the dead return to their homes.，是英语中表「据说」的常用句式。同类还有 be reported to do sth.、be believed to do sth.。</li>
+      <li><b>过去完成时的被动语态点明先后</b>：the food that had been laid out for the dead is thrown into a river …（先摆好，后扔掉）；the tiny lanterns which had been hung in the streets the night before, are placed into the water …（先挂上，后放进水里）。两处都用 had been done，把「更早发生」这一层意思交代清楚。</li>
+      <li><b>the dead / the living</b>：「the + 形容词」可以表示一类人，作主语时谓语用复数。本课有 the dead（死者）、the living（生者）；类似的还有 the rich（富人）、the young（年轻人）、the blind（盲人）。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 96 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson96.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson96-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson96-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

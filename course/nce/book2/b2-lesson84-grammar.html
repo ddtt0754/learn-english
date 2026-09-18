@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 84 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 On strike 罢工</h1>
+    <p class="sub">新概念英语第二册 Lesson 84 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 84（课本印刷页 386-389）· 11 个生词和短语 · 课文 11 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则关于罢工的报道。语言点集中在 <b>be due to do sth.</b>、<b>被动语态</b>（is reached / have been seen）、<b>object that …</b>，以及 <b>to some extent</b>、<b>in two days' time</b> 等时间与程度状语。</p>
+    <h3>¶ 1 · 罢工决定（句 1-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen"><b>Busmen</b> have decided to go on <b>strike</b> next week.</td><td class="gram"><span class='tag b'>go on strike</span> 举行罢工 · busmen 公共汽车司机（busman 的复数）· decide to do sth. 决定做某事 · 用现在完成时报道刚作出的决定</td></tr>
+      <tr><td class="sen">The strike is due to begin on Tuesday. No one knows how long it will last.</td><td class="gram"><span class='tag b'>be due to do sth.</span> 定于……，预计…… · on Tuesday 在星期二（具体某天用 on）· <span class='tag g'>宾语从句</span> how long it will last 会持续多久</td></tr>
+      <tr><td class="sen">The busmen have <b>stated</b> that the strike will continue until general <b>agreement</b> is reached about pay and working conditions.</td><td class="gram">state 正式提出，宣布 · <span class='tag g'>宾语从句</span> that 引导 · <span class='tag g'>时间状语从句</span> until 引导 · <span class='tag b'>被动语态</span> is reached：达成 · pay and working conditions 工资和工作条件</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 各方应对（句 4-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Most people believe that the strike will last for at least a week.</td><td class="gram">most people 大多数人 · at least 至少 · <span class='tag g'>宾语从句</span> that 引导</td></tr>
+      <tr><td class="sen">Many owners of private cars are going to offer 'free rides' to people on their way to work.</td><td class="gram">owners of private cars 私人汽车的车主 · offer sth. to sb. 向某人提供某物 · free rides 免费乘车 · on one's way to work 在上班的路上</td></tr>
+      <tr><td class="sen">This will <b>relieve</b> <b>pressure</b> on the trains to some <b>extent</b>.</td><td class="gram">relieve 减轻 · pressure on 对……的压力 · to some extent 在某种程度上 · this 指代上句所说的「免费乘车」</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 学生代驾（句 7-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Meanwhile, a number of university students have <b>volunteered</b> to drive buses while the strike lasts.</td><td class="gram"><span class='tag b'>volunteer to do sth.</span> 自愿做某事 · a number of 许多 · meanwhile 与此同时 · <span class='tag g'>时间状语从句</span> while 引导</td></tr>
+      <tr><td class="sen">All the students are expert drivers, but before they drive any of the buses, they will have to pass a special test.</td><td class="gram">be expert drivers 是驾车能手 · <span class='tag g'>时间状语从句</span> before 引导 · have to 不得不 · pass a test 通过考试 · any of the buses 这些公共汽车中的任何一辆</td></tr>
+      <tr><td class="sen">The students are going to take the test in two days' time. Even so, people are going to find it difficult to get to work.</td><td class="gram">in two days' time 两天后 · even so 即便如此 · find it difficult to do sth. 觉得做某事难（it 是形式宾语，真正宾语是后面的不定式）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 公众反应（句 10-11）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">But so far, the public has expressed its <b>gratitude</b> to the students in letters to the <b>Press</b>.</td><td class="gram">so far 到目前为止 · express one's gratitude to sb. 向某人表达谢意 · in letters to the Press 通过写给报界的信 · the Press 新闻界 · the public 作主语时谓语可用单数（has expressed）</td></tr>
+      <tr><td class="sen">Only one or two people have <b>objected</b> that the students will drive too fast!</td><td class="gram"><span class='tag b'>object that …</span> 反对说…… · one or two 一两个 · 结尾以「反对的理由是学生开得太快」收束，含一丝调侃</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">go on strike</td><td class="gram">举行罢工：Busmen have decided to go on strike next week。</td></tr>
+      <tr><td class="sen">be due to do sth.</td><td class="gram">定于……，预计……：The strike is due to begin on Tuesday。</td></tr>
+      <tr><td class="sen">at least</td><td class="gram">至少：the strike will last for at least a week。</td></tr>
+      <tr><td class="sen">on one's way to work</td><td class="gram">在上班的路上：people on their way to work。</td></tr>
+      <tr><td class="sen">relieve pressure on</td><td class="gram">减轻对……的压力：relieve pressure on the trains。</td></tr>
+      <tr><td class="sen">to some extent</td><td class="gram">在某种程度上：to some extent。</td></tr>
+      <tr><td class="sen">volunteer to do sth.</td><td class="gram">自愿做某事：students have volunteered to drive buses。</td></tr>
+      <tr><td class="sen">object that …</td><td class="gram">反对说……：Only one or two people have objected that the students will drive too fast。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">be due to do sth.</div><div class="value">定于……</div></div>
+      <div class="sum-item"><div class="label">被动语态</div><div class="value">is reached（达成）</div></div>
+      <div class="sum-item"><div class="label">volunteer to do sth.</div><div class="value">自愿做某事</div></div>
+      <div class="sum-item"><div class="label">find it difficult to do sth.</div><div class="value">觉得做某事难（it 为形式宾语）</div></div>
+    </div>
+    <ul>
+      <li><b>be due to do sth.</b>：The strike is due to begin on Tuesday. be due to 表示「按计划定于……」或「预计将……」，to 后接动词原形。注意与 be due to ＋ 名词（由于）区分：The accident was due to careless driving.（这起事故是由于粗心驾驶造成的。）</li>
+      <li><b>find it difficult to do sth.</b>：句中 it 是形式宾语，真正的宾语是后面的不定式 to get to work，difficult 是宾语补足语。同类还有 make it clear that …、think it necessary to do sth.。</li>
+      <li><b>the public 作主语</b>：the public 是集合名词，作主语时谓语既可用单数（has expressed），也可用复数（have expressed），本课用单数，把公众视为一个整体。同类名词还有 the government、the committee。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 84 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson84.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson84-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson84-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

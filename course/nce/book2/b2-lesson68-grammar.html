@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 68 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Persistent 纠缠不休</h1>
+    <p class="sub">新概念英语第二册 Lesson 68 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 68（课本印刷页 308-311）· 2 个生词和短语 · 课文 12 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则「躲不开的熟人」的幽默小品。语言点集中在 <b>avoid doing sth.</b>、<b>It is no use doing sth.</b>、<b>no matter how</b> 引导的让步状语从句、<b>insist on doing sth.</b>，以及 <b>Would you mind my doing sth.?</b> 这一委婉请求句式。</p>
+    <h3>¶ 1 · 躲不掉的人（句 1-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">I crossed the street to <b>avoid</b> meeting him, but he saw me and came running towards me.</td><td class="gram"><span class='tag b'>avoid doing sth.</span> 避免做某事（avoid 后接动名词，不能接不定式）· cross the street 穿过马路 · come running 跑过来（现在分词作方式状语）</td></tr>
+      <tr><td class="sen">It was no use pretending that I had not seen him, so I waved to him.</td><td class="gram"><span class='tag b'>It is no use doing sth.</span> 做某事没有用 · <span class='tag g'>宾语从句</span> that 引导 · wave to sb. 向某人招手</td></tr>
+      <tr><td class="sen">I never enjoy meeting Nigel Dykes.</td><td class="gram">enjoy doing sth. 喜欢做某事（enjoy 后接动名词）· never 从不，写出不胜其烦</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 无事可做的奈杰尔（句 4-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">He never has anything to do.</td><td class="gram">have sth. to do 有事可做 · never 与 anything 连用，写出「从来无事可做」</td></tr>
+      <tr><td class="sen">No matter how busy you are, he always <b>insists</b> on coming with you.</td><td class="gram"><span class='tag g'>让步状语从句</span> no matter how 引导（＝ however）· insist on doing sth. 坚持做某事 · come with sb. 与某人同行</td></tr>
+      <tr><td class="sen">I had to think of a way of preventing him from following me around all morning.</td><td class="gram">think of a way of doing sth. 想到做某事的办法 · prevent sb. from doing sth. 阻止某人做某事 · follow sb. around 跟着某人到处走 · have to 不得不</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 街上相遇（句 7-10）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"Hello, Nigel," I said. "Fancy meeting you here!"</td><td class="gram">Fancy meeting you here! 真想不到在这儿见到你！（fancy 后接动名词，表惊讶）</td></tr>
+      <tr><td class="sen">"Hi, Elizabeth," Nigel answered. "I was just wondering how to spend the morning — until I saw you. You're not busy doing anything, are you?"</td><td class="gram">wonder how to do sth. 想着如何做某事 · spend the morning 消磨上午 · <span class='tag g'>反意疑问句</span> are you?（对否定句提问时用肯定形式）</td></tr>
+      <tr><td class="sen">"No, not at all," I answered. "I'm going to ..."</td><td class="gram">not at all 一点也不 · I'm going to … 我打算去……（话被打断，为下文留悬念）</td></tr>
+      <tr><td class="sen">"Would you mind my coming with you?" he asked, before I had finished speaking.</td><td class="gram"><span class='tag b'>Would you mind my doing sth.?</span> 你介意我做某事吗？（my 是动名词的逻辑主语）· before I had finished speaking 在我把话说完之前</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 一起去牙医（句 11-12）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"Not at all," I lied, "but I'm going to the dentist."</td><td class="gram">not at all 没关系 · lie 撒谎 · go to the dentist 去看牙医</td></tr>
+      <tr><td class="sen">"Then I'll come with you," he answered. "There's always plenty to read in the waiting room!"</td><td class="gram">plenty to read 很多可读的东西（不定式作后置定语）· the waiting room 候诊室 · 结尾以「候诊室总有很多东西可读」抖出笑点</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">avoid doing sth.</td><td class="gram">避免做某事：I crossed the street to avoid meeting him。</td></tr>
+      <tr><td class="sen">It is no use doing sth.</td><td class="gram">做某事没有用：It was no use pretending that I had not seen him。</td></tr>
+      <tr><td class="sen">no matter how</td><td class="gram">不管多么（引导让步状语从句）：No matter how busy you are…。</td></tr>
+      <tr><td class="sen">insist on doing sth.</td><td class="gram">坚持做某事：he always insists on coming with you。</td></tr>
+      <tr><td class="sen">prevent sb. from doing sth.</td><td class="gram">阻止某人做某事：preventing him from following me around。</td></tr>
+      <tr><td class="sen">Fancy doing sth.!</td><td class="gram">真想不到……：Fancy meeting you here!</td></tr>
+      <tr><td class="sen">Would you mind my doing sth.?</td><td class="gram">你介意我做某事吗：Would you mind my coming with you?</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">avoid / enjoy / fancy + doing</div><div class="value">动词后接动名词，不接不定式</div></div>
+      <div class="sum-item"><div class="label">no matter how 让步状语从句</div><div class="value">No matter how busy you are…</div></div>
+      <div class="sum-item"><div class="label">It is no use doing sth.</div><div class="value">做某事没有用</div></div>
+      <div class="sum-item"><div class="label">Would you mind my doing sth.?</div><div class="value">动名词前用所有格 my 作逻辑主语</div></div>
+    </div>
+    <ul>
+      <li><b>后接动名词的动词</b>：本课连续出现 avoid meeting、enjoy meeting、Fancy meeting、insist on coming、prevent … from following，这些动词或短语后面一律接动名词，不能接不定式。同类还有 mind、finish、practise、give up 等。</li>
+      <li><b>no matter how 引导让步状语从句</b>：No matter how busy you are, he always insists on coming with you. no matter how 等于 however，后面必须紧跟形容词或副词（busy），再接主谓。同类结构还有 no matter what / who / where。</li>
+      <li><b>Would you mind my coming with you?</b>：mind 后接动名词，动名词的逻辑主语用所有格 my（口语中也用 me）。肯定回答「不介意」用 Not at all. / Certainly not.，「介意」用 I'm sorry, but …。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 68 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson68.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson68-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson68-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

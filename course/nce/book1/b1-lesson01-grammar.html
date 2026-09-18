@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第一册 Lesson 1 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Excuse me! 对不起！</h1>
+    <p class="sub">新概念英语第一册 Lesson 1 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 1 · Lesson 1（课本印刷页 1-2）· 11 个生词和短语 · 课文 7 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一段发生在公共场所的简短对话（认领手提包），语言点集中在 <b>be 动词一般疑问句</b>、<b>指示代词 this</b>、<b>形容词性物主代词 your</b> 与 <b>简略回答</b>。</p>
+    <h3>¶ 1 · 交际开场</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen"><b>Excuse</b> <b>me</b>!</td><td class="gram"><span class='tag'>固定客套语</span> 完整结构为祈使性短语 · 用于与陌生人搭话、打断对方或侧身挤过 · <b>me</b> 是 I 的<span class='tag'>宾格</span></td></tr>
+      <tr><td class="sen"><b>Yes</b>?</td><td class="gram"><span class='tag'>省略句</span> 省略 What is it? · 读<span class='tag g'>升调</span>表疑问「什么事？」</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 询问与请求重复</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen"><b>Is</b> <b>this</b> <b>your</b> <b>handbag</b>?</td><td class="gram"><span class='tag'>一般疑问句</span>：<span class='tag g'>be 动词 is 提到主语前</span> · 主语 this（<span class='tag'>指示代词</span>）· 表语 your handbag = <span class='tag'>形容词性物主代词</span> your + 名词 handbag · 读<span class='tag g'>升调</span></td></tr>
+      <tr><td class="sen"><b>Pardon</b>?</td><td class="gram"><span class='tag'>省略句</span> 全句为 I beg your pardon. · 请求对方把刚说的话重复一遍 · 读<span class='tag g'>升调</span></td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 重复与应答</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Is this your handbag?</td><td class="gram">原句<span class='tag'>重复</span>，用于确认信息 · 与上一句同构（主谓不倒装的原句 + be 动词前置的疑问句）</td></tr>
+      <tr><td class="sen">Yes, <b>it</b> is.</td><td class="gram"><span class='tag g'>简略回答</span> Yes/No + 主语 + be 动词 · <span class='tag'>it 指代</span>上文 this handbag，<b>避免重复名词</b> · Yes 后加逗号</td></tr>
+      <tr><td class="sen"><b>Thank you</b> <b>very much</b>.</td><td class="gram"><span class='tag'>致谢用语</span> · thank 为及物动词 · <span class='tag g'>very much</span> 程度副词短语，置于句末</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配分类整理 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配分类整理</h2>
+    <h3>🔹 日常交际用语 (Everyday Expressions)</h3>
+    <table>
+      <thead><tr><th>短语</th><th>释义</th><th>例句出处</th></tr></thead>
+      <tbody>
+      <tr><td><b>Excuse me.</b></td><td>对不起；打扰一下</td><td class="sen">Excuse me!</td></tr>
+      <tr><td><b>Yes?</b></td><td>什么事？（升调）</td><td class="sen">Yes?</td></tr>
+      <tr><td><b>Pardon?</b></td><td>请再说一遍</td><td class="sen">Pardon?</td></tr>
+      <tr><td><b>I beg your pardon.</b></td><td>请再说一遍（Pardon? 的完整句）</td><td class="sen">课文注释 2</td></tr>
+      <tr><td><b>Thank you very much.</b></td><td>非常感谢</td><td class="sen">Thank you very much.</td></tr>
+      </tbody>
+    </table>
+    <h3>🔹 询问与应答句型 (Questions &amp; Answers)</h3>
+    <table>
+      <thead><tr><th>短语</th><th>释义</th><th>例句出处</th></tr></thead>
+      <tbody>
+      <tr><td><b>Is this...?</b></td><td>这是……吗？</td><td class="sen">Is this your handbag?</td></tr>
+      <tr><td><b>Is this your + n.?</b></td><td>这是你的……吗？</td><td class="sen">Is this your handbag?</td></tr>
+      <tr><td><b>Yes, it is.</b></td><td>是的，它是。（肯定简略答语）</td><td class="sen">Yes, it is.</td></tr>
+      <tr><td><b>No, it isn't.</b></td><td>不，它不是。（否定简略答语）</td><td class="sen">拓展：it is not 的缩写</td></tr>
+      </tbody>
+    </table>
+    <h3>🔹 代词 (Pronouns)</h3>
+    <table>
+      <thead><tr><th>短语</th><th>释义</th><th>例句出处</th></tr></thead>
+      <tbody>
+      <tr><td><b>this</b></td><td>pron. 这（指示代词，指近处的人或物）</td><td class="sen">Is this your handbag?</td></tr>
+      <tr><td><b>it</b></td><td>pron. 它（指代前文提到的事物）</td><td class="sen">Yes, it is.</td></tr>
+      <tr><td><b>me</b></td><td>pron. 我（I 的宾格）</td><td class="sen">Excuse me!</td></tr>
+      <tr><td><b>your</b></td><td>形容词性物主代词 你的，你们的</td><td class="sen">your handbag</td></tr>
+      </tbody>
+    </table>
+    <h3>🔹 be 动词 (The Verb &quot;be&quot;)</h3>
+    <table>
+      <thead><tr><th>短语</th><th>释义</th><th>例句出处</th></tr></thead>
+      <tbody>
+      <tr><td><b>is</b></td><td>be 动词现在时第三人称单数</td><td class="sen">Is this your handbag?</td></tr>
+      <tr><td><b>it + is</b></td><td>主语与 be 动词的搭配</td><td class="sen">Yes, it is.</td></tr>
+      <tr><td><b>be 动词前置</b></td><td>一般疑问句语序</td><td class="sen">Is this...?</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <h3>📊 时态与句型分布</h3>
+    <table>
+      <thead><tr><th>项目</th><th>出现情况</th><th>典型例句</th></tr></thead>
+      <tbody>
+      <tr><td><span class='tag'>一般现在时（be 动词）</span></td><td>主体（3 句）</td><td class="sen">Is this your handbag? / Yes, it is.</td></tr>
+      <tr><td><span class='tag g'>一般疑问句</span></td><td>2 处</td><td class="sen">Is this your handbag?</td></tr>
+      <tr><td><span class='tag g'>简略回答</span></td><td>1 处</td><td class="sen">Yes, it is.</td></tr>
+      <tr><td><span class='tag r'>省略句</span></td><td>2 处</td><td class="sen">Yes? / Pardon?</td></tr>
+      </tbody>
+    </table>
+    <p>本课对话通篇使用<b>一般现在时</b>与 <b>be 动词 is</b>，以<b>一般疑问句</b>（Is this...?）发起询问，用<b>简略回答</b>（Yes, it is.）与<b>省略句</b>（Yes? / Pardon?）推动交际，是英语交际入门最基础的句型组合。</p>
+    <h3>📊 语法专项统计</h3>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">生词和短语</div><div class="value">11 个（课本 New words and expressions）</div></div>
+      <div class="sum-item"><div class="label">课文句子</div><div class="value">7 句（男女对话交替）</div></div>
+      <div class="sum-item"><div class="label">一般疑问句</div><div class="value">Is this...? 共 2 处</div></div>
+      <div class="sum-item"><div class="label">代词</div><div class="value">this / it / me / your 共 4 个</div></div>
+      <div class="sum-item"><div class="label">交际用语</div><div class="value">Excuse me / Yes? / Pardon? / Thank you very much 共 4 组</div></div>
+      <div class="sum-item"><div class="label">朗读时长</div><div class="value">约 15 秒，语速平缓</div></div>
+    </div>
+    <h3>🎯 中考备考要点（入门基础）</h3>
+    <ul>
+      <li><b>Excuse me 与 Sorry 的区别</b>：Excuse me 用于<b>事前</b>打扰、搭话、借过；Sorry 用于<b>事后</b>道歉</li>
+      <li><b>一般疑问句 Is this...?</b>：be 动词提到主语前，读升调，用 Yes / No 回答</li>
+      <li><b>it 指代前文名词</b>：Is this your handbag? — Yes, it is.（用 it 替代 this handbag，避免重复）</li>
+      <li><b>形容词性物主代词 your 后必须接名词</b>：your handbag（不能说 your is）</li>
+      <li><b>Pardon? / I beg your pardon.</b>：听力口语高频礼貌用语，请求对方重复</li>
+      <li><b>Thank you very much.</b>：程度副词短语 very much 置于句末，不能插入动宾之间</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第一册 Lesson 1 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b1-lesson01.html" class="grammar">📖 句子跟读</a>
+  <a href="b1-lesson01-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b1-lesson01-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b1-lesson01-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

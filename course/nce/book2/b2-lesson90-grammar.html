@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 90 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 What's for supper? 晚餐吃什么？</h1>
+    <p class="sub">新概念英语第二册 Lesson 90 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 90（课本印刷页 410-413）· 12 个生词和短语 · 课文 8 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则科普小品，讲北海钻井平台附近鱼类异常长大的原因。语言点集中在 <b>it comes as a surprise to learn that …</b> 这一形式主语句型、<b>have sth. done</b>（have had special cages made）、<b>be frightened out of one's wits</b> 等固定表达，以及 <b>as a result</b> 的用法。</p>
+    <h3>¶ 1 · 鱼越来越贵（句 1）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Fish and <b>chips</b> has always been a favourite dish in Britain, but as the oceans have been <b>overfished</b>, fish has become more and more expensive.</td><td class="gram">fish and chips 炸鱼加炸土豆片（视为一道菜，作主语时谓语用单数 has）· a favourite dish 一道受人喜爱的菜 · <span class='tag g'>原因状语从句</span> as 引导 · <span class='tag b'>被动语态</span> have been overfished · <span class='tag b'>more and more + 形容词</span> 越来越……</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 巨鱼惊扰潜水员（句 2-4）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">So it comes as a surprise to learn that <b>giant</b> fish are <b>terrifying</b> the <b>divers</b> on North Sea <b>oil rigs</b>.</td><td class="gram"><span class='tag b'>it comes as a surprise to learn that …</span> 听说……令人吃惊（it 是形式主语，真正的主语是 to learn that …）· <span class='tag g'>宾语从句</span> that 引导作 learn 的宾语 · terrify 使害怕 · North Sea oil rigs 北海的石油钻井平台 · the divers on North Sea oil rigs 用介词短语作定语</td></tr>
+      <tr><td class="sen">Oil rigs have to be repaired frequently and divers, who often have to work in darkness a hundred feet under water, have been frightened out of their wits by giant fish bumping into them as they work.</td><td class="gram"><span class='tag b'>被动语态</span> have to be repaired · frequently 经常地 · <span class='tag g'>非限制性定语从句</span> who 引导 · in darkness 在黑暗中 · a hundred feet under water 在水下100英尺 · <span class='tag b'>be frightened out of one's wits</span> 吓得惊慌失措 · <span class='tag g'>现在分词短语</span> bumping into them 作定语修饰 giant fish · <span class='tag g'>时间状语从句</span> as 引导</td></tr>
+      <tr><td class="sen">Now they have had special cages made to protect them from these monsters.</td><td class="gram"><span class='tag b'>have sth. done</span> 请人做某事，have had special cages made 即「请人做了特别的笼子」· protect sb. from sth. 保护某人免受…… · these monsters 这些庞然大物</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 巨鱼的真面目（句 5-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The fish are not <b>sharks</b> or killer <b>whales</b>, but favourite eating <b>varieties</b> like <b>cod</b> and <b>skate</b> which grow to unnatural sizes, sometimes as much as twelve feet in length.</td><td class="gram">not … but … 不是……而是…… · killer whales 虎鲸 · favourite eating varieties 人们爱吃的品种 · <span class='tag g'>定语从句</span> which 引导修饰 varieties · grow to unnatural sizes 长到不正常的尺寸 · as much as 多达 · in length 在长度上</td></tr>
+      <tr><td class="sen">Three <b>factors</b> have caused these fish to grow so large: the warm water round the hot oil pipes under the sea; the plentiful supply of food thrown overboard by the crews on the rigs; the total absence of fishing boats around the oil rigs.</td><td class="gram"><span class='tag b'>cause sth. to do sth.</span> 促使某物做某事 · 冒号后 three factors 依次列出，用分号隔开 · round the hot oil pipes 在热油管周围 · thrown overboard by the crews 由船员们扔到海里的<span class='tag g'>过去分词短语作定语</span> · the total absence of 完全不存在</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 结果与悬念（句 7-8）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">As a result, the fish just eat and eat and grow and grow in the lovely warm water.</td><td class="gram"><span class='tag b'>as a result</span> 结果（承接上句的三点原因）· eat and eat / grow and grow 用重复的动词表示「不停地」· in the lovely warm water 在可爱的温暖的水里</td></tr>
+      <tr><td class="sen">Who eats who?</td><td class="gram">全篇以一句设问收尾：潜水员怕鱼，而鱼又是人们的食物，到底「谁吃谁」？这种反问留有余味，是科普小品常用的幽默结尾。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">a favourite dish</td><td class="gram">一道受人喜爱的菜：a favourite dish in Britain。</td></tr>
+      <tr><td class="sen">more and more expensive</td><td class="gram">越来越贵：fish has become more and more expensive。</td></tr>
+      <tr><td class="sen">it comes as a surprise to learn that …</td><td class="gram">听说……令人吃惊：So it comes as a surprise to learn that …。</td></tr>
+      <tr><td class="sen">work in darkness</td><td class="gram">在黑暗中工作：often have to work in darkness a hundred feet under water。</td></tr>
+      <tr><td class="sen">be frightened out of one's wits</td><td class="gram">吓得惊慌失措：have been frightened out of their wits。</td></tr>
+      <tr><td class="sen">bump into</td><td class="gram">撞上，碰见：giant fish bumping into them as they work。</td></tr>
+      <tr><td class="sen">have sth. done</td><td class="gram">请人做某事：they have had special cages made。</td></tr>
+      <tr><td class="sen">protect sb. from sth.</td><td class="gram">保护某人免受……：to protect them from these monsters。</td></tr>
+      <tr><td class="sen">as much as</td><td class="gram">多达：sometimes as much as twelve feet in length。</td></tr>
+      <tr><td class="sen">as a result</td><td class="gram">结果：As a result, the fish just eat and eat …。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">it 作形式主语</div><div class="value">it comes as a surprise to learn that …</div></div>
+      <div class="sum-item"><div class="label">have sth. done</div><div class="value">have had special cages made（请人做笼子）</div></div>
+      <div class="sum-item"><div class="label">be frightened out of one's wits</div><div class="value">吓得惊慌失措</div></div>
+      <div class="sum-item"><div class="label">as a result</div><div class="value">结果（承接原因）</div></div>
+    </div>
+    <ul>
+      <li><b>have sth. done 结构</b>：have + 宾语 + 过去分词，表示「请（让）别人做某事」或「遭遇某事」。本课 they have had special cages made 是「他们请人做了特别的笼子」，made 与 cages 之间是被动关系。同类还有 have my hair cut、have the house painted。</li>
+      <li><b>it comes as a surprise to learn that …</b>：句中的 it 是形式主语，真正的主语是 to learn that giant fish are terrifying the divers …。这一句型表示「得知……令人吃惊」，come as a surprise 是固定搭配。</li>
+      <li><b>fish and chips 作主语用单数</b>：fish and chips 被视为「一道菜」，是一个整体，所以谓语用单数 has。同类还有 bread and butter、a knife and fork 等。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 90 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson90.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson90-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson90-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

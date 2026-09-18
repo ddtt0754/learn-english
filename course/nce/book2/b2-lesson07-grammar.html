@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 7 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Too late</h1>
+    <p class="sub">新概念英语第二册 Lesson 7 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 7（课本印刷页 36-39）· 13 个生词和短语 · 课文 7 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是「机场等钻石」的侦破短文，语言点集中在 <b>过去进行时 was/were + doing</b>、<b>过去完成时 had told</b>、<b>过去将来时 would try</b> 三层时态的配合，以及 <b>while 引导的时间状语从句</b>。</p>
+    <h3>¶ 1 · 等待与情报（句 1-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The plane was late and <b>detectives</b> were waiting at the <b>airport</b> all morning.</td><td class="gram"><span class='tag'>过去进行时</span> were waiting 描述过去某段时间里持续的动作 · all morning 配合进行时表「一上午都在等」</td></tr>
+      <tr><td class="sen">They were <b>expecting</b> a <b>valuable</b> <b>parcel</b> of <b>diamonds</b> from South Africa.</td><td class="gram">expect 用进行时表示「一直盼着」· a parcel of + 复数名词，表示「一包…」</td></tr>
+      <tr><td class="sen">A few hours earlier, someone had told the police that thieves would try to <b>steal</b> the diamonds.</td><td class="gram"><span class='tag r'>过去完成时</span> had told 表「在等之前就已经发生」· would try 是过去将来时，与 told 呼应</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 飞机到达（句 4-5）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">When the plane arrived, some of the detectives were waiting inside the <b>main</b> building while others were waiting on the <b>airfield</b>.</td><td class="gram"><span class='tag'>while</span> 连接两个同时进行的动作 · some … others … 表「一些…另一些…」</td></tr>
+      <tr><td class="sen">Two men took the parcel off the plane and carried it into the Customs House.</td><td class="gram">take … off 拿下、carry … into 抬进，介词不同、方向词对应</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 开箱查验（句 6-7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">While two detectives were keeping <b>guard</b> at the door, two others opened the parcel.</td><td class="gram">keep guard 意为「守卫」· while 从句用进行时、主句用一般过去时，一长一短</td></tr>
+      <tr><td class="sen">To their surprise, the <b>precious</b> parcel was full of <b>stones</b> and <b>sand</b>!</td><td class="gram">to one's surprise 令某人吃惊的是 · be full of 装满 · 句末感叹号收束全文</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">be full of</td><td class="gram">装满、充满：The parcel was full of stones and sand.</td></tr>
+      <tr><td class="sen">to one's surprise</td><td class="gram">令某人吃惊的是，放句首。</td></tr>
+      <tr><td class="sen">keep guard</td><td class="gram">守卫、站岗：keep guard at the door。</td></tr>
+      <tr><td class="sen">some … others …</td><td class="gram">一些…另一些…，用于分成两类的人或物。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">过去进行时</div><div class="value">was/were + doing，表过去某时正在进行的动作</div></div>
+      <div class="sum-item"><div class="label">过去完成时</div><div class="value">had + 过去分词，表「过去的过去」</div></div>
+      <div class="sum-item"><div class="label">过去将来时</div><div class="value">would + 动词原形，与过去时的 told 呼应</div></div>
+      <div class="sum-item"><div class="label">连词</div><div class="value">when 后接短暂动作 · while 后接持续动作</div></div>
+    </div>
+    <ul>
+      <li><b>三层时态的分工</b>：had told（更早）→ were waiting（当时正在进行）→ would try（当时还没发生），一句话里能同时出现三种过去时态。</li>
+      <li><b>when 与 while</b>：when 后常接短暂动作（the plane arrived）；while 后接持续性动作（were waiting / were keeping guard）。</li>
+      <li><b>take … off 与 carry … into</b>：介词决定方向，off 表「离开表面」，into 表「进入内部」。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 7 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson07.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson07-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson07-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson07-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第一册 Lesson 17 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 How do you do? 你好！</h1>
+    <p class="sub">新概念英语第一册 Lesson 17 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 1 · Lesson 17（课本印刷页 33-34）· 6 个生词和短语 · 课文 16 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是「把新同事介绍给客人」的对话，语言点集中在 <b>This is … 介绍句型</b>、<b>What are their jobs? 询问职业</b>、<b>第三人称复数 they</b> 与<b>形容词作表语</b>。</p>
+    <h3>¶ 1 · 介绍两位女同事（句 1-7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Come and meet our <b>employees</b>, Mr. Richards.</td><td class="gram"><span class='tag'>come and + 动词</span> 两个动作连用，and 表目的 · employee 的复数是 employees</td></tr>
+      <tr><td class="sen">Thank you, Mr. Jackson.</td><td class="gram"><span class='tag'>称呼语</span> Mr. + 姓氏，放句末用逗号隔开</td></tr>
+      <tr><td class="sen">This is Nicola Grey, and this is Claire Taylor.</td><td class="gram"><span class='tag'>介绍他人</span> 固定用 This is …，不能用 He is …</td></tr>
+      <tr><td class="sen"><b>How do you do?</b></td><td class="gram">初次见面的正式问候，<b>不是提问</b>，答语同样说 How do you do?</td></tr>
+      <tr><td class="sen">Those women are very <b>hard-working</b>.</td><td class="gram">those women 指远处的两位 · hard-working 是复合形容词，作表语</td></tr>
+      <tr><td class="sen">What are their <b>jobs</b>?</td><td class="gram"><span class='tag'>询问职业</span> their 指 those women · 职业名词用复数 jobs</td></tr>
+      <tr><td class="sen">They're keyboard operators.</td><td class="gram">they 指 the women · 「职业 + 复数」表示一类人</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 介绍两位男同事（句 8-13）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">This is Michael Baker, and this is Jeremy Short.</td><td class="gram">句型与前半段完全平行，反复操练 This is …</td></tr>
+      <tr><td class="sen">How do you do?</td><td class="gram">同一问候第二次出现，答语仍是 How do you do?</td></tr>
+      <tr><td class="sen">They're very <b>busy</b>.</td><td class="gram">they 改指两位男士 · busy 作表语，意为「忙的」</td></tr>
+      <tr><td class="sen">What are their jobs?</td><td class="gram">问句原样复现，主语换成 they</td></tr>
+      <tr><td class="sen">They're <b>sales reps</b>.</td><td class="gram">sales rep = sales representative 的缩写，复数是 sales reps</td></tr>
+      <tr><td class="sen">They're very <b>lazy</b>.</td><td class="gram">lazy 与 busy 形成对照，是本课唯一的评价性形容词</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 介绍办公室助理（句 14-16）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Who is this young <b>man</b>?</td><td class="gram"><span class='tag'>特殊疑问句</span> Who is + 单数主语 · man 的复数是 men（不规则）</td></tr>
+      <tr><td class="sen">This is Jim.</td><td class="gram">介绍单个人仍用 This is …</td></tr>
+      <tr><td class="sen">He's our <b>office</b> <b>assistant</b>.</td><td class="gram">单数主语用 He's = He is · 职务名词前加 a/an 或物主代词，如 our office assistant</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">This is …, and this is …</td><td class="gram">依次介绍两个人；介绍时不论性别一律用 This is。</td></tr>
+      <tr><td class="sen">How do you do?</td><td class="gram">初次见面的正式问候，答语重复 How do you do?</td></tr>
+      <tr><td class="sen">What are their jobs?</td><td class="gram">询问一群人的职业；问一个人用 What is his/her job?</td></tr>
+      <tr><td class="sen">Come and meet …</td><td class="gram">把对方领去见某人时的邀请语。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">介绍句型</div><div class="value">This is + 人；复数用 These are + 人</div></div>
+      <div class="sum-item"><div class="label">询问职业</div><div class="value">What is his/her job? / What are their jobs?</div></div>
+      <div class="sum-item"><div class="label">答语</div><div class="value">He's a … / They're …（复数职业名词加 -s）</div></div>
+      <div class="sum-item"><div class="label">人称代词</div><div class="value">he / she ↔ they · 复数主语一律用 are</div></div>
+    </div>
+    <ul>
+      <li><b>How do you do? 不是问句</b>：它是握手的问候语，答语同为 How do you do?；问「你好吗」要用 How are you?</li>
+      <li><b>man → men 不规则复数</b>：one man / two men；woman → women 同理。</li>
+      <li><b>职业前加冠词</b>：He is an office assistant.（✗ He is office assistant.），但 our office assistant 前不加。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第一册 Lesson 17 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b1-lesson17.html" class="grammar">📖 句子跟读</a>
+  <a href="b1-lesson17-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b1-lesson17-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b1-lesson17-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第一册 Lesson 3 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Sorry, sir. 对不起，先生。</h1>
+    <p class="sub">新概念英语第一册 Lesson 3 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 1 · Lesson 3（课本印刷页 5-6）· 9 个生词和短语 · 课文 12 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是「衣帽间取衣」的短对话，语言点集中在 <b>形容词性物主代词 my / your</b>、<b>指示代词 this</b>、<b>be 动词的否定句与一般疑问句</b>，以及 <b>省略句</b>。</p>
+    <h3>¶ 1 · 取衣与验牌（句 1-4）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen"><b>My</b> coat and <b>my</b> <b>umbrella</b> <b>please</b>.</td><td class="gram"><span class='tag'>祈使句</span> 省略主语与谓语（Give me …）· <b>please</b> 置于句末表礼貌 · 两个并列宾语由 <span class='tag g'>and</span> 连接</td></tr>
+      <tr><td class="sen"><b>Here</b> is my <b>ticket</b>.</td><td class="gram"><span class='tag'>倒装</span> Here + be + 主语，表示「这就是…」· 主语 my ticket 为单数，故用 is</td></tr>
+      <tr><td class="sen">Thank you, <b>sir</b>.</td><td class="gram"><span class='tag'>称呼语</span> sir 是对陌生男士、长者或上级的尊称，<b>单独使用时不大写</b></td></tr>
+      <tr><td class="sen"><b>Number</b> <b>five</b>.</td><td class="gram"><span class='tag'>省略句</span> 完整为 It is number five. · 号码用<span class='tag g'>基数词</span> five，而非序数词</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 认领与纠错（句 5-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Here's your umbrella and your coat.</td><td class="gram">Here's = Here is · 主语是两件物品，口语仍可用 Here's · 译为「这是您的…」</td></tr>
+      <tr><td class="sen">This is <b>not</b> my umbrella.</td><td class="gram"><span class='tag r'>否定句</span> be 动词后直接加 not，<b>绝不能</b>借 don't · 主语 this 指近处单件物品</td></tr>
+      <tr><td class="sen"><b>Sorry</b>, sir.</td><td class="gram"><span class='tag'>固定客套语</span> 服务人员致歉用语 · 与 Excuse me 分工：Sorry 用于冒犯<b>之后</b>道歉，Excuse me 用于搭话<b>之前</b>示意</td></tr>
+      <tr><td class="sen">Is this your umbrella?</td><td class="gram"><span class='tag'>一般疑问句</span> is 提到主语前 · 与上一句「This is not my umbrella.」构成<span class='tag g'>正反一对</span></td></tr>
+      <tr><td class="sen">No, it isn't.</td><td class="gram"><span class='tag g'>简略回答</span> No + it + isn't · <b>it</b> 指代上文 this umbrella，避免重复名词</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 确认与道谢（句 10-12）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Is this it?</td><td class="gram"><span class='tag'>省略句</span> it 指代正在找的那把伞 · 读<span class='tag g'>升调</span>，表示「就是这个吗？」</td></tr>
+      <tr><td class="sen">Yes, it is.</td><td class="gram">肯定简略回答，与 No, it isn't. 成对记忆</td></tr>
+      <tr><td class="sen">Thank you very much.</td><td class="gram"><span class='tag'>程度状语</span> very much 加强致谢语气</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">… please.</td><td class="gram">取物、购物时的礼貌说法，please 永远在句末并<b>弱读</b>：My coat and my umbrella please.</td></tr>
+      <tr><td class="sen">Here is / Here's …</td><td class="gram">把东西递过去时的固定说法：「Here is your ticket.」「Here's your coat.」</td></tr>
+      <tr><td class="sen">Thank you very much.</td><td class="gram">比 Thank you. 更客气；回应可用 You're welcome. / Not at all.</td></tr>
+      <tr><td class="sen">Sorry, sir. / Yes, sir.</td><td class="gram">对长辈、顾客、上级应答时用 sir；对女士用 madam</td></tr>
+      </tbody>
+    </table>
+    <p><span class="tag">取物</span><span class="tag g">致谢</span><span class="tag r">致歉</span> 三类交际用语构成本课骨架，朗读时注意 please / sir 的弱读与升调。</p>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">指示代词</div><div class="value">this 指近处单数</div></div>
+      <div class="sum-item"><div class="label">形容词性物主代词</div><div class="value">my / your + 名词</div></div>
+      <div class="sum-item"><div class="label">be 动词否定</div><div class="value">is / are + not</div></div>
+      <div class="sum-item"><div class="label">简略回答</div><div class="value">Yes, it is. / No, it isn't.</div></div>
+    </div>
+    <ul>
+      <li><b>be 动词不借 do</b>：This <b>is not</b> my umbrella.（✗ This doesn't my umbrella.）</li>
+      <li><b>it 的代指</b>：问句里的 this / that，答语中一律换成 it。</li>
+      <li><b>称谓大小写</b>：sir 单独用不大写；Mr. Blake 这类「头衔 + 姓氏」才大写。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第一册 Lesson 3 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b1-lesson03.html" class="grammar">📖 句子跟读</a>
+  <a href="b1-lesson03-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b1-lesson03-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b1-lesson03-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

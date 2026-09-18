@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 92 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Asking for trouble 自找麻烦</h1>
+    <p class="sub">新概念英语第二册 Lesson 92 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 92（课本印刷页 418-421）· 5 个生词和短语 · 课文 10 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则第一人称的幽默小故事。语言点集中在 <b>must have done 表推测</b>、<b>when 引导的并列式时间从句</b>（was almost there when …）、<b>So do I 这类「倒装 + 省略」的应答语</b>，以及 <b>would you mind doing sth.</b>、<b>prefer to do sth.</b> 等固定表达。</p>
+    <h3>¶ 1 · 深夜翻窗（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">It must have been about two in the morning when I returned home.</td><td class="gram"><span class='tag b'>must have been</span> 一定曾是……（对过去情况的肯定推测）· about two in the morning 凌晨两点左右 · it … when … 结构：it 指时间，when 引导的从句说明「就在这时」</td></tr>
+      <tr><td class="sen">I tried to wake up my wife by ringing the doorbell, but she was <b>fast</b> asleep, so I got a <b>ladder</b> from the <b>shed</b> in the garden, put it against the wall, and began climbing towards the bedroom window.</td><td class="gram">wake sb. up 叫醒某人 · by ringing the doorbell 靠按门铃（by + 动名词表方式）· be fast asleep 睡得很熟（fast 在此意为「熟」）· 三个并列谓语 got / put / began 连贯地写出一连串动作 · begin doing sth. 开始做某事 · climb towards 朝……爬去</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 警察来了（句 3-5）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">I was almost there when a <b>sarcastic</b> voice below said, "I don't think the windows need cleaning at this time of the night."</td><td class="gram"><span class='tag b'>was almost there when …</span> 快到时，就在这时……（when 在此表示「突然、就在这时」）· a sarcastic voice below 下面一个讽刺的声音 · need cleaning 需要擦（need + 动名词，主动形式表被动意义）· at this time of the night 在夜里这个时候</td></tr>
+      <tr><td class="sen">I looked down and nearly fell off the ladder when I saw a policeman.</td><td class="gram">look down 朝下看 · nearly 几乎 · fall off 从……摔下 · <span class='tag g'>时间状语从句</span> when 引导，表示「就在此时」</td></tr>
+      <tr><td class="sen">I immediately regretted answering in the way I did, but I said, "I enjoy cleaning windows at night."</td><td class="gram">regret doing sth. 后悔做过某事 · in the way I did 以我那样的方式 · enjoy doing sth. 喜欢做某事 · 嘴上逞强，实则心虚，是这句的幽默所在</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 警察的反唇相讥（句 6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"So do I," answered the policeman in the same <b>tone</b>. "Excuse my interrupting you. I hate to interrupt a man when he's busy working, but would you mind coming with me to the station?"</td><td class="gram"><span class='tag b'>So do I</span> 我也是（「so + 助动词 + 主语」，表示与前者情况相同）· in the same tone 用同样的腔调 · Excuse my interrupting you 请原谅我打断你（my + 动名词）· hate to do sth. 不愿做某事 · <span class='tag b'>would you mind doing sth.</span> 你介意做某事吗 · when he's busy working 时间状语从句</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 真相大白（句 7-10）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"Well, I'd prefer to stay here," I said. "You see, I've forgotten my key."</td><td class="gram">prefer to do sth. 更愿意做某事 · you see 你知道（插入语）· forget one’s key 忘带钥匙 · 至此才说出实情，扣住标题 asking for trouble</td></tr>
+      <tr><td class="sen">"Your what?" he called.</td><td class="gram">省略的疑问句，表示没听清或不敢相信 · call 在此意为「大声说」</td></tr>
+      <tr><td class="sen">"My key," I shouted.</td><td class="gram">用短短两个词作答，节奏加快，把紧张感推到顶点</td></tr>
+      <tr><td class="sen">Fortunately, the shouting woke up my wife who opened the window just as the policeman had started to climb towards me.</td><td class="gram"><span class='tag g'>定语从句</span> who 引导修饰 my wife · <span class='tag g'>时间状语从句</span> just as 引导（正当……的时候）· had started to do sth. 用过去完成时，表示在妻子开窗之前警察已经动身 · Fortunately 置于句首，为全篇的化险为夷定下基调</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">wake sb. up</td><td class="gram">叫醒某人：I tried to wake up my wife。</td></tr>
+      <tr><td class="sen">by + 动名词</td><td class="gram">靠做某事（方式）：by ringing the doorbell。</td></tr>
+      <tr><td class="sen">be fast asleep</td><td class="gram">睡得很熟：she was fast asleep。</td></tr>
+      <tr><td class="sen">fall off</td><td class="gram">从……摔下：nearly fell off the ladder。</td></tr>
+      <tr><td class="sen">regret doing sth.</td><td class="gram">后悔做过某事：regretted answering in the way I did。</td></tr>
+      <tr><td class="sen">need doing</td><td class="gram">需要被做（主动表被动）：the windows need cleaning。</td></tr>
+      <tr><td class="sen">So do I</td><td class="gram">我也是：So do I, answered the policeman in the same tone。</td></tr>
+      <tr><td class="sen">would you mind doing sth.</td><td class="gram">你介意做某事吗：would you mind coming with me to the station?</td></tr>
+      <tr><td class="sen">prefer to do sth.</td><td class="gram">更愿意做某事：I'd prefer to stay here。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">must have done</div><div class="value">对过去的肯定推测：It must have been about two in the morning。</div></div>
+      <div class="sum-item"><div class="label">was doing … when …</div><div class="value">正在……就在这时……：I was almost there when …</div></div>
+      <div class="sum-item"><div class="label">So do I</div><div class="value">「so + 助动词 + 主语」表相同情况</div></div>
+      <div class="sum-item"><div class="label">need doing</div><div class="value">主动形式表被动意义</div></div>
+    </div>
+    <ul>
+      <li><b>was/were doing … when …</b>：这一结构表示「正在做某事，就在这时（突然）发生了另一件事」，when 引导的从句常用一般过去时，且是句子的重心。本课 I was almost there when a sarcastic voice below said … 就是「我快爬到那儿了，就在这时下面有个讽刺的声音说……」。</li>
+      <li><b>need cleaning 的主动表被动</b>：need 后接动名词时，动名词虽为主动形式，却表示被动意义：The windows need cleaning. = The windows need to be cleaned. 同类还有 want、require。</li>
+      <li><b>So do I 的用法</b>：表示「我也是」时，用「so + 助动词（be/do/have/情态动词）+ 主语」。本课对方说 I enjoy cleaning windows at night.，警察回答 So do I.，用同样的句式回敬，讽刺意味十足。若表示「我也不」，则用 Neither/Nor + 助动词 + 主语。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 92 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson92.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson92-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson92-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

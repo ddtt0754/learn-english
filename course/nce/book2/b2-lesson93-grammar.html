@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 93 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 A noble gift 崇高的礼物</h1>
+    <p class="sub">新概念英语第二册 Lesson 93 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 93（课本印刷页 422-425）· 11 个生词和短语 · 课文 9 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一篇介绍自由女神像的说明文。语言点集中在 <b>过去完成时的被动语态</b>（had been erected / had been put together），<b>before / by / ever since 等时间表达</b>，以及 <b>be made of</b>、<b>take … to complete</b>、<b>take sth. to pieces</b>、<b>put sth. together</b> 等固定表达，全篇以被动语态贯串，是学习被动语态的好材料。</p>
+    <h3>¶ 1 · 雕像的来历（句 1-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">One of the most famous <b>monuments</b> in the world, the <b>Statue</b> of Liberty, was <b>presented</b> to the United States of America in the nineteenth century by the people of France.</td><td class="gram"><span class='tag g'>同位语</span> the Statue of Liberty 说明前面的 one of the most famous monuments · <span class='tag b'>被动语态</span> was presented to sb. by sb. · in the nineteenth century 在十九世纪 · the people of France 法国人民</td></tr>
+      <tr><td class="sen">The great <b>statue</b>, which was designed by the <b>sculptor</b> Auguste Bartholdi, took ten years to complete.</td><td class="gram"><span class='tag g'>非限制性定语从句</span> which 引导，用被动语态 was designed by · <span class='tag b'>take + 时间 + to do sth.</span> 花多少时间做某事 · complete 完成 · 本句把「谁设计」作为补充信息，主句仍是「花了十年」</td></tr>
+      <tr><td class="sen">The actual figure was made of <b>copper</b> <b>supported</b> by a metal <b>framework</b> which had been especially constructed by Eiffel.</td><td class="gram"><span class='tag b'>be made of</span> 由……制成（能看出原材料）· <span class='tag g'>过去分词短语作定语</span> supported by a metal framework 修饰 copper · <span class='tag g'>定语从句</span> which 引导 · <span class='tag b'>过去完成时的被动语态</span> had been constructed by Eiffel · especially 专门地</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 运往美国之前（句 4-5）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Before it could be <b>transported</b> to the United States, a <b>site</b> had to be found for it and a <b>pedestal</b> had to be built.</td><td class="gram"><span class='tag g'>时间状语从句</span> before 引导 · <span class='tag b'>过去完成时的被动语态</span> had to be found / had to be built 不得不被……· <span class='tag b'>被动语态</span> could be transported · site 场地 · pedestal 底座</td></tr>
+      <tr><td class="sen">The site chosen was an island at the entrance of New York Harbour.</td><td class="gram"><span class='tag g'>过去分词作定语</span> the site chosen = the site which was chosen · at the entrance of New York Harbour 在纽约港入口处</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 竖起与拆运（句 6-7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">By 1884, a statue which was 151 feet tall had been erected in Paris.</td><td class="gram"><span class='tag b'>by + 时间</span> 到……时为止（常与完成时连用）· <span class='tag g'>定语从句</span> which 引导 · <span class='tag b'>过去完成时的被动语态</span> had been erected · erect 竖立 · 151 feet tall 高151英尺</td></tr>
+      <tr><td class="sen">The following year, it was taken to pieces and sent to America.</td><td class="gram"><span class='tag b'>take sth. to pieces</span> 把某物拆开 · the following year 第二年 · 两个并列的被动谓语 was taken to pieces 与 (was) sent · 英语中用 and 连接时可共用一个助动词</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 组装与赠送（句 8-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">By the end of October 1886, the statue had been put together again and it was officially presented to the American people by Bartholdi.</td><td class="gram">by the end of + 时间 到……末为止 · <span class='tag b'>put sth. together</span> 把某物组装起来（与 take … to pieces 相对）· <span class='tag b'>过去完成时的被动语态</span> had been put together · officially 正式地 · <span class='tag b'>被动语态</span> was presented to sb. by sb.</td></tr>
+      <tr><td class="sen">Ever since then, the great monument has been a symbol of <b>liberty</b> for the millions of people who have passed through New York Harbour to make their homes in America.</td><td class="gram"><span class='tag b'>ever since then</span> 从那时起一直（与现在完成时连用）· a symbol of liberty 自由的象征 · the millions of people 数百万的人 · <span class='tag g'>定语从句</span> who 引导 · pass through 穿过 · make one’s home in 在……安家落户</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">one of the most famous …</td><td class="gram">最著名的……之一：One of the most famous monuments in the world。</td></tr>
+      <tr><td class="sen">be presented to sb. by sb.</td><td class="gram">由某人赠送给某人：was presented to the United States of America by the people of France。</td></tr>
+      <tr><td class="sen">be designed by</td><td class="gram">由……设计：which was designed by the sculptor Auguste Bartholdi。</td></tr>
+      <tr><td class="sen">take ten years to complete</td><td class="gram">花十年完成：took ten years to complete。</td></tr>
+      <tr><td class="sen">be made of</td><td class="gram">由……制成（看得出材料）：The actual figure was made of copper。</td></tr>
+      <tr><td class="sen">a site had to be found</td><td class="gram">必须找一块场地：a site had to be found for it。</td></tr>
+      <tr><td class="sen">take sth. to pieces</td><td class="gram">把某物拆开：it was taken to pieces。</td></tr>
+      <tr><td class="sen">put sth. together</td><td class="gram">把某物组装起来：the statue had been put together again。</td></tr>
+      <tr><td class="sen">be a symbol of</td><td class="gram">是……的象征：has been a symbol of liberty。</td></tr>
+      <tr><td class="sen">make one's home in</td><td class="gram">在……安家落户：to make their homes in America。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">被动语态</div><div class="value">was presented / was designed / was made of / could be transported / had to be found / was taken to pieces / was sent</div></div>
+      <div class="sum-item"><div class="label">过去完成时的被动语态</div><div class="value">had been erected / had been constructed / had been put together</div></div>
+      <div class="sum-item"><div class="label">by + 时间</div><div class="value">By 1884 / By the end of October 1886（与完成时连用）</div></div>
+      <div class="sum-item"><div class="label">take … to pieces / put … together</div><div class="value">拆开 / 组装（一对反义短语）</div></div>
+    </div>
+    <ul>
+      <li><b>过去完成时的被动语态</b>：had been + 过去分词。本课多处用它表示「在过去某一时间之前就已经被完成的动作」：By 1884, a statue … had been erected in Paris.（到1884年，一座雕像已在巴黎竖立起来。）By the end of October 1886, the statue had been put together again …（到1886年10月底，雕像已被重新组装起来。）</li>
+      <li><b>by + 时间点与完成时</b>：by 表示「到……时为止」，句中谓语常用完成时。本课 By 1884 … had been erected；By the end of October 1886 … had been put together again and it was officially presented …。若 by 后接的是将来时间，则用将来完成时。</li>
+      <li><b>be made of 与 be made from</b>：be made of 用于能看出原材料的场合，如 The figure was made of copper.（看得出是铜做的）；be made from 用于看不出原材料的场合，如 Paper is made from wood.。此外还有 be made in（在某地制造）、be made by（由某人制造）。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 93 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson93.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson93-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson93-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

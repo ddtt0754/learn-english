@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 89 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 A slip of the tongue 口误</h1>
+    <p class="sub">新概念英语第二册 Lesson 89 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 89（课本印刷页 406-409）· 6 个生词和短语 · 课文 9 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则幽默小品，讲一场糟糕的演出因报幕员的口误而变得有趣。语言点集中在 <b>need not have done</b> 与 <b>should have done</b> 的对比、<b>get round</b>、<b>burst out laughing</b> 等固定表达，以及 <b>what 引导的名词性从句</b>（what he actually said）。</p>
+    <h3>¶ 1 · 免费演出（句 1）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">People will do anything to see a free show — even if it is a bad one.</td><td class="gram">do anything to do sth. 为做某事什么都愿意干 · a free show 免费的演出 · <span class='tag g'>让步状语从句</span> even if 引导 · 破折号后的 even if 从句补充说明，让语气更显夸张</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 排队进场（句 2-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">When the news got round that a <b>comedy</b> show would be <b>presented</b> at our local cinema by the P. and U. Bird Seed Company, we all rushed to see it.</td><td class="gram"><span class='tag g'>时间状语从句</span> when 引导 · <span class='tag b'>get round</span> 传开（消息）· <span class='tag g'>同位语从句</span> that 引导，说明 news 的内容 · <span class='tag b'>被动语态</span> would be presented · at our local cinema 在我们当地的电影院 · rush to see it 赶去看</td></tr>
+      <tr><td class="sen">We had to <b>queue</b> for hours to get in and there must have been several hundred people present just before the show began.</td><td class="gram">have to do sth. 不得不做某事 · queue for hours 排队好几个小时 · get in 进去 · <span class='tag b'>there must have been</span> 一定曾有……（对过去情况很有把握的推测）· present 出席的（形容词）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 演出乏味（句 4-5）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Unfortunately, the show was one of the <b>dullest</b> we have ever seen.</td><td class="gram">one of the dullest (shows) we have ever seen 我们看过的最乏味的演出之一 · 形容词最高级后接定语从句时，从句用现在完成时 · dullest 是 dull 的最高级</td></tr>
+      <tr><td class="sen">Those who failed to get in need not have felt disappointed, as many of the <b>artistes</b> who should have appeared did not come.</td><td class="gram"><span class='tag g'>定语从句</span> who 引导修饰 those · fail to do sth. 未能做某事 · <span class='tag b'>need not have done</span> 本来不必做（做了却没必要）· <span class='tag b'>should have done</span> 本应该做（却没做）· <span class='tag g'>原因状语从句</span> as 引导</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 报幕员的口误（句 6-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The only funny things we heard that evening came from the <b>advertiser</b> at the beginning of the programme.</td><td class="gram"><span class='tag g'>定语从句</span> (that) we heard 修饰 the only funny things · come from 来自 · at the beginning of the programme 在节目开始时 · the only … 后接定语从句时关系代词常用 that</td></tr>
+      <tr><td class="sen">He was obviously very nervous and for some minutes stood awkwardly before the microphone.</td><td class="gram">obviously 显然 · nervous 紧张的 · for some minutes 有好几分钟 · stand awkwardly 局促地站着 · 两个谓语 was 与 stood 并列</td></tr>
+      <tr><td class="sen">As soon as he opened his mouth, everyone burst out laughing.</td><td class="gram"><span class='tag g'>时间状语从句</span> as soon as 引导（一……就……）· burst out laughing 突然大笑起来（burst out doing sth.）· 本句是全篇的转折点，为下文的口误作铺垫</td></tr>
+      <tr><td class="sen">We all know what the poor man should have said, but what he actually said was: "This is the Poo and Ee Seed Bird Company. Good ladies, evening and gentlemen!"</td><td class="gram"><span class='tag g'>宾语从句</span> what 引导 · <span class='tag b'>should have said</span> 本应该说（却没说出来）· <span class='tag g'>主语从句</span> what he actually said 作主语 · actually 实际上 · 结尾把「好女士们，晚上和先生们」的错位当作笑点，这正呼应标题 a slip of the tongue</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">a free show</td><td class="gram">免费的演出：to see a free show。</td></tr>
+      <tr><td class="sen">get round</td><td class="gram">（消息）传开：When the news got round that …。</td></tr>
+      <tr><td class="sen">queue for hours</td><td class="gram">排队好几个小时：We had to queue for hours to get in。</td></tr>
+      <tr><td class="sen">there must have been</td><td class="gram">一定曾有……（对过去的肯定推测）：there must have been several hundred people present。</td></tr>
+      <tr><td class="sen">need not have done</td><td class="gram">本来不必做（做了却没必要）：need not have felt disappointed。</td></tr>
+      <tr><td class="sen">should have done</td><td class="gram">本应该做（却没做）：many of the artistes who should have appeared did not come。</td></tr>
+      <tr><td class="sen">burst out laughing</td><td class="gram">突然大笑起来：everyone burst out laughing。</td></tr>
+      <tr><td class="sen">a slip of the tongue</td><td class="gram">口误：标题用语，指说错话。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">need not have done</div><div class="value">本来不必做（而实际上做了）</div></div>
+      <div class="sum-item"><div class="label">should have done</div><div class="value">本应该做（而实际上没做）</div></div>
+      <div class="sum-item"><div class="label">what 引导的名词性从句</div><div class="value">what he actually said 作主语</div></div>
+      <div class="sum-item"><div class="label">同位语从句</div><div class="value">the news that a comedy show would be presented …</div></div>
+    </div>
+    <ul>
+      <li><b>need not have done 与 should have done 的对比</b>：need not have done 表示「本来不必做某事，但事实上却做了」，含惋惜或不解的语气：Those who failed to get in need not have felt disappointed. （没能进去的人本不必感到失望。）should have done 表示「本来应该做某事，但事实上却没做」：many of the artistes who should have appeared did not come.（许多本应出场的艺人却没有来。）</li>
+      <li><b>the news got round that …</b>：that 从句与 news 是同位关系，说明消息的内容，叫作同位语从句。这类名词还有 fact、idea、hope、belief、doubt 等。注意同位语从句的 that 只起连接作用，不作句子成分，不能省略。</li>
+      <li><b>there must have been 表推测</b>：must have done 表示对过去事情的肯定推测，意为「一定曾经……」。本课 There must have been several hundred people present. 即「当时一定有好几百人在场」。否定推测则用 can't have done。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 89 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson89.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson89-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson89-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

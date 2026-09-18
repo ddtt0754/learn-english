@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第一册 Lesson 57 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 An unusual day 不平常的一天</h1>
+    <p class="sub">新概念英语第一册 Lesson 57 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 1 · Lesson 57（课本印刷页 113-114）· 3 个生词和短语 · 课文 17 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课把 <b>一般现在时</b>（习惯）和 <b>现在进行时</b>（此刻）对照起来：usually / every day 配一般现在时，today / this morning / at the moment 配现在进行时，中间常用 <b>but</b> 转折。</p>
+    <h3>¶ 1 · 一般现在时 vs 现在进行时（句 2-3、5-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The children <b>go</b> to school by car <b>every day</b>.</td><td class="gram"><span class='tag'>习惯</span> every day 是一般现在时的标志词，用动词原形</td></tr>
+      <tr><td class="sen">…but today they <b>are going</b> to school <b>on foot</b>.</td><td class="gram"><span class='tag g'>此刻</span> today 强调「今天」，用 be + doing；on foot = 步行</td></tr>
+      <tr><td class="sen">Mrs. Sawyer usually <b>stays</b> at home in the morning.</td><td class="gram">usually 是频率副词，仍用一般现在时；注意第三人称单数 -s</td></tr>
+      <tr><td class="sen">But this morning she <b>is going</b> to the shops.</td><td class="gram">this morning 表今天早上 → 现在进行时；go to the shops 去商店买东西</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 用整点推进场景（句 1、4、7、10、14）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">It is eight <b>o'clock</b>.</td><td class="gram">整点用 o'clock；问时间是 What time is it?</td></tr>
+      <tr><td class="sen">It is ten o'clock. / It is four o'clock. / It is six o'clock. / It is nine o'clock.</td><td class="gram">课文用五个整点串联一天的场景，是叙事的时间骨架</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 否定与「此刻」（句 12-13、16-17）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">…but this evening they <b>are not doing</b> their homework.</td><td class="gram">现在进行时的否定：be + not + doing</td></tr>
+      <tr><td class="sen"><b>At the moment</b>, they are playing in the garden.</td><td class="gram">at the moment = 此刻，是现在进行时的典型标志</td></tr>
+      <tr><td class="sen">But he's <b>not reading</b> his newspaper tonight.</td><td class="gram">tonight 指今晚 → 进行时；否定在 be 后加 not</td></tr>
+      <tr><td class="sen">At the moment, he's reading an <b>interesting</b> book.</td><td class="gram">an 用于元音音素开头的词；interesting 指「使人感兴趣的」</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">by car / on foot</td><td class="gram">坐小汽车 / 步行。by + 交通工具，on foot 是固定说法。</td></tr>
+      <tr><td class="sen">every day / today</td><td class="gram">每天（一般现在时）/ 今天（现在进行时）。</td></tr>
+      <tr><td class="sen">go to the shops</td><td class="gram">去商店买东西。shops 用复数。</td></tr>
+      <tr><td class="sen">in the morning / in the afternoon / in the evening / at night</td><td class="gram">一天四个时段的固定搭配。</td></tr>
+      <tr><td class="sen">at the moment</td><td class="gram">此刻，眼下。At the moment, he's reading a book.</td></tr>
+      <tr><td class="sen">drink tea in the living room</td><td class="gram">在起居室喝茶。living room = 客厅。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">核心对比</div><div class="value">一般现在时 vs 现在进行时</div></div>
+      <div class="sum-item"><div class="label">本课生词</div><div class="value">3 个</div></div>
+      <div class="sum-item"><div class="label">课文句数</div><div class="value">17 句</div></div>
+      <div class="sum-item"><div class="label">重点内容</div><div class="value">整点 + 习惯与此刻对照</div></div>
+    </div>
+    <ul>
+      <li><b>信号词决定时态</b>：every day / usually → 一般现在时；today / this morning / at the moment → 现在进行时。</li>
+      <li><b>on foot</b> 是固定说法，不说 by foot。</li>
+      <li><b>o'clock</b> 只用于整点：eight o'clock，不能说 eight o'clock ten。</li>
+      <li>本课生词 3 个全部嵌入课文句子，无遗漏。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第一册 Lesson 57 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b1-lesson57.html" class="grammar">📖 句子跟读</a>
+  <a href="b1-lesson57-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b1-lesson57-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b1-lesson57-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

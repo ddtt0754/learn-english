@@ -32,15 +32,18 @@ body{
 .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:4px;opacity:.94;}
 .title-card .meta{position:relative;margin-top:12px;font-size:12px;opacity:.88;letter-spacing:1px;}
 
+/* 顶部按钮组 */
+.btn-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+
 /* 视频播放按钮 */
 .video-btn{
   position:relative;display:inline-flex;align-items:center;gap:8px;
-  margin-top:18px;padding:12px 28px;
+  padding:12px 28px;
   background:rgba(255,255,255,.95);color:var(--green-deep);
   border:none;border-radius:999px;font-size:15px;font-weight:700;
   box-shadow:0 6px 18px rgba(255,255,255,.4);
   cursor:pointer;transition:transform .15s, box-shadow .15s;
-  font-family:inherit;
+  font-family:inherit;text-decoration:none;
 }
 .video-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,255,255,.5)}
 .video-btn:active{transform:scale(.97)}
@@ -91,7 +94,10 @@ footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spa
     <h1>📖 拼读基础 · 48 个国际音标</h1>
     <p class="sub">口诀秒记 · 自然拼读</p>
     <p class="meta">元音 20 个 + 辅音 28 个 · 点音标可听发音</p>
-    <button class="video-btn" onclick="openVideo()"><span class="play-ico">🎬</span>视频播放</button>
+    <div class="btn-row">
+      <button class="video-btn" onclick="openVideo()"><span class="play-ico">🎬</span>视频播放</button>
+      <a class="video-btn" href="https://letmeenglish.com/zh-hans/category/pronunciation/" target="_blank" rel="noopener noreferrer"><span class="play-ico">🌐</span>更多学习</a>
+    </div>
   </header>
 
   <!-- 一、元音 -->

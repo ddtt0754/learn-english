@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 4 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 An exciting trip</h1>
+    <p class="sub">新概念英语第二册 Lesson 4 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 4（课本印刷页 24-27）· 6 个生词和短语 · 课文 9 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是「弟弟在澳大利亚的旅行来信」，语法主线是 <b>现在完成时</b>（have / has + 过去分词）配 <b>just / already / never / before / for</b>，并对照 <b>现在进行时</b>与 <b>一般将来时 will</b>。</p>
+    <h3>¶ 1 · 收到来信与基本情况（句 1-4）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">I <b>have</b> just <b>received</b> a letter from my brother, Tim.</td><td class="gram"><span class='tag'>现在完成时</span> have + 过去分词（receive → received）· <b>just</b> 插在 have 与分词之间，表示「刚刚」· a letter from sb = 某人来的信</td></tr>
+      <tr><td class="sen">He <b>is</b> in Australia.</td><td class="gram">一般现在时陈述当前状态 · Australia 前不加 the</td></tr>
+      <tr><td class="sen">He has <b>been</b> there <b>for</b> six months.</td><td class="gram"><span class='tag'>现在完成时</span> have been + <b>for + 时间段</b>，表示「已经持续了多久」· be 的过去分词是 been</td></tr>
+      <tr><td class="sen">Tim is an engineer.</td><td class="gram">职业前加 a / an（engineer 以元音音素开头，用 an）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 弟弟的行程（句 5-8）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">He <b>is working</b> for a big <b>firm</b> and he has <b>already</b> visited a great number of <b>different</b> places in Australia.</td><td class="gram"><span class='tag g'>现在进行时</span> 表示现阶段正在进行（并非此刻）· <b>already</b> 放 has 与过去分词之间 · a great number of + 可数名词复数 = 许多</td></tr>
+      <tr><td class="sen">He has just bought an Australian car and has gone to Alice Springs, a small town in the <b>centre</b> of Australia.</td><td class="gram">两个现在完成时并列（has bought / has gone）· <b>Alice Springs</b> 是同位语，解释前面的地名 · in the centre of = 在…中部</td></tr>
+      <tr><td class="sen">He <b>will</b> soon visit Darwin.</td><td class="gram"><span class='tag'>一般将来时</span> will + 动词原形 · soon 表示「不久」</td></tr>
+      <tr><td class="sen">From there, he will fly to Perth.</td><td class="gram">from there = 从那里 · fly to + 地点 = 飞往</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 旅行的意义（句 9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">My brother has <b>never</b> been <b>abroad</b> <b>before</b>, so he is finding this trip very <b>exciting</b>.</td><td class="gram"><span class='tag'>never</span> 插在 has 与 been 之间 · <b>before</b> 放句末，与 never 呼应表示「从未」· exciting 修饰物（令人兴奋的）· is finding 是现在进行时</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">a letter from sb</td><td class="gram">某人寄来的信；回信是 a letter to sb</td></tr>
+      <tr><td class="sen">for six months</td><td class="gram">与现在完成时连用，表示持续的时间；since 后接时间点</td></tr>
+      <tr><td class="sen">work for a firm</td><td class="gram">在某个公司工作；work for 后接雇主或公司</td></tr>
+      <tr><td class="sen">a great number of</td><td class="gram">许多（后接可数名词复数）；a great deal of 后接不可数名词</td></tr>
+      <tr><td class="sen">go to Alice Springs</td><td class="gram">去某地；地名后不加 the，但 the United States 这类例外</td></tr>
+      <tr><td class="sen">be abroad</td><td class="gram">在国外；abroad 是副词，前面<b>不加 to</b>（✗ go to abroad）</td></tr>
+      </tbody>
+    </table>
+    <p><span class="tag">四个信号词</span> <b>just</b>（刚刚）、<b>already</b>（已经）、<b>never</b>（从未）、<b>before</b>（以前）都放句子里配合现在完成时，看到它们就要想到 have / has + 过去分词。</p>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">现在完成时</div><div class="value">have / has + 过去分词</div></div>
+      <div class="sum-item"><div class="label">副词位置</div><div class="value">just / already / never 插在中间</div></div>
+      <div class="sum-item"><div class="label">持续时长</div><div class="value">for + 时间段</div></div>
+      <div class="sum-item"><div class="label">一般将来时</div><div class="value">will + 动词原形</div></div>
+    </div>
+    <ul>
+      <li><b>现在完成时讲「结果对现在的影响」</b>：He <b>has gone</b> to Alice Springs.（人现在在那边）—— 与一般过去时 He went …（只叙述过去）不同。</li>
+      <li><b>副词插在中间</b>：has <b>just</b> bought / has <b>already</b> visited / has <b>never</b> been，不能放在句首或句末。</li>
+      <li><b>exciting 与 excited</b>：this trip is exciting（旅行令人兴奋）；I am excited（我感到兴奋）。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 4 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson04.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson04-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson04-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson04-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

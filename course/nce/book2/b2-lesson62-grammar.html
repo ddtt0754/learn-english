@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 62 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 After the fire 大火之后</h1>
+    <p class="sub">新概念英语第二册 Lesson 62 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 62（课本印刷页 284-287）· 15 个生词和短语 · 课文 9 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则灾后重建的报道。语言点集中在 <b>过去完成进行时</b>（had been fighting / had been planting）、<b>过去完成时</b>（had covered / had taken root）、<b>被动语态</b>（had been put out / was sprayed），以及 <b>for 引导的并列原因分句</b>。</p>
+    <h3>¶ 1 · 扑火（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Firemen had been fighting the forest fire for nearly three weeks before they could get it under <b>control</b>.</td><td class="gram"><span class='tag b'>过去完成进行时</span> had been fighting：在另一件过去的事（控制住火势）之前，一直在打火 · get sth. under control 把某事控制住 · nearly three weeks 将近三周</td></tr>
+      <tr><td class="sen">A short time before, great trees had covered the countryside for miles around.</td><td class="gram"><span class='tag b'>过去完成时</span> had covered：写「火灾之前」的景象，为下文荒凉作对比 · a short time before 不久前 · for miles around 方圆数英里</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 荒凉的山丘（句 3-4）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">Now, <b>smoke</b> still rose up from the warm ground over the <b>desolate</b> hills.</td><td class="gram">rise up from 从……升起 · warm ground 发热的地面（余烬未熄）· desolate hills 荒凉的山丘 · still 仍然，写出灾后未息的余烬</td></tr>
+      <tr><td class="sen">Winter was coming on and the hills <b>threatened</b> the <b>surrounding</b> villages with <b>destruction</b>, for heavy rain would not only wash away the soil but would cause serious <b>floods</b> as well.</td><td class="gram">come on 来临 · threaten sb. with sth. 以某物威胁某人 · <span class='tag g'>并列连词 for</span> 引导原因分句（for 表「因为」，语气比 because 弱）· not only … but … as well 不仅……而且……</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 撒播草籽（句 5-7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">When the fire had at last been put out, the forest <b>authorities</b> ordered several tons of a special type of <b>grass-seed</b> which would grow quickly.</td><td class="gram"><span class='tag b'>被动语态</span> had been put out（过去完成时的被动式）· <span class='tag g'>时间状语从句</span> when 引导 · the forest authorities 森林管理当局（authority 用复数指当局）· a special type of 一种特殊的</td></tr>
+      <tr><td class="sen">The seed was <b>sprayed</b> over the ground in huge <b>quantities</b> by aeroplanes.</td><td class="gram"><span class='tag b'>被动语态</span> was sprayed：被喷洒 · in huge quantities 大量地 · by aeroplanes 用飞机（by 引出方式或手段）</td></tr>
+      <tr><td class="sen">The planes had been planting seed for nearly a month when it began to rain.</td><td class="gram"><span class='tag b'>过去完成进行时</span> had been planting · <span class="tag g">时间状语从句</span> when 引出另一件发生的事 · 与句 1 同构：had been doing … when …</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 绿草生根（句 8-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">By then, however, in many places the grass had already taken <b>root</b>.</td><td class="gram">by then 到那时 · take root 生根，扎根 · had already taken root 用过去完成时，点出「下雨时草早已扎根」这一关键</td></tr>
+      <tr><td class="sen">In place of the great trees which had been growing there for centuries, <b>patches</b> of green had begun to appear in the <b>blackened</b> soil.</td><td class="gram"><span class='tag g'>定语从句</span> which 引导，修饰 the great trees · <span class='tag b'>过去完成进行时</span> had been growing · in place of 代替（＝ instead of）· patch 小块 · blackened 烧黑的 · 结尾以「新绿代替古树」收束，暗含希望</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">get sth. under control</td><td class="gram">把某事控制住：get it under control。</td></tr>
+      <tr><td class="sen">for miles around</td><td class="gram">方圆数英里：great trees had covered the countryside for miles around。</td></tr>
+      <tr><td class="sen">come on</td><td class="gram">来临：Winter was coming on。</td></tr>
+      <tr><td class="sen">threaten sb. with sth.</td><td class="gram">以某物威胁某人：the hills threatened the surrounding villages with destruction。</td></tr>
+      <tr><td class="sen">not only … but … as well</td><td class="gram">不仅……而且……：would not only wash away the soil but would cause serious floods as well。</td></tr>
+      <tr><td class="sen">in huge quantities</td><td class="gram">大量地：The seed was sprayed over the ground in huge quantities。</td></tr>
+      <tr><td class="sen">take root</td><td class="gram">生根，扎根：the grass had already taken root。</td></tr>
+      <tr><td class="sen">in place of</td><td class="gram">代替：In place of the great trees…。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">过去完成进行时</div><div class="value">had been fighting / had been planting：在另一件过去的事之前一直在做</div></div>
+      <div class="sum-item"><div class="label">过去完成时</div><div class="value">had covered / had taken root：在另一件过去的事之前已完成</div></div>
+      <div class="sum-item"><div class="label">被动语态</div><div class="value">had been put out / was sprayed</div></div>
+      <div class="sum-item"><div class="label">并列连词 for</div><div class="value">表原因，语气比 because 弱</div></div>
+    </div>
+    <ul>
+      <li><b>had been doing … when …</b>：本课句 1 与句 7 同构——Firemen had been fighting the forest fire for nearly three weeks before they could get it under control. / The planes had been planting seed for nearly a month when it began to rain. 前半句用过去完成进行时铺出「一直在做」，后半句用 before / when 引出转折性的另一件事。</li>
+      <li><b>for 引导的原因分句</b>：… for heavy rain would not only wash away the soil but would cause serious floods as well. 这里的 for 是并列连词，表示「因为」，但语气比 because 弱，通常用来补充说明理由，不能放在句首。</li>
+      <li><b>过去完成时点出先后</b>：By then, however, in many places the grass had already taken root. 「到那时草早已生根」，用过去完成时说明「生根」发生在「下雨」之前，这正是灾后重建成功的关键。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 62 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson62.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson62-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson62-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson62-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>

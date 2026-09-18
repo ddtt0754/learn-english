@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 76 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 April Fools' Day 愚人节</h1>
+    <p class="sub">新概念英语第二册 Lesson 76 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 76（课本印刷页 354-357）· 14 个生词和短语 · 课文 9 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是一则愚人节玩笑。语言点集中在 <b>现在完成进行时</b>（have been expecting / has been working / has been helping）、<b>现在完成时的被动语态</b>（has been grown / is processed），以及新闻播报常用的 bulletin、go over to 等用语。</p>
+    <h3>¶ 1 · 节目开场（句 1-2）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"To end our special news <b>bulletin</b>," said the voice of the television <b>announcer</b>, "we're going over to the macaroni fields of Calabria."</td><td class="gram">to end our special news bulletin 作为这则特别新闻简报的结尾 · go over to 转到（某地）· the macaroni fields 通心粉田 · Calabria 卡拉布里亚（意大利地名）· 直接引语被插说部分（said the voice of …）分为两半，注意引号配对</td></tr>
+      <tr><td class="sen">"Macaroni has been grown in this area for over six hundred years."</td><td class="gram"><span class='tag b'>现在完成时的被动语态</span> has been grown：已被种植 · for over six hundred years 六百多年来 · 用被动语态突出「通心粉」这一话题主语</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 丰收在望（句 3-4）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"Two of the <b>leading</b> <b>growers</b>, Giuseppe Moldova and Riccardo Brabante, tell me that they have been expecting a <b>splendid</b> crop this year and harvesting has begun earlier than usual."</td><td class="gram"><span class='tag b'>现在完成进行时</span> have been expecting：一直在期待 · <span class='tag g'>宾语从句</span> that 引导 · a splendid crop 一次大丰收 · earlier than usual 比往常早 · 同位语说明两位种植者的姓名</td></tr>
+      <tr><td class="sen">"Here you can see two workers who, between them, have just finished cutting three cartloads of golden brown <b>macaroni</b> <b>stalks</b>."</td><td class="gram"><span class='tag g'>定语从句</span> who 引导 · between them 两人协力 · <span class='tag b'>现在完成时</span> have just finished cutting · three cartloads of 三车…… · golden brown 金黄色的</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 全村抢收（句 5-6）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"The whole village has been working day and night <b>gathering</b> and <b>threshing</b> this year's crop before the September rains."</td><td class="gram"><span class='tag b'>现在完成进行时</span> has been working：一直在干 · day and night 日夜不停 · gathering and threshing 收割和脱粒（现在分词短语作状语，表方式）· before the September rains 赶在九月雨季之前</td></tr>
+      <tr><td class="sen">"On the right, you can see Mrs. Brabante herself. She has been helping her husband for thirty years now."</td><td class="gram">on the right 在右边 · herself 亲自（反身代词加强语气）· <span class='tag b'>现在完成进行时</span> has been helping（一直帮了三十年）</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 4 · 收尾与玩笑（句 7-9）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">"Mrs. Brabante is talking to the manager of the local factory where the crop is <b>processed</b>. This last scene shows you what will happen at the end of the harvest: the famous Calabrian macaroni-eating competition!"</td><td class="gram"><span class='tag g'>定语从句</span> where 引导，修饰 the local factory · <span class='tag b'>被动语态</span> is processed：被加工 · <span class='tag g'>宾语从句</span> what will happen（会发生的）· the end of the harvest 收获结束之时</td></tr>
+      <tr><td class="sen">"<b>Signor</b> Fratelli, the <b>present</b> <b>champion</b>, has won it every year since 1991."</td><td class="gram">Signor 先生（意大利语称呼语）· the present champion 现任冠军 · has won it every year since 1991 自 1991 年以来年年夺冠（现在完成时 + since）</td></tr>
+      <tr><td class="sen">"And that ends our special bulletin for today, Thursday, April 1st. We're now going back to the <b>studio</b>."</td><td class="gram">that ends … 今天的……到此结束 · April 1st 4 月 1 日（愚人节，全文的「谜底」）· the studio 演播室 · 结尾以日期点破玩笑，回味整篇「通心粉丰收」的荒诞</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">go over to</td><td class="gram">转到（某地）：we're going over to the macaroni fields of Calabria。</td></tr>
+      <tr><td class="sen">day and night</td><td class="gram">日夜不停：The whole village has been working day and night。</td></tr>
+      <tr><td class="sen">between them</td><td class="gram">两人协力：two workers who, between them, have just finished cutting…。</td></tr>
+      <tr><td class="sen">a cartload of</td><td class="gram">一车……：three cartloads of golden brown macaroni stalks。</td></tr>
+      <tr><td class="sen">earlier than usual</td><td class="gram">比往常早：harvesting has begun earlier than usual。</td></tr>
+      <tr><td class="sen">since + 时间点</td><td class="gram">自从……以来（与现在完成时连用）：has won it every year since 1991。</td></tr>
+      <tr><td class="sen">for + 时间段</td><td class="gram">持续……（与完成时连用）：for over six hundred years / for thirty years now。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">现在完成进行时</div><div class="value">have been expecting / has been working / has been helping</div></div>
+      <div class="sum-item"><div class="label">现在完成时被动</div><div class="value">has been grown</div></div>
+      <div class="sum-item"><div class="label">被动语态</div><div class="value">is processed</div></div>
+      <div class="sum-item"><div class="label">since + 时间点</div><div class="value">has won it every year since 1991</div></div>
+    </div>
+    <ul>
+      <li><b>现在完成进行时与现在完成时的分工</b>：本课 have been expecting a splendid crop / has been working day and night / has been helping her husband 都用进行式，强调动作从过去持续到现在、并且仍在继续；而 has won it every year since 1991 用现在完成时，只陈述「年年获胜」这一事实。</li>
+      <li><b>since 与 for 的区别</b>：since 后接时间点（since 1991），for 后接时间段（for over six hundred years / for thirty years now），两者都常与完成时连用。这是完成时最重要的两个时间状语。</li>
+      <li><b>April 1st 是全文的谜底</b>：整篇新闻一本正经地报道「通心粉丰收」「通心粉收割比赛」，末尾才报出日期 4 月 1 日（愚人节），读者方知是玩笑。理解这类文章，要注意结尾的「点破」往往承载全文的幽默。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 76 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson76.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson76-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson76-spelling.html" class="spelling">✏️ 拼写练习</a>
+</nav></div>
+</body>
+</html>

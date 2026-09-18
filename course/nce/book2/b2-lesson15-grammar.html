@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 Lesson 15 · 语法精读与固定搭配分类</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+    --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+    color:var(--text);line-height:1.9;min-height:100vh;
+    display:flex;justify-content:center;padding:28px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .container{width:100%;max-width:800px;}
+
+  .title-card{
+    position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:32px 20px 28px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:14px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+  .sec{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;margin-top:18px;box-shadow:var(--shadow);}
+  .sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+  .sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+  .sec h3{font-size:15px;color:#1fa873;margin:18px 0 8px;}
+  .sec p{font-size:14.5px;color:#4a5a63;margin:8px 0;text-align:justify;}
+  .sec ul{margin:8px 0 8px 4px;padding-left:4px;list-style:none;}
+  .sec ul li{font-size:14px;color:#4a5a63;padding:6px 0 6px 26px;position:relative;}
+  .sec ul li::before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0);}
+  .sec ul li b{color:#2f6ba3;}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+  thead th{background:#f0faf6;color:#1fa873;padding:10px 12px;text-align:left;border-bottom:2px solid #d9f2e8;font-weight:600;white-space:nowrap;}
+  tbody td{padding:9px 12px;border-bottom:1px solid #eef4f2;color:#4a5a63;vertical-align:top;}
+  tbody td.sen{font-size:13.5px;line-height:1.7;color:#33434b;}
+  tbody td.gram{font-size:13px;color:#5a6c76;min-width:160px;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fafdfc;}
+  .tag{display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;}
+  .tag.g{background:#eefaf4;border-color:#cdeee0;color:#1fa873;}
+  .tag.r{background:#fff8ef;border-color:#fbd9a8;color:#c07a1a;}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .sum-item{background:linear-gradient(180deg,#f7fcf9,#eef6f2);border:1.5px solid #d9efe4;border-radius:12px;padding:14px 16px;}
+  .sum-item .label{font-size:12px;color:#6b7c86;margin-bottom:4px;}
+  .sum-item .value{font-size:15px;font-weight:700;color:#2f6ba3;}
+  @media (max-width:560px){.sum-grid{grid-template-columns:1fr;}}
+
+  footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px;}
+  @media print{body{background:#fff;} .sec{box-shadow:none;border:1px solid #ddd;}}
+
+  /* 底部导航：返回导航 / 句子跟读 / 语法解读 / 口语练习 / 拼写练习 / 情景视频 */
+  .page-footer{
+    max-width:760px;
+    margin:18px auto calc(96px + env(safe-area-inset-bottom));
+    padding:14px 12px 18px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 128px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.video{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;
+    box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🔍 Good news 佳音</h1>
+    <p class="sub">新概念英语第二册 Lesson 15 · 语法精读与固定搭配分类</p>
+    <p class="meta">NCE Book 2 · Lesson 15（课本印刷页 68-71）· 5 个生词和短语 · 课文 10 句</p>
+  </header>
+
+  <!-- ====== 一、全文逐句语法解读 ====== -->
+  <section class="sec">
+    <h2><span class="no">一</span>全文逐句语法解读</h2>
+    <p>本课是「本以为要丢工作、结果却加了薪」的反转小故事。语言点集中在 <b>间接引语</b>（said that / told me that）、<b>过去完成时 had sat down / had come</b>、could not afford to do 这一否定搭配，以及 in a weak voice 这类表示说话方式的介词短语。</p>
+    <h3>¶ 1 · 走进办公室（句 1-3）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">The <b>secretary</b> told me that Mr. Harmsworth would see me.</td><td class="gram"><span class='tag b'>间接引语</span> tell sb. that …；would see 是 will see 的过去形式（过去将来时）</td></tr>
+      <tr><td class="sen">I felt very <b>nervous</b> when I went into his office.</td><td class="gram">feel + 形容词表示状态 · when 引导时间状语从句</td></tr>
+      <tr><td class="sen">He did not look up from his desk when I entered.</td><td class="gram">look up from … 从（桌面、书本）上抬起头 · enter 只接宾语，不加 into</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 2 · 坏消息（句 4-7）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">After I had sat down, he said that business was very bad.</td><td class="gram"><span class='tag r'>过去完成时</span> had sat down 先于 said；间接引语里 is 要退成 was</td></tr>
+      <tr><td class="sen">He told me that the firm could not <b>afford</b> to pay such large salaries.</td><td class="gram">afford to do sth. 负担得起做某事 · such + 形容词 + 复数名词 表示「这样……的」</td></tr>
+      <tr><td class="sen">Twenty people had already left. / I knew that my turn had come.</td><td class="gram">my turn had come 我的轮次到了 · had come 表示在 knew 之前已经完成</td></tr>
+      </tbody>
+    </table>
+    <h3>¶ 3 · 反转（句 8-10）</h3>
+    <table>
+      <thead><tr><th style="width:52%">句子</th><th style="width:48%">语法点</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">'Mr. Harmsworth,' I said in a <b>weak</b> voice.</td><td class="gram">in a … voice 用……的声音说 · weak 在此表示「没有底气的」</td></tr>
+      <tr><td class="sen">'Don't <b>interrupt</b>,' he said.</td><td class="gram"><span class='tag r'>否定祈使句</span> Don't + 动词原形；直接引语整句放进引号内</td></tr>
+      <tr><td class="sen">Then he smiled and told me I would receive an extra thousand pounds a year!</td><td class="gram">间接引语省略 that · an extra thousand pounds ＝ 额外的一千英镑，数词修饰复数名词</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 二、固定搭配与重点词组 ====== -->
+  <section class="sec">
+    <h2><span class="no">二</span>固定搭配与重点词组</h2>
+    <table>
+      <thead><tr><th style="width:36%">短语</th><th style="width:64%">用法与例句</th></tr></thead>
+      <tbody>
+      <tr><td class="sen">afford to do sth.</td><td class="gram">负担得起做某事：We cannot afford to pay such salaries.</td></tr>
+      <tr><td class="sen">in a weak voice</td><td class="gram">用微弱的声音，有气无力地。</td></tr>
+      <tr><td class="sen">look up from</td><td class="gram">从（书本、桌面）上抬起头来。</td></tr>
+      <tr><td class="sen">one's turn has come</td><td class="gram">轮到某人了：I knew that my turn had come.</td></tr>
+      <tr><td class="sen">such + adj. + 复数名词</td><td class="gram">这样……的：such large salaries。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== 三、语法核心总结 ====== -->
+  <section class="sec">
+    <h2><span class="no">三</span>语法核心总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item"><div class="label">间接引语</div><div class="value">told sb. (that) …；时态要后退：is→was，will→would</div></div>
+      <div class="sum-item"><div class="label">过去完成时</div><div class="value">had + 过去分词：表示先发生的动作</div></div>
+      <div class="sum-item"><div class="label">过去将来时</div><div class="value">would + 动词原形：从过去的角度看将来</div></div>
+      <div class="sum-item"><div class="label">afford 的用法</div><div class="value">afford to do sth.，多用于否定句与疑问句</div></div>
+    </div>
+    <ul>
+      <li><b>间接引语的时态后退</b>：直接引语 "Business is very bad." → 间接引语 He said that business <u>was</u> very bad.，不能说 is very bad。</li>
+      <li><b>salary 与 wage</b>：salary 指按月发的薪水（多用于白领），wage 指按周、日计的工资。课文中公司「付不起这么多薪水」，所以用 salaries。</li>
+      <li><b>an extra thousand pounds</b>：数词后面接 hundred / thousand / million 时不用复数，不说 two thousands pounds。</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 豆豆助理 · 新概念英语第二册 Lesson 15 · 语法精读分析</footer>
+<nav class="page-footer" aria-label="页面导航">
+  <a href="index.html" class="home">🏠 返回导航</a>
+  <a href="b2-lesson15.html" class="grammar">📖 句子跟读</a>
+  <a href="b2-lesson15-oral.html" class="oral">🎤 口语练习</a>
+  <a href="b2-lesson15-spelling.html" class="spelling">✏️ 拼写练习</a>
+  <a href="b2-lesson15-video.html" class="video">🎬 情景视频</a>
+</nav></div>
+</body>
+</html>
