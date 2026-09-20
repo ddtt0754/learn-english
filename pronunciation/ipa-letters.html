@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>音标对应字母表 · 见音标找字母</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+  --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+  --line:#e6f1ec;
+}
+body{
+  font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+  background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+  color:var(--text);line-height:1.9;min-height:100vh;
+  display:flex;justify-content:center;padding:24px 16px calc(40px + env(safe-area-inset-bottom));
+}
+.container{width:100%;max-width:760px;}
+
+/* ---------- 标题卡 ---------- */
+.title-card{
+  position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+  border-radius:22px;padding:30px 20px 24px;text-align:center;color:#fff;overflow:hidden;
+  box-shadow:0 14px 30px rgba(47,157,240,.25);
+}
+.title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+.title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+.title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+.title-card h1{position:relative;font-size:23px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+.title-card .sub{position:relative;margin-top:10px;font-size:13px;letter-spacing:3px;opacity:.94;}
+.title-card .meta{position:relative;margin-top:12px;font-size:12px;opacity:.88;letter-spacing:1px;}
+
+/* ---------- 吸顶工具栏 ---------- */
+.toolbar{
+  position:sticky;top:0;z-index:30;margin-top:16px;padding:10px 12px;border-radius:14px;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 6px 18px rgba(47,157,240,.14);
+}
+.search{
+  width:100%;height:40px;border:1.5px solid #d9ebe3;border-radius:11px;background:#fcfffe;
+  font-family:inherit;font-size:14px;color:var(--text);padding:0 12px;outline:0;
+  transition:border-color .15s, background .15s;
+}
+.search::placeholder{color:#b3c6bf}
+.search:focus{border-color:var(--green);background:#f6fdfa}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:9px}
+.chip{
+  border:1.5px solid #d9ebe3;background:#fff;color:var(--green-deep);border-radius:999px;
+  font-family:inherit;font-size:12.5px;font-weight:700;padding:5px 14px;cursor:pointer;
+  transition:transform .15s, background .15s;
+}
+.chip:active{transform:scale(.95)}
+.chip.on{background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;border-color:transparent;box-shadow:0 4px 12px rgba(47,157,240,.24)}
+.chip i{font-style:normal;opacity:.75;font-weight:600;margin-left:3px;font-variant-numeric:tabular-nums}
+.stat{margin-left:auto;font-size:12.5px;color:var(--text-light);font-weight:600;white-space:nowrap}
+.stat b{color:var(--green-deep);font-size:15px;font-variant-numeric:tabular-nums}
+
+/* ---------- 分组卡 ---------- */
+.sec{background:#fff;border-radius:var(--radius);padding:20px 20px 16px;margin-top:18px;box-shadow:var(--shadow);}
+.sec.hide{display:none}
+.sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+.sec h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;}
+.sec h2 .cnt{margin-left:auto;font-size:12px;font-weight:600;color:var(--text-light);background:#f2f7f5;border-radius:999px;padding:2px 10px}
+
+.tw{border:1.5px solid #d9ebe3;border-radius:12px;overflow:hidden;background:#fff}
+.grid{width:100%;border-collapse:collapse;table-layout:fixed}
+.grid th,.grid td{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:8px 8px;text-align:center;vertical-align:middle}
+.grid tr > *:last-child{border-right:0}
+.grid tbody tr:last-child > *{border-bottom:0}
+.grid thead th{background:#f2fbf7;color:var(--green-deep);font-weight:700;font-size:13px;height:34px;letter-spacing:.5px}
+.grid th.c1,.grid td.c1{width:88px}
+.grid th.c2,.grid td.c2{width:34%}
+.grid tbody tr:nth-child(even){background:#fcfffe}
+.grid tbody tr:active{background:#f3fbf7}
+
+/* 音标：IPA 专用字体栈 */
+.ipa{
+  font-family:"Charis SIL","Doulos SIL","Gentium Plus","Segoe UI","Lucida Sans Unicode","Arial Unicode MS",Arial,sans-serif;
+  font-size:17px;font-weight:700;color:var(--green-deep);letter-spacing:.5px;white-space:nowrap;
+}
+/* 字母组合 */
+.let{
+  font-family:"Lucida Sans Unicode","Arial Unicode MS",Arial,sans-serif;
+  font-size:13.5px;color:#2f6ba3;font-weight:600;
+}
+.let .t{display:inline-block;background:#eefaf4;border:1px solid #cdeee0;border-radius:7px;
+  padding:1px 7px;margin:2px 3px;font-weight:700}
+/* 例词 */
+.eg{
+  font-family:"Lucida Sans Unicode","Arial Unicode MS",Arial,sans-serif;
+  font-size:13.5px;color:#5d7a72;
+}
+.eg .w{display:inline-block;margin:2px 4px;white-space:nowrap}
+.eg .w.hit{background:#e6f1fd;border-radius:6px;padding:0 4px;box-shadow:inset 0 0 0 1px #a8cdf0}
+.eg b{color:#c9413a;font-weight:800}
+mark{background:#d6f5e9;color:#12775a;font-weight:700;border-radius:3px;padding:0 1px}
+
+/* ---------- 空态 ---------- */
+.empty{display:none;text-align:center;font-size:14px;color:var(--text-light);
+  background:#fff;border-radius:var(--radius);padding:34px 20px;margin-top:18px;box-shadow:var(--shadow)}
+.empty.on{display:block}
+.empty b{color:var(--green-deep)}
+
+/* ---------- 说明 ---------- */
+.tips{background:#fff;border-radius:var(--radius);padding:20px 20px 16px;margin-top:18px;box-shadow:var(--shadow);}
+.tips h2{font-size:16px;color:#2f6ba3;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+.tips li{list-style:none;font-size:14px;color:#4a5a63;padding:7px 0 7px 26px;position:relative}
+.tips li .dot{position:absolute;left:6px;top:14px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#35d29a,#2f9df0)}
+.tips li b{color:var(--green-deep)}
+.tips .tag{display:inline-block;padding:3px 10px;background:#eefaf4;border:1px solid #cdeee0;border-radius:8px;font-size:12.5px;color:#2f6ba3;font-weight:600;margin:2px 3px}
+
+/* ---------- 返回 / 页脚 ---------- */
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;padding:11px 26px;
+  background:#fff;color:var(--green-deep);border:1.5px solid var(--green);border-radius:14px;
+  font-size:14px;font-weight:700;text-decoration:none;
+  box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s;
+}
+.back-btn:active{transform:scale(.97)}
+.back-wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:24px 0 6px}
+footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:26px;letter-spacing:1px}
+.coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.coach-tip .tip{visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;box-shadow:0 6px 18px rgba(47,157,240,.35);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.coach-tip .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#2f9df0}
+.coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (max-width:520px){
+  .title-card h1{font-size:20px}
+  .sec{padding:16px 12px 12px}
+  .grid th,.grid td{padding:7px 5px}
+  .grid th.c1,.grid td.c1{width:74px}
+  .ipa{font-size:15.5px}
+  .let,.eg{font-size:12.5px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🎵 音标对应字母表</h1>
+    <p class="sub">48 个音标 · 见音标找字母</p>
+    <p class="meta">单元音 12 · 双元音 8 · 辅音 28</p>
+  </header>
+
+  <div class="toolbar">
+    <input id="q" class="search" type="search" inputmode="search" enterkeyhint="search"
+           placeholder="🔍 搜音标 / 字母组合 / 例词" autocomplete="off" autocorrect="off"
+           autocapitalize="off" spellcheck="false" aria-label="搜索音标、字母组合或例词">
+    <div class="chips" id="chips">
+      <span class="stat" id="stat"></span>
+    </div>
+  </div>
+
+  <div id="groups"></div>
+
+  <div class="empty" id="empty">
+    没有找到匹配的内容 —— 换个音标、字母组合或例词试试 🙂
+  </div>
+
+  <section class="tips">
+    <h2>💡 怎么用这张表</h2>
+    <ul>
+      <li><span class="dot"></span><b>查</b>：在上方搜索框输入<b>音标</b>（如 <span class="tag">iː</span>）、<b>字母组合</b>（如 <span class="tag">igh</span>）或<b>例词</b>（如 <span class="tag">night</span> 里的 high），都能直接定位。</li>
+      <li><span class="dot"></span><b>辨</b>：例词里<span style="color:#c9413a;font-weight:800">标红的那几个字母</span>，就是发这个音的字母或字母组合。</li>
+      <li><span class="dot"></span><b>筛</b>：用「单元音 / 双元音 / 辅音」三个标签，只看其中一类。</li>
+      <li><span class="dot"></span><b>记</b>：一个音标常对应多种拼写（如 <span class="tag">/iː/</span> 有 ee、ea、i、e 四种），先把它们串起来记，比单独背单词更省力。</li>
+    </ul>
+  </section>
+
+  <div class="back-wrap">
+    <a href="IPA.html" class="back-btn">🔤 返回</a>
+    <a href="index.html" class="back-btn">🏠 返回主页</a>
+  </div>
+  <footer>© 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span> · 音标对应字母表</footer>
+</div>
+
+<script>
+/* ===================== 数据（来源：音标对应字母表.xlsx → Sheet1，48 条，原文照录） ===================== */
+var GROUPS = [
+  { key:'mono', name:'单元音', rows:[
+    ['/iː/',  ['ee','ea','i','e'],        ['meet','tea','police','be']],
+    ['/ɪ/',   ['i','y','e'],              ['sit','city','begin']],
+    ['/e/',   ['e','ea','a'],             ['pen','head','many']],
+    ['/æ/',   ['a'],                      ['map','cat']],
+    ['/ɑː/',  ['a','ar'],                 ['car','dark']],
+    ['/ɒ/',   ['o','a'],                  ['hot','want']],
+    ['/ɔː/',  ['aw','or','al'],           ['draw','fork','small']],
+    ['/uː/',  ['oo','u','ou'],            ['food','rule','soup']],
+    ['/ʊ/',   ['oo','u','ou'],            ['book','put','could']],
+    ['/ʌ/',   ['u','o','oo'],             ['bus','love','blood']],
+    ['/ɜː/',  ['ir','er','ur'],           ['bird','her','turn']],
+    ['/ə/',   ['a','e','o','er'],         ['about','open','doctor','teacher']]
+  ]},
+  { key:'dip',  name:'双元音', rows:[
+    ['/eɪ/',  ['a','ai','ay'],            ['cake','rain','day']],
+    ['/aɪ/',  ['i','y','igh'],            ['ice','fly','high']],
+    ['/ɔɪ/',  ['oy','oi'],                ['boy','oil']],
+    ['/aʊ/',  ['ou','ow'],                ['out','now']],
+    ['/ɪə/',  ['eer','ear','ier'],        ['deer','near','fierce']],
+    ['/eə/',  ['air','ear','are'],        ['hair','bear','care']],
+    ['/ʊə/',  ['oor','our'],              ['poor','tour']],
+    ['/əʊ/',  ['o','ow','oa'],            ['go','show','boat']]
+  ]},
+  { key:'cons', name:'辅音', rows:[
+    ['/p/',   ['p'],                      ['pen']],
+    ['/b/',   ['b'],                      ['book']],
+    ['/t/',   ['t'],                      ['tea']],
+    ['/d/',   ['d'],                      ['dog']],
+    ['/k/',   ['k','c','ck'],             ['key','cat','duck']],
+    ['/g/',   ['g'],                      ['go']],
+    ['/f/',   ['f','ph'],                 ['fish','photo']],
+    ['/v/',   ['v'],                      ['very']],
+    ['/s/',   ['s','c'],                  ['sun','rice']],
+    ['/z/',   ['z','s'],                  ['zoo','is']],
+    ['/θ/',   ['th'],                     ['three']],
+    ['/ð/',   ['th'],                     ['this']],
+    ['/ʃ/',   ['sh','ch','s'],            ['ship','machine','sure']],
+    ['/ʒ/',   ['s','g'],                  ['usually','garage']],
+    ['/tʃ/',  ['ch','tch'],               ['chair','watch']],
+    ['/dʒ/',  ['j','g','dge'],            ['jump','gym','bridge']],
+    ['/tr/',  ['tr'],                     ['tree']],
+    ['/dr/',  ['dr'],                     ['dress']],
+    ['/ts/',  ['ts','tes'],               ['bits','gates']],
+    ['/dz/',  ['ds','des'],               ['beds','rides']],
+    ['/m/',   ['m'],                      ['map']],
+    ['/n/',   ['n'],                      ['not']],
+    ['/ŋ/',   ['ng','nk'],                ['sing','thank']],
+    ['/l/',   ['l'],                      ['like']],
+    ['/r/',   ['r'],                      ['red']],
+    ['/h/',   ['h'],                      ['he']],
+    ['/w/',   ['w'],                      ['we']],
+    ['/j/',   ['y'],                      ['yes']]
+  ]}
+];
+var CN = ['一','二','三','四','五','六'];
+var TOTAL = GROUPS.reduce(function(a,g){ return a + g.rows.length; }, 0);
+
+/* ---------- 工具 ---------- */
+function esc(s){
+  return String(s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+  });
+}
+/* 把 q 在文本中命中的部分包成 <mark> */
+function mark(text, q){
+  var t = esc(text);
+  if(!q) return t;
+  var eq = esc(q);
+  var lo = t.toLowerCase(), lq = eq.toLowerCase(), out = '', i = 0;
+  while(lq){
+    var k = lo.indexOf(lq, i);
+    if(k < 0) break;
+    out += t.slice(i, k) + '<mark>' + t.slice(k, k + eq.length) + '</mark>';
+    i = k + eq.length;
+  }
+  return out + t.slice(i);
+}
+/* 例词中把"发该音的字母/组合"标红：取能匹配上的最长组合 */
+function hiWord(word, letters){
+  var best = null;
+  letters.forEach(function(g){
+    var i = word.toLowerCase().indexOf(g.toLowerCase());
+    if(i >= 0 && (!best || g.length > best.g.length)) best = { g:g, i:i };
+  });
+  if(!best) return esc(word);
+  return esc(word.slice(0, best.i))
+       + '<b>' + esc(word.slice(best.i, best.i + best.g.length)) + '</b>'
+       + esc(word.slice(best.i + best.g.length));
+}
+
+/* ---------- 渲染 ---------- */
+function render(){
+  var html = '';
+  GROUPS.forEach(function(G, gi){
+    var tbody = G.rows.map(function(r){
+      var ipa = r[0], lets = r[1], egs = r[2];
+      var letTags = lets.map(function(l){ return '<span class="t">' + esc(l) + '</span>'; }).join('');
+      var key = (ipa + ' ' + lets.join(' ') + ' ' + egs.join(' ')).toLowerCase();
+      var egHtml = egs.map(function(w){
+        return '<span class="w">' + hiWord(w, lets) + '</span>';
+      }).join('');
+      return '<tr data-key="' + esc(key) + '">'
+           +   '<td class="c1"><span class="ipa">' + esc(ipa) + '</span></td>'
+           +   '<td class="c2"><span class="let">' + letTags + '</span></td>'
+           +   '<td class="c3"><span class="eg">' + egHtml + '</span></td>'
+           + '</tr>';
+    }).join('');
+    html += '<section class="sec" data-g="' + G.key + '">'
+         +   '<h2><span class="no">' + CN[gi] + '</span>' + esc(G.name)
+         +     '<span class="cnt">' + G.rows.length + ' 个</span></h2>'
+         +   '<div class="tw"><table class="grid">'
+         +     '<colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup>'
+         +     '<thead><tr><th class="c1">音标</th><th class="c2">常见对应字母/组合</th><th class="c3">例词</th></tr></thead>'
+         +     '<tbody>' + tbody + '</tbody>'
+         +   '</table></div>'
+         + '</section>';
+  });
+  document.getElementById('groups').innerHTML = html;
+}
+
+/* ---------- 搜索 + 筛选 ---------- */
+var curFilter = 'all';
+
+function apply(){
+  var q = document.getElementById('q').value.trim().toLowerCase();
+  var shown = 0;
+  Array.prototype.forEach.call(document.querySelectorAll('.sec'), function(sec){
+    var g = sec.getAttribute('data-g');
+    var byType = (curFilter === 'all' || curFilter === g);
+    var rows = sec.querySelectorAll('tbody tr');
+    var visible = 0;
+    Array.prototype.forEach.call(rows, function(tr){
+      var hit = byType && (!q || tr.getAttribute('data-key').indexOf(q) >= 0);
+      tr.style.display = hit ? '' : 'none';
+      if(hit) visible++;
+    });
+    sec.classList.toggle('hide', visible === 0);
+    shown += visible;
+  });
+  document.getElementById('empty').classList.toggle('on', shown === 0);
+  document.getElementById('stat').innerHTML = q || curFilter !== 'all'
+      ? '匹配 <b>' + shown + '</b> / ' + TOTAL
+      : '共 <b>' + TOTAL + '</b> 个音标';
+}
+
+/* 芯片 */
+function buildChips(){
+  var defs = [{ k:'all', n:'全部', c:TOTAL }];
+  GROUPS.forEach(function(G){ defs.push({ k:G.key, n:G.name, c:G.rows.length }); });
+  var box = document.getElementById('chips');
+  var stat = document.getElementById('stat');
+  defs.forEach(function(d){
+    var b = document.createElement('button');
+    b.className = 'chip' + (d.k === 'all' ? ' on' : '');
+    b.setAttribute('data-k', d.k);
+    b.innerHTML = d.n + '<i>' + d.c + '</i>';
+    b.addEventListener('click', function(){
+      curFilter = d.k;
+      Array.prototype.forEach.call(box.querySelectorAll('.chip'), function(x){
+        x.classList.toggle('on', x === b);
+      });
+      apply();
+    });
+    box.insertBefore(b, stat);
+  });
+}
+
+/* ---------- 绑定 ---------- */
+document.getElementById('q').addEventListener('input', apply);
+buildChips();
+render();
+apply();
+</script>
+</body>
+</html>
