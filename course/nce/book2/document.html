@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>新概念英语第二册 · 文档下载中心</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  :root{
+    --green:#2ebd85;--blue:#2f9df0;--text:#33434b;--muted:#8aa09a;--shadow:0 8px 22px rgba(47,157,240,.10);
+  }
+  body{
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);color:var(--text);
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:22px 14px 40px;
+  }
+  .container{width:100%;max-width:880px;}
+
+  .title-card{
+    position:relative;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+    border-radius:22px;padding:28px 20px 24px;text-align:center;color:#fff;overflow:hidden;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  .title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+  .title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  .title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .title-card h1{position:relative;font-size:22px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .title-card .sub{position:relative;margin-top:9px;font-size:13px;letter-spacing:2px;opacity:.94;}
+  .title-card .meta{position:relative;margin-top:12px;font-size:12px;opacity:.9;letter-spacing:1px;}
+
+  /* ---------- 文档卡片 ---------- */
+  .doc-list{display:flex;flex-direction:column;gap:12px;margin-top:18px;}
+  .doc-card{
+    background:#fff;border-radius:16px;padding:16px;box-shadow:var(--shadow);
+    border:1.5px solid #e2f0ea;transition:transform .15s,box-shadow .15s,border-color .15s;
+  }
+  .doc-card:hover{transform:translateY(-3px);border-color:#9fe0c6;box-shadow:0 10px 26px rgba(47,157,240,.16);}
+  .dc-head{display:flex;gap:12px;align-items:flex-start;}
+  .dc-icon{
+    flex:0 0 auto;width:46px;height:46px;border-radius:13px;
+    display:flex;align-items:center;justify-content:center;font-size:23px;
+  }
+  .dc-icon.pdf{background:#e8f4fe;}
+  .dc-icon.doc{background:#e8f7f0;}
+  .dc-main{flex:1;min-width:0;}
+  .dc-name{font-size:14px;font-weight:700;line-height:1.5;word-break:break-all;}
+  .dc-desc{margin-top:4px;font-size:12.5px;color:#6b7c86;line-height:1.6;}
+  .dc-meta{margin-top:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);}
+  .fmt{border-radius:6px;padding:1px 7px;font-size:10.5px;font-weight:700;color:#fff;letter-spacing:.5px;}
+  .fmt.pdf{background:#2f9df0;}
+  .fmt.doc{background:#2ebd85;}
+  .dc-actions{display:flex;gap:9px;margin-top:14px;}
+  .btn{
+    flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;
+    border-radius:12px;padding:10px 12px;font-size:13px;font-weight:700;letter-spacing:.5px;
+    text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn.solid{
+    background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;
+    box-shadow:0 4px 14px rgba(47,157,240,.28);
+  }
+  .btn.ghost{background:#fff;color:var(--green);border:1.5px solid #9fe0c6;}
+
+  /* ---------- 说明卡 ---------- */
+  .tip-card{
+    margin-top:18px;background:#fff;border-radius:16px;padding:16px 18px;box-shadow:var(--shadow);
+    border:1.5px solid #e2f0ea;font-size:13px;color:#4a5a63;line-height:1.95;
+  }
+  .tip-card b{color:#2f6ba3;}
+  .tip-card .tag{
+    display:inline-block;background:#eef4fb;border:1px solid #d3e5f6;border-radius:6px;
+    padding:1px 8px;font-size:12px;color:#2f6ba3;font-weight:600;margin:1px 2px;
+  }
+
+  footer{width:100%;max-width:880px;text-align:center;font-size:12px;color:#a8bcb4;margin-top:26px;line-height:2;}
+  footer a{color:var(--green);text-decoration:none;font-weight:700;}
+  .coach-tip{position:relative;display:inline-block;cursor:pointer;}
+  .coach-tip .tip{
+    visibility:hidden;opacity:0;position:absolute;bottom:150%;left:50%;transform:translateX(-50%);
+    background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:6px 12px;border-radius:10px;
+    font-size:12px;font-weight:700;white-space:nowrap;z-index:99;transition:opacity .2s;
+  }
+  .coach-tip:hover .tip,.coach-tip:active .tip{visibility:visible;opacity:1;}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>新概念英语 · 第二册</h1>
+    <p class="sub">📄 文档下载中心</p>
+    <p class="meta" id="meta">共 3 份文档</p>
+  </header>
+
+  <div class="doc-list" id="docList"></div>
+  <noscript>
+    <div class="tip-card">请开启 JavaScript 以显示文档列表。</div>
+  </noscript>
+
+  <div class="tip-card">
+    <b>使用说明</b>：<span class="tag">📕 PDF</span>可在线预览，也可下载到手机 / 电脑离线查看；
+    <span class="tag">📝 DOCX</span>需下载后用 WPS / Word 打开。<br>
+    文件较大时下载需要几秒，请耐心等待；建议在 Wi-Fi 环境下下载，下载后可在文件管理器中随时查阅。
+  </div>
+
+</div>
+
+<footer>
+  <a href="index.html">📖 返回第二册课次</a> &nbsp;·&nbsp;
+  <a href="../../index.html">📚 课程中心</a> &nbsp;·&nbsp;
+  <a href="../index.html">🏠 返回主页</a><br>
+  &copy; 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span>
+</footer>
+
+<script>
+/* ===================== 文档清单（新增文档只需改这里） =====================
+   name : 显示的文件名
+   desc : 一句话说明
+   fmt  : 'pdf' | 'doc'  —— 决定标签配色与图标底
+   size : 文件大小（换文件后请同步更新）
+   path : 相对本页的路径（本页与 index.html 同目录，即 course/nce/book{N}/）
+   preview : 是否提供「在线预览」（PDF 可预览，DOCX 不可）
+   ======================================================================== */
+var DOCS = [
+  {
+    icon:"📕", name:"新概念英语第二册.pdf", desc:"教材原版 PDF · 全册课文与词汇表",
+    fmt:"pdf", fmtName:"PDF", size:"16.84 MB", preview:true,
+    path:"../../../resources/nce/book2/document/新概念英语第二册.pdf"
+  },
+  {
+    icon:"📐", name:"整理第二册前 48 课语法.pdf", desc:"前 48 课语法要点整理 · 便携速查",
+    fmt:"pdf", fmtName:"PDF", size:"238 KB", preview:true,
+    path:"../../../resources/nce/book2/document/整理第二册前 48 课语法.pdf"
+  },
+  {
+    icon:"📝", name:"新概念英语第二册笔记.docx", desc:"配套学习笔记 · 知识点与语法梳理",
+    fmt:"doc", fmtName:"DOCX", size:"2.14 MB", preview:false,
+    path:"../../../resources/nce/book2/document/新概念英语第二册笔记.docx"
+  }
+];
+
+var esc = function(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+};
+
+function render(){
+  var html = DOCS.map(function(d){
+    var actions = '';
+    if (d.preview){
+      actions += '<a class="btn ghost" href="' + d.path + '" target="_blank" rel="noopener">👁 在线预览</a>';
+    }
+    actions += '<a class="btn solid" href="' + d.path + '" download>📥 下载</a>';
+
+    return '<div class="doc-card">'
+         +   '<div class="dc-head">'
+         +     '<div class="dc-icon ' + d.fmt + '">' + d.icon + '</div>'
+         +     '<div class="dc-main">'
+         +       '<div class="dc-name">' + esc(d.name) + '</div>'
+         +       '<div class="dc-desc">' + esc(d.desc) + '</div>'
+         +       '<div class="dc-meta"><span class="fmt ' + d.fmt + '">' + d.fmtName + '</span>'
+         +         '<span>' + esc(d.size) + '</span></div>'
+         +     '</div>'
+         +   '</div>'
+         +   '<div class="dc-actions">' + actions + '</div>'
+         + '</div>';
+  }).join('');
+
+  document.getElementById('docList').innerHTML = html;
+  document.getElementById('meta').textContent = '共 ' + DOCS.length + ' 份文档 · 教材原版 + 语法整理 + 学习笔记';
+}
+
+render();
+</script>
+</body>
+</html>
