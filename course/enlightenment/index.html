@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2ebd85">
+<title>英语启蒙动画片 · 观看顺序路线图</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --green:#2ebd85;--green-deep:#1fa873;--blue:#2f9df0;--text:#33434b;
+  --text-light:#8aa09a;--card:#ffffff;--shadow:0 8px 22px rgba(47,157,240,.10);--radius:16px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+  background:linear-gradient(180deg,#eefaf4 0%,#eef4fb 100%);
+  color:var(--text);line-height:1.9;min-height:100vh;
+  display:flex;justify-content:center;padding:24px 16px calc(40px + env(safe-area-inset-bottom));
+}
+.container{width:100%;max-width:760px;}
+
+.title-card{
+  position:relative;width:100%;background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);
+  border-radius:22px;padding:30px 20px 24px;text-align:center;color:#fff;overflow:hidden;
+  box-shadow:0 14px 30px rgba(47,157,240,.25);
+}
+.title-card::before,.title-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14);}
+.title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+.title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+.title-card h1{position:relative;font-size:23px;letter-spacing:2px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.12);}
+.title-card .sub{position:relative;margin-top:10px;font-size:12px;letter-spacing:2.5px;opacity:.94;}
+
+.sec{background:#fff;border-radius:var(--radius);padding:18px 18px 16px;margin-top:18px;box-shadow:var(--shadow);}
+.sec h2{font-size:17px;color:#2f6ba3;display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-bottom:10px;border-bottom:2px solid #e8f2ec;}
+.sec h2 .no{
+  display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;
+  background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:14px;flex-shrink:0;
+}
+.lead{font-size:14px;color:#4c6068;margin-top:8px}
+.lead b{color:#1fa873}
+
+.tick{list-style:none;margin-top:8px}
+.tick li{position:relative;padding-left:22px;font-size:13.5px;color:#5c7270;margin-top:6px}
+.tick li::before{content:"\2713";position:absolute;left:2px;top:0;color:#2ebd85;font-weight:700}
+
+.quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.quick a{
+  display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:999px;
+  background:#f2f9f6;border:1px solid #dcece5;color:#3f7a63;font-size:12.5px;font-weight:600;
+  text-decoration:none;transition:background .14s,color .14s,transform .14s,box-shadow .14s;
+}
+.quick a b{color:#2f9df0;font-size:12px}
+.quick a:hover{background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;border-color:transparent;transform:translateY(-2px);box-shadow:0 6px 14px rgba(47,157,240,.25)}
+.quick a:hover b{color:#fff}
+.quick a:active{transform:scale(.96)}
+
+.stage-tip{font-size:12.5px;color:#9ab0a9;margin-top:-2px}
+.llist{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.item{
+  display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:14px;
+  background:#f7fbf9;border:1.5px solid #e3f1ea;
+  transition:transform .14s,box-shadow .14s,background .14s;
+}
+.item:hover{background:#eefaf4;box-shadow:0 8px 20px rgba(46,158,107,.16);transform:translateY(-2px)}
+.item:target{background:#eafaf2;border-color:#2ebd85}
+.cover{position:relative;flex-shrink:0;width:64px;height:64px}
+.cover img{width:64px;height:64px;border-radius:50%;display:block}
+.cover .idx{
+  position:absolute;left:-5px;top:-5px;min-width:23px;height:23px;padding:0 5px;border-radius:999px;
+  background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:12px;font-weight:700;line-height:23px;
+  text-align:center;box-shadow:0 3px 8px rgba(47,157,240,.35);
+}
+.body{flex:1;min-width:0}
+.ct{font-size:16px;font-weight:700;color:#2c3e48;line-height:1.5}
+.ct .en{font-size:12px;font-weight:600;color:#8aa09a;margin-left:6px;letter-spacing:.3px}
+.cs{font-size:12.5px;color:#7d938c;margin-top:4px;line-height:1.7}
+.tag{
+  display:inline-block;margin-right:6px;padding:1px 8px;border-radius:999px;font-size:11px;
+  color:#1fa873;background:#eaf8f2;border:1px solid #cdeade;font-weight:600;
+}
+
+.turn{margin-top:14px;text-align:center;font-size:12.5px;color:#7d938c;letter-spacing:.5px}
+.turn b{
+  display:block;width:30px;height:30px;margin:0 auto 5px;border-radius:50%;
+  background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;font-size:15px;line-height:30px;
+  box-shadow:0 5px 12px rgba(47,157,240,.28);
+}
+
+.poster{display:block;text-align:center;margin-top:10px}
+.poster img{max-width:100%;border-radius:14px;border:1.5px solid #e3f1ea;display:block;margin:0 auto}
+.poster .hint{font-size:12.5px;color:#9ab0a9;margin-top:10px}
+
+footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spacing:1px}
+.coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.coach-tip .tip{visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;box-shadow:0 6px 18px rgba(47,157,240,.35);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.coach-tip .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#2f9df0}
+.coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;padding:11px 26px;
+  background:#fff;color:#1fa873;border:1.5px solid #2ebd85;border-radius:999px;
+  font-size:14px;font-weight:700;text-decoration:none;
+  box-shadow:0 4px 12px rgba(46,158,107,.12);transition:transform .15s,box-shadow .15s,background .15s;
+}
+.back-btn:hover{background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(47,157,240,.25)}
+.back-btn:active{transform:scale(.97)}
+.back-wrap{text-align:center;margin:22px 0 4px}
+
+@media (max-width:400px){
+  .cover,.cover img{width:56px;height:56px}
+  .ct{font-size:15px}
+  .ct .en{display:block;margin-left:0}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="title-card">
+    <h1>🎬 英语启蒙动画片</h1>
+    <p class="sub">WATCH IN ORDER &middot; 16 STEPS</p>
+  </header>
+
+  <section class="sec">
+    <h2><span class="no">!</span>顺序千万别搞反了</h2>
+    <p class="lead">这条路线一共 <b>16 部</b> 动画，按「<b>听 → 懂 → 说 → 拓展</b>」四个阶段排列。阶段<strong>内</strong>按序号一部一部看，一个阶段看完再进下一阶段。</p>
+    <ul class="tick">
+      <li>每部先看十分钟试水，孩子看得住就继续，看不进去就先跳过。</li>
+      <li>每天 15–20 分钟即可，贵在「天天看」，不在「一次看多久」。</li>
+      <li>一部动画可以反复看很多遍，重复才是启蒙的关键。</li>
+      <li>建议家长陪看，遇到熟悉的词和孩子一起说出来。</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <h2><span class="no">#</span>16 站路线速览</h2>
+    <div class="quick">
+      <a href="#s1"><b>1</b>SSS</a>
+      <a href="#s2"><b>2</b>Yakka Dee</a>
+      <a href="#s3"><b>3</b>Wow English</a>
+      <a href="#s4"><b>4</b>Didi's Day</a>
+      <a href="#s5"><b>5</b>Big Muzzy</a>
+      <a href="#s6"><b>6</b>Little Fox</a>
+      <a href="#s7"><b>7</b>蓝色小考拉</a>
+      <a href="#s8"><b>8</b>动物王国大冒险</a>
+      <a href="#s9"><b>9</b>数字积木</a>
+      <a href="#s10"><b>10</b>小猪佩奇</a>
+      <a href="#s11"><b>11</b>卡由</a>
+      <a href="#s12"><b>12</b>布鲁伊</a>
+      <a href="#s13"><b>13</b>嗨！道奇</a>
+      <a href="#s14"><b>14</b>汪汪队</a>
+      <a href="#s15"><b>15</b>神奇校车</a>
+      <a href="#s16"><b>16</b>西游记</a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="no">①</span>第一阶段 · 磨耳朵打底</h2>
+    <p class="stage-tip">第 1–4 部 · 目标：让孩子习惯英文的声音</p>
+    <div class="llist">
+
+      <div class="item" id="s1">
+        <div class="cover"><img src="img/01-sss.png" alt="Super Simple Songs" loading="lazy"><span class="idx">1</span></div>
+        <div class="body">
+          <div class="ct">Super Simple Songs<span class="en">SSS</span></div>
+          <div class="cs"><span class="tag">儿歌</span>磨耳朵首选，画面简单、句型重复，先听着不看画面也行。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s2">
+        <div class="cover"><img src="img/02-yakka-dee.png" alt="Yakka Dee" loading="lazy"><span class="idx">2</span></div>
+        <div class="body">
+          <div class="ct">Yakka Dee<span class="en">Talk Dee</span></div>
+          <div class="cs"><span class="tag">单词</span>一集一个单词，真人加动画，孩子容易跟出第一个词。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s3">
+        <div class="cover"><img src="img/03-wow-english.png" alt="Wow English" loading="lazy"><span class="idx">3</span></div>
+        <div class="body">
+          <div class="ct">Wow English<span class="en">Steve</span></div>
+          <div class="cs"><span class="tag">情景</span>真人外教加动画小鸟，边说边做动作，理解输入快。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s4">
+        <div class="cover"><img src="img/04-didis-day.png" alt="Didi's Day" loading="lazy"><span class="idx">4</span></div>
+        <div class="body">
+          <div class="ct">Didi's Day<span class="en">小狗 Didi</span></div>
+          <div class="cs"><span class="tag">日常</span>小狗 Didi 的一天，短句高频重复，日常磨耳朵很合适。</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="turn"><b>↓</b>耳朵磨住了，再进入第 ② 阶段</div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="no">②</span>第二阶段 · 情境理解入门</h2>
+    <p class="stage-tip">第 5–8 部 · 目标：把听到的声音和情景对上号（海报中这一行从右往左看）</p>
+    <div class="llist">
+
+      <div class="item" id="s5">
+        <div class="cover"><img src="img/05-big-muzzy.png" alt="Big Muzzy" loading="lazy"><span class="idx">5</span></div>
+        <div class="body">
+          <div class="ct">Big Muzzy<span class="en">BBC</span></div>
+          <div class="cs"><span class="tag">情景对话</span>BBC 经典慢速英语，情节循环出现，句型反复听。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s6">
+        <div class="cover"><img src="img/06-little-fox.png" alt="Little Fox" loading="lazy"><span class="idx">6</span></div>
+        <div class="body">
+          <div class="ct">Little Fox<span class="en">小狐狸</span></div>
+          <div class="cs"><span class="tag">分级故事</span>分级动画片库，从 L1 开始一级一级往上爬，量很足。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s7">
+        <div class="cover"><img src="img/07-penelope.png" alt="Penelope 蓝色小考拉" loading="lazy"><span class="idx">7</span></div>
+        <div class="body">
+          <div class="ct">蓝色小考拉<span class="en">Penelope</span></div>
+          <div class="cs"><span class="tag">生活场景</span>小考拉的日常，语速平稳，适合精听和跟读。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s8">
+        <div class="cover"><img src="img/08-animal-kingdom.png" alt="动物王国大冒险" loading="lazy"><span class="idx">8</span></div>
+        <div class="body">
+          <div class="ct">动物王国大冒险<span class="en">8 岁英语启蒙神片</span></div>
+          <div class="cs"><span class="tag">情境故事</span>故事性强，孩子会主动想看，情景输入效果好。</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="turn"><b>↓</b>简单情景能听懂了，再进入第 ③ 阶段</div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="no">③</span>第三阶段 · 生活口语进阶</h2>
+    <p class="stage-tip">第 9–12 部 · 目标：把生活里的英文说出口</p>
+    <div class="llist">
+
+      <div class="item" id="s9">
+        <div class="cover"><img src="img/09-numberblocks.png" alt="Numberblocks 数字积木" loading="lazy"><span class="idx">9</span></div>
+        <div class="body">
+          <div class="ct">数字积木<span class="en">Numberblocks</span></div>
+          <div class="cs"><span class="tag">数学启蒙</span>数字加英语双输入，为数学启蒙和课堂英语打底。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s10">
+        <div class="cover"><img src="img/10-peppa-pig.png" alt="Peppa Pig 小猪佩奇" loading="lazy"><span class="idx">10</span></div>
+        <div class="body">
+          <div class="ct">小猪佩奇<span class="en">Peppa Pig</span></div>
+          <div class="cs"><span class="tag">生活口语</span>全英生活口语，句子短、场景熟，可以跟读模仿。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s11">
+        <div class="cover"><img src="img/11-caillou.png" alt="Caillou 卡由" loading="lazy"><span class="idx">11</span></div>
+        <div class="body">
+          <div class="ct">卡由<span class="en">Caillou</span></div>
+          <div class="cs"><span class="tag">成长日常</span>四岁男孩的成长故事，语速自然，情节贴近生活。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s12">
+        <div class="cover"><img src="img/12-bluey.png" alt="Bluey 布鲁伊" loading="lazy"><span class="idx">12</span></div>
+        <div class="body">
+          <div class="ct">布鲁伊<span class="en">Bluey</span></div>
+          <div class="cs"><span class="tag">家庭对话</span>家庭日常对话，口语地道、语速偏快，往上进阶听。</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="turn"><b>↓</b>生活口语说得上了，再进入第 ④ 阶段</div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="no">④</span>第四阶段 · 科普与故事拓展</h2>
+    <p class="stage-tip">第 13–16 部 · 目标：从看动画过渡到听故事（海报中这一行从右往左看）</p>
+    <div class="llist">
+
+      <div class="item" id="s13">
+        <div class="cover"><img src="img/13-hey-duggee.png" alt="Hey Duggee 嗨！道奇" loading="lazy"><span class="idx">13</span></div>
+        <div class="body">
+          <div class="ct">嗨！道奇<span class="en">Hey Duggee</span></div>
+          <div class="cs"><span class="tag">情绪社交</span>每集一个主题徽章，短句加儿歌，社交和情绪词汇多。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s14">
+        <div class="cover"><img src="img/14-paw-patrol.png" alt="PAW Patrol 汪汪队立大功" loading="lazy"><span class="idx">14</span></div>
+        <div class="body">
+          <div class="ct">汪汪队立大功<span class="en">PAW Patrol</span></div>
+          <div class="cs"><span class="tag">情节故事</span>情节完整、指令句多，从短句过渡到完整故事。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s15">
+        <div class="cover"><img src="img/15-magic-school-bus.png" alt="The Magic School Bus 神奇校车" loading="lazy"><span class="idx">15</span></div>
+        <div class="body">
+          <div class="ct">神奇校车<span class="en">The Magic School Bus</span></div>
+          <div class="cs"><span class="tag">科普</span>科普动画，学科词汇大量出现，边看边把英语当工具用。</div>
+        </div>
+      </div>
+
+      <div class="item" id="s16">
+        <div class="cover"><img src="img/16-journey-to-the-west.png" alt="Journey to the West 西游记英文版" loading="lazy"><span class="idx">16</span></div>
+        <div class="body">
+          <div class="ct">西游记<span class="en">Journey to the West</span></div>
+          <div class="cs"><span class="tag">长故事</span>熟悉的中国故事英文版，检验听力、过渡到裸听。</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="turn"><b>✓</b>16 部走完，英文耳朵就通了</div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="no">🖼</span>原版海报（可点开看大图）</h2>
+    <a class="poster" href="img/poster.jpg" target="_blank" rel="noopener">
+      <img src="img/poster.jpg" alt="英语启蒙动画片顺序海报" loading="lazy">
+    </a>
+  </section>
+
+  <div class="back-wrap">
+    <a class="back-btn" href="../index.html">🏠 返回课程中心</a>
+  </div>
+
+  <footer>
+    <span class="coach-tip" tabindex="0">
+      © 两英豆豆教练
+      <span class="tip">微信号：ddtt0754</span>
+    </span>
+  </footer>
+
+</div>
+</body>
+</html>
