@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content">
+<title>四年级下册 Unit 6 · 句子默写</title>
+<style>
+/* =====================================================================
+   句子默写 · 听写本 —— 全屏单句听写台
+   设计语言：清新校园绿 + 听写本方格纸质感
+   ===================================================================== */
+*,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+
+:root{
+  /* —— 纸与墨 —— */
+  --paper:#ffffff;
+  --ink:#14312a;
+  --ink2:#4b6b5e;
+  --mute:#93ab9f;
+  --line:#dcebe2;
+  --line2:#eef6f1;
+  /* —— 品牌色（与站内一致）—— */
+  --g1:#2e9e6b;
+  --g2:#46c294;
+  --gd:#1f7d55;
+  /* —— 状态色 —— */
+  --amber:#e09b2d;
+  --red:#e0574c;
+  --sky:#3aa6ef;
+  --sh:0 18px 48px rgba(26,72,54,.13), 0 2px 6px rgba(26,72,54,.07);
+  /* —— 字体（全部本机可用，零外链）—— */
+  --f-cn:"MiSans","HarmonyOS Sans SC","PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --f-en:"Century Gothic","Avenir Next","Segoe UI Variable Text","Segoe UI","Helvetica Neue",sans-serif;
+  --f-num:"SF Mono","Cascadia Mono","Consolas","DejaVu Sans Mono",monospace;
+}
+
+html,body{height:100%;margin:0;padding:0;}
+body{
+  font-family:var(--f-cn);
+  color:var(--ink);
+  background:#eef6f1;
+  overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+button{font-family:inherit;}
+
+/* ================= 舞台：铺满全屏 ================= */
+.stage{
+  position:fixed;top:0;left:0;right:0;
+  height:100vh;height:100dvh;
+  display:flex;flex-direction:column;
+  padding:calc(9px + env(safe-area-inset-top)) 9px calc(9px + env(safe-area-inset-bottom));
+  overflow:hidden;
+  background:
+    radial-gradient(1100px 620px at 6% -14%, #d6efe0 0%, rgba(214,239,224,0) 62%),
+    radial-gradient(880px 540px at 104% 110%, #d8e9fb 0%, rgba(216,233,251,0) 64%),
+    linear-gradient(168deg,#f0f8f3 0%,#e9f3f8 48%,#f4faf3 100%);
+}
+/* 方格纸底纹 —— 听写本 */
+.stage::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right, rgba(46,158,107,.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(46,158,107,.09) 1px, transparent 1px);
+  background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(125% 92% at 50% 38%, #000 26%, transparent 86%);
+  mask-image:radial-gradient(125% 92% at 50% 38%, #000 26%, transparent 86%);
+  opacity:.5;
+}
+/* 颗粒质感 */
+.stage::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.11;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+/* ================= 听写卡 ================= */
+.card{
+  position:relative;flex:1;min-height:0;z-index:2;
+  display:flex;flex-direction:column;
+  background:linear-gradient(180deg,#fff 0%,#fdfffe 100%);
+  border-radius:26px;
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:var(--sh);
+  overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--g1),var(--g2) 46%,#57c7e8 100%);
+}
+
+/* ================= 顶部 HUD ================= */
+.hud{display:flex;align-items:center;gap:9px;padding:14px 14px 9px;flex:0 0 auto;}
+.icon-btn{
+  width:34px;height:34px;flex:0 0 auto;border-radius:11px;cursor:pointer;
+  border:1px solid var(--line);background:#f7fbf9;color:var(--ink2);font-size:15px;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:.18s;
+}
+.icon-btn:hover{background:#eef7f2;border-color:#bcdccc;color:var(--g1);}
+.icon-btn:active{transform:scale(.94);}
+.unit{display:flex;flex-direction:column;line-height:1.16;min-width:0;flex:1 1 auto;}
+.unit b{font-size:13px;font-weight:800;letter-spacing:.4px;color:#17513c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.unit span{font-size:9.5px;font-weight:700;color:var(--mute);letter-spacing:2.2px;}
+.hud-right{display:flex;align-items:center;gap:8px;flex:0 0 auto;}
+
+/* 倒计时 */
+.timer{
+  display:flex;align-items:center;gap:6px;padding:4px 11px 4px 6px;border-radius:999px;
+  background:#f2f9f5;border:1px solid var(--line);transition:background .35s,border-color .35s;
+}
+.timer svg{width:22px;height:22px;display:block;transform:rotate(-90deg);}
+.tr-bg{fill:none;stroke:#dcebe2;stroke-width:3.6;}
+.tr-fg{fill:none;stroke:var(--g1);stroke-width:3.6;stroke-linecap:round;transition:stroke .35s;}
+.t-num{font-family:var(--f-num);font-size:13.5px;font-weight:700;letter-spacing:.3px;color:#1d5a42;font-variant-numeric:tabular-nums;}
+.timer.warn{background:#fff9ee;border-color:#f0dcb6;}
+.timer.warn .tr-fg{stroke:var(--amber);}
+.timer.warn .t-num{color:#a4700f;}
+.timer.over{background:#fdeeec;border-color:#f2c8c3;animation:pulseRed 1.15s ease-in-out infinite;}
+.timer.over .tr-fg{stroke:var(--red);}
+.timer.over .t-num{color:var(--red);}
+@keyframes pulseRed{0%,100%{box-shadow:0 0 0 0 rgba(224,87,76,0);}50%{box-shadow:0 0 0 5px rgba(224,87,76,.14);}}
+
+/* 句序 */
+.cnt{
+  display:flex;align-items:baseline;gap:1px;padding:5px 11px;border-radius:999px;
+  background:#f2f9f5;border:1px solid var(--line);font-family:var(--f-num);font-weight:700;
+}
+.cnt b{font-size:15px;color:var(--g1);}
+.cnt s{text-decoration:none;font-size:11px;color:#b6cbc0;}
+.cnt span{font-size:12px;color:var(--ink2);}
+
+/* ================= 主体 ================= */
+.main{
+  flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:8px 14px 12px;scrollbar-width:none;
+}
+.main::-webkit-scrollbar{display:none;}
+.col{width:100%;max-width:820px;margin:0 auto;}
+
+/* 答题区：播放键 + 词格 */
+.ask{position:relative;display:flex;flex-direction:column;align-items:center;gap:15px;padding:4px 0 2px;}
+.ask > *{position:relative;z-index:1;}
+/* 背景幽灵句号（页面记忆点） */
+.ghost{
+  position:absolute;right:-6px;bottom:-50px;z-index:0 !important;pointer-events:none;user-select:none;
+  font-family:var(--f-num);font-weight:800;font-size:130px;line-height:1;letter-spacing:-8px;
+  color:rgba(46,158,107,.075);
+}
+
+/* 播放按钮 */
+.rail{display:flex;flex-direction:column;align-items:center;gap:7px;flex:0 0 auto;}
+.play{
+  position:relative;width:66px;height:66px;border-radius:50%;border:0;cursor:pointer;
+  background:linear-gradient(150deg,#3cbe8e 0%,#2e9e6b 56%,#228054 100%);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 22px rgba(46,158,107,.32), inset 0 1px 0 rgba(255,255,255,.42);
+  transition:transform .14s ease, box-shadow .22s;touch-action:manipulation;
+}
+.play:active{transform:scale(.93);}
+.play svg{width:26px;height:26px;display:block;}
+.play::after{
+  content:"";position:absolute;inset:-5px;border-radius:50%;opacity:0;transition:opacity .3s;
+  background:radial-gradient(circle, rgba(59,189,141,.36), rgba(59,189,141,0) 68%);
+}
+.play.on::after{opacity:1;animation:halo 1.7s ease-out infinite;}
+@keyframes halo{0%{transform:scale(1);opacity:.95;}100%{transform:scale(1.5);opacity:0;}}
+.play .rep{
+  position:absolute;right:-5px;bottom:-5px;min-width:23px;height:23px;padding:0 5px;
+  border-radius:999px;background:#fff;border:1.5px solid var(--g1);color:var(--g1);
+  font-family:var(--f-num);font-size:11px;font-weight:800;line-height:20px;text-align:center;
+}
+.play-note{font-size:11px;color:var(--mute);letter-spacing:.3px;text-align:center;min-height:14px;font-weight:600;white-space:nowrap;}
+
+/* 词格容器 */
+.cells{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:9px 8px;min-width:0;}
+
+/* 单格 —— 一格一词 */
+.cell{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;
+  height:54px;padding:0 9px;border-radius:14px;cursor:text;
+  background:linear-gradient(180deg,#fbfefc,#f3f9f5);
+  border:1.5px solid var(--line);
+  box-shadow:inset 0 -3px 0 rgba(46,158,107,.10);
+  transition:border-color .2s,box-shadow .22s,background .22s,transform .16s;
+}
+.cell:hover{border-color:#bcdccc;}
+.cell.focus{border-color:var(--g1);background:#fff;box-shadow:0 0 0 4px rgba(46,158,107,.13), inset 0 -3px 0 rgba(46,158,107,.20);}
+.cell.ok{
+  border-color:#84d5b0;background:linear-gradient(180deg,#f1fbf6,#e5f7ee);
+  box-shadow:0 0 0 3px rgba(59,189,141,.15), inset 0 -3px 0 rgba(46,158,107,.20);
+}
+.cell.ok .bx{color:var(--gd);}
+.cell.bad{border-color:#f0a9a2;background:#fef5f4;animation:shake .44s cubic-bezier(.36,.07,.19,.97);}
+@keyframes shake{10%,90%{transform:translateX(-2px);}20%,80%{transform:translateX(4px);}30%,50%,70%{transform:translateX(-6px);}40%,60%{transform:translateX(6px);}}
+.cell.in{animation:cellIn .44s cubic-bezier(.2,.9,.25,1) both;}
+@keyframes cellIn{from{opacity:0;transform:translateY(11px) scale(.93);}to{opacity:1;transform:none;}}
+
+.bx{
+  width:calc(var(--n) * 0.60em + 0.7em);min-width:0;padding:0;border:0;background:transparent;
+  outline:0;text-align:center;font-family:var(--f-en);font-weight:600;letter-spacing:.2px;
+  font-size:clamp(15px,4.1vw,19px);color:#123a2c;
+}
+.bx::placeholder{color:#d2e2d9;font-weight:500;}
+.pn{
+  font-family:var(--f-en);font-size:clamp(12px,3.2vw,15px);font-weight:700;
+  color:#a9c2b5;user-select:none;pointer-events:none;
+}
+.cell.ok .pn{color:#7fbda0;}
+
+/* 中文提示（句子后面 · 开启/关闭） */
+.cn-wrap{text-align:center;margin-top:8px;}
+.cn-toggle{
+  display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 15px;
+  border-radius:999px;border:1.5px dashed #c9ddd3;background:#f8fcfa;color:var(--ink2);
+  font-size:12.5px;font-weight:700;cursor:pointer;transition:.2s;
+}
+.cn-toggle:hover{border-color:var(--g1);color:var(--g1);background:#f1faf5;}
+.cn-toggle.on{border-style:solid;border-color:#a7dcc3;background:#eefaf3;color:var(--g1);}
+.cn-toggle .st{font-size:11px;font-weight:800;letter-spacing:.5px;color:#9fbbaf;}
+.cn-toggle.on .st{color:var(--g1);}
+
+.cn-slot{position:relative;margin-top:11px;height:64px;}
+.cn-box,.cn-hint{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  border-radius:14px;padding:10px 16px;text-align:center;transition:opacity .32s,transform .32s;
+}
+.cn-box{
+  background:linear-gradient(180deg,#f3faff,#eaf4fd);border:1px solid #d5e8f8;border-left:4px solid var(--sky);
+  color:#22526f;font-size:15px;font-weight:700;letter-spacing:.4px;
+  opacity:0;transform:translateY(7px);
+}
+.cn-box.show{opacity:1;transform:none;}
+.cn-hint{
+  border:1.5px dashed #dbe9e1;color:#b7cbc0;font-size:12px;letter-spacing:.4px;
+}
+.cn-hint.hide{opacity:0;}
+
+/* ================= 底部控制 ================= */
+.foot{flex:0 0 auto;padding:10px 14px 13px;border-top:1px solid var(--line2);background:linear-gradient(180deg,#fbfefc,#f5faf7);}
+.foot-row{display:flex;gap:9px;max-width:820px;margin:0 auto;}
+.fbtn{
+  flex:1;height:46px;border-radius:14px;border:1.5px solid var(--line);background:#fff;color:var(--ink2);
+  font-size:13.5px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  gap:7px;transition:transform .14s,border-color .18s,background .18s,color .18s;
+}
+.fbtn:active{transform:scale(.975);}
+.fbtn:hover{border-color:#bcdccc;}
+.fbtn.on{border-color:#a7dcc3;background:#eefaf3;color:var(--g1);}
+.fbtn kbd{
+  font-family:var(--f-num);font-size:11.5px;font-weight:800;padding:1px 6px;border-radius:6px;
+  background:#eef7f2;color:var(--g1);
+}
+.fbtn.on kbd{background:#ddf3e8;}
+
+.strip{display:flex;gap:3px;max-width:820px;margin:10px auto 0;}
+.strip i{flex:1;height:4px;border-radius:99px;background:#e6f0ea;transition:background .35s,transform .3s;}
+.strip i.ok{background:linear-gradient(90deg,#46c294,#2e9e6b);}
+.strip i.over{background:linear-gradient(90deg,#eda93f,#e0891d);}
+.strip i.skip{background:#c9d6cf;}
+.strip i.cur{background:#bfe6d3;transform:scaleY(2.2);}
+
+/* ================= 横幅提示 ================= */
+.banner{
+  position:absolute;left:50%;top:15px;z-index:30;pointer-events:none;
+  display:flex;align-items:center;gap:8px;padding:10px 21px;border-radius:999px;
+  font-size:13.5px;font-weight:800;letter-spacing:.5px;white-space:nowrap;color:#fff;
+  box-shadow:0 12px 30px rgba(26,72,54,.22);
+  opacity:0;transform:translate(-50%,-22px);transition:opacity .28s,transform .28s;
+}
+.banner.show{opacity:1;transform:translate(-50%,0);}
+.banner.ok{background:linear-gradient(135deg,#46c294,#2e9e6b);}
+.banner.over{background:linear-gradient(135deg,#eda93f,#e0891d);}
+.banner.skip{background:linear-gradient(135deg,#9baca4,#7d928a);}
+
+/* ================= 遮罩 / 面板 ================= */
+.veil{
+  position:absolute;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:rgba(247,252,249,.88);
+  -webkit-backdrop-filter:blur(11px);backdrop-filter:blur(11px);
+  opacity:0;pointer-events:none;transition:opacity .32s;
+}
+.veil.show{opacity:1;pointer-events:auto;}
+.panel{
+  width:100%;max-width:520px;max-height:100%;overflow-y:auto;
+  background:#fff;border:1px solid #eaf4ee;border-radius:24px;padding:26px 22px 22px;
+  box-shadow:0 26px 64px rgba(20,60,45,.22);text-align:center;scrollbar-width:none;
+  transform:translateY(15px) scale(.97);transition:transform .36s cubic-bezier(.2,.9,.25,1);
+}
+.panel::-webkit-scrollbar{display:none;}
+.veil.show .panel{transform:none;}
+
+.pbadge{
+  display:inline-block;padding:5px 14px;border-radius:999px;background:#eefaf3;color:var(--g1);
+  font-size:11.5px;font-weight:800;letter-spacing:.8px;border:1px solid #cdeadb;
+}
+.panel h1{margin:13px 0 6px;font-size:23px;font-weight:800;letter-spacing:.3px;color:#123a2c;}
+.psub{margin:0;font-size:12.5px;color:var(--mute);font-weight:600;letter-spacing:.3px;}
+
+.pstats{display:flex;gap:9px;margin:18px 0 4px;}
+.pstats div{flex:1;border-radius:15px;padding:11px 6px;background:#f6fbf8;border:1px solid var(--line2);}
+.pstats b{display:block;font-family:var(--f-num);font-size:19px;font-weight:800;color:var(--g1);letter-spacing:-.3px;}
+.pstats span{display:block;margin-top:3px;font-size:10.5px;color:var(--mute);font-weight:700;letter-spacing:.4px;}
+.pstats.g b{color:#123a2c;}
+.pstats.g .k-ok{color:var(--g1);}
+.pstats.g .k-over{color:var(--amber);}
+.pstats.g .k-skip{color:#8b9d95;}
+
+.ptips{list-style:none;margin:16px 0 0;padding:0;text-align:left;}
+.ptips li{position:relative;padding:0 0 0 33px;margin:0 0 10px;font-size:12.8px;line-height:1.75;color:var(--ink2);}
+.ptips li i{
+  position:absolute;left:0;top:2px;width:21px;height:21px;border-radius:50%;
+  background:linear-gradient(135deg,#46c294,#2e9e6b);color:#fff;
+  font-size:11px;font-weight:800;font-style:normal;line-height:21px;text-align:center;
+  font-family:var(--f-num);
+}
+.ptips li b{color:var(--g1);font-weight:800;}
+
+.gostart{
+  width:100%;height:54px;margin-top:20px;border:0;border-radius:16px;cursor:pointer;
+  background:linear-gradient(135deg,#46c294,#2e9e6b);color:#fff;
+  font-size:16.5px;font-weight:800;letter-spacing:2px;
+  box-shadow:0 12px 26px rgba(46,158,107,.32);
+  transition:transform .14s,box-shadow .22s,filter .2s;
+}
+.gostart:hover{filter:brightness(1.05);box-shadow:0 15px 32px rgba(46,158,107,.38);}
+.gostart:active{transform:scale(.975);}
+
+.pnav{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+.pnav a,.pnav button{
+  flex:1 1 44%;display:flex;align-items:center;justify-content:center;height:42px;border-radius:13px;
+  text-decoration:none;font-size:12.5px;font-weight:700;color:var(--g1);cursor:pointer;
+  background:#f6fbf8;border:1.5px solid #d7ebe0;transition:.18s;
+}
+.pnav a:hover,.pnav button:hover{background:#eefaf3;border-color:#a7dcc3;}
+.pfoot{margin-top:16px;font-size:11.5px;color:var(--mute);letter-spacing:.4px;}
+
+/* 结束页成绩环 */
+.score{position:relative;width:136px;height:136px;margin:16px auto 6px;}
+.score svg{width:136px;height:136px;display:block;transform:rotate(-90deg);}
+.score circle{fill:none;stroke-width:11;stroke-linecap:round;}
+.s-bg{stroke:#eaf4ee;}
+.s-fg{stroke:url(#sgrad);transition:stroke-dashoffset 1.1s cubic-bezier(.2,.9,.25,1);}
+.score-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.score-in b{font-family:var(--f-num);font-size:34px;font-weight:800;line-height:1;color:#123a2c;letter-spacing:-1px;}
+.score-in span{font-family:var(--f-num);font-size:14px;font-weight:800;color:var(--mute);margin-top:2px;}
+.score-in em{font-style:normal;font-size:10.5px;font-weight:700;color:var(--mute);letter-spacing:2px;margin-top:5px;}
+.dtotal{margin:10px 0 0;font-size:12.5px;color:var(--ink2);font-weight:600;letter-spacing:.4px;}
+.dtotal b{font-family:var(--f-num);font-size:15px;color:var(--g1);font-weight:800;}
+
+/* 页脚署名气泡（全站标准写法，纯 CSS 无 JS） */
+.coach-tip{position:relative;display:inline-block;cursor:pointer;font-weight:700;color:var(--ink2);-webkit-tap-highlight-color:transparent;}
+.coach-tip .tip{
+  visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;
+  transform:translateX(-50%) translateY(4px);
+  background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;
+  font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;
+  box-shadow:0 6px 18px rgba(47,157,240,.35);
+  transition:opacity .2s ease,transform .2s ease,visibility .2s;
+}
+.coach-tip .tip::after{
+  content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:6px solid transparent;border-top-color:#2f9df0;
+}
+.coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{
+  visibility:visible;opacity:1;transform:translateX(-50%) translateY(0);
+}
+
+/* ================= 自适应 ================= */
+@media (min-width:660px){
+  .ask{flex-direction:row;justify-content:center;gap:24px;}
+  .cells{flex:1;justify-content:center;}
+  .play{width:72px;height:72px;}
+  .cell{height:58px;}
+  .cn-slot{height:68px;}
+  .ghost{font-size:158px;bottom:-58px;}
+}
+/* 矮屏（小手机 / 有浏览器工具栏）：压缩面板纵向占用，保证「开始默写」在首屏内 */
+@media (max-height:720px){
+  .veil{padding:14px;}
+  .panel{padding:18px 18px 15px;border-radius:20px;}
+  .panel h1{font-size:20px;margin:9px 0 4px;}
+  .psub{font-size:11.5px;}
+  .pstats{margin:12px 0 2px;}
+  .pstats div{padding:8px 5px;border-radius:13px;}
+  .pstats b{font-size:16px;}
+  .ptips{margin-top:11px;}
+  .ptips li{font-size:12px;line-height:1.62;margin-bottom:7px;padding-left:29px;}
+  .ptips li i{width:19px;height:19px;line-height:19px;font-size:10px;}
+  .gostart{height:48px;margin-top:13px;font-size:15px;border-radius:14px;}
+  .pnav{margin-top:12px;}
+  .pnav a,.pnav button{height:38px;font-size:12px;}
+  .pfoot{margin-top:11px;}
+  .score{width:112px;height:112px;margin:11px auto 4px;}
+  .score svg{width:112px;height:112px;}
+  .score-in b{font-size:28px;}
+}
+@media (max-width:420px){
+  .unit span{display:none;}
+  .cell{height:50px;padding:0 7px;}
+  .t-num{font-size:12.5px;}
+  .ghost{font-size:104px;}
+  .play{width:60px;height:60px;}
+  .play svg{width:24px;height:24px;}
+  .cn-slot{height:58px;}
+  .cn-box{font-size:13.5px;}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+}
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="card">
+
+    <!-- 状态横幅 -->
+    <div class="banner" id="banner" role="status" aria-live="polite"></div>
+
+    <!-- 顶部 HUD -->
+    <div class="hud">
+      <button class="icon-btn" id="menuBtn" type="button" aria-label="使用说明与导航">☰</button>
+      <div class="unit">
+        <b>四下 · Unit 6</b>
+        <span>句 子 默 写</span>
+      </div>
+      <div class="hud-right">
+        <div class="timer" id="timerBox">
+          <svg viewBox="0 0 36 36" aria-hidden="true">
+            <circle class="tr-bg" cx="18" cy="18" r="15.5"></circle>
+            <circle class="tr-fg" id="ringFg" cx="18" cy="18" r="15.5"></circle>
+          </svg>
+          <span class="t-num" id="timeTxt">05:00</span>
+        </div>
+        <div class="cnt"><b id="curNo">1</b><s>/</s><span id="totNo">17</span></div>
+      </div>
+    </div>
+
+    <!-- 主体：一屏一句 -->
+    <div class="main" id="main">
+      <div class="col">
+
+        <div class="ask">
+          <div class="ghost" id="ghost">01</div>
+          <div class="rail">
+            <button class="play" id="playBtn" type="button" aria-label="播放本句">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 9.4h3.1L11.8 5.4v13.2L7.1 14.6H4z" fill="currentColor"></path>
+                <path d="M15.4 9.2a4.1 4.1 0 0 1 0 5.6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path>
+                <path d="M18.1 6.5a7.7 7.7 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path>
+              </svg>
+              <span class="rep" id="repBadge">×2</span>
+            </button>
+            <div class="play-note" id="playNote"></div>
+          </div>
+          <div class="cells" id="cells"></div>
+        </div>
+
+        <!-- 中文提示：句子后面，开启 / 关闭 -->
+        <div class="cn-wrap">
+          <button class="cn-toggle" id="cnBtn" type="button" aria-pressed="false">
+            <span>🀄 中文提示</span><span class="st" id="cnState">关 闭</span>
+          </button>
+          <div class="cn-slot">
+            <div class="cn-hint" id="cnHint">中文提示已关闭 · 点上方按钮可显示本句翻译</div>
+            <div class="cn-box" id="cnBox"><span id="cnText"></span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 底部控制 -->
+    <div class="foot">
+      <div class="foot-row">
+        <button class="fbtn" id="repBtn" type="button">🔁 朗读 <kbd id="repTxt">×2</kbd></button>
+        <button class="fbtn" id="skipBtn" type="button">⏭ 跳过本句</button>
+      </div>
+      <div class="strip" id="strip"></div>
+    </div>
+
+    <!-- 开场 / 说明 -->
+    <div class="veil show" id="introVeil">
+      <div class="panel">
+        <div class="pbadge">🌿 人教 PEP · 四年级下册</div>
+        <h1>Unit 6 · 句子默写</h1>
+        <p class="psub">On the farm　·　17 句 · 每句限时 5 分钟</p>
+
+        <div class="pstats">
+          <div><b>17</b><span>句子</span></div>
+          <div><b>2</b><span>默认朗读遍数</span></div>
+          <div><b>5′</b><span>单句限时</span></div>
+        </div>
+
+        <ul class="ptips">
+          <li><i>1</i>进入新句子会自动朗读 <b>2 遍</b>，点句子前的播放键可随时重听。</li>
+          <li><i>2</i>听到几个单词就填几格，<b>一格一个单词</b>；填对立刻变绿并自动跳到下一格。</li>
+          <li><i>3</i>整句填对 → <b>自动进入下一句</b>；超过 5 分钟显示已超时并自动跳转。</li>
+          <li><i>4</i>想不起来时，点句子下方的 <b>「中文提示」</b> 可显示本句翻译。</li>
+        </ul>
+
+        <button class="gostart" id="startBtn" type="button">开 始 默 写</button>
+
+        <nav class="pnav">
+          <a href="index.html">🏠 返回导航</a>
+          <a href="4b-unit6.html">📖 句子跟读</a>
+          <a href="4b-unit6-spelling.html">✏️ 生词拼写</a>
+          <a href="4b-unit6-oral.html">🎤 口语练习</a>
+        </nav>
+        <div class="pfoot">© 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span></div>
+      </div>
+    </div>
+
+    <!-- 完成 -->
+    <div class="veil" id="doneVeil">
+      <div class="panel">
+        <div class="pbadge">🎉 全部完成</div>
+        <h1 id="doneTitle">17 / 17 句完全正确</h1>
+
+        <div class="score">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs>
+              <linearGradient id="sgrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#46c294"></stop>
+                <stop offset="1" stop-color="#2e9e6b"></stop>
+              </linearGradient>
+            </defs>
+            <circle class="s-bg" cx="60" cy="60" r="52"></circle>
+            <circle class="s-fg" id="scoreFg" cx="60" cy="60" r="52"></circle>
+          </svg>
+          <div class="score-in"><b id="scorePct">0</b><span>%</span><em>正 确 率</em></div>
+        </div>
+
+        <div class="pstats g">
+          <div><b class="k-ok" id="dOk">0</b><span>完全正确</span></div>
+          <div><b class="k-over" id="dOver">0</b><span>超时</span></div>
+          <div><b class="k-skip" id="dSkip">0</b><span>跳过</span></div>
+        </div>
+        <p class="dtotal">总用时 <b id="dTotal">00:00</b></p>
+
+        <div class="pnav">
+          <button type="button" id="againBtn">🔁 再来一遍</button>
+          <a href="index.html">🏠 返回导航</a>
+        </div>
+        <div class="pfoot">© 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ===================================================================
+   * ★ 数据区 —— 句子取自 4b-unit6.html 的 data-spoken（朗读文本）★
+   *   要求：听到什么就能写出什么，故音频与答案必须完全一致。
+   *   若源页面可见正文与 data-spoken 不一致，一律以「朗读文本」为准，
+   *   否则学生照听到的内容写会永远判错。
+   * =================================================================== */
+  var DATA = [
+    { en:"Let's feed the chickens.",                           cn:'让我们喂鸡吧。' },
+    { en:'OK. Can you please pass me the vegetables?',         cn:'好的。你能把蔬菜递给我吗？' },
+    { en:'They pick tomatoes.',                                cn:'他们摘西红柿。' },
+    { en:'They milk cows.',                                    cn:'他们给奶牛挤奶。' },
+    { en:'Mike, Amy, would you like a knife and fork?',        cn:'迈克、埃米，你们想要刀叉吗？' },
+    { en:'I can use chopsticks.',                              cn:'我会用筷子。' },
+    { en:"Don't waste food, please.",                          cn:'请不要浪费食物。' },
+    { en:'The food is delicious!',                             cn:'这食物很美味！' },
+    { en:"Let's set the table.",                               cn:'让我们摆放餐具吧。' },
+    { en:"Let's clear the table.",                             cn:'让我们收拾餐桌吧。' },
+    { en:'Can you please pass me the bowl?',                   cn:'你能把碗递给我吗？' },
+    { en:'spoon',                                              cn:'勺；匙；调羹' },
+    { en:'Where do you get your tomatoes? In a supermarket?',  cn:'你从哪里得到西红柿？在超市里吗？' },
+    { en:'Chen Jie waters the tomato plants every week.',      cn:'陈洁每周给西红柿浇水。' },
+    { en:'Then, she makes a salad and eats it with her family.', cn:'然后，她做一份蔬菜沙拉，和家人一起吃。' },
+    { en:'Make a Family Farm Day ad.',                         cn:'为“家庭农场日”做一则广告。' },
+    { en:'by oneself',                                         cn:'（某人）独立地；单独' },
+  ];
+
+  /* ---------------- 常量 ---------------- */
+  var LIMIT          = 5 * 60 * 1000;   /* 单句限时 5 分钟 */
+  var RING_C         = 2 * Math.PI * 15.5;
+  var SCORE_C        = 2 * Math.PI * 52;
+  var SPEAK_GAP      = 520;             /* 两遍之间的停顿 */
+  var GAP_OK         = 950;             /* 判对后停留 */
+  var GAP_OVER       = 1700;            /* 超时后停留 */
+  var GAP_SKIP       = 620;
+  var BAD_DELAY      = 950;             /* 填满后多久给出错误反馈 */
+
+  /* ---------------- 元素 ---------------- */
+  var $ = function(id){ return document.getElementById(id); };
+  var cellsEl = $('cells'), stripEl = $('strip'), bannerEl = $('banner');
+  var playBtn = $('playBtn'), playNote = $('playNote'), repBadge = $('repBadge');
+  var repBtn = $('repBtn'), repTxt = $('repTxt'), skipBtn = $('skipBtn');
+  var cnBtn = $('cnBtn'), cnState = $('cnState'), cnBox = $('cnBox'), cnHint = $('cnHint'), cnText = $('cnText');
+  var timeTxt = $('timeTxt'), ringFg = $('ringFg'), timerBox = $('timerBox'), mainEl = $('main');
+  var curNo = $('curNo'), totNo = $('totNo'), ghost = $('ghost');
+  var introVeil = $('introVeil'), doneVeil = $('doneVeil');
+
+  /* ---------------- 状态 ---------------- */
+  var idx = 0;              /* 当前句下标 */
+  var results = [];         /* 'ok' | 'over' | 'skip' */
+  var spent = [];           /* 每句耗时 ms */
+  var tokens = [];          /* 当前句分词结果 */
+  var cells = [];           /* 当前句 .cell 节点 */
+  var inputs = [];          /* 当前句 input 节点 */
+  var repeat = 2;           /* 朗读遍数（默认 2） */
+  var cnOn = false;
+  var started = false;
+  var phase = 'idle';       /* idle | run | lock | done */
+  var sToken = 0;           /* 语音链令牌 */
+  var flowToken = 0;        /* 流程令牌 */
+  var badTimer = null;
+  /* 计时器：tBase 为已累计，tRun 为本段起点，running 标记运行中 */
+  var tBase = 0, tRun = 0, running = false, tickId = null;
+
+  /* ===================================================================
+   * 工具
+   * =================================================================== */
+  /* 归一化：忽略大小写、忽略标点、统一撇号 */
+  function norm(s){
+    return String(s == null ? '' : s).toLowerCase()
+      .replace(/[\u2018\u2019\u02bc]/g, "'")
+      .replace(/[^a-z0-9']/g, '');
+  }
+  /* 分词：把 "Hi!" 拆成 {pre:'', core:'Hi', post:'!'}；"Let's" → core:"Let's" */
+  function tokenize(en){
+    var out = [];
+    en.split(/\s+/).filter(function(t){ return t.length > 0; }).forEach(function(tok){
+      var m = tok.match(/^([^\w']*)([\w']*)([^\w']*)$/);
+      var t = m ? { pre:m[1], core:m[2], post:m[3] } : { pre:'', core:tok, post:'' };
+      /* ⚠️ 纯标点 token（如句末的 "..."）core 为空 → 没有可填的字母。
+         若照样给它一格 input，cellOk 要求「非空且等于空串」恒为假，
+         这一格永远填不对 ⇒ 整句永远无法自动推进，只能跳过或等超时。
+         处置：并进前一格的尾部，当标点后缀显示。 */
+      if (t.core === '' && out.length){
+        out[out.length - 1].post += ' ' + t.pre + t.post;
+        return;
+      }
+      out.push(t);
+    });
+    return out;
+  }
+  function pad2(n){ return n < 10 ? '0' + n : String(n); }
+  function mmss(ms){
+    var s = Math.round(ms / 1000), m = Math.floor(s / 60);
+    s = s % 60;
+    return pad2(m) + ':' + pad2(s);
+  }
+  function pickVoice(){
+    var synth = window.speechSynthesis;
+    if (!synth) return null;
+    var vs = synth.getVoices() || [];
+    var en = vs.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('en') === 0; });
+    if (!en.length) return null;
+    var fav = en.filter(function(v){
+      var n = v.name.toLowerCase();
+      return /female|samantha|zira|google us|karen|tessa|victoria|allison|aria/i.test(n)
+        && (v.lang.toLowerCase().indexOf('en-us') === 0 || v.default);
+    });
+    if (fav.length) return fav[0];
+    var us = en.filter(function(v){ return v.lang.toLowerCase() === 'en-us'; });
+    if (us.length) return us[0];
+    return en[0];
+  }
+
+  /* ===================================================================
+   * 计时
+   * =================================================================== */
+  function tNow(){ return tBase + (running ? (Date.now() - tRun) : 0); }
+  function startTimer(){
+    tBase = 0; tRun = Date.now(); running = true;
+    if (tickId) clearInterval(tickId);
+    tickId = setInterval(tick, 200);
+    tick();
+  }
+  function pauseTimer(){
+    if (running){ tBase += Date.now() - tRun; running = false; }
+    if (tickId){ clearInterval(tickId); tickId = null; }
+  }
+  function resumeTimer(){
+    if (running || phase !== 'run') return;
+    tRun = Date.now(); running = true;
+    if (tickId) clearInterval(tickId);
+    tickId = setInterval(tick, 200);
+  }
+  function tick(){
+    var used = Math.min(LIMIT, tNow());
+    var left = LIMIT - used;
+    ringFg.style.strokeDasharray = String(RING_C);
+    ringFg.style.strokeDashoffset = String(RING_C * (used / LIMIT));
+    timeTxt.textContent = mmss(left);
+    timerBox.classList.toggle('warn', left <= 90000 && left > 30000);
+    timerBox.classList.toggle('over', left <= 30000);
+    if (left <= 0 && phase === 'run') onTimeout();
+  }
+
+  /* ===================================================================
+   * 语音
+   * =================================================================== */
+  function setSpeakUI(on, note){
+    playBtn.classList.toggle('on', !!on);
+    playNote.textContent = note || '';
+  }
+  /* 朗读当前句 repeat 遍；全部读完后执行 after */
+  function say(after){
+    var synth = window.speechSynthesis;
+    if (!synth){ setSpeakUI(false, '本浏览器不支持语音合成'); if (after) after(); return; }
+    sToken++;
+    var my = sToken, left = repeat, v = pickVoice();
+    synth.cancel();
+    function step(){
+      if (my !== sToken) return;
+      if (left <= 0){ setSpeakUI(false, ''); if (after) after(); return; }
+      left--;
+      setSpeakUI(true, '正在朗读 ' + (repeat - left) + ' / ' + repeat);
+      var u = new SpeechSynthesisUtterance(DATA[idx].en);
+      u.lang = 'en-US';
+      if (v) u.voice = v;
+      u.rate = 0.88;
+      u.pitch = 1.04;
+      u.onend = function(){ if (my !== sToken) return; setTimeout(step, SPEAK_GAP); };
+      u.onerror = function(){ if (my !== sToken) return; setSpeakUI(false, ''); };
+      synth.speak(u);
+    }
+    setTimeout(step, 40);
+  }
+  function stopSay(){
+    sToken++;
+    try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch(e){}
+    setSpeakUI(false, '');
+  }
+
+  /* ===================================================================
+   * 渲染
+   * =================================================================== */
+  function buildSentence(){
+    var item = DATA[idx];
+    tokens = tokenize(item.en);
+    cnText.textContent = item.cn;
+    ghost.textContent = pad2(idx + 1);
+    cellsEl.innerHTML = '';
+    cells = []; inputs = [];
+
+    tokens.forEach(function(t, k){
+      /* 词格 —— 一格一词，格宽随单词长度自适应 */
+      var cell = document.createElement('label');
+      cell.className = 'cell in';
+      cell.style.setProperty('--n', String(Math.min(9, Math.max(3, t.core.length))));
+      cell.style.animationDelay = (k * 38) + 'ms';
+
+      if (t.pre){
+        var a = document.createElement('span');
+        a.className = 'pn'; a.textContent = t.pre;
+        cell.appendChild(a);
+      }
+      var inp = document.createElement('input');
+      inp.type = 'text';
+      inp.className = 'bx';
+      inp.autocomplete = 'off';
+      inp.autocapitalize = 'none';
+      inp.autocorrect = 'off';
+      inp.spellcheck = false;
+      inp.setAttribute('aria-label', '第 ' + (k + 1) + ' 个单词');
+      cell.appendChild(inp);
+      if (t.post){
+        var b = document.createElement('span');
+        b.className = 'pn'; b.textContent = t.post;
+        cell.appendChild(b);
+      }
+      cellsEl.appendChild(cell);
+      cells.push(cell); inputs.push(inp);
+
+      inp.addEventListener('input', onInput);
+      inp.addEventListener('keydown', onKey);
+      inp.addEventListener('focus', function(){ cell.classList.add('focus'); });
+      inp.addEventListener('blur', function(){ cell.classList.remove('focus'); });
+    });
+
+    curNo.textContent = String(idx + 1);
+    renderStrip();
+  }
+
+  function renderStrip(){
+    stripEl.innerHTML = '';
+    for (var k = 0; k < DATA.length; k++){
+      var i = document.createElement('i');
+      if (results[k]) i.className = results[k];
+      if (k === idx && phase === 'run') i.className += ' cur';
+      stripEl.appendChild(i);
+    }
+  }
+
+  /* 中文提示开关 */
+  function setCN(on){
+    cnOn = !!on;
+    cnBtn.classList.toggle('on', cnOn);
+    cnBtn.setAttribute('aria-pressed', cnOn ? 'true' : 'false');
+    cnState.textContent = cnOn ? '开 启' : '关 闭';
+    cnBox.classList.toggle('show', cnOn);
+    cnHint.classList.toggle('hide', cnOn);
+  }
+
+  /* 横幅 */
+  var bannerTimer = null;
+  function showBanner(kind, text){
+    bannerEl.className = 'banner ' + kind;
+    bannerEl.textContent = text;
+    void bannerEl.offsetWidth;
+    bannerEl.classList.add('show');
+    if (bannerTimer) clearTimeout(bannerTimer);
+    bannerTimer = setTimeout(function(){ bannerEl.classList.remove('show'); }, 1500);
+  }
+
+  /* ===================================================================
+   * 判定
+   * =================================================================== */
+  function focusCell(k){
+    var inp = inputs[k];
+    if (!inp) return;
+    try { inp.focus({ preventScroll: true }); } catch(e){ try { inp.focus(); } catch(e2){} }
+    try { inp.setSelectionRange(inp.value.length, inp.value.length); } catch(e){}
+    var at = flowToken;
+    setTimeout(function(){
+      if (at !== flowToken) return;
+      try {
+        if (cells[k] && cells[k].scrollIntoView) cells[k].scrollIntoView({ block: 'center', behavior: 'smooth' });
+      } catch(err){}
+    }, 70);
+  }
+  function cellOk(k){
+    /* 纯标点格（core 为空）没有字母可填 —— 直接视为满足，杜绝整句死锁 */
+    if (tokens[k].core === '') return true;
+    var v = norm(inputs[k].value);
+    return v !== '' && v === norm(tokens[k].core);
+  }
+  function allCorrect(){
+    for (var k = 0; k < inputs.length; k++){ if (!cellOk(k)) return false; }
+    return inputs.length > 0;
+  }
+  function allFilled(){
+    for (var k = 0; k < inputs.length; k++){
+      if (tokens[k].core === '') continue;
+      if (norm(inputs[k].value) === '') return false;
+    }
+    return true;
+  }
+
+  function onInput(e){
+    var k = inputs.indexOf(e.target);
+    if (k < 0) return;
+    var ok = cellOk(k);
+    cells[k].classList.toggle('ok', ok);
+    cells[k].classList.remove('bad');
+    /* 填对 → 自动跳到下一格 */
+    if (ok && k < inputs.length - 1 && !inputs[k + 1].value){
+      focusCell(k + 1);
+    }
+    /* 全部填满但仍不对 → 延时给出提示 */
+    if (badTimer) clearTimeout(badTimer);
+    badTimer = setTimeout(function(){
+      badTimer = null;
+      if (phase !== 'run' || !allFilled() || allCorrect()) return;
+      var wrong = [];
+      for (var j = 0; j < inputs.length; j++){ if (!cellOk(j)) wrong.push(j); }
+      wrong.forEach(function(j){
+        cells[j].classList.remove('bad');
+        void cells[j].offsetWidth;
+        cells[j].classList.add('bad');
+      });
+      setTimeout(function(){
+        cells.forEach(function(c){ c.classList.remove('bad'); });
+      }, 720);
+    }, BAD_DELAY);
+
+    if (allCorrect()) onCorrect();
+  }
+
+  function onKey(e){
+    var k = inputs.indexOf(e.target);
+    if (k < 0) return;
+    if (e.key === ' ' || e.key === 'Enter'){
+      e.preventDefault();
+      if (k < inputs.length - 1) focusCell(k + 1);
+      return;
+    }
+    if (e.key === 'Backspace' && e.target.value === '' && k > 0){ e.preventDefault(); focusCell(k - 1); return; }
+    if (e.key === 'ArrowLeft' && e.target.selectionStart === 0 && k > 0){ e.preventDefault(); focusCell(k - 1); return; }
+    if (e.key === 'ArrowRight' && e.target.selectionStart === e.target.value.length && k < inputs.length - 1){
+      e.preventDefault(); focusCell(k + 1);
+    }
+  }
+
+  /* ===================================================================
+   * 流程
+   * =================================================================== */
+  function goto(i){
+    if (i >= DATA.length){ finish(); return; }
+    flowToken++;
+    stopSay();
+    pauseTimer();
+    idx = i;
+    phase = 'run';
+    if (badTimer){ clearTimeout(badTimer); badTimer = null; }
+    buildSentence();
+    setCN(false);
+    startTimer();
+    var at = flowToken;
+    /* 先听两遍，听完再落光标 —— 避免手机上键盘抢先挡屏 */
+    say(function(){
+      if (at !== flowToken) return;
+      focusCell(0);
+    });
+  }
+
+  function onCorrect(){
+    if (phase !== 'run') return;
+    phase = 'lock';
+    pauseTimer();
+    stopSay();
+    var at = idx;
+    spent[at] = tNow();
+    results[at] = 'ok';
+    cells.forEach(function(c){ c.classList.add('ok'); });
+    renderStrip();
+    showBanner('ok', '✓ 完全正确 · 自动进入下一句');
+    setTimeout(function(){
+      if (phase !== 'lock' || idx !== at) return;
+      goto(at + 1);
+    }, GAP_OK);
+  }
+
+  function onTimeout(){
+    if (phase !== 'run') return;
+    phase = 'lock';
+    pauseTimer();
+    stopSay();
+    var at = idx;
+    spent[at] = LIMIT;
+    results[at] = 'over';
+    renderStrip();
+    showBanner('over', '⏱ 已超时 · 自动进入下一句');
+    cells.forEach(function(c){ if (!c.classList.contains('ok')) c.classList.add('bad'); });
+    setTimeout(function(){
+      if (phase !== 'lock' || idx !== at) return;
+      goto(at + 1);
+    }, GAP_OVER);
+  }
+
+  function doSkip(){
+    if (phase !== 'run') return;
+    phase = 'lock';
+    pauseTimer();
+    stopSay();
+    var at = idx;
+    spent[at] = tNow();
+    results[at] = 'skip';
+    renderStrip();
+    showBanner('skip', '⏭ 已跳过本句');
+    setTimeout(function(){
+      if (phase !== 'lock' || idx !== at) return;
+      goto(at + 1);
+    }, GAP_SKIP);
+  }
+
+  function finish(){
+    phase = 'done';
+    pauseTimer();
+    stopSay();
+    var ok = 0, over = 0, skip = 0, total = 0;
+    for (var k = 0; k < DATA.length; k++){
+      var r = results[k] || 'skip';
+      if (r === 'ok') ok++; else if (r === 'over') over++; else skip++;
+      total += spent[k] || 0;
+    }
+    $('dOk').textContent = String(ok);
+    $('dOver').textContent = String(over);
+    $('dSkip').textContent = String(skip);
+    $('dTotal').textContent = mmss(total);
+    $('doneTitle').textContent = ok + ' / ' + DATA.length + ' 句完全正确';
+    var pct = Math.round(ok / DATA.length * 100);
+    $('scorePct').textContent = String(pct);
+    $('scoreFg').style.strokeDasharray = String(SCORE_C);
+    $('scoreFg').style.strokeDashoffset = String(SCORE_C);
+    doneVeil.classList.add('show');
+    setTimeout(function(){
+      $('scoreFg').style.strokeDashoffset = String(SCORE_C * (1 - pct / 100));
+    }, 260);
+    renderStrip();
+  }
+
+  /* ===================================================================
+   * 遮罩
+   * =================================================================== */
+  function openIntro(){
+    if (phase === 'run'){ pauseTimer(); stopSay(); }
+    introVeil.classList.add('show');
+  }
+  function closeIntro(){
+    introVeil.classList.remove('show');
+    if (started) resumeTimer();
+  }
+
+  /* ===================================================================
+   * 事件绑定
+   * =================================================================== */
+  playBtn.addEventListener('click', function(){
+    if (phase !== 'run' && phase !== 'lock') return;
+    say(null);
+  });
+
+  repBtn.addEventListener('click', function(){
+    repeat = repeat >= 3 ? 1 : repeat + 1;
+    repBadge.textContent = '×' + repeat;
+    repTxt.textContent = '×' + repeat;
+    repBtn.classList.toggle('on', repeat !== 2);
+    if (phase === 'run') say(null);
+  });
+
+  skipBtn.addEventListener('click', doSkip);
+
+  cnBtn.addEventListener('click', function(){ setCN(!cnOn); });
+
+  $('menuBtn').addEventListener('click', openIntro);
+
+  $('startBtn').addEventListener('click', function(){
+    if (!started){
+      started = true;
+      introVeil.classList.remove('show');
+      goto(0);
+    } else {
+      closeIntro();
+    }
+  });
+
+  $('againBtn').addEventListener('click', function(){
+    results = []; spent = [];
+    doneVeil.classList.remove('show');
+    phase = 'run';
+    goto(0);
+  });
+
+  /* 键盘：空格 / 回车 交给输入框，避免页面滚动 */
+  document.addEventListener('keydown', function(e){
+    var t = e.target;
+    if (e.key === ' ' && (!t || t.tagName !== 'INPUT')) e.preventDefault();
+  });
+
+  /* 离开页面时静音 */
+  window.addEventListener('pagehide', stopSay);
+  document.addEventListener('visibilitychange', function(){
+    if (document.hidden) stopSay();
+  });
+
+  /* ===================================================================
+   * 初始化
+   * =================================================================== */
+  totNo.textContent = String(DATA.length);
+  repBadge.textContent = '×' + repeat;
+  repTxt.textContent = '×' + repeat;
+  ringFg.style.strokeDasharray = String(RING_C);
+  ringFg.style.strokeDashoffset = '0';
+  timeTxt.textContent = mmss(LIMIT);
+  buildSentence();          /* 先铺好第一句，遮罩后面可见 */
+  phase = 'idle';
+  renderStrip();
+  if (!window.speechSynthesis) playNote.textContent = '本浏览器不支持语音合成';
+})();
+</script>
+</body>
+</html>
