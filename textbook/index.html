@@ -31,7 +31,7 @@
   }
   .container{
     width:100%;
-    max-width:520px;
+    max-width:760px;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -72,6 +72,34 @@
     opacity:.92;
   }
   .title-card .sub b{font-weight:600;margin:0 2px;}
+
+  /* ============ 头部入口按钮（教材点读，置于标题卡内居中） ============ */
+  .nav-btn{
+    position:relative;
+    z-index:1;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    margin-top:16px;
+    padding:10px 26px;
+    border-radius:999px;
+    background:#fff;
+    color:var(--green-deep);
+    font-size:13.5px;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-decoration:none;
+    box-shadow:0 6px 16px rgba(20,60,90,.20);
+    transition:transform .15s,box-shadow .25s;
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .nav-btn:active{transform:scale(.95);}
+  @media (hover:hover){
+    .nav-btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(47,157,240,.4);}
+  }
 
   /* 数据来源说明 */
   .source{
@@ -331,10 +359,11 @@
 
 <div class="container" data-page-node-id="CEU8oyKDdwkxIXT1qKnEkT">
 
-  <!-- 顶部标题 -->
+  <!-- 顶部标题（头部渐变卡，内置【教材点读】入口，居中） -->
   <header class="title-card" data-page-node-id="XqYAg2kBOduKPDSY8qiNW4">
     <h1 data-page-node-id="x5Y1Kat2Fml0iH5Rwe5ziQ">📚 英语同步学 | 听 · 读 · 说 · 写</h1>
     <div class="sub" data-page-node-id="QU0YPC37vUj8uooTwzPIAe">人教版PEP英语3-6 年级 · <b data-page-node-id="PO9Cnp05GrF1i388Mk9eFs">单元导航</b></div>
+    <a class="nav-btn" href="../tools/aidiandu.html"><span aria-hidden="true">📖</span>教材点读</a>
   </header>
 
   <!-- 数据来源（IMA 知识库 · 2026 新教材） -->
