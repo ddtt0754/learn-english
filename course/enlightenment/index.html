@@ -107,6 +107,25 @@ footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spa
 .back-btn:active{transform:scale(.97)}
 .back-wrap{text-align:center;margin:22px 0 4px}
 
+/* ---------- VIP 知识库悬浮按钮（右下角 · 参照 learn/resources.html 的 .vip-fab） ---------- */
+.vip-fab{
+  position:fixed;right:14px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:40;
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:11px 18px;border-radius:999px;white-space:nowrap;
+  background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);color:#fff;text-decoration:none;
+  font-size:13px;font-weight:700;letter-spacing:.5px;
+  box-shadow:0 6px 18px rgba(47,157,240,.32);
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .18s,box-shadow .18s;
+  animation:vipPulse 2.6s ease-in-out infinite;
+}
+.vip-fab:active{transform:scale(.94);box-shadow:0 3px 10px rgba(47,157,240,.34)}
+@keyframes vipPulse{
+  0%,100%{box-shadow:0 6px 18px rgba(47,157,240,.32)}
+  50%    {box-shadow:0 6px 24px rgba(53,210,154,.58)}
+}
+@media (prefers-reduced-motion:reduce){.vip-fab{animation:none}}
+
 @media (max-width:400px){
   .cover,.cover img{width:56px;height:56px}
   .ct{font-size:15px}
@@ -338,5 +357,7 @@ footer{text-align:center;font-size:12px;color:#a8bcb4;margin-top:28px;letter-spa
   </footer>
 
 </div>
+
+<a class="vip-fab" href="../../../learn/resources.html" aria-label="进入VIP知识库">进入VIP知识库</a>
 </body>
 </html>

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#2ebd85">
+<meta name="description" content="豆豆智学 · 单词练习中心 —— 自定义词库（人教PEP 3-9 年级）、打字背单词、集中设置。">
+<title>单词练习 · 智学中心</title>
+<style>
+  :root{
+    --bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;
+    --green:#2e9e6b;--green2:#3bb98a;--green-deep:#1f7d56;
+    --red:#e53935;--blue:#2f9df0;
+    --line:#e9efe9;--soft:#f4f9f6;--soft2:#eafaf1;
+    --mono:"Consolas","Menlo","SFMono-Regular","DejaVu Sans Mono","Courier New",monospace;
+    --shadow:0 3px 14px rgba(30,50,40,.07);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    padding:20px 16px calc(40px + env(safe-area-inset-bottom));
+    min-height:100vh;
+  }
+
+  /* ============ 顶部标题卡（参照 textbook/index.html：760px 居中浮动圆角渐变卡）============ */
+  header.title-card{
+    position:relative;overflow:hidden;
+    width:100%;max-width:760px;margin:0 auto;
+    background:linear-gradient(135deg,#35d29a 0%,#2f9df0 100%);color:#fff;
+    padding:30px 20px 26px;text-align:center;
+    border-radius:22px;
+    box-shadow:0 14px 30px rgba(47,157,240,.25);
+  }
+  header.title-card::before,
+  header.title-card::after{
+    content:"";position:absolute;border-radius:50%;
+    background:rgba(255,255,255,.14);pointer-events:none;
+  }
+  header.title-card::before{width:120px;height:120px;top:-40px;right:-30px;}
+  header.title-card::after{width:70px;height:70px;bottom:-24px;left:-16px;}
+  .tc-inner{position:relative;z-index:1;}
+  header.title-card h1{margin:0;font-size:24px;font-weight:700;letter-spacing:3px;
+    text-shadow:0 2px 6px rgba(0,0,0,.12);}
+  header.title-card .sub{margin-top:10px;font-size:13px;letter-spacing:4px;opacity:.92;}
+  header.title-card .sub b{font-weight:600;}
+  .nav-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    margin-top:16px;padding:9px 18px;
+    background:#fff;color:var(--green-deep);
+    border-radius:999px;font-size:13.5px;font-weight:800;text-decoration:none;
+    box-shadow:0 6px 16px rgba(20,60,90,.20);
+    position:relative;z-index:1;transition:transform .15s ease,box-shadow .2s ease;
+  }
+  .nav-btn:active{transform:scale(.96);}
+
+  .wrap{width:100%;max-width:760px;margin:0 auto;padding:16px 0 8px;}
+
+  /* ============ 统计总览 ============ */
+  .overview{display:flex;gap:9px;margin-bottom:16px;}
+  .ov{
+    flex:1;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:12px 6px;text-align:center;box-shadow:var(--shadow);
+  }
+  .ov .n{font-family:var(--mono);font-size:21px;font-weight:800;color:var(--green);line-height:1.15;}
+  .ov .l{font-size:11.5px;color:var(--muted);margin-top:2px;}
+
+  /* ============ 区块头 ============ */
+  .sec-head{display:flex;align-items:center;gap:9px;margin:0 0 11px;padding-left:2px;}
+  .sec-head .dot{width:7px;height:19px;border-radius:4px;background:linear-gradient(180deg,#2e9e6b,#3bb98a);}
+  .sec-head h2{margin:0;font-size:16px;font-weight:800;letter-spacing:.4px;flex:1;}
+  .sec-head .cnt{font-size:12px;color:var(--muted);font-weight:600;font-family:var(--mono);}
+
+  /* ============ 年级册选择 ============ */
+  .books{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 16px;}
+  @media (max-width:430px){.books{grid-template-columns:repeat(4,1fr);gap:6px;}}
+  .bk{
+    position:relative;border:1.5px solid var(--line);background:#fff;border-radius:12px;
+    padding:9px 4px 8px;text-align:center;cursor:pointer;font-family:inherit;
+    transition:border-color .16s,background .16s,transform .08s,box-shadow .16s;
+  }
+  .bk:active{transform:scale(.96);}
+  .bk .g{font-size:16px;font-weight:800;line-height:1.1;color:var(--ink);}
+  .bk .v{font-size:10.5px;color:var(--muted);margin-top:2px;letter-spacing:.5px;}
+  .bk .wc{font-size:10px;color:#b3c4be;font-family:var(--mono);margin-top:3px;}
+  .bk.on{border-color:var(--green);background:var(--soft2);box-shadow:0 3px 10px rgba(46,158,107,.16);}
+  .bk.on .g{color:var(--green-deep);}
+  .bk.on .v,.bk.on .wc{color:var(--green);}
+  .bk.empty{border-style:dashed;cursor:not-allowed;opacity:.62;}
+  .bk.empty:active{transform:none;}
+  /* 「准备中」占位角标：贴卡片右上内角，避免压到上一行 */
+  .bk .soon{
+    position:absolute;top:4px;right:4px;
+    background:#c9d6d0;color:#fff;font-size:8.5px;font-weight:800;letter-spacing:.3px;
+    border-radius:999px;padding:1px 6px;white-space:nowrap;line-height:1.5;
+  }
+
+  /* ============ 单元勾选 ============ */
+  .units-panel{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:var(--shadow);padding:13px 13px 6px;margin:0 0 16px;
+  }
+  .units-empty{color:var(--muted);font-size:13px;text-align:center;padding:22px 8px;}
+  .units-empty .big{font-size:30px;display:block;margin-bottom:6px;opacity:.55;}
+  .up-bar{display:flex;align-items:center;gap:8px;margin-bottom:11px;flex-wrap:wrap;}
+  .mini{
+    border:1.5px solid var(--green);background:#fff;color:var(--green);
+    border-radius:999px;padding:5px 13px;font-size:12.5px;font-weight:700;
+    cursor:pointer;font-family:inherit;transition:background .15s,color .15s,transform .08s;
+  }
+  .mini:active{transform:scale(.95);}
+  .mini.solid{background:var(--green);color:#fff;}
+  .up-bar .spacer{flex:1;}
+  .up-bar .sel{font-size:12px;color:var(--muted);font-family:var(--mono);font-weight:700;}
+
+  .u-list{display:flex;flex-direction:column;gap:2px;}
+  .u{
+    display:flex;align-items:center;gap:11px;padding:10px 6px;border-radius:11px;
+    cursor:pointer;transition:background .14s;border-bottom:1px solid #f2f6f4;
+  }
+  .u:last-child{border-bottom:none;}
+  .u:hover{background:var(--soft);}
+  .u .box{
+    flex:0 0 auto;width:22px;height:22px;border-radius:7px;border:2px solid #cfdcd6;
+    display:inline-flex;align-items:center;justify-content:center;
+    color:#fff;font-size:13px;font-weight:900;transition:background .14s,border-color .14s;
+  }
+  .u.on .box{background:var(--green);border-color:var(--green);}
+  .u .box::after{content:"✓";opacity:0;transform:scale(.5);transition:opacity .14s,transform .14s;}
+  .u.on .box::after{opacity:1;transform:scale(1);}
+  .u .meta{flex:1;min-width:0;}
+  .u .t1{font-size:13.5px;font-weight:700;}
+  .u .t1 .un{color:var(--green);font-family:var(--mono);margin-right:6px;}
+  .u .t2{font-size:11.5px;color:var(--muted);margin-top:1px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .u .c{flex:0 0 auto;font-size:11.5px;color:var(--muted);font-family:var(--mono);font-weight:700;}
+
+  /* ============ 卡片式设置项 ============ */
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:var(--shadow);padding:4px 14px;margin:0 0 16px;
+  }
+  .row{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:12px 0;border-bottom:1px solid var(--line);
+  }
+  .row:last-child{border-bottom:none;}
+  .row .lab{font-size:14px;font-weight:700;}
+  .row .sub{font-size:11.5px;color:var(--muted);font-weight:400;margin-top:2px;}
+  .seg{display:flex;gap:6px;flex:0 0 auto;}
+  .seg button{
+    min-height:34px;padding:0 12px;border-radius:10px;border:1.5px solid var(--line);
+    background:#fff;color:var(--muted);font-size:12.5px;font-weight:700;
+    cursor:pointer;font-family:inherit;transition:background .15s,color .15s,border-color .15s;
+  }
+  .seg button.on{background:var(--green);border-color:var(--green);color:#fff;}
+  .sw{
+    position:relative;flex:0 0 auto;width:48px;height:28px;border-radius:14px;
+    background:#d8e4de;border:none;cursor:pointer;transition:background .2s;padding:0;
+  }
+  .sw::after{
+    content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.2);transition:transform .2s;
+  }
+  .sw.on{background:var(--green);}
+  .sw.on::after{transform:translateX(20px);}
+
+  /* ============ 开始按钮 ============ */
+  .start-wrap{text-align:center;margin:22px 0 6px;}
+  .start-btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    width:100%;max-width:420px;min-height:56px;
+    background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;
+    border:none;border-radius:16px;font-size:17px;font-weight:800;letter-spacing:.5px;
+    cursor:pointer;font-family:inherit;
+    box-shadow:0 8px 22px rgba(46,158,107,.32);
+    transition:transform .1s ease,box-shadow .2s ease,filter .2s ease;
+  }
+  .start-btn:active{transform:scale(.975);}
+  .start-btn:disabled{
+    background:#d5e2dc;color:#8fa89d;box-shadow:none;cursor:not-allowed;filter:none;
+  }
+  .start-hint{margin-top:10px;font-size:12px;color:var(--muted);min-height:18px;letter-spacing:.3px;}
+
+  /* ============ 底部导航 ============ */
+  .page-footer{
+    width:100%;max-width:760px;margin:18px auto 0;
+    padding:14px 0 18px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#2e9e6b;background:#fff;
+    border:1.5px solid #2e9e6b;box-shadow:0 2px 6px rgba(46,158,107,.10);
+    transition:transform .15s ease;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  .page-footer a.primary{
+    background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;border-color:transparent;
+    box-shadow:0 4px 12px rgba(46,158,107,.18);
+  }
+
+  /* ============ 署名气泡 ============ */
+  .site-foot{
+    width:100%;max-width:760px;margin:0 auto;padding:0 0 6px;text-align:center;
+    font-size:11.5px;color:var(--muted);letter-spacing:.4px;
+  }
+  .coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  .coach-tip .tip{
+    visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;
+    transform:translateX(-50%) translateY(4px);
+    background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;
+    font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;
+    box-shadow:0 6px 18px rgba(47,157,240,.35);
+    transition:opacity .2s ease,transform .2s ease,visibility .2s;
+  }
+  .coach-tip .tip::after{
+    content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
+    border:6px solid transparent;border-top-color:#2f9df0;
+  }
+  .coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{
+    visibility:visible;opacity:1;transform:translateX(-50%) translateY(0);
+  }
+
+  /* ============ 轻提示 ============ */
+  .toast{
+    position:fixed;left:50%;bottom:84px;transform:translateX(-50%) translateY(10px);
+    background:rgba(34,48,58,.94);color:#fff;font-size:13px;font-weight:600;
+    padding:10px 20px;border-radius:999px;z-index:200;pointer-events:none;
+    opacity:0;transition:opacity .22s ease,transform .22s ease;white-space:nowrap;
+    box-shadow:0 8px 24px rgba(0,0,0,.24);
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  @media (max-width:360px){
+    header.title-card h1{font-size:20px;letter-spacing:2px;}
+    .u .t1{font-size:13px;}
+    .start-btn{font-size:16px;min-height:52px;}
+  }
+
+  /* ========== 手机号验证锁屏（哈希清单共用 ../jiesuo.html）========== */
+  .lock-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(15,23,42,.78); backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: center;
+    font-family: -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  .lock-overlay.hidden { display: none; }
+  .lock-card {
+    background: #fff; border-radius: 20px; padding: 32px 28px 24px;
+    width: 340px; max-width: 92vw; text-align: center;
+    box-shadow: 0 24px 60px rgba(0,0,0,.25); animation: lockIn .35s ease;
+  }
+  @keyframes lockIn { from { opacity:0; transform: translateY(20px) scale(.96); } to { opacity:1; transform: translateY(0) scale(1); } }
+  .lock-card .lock-icon { font-size: 48px; margin-bottom: 6px; }
+  .lock-card h2 { font-size: 18px; font-weight: 800; color: #1e293b; margin-bottom: 6px; }
+  .lock-card .lock-desc { font-size: 12px; color: #94a3b8; margin-bottom: 18px; line-height: 1.6; }
+  .lock-input-row { display: flex; gap: 8px; }
+  .lock-input-row input {
+    flex: 1; padding: 12px 14px; border: 2px solid #e2e8f0; border-radius: 12px;
+    font-size: 16px; outline: none; text-align: center; letter-spacing: 2px;
+    font-family: inherit; transition: border-color .2s;
+  }
+  .lock-input-row input:focus { border-color: #3b82f6; }
+  .lock-input-row input.error { border-color: #ef4444; background: #fef2f2; animation: lockShake .4s; }
+  @keyframes lockShake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+  .lock-input-row button {
+    padding: 12px 22px; background: linear-gradient(135deg,#35d29a,#2f9df0);
+    color: #fff; border: none; border-radius: 12px; font-size: 15px; font-weight: 700;
+    cursor: pointer; white-space: nowrap; transition: transform .15s;
+  }
+  .lock-input-row button:hover { transform: scale(1.03); }
+  .lock-input-row button:active { transform: scale(.97); }
+  .lock-input-row button:disabled { opacity: .5; cursor: not-allowed; }
+  .lock-loading { display: none; margin-top: 10px; font-size: 12px; color: #64748b; }
+  .lock-loading.show { display: block; }
+  .lock-error { display: none; margin-top: 10px; padding: 8px 12px; background: #fef2f2;
+    color: #dc2626; border-radius: 8px; font-size: 12px; font-weight: 600; }
+  .lock-error.show { display: block; }
+  .lock-hint { margin-top: 12px; font-size: 11px; color: #94a3b8; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<!-- 手机号验证锁屏 -->
+<div class="lock-overlay" id="lockOverlay">
+  <div class="lock-card">
+    <div class="lock-icon">🔐</div>
+    <h2>请输入手机号验证</h2>
+    <div class="lock-desc">首次访问需验证手机号<br>验证通过后可 7 天内免登录</div>
+    <div class="lock-input-row">
+      <input type="tel" id="phoneInput" placeholder="输入 11 位手机号" maxlength="11" inputmode="numeric" autofocus>
+      <button id="verifyBtn" onclick="verifyPhone()">验证</button>
+    </div>
+    <div class="lock-loading" id="lockLoading">⏳ 正在验证…</div>
+    <div class="lock-error" id="lockError"></div>
+    <div class="lock-hint">仅限已登记手机号访问<br>如有疑问请联系两英豆豆教练</div>
+  </div>
+</div>
+
+<header class="title-card">
+  <div class="tc-inner">
+    <h1>⌨️ 单词训练</h1>
+    <div class="sub">人教PEP英语 <b>3–9 年级</b> · 自定义词库 · 打字背单词</div>
+    <a class="nav-btn" href="https://www.daziya.com/" target="_blank" rel="noopener">⌨️ 键盘练习</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- 总览 -->
+  <div class="overview">
+    <div class="ov"><div class="n" id="ovBooks">0</div><div class="l">可选册数</div></div>
+    <div class="ov"><div class="n" id="ovUnits">0</div><div class="l">已选单元</div></div>
+    <div class="ov"><div class="n" id="ovWords">0</div><div class="l">已选词数</div></div>
+  </div>
+
+  <!-- 一、选册 -->
+  <div class="sec-head">
+    <span class="dot"></span><h2>① 选择年级册</h2>
+    <span class="cnt" id="bookTip">可多选</span>
+  </div>
+  <div class="books" id="bookGrid"></div>
+
+  <!-- 二、选单元 -->
+  <div class="sec-head">
+    <span class="dot"></span><h2>② 勾选单元</h2>
+    <span class="cnt" id="unitTip">—</span>
+  </div>
+  <div class="units-panel" id="unitsPanel">
+    <div class="units-empty"><span class="big">👆</span>先在上面选择年级册</div>
+  </div>
+
+  <!-- 三、设置 -->
+  <div class="sec-head">
+    <span class="dot"></span><h2>③ 练习设置</h2>
+    <span class="cnt">自动保存</span>
+  </div>
+  <div class="card">
+    <div class="row">
+      <div><div class="lab">显示单词</div><div class="sub">生词区第一行 · 只显示单词本身</div></div>
+      <button class="sw on" id="swWord" type="button" aria-label="显示单词开关"></button>
+    </div>
+    <div class="row">
+      <div><div class="lab">显示释义</div><div class="sub">生词区第二行 · 词性 + 中文释义</div></div>
+      <button class="sw" id="swCn" type="button" aria-label="显示释义开关"></button>
+    </div>
+    <div class="row">
+      <div><div class="lab">显示音标</div><div class="sub">音标行与朗读键</div></div>
+      <button class="sw" id="swPh" type="button" aria-label="显示音标开关"></button>
+    </div>
+    <div class="row">
+      <div><div class="lab">自动朗读</div><div class="sub">进入新词后自动播报</div></div>
+      <button class="sw on" id="swAuto" type="button" aria-label="自动朗读开关"></button>
+    </div>
+    <div class="row">
+      <div><div class="lab">朗读遍数</div><div class="sub">每次进入新词播报几次</div></div>
+      <div class="seg" id="segTimes">
+        <button data-v="1" type="button">1 次</button>
+        <button data-v="2" class="on" type="button">2 次</button>
+        <button data-v="3" type="button">3 次</button>
+      </div>
+    </div>
+    <div class="row">
+      <div><div class="lab">界面语言</div><div class="sub">按钮与提示文案</div></div>
+      <div class="seg" id="segUi">
+        <button data-v="cn" class="on" type="button">中文</button>
+        <button data-v="en" type="button">English</button>
+      </div>
+    </div>
+    <div class="row">
+      <div><div class="lab">字母格子大小</div><div class="sub">打字页字母方格尺寸</div></div>
+      <div class="seg" id="segSize">
+        <button data-v="s" type="button">小</button>
+        <button data-v="m" class="on" type="button">中</button>
+        <button data-v="l" type="button">大</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 开始 -->
+  <div class="start-wrap">
+    <button class="start-btn" id="startBtn" type="button" disabled>▶ 开始练习</button>
+    <div class="start-hint" id="startHint">请至少勾选一个单元</div>
+  </div>
+
+  <!-- 底部导航 -->
+  <div class="page-footer">
+    <a href="../index.html" class="primary">🏠 返回首页</a>
+    <a href="qwertylearner.cn.html" class="more" target="_blank" rel="noopener">✨ 更多练习</a>
+  </div>
+
+  <div class="site-foot">© 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="wordlib.js"></script>
+<script>
+"use strict";
+/* =====================================================================
+ * 单词练习中心 —— 词库选择 + 设置中心
+ *   · 词库来自同目录 wordlib.js（数组 WORDLIB）
+ *   · 设置写入 localStorage['wordtyping_settings_v1']，与打字页共用
+ *   · 选中的词表经 localStorage['wordtyping_custom_words_v1'] 传给打字页
+ * ===================================================================== */
+
+/* ---------- 设置 ---------- */
+var STORE_KEY = "wordtyping_settings_v1";
+var PICK_KEY  = "wordtyping_pick_v1";
+var WORDS_KEY = "wordtyping_custom_words_v1";
+/* 显隐三键与打字页 practice.html 完全对齐（一按钮 = 一数据字段）
+ *   wordVisible → 第一行【单词】（只显示单词本身，不含词性）
+ *   cnVisible   → 第二行【释义】（词性 + 中文释义）
+ *   phVisible   → 音标行与朗读键
+ * 默认「一开两关」：单词开 / 释义关 / 音标关（与 practice.html DEFAULTS 逐字一致）*/
+var DEFAULTS  = { auto:true, times:2, ui:"cn", size:"m",
+                  wordVisible:true, cnVisible:false, phVisible:false };
+
+var settings = {};
+var legacyEn = null;   /* 旧版字段 enVisible（已废弃），仅用于一次性迁移 */
+try{
+  var raw = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
+  if(raw && typeof raw === "object"){
+    for(var k in raw){
+      if(k === "enVisible"){ legacyEn = !!raw[k]; continue; }
+      if(k === "gloss"){ continue; }   /* 释义语言设置项已移除（2026-09-30）：读入即丢弃，不再回写 */
+      settings[k] = raw[k];
+    }
+  }
+}catch(e){}
+/* 旧版 enVisible → 新键 wordVisible 迁移（两者同义：是否显示第一行单词） */
+if(legacyEn !== null && typeof settings.wordVisible === "undefined") settings.wordVisible = legacyEn;
+for(var dk in DEFAULTS){ if(typeof settings[dk] === "undefined") settings[dk] = DEFAULTS[dk]; }
+
+function saveSettings(){
+  try{ localStorage.setItem(STORE_KEY, JSON.stringify(settings)); }catch(e){}
+}
+
+/* ---------- 工具 ---------- */
+var $ = function(id){ return document.getElementById(id); };
+var toastTimer = null;
+function toast(msg){
+  var el = $("toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  if(toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.classList.remove("show"); }, 1700);
+}
+
+/* ---------- 词库整理 ---------- */
+/* WORDLIB: [ book, cnName, [ [unitNo, topic, count, [[w,ph,pos,cn],...]], ... ] ] */
+var BOOKS = [];
+(function(){
+  if(typeof WORDLIB === "undefined") return;
+  for(var i = 0; i < WORDLIB.length; i++){
+    var b = WORDLIB[i];
+    BOOKS.push({
+      key: b[0], cn: b[1],
+      units: (b[2] || []).map(function(u){
+        return { n:u[0], topic:u[1], count:u[2], words:u[3] || [] };
+      })
+    });
+  }
+})();
+
+/* 全册目录（3-9 年级共 14 册，决定卡片顺序；无数据的册显示「准备中」占位） */
+var CATALOG = ["3a","3b","4a","4b","5a","5b","6a","6b","7a","7b","8a","8b","9a","9b"];
+
+/* 已选：{ bookKey: { unitNo: true } } */
+var picked = {};
+try{
+  var pr = JSON.parse(localStorage.getItem(PICK_KEY) || "null");
+  if(pr && typeof pr === "object") picked = pr;
+}catch(e){}
+
+var activeBook = null;   /* 当前展开的册 */
+
+function savePick(){ try{ localStorage.setItem(PICK_KEY, JSON.stringify(picked)); }catch(e){} }
+function bookOf(key){
+  for(var i = 0; i < BOOKS.length; i++){ if(BOOKS[i].key === key) return BOOKS[i]; }
+  return null;
+}
+function pickedUnitCount(key){
+  var p = picked[key]; if(!p) return 0;
+  var n = 0; for(var u in p){ if(p[u]) n++; }
+  return n;
+}
+function bookWordCount(key){
+  var b = bookOf(key); if(!b) return 0;
+  var p = picked[key] || {}, sum = 0;
+  for(var i = 0; i < b.units.length; i++){
+    if(p[b.units[i].n]) sum += b.units[i].count;
+  }
+  return sum;
+}
+function selectedUnitList(){
+  /* 返回 [{book, cn, n, topic, words}]，按册序/单元序 */
+  var out = [];
+  for(var i = 0; i < BOOKS.length; i++){
+    var b = BOOKS[i], p = picked[b.key] || {};
+    for(var j = 0; j < b.units.length; j++){
+      var u = b.units[j];
+      if(p[u.n]){
+        out.push({ book:b.key, cn:b.cn, n:u.n, topic:u.topic, words:u.words });
+      }
+    }
+  }
+  return out;
+}
+function totalSelectedWords(){
+  var t = 0, list = selectedUnitList();
+  for(var i = 0; i < list.length; i++) t += list[i].words.length;
+  return t;
+}
+
+/* ---------- 渲染：年级册（按 CATALOG 顺序，含无数据的占位册）---------- */
+function renderBooks(){
+  var g = $("bookGrid");
+  g.innerHTML = "";
+  var avail = 0;
+  for(var i = 0; i < CATALOG.length; i++){
+    var key = CATALOG[i];
+    var b = bookOf(key);
+    var words = 0;
+    if(b){ for(var j = 0; j < b.units.length; j++) words += b.units[j].count; }
+    var hasWords = words > 0;
+    if(hasWords) avail++;
+    var el = document.createElement("button");
+    el.type = "button";
+    el.className = "bk" + (hasWords ? "" : " empty") + (activeBook === key ? " on" : "");
+    el.dataset.k = key;
+    var grade = key.charAt(0), vol = key.charAt(1) === "a" ? "上" : "下";
+    el.innerHTML = (hasWords ? "" : '<span class="soon">准备中</span>')
+      + '<div class="g">' + grade + '年级</div>'
+      + '<div class="v">' + vol + '册</div>'
+      + '<div class="wc">' + (hasWords ? words + ' 词' : '—') + '</div>';
+    if(hasWords){
+      el.addEventListener("click", function(){ onBook(this.dataset.k); });
+    }else{
+      el.addEventListener("click", function(){ toast("该册词库准备中，敬请期待"); });
+    }
+    g.appendChild(el);
+  }
+  $("ovBooks").textContent = String(avail);
+}
+
+function onBook(key){
+  var b = bookOf(key);
+  if(!b) return;
+  if(b.units.every(function(u){ return u.count === 0; })){
+    toast("该册词库准备中，敬请期待");
+    return;
+  }
+  activeBook = key;
+  renderBooks();
+  renderUnits();
+}
+
+/* ---------- 渲染：单元 ---------- */
+function renderUnits(){
+  var panel = $("unitsPanel");
+  var b = activeBook ? bookOf(activeBook) : null;
+  var units = b ? b.units.filter(function(u){ return u.count > 0; }) : [];
+  if(!units.length){
+    panel.innerHTML = '<div class="units-empty"><span class="big">👆</span>先在上面选择年级册</div>';
+    $("unitTip").textContent = "—";
+    updateStart();
+    return;
+  }
+  var html = '';
+  var isAll = units.every(function(u){ return (picked[b.key] || {})[u.n]; });
+  var cnt = pickedUnitCount(b.key);
+  html += '<div class="up-bar">'
+       + '<button class="mini' + (isAll ? " solid" : "") + '" id="uAll" type="button">全选本册</button>'
+       + '<button class="mini" id="uNone" type="button">清空本册</button>'
+       + '<span class="spacer"></span>'
+       + '<span class="sel">' + cnt + ' / ' + units.length + ' 单元</span>'
+       + '</div>';
+  html += '<div class="u-list">';
+  for(var i = 0; i < units.length; i++){
+    var u = units[i];
+    var on = !!((picked[b.key] || {})[u.n]);
+    html += '<div class="u' + (on ? " on" : "") + '" data-b="' + b.key + '" data-n="' + u.n + '">'
+         +  '<span class="box"></span>'
+         +  '<span class="meta"><span class="t1"><span class="un">Unit ' + u.n + '</span>'
+         +  esc(u.topic || ("单元 " + u.n)) + '</span>'
+         +  '<div class="t2">' + esc(b.cn) + ' · ' + u.count + ' 个生词</div></span>'
+         +  '<span class="c">' + u.count + '</span>'
+         +  '</div>';
+  }
+  html += '</div>';
+  panel.innerHTML = html;
+
+  $("uAll").addEventListener("click", function(){ setAll(b.key, true); });
+  $("uNone").addEventListener("click", function(){ setAll(b.key, false); });
+  var rows = panel.querySelectorAll(".u");
+  for(var r = 0; r < rows.length; r++){
+    rows[r].addEventListener("click", function(){
+      toggleUnit(this.dataset.b, parseInt(this.dataset.n, 10));
+    });
+  }
+  $("unitTip").textContent = b.cn + " · 共 " + units.length + " 单元";
+  updateStart();
+}
+
+function esc(s){
+  return String(s).replace(/[&<>"']/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+  });
+}
+
+function toggleUnit(bk, n){
+  if(!picked[bk]) picked[bk] = {};
+  picked[bk][n] = !picked[bk][n];
+  if(!picked[bk][n]) delete picked[bk][n];
+  savePick();
+  renderUnits();
+}
+function setAll(bk, val){
+  if(!picked[bk]) picked[bk] = {};
+  var b = bookOf(bk); if(!b) return;
+  for(var i = 0; i < b.units.length; i++){
+    var u = b.units[i]; if(u.count <= 0) continue;
+    if(val) picked[bk][u.n] = true; else delete picked[bk][u.n];
+  }
+  savePick();
+  renderUnits();
+}
+
+/* ---------- 总览 + 开始键 ---------- */
+function updateStart(){
+  var uCnt = 0;
+  for(var i = 0; i < BOOKS.length; i++) uCnt += pickedUnitCount(BOOKS[i].key);
+  var wCnt = totalSelectedWords();
+  $("ovUnits").textContent = String(uCnt);
+  $("ovWords").textContent = String(wCnt);
+
+  var btn = $("startBtn"), hint = $("startHint");
+  var ok = wCnt >= 1;
+  btn.disabled = !ok;
+  if(!ok){
+    hint.textContent = "请至少勾选一个单元";
+  }else{
+    hint.textContent = "已选 " + uCnt + " 个单元 · 共 " + wCnt + " 个生词";
+  }
+}
+
+$("startBtn").addEventListener("click", function(){
+  var list = selectedUnitList();
+  if(!list.length) { toast("请先勾选单元"); return; }
+  /* 汇总词表（按单元顺序，同词去重，保留首次出现） */
+  var seen = {}, words = [];
+  for(var i = 0; i < list.length; i++){
+    for(var j = 0; j < list[i].words.length; j++){
+      var w = list[i].words[j], key = String(w[0]).toLowerCase();
+      if(seen[key]) continue;
+      seen[key] = 1;
+      words.push({ w:w[0], ph:w[1], pos:w[2], cn:w[3] });
+    }
+  }
+  if(!words.length){ toast("所选单元暂无生词"); return; }
+  try{
+    localStorage.setItem(WORDS_KEY, JSON.stringify({
+      label: list.length === 1 ? (list[0].cn + " Unit " + list[0].n + " · " + list[0].topic)
+                               : ("自定义词库 · " + list.length + " 个单元"),
+      units: list.map(function(x){ return x.cn + " U" + x.n; }),
+      words: words
+    }));
+  }catch(e){}
+  location.href = "practice.html";
+});
+
+/* ---------- 设置面板 ---------- */
+function syncUI(){
+  $("swAuto").classList.toggle("on", !!settings.auto);
+  $("swWord").classList.toggle("on", settings.wordVisible !== false);
+  $("swCn").classList.toggle("on", settings.cnVisible === true);
+  $("swPh").classList.toggle("on", settings.phVisible === true);
+  setSeg("segTimes", settings.times);
+  setSeg("segUi", settings.ui);
+  setSeg("segSize", settings.size);
+}
+function setSeg(gid, val){
+  var box = $(gid); if(!box) return;
+  var bs = box.querySelectorAll("button");
+  for(var i = 0; i < bs.length; i++){
+    bs[i].classList.toggle("on", String(bs[i].dataset.v) === String(val));
+  }
+}
+$("swAuto").addEventListener("click", function(){
+  settings.auto = !settings.auto; saveSettings(); syncUI();
+  toast(settings.auto ? "已开启自动朗读" : "已关闭自动朗读");
+});
+$("swWord").addEventListener("click", function(){
+  settings.wordVisible = !(settings.wordVisible !== false); saveSettings(); syncUI();
+  toast(settings.wordVisible ? "已显示单词" : "已隐藏单词");
+});
+$("swCn").addEventListener("click", function(){
+  settings.cnVisible = !(settings.cnVisible === true); saveSettings(); syncUI();
+  toast(settings.cnVisible ? "已显示释义" : "已隐藏释义");
+});
+$("swPh").addEventListener("click", function(){
+  settings.phVisible = !(settings.phVisible === true); saveSettings(); syncUI();
+  toast(settings.phVisible ? "已显示音标" : "已隐藏音标");
+});
+$("segTimes").addEventListener("click", function(e){
+  var b = e.target.closest("button"); if(!b) return;
+  settings.times = parseInt(b.dataset.v, 10); saveSettings(); syncUI();
+});
+$("segUi").addEventListener("click", function(e){
+  var b = e.target.closest("button"); if(!b) return;
+  settings.ui = b.dataset.v; saveSettings(); syncUI();
+});
+$("segSize").addEventListener("click", function(e){
+  var b = e.target.closest("button"); if(!b) return;
+  settings.size = b.dataset.v; saveSettings(); syncUI();
+});
+
+/* ---------- 初始化 ---------- */
+renderBooks();
+/* 默认展开第一本有词的册；若用户上次选过，优先展开那本 */
+(function(){
+  var first = null, lastPicked = null;
+  for(var i = 0; i < BOOKS.length; i++){
+    if(BOOKS[i].units.some(function(u){ return u.count > 0; })){
+      if(!first) first = BOOKS[i].key;
+      if(pickedUnitCount(BOOKS[i].key) > 0) lastPicked = BOOKS[i].key;
+    }
+  }
+  activeBook = lastPicked || first;
+})();
+renderBooks();
+renderUnits();
+syncUI();
+updateStart();
+</script>
+<script>
+/* ===== 手机号验证锁屏（与 textbook/index.html 同源；哈希清单共用 ../jiesuo.html）===== */
+(function(){
+  var overlay = document.getElementById('lockOverlay');
+  var phoneInput = document.getElementById('phoneInput');
+  var errEl = document.getElementById('lockError');
+  var loadEl = document.getElementById('lockLoading');
+  var btnEl = document.getElementById('verifyBtn');
+
+  // 有效期 7 天
+  var VALID_MS = 7 * 24 * 60 * 60 * 1000;
+  var relockTimer = null;
+
+  // Enter 键提交（始终绑定，保证重新锁屏后也能用）
+  if (phoneInput) {
+    phoneInput.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') verifyPhone();
+    });
+  }
+  window.verifyPhone = verifyPhone;
+
+  // 已登录且在有效期内 -> 直接放行
+  var session = null;
+  try { session = JSON.parse(localStorage.getItem('phone_session')); } catch(e) {}
+  if (session && session.expires && Date.now() < session.expires) {
+    if (overlay) overlay.classList.add('hidden');
+    scheduleRelock(session.expires);
+    return;
+  }
+
+  // 显示锁屏
+  if (overlay) overlay.classList.remove('hidden');
+  if (phoneInput) phoneInput.focus();
+
+  function sha256(str){
+    var encoder = new TextEncoder();
+    return crypto.subtle.digest('SHA-256', encoder.encode(str))
+      .then(function(buf){
+        return Array.from(new Uint8Array(buf))
+          .map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+      });
+  }
+
+  function verifyPhone(){
+    var phone = phoneInput.value.replace(/\s+/g, '');
+    if (!phone) { showErr('请输入手机号'); shake(); return; }
+    if (!/^1\d{10}$/.test(phone)) { showErr('请输入正确的 11 位手机号'); shake(); return; }
+
+    btnEl.disabled = true;
+    loadEl.classList.add('show');
+    errEl.classList.remove('show');
+    phoneInput.classList.remove('error');
+
+    // 兜底哈希列表：fetch 失败（如本地 file:// 打开）时使用，仅存哈希不存明文
+    // 与 ../jiesuo.html 保持同步（当前 5 条）
+    var FALLBACK_HASHES = [
+      '413b7b3d5700ad8a6b296c9d0e7107dbd7280a985c1c695db8646c278e510224',
+      '679d49b6e57d426b2af961461512559700b9e4c01aa723f0b71682c5f07b31c3',
+      'df225757a3ffcac2bd9643323af99631a53300b439da8ff4a8a41f889ce39704',
+      'f33f356f0975feb01468d154687a812a113ffa87ac5091ecc99637a552f033e9',
+      'df090d9cd36c1f30cbe08d403e302882cd30d8a727bf7d462f8e007927d5af7a',
+    ];
+
+    function check(phoneHash, hashes){
+      var matched = hashes.some(function(h){ return h === phoneHash; });
+      loadEl.classList.remove('show');
+      btnEl.disabled = false;
+      if (matched) {
+        unlock(phone);
+      } else {
+        showErr('输入有误，请重新输入');
+        shake();
+      }
+    }
+
+    sha256(phone).then(function(phoneHash){
+      fetch('../jiesuo.html').then(function(r){ return r.text(); }).then(function(text){
+        var hashes = text.trim().split(/[\n\r]+/).filter(function(h){ return h.trim(); });
+        check(phoneHash, hashes);
+      }).catch(function(){
+        check(phoneHash, FALLBACK_HASHES);
+      });
+    }).catch(function(){
+      loadEl.classList.remove('show');
+      btnEl.disabled = false;
+      showErr('设备不支持，请更换浏览器');
+    });
+  }
+
+  function unlock(phone){
+    var now = Date.now();
+    var expires = now + VALID_MS;
+    localStorage.setItem('phone_session', JSON.stringify({
+      phone: phone,
+      loginAt: now,
+      expires: expires
+    }));
+    if (overlay) {
+      overlay.style.opacity = '0';
+      overlay.style.transition = 'opacity .4s';
+      setTimeout(function(){ overlay.classList.add('hidden'); overlay.style.opacity = '1'; }, 400);
+    }
+    scheduleRelock(expires);
+  }
+
+  // 有效期结束后重新锁屏（页面停留期间也会触发）
+  function relock(){
+    relockTimer = null;
+    try { localStorage.removeItem('phone_session'); } catch(e) {}
+    if (!overlay) return;
+    phoneInput.value = '';
+    errEl.classList.remove('show');
+    overlay.classList.remove('hidden');
+    overlay.style.opacity = '1';
+    overlay.style.transition = 'none';
+    if (phoneInput) phoneInput.focus();
+  }
+
+  function scheduleRelock(expires){
+    if (relockTimer) { clearTimeout(relockTimer); relockTimer = null; }
+    var remain = expires - Date.now();
+    if (remain <= 0) { relock(); return; }
+    relockTimer = setTimeout(relock, remain);
+  }
+
+  function showErr(msg){
+    errEl.textContent = msg;
+    errEl.classList.add('show');
+    setTimeout(function(){ errEl.classList.remove('show'); }, 3000);
+  }
+
+  function shake(){
+    phoneInput.classList.add('error');
+    setTimeout(function(){ phoneInput.classList.remove('error'); }, 400);
+  }
+})();
+</script>
+</body>
+</html>

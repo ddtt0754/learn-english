@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#2e9e6b">
+<meta name="description" content="豆豆智学 · 生词打字练习 —— 一词一屏、逐字母校验、自由计时，设置由词库中心统一管理。">
+<title>生词打字练习 · 豆豆智学</title>
+<style>
+  :root{
+    --bg:#eef4f0;--card:#ffffff;--ink:#22303a;--muted:#6b7c86;
+    --red:#e53935;--accent:#2e9e6b;--accent2:#3bb98a;
+    --line:#e9efe9;--soft:#f4f9f6;
+    --mono:"Consolas","Menlo","SFMono-Regular","DejaVu Sans Mono","Courier New",monospace;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;height:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.9;padding-bottom:18px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ============ 顶部渐变条 ============ */
+  header{
+    background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;
+    padding:16px 14px 12px;text-align:center;box-shadow:0 2px 10px rgba(46,158,107,.25);
+  }
+  header h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.5px;}
+  header p{margin:4px 0 0;font-size:12px;opacity:.92;}
+  .bar{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:11px;flex-wrap:wrap;}
+  .timer{
+    display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.16);
+    border:1.5px solid rgba(255,255,255,.85);border-radius:20px;padding:6px 14px;
+    font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;
+  }
+  .timer b{font-family:var(--mono);font-size:14px;letter-spacing:.5px;}
+  .toggle-btn{
+    min-height:38px;padding:0 15px;border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(255,255,255,.16);color:#fff;border-radius:20px;font-size:13px;font-weight:600;
+    cursor:pointer;transition:background .2s,transform .08s;
+    touch-action:manipulation;user-select:none;-webkit-user-select:none;
+  }
+  .toggle-btn:active{transform:scale(.97);}
+  .toggle-btn.active{background:#fff;color:var(--accent);border-color:#fff;}
+
+  .wrap{max-width:760px;margin:0 auto;padding:14px 12px 8px;}
+
+  /* ============ 实时数据条 ============ */
+  .stats{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;}
+  .stat{
+    flex:1 1 30%;background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:8px 6px;text-align:center;box-shadow:0 3px 14px rgba(30,50,40,.05);
+  }
+  .stat .num{font-family:var(--mono);font-size:19px;font-weight:800;color:var(--accent);line-height:1.15;}
+  .stat .lab{font-size:11.5px;color:var(--muted);margin-top:1px;}
+  .stat.bad .num{color:var(--red);}
+
+  /* ============ 进度细条 ============ */
+  .progress{height:6px;border-radius:6px;background:#e2ece7;overflow:hidden;margin:0 0 14px;}
+  .progress i{display:block;height:100%;width:0;border-radius:6px;
+    background:linear-gradient(90deg,#2e9e6b,#3bb98a);transition:width .35s ease;}
+
+  /* ============ 核心：一词一屏 ============ */
+  .stage{
+    position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 3px 14px rgba(30,50,40,.07);
+    padding:26px 16px 24px;margin:0 0 14px;text-align:center;
+    transition:opacity .25s,filter .25s;
+  }
+  .stage.fade{animation:fadeIn .32s ease backwards;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+  /* ============ 单词释义区（两行：单词第一行 / 释义第二行）============ */
+  .gloss{
+    display:block;font-size:15px;color:#4a5a66;line-height:1.6;
+    background:var(--soft);border:1px solid var(--line);border-radius:10px;
+    padding:8px 12px;margin:0 0 12px;
+  }
+  /* 【单词】：默认显示，占第一行 —— 只显示单词本身 */
+  .gloss .word-gloss{display:block;color:#4a5a66;font-weight:700;letter-spacing:.3px;}
+  /* 【释义】：默认隐藏，显示时另起第二行 —— 词性 + 中文释义 */
+  .gloss .cn-gloss{display:none;color:#6b7c86;font-size:14px;margin-top:3px;}
+  .gloss .cn-gloss::before{content:"释 ";color:#b3c4be;font-size:12px;font-weight:700;}
+
+  /* 【单词】开关：独立控制第一行显隐（规则必须独立成立）*/
+  body.hide-word .gloss .word-gloss{display:none;}
+  /* 【释义】开关：显示中文释义（第二行）*/
+  body.show-cn .gloss .cn-gloss{display:block;}
+
+  .ph{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font-family:"Arial",sans-serif;font-size:15px;color:var(--red);margin:0 0 18px;
+  }
+  .say-btn{
+    flex:0 0 auto;width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;
+    background:linear-gradient(135deg,#2e9e6b,#3bb98a);color:#fff;font-size:16px;line-height:1;
+    display:inline-flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 12px rgba(46,158,107,.3);transition:transform .08s,filter .2s;
+  }
+  .say-btn:active{transform:scale(.94);}
+  .say-btn:hover{filter:brightness(1.06);}
+  .say-btn.spin{animation:pulse .6s ease;}
+  @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.14);}}
+
+  /* 字母格子 */
+  .slots{
+    display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;
+    gap:10px;min-height:76px;
+  }
+  .slot{display:flex;flex-direction:column;align-items:center;gap:5px;}
+  .slot input{
+    width:52px;height:62px;padding:0;border:2px solid #dfe9e4;border-radius:12px;
+    background:#fbfdfc;font-family:var(--mono);font-size:26px;font-weight:700;
+    text-align:center;color:var(--ink);outline:none;text-transform:lowercase;
+    -webkit-appearance:none;appearance:none;box-shadow:none;
+    transition:border-color .12s,background .12s,color .12s,transform .12s;
+    caret-color:var(--accent);
+  }
+  .slot input:focus{border-color:var(--accent2);background:#fff;box-shadow:0 0 0 4px rgba(46,158,107,.14);}
+  .slot input.ok{border-color:#2e9e6b;background:#eafaf1;color:#1f7d56;}
+  .slot input.bad{border-color:var(--red);background:#fdecec;color:var(--red);animation:shake .28s;}
+  @keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+  .slot .idx{font-size:10.5px;color:#b3c4be;font-family:var(--mono);}
+  /* 词组中的空格：非输入占位，仅作分词分隔（不参与逐格判分） */
+  .slot.gap{width:16px;height:62px;position:relative;}
+  .slot.gap::after{
+    content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:6px;height:6px;border-radius:50%;background:#dbe7e1;
+  }
+
+  /* 格子大小（设置面板「格子大小」三档，默认 m） */
+  body.size-s .slot input{width:40px;height:48px;font-size:20px;border-radius:9px;}
+  body.size-s .slot.gap{width:13px;height:48px;}
+  body.size-s .slots{gap:7px;min-height:54px;}
+  body.size-l .slot input{width:66px;height:78px;font-size:33px;border-radius:14px;}
+  body.size-l .slot.gap{width:22px;height:78px;}
+  body.size-l .slots{gap:12px;min-height:92px;}
+
+  .prompt{
+    margin:20px 0 0;font-size:12.5px;color:var(--muted);letter-spacing:.3px;min-height:20px;
+  }
+  .prompt.err{color:var(--red);font-weight:700;}
+  .prompt.ok{color:var(--accent);font-weight:700;}
+
+  /* ============ 设置面板 ============ */
+  .modal{
+    position:fixed;inset:0;background:rgba(20,40,30,.5);display:none;
+    align-items:flex-start;justify-content:center;padding:24px 12px;z-index:50;overflow:auto;
+  }
+  .modal.show{display:flex;}
+  .panel{
+    background:#fff;border-radius:16px;max-width:560px;width:100%;padding:18px 18px 20px;
+    box-shadow:0 10px 40px rgba(0,0,0,.2);
+  }
+  .panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+  .panel-head h3{margin:0;font-size:17px;color:var(--accent);}
+  .panel-close{
+    border:none;background:var(--soft);color:var(--muted);border-radius:10px;
+    min-width:36px;min-height:36px;font-size:18px;cursor:pointer;
+  }
+  .row{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:12px 0;border-bottom:1px solid var(--line);
+  }
+  .row:last-of-type{border-bottom:none;}
+  .row .lab{font-size:14px;font-weight:600;color:var(--ink);}
+  .row .sub{font-size:11.5px;color:var(--muted);font-weight:400;margin-top:2px;}
+  .seg{display:flex;gap:6px;flex:0 0 auto;}
+  .seg button{
+    min-height:34px;padding:0 12px;border-radius:10px;border:1.5px solid var(--line);
+    background:#fff;color:var(--muted);font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit;
+  }
+  .seg button.on{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .sw{
+    position:relative;flex:0 0 auto;width:48px;height:28px;border-radius:14px;
+    background:#d8e4de;border:none;cursor:pointer;transition:background .2s;padding:0;
+  }
+  .sw::after{
+    content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.2);transition:transform .2s;
+  }
+  .sw.on{background:var(--accent);}
+  .sw.on::after{transform:translateX(20px);}
+
+  /* ---- 只读回显（设置统一在词库中心改）---- */
+  .ro-note{
+    margin:0 0 6px;padding:8px 11px;background:var(--soft);border:1px solid var(--line);
+    border-radius:10px;font-size:12px;color:var(--muted);line-height:1.6;
+  }
+  .ro-val{
+    flex:0 0 auto;max-width:52%;text-align:right;
+    font-size:13.5px;font-weight:800;color:var(--accent);
+    background:var(--soft);border:1px solid var(--line);border-radius:9px;padding:5px 11px;
+    word-break:break-all;
+  }
+  .ro-act{justify-content:center;}
+  .ro-link{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:40px;padding:0 16px;border-radius:11px;font-size:13.5px;font-weight:800;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);
+  }
+  .ro-link:active{transform:scale(.97);}
+
+  /* ============ 结果弹层 ============ */
+  .veil{
+    position:fixed;inset:0;background:rgba(20,40,30,.55);display:none;
+    align-items:center;justify-content:center;padding:20px 14px;z-index:60;overflow:auto;
+  }
+  .veil.show{display:flex;}
+  .veil .panel{max-width:600px;text-align:center;}
+  .rpt-badge{
+    display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:2px;
+    color:var(--accent);background:var(--soft);border:1px solid var(--line);
+    border-radius:20px;padding:4px 16px;margin-bottom:10px;
+  }
+  .veil h1{margin:0 0 14px;font-size:22px;font-weight:800;color:var(--ink);}
+  .rgrid{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;}
+  .rgrid .stat{flex:1 1 30%;box-shadow:none;background:var(--soft);}
+  .rail{
+    max-height:34vh;overflow:auto;text-align:left;margin:0 0 16px;
+    border:1px solid var(--line);border-radius:12px;padding:6px;
+  }
+  .ritem{
+    display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:9px;font-size:13.5px;
+  }
+  .ritem + .ritem{border-top:1px solid #f2f6f4;}
+  .ritem .rw{font-family:var(--mono);font-weight:800;letter-spacing:.6px;}
+  .ritem .rg{color:var(--muted);font-size:12px;flex:1;text-align:right;}
+  .ritem.ok .rw{color:var(--accent);}
+  .ritem.no .rw{color:var(--red);}
+  .ritem.no{background:#fff7f7;}
+  .veil-actions{display:flex;gap:10px;}
+  .veil-actions button,.veil-actions a{
+    flex:1;min-height:44px;border-radius:12px;font-size:14.5px;font-weight:700;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;text-decoration:none;font-family:inherit;
+    border:none;background:var(--accent);color:#fff;
+  }
+  .veil-actions .ghost{background:#fff;color:var(--accent);border:1.5px solid var(--accent);}
+  .pfoot{margin-top:16px;font-size:11.5px;color:var(--muted);letter-spacing:.4px;}
+
+  /* ============ 底部导航 ============ */
+  .page-footer{
+    max-width:760px;margin:18px auto 0;
+    padding:14px 12px 18px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .page-footer a{
+    flex:1 1 130px;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:42px;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;
+    text-decoration:none;color:#fff;background:linear-gradient(135deg,#2e9e6b,#3bb98a);
+    box-shadow:0 4px 12px rgba(46,158,107,.18);transition:transform .15s,box-shadow .15s;
+    -webkit-tap-highlight-color:transparent;white-space:nowrap;
+  }
+  .page-footer a:active{transform:scale(.97);}
+  /* 单键（只剩返回主页）时不要拉满整行，保持居中的胶囊观感 */
+  .page-footer a:only-child{flex:0 0 auto;min-width:180px;}
+  .page-footer a.home,
+  .page-footer a.grammar,
+  .page-footer a.oral,
+  .page-footer a.spelling,
+  .page-footer a.dictation,
+  .page-footer a.setlink,
+  .page-footer a.typing{
+    background:#fff;color:#2e9e6b;border:1.5px solid #2e9e6b;box-shadow:0 2px 6px rgba(46,158,107,.10);
+  }
+
+  /* ============ 页脚署名气泡（全站标准，纯 CSS） ============ */
+  .coach-tip{position:relative;display:inline-block;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  .coach-tip .tip{
+    visibility:hidden;opacity:0;position:absolute;bottom:145%;left:50%;
+    transform:translateX(-50%) translateY(4px);
+    background:linear-gradient(135deg,#35d29a,#2f9df0);color:#fff;padding:7px 14px;border-radius:10px;
+    font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:.5px;z-index:99;pointer-events:none;
+    box-shadow:0 6px 18px rgba(47,157,240,.35);
+    transition:opacity .2s ease,transform .2s ease,visibility .2s;
+  }
+  .coach-tip .tip::after{
+    content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
+    border:6px solid transparent;border-top-color:#2f9df0;
+  }
+  .coach-tip:hover .tip,.coach-tip:active .tip,.coach-tip:focus .tip{
+    visibility:visible;opacity:1;transform:translateX(-50%) translateY(0);
+  }
+  .site-foot{
+    max-width:760px;margin:0 auto;padding:0 12px 8px;text-align:center;
+    font-size:11.5px;color:var(--muted);letter-spacing:.4px;
+  }
+
+  /* ============ 窄屏 ============ */
+  @media (max-width:430px){
+    .slot input{width:44px;height:54px;font-size:22px;border-radius:10px;}
+    .slot.gap{width:14px;height:54px;}
+    .slots{gap:8px;min-height:66px;}
+    .stat .num{font-size:17px;}
+    .stage{padding:22px 10px 20px;}
+  }
+  @media (max-width:340px){
+    .slot input{width:38px;height:48px;font-size:19px;}
+    .slot.gap{width:12px;height:48px;}
+    .slots{gap:6px;}
+  }
+  @media (min-width:760px){
+    .stage{padding:34px 24px 30px;}
+    .slot input{width:60px;height:72px;font-size:30px;}
+    .gloss{font-size:16px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 id="hdrTitle">Unit 1 · 生词打字</h1>
+  <p id="hdrSub">人教PEP三年级上册 · Making friends · 逐字母校验 · 自由计时</p>
+  <div class="bar">
+    <span class="timer">⏱ <b id="clock">00:00</b></span>
+    <button class="toggle-btn active" id="btnWord" type="button">单词</button>
+    <button class="toggle-btn" id="btnGloss" type="button">释义</button>
+    <button class="toggle-btn" id="btnPh" type="button">音标</button>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- 实时数据 -->
+  <div class="stats">
+    <div class="stat"><div class="num" id="sDone">0/30</div><div class="lab">进度</div></div>
+    <div class="stat"><div class="num" id="sRight">0</div><div class="lab">全对词数</div></div>
+    <div class="stat"><div class="num" id="sAcc">100%</div><div class="lab">正确率</div></div>
+    <div class="stat"><div class="num" id="sWpm">0</div><div class="lab">每分钟词数</div></div>
+    <div class="stat"><div class="num" id="sAvg">0.0s</div><div class="lab">平均词耗时</div></div>
+    <div class="stat bad"><div class="num" id="sMiss">0</div><div class="lab">失误格数</div></div>
+  </div>
+
+  <div class="progress"><i id="bar"></i></div>
+
+  <!-- 一词一屏 -->
+  <div class="stage" id="stage">
+    <!-- 单词区：【单词】第一行（默认显示，仅单词）→ 【释义】第二行（默认隐藏，词性+中文）-->
+    <div class="gloss" id="gloss">
+      <span class="word-gloss" id="wordGloss"></span>
+      <span class="cn-gloss" id="cnGloss"></span>
+    </div>
+
+    <div class="ph" id="phRow">
+      <span class="say-btn" id="sayBtn" role="button" tabindex="0" aria-label="朗读单词">🔊</span>
+      <span id="phText">/—/</span>
+    </div>
+
+    <div class="slots" id="slots"></div>
+
+    <p class="prompt" id="prompt">按顺序输入字母，全部正确会自动进入下一个词。</p>
+  </div>
+
+  <!-- 底部导航：词库中心 + 当前设置 + 返回主页 -->
+  <div class="page-footer" id="pageFooter">
+    <a href="index.html" class="typing">⌨️ 词库中心</a>
+    <a href="#" id="btnSet" class="setlink" role="button">⚙ 当前设置</a>
+    <a href="../index.html" class="home">🏠 返回首页</a>
+  </div>
+
+  <div class="site-foot">© 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span></div>
+</div>
+
+<!-- 设置（只读回显：设置统一在「词库中心」index.html 里改）-->
+<div class="modal" id="setModal" aria-hidden="true">
+  <div class="panel">
+    <div class="panel-head">
+      <h3>⚙ 当前练习设置</h3>
+      <button class="panel-close" id="setClose" type="button">×</button>
+    </div>
+    <p class="ro-note">设置由「词库中心」统一管理，本页仅作回显。顶部【单词】【释义】【音标】可临时切换。</p>
+
+    <div class="row">
+      <div><div class="lab">自动朗读</div><div class="sub">进入新词后自动播报</div></div>
+      <span class="ro-val" id="roAuto">—</span>
+    </div>
+
+    <div class="row">
+      <div><div class="lab">朗读遍数</div><div class="sub">每次进入新词播报几次</div></div>
+      <span class="ro-val" id="roTimes">—</span>
+    </div>
+
+    <div class="row">
+      <div><div class="lab">界面语言</div><div class="sub">按钮与提示文案</div></div>
+      <span class="ro-val" id="roUi">—</span>
+    </div>
+
+    <div class="row">
+      <div><div class="lab">格子大小</div><div class="sub">字母方格的尺寸</div></div>
+      <span class="ro-val" id="roSize">—</span>
+    </div>
+
+    <div class="row">
+      <div><div class="lab">词库来源</div><div class="sub">本次练习使用的词表</div></div>
+      <span class="ro-val" id="roLib">—</span>
+    </div>
+
+    <div class="row ro-act">
+      <a class="ro-link" href="index.html">⌨️ 去「词库中心」修改设置</a>
+    </div>
+  </div>
+</div>
+
+<!-- 结果 -->
+<div class="veil" id="doneVeil">
+  <div class="panel">
+    <div class="rpt-badge" id="doneBadge">练习小结</div>
+    <h1 id="doneTitle">—</h1>
+
+    <div class="rgrid">
+      <div class="stat"><div class="num" id="dTime">00:00</div><div class="lab">总用时</div></div>
+      <div class="stat"><div class="num" id="dWords">0</div><div class="lab">练完词数</div></div>
+      <div class="stat"><div class="num" id="dAcc">0%</div><div class="lab">正确率</div></div>
+      <div class="stat"><div class="num" id="dWpm">0</div><div class="lab">每分钟词数</div></div>
+      <div class="stat"><div class="num" id="dAvg">0.0s</div><div class="lab">平均词耗时</div></div>
+      <div class="stat bad"><div class="num" id="dMiss">0</div><div class="lab">失误格数</div></div>
+    </div>
+
+    <div class="rail" id="doneRail"></div>
+
+    <div class="veil-actions">
+      <button id="againBtn" type="button">↻ 再练一遍</button>
+      <a class="ghost" href="../index.html">🏠 返回首页</a>
+    </div>
+    <div class="pfoot">© 2026 <span class="coach-tip" tabindex="0">两英豆豆教练<span class="tip">微信号 ddtt0754</span></span></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* =====================================================================
+ * ★ 数据区 —— 30 个生词取自 3a-unit1.html 的粗体生词（<strong>）★
+ *   word  : 目标词（英文原形，保留原大小写）
+ *   ph    : 音标（IPA，来自课文音标释义标注）
+ *   pos   : 词性（来自课文标注）
+ *   cn    : 中文释义
+ *   新增单元时只改这一块即可。
+ * ===================================================================== */
+let WORDS = [
+  {word:"my",       ph:"/maɪ/",           pos:"pron.",  cn:"我的"},
+  {word:"name",     ph:"/neɪm/",          pos:"n.",     cn:"名字"},
+  {word:"Nice",     ph:"/naɪs/",          pos:"adj.",   cn:"友好的；令人愉快的"},
+  {word:"to",       ph:"/tuː/",           pos:"prep.",  cn:"向，朝"},
+  {word:"meet",     ph:"/miːt/",          pos:"v.",     cn:"结识；遇见"},
+  {word:"you",      ph:"/juː/",           pos:"pron.",  cn:"你；你们"},
+  {word:"be",       ph:"/biː/",           pos:"v.",     cn:"成为；是"},
+  {word:"friends",  ph:"/frendz/",        pos:"n.",     cn:"朋友（复数）"},
+  {word:"Wave",     ph:"/weɪv/",          pos:"v.",     cn:"挥动；招手"},
+  {word:"your",     ph:"/jɔː(r)/",        pos:"pron.",  cn:"你的；你们的"},
+  {word:"hand",     ph:"/hænd/",          pos:"n.",     cn:"手"},
+  {word:"Look",     ph:"/lʊk/",           pos:"v.",     cn:"看"},
+  {word:"eye",      ph:"/aɪ/",            pos:"n.",     cn:"眼睛"},
+  {word:"Point",    ph:"/pɔɪnt/",         pos:"v.",     cn:"指；指向"},
+  {word:"ear",      ph:"/ɪə(r)/",         pos:"n.",     cn:"耳朵"},
+  {word:"mouth",    ph:"/maʊθ/",          pos:"n.",     cn:"嘴"},
+  {word:"arm",      ph:"/ɑːm/",           pos:"n.",     cn:"胳膊"},
+  {word:"Be",       ph:"/biː/",           pos:"v.",     cn:"成为；是"},
+  {word:"We",       ph:"/wiː/",           pos:"pron.",  cn:"我们"},
+  {word:"can",      ph:"/kæn/",           pos:"modal v.",cn:"能；会"},
+  {word:"share",    ph:"/ʃeə(r)/",        pos:"v.",     cn:"分享"},
+  {word:"toy",      ph:"/tɔɪ/",           pos:"n.",     cn:"玩具"},
+  {word:"cake",     ph:"/keɪk/",          pos:"n.",     cn:"蛋糕"},
+  {word:"too",      ph:"/tuː/",           pos:"adv.",   cn:"也"},
+  {word:"listen",   ph:"/ˈlɪsn/",         pos:"v.",     cn:"听；倾听"},
+  {word:"good",     ph:"/ɡʊd/",           pos:"adj.",   cn:"好的"},
+  {word:"friend",   ph:"/frend/",         pos:"n.",     cn:"朋友"},
+  {word:"help",     ph:"/help/",          pos:"v.",     cn:"帮助"},
+  {word:"say",      ph:"/seɪ/",           pos:"v.",     cn:"说；讲"},
+  {word:"Goodbye",  ph:"/ˌɡʊdˈbaɪ/",      pos:"interj.",cn:"再见"}
+];
+let UNIT = "3A Unit 1 · Making friends";
+const STORE_KEY = "wordtyping_settings_v1";
+const WORDS_KEY = "wordtyping_custom_words_v1";
+
+/* ---------- 外部词库接管（由 word/index.html 传入）----------
+ * localStorage['wordtyping_custom_words_v1'] = { label, units[], words:[{w,ph,pos,cn}] }
+ * 只在「本页作为练习出口」时生效；无该数据时用上面内置的 3A U1 词表。
+ * ------------------------------------------------------------------ */
+let CUSTOM_UNITS = null;
+try{
+  const cw = JSON.parse(localStorage.getItem(WORDS_KEY) || "null");
+  if(cw && cw.words && cw.words.length){
+    const conv = [];
+    for(let i = 0; i < cw.words.length; i++){
+      const x = cw.words[i];
+      const wd = String(x.w || x.word || "").trim();
+      /* 允许单单词与词组（词组含空格，如 "make friends"）；仍需以字母开头结尾、仅字母/撇号/连字符/空格 */
+      if(!/^[A-Za-z](?:[A-Za-z'\- ]*[A-Za-z])?$/.test(wd)) continue;
+      conv.push({
+        word: wd,
+        ph: x.ph || "",
+        pos: x.pos || "",
+        cn: x.cn || ""
+      });
+    }
+    if(conv.length){
+      WORDS = conv;
+      UNIT = cw.label || ("自定义词库 · " + conv.length + " 个生词");
+      CUSTOM_UNITS = cw.units || null;
+    }
+  }
+}catch(e){}
+
+/* =====================================================================
+ * 工具函数
+ * ===================================================================== */
+const $ = function(id){ return document.getElementById(id); };
+function normChar(ch){
+  return String(ch).toLowerCase()
+    .replace(/[\u2018\u2019\u02bc\u00b4`]/g, "'")
+    .replace(/[\u2010-\u2015\u2212]/g, "-");
+}
+function charsOf(w){ return Array.from(String(w)); }
+function pad2(n){ return (n < 10 ? "0" : "") + n; }
+function mmss(ms){
+  const t = Math.max(0, Math.floor(ms / 1000));
+  return pad2(Math.floor(t / 60)) + ":" + pad2(t % 60);
+}
+function esc(s){
+  return String(s).replace(/[&<>"']/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+  });
+}
+
+/* =====================================================================
+ * 设置（本页「只读继承」——本体在 word/index.html 里修改）
+ *   · 读取 localStorage['wordtyping_settings_v1']，与词库中心共用同一份
+ *   · 本页不写回设置本体，避免与词库中心互相覆盖
+ *   · 顶部【单词】【释义】【音标】是「本次浏览的临时显隐」，刷新即回到设置值
+ * ===================================================================== */
+const DEFAULTS = { auto:true, times:2, ui:"cn", size:"m", wordVisible:true, cnVisible:false, phVisible:false };
+let settings = Object.assign({}, DEFAULTS);
+try{
+  const raw = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
+  if(raw && typeof raw === "object") settings = Object.assign(settings, raw);
+}catch(e){}
+
+/* 界面文案（中/英） */
+const UI = {
+  cn:{
+    title:"生词打字练习",
+    promptReady:"按顺序输入字母，全部正确会自动进入下一个词。",
+    promptOk:"✓ 正确！",
+    promptBad:"✗ 这个字母不对，退格重来。",
+    promptDone:"已练完一遍。",
+    footerReady:"按顺序输入字母，全部正确会自动进入下一个词。",
+    doneBadge:"练习小结",again:"↻ 再练一遍",home:"🏠 返回导航",
+    statsProgress:"进度",statsRight:"全对词数",statsAcc:"正确率",
+    statsWpm:"每分钟词数",statsAvg:"平均词耗时",statsMiss:"失误格数",
+    dTime:"总用时",dWords:"练完词数"
+  },
+  en:{
+    title:"Word Typing Practice",
+    promptReady:"Type the letters in order. A perfect word advances automatically.",
+    promptOk:"✓ Correct!",
+    promptBad:"✗ Wrong letter — press Backspace and retry.",
+    promptDone:"One full round finished.",
+    footerReady:"Type the letters in order. A perfect word advances automatically.",
+    doneBadge:"SESSION REPORT",again:"↻ Practice Again",home:"🏠 Back to Menu",
+    statsProgress:"Progress",statsRight:"Perfect",statsAcc:"Accuracy",
+    statsWpm:"WPM",statsAvg:"Avg / word",statsMiss:"Misses",
+    dTime:"Total time",dWords:"Words done"
+  }
+};
+function t(key){ return (UI[settings.ui] || UI.cn)[key]; }
+
+/* =====================================================================
+ * 状态
+ * ===================================================================== */
+const slotsEl = $("slots");
+const stageEl = $("stage");
+let idx = 0;                 /* 当前词索引 */
+let cells = [];              /* 当前词的格子 */
+let phase = "run";           /* run | done */
+let wordStart = 0;           /* 当前词开始时间戳 */
+let totalStart = 0;          /* 本次练习开始时间戳 */
+const spent = [];            /* 每个词的耗时 ms */
+const missed = [];           /* 每个词的失误格数 */
+let missTotal = 0;
+let perfect = 0;
+let keyTotal = 0;            /* 有效按键总数（用于「每分钟词数」指标） */
+let ticker = null;
+let sayTimer = null;
+
+/* 载入词序：顺序练习 */
+const order = WORDS.map(function(w, i){ return i; });
+
+/* =====================================================================
+ * 渲染当前词
+ * ===================================================================== */
+function renderWord(){
+  const w = WORDS[order[idx]];
+  const chars = charsOf(w.word);
+
+  /* 单词区（两行，由 body 类控制显隐）
+     【单词】第一行（默认显示）＝只显示单词本身（不含词性）
+     【释义】第二行（默认隐藏）＝词性 + 中文释义 */
+  var posTxt = String(w.pos || "").trim();
+  var cnTxt = String(w.cn || "").trim();
+  $("wordGloss").textContent = w.word;
+  $("cnGloss").textContent = posTxt ? (posTxt + "  " + cnTxt) : cnTxt;
+
+  /* 音标 */
+  $("phText").textContent = w.ph;
+
+  /* 格子 */
+  slotsEl.innerHTML = "";
+  cells = [];
+  chars.forEach(function(ch){
+    /* 空白（词组中的空格）→ 只渲染分隔占位，不建输入格、不进 cells */
+    if(/\s/.test(ch)){
+      const gap = document.createElement("div");
+      gap.className = "slot gap";
+      slotsEl.appendChild(gap);
+      return;
+    }
+    const box = document.createElement("div");
+    box.className = "slot";
+    const inp = document.createElement("input");
+    inp.type = "text";
+    inp.className = "cell";
+    inp.dataset.k = cells.length;        /* 序号＝可打字字符下标（已跳过空格） */
+    inp.autocomplete = "off";
+    inp.autocapitalize = "off";
+    inp.autocorrect = "off";
+    inp.spellcheck = false;
+    inp.setAttribute("aria-label", "第" + (cells.length + 1) + "个字母");
+    inp.maxLength = 1;
+    const lbl = document.createElement("span");
+    lbl.className = "idx";
+    lbl.textContent = String(cells.length + 1);
+    box.appendChild(inp);
+    box.appendChild(lbl);
+    slotsEl.appendChild(box);
+    cells.push(inp);
+  });
+
+  applySize();
+  setPrompt(t("promptReady"), "");
+
+  stageEl.classList.remove("fade");
+  void stageEl.offsetWidth;
+  stageEl.classList.add("fade");
+
+  wordStart = now();
+  focusCell(0);
+  autoSay();
+}
+
+function applySize(){
+  document.body.classList.remove("size-s", "size-m", "size-l");
+  document.body.classList.add("size-" + settings.size);
+}
+
+function focusCell(i){
+  const c = cells[i];
+  if(c){ try{ c.focus({ preventScroll: true }); }catch(e){ c.focus(); } }
+}
+
+/* =====================================================================
+ * 语音
+ * ===================================================================== */
+const synth = window.speechSynthesis;
+function pickVoice(){
+  if(!synth) return null;
+  const vs = synth.getVoices() || [];
+  const en = vs.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf("en") === 0; });
+  if(!en.length) return null;
+  const fav = en.filter(function(v){
+    const n = v.name.toLowerCase();
+    return /female|samantha|zira|google us|karen|tessa|victoria|allison|aria/i.test(n)
+      && (v.lang.toLowerCase().indexOf("en-us") === 0 || v.default);
+  });
+  if(fav.length) return fav[0];
+  const us = en.filter(function(v){ return v.lang.toLowerCase() === "en-us"; });
+  return us.length ? us[0] : en[0];
+}
+let sayToken = 0;
+function sayWord(times){
+  const w = WORDS[order[idx]];
+  if(!synth) return;
+  synth.cancel();
+  const my = ++sayToken;
+  let n = 0;
+  const total = Math.max(1, parseInt(times, 10) || 1);
+
+  function once(){
+    if(my !== sayToken) return;
+    if(n >= total) return;
+    n++;
+    const u = new SpeechSynthesisUtterance(w.word);
+    u.lang = "en-US";
+    const v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 0.85;
+    u.pitch = 1.05;
+    u.onend = function(){
+      if(my !== sayToken) return;
+      if(n < total){ sayTimer = setTimeout(once, 420); }
+    };
+    u.onerror = function(){ if(my !== sayToken) return; };
+    synth.speak(u);
+  }
+  once();
+
+  const btn = $("sayBtn");
+  btn.classList.remove("spin");
+  void btn.offsetWidth;
+  btn.classList.add("spin");
+}
+function autoSay(){
+  if(!settings.auto) return;
+  if(sayTimer) clearTimeout(sayTimer);
+  sayTimer = setTimeout(function(){ sayWord(settings.times); }, 260);
+}
+function stopSay(){
+  if(sayTimer) clearTimeout(sayTimer);
+  sayToken++;
+  if(synth) synth.cancel();
+}
+
+/* =====================================================================
+ * 计时
+ * ===================================================================== */
+function now(){ return Date.now(); }
+function elapsed(){ return now() - totalStart; }
+function tick(){
+  if(phase !== "run") return;
+  $("clock").textContent = mmss(elapsed());
+  renderStats();
+}
+function startTicker(){
+  if(ticker) clearInterval(ticker);
+  ticker = setInterval(tick, 200);
+}
+
+/* =====================================================================
+ * 统计
+ * ===================================================================== */
+function renderStats(){
+  /* 进度按「已完成的词」计：完成数 = 全对词数 + 已放弃/跳过数（本页无跳过，故等于 perfect 或 idx） */
+  const doneWords = Math.max(perfect, idx);
+  $("sDone").textContent = doneWords + "/" + WORDS.length;
+  $("sRight").textContent = String(perfect);
+  $("sMiss").textContent = String(missTotal);
+
+  const mins = Math.max(elapsed() / 60000, 1 / 60000);
+  const chars = spentChars();
+  const wpm = chars > 0 ? Math.round((chars / 5) / mins) : 0;
+  $("sWpm").textContent = String(wpm);
+
+  const avg = spent.length
+    ? (spent.reduce(function(a, b){ return a + b; }, 0) / spent.length / 1000) : 0;
+  $("sAvg").textContent = avg.toFixed(1) + "s";
+
+  /* 正确率 = 打对的字母数 / 总有效按键数（诚实口径，不做加权臆造） */
+  const acc = keyTotal > 0
+    ? Math.max(0, Math.round((keyTotal - missTotal) / keyTotal * 100)) : 100;
+  $("sAcc").textContent = acc + "%";
+
+  $("bar").style.width = (doneWords / WORDS.length * 100) + "%";
+}
+function spentChars(){
+  let n = 0;
+  for(let i = 0; i < spent.length; i++){ n += typeCharsOf(WORDS[order[i]].word).length; }
+  return n;
+}
+
+function setPrompt(text, cls){
+  const el = $("prompt");
+  el.textContent = text;
+  el.className = "prompt" + (cls ? " " + cls : "");
+}
+
+/* =====================================================================
+ * 输入：逐格校验
+ * ===================================================================== */
+/* 可打字字符序列：剔除空白（词组 "make friends" 只需键入字母序列，空格另作占位） */
+function typeCharsOf(w){ return charsOf(w).filter(function(ch){ return !/\s/.test(ch); }); }
+function currentChars(){ return typeCharsOf(WORDS[order[idx]].word); }
+
+function checkCell(input, k){
+  const target = currentChars()[k] || "";
+  const val = input.value;
+  input.classList.remove("ok", "bad");
+  missed[k] = missed[k] || 0;
+  if(!val) return false;
+  if(normChar(val) === normChar(target)){
+    input.classList.add("ok");
+    return true;
+  }
+  input.classList.add("bad");
+  missTotal++;
+  missed[k]++;
+  return false;
+}
+
+function allGreen(){
+  for(let i = 0; i < cells.length; i++){
+    if(!cells[i].classList.contains("ok")) return false;
+  }
+  return true;
+}
+
+function onInput(e){
+  const inp = e.target;
+  if(!inp.classList || !inp.classList.contains("cell")) return;
+  if(phase !== "run") { inp.value = ""; return; }
+  const k = parseInt(inp.dataset.k, 10);
+  /* 只取字母（含撇号、连字符），过滤数字/符号/空格 */
+  let v = String(inp.value).replace(/[^A-Za-z'\-\u2019]/g, "");
+  if(v.length > 1) v = v.slice(0, 1);
+  inp.value = v;
+
+  if(!v){
+    inp.classList.remove("ok", "bad");
+    setPrompt(t("promptReady"), "");
+    return;
+  }
+  keyTotal++;
+  const ok = checkCell(inp, k);
+  renderStats();                       /* 每次按键即时刷新统计（不等 200ms 心跳） */
+  if(ok){
+    setPrompt(t("promptOk"), "ok");
+    if(k < cells.length - 1){ focusCell(k + 1); }
+    if(allGreen()) finishWord();
+  }else{
+    setPrompt(t("promptBad"), "err");
+  }
+}
+
+function onKeydown(e){
+  const inp = e.target;
+  if(!inp.classList || !inp.classList.contains("cell")) return;
+  const k = parseInt(inp.dataset.k, 10);
+  if(e.key === "Backspace"){
+    if(inp.value){
+      inp.value = "";
+      inp.classList.remove("ok", "bad");
+      setPrompt(t("promptReady"), "");
+      e.preventDefault();
+    }else if(k > 0){
+      e.preventDefault();
+      cells[k - 1].focus();
+      cells[k - 1].value = "";
+      cells[k - 1].classList.remove("ok", "bad");
+      setPrompt(t("promptReady"), "");
+    }
+    return;
+  }
+  if(e.key === "ArrowLeft" && k > 0){ e.preventDefault(); focusCell(k - 1); return; }
+  if(e.key === "ArrowRight" && k < cells.length - 1){ e.preventDefault(); focusCell(k + 1); return; }
+  /* Enter 重听 */
+  if(e.key === "Enter"){ e.preventDefault(); sayWord(settings.times); return; }
+}
+
+function onFocusin(e){
+  const inp = e.target;
+  if(inp.classList && inp.classList.contains("cell") && inp.value){ inp.select(); }
+}
+
+/* =====================================================================
+ * 一个词全对 → 自动下一个
+ * ===================================================================== */
+function finishWord(){
+  if(phase !== "run") return;
+  spent[idx] = now() - wordStart;
+  perfect++;
+  renderStats();
+  setPrompt(t("promptOk"), "ok");
+
+  cells.forEach(function(c){ c.disabled = true; });
+
+  setTimeout(function(){
+    if(phase !== "run") return;
+    idx++;
+    if(idx >= WORDS.length){ finishAll(); return; }
+    renderWord();
+    renderStats();
+  }, 620);
+}
+
+function finishAll(){
+  phase = "done";
+  stopSay();
+  if(ticker) clearInterval(ticker);
+  $("bar").style.width = "100%";
+  showReport();
+}
+
+/* =====================================================================
+ * 结果报告
+ * ===================================================================== */
+function buildRail(){
+  let html = "";
+  for(let i = 0; i < WORDS.length; i++){
+    const w = WORDS[i];
+    const isMiss = (missed[i] || 0) > 0;
+    html += '<div class="ritem ' + (isMiss ? "no" : "ok") + '">'
+      + '<span class="rw">' + esc(w.word) + '</span>'
+      + '<span class="rg">' + esc(w.cn) + (isMiss ? "　失误 " + missed[i] + " 格" : "　✓") + '</span>'
+      + '</div>';
+  }
+  return html;
+}
+
+function showReport(){
+  const totalMs = elapsed();
+  const done = spent.length;
+  const avg = done ? (spent.reduce(function(a, b){ return a + b; }, 0) / done / 1000) : 0;
+  const chars = spentChars();
+  const mins = Math.max(totalMs / 60000, 1 / 60000);
+  const wpm = chars > 0 ? Math.round((chars / 5) / mins) : 0;
+
+  $("dTime").textContent = mmss(totalMs);
+  $("dWords").textContent = String(done) + "/" + WORDS.length;
+  $("dAcc").textContent = (keyTotal > 0
+    ? Math.max(0, Math.round((keyTotal - missTotal) / keyTotal * 100)) : 100) + "%";
+  $("dWpm").textContent = String(wpm);
+  $("dAvg").textContent = avg.toFixed(1) + "s";
+  $("dMiss").textContent = String(missTotal);
+
+  $("doneBadge").textContent = t("doneBadge");
+  $("doneTitle").textContent = (missTotal === 0 ? "🎉 " : "") + stringDoneTitle();
+  $("doneRail").innerHTML = buildRail();
+  $("againBtn").textContent = t("again");
+  $("doneVeil").classList.add("show");
+}
+function stringDoneTitle(){
+  if(settings.ui === "en"){
+    return missTotal === 0
+      ? "Perfect! 30 words, zero mistakes."
+      : "Finished " + WORDS.length + " words with " + missTotal + " misses.";
+  }
+  return missTotal === 0
+    ? "全部正确！30 个词零失误。"
+    : "练完 " + WORDS.length + " 个词，失误 " + missTotal + " 格。";
+}
+
+/* =====================================================================
+ * 重来
+ * ===================================================================== */
+/* 顶部固定条已移除（含暂停/重来）。重置统一走结果层的「↻ 再练一遍」，
+ * 与页脚「🔄 返回首页」，均通过 location.reload() 达成。 */
+
+/* =====================================================================
+ * 设置面板
+ * ===================================================================== */
+const setModal = $("setModal");
+function openSet(){ setModal.classList.add("show"); setModal.setAttribute("aria-hidden", "false"); }
+function closeSet(){ setModal.classList.remove("show"); setModal.setAttribute("aria-hidden", "true"); }
+
+function syncSettingsUI(){
+  renderReadOnly();
+  applyWordToggle();
+  applyCnToggle();
+  applyPhToggle();
+  /* 有外部词库时标题用词库名，否则用 i18n 标题（避免被此处覆盖） */
+  var h1 = document.querySelector("header h1");
+  h1.textContent = (h1.dataset.custom ? UNIT : t("title"));
+  $("sDone").nextElementSibling.textContent = t("statsProgress");
+  $("sRight").nextElementSibling.textContent = t("statsRight");
+  $("sAcc").nextElementSibling.textContent = t("statsAcc");
+  $("sWpm").nextElementSibling.textContent = t("statsWpm");
+  $("sAvg").nextElementSibling.textContent = t("statsAvg");
+  $("sMiss").nextElementSibling.textContent = t("statsMiss");
+  $("doneBadge").textContent = t("doneBadge");
+  $("againBtn").textContent = t("again");
+  if(phase === "run") setPrompt(t("promptReady"), "");
+}
+
+/* 只读回显：把继承来的设置展示出来（设置本体在 index.html 里改） */
+function renderReadOnly(){
+  const uiEn = (settings.ui === "en");
+  $("roAuto").textContent  = settings.auto ? (uiEn ? "On" : "开启") : (uiEn ? "Off" : "关闭");
+  $("roTimes").textContent = settings.times + (uiEn ? " ×" : " 次");
+  $("roUi").textContent    = uiEn ? "English" : "中文";
+  const szMap = uiEn ? { s:"Small", m:"Medium", l:"Large" } : { s:"小", m:"中", l:"大" };
+  $("roSize").textContent  = szMap[settings.size] || String(settings.size);
+  $("roLib").textContent   = (typeof UNIT === "string" && UNIT) ? UNIT : "—";
+}
+
+/* 【单词】开关：settings.wordVisible 默认 true → 第一行（原单词）显示 */
+function applyWordToggle(){
+  const on = (settings.wordVisible !== false);
+  document.body.classList.toggle("hide-word", !on);
+  $("btnWord").classList.toggle("active", on);
+}
+/* 【释义】开关：settings.cnVisible 默认 false → 中文释义默认隐藏，开启后在第二行 */
+function applyCnToggle(){
+  const on = (settings.cnVisible === true);
+  document.body.classList.toggle("show-cn", on);
+  $("btnGloss").classList.toggle("active", on);
+}
+/* 【音标】开关：settings.phVisible 默认 false → 音标默认隐藏 */
+function applyPhToggle(){
+  const on = (settings.phVisible === true);
+  $("phRow").style.display = on ? "" : "none";
+  $("btnPh").classList.toggle("active", on);
+}
+
+/* 设置（只读回显，不可在本页修改；本体在词库中心 index.html）*/
+$("btnSet").addEventListener("click", function(e){ e.preventDefault(); openSet(); });
+$("setClose").addEventListener("click", closeSet);
+setModal.addEventListener("click", function(e){ if(e.target === setModal) closeSet(); });
+
+/* 顶部三个快捷开关
+ *   【单词】默认开（只显示单词 在第一行）→ 点一下隐藏
+ *   【释义】默认关（词性+中文释义隐藏）   → 点一下显示在第二行
+ *   【音标】默认关                        → 点一下显示
+ * 三者均为「本次浏览的临时显隐」，不写回设置本体（设置由词库中心统一管理）。
+ */
+$("btnWord").addEventListener("click", function(){
+  settings.wordVisible = !(settings.wordVisible !== false);
+  applyWordToggle();
+});
+$("btnGloss").addEventListener("click", function(){
+  settings.cnVisible = !(settings.cnVisible === true);
+  applyCnToggle();
+});
+$("btnPh").addEventListener("click", function(){
+  settings.phVisible = !(settings.phVisible === true);
+  applyPhToggle();
+});
+
+/* 朗读按钮 */
+$("sayBtn").addEventListener("click", function(){ sayWord(settings.times); });
+$("sayBtn").addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); sayWord(settings.times); } });
+
+/* 结果层 */
+$("againBtn").addEventListener("click", function(){ location.reload(); });
+
+/* 输入事件（委托） */
+slotsEl.addEventListener("input", onInput);
+slotsEl.addEventListener("keydown", onKeydown);
+slotsEl.addEventListener("focusin", onFocusin);
+
+/* 全局：非输入状态下空格不滚动 */
+document.addEventListener("keydown", function(e){
+  const tn = e.target && e.target.tagName;
+  if(e.key === " " && tn !== "INPUT") e.preventDefault();
+});
+
+/* 离开页面静音 */
+window.addEventListener("pagehide", stopSay);
+document.addEventListener("visibilitychange", function(){ if(document.hidden) stopSay(); });
+
+/* =====================================================================
+ * 初始化
+ * ===================================================================== */
+/* 头部标题：有外部词库时用词库名；直接打开（内置 3A U1）时用通用标题 */
+(function(){
+  if(CUSTOM_UNITS || UNIT !== "3A Unit 1 · Making friends"){
+    $("hdrTitle").textContent = UNIT;
+    $("hdrTitle").dataset.custom = "1";
+    var sub = CUSTOM_UNITS && CUSTOM_UNITS.length
+      ? (CUSTOM_UNITS.slice(0, 4).join(" · ") + (CUSTOM_UNITS.length > 4 ? " 等 " + CUSTOM_UNITS.length + " 个单元" : ""))
+      : "自定义词库 · 逐字母校验 · 自由计时";
+    $("hdrSub").textContent = sub;
+    document.title = UNIT + " · 生词打字";
+  }else{
+    $("hdrTitle").textContent = "生词打字练习";
+    $("hdrSub").textContent = "人教PEP三年级上册 · Making friends · 逐字母校验 · 自由计时";
+    document.title = "生词打字练习 · 豆豆智学";
+  }
+})();
+
+totalStart = now();
+startTicker();
+renderWord();
+renderStats();
+applySize();
+syncSettingsUI();
+$("sDone").textContent = "0/" + WORDS.length;
+if(!synth){
+  setPrompt("本浏览器不支持语音合成，仍可练习拼写。", "");
+}
+</script>
+</body>
+</html>
