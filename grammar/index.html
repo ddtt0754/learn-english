@@ -50,6 +50,13 @@ body {
 .daily .card-icon { color: #3b82f6; }
 .daily:hover { border-color: #2563eb; }
 
+.mm { border-color: #6366f1; }
+.mm .card-icon { color: #6366f1; }
+.mm:hover { border-color: #4f46e5; }
+
+/* 通栏卡片（第三格独占一行） */
+.grid a.full { grid-column: 1 / -1; }
+
 /* Footer */
 .site-footer {
   text-align: center; padding: 16px 0 20px;
@@ -152,7 +159,12 @@ html{-webkit-text-size-adjust:100%;}
       <div class="card-title">单元语法知识导图</div>
       <div class="card-desc">3-9年级 · 语法思维导图</div>
     </a>
-    <a href="daily_practice.html" class="daily">
+    <a href="mindmap.html" class="mm">
+      <div class="card-icon">🧠</div>
+      <div class="card-title">英语语法知识体系</div>
+      <div class="card-desc">小初高英语 · 全局框架</div>
+    </a>
+    <a href="daily_practice.html" class="daily full">
       <div class="card-icon">✏️</div>
       <div class="card-title">中考语法每日一练</div>
       <div class="card-desc">中考语法 · 每日精练巩固</div>
