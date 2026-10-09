@@ -73,7 +73,17 @@
   }
   .title-card .sub b{font-weight:600;margin:0 2px;}
 
-  /* ============ 头部入口按钮（教材点读，置于标题卡内居中） ============ */
+  /* ============ 头部入口按钮组（教材点读 · 菁优题库，居中自适应换行） ============ */
+  .nav-group{
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top:16px;
+  }
   .nav-btn{
     position:relative;
     z-index:1;
@@ -81,7 +91,6 @@
     align-items:center;
     justify-content:center;
     gap:6px;
-    margin-top:16px;
     padding:10px 26px;
     border-radius:999px;
     background:#fff;
@@ -290,6 +299,8 @@
     .title-card h1{font-size:20px;letter-spacing:2px;}
     .tab{font-size:13px;}
     .cell .name{font-size:14px;}
+    .nav-group{gap:8px;}
+    .nav-btn{padding:9px 16px;font-size:12.5px;}
   }
 
 /* 教练微信号提示框 */
@@ -365,11 +376,14 @@ html{-webkit-text-size-adjust:100%;}
 
 <div class="container" data-page-node-id="CEU8oyKDdwkxIXT1qKnEkT">
 
-  <!-- 顶部标题（头部渐变卡，内置【教材点读】入口，居中） -->
+  <!-- 顶部标题（头部渐变卡，内置【教材点读 · 菁优题库】入口按钮组，居中） -->
   <header class="title-card" data-page-node-id="XqYAg2kBOduKPDSY8qiNW4">
     <h1 data-page-node-id="x5Y1Kat2Fml0iH5Rwe5ziQ">📚 同步学 | 听 · 读 · 说 · 写</h1>
     <div class="sub" data-page-node-id="QU0YPC37vUj8uooTwzPIAe">人教版PEP英语3-6年级 · <b data-page-node-id="PO9Cnp05GrF1i388Mk9eFs">单元导航</b></div>
-    <a class="nav-btn" href="../tools/aidiandu.html"><span aria-hidden="true">📖</span>教材点读</a>
+    <div class="nav-group">
+      <a class="nav-btn" href="../tools/aidiandu.html"><span aria-hidden="true">📖</span>教材点读</a>
+      <a class="nav-btn" href="jyeoo.html"><span aria-hidden="true">🧮</span>菁优题库</a>
+    </div>
   </header>
 
   <!-- 数据来源（IMA 知识库 · 2026 新教材） -->
